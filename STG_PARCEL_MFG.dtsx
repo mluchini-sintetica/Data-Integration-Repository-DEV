@@ -11,8 +11,8 @@
   DTS:LocaleID="2064"
   DTS:ObjectName="STG_PARCEL_MFG"
   DTS:PackageType="5"
-  DTS:VersionBuild="129"
-  DTS:VersionGUID="{92FD2749-D8D8-4F5C-A6FA-9A2240A38EB1}">
+  DTS:VersionBuild="133"
+  DTS:VersionGUID="{D9527E37-DF33-4333-B1AF-E0FF67326A67}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -27,7 +27,7 @@
           <DTS:Password
             DTS:Name="Password"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAZ1W4zPu86k256zsBij2bAQAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAABy0PA0Owk4tmVsn+XmYeFNAAAAAASAAACgAAAAEAAAAEdeyjyXLKz2Xvz+6oc10iMgAAAAR+yJp8VDGtosHe9NcFtQvQrTAyJFhnr3wFxt3Yl8o/0UAAAARm3uz5ehHmOJFATsii7sU/0d0vw</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAZ1W4zPu86k256zsBij2bAQAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAAAQzLFEni49eXGTzJryX9IwAAAAAASAAACgAAAAEAAAAFUHvC87FC0yVHHfmik0ZHogAAAAD2HCt+XU6o5/NfRcPVpd29xtRN5rBTXRNM/1zB0obTgUAAAAEjF6amjlmdFL5gk8gQhu5gaDRB0</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -36,7 +36,7 @@
     <DTS:PackageParameter
       DTS:CreationName=""
       DTS:DataType="3"
-      DTS:DTSID="{8C69F3E5-9B3A-411F-9B30-4EE1CFCD9C53}"
+      DTS:DTSID="{8A5BC685-6D9C-45D3-A1F6-811C65E8298A}"
       DTS:ObjectName="Parameter">
       <DTS:Property
         DTS:DataType="3"
@@ -471,6 +471,29 @@
               DTS:ObjectName="Constraint 1"
               DTS:To="Package\STAGING LOAD\TBST_ANAGRAFICA_LOTTI\Data Flow Task" />
           </DTS:PrecedenceConstraints>
+          <DTS:EventHandlers>
+            <DTS:EventHandler
+              DTS:refId="Package\STAGING LOAD\TBST_ANAGRAFICA_LOTTI.EventHandlers[OnPreExecute]"
+              DTS:CreationName="OnPreExecute"
+              DTS:DTSID="{008B219E-2D09-43AF-A351-233917C4CD59}"
+              DTS:EventID="0"
+              DTS:EventName="OnPreExecute"
+              DTS:LocaleID="-1">
+              <DTS:Variables>
+                <DTS:Variable
+                  DTS:CreationName=""
+                  DTS:Description="The propagate property of the event"
+                  DTS:DTSID="{1063A506-80AB-49BA-8659-4C3445A531C0}"
+                  DTS:IncludeInDebugDump="6789"
+                  DTS:Namespace="System"
+                  DTS:ObjectName="Propagate">
+                  <DTS:VariableValue
+                    DTS:DataType="11">-1</DTS:VariableValue>
+                </DTS:Variable>
+              </DTS:Variables>
+              <DTS:Executables />
+            </DTS:EventHandler>
+          </DTS:EventHandlers>
         </DTS:Executable>
         <DTS:Executable
           DTS:refId="Package\STAGING LOAD\TBST_ARTICOLO"
@@ -772,69 +795,13 @@
           Id="Package\Ins TBLOG_PACKAGE + Max ID"
           TopLeft="605.666666666667,26.7777777777778" />
         <NodeLayout
-          Size="199,42"
-          Id="Package\Upd TBLOG_PACKAGE"
-          TopLeft="626.444444444444,122.333333333333" />
-        <NodeLayout
           Size="222,42"
           Id="Package\Last Upd TBLOG_PACKAGE"
           TopLeft="607.333333333333,590.111111111111" />
-        <EdgeLayout
-          Id="Package.PrecedenceConstraints[Constraint]"
-          TopLeft="725.805555555555,68.7777777777778">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,53.5555555555552"
-              Start="0,0"
-              End="0,46.0555555555552">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,46.0555555555552" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package.PrecedenceConstraints[Constraint 7]"
-          TopLeft="718.333333333333,632.111111111111">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-20.833333333333,65.888888888889"
-              Start="0,0"
-              End="-20.833333333333,58.388888888889">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,28.9444444444445" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,28.9444444444445"
-                    Point2="0,32.9444444444445"
-                    Point3="-4,32.9444444444445" />
-                  <mssgle:LineSegment
-                    End="-16.833333333333,32.9444444444445" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-16.833333333333,32.9444444444445"
-                    Point2="-20.833333333333,32.9444444444445"
-                    Point3="-20.833333333333,36.9444444444445" />
-                  <mssgle:LineSegment
-                    End="-20.833333333333,58.388888888889" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
+        <NodeLayout
+          Size="155,42"
+          Id="Package\STAGING LOAD\TBST_ANAGRAFICA_LOTTI\Data Flow Task"
+          TopLeft="97,102" />
         <NodeLayout
           Size="332,42"
           Id="Package\STAGING LOAD\TBST_ANAGRAFICA_LOTTI\Ins_Upd TBLOG_PACKAGE_TABLE + TRUNCATE"
@@ -843,10 +810,6 @@
           Size="263,42"
           Id="Package\STAGING LOAD\TBST_ANAGRAFICA_LOTTI\Last Upd TBLOG_PACKAGE_TABLE"
           TopLeft="59,179" />
-        <NodeLayout
-          Size="155,42"
-          Id="Package\STAGING LOAD\TBST_ANAGRAFICA_LOTTI\Data Flow Task"
-          TopLeft="97,102" />
         <EdgeLayout
           Id="Package\STAGING LOAD\TBST_ANAGRAFICA_LOTTI.PrecedenceConstraints[Constraint]"
           TopLeft="174.5,144">
@@ -921,7 +884,7 @@
           PanelSize="379,226"
           Size="379,269"
           Id="Package\STAGING LOAD\TBST_ANAGRAFICA_LOTTI"
-          TopLeft="18.5,20.5" />
+          TopLeft="34.5,46.5" />
         <NodeLayout
           Size="155,42"
           Id="Package\STAGING LOAD\TBST_ARTICOLO\Data Flow Task"
@@ -1008,40 +971,66 @@
           PanelSize="379,226"
           Size="379,269"
           Id="Package\STAGING LOAD\TBST_ARTICOLO"
-          TopLeft="540,40" />
+          TopLeft="558,32" />
         <ContainerLayout
           HeaderHeight="43"
-          IsExpanded="False"
+          IsExpanded="True"
           PanelSize="1011,464"
-          Size="1011,43"
+          Size="1011,507"
           Id="Package\STAGING LOAD"
           TopLeft="189,298" />
+        <NodeLayout
+          Size="199,42"
+          Id="Package\Upd TBLOG_PACKAGE"
+          TopLeft="626.444444444444,122.333333333333" />
         <EdgeLayout
-          Id="Package.PrecedenceConstraints[Constraint 1]"
-          TopLeft="694.5,341">
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="725.805555555555,68.7777777777778">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="23.833333333333,249.111111111111"
+              EndConnector="0,53.5555555555552"
               Start="0,0"
-              End="23.833333333333,241.611111111111">
+              End="0,46.0555555555552">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,120.555555555555" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,120.555555555555"
-                    Point2="0,124.555555555555"
-                    Point3="4,124.555555555555" />
+                    End="0,46.0555555555552" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 1]"
+          TopLeft="694.5,805">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="23.833333333333,-214.888888888889"
+              Start="0,0"
+              End="23.833333333333,-207.388888888889">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
                   <mssgle:LineSegment
-                    End="19.833333333333,124.555555555555" />
+                    End="0,-103.444444444445" />
                   <mssgle:CubicBezierSegment
-                    Point1="19.833333333333,124.555555555555"
-                    Point2="23.833333333333,124.555555555555"
-                    Point3="23.833333333333,128.555555555555" />
+                    Point1="0,-103.444444444445"
+                    Point2="0,-107.444444444445"
+                    Point3="4,-107.444444444445" />
                   <mssgle:LineSegment
-                    End="23.833333333333,241.611111111111" />
+                    End="19.833333333333,-107.444444444445" />
+                  <mssgle:CubicBezierSegment
+                    Point1="19.833333333333,-107.444444444445"
+                    Point2="23.833333333333,-107.444444444445"
+                    Point3="23.833333333333,-111.444444444445" />
+                  <mssgle:LineSegment
+                    End="23.833333333333,-207.388888888889" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -1084,6 +1073,40 @@
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 7]"
+          TopLeft="718.333333333333,632.111111111111">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-20.833333333333,65.888888888889"
+              Start="0,0"
+              End="-20.833333333333,58.388888888889">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,28.9444444444445" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,28.9444444444445"
+                    Point2="0,32.9444444444445"
+                    Point3="-4,32.9444444444445" />
+                  <mssgle:LineSegment
+                    End="-16.833333333333,32.9444444444445" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-16.833333333333,32.9444444444445"
+                    Point2="-20.833333333333,32.9444444444445"
+                    Point3="-20.833333333333,36.9444444444445" />
+                  <mssgle:LineSegment
+                    End="-20.833333333333,58.388888888889" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </Package>
@@ -1096,6 +1119,18 @@
           Size="149,42"
           Id="Package.EventHandlers[OnError]\Email ERROR"
           TopLeft="60,60" />
+      </GraphLayout>
+    </LayoutInfo>
+  </DtsEventHandler>
+  <DtsEventHandler
+    design-time-name="Package\STAGING LOAD\TBST_ANAGRAFICA_LOTTI.EventHandlers[OnPreExecute]">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="134,42"
+          Id="{CA0A6374-42C9-44B3-B808-C3C7F7A463CC}"
+          TopLeft="265,85" />
       </GraphLayout>
     </LayoutInfo>
   </DtsEventHandler>
