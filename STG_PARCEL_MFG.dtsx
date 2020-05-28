@@ -9,25 +9,55 @@
   DTS:ExecutableType="Microsoft.Package"
   DTS:LastModifiedProductVersion="15.0.2000.121"
   DTS:LocaleID="2064"
-  DTS:ObjectName="Package"
+  DTS:ObjectName="STG_PARCEL_MFG"
   DTS:PackageType="5"
-  DTS:VersionBuild="56"
-  DTS:VersionGUID="{33ADD3DB-84EF-4D94-A3D0-F6B87D5FB722}">
+  DTS:VersionBuild="101"
+  DTS:VersionGUID="{0271960E-7E48-4C18-94B1-EB826279A1BF}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
-  <DTS:ConnectionManagers>
-    <DTS:ConnectionManager
-      DTS:refId="Package.ConnectionManagers[it@sintetica.com]"
-      DTS:CreationName="SMTP"
-      DTS:DTSID="{904BB92B-90BA-44E4-AF7F-15DC259A58D0}"
-      DTS:ObjectName="it@sintetica.com">
-      <DTS:ObjectData>
-        <SmtpConnectionManager
-          ConnectionString="SmtpServer=smtp.office365.com;UseWindowsAuthentication=True;EnableSsl=True;" />
-      </DTS:ObjectData>
-    </DTS:ConnectionManager>
-  </DTS:ConnectionManagers>
   <DTS:Variables>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{8FC49B32-AAE4-47B0-A0A4-54D61AE6F437}"
+      DTS:EvaluateAsExpression="True"
+      DTS:Expression="&quot;SSIS package: &quot; + @[System::PackageName] + &quot; ERROR&quot;"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="in_MAIL_OBJECT_ERROR">
+      <DTS:VariableValue
+        DTS:DataType="8">SSIS package: STG_PARCEL_MFG ERROR</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{4F0E467A-1470-4C4A-88FA-87B203D0DDC1}"
+      DTS:EvaluateAsExpression="True"
+      DTS:Expression="&quot;SSIS package: &quot; + @[System::PackageName] + &quot; completed SUCCESSFULLY&quot;"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="in_MAIL_OBJECT_SUCCESS">
+      <DTS:VariableValue
+        DTS:DataType="8">SSIS package: STG_PARCEL_MFG completed SUCCESSFULLY</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:Description="The SQL server database mail profile name used to send email"
+      DTS:DTSID="{ECA68102-32B8-44F4-A76F-C53050F7D10C}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="in_MAIL_PROFILE">
+      <DTS:VariableValue
+        DTS:DataType="8">ITatSINTETICA.COM</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:Description="The target users of the email. Use ; as separator"
+      DTS:DTSID="{4572ED32-EE86-4FA9-B450-A922D6FAD13B}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="in_MAIL_RECIPIENTS">
+      <DTS:VariableValue
+        DTS:DataType="8">mluchini@sintetica.com</DTS:VariableValue>
+    </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
       DTS:Description="The package name"
@@ -100,6 +130,42 @@
     </DTS:Variable>
   </DTS:Variables>
   <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Email SUCCESS"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{1AD995A0-5AC4-4890-B4FC-195AA4556DBC}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Email SUCCESS"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{62102490-454D-4B7E-9A09-120A46D18B10}"
+          SQLTask:SqlStatementSource="EXEC msdb.dbo.sp_send_dbmail @profile_name = ?, @recipients = ?, @subject= ?" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="0"
+            SQLTask:DtsVariableName="User::in_MAIL_PROFILE"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="130"
+            SQLTask:ParameterSize="-1" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="1"
+            SQLTask:DtsVariableName="User::in_MAIL_RECIPIENTS"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="130"
+            SQLTask:ParameterSize="-1" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="2"
+            SQLTask:DtsVariableName="User::in_MAIL_OBJECT_SUCCESS"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="130"
+            SQLTask:ParameterSize="-1" />
+        </SQLTask:SqlTaskData>
+      </DTS:ObjectData>
+    </DTS:Executable>
     <DTS:Executable
       DTS:refId="Package\Ins TBLOG_PACKAGE"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
@@ -183,25 +249,6 @@
       </DTS:ObjectData>
     </DTS:Executable>
     <DTS:Executable
-      DTS:refId="Package\SUCCESS EMAIL"
-      DTS:CreationName="Microsoft.SendMailTask"
-      DTS:Description="Send Mail Task"
-      DTS:DTSID="{993A4AE3-58BC-41B0-9247-8890A37377D1}"
-      DTS:ExecutableType="Microsoft.SendMailTask"
-      DTS:LocaleID="-1"
-      DTS:ObjectName="SUCCESS EMAIL"
-      DTS:TaskContact="Send Mail Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="0">
-      <DTS:Variables />
-      <DTS:ObjectData>
-        <SendMailTask:SendMailTaskData
-          SendMailTask:SMTPServer="{904BB92B-90BA-44E4-AF7F-15DC259A58D0}"
-          SendMailTask:From="it@sintetica.com"
-          SendMailTask:To="it@sintetica.com"
-          SendMailTask:Subject="STG_PARCEL_MFG" xmlns:SendMailTask="www.microsoft.com/sqlserver/dts/tasks/sendmailtask" />
-      </DTS:ObjectData>
-    </DTS:Executable>
-    <DTS:Executable
       DTS:refId="Package\TBST_PRC_ANAGRAFICA_LOTTI"
       DTS:CreationName="Microsoft.Pipeline"
       DTS:Description="Data Flow Task"
@@ -232,13 +279,13 @@
       </DTS:ObjectData>
     </DTS:Executable>
     <DTS:Executable
-      DTS:refId="Package\TRUNCATE"
+      DTS:refId="Package\TRUNCATE STG target"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Execute SQL Task"
       DTS:DTSID="{C83AC9C2-9721-4706-8123-6D819DC5738F}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
-      DTS:ObjectName="TRUNCATE"
+      DTS:ObjectName="TRUNCATE STG target"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
       DTS:ThreadHint="0">
       <DTS:Variables />
@@ -301,7 +348,7 @@
       DTS:From="Package\Ins TBLOG_PACKAGE"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 1"
-      DTS:To="Package\TRUNCATE" />
+      DTS:To="Package\TRUNCATE STG target" />
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 2]"
       DTS:CreationName=""
@@ -314,7 +361,7 @@
       DTS:refId="Package.PrecedenceConstraints[Constraint 3]"
       DTS:CreationName=""
       DTS:DTSID="{470F1D4E-CFA9-483E-B926-C4AF150FB3C0}"
-      DTS:From="Package\TRUNCATE"
+      DTS:From="Package\TRUNCATE STG target"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 3"
       DTS:To="Package\TBST_PRC_ARTICOLO" />
@@ -338,19 +385,84 @@
       DTS:refId="Package.PrecedenceConstraints[Constraint 6]"
       DTS:CreationName=""
       DTS:DTSID="{76BDF382-BC38-45E4-B175-F7857949921B}"
-      DTS:From="Package\TRUNCATE"
+      DTS:From="Package\TRUNCATE STG target"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 6"
       DTS:To="Package\TBST_PRC_ANAGRAFICA_LOTTI" />
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 7]"
       DTS:CreationName=""
-      DTS:DTSID="{FBED7636-A0FF-4A8D-B3A4-CC3C2FE1C7CD}"
+      DTS:DTSID="{375A1BD6-57D3-49B4-82EE-7547A57C46F8}"
       DTS:From="Package\Upd TBLOG_PACKAGE"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 7"
-      DTS:To="Package\SUCCESS EMAIL" />
+      DTS:To="Package\Email SUCCESS" />
   </DTS:PrecedenceConstraints>
+  <DTS:EventHandlers>
+    <DTS:EventHandler
+      DTS:refId="Package.EventHandlers[OnError]"
+      DTS:CreationName="OnError"
+      DTS:DTSID="{46EF492F-D961-4FE3-BA7B-56E1426039EC}"
+      DTS:EventID="9110279"
+      DTS:EventName="OnError"
+      DTS:LocaleID="-1">
+      <DTS:Variables>
+        <DTS:Variable
+          DTS:CreationName=""
+          DTS:Description="The propagate property of the event"
+          DTS:DTSID="{03B1157B-18F4-41FC-B4D4-826BE464DD2C}"
+          DTS:IncludeInDebugDump="6789"
+          DTS:Namespace="System"
+          DTS:ObjectName="Propagate">
+          <DTS:VariableValue
+            DTS:DataType="11">-1</DTS:VariableValue>
+        </DTS:Variable>
+      </DTS:Variables>
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package.EventHandlers[OnError]\Email ERROR"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{15eff937-ba3e-4439-868c-ddb8dc061428}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Email ERROR"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{62102490-454D-4B7E-9A09-120A46D18B10}"
+              SQLTask:SqlStatementSource="EXEC msdb.dbo.sp_send_dbmail @profile_name = ?, @recipients = ?, @subject= ?, @body =  ?" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="0"
+                SQLTask:DtsVariableName="User::in_MAIL_PROFILE"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="130"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="1"
+                SQLTask:DtsVariableName="User::in_MAIL_RECIPIENTS"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="130"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="2"
+                SQLTask:DtsVariableName="User::in_MAIL_OBJECT_ERROR"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="130"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="3"
+                SQLTask:DtsVariableName="System::ErrorDescription"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="130"
+                SQLTask:ParameterSize="-1" />
+            </SQLTask:SqlTaskData>
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+    </DTS:EventHandler>
+  </DTS:EventHandlers>
   <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
 <!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
 <!--If you manually edit this section and make a mistake, you can delete it. -->
@@ -364,17 +476,33 @@
       <GraphLayout
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
+          Size="163,42"
+          Id="Package\Email SUCCESS"
+          TopLeft="305,487" />
+        <NodeLayout
           Size="193,42"
           Id="Package\Ins TBLOG_PACKAGE"
           TopLeft="301.666666666667,26.7777777777778" />
         <NodeLayout
-          Size="139,42"
-          Id="Package\TRUNCATE"
-          TopLeft="504.111111111111,119" />
-        <NodeLayout
           Size="216,42"
           Id="Package\MAX ID TBLOG_PACKAGE"
           TopLeft="139.444444444444,121.333333333333" />
+        <NodeLayout
+          Size="251,42"
+          Id="Package\TBST_PRC_ANAGRAFICA_LOTTI"
+          TopLeft="727.777777777778,244.444444444444" />
+        <NodeLayout
+          Size="199,42"
+          Id="Package\TBST_PRC_ARTICOLO"
+          TopLeft="425.555555555555,238.888888888889" />
+        <NodeLayout
+          Size="195,42"
+          Id="Package\TRUNCATE STG target"
+          TopLeft="504.111111111111,119" />
+        <NodeLayout
+          Size="199,42"
+          Id="Package\Upd TBLOG_PACKAGE"
+          TopLeft="294.333333333333,392.111111111111" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint]"
           TopLeft="367.333333333333,68.7777777777778">
@@ -415,9 +543,9 @@
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="144.611111111111,50.2222222222222"
+              EndConnector="172.611111111111,50.2222222222222"
               Start="0,0"
-              End="144.611111111111,42.7222222222222">
+              End="172.611111111111,42.7222222222222">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
@@ -428,13 +556,13 @@
                     Point2="0,20.3366449697385"
                     Point3="4,20.3366449697385" />
                   <mssgle:LineSegment
-                    End="140.611111111111,20.3366449697385" />
+                    End="168.611111111111,20.3366449697385" />
                   <mssgle:CubicBezierSegment
-                    Point1="140.611111111111,20.3366449697385"
-                    Point2="144.611111111111,20.3366449697385"
-                    Point3="144.611111111111,24.3366449697385" />
+                    Point1="168.611111111111,20.3366449697385"
+                    Point2="172.611111111111,20.3366449697385"
+                    Point3="172.611111111111,24.3366449697385" />
                   <mssgle:LineSegment
-                    End="144.611111111111,42.7222222222222" />
+                    End="172.611111111111,42.7222222222222" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -443,10 +571,6 @@
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="199,42"
-          Id="Package\Upd TBLOG_PACKAGE"
-          TopLeft="294.333333333333,392.111111111111" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 2]"
           TopLeft="247.444444444444,163.333333333333">
@@ -481,36 +605,32 @@
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="199,42"
-          Id="Package\TBST_PRC_ARTICOLO"
-          TopLeft="425.555555555555,238.888888888889" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 3]"
-          TopLeft="573.611111111111,161">
+          TopLeft="570.444444444444,161">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-48.5555555555557,77.888888888889"
+              EndConnector="-45.3888888888894,77.888888888889"
               Start="0,0"
-              End="-48.5555555555557,70.388888888889">
+              End="-45.3888888888894,70.388888888889">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,34.9444444444445" />
+                    End="0,27.535887871595" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,34.9444444444445"
-                    Point2="0,38.9444444444445"
-                    Point3="-4,38.9444444444445" />
+                    Point1="0,27.535887871595"
+                    Point2="0,31.535887871595"
+                    Point3="-4,31.535887871595" />
                   <mssgle:LineSegment
-                    End="-44.5555555555557,38.9444444444445" />
+                    End="-41.3888888888894,31.535887871595" />
                   <mssgle:CubicBezierSegment
-                    Point1="-44.5555555555557,38.9444444444445"
-                    Point2="-48.5555555555557,38.9444444444445"
-                    Point3="-48.5555555555557,42.9444444444445" />
+                    Point1="-41.3888888888894,31.535887871595"
+                    Point2="-45.3888888888894,31.535887871595"
+                    Point3="-45.3888888888894,35.535887871595" />
                   <mssgle:LineSegment
-                    End="-48.5555555555557,70.388888888889" />
+                    End="-45.3888888888894,70.388888888889" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -553,10 +673,6 @@
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="251,42"
-          Id="Package\TBST_PRC_ANAGRAFICA_LOTTI"
-          TopLeft="727.777777777778,244.444444444444" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 5]"
           TopLeft="853.277777777778,286.444444444444">
@@ -593,30 +709,30 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 6]"
-          TopLeft="595.444444444444,161">
+          TopLeft="632.777777777778,161">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="257.833333333333,83.4444444444445"
+              EndConnector="220.5,83.444444444444"
               Start="0,0"
-              End="257.833333333333,75.9444444444445">
+              End="220.5,75.944444444444">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,29.9475264738423" />
+                    End="0,29.7852379337627" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,29.9475264738423"
-                    Point2="0,33.9475264738423"
-                    Point3="4,33.9475264738423" />
+                    Point1="0,29.7852379337627"
+                    Point2="0,33.7852379337627"
+                    Point3="4,33.7852379337627" />
                   <mssgle:LineSegment
-                    End="253.833333333333,33.9475264738423" />
+                    End="216.5,33.7852379337627" />
                   <mssgle:CubicBezierSegment
-                    Point1="253.833333333333,33.9475264738423"
-                    Point2="257.833333333333,33.9475264738423"
-                    Point3="257.833333333333,37.9475264738423" />
+                    Point1="216.5,33.7852379337627"
+                    Point2="220.5,33.7852379337627"
+                    Point3="220.5,37.7852379337627" />
                   <mssgle:LineSegment
-                    End="257.833333333333,75.9444444444445" />
+                    End="220.5,75.944444444444" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -625,36 +741,20 @@
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="168,42"
-          Id="Package\SUCCESS EMAIL"
-          TopLeft="298.888888888889,490" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 7]"
-          TopLeft="393.833333333333,434.111111111111">
+          TopLeft="390.166666666667,434.111111111111">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-10.9444444444443,55.8888888888888"
+              EndConnector="0,52.888888888889"
               Start="0,0"
-              End="-10.9444444444443,48.3888888888888">
+              End="0,45.388888888889">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,23.9444444444444" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,23.9444444444444"
-                    Point2="0,27.9444444444444"
-                    Point3="-4,27.9444444444444" />
-                  <mssgle:LineSegment
-                    End="-6.94444444444434,27.9444444444444" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-6.94444444444434,27.9444444444444"
-                    Point2="-10.9444444444443,27.9444444444444"
-                    Point3="-10.9444444444443,31.9444444444444" />
-                  <mssgle:LineSegment
-                    End="-10.9444444444443,48.3888888888888" />
+                    End="0,45.388888888889" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -666,5 +766,17 @@
       </GraphLayout>
     </LayoutInfo>
   </Package>
+  <DtsEventHandler
+    design-time-name="Package.EventHandlers[OnError]">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="149,42"
+          Id="Package.EventHandlers[OnError]\Email ERROR"
+          TopLeft="60,60" />
+      </GraphLayout>
+    </LayoutInfo>
+  </DtsEventHandler>
 </Objects>]]></DTS:DesignTimeProperties>
 </DTS:Executable>
