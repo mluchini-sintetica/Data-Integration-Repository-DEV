@@ -1,0 +1,14 @@
+﻿<?xml version="1.0"?>
+<DTS:ConnectionManager xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:ObjectName="SRV-DIR-DEV_SRVDIRDEV.DIR_DWH.DIR_DWH_ETL"
+  DTS:DTSID="{62102490-454D-4B7E-9A09-120A46D18B10}"
+  DTS:CreationName="OLEDB">
+  <DTS:ObjectData>
+    <DTS:ConnectionManager
+      DTS:ConnectionString="Data Source=SRV-DIR-DEV\SRVDIRDEV;User ID=DIR_DWH_ETL;Initial Catalog=DIR_DWH;Provider=SQLNCLI11.1;Persist Security Info=True;Auto Translate=False;">
+      <DTS:Password
+        DTS:Name="Password"
+        Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAZ1W4zPu86k256zsBij2bAQAAAAACAAAAAAADZgAAwAAAABAAAACy880Je3PpH97vCNwubyWFAAAAAASAAACgAAAAEAAAALsPoj2j9RuVRw5u5CtJK9N4AAAAgJUAjSba7agde2mOX2aoJEy8u4c6IcV23HFeVCu6Fre3boGGIhxa2vvA4SCorkjGoxFgCZhOiDDK0I5JOmAvXSO3GUq2JYfXOMFrc3c4meVYrAjYmXFcB+FFcNDrRtVZJL/8NEaXWBzWq3YXok6b9UWQGBixv2qxFAAAAOcXojL8uFuE0wyc/HKdRu1e+bFk</DTS:Password>
+    </DTS:ConnectionManager>
+  </DTS:ObjectData>
+</DTS:ConnectionManager>
