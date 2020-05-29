@@ -11,8 +11,8 @@
   DTS:LocaleID="2064"
   DTS:ObjectName="STG_PARCEL_MFG"
   DTS:PackageType="5"
-  DTS:VersionBuild="216"
-  DTS:VersionGUID="{67B14122-C478-4CD2-B21C-D150142327C5}">
+  DTS:VersionBuild="227"
+  DTS:VersionGUID="{C03CA8D2-3714-46EF-AB66-C3385AE8AE5A}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -27,7 +27,7 @@
           <DTS:Password
             DTS:Name="Password"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAZ1W4zPu86k256zsBij2bAQAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAACF8+fFE8f3wd9l+SgT8zFkAAAAAASAAACgAAAAEAAAADKAWFnwzQvQ/2ptfdn+490gAAAA56OyheVM8GwnzhMM9PAiStza6+7iVbsAGAuKiPCuhe4UAAAAS5S+JPwwtieJSY37NWn6+hckKy0</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAZ1W4zPu86k256zsBij2bAQAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAABDSsO88dD2gvi4AsQUlPQyAAAAAASAAACgAAAAEAAAAMxriXdZTcTKwRogdkezm0AgAAAAeq1BQorIQxwAK/d5phDEN+LEZ1bAwu5Sxw8t+fWqUb4UAAAAgwPKUM2jdYciTC9wZGVLLKULslU</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -2217,7 +2217,6 @@
           DTS:refId="Package\STAGING LOAD\TBST_PRC_ARTICOLO"
           DTS:CreationName="STOCK:SEQUENCE"
           DTS:Description="Sequence Container"
-          DTS:Disabled="True"
           DTS:DTSID="{3afe1f3c-c1fb-40a1-9436-b53f03a2460b}"
           DTS:ExecutableType="STOCK:SEQUENCE"
           DTS:LocaleID="-1"
@@ -2378,7 +2377,6 @@
               DTS:refId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE"
               DTS:CreationName="Microsoft.Pipeline"
               DTS:Description="Data Flow Task"
-              DTS:Disabled="True"
               DTS:DTSID="{3d3d731a-0869-4941-897d-8fdbdc36536f}"
               DTS:ExecutableType="Microsoft.Pipeline"
               DTS:LocaleID="-1"
@@ -4158,6 +4156,14 @@
                           refId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\Derived Column.Inputs[Derived Column Input]"
                           description="Input to the Derived Column Transformation"
                           name="Derived Column Input">
+                          <inputColumns>
+                            <inputColumn
+                              refId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\Derived Column.Inputs[Derived Column Input].Columns[Particolari]"
+                              cachedCodepage="1252"
+                              cachedDataType="text"
+                              cachedName="Particolari"
+                              lineageId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Source.Outputs[OLE DB Source Output].Columns[Particolari]" />
+                          </inputColumns>
                           <externalMetadataColumns />
                         </input>
                       </inputs>
@@ -4324,6 +4330,29 @@
                                   name="FriendlyExpression">@[User::out_MAX_TABLE_ID]</property>
                               </properties>
                             </outputColumn>
+                            <outputColumn
+                              refId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\Derived Column.Outputs[Derived Column Output].Columns[Particolari_WSTR]"
+                              dataType="wstr"
+                              errorOrTruncationOperation="Computation"
+                              errorRowDisposition="FailComponent"
+                              length="4000"
+                              lineageId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\Derived Column.Outputs[Derived Column Output].Columns[Particolari_WSTR]"
+                              name="Particolari_WSTR"
+                              truncationRowDisposition="FailComponent">
+                              <properties>
+                                <property
+                                  containsID="true"
+                                  dataType="System.String"
+                                  description="Derived Column Expression"
+                                  name="Expression">(DT_WSTR,4000)(DT_STR,4000,1252)#{Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Source.Outputs[OLE DB Source Output].Columns[Particolari]}</property>
+                                <property
+                                  containsID="true"
+                                  dataType="System.String"
+                                  description="Derived Column Friendly Expression"
+                                  expressionType="Notify"
+                                  name="FriendlyExpression">(DT_WSTR,4000)(DT_STR,4000,1252)Particolari</property>
+                              </properties>
+                            </outputColumn>
                           </outputColumns>
                           <externalMetadataColumns />
                         </output>
@@ -4368,7 +4397,7 @@
                         <property
                           dataType="System.String"
                           description="Specifies the name of the database object used to open a rowset."
-                          name="OpenRowset">[db_owner].[TBST_PRC_ANAGRAFICA_LOTTI]</property>
+                          name="OpenRowset">[db_owner].[TBST_PRC_ARTICOLO]</property>
                         <property
                           dataType="System.String"
                           description="Specifies the variable that contains the name of the database object used to open a rowset."
@@ -4425,77 +4454,11 @@
                           name="OLE DB Destination Input">
                           <inputColumns>
                             <inputColumn
-                              refId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[ID_Lotto]"
-                              cachedDataType="i4"
-                              cachedName="ID_Lotto"
-                              externalMetadataColumnId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ID_Lotto]"
-                              lineageId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\34:invalid" />
-                            <inputColumn
-                              refId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Data_Entrata]"
-                              cachedDataType="dbTimeStamp"
-                              cachedName="Data_Entrata"
-                              externalMetadataColumnId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Data_Entrata]"
-                              lineageId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\43:invalid" />
-                            <inputColumn
-                              refId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Data_Scadenza]"
-                              cachedDataType="dbTimeStamp"
-                              cachedName="Data_Scadenza"
-                              externalMetadataColumnId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Data_Scadenza]"
-                              lineageId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\46:invalid" />
-                            <inputColumn
-                              refId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Data_Re_Test]"
-                              cachedDataType="dbTimeStamp"
-                              cachedName="Data_Re_Test"
-                              externalMetadataColumnId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Data_Re_Test]"
-                              lineageId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\52:invalid" />
-                            <inputColumn
-                              refId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Data_Produzione_Fornitore]"
-                              cachedDataType="dbTimeStamp"
-                              cachedName="Data_Produzione_Fornitore"
-                              externalMetadataColumnId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Data_Produzione_Fornitore]"
-                              lineageId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\55:invalid" />
-                            <inputColumn
-                              refId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Data_Produzione_Interna]"
-                              cachedDataType="dbTimeStamp"
-                              cachedName="Data_Produzione_Interna"
-                              externalMetadataColumnId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Data_Produzione_Interna]"
-                              lineageId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\58:invalid" />
-                            <inputColumn
-                              refId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Data_Produzione_Esterna]"
-                              cachedDataType="dbTimeStamp"
-                              cachedName="Data_Produzione_Esterna"
-                              externalMetadataColumnId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Data_Produzione_Esterna]"
-                              lineageId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\61:invalid" />
-                            <inputColumn
-                              refId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Flag_Lotto_Interno]"
-                              cachedDataType="bool"
-                              cachedName="Flag_Lotto_Interno"
-                              externalMetadataColumnId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Flag_Lotto_Interno]"
-                              lineageId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\73:invalid" />
-                            <inputColumn
                               refId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[U_Data]"
                               cachedDataType="dbTimeStamp"
                               cachedName="U_Data"
                               externalMetadataColumnId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[U_Data]"
                               lineageId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Source.Outputs[OLE DB Source Output].Columns[U_Data]" />
-                            <inputColumn
-                              refId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[N_Colli_Ori]"
-                              cachedDataType="i4"
-                              cachedName="N_Colli_Ori"
-                              externalMetadataColumnId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[N_Colli_Ori]"
-                              lineageId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\94:invalid" />
-                            <inputColumn
-                              refId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Versione_Utente]"
-                              cachedDataType="i4"
-                              cachedName="Versione_Utente"
-                              externalMetadataColumnId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Versione_Utente]"
-                              lineageId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\100:invalid" />
-                            <inputColumn
-                              refId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Limite_Distribuibilità]"
-                              cachedDataType="i4"
-                              cachedName="Limite_Distribuibilità"
-                              externalMetadataColumnId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Limite_Distribuibilita]"
-                              lineageId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\49:invalid" />
                             <inputColumn
                               refId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[TBLOG_PACKAGE_ID]"
                               cachedDataType="i4"
@@ -4509,22 +4472,6 @@
                               cachedName="Copy of Codice_Articolo"
                               externalMetadataColumnId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Codice_Articolo]"
                               lineageId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Codice_Articolo]" />
-                            <inputColumn
-                              refId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of Lotto_Principale]"
-                              cachedCodepage="1252"
-                              cachedDataType="str"
-                              cachedLength="20"
-                              cachedName="Copy of Lotto_Principale"
-                              externalMetadataColumnId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Lotto_Principale]"
-                              lineageId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\2587:invalid" />
-                            <inputColumn
-                              refId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of Codice_Qualità]"
-                              cachedCodepage="1252"
-                              cachedDataType="str"
-                              cachedLength="10"
-                              cachedName="Copy of Codice_Qualità"
-                              externalMetadataColumnId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Codice_Qualita]"
-                              lineageId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\2590:invalid" />
                             <inputColumn
                               refId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[INSERT_DT]"
                               cachedDataType="dbTimeStamp"
@@ -4557,58 +4504,6 @@
                               externalMetadataColumnId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[SOURCE_SYSTEM_ID]"
                               lineageId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\Derived Column.Outputs[Derived Column Output].Columns[SOURCE_SYSTEM_ID]" />
                             <inputColumn
-                              refId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of Codice_Qualità_Richiesta]"
-                              cachedCodepage="1252"
-                              cachedDataType="str"
-                              cachedLength="10"
-                              cachedName="Copy of Codice_Qualità_Richiesta"
-                              externalMetadataColumnId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Codice_Qualita_Richiesta]"
-                              lineageId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\2593:invalid" />
-                            <inputColumn
-                              refId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of Table_ID]"
-                              cachedDataType="guid"
-                              cachedName="Copy of Table_ID"
-                              externalMetadataColumnId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Table_ID]"
-                              lineageId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\2596:invalid" />
-                            <inputColumn
-                              refId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of C_Controparte_Tipo]"
-                              cachedCodepage="1252"
-                              cachedDataType="str"
-                              cachedLength="1"
-                              cachedName="Copy of C_Controparte_Tipo"
-                              externalMetadataColumnId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[C_Controparte_Tipo]"
-                              lineageId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\2599:invalid" />
-                            <inputColumn
-                              refId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of C_Controparte]"
-                              cachedCodepage="1252"
-                              cachedDataType="str"
-                              cachedLength="20"
-                              cachedName="Copy of C_Controparte"
-                              externalMetadataColumnId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[C_Controparte]"
-                              lineageId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\2602:invalid" />
-                            <inputColumn
-                              refId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of U_User]"
-                              cachedDataType="wstr"
-                              cachedLength="20"
-                              cachedName="Copy of U_User"
-                              externalMetadataColumnId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[U_User]"
-                              lineageId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of U_User]" />
-                            <inputColumn
-                              refId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of U_Modify]"
-                              cachedDataType="wstr"
-                              cachedLength="50"
-                              cachedName="Copy of U_Modify"
-                              externalMetadataColumnId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[U_Modify]"
-                              lineageId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of U_Modify]" />
-                            <inputColumn
-                              refId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of C_Produttore]"
-                              cachedCodepage="1252"
-                              cachedDataType="str"
-                              cachedLength="20"
-                              cachedName="Copy of C_Produttore"
-                              externalMetadataColumnId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[C_Produttore]"
-                              lineageId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\2605:invalid" />
-                            <inputColumn
                               refId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of ccksum]"
                               cachedDataType="wstr"
                               cachedLength="100"
@@ -4621,6 +4516,971 @@
                               cachedName="TBLOG_PACKAGE_TABLE_ID"
                               externalMetadataColumnId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[TBLOG_PACKAGE_TABLE_ID]"
                               lineageId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\Derived Column.Outputs[Derived Column Output].Columns[TBLOG_PACKAGE_TABLE_ID]" />
+                            <inputColumn
+                              refId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of Descrizione_Articolo]"
+                              cachedDataType="wstr"
+                              cachedLength="150"
+                              cachedName="Copy of Descrizione_Articolo"
+                              externalMetadataColumnId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Descrizione_Articolo]"
+                              lineageId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Descrizione_Articolo]" />
+                            <inputColumn
+                              refId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of Codice_UM]"
+                              cachedDataType="wstr"
+                              cachedLength="10"
+                              cachedName="Copy of Codice_UM"
+                              externalMetadataColumnId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Codice_UM]"
+                              lineageId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Codice_UM]" />
+                            <inputColumn
+                              refId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of Codice_Gruppo_Merc]"
+                              cachedDataType="wstr"
+                              cachedLength="10"
+                              cachedName="Copy of Codice_Gruppo_Merc"
+                              externalMetadataColumnId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Codice_Gruppo_Merc]"
+                              lineageId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Codice_Gruppo_Merc]" />
+                            <inputColumn
+                              refId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of Codice_Sottogruppo_Merc]"
+                              cachedDataType="wstr"
+                              cachedLength="10"
+                              cachedName="Copy of Codice_Sottogruppo_Merc"
+                              externalMetadataColumnId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Codice_Sottogruppo_Merc]"
+                              lineageId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Codice_Sottogruppo_Merc]" />
+                            <inputColumn
+                              refId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of Codice_Norme_Sicurezza]"
+                              cachedDataType="wstr"
+                              cachedLength="10"
+                              cachedName="Copy of Codice_Norme_Sicurezza"
+                              externalMetadataColumnId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Codice_Norme_Sicurezza]"
+                              lineageId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Codice_Norme_Sicurezza]" />
+                            <inputColumn
+                              refId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of Codice_Pericolosità]"
+                              cachedDataType="wstr"
+                              cachedLength="10"
+                              cachedName="Copy of Codice_Pericolosità"
+                              externalMetadataColumnId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Codice_Pericolosità]"
+                              lineageId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Codice_Pericolosità]" />
+                            <inputColumn
+                              refId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of Codice_Conservazione]"
+                              cachedDataType="wstr"
+                              cachedLength="10"
+                              cachedName="Copy of Codice_Conservazione"
+                              externalMetadataColumnId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Codice_Conservazione]"
+                              lineageId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Codice_Conservazione]" />
+                            <inputColumn
+                              refId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of Codice_Iva]"
+                              cachedDataType="wstr"
+                              cachedLength="10"
+                              cachedName="Copy of Codice_Iva"
+                              externalMetadataColumnId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Codice_Iva]"
+                              lineageId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Codice_Iva]" />
+                            <inputColumn
+                              refId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of Codice_Cat_Contabile]"
+                              cachedDataType="wstr"
+                              cachedLength="10"
+                              cachedName="Copy of Codice_Cat_Contabile"
+                              externalMetadataColumnId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Codice_Cat_Contabile]"
+                              lineageId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Codice_Cat_Contabile]" />
+                            <inputColumn
+                              refId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of Codice_Cat_Omogenea]"
+                              cachedDataType="wstr"
+                              cachedLength="10"
+                              cachedName="Copy of Codice_Cat_Omogenea"
+                              externalMetadataColumnId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Codice_Cat_Omogenea]"
+                              lineageId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Codice_Cat_Omogenea]" />
+                            <inputColumn
+                              refId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of Codice_Cat_Analitica]"
+                              cachedDataType="wstr"
+                              cachedLength="10"
+                              cachedName="Copy of Codice_Cat_Analitica"
+                              externalMetadataColumnId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Codice_Cat_Analitica]"
+                              lineageId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Codice_Cat_Analitica]" />
+                            <inputColumn
+                              refId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of Codice_Cat_Provvigioni]"
+                              cachedDataType="wstr"
+                              cachedLength="10"
+                              cachedName="Copy of Codice_Cat_Provvigioni"
+                              externalMetadataColumnId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Codice_Cat_Provvigioni]"
+                              lineageId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Codice_Cat_Provvigioni]" />
+                            <inputColumn
+                              refId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of Codice_Cat_ScontiMagg]"
+                              cachedDataType="wstr"
+                              cachedLength="10"
+                              cachedName="Copy of Codice_Cat_ScontiMagg"
+                              externalMetadataColumnId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Codice_Cat_ScontiMagg]"
+                              lineageId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Codice_Cat_ScontiMagg]" />
+                            <inputColumn
+                              refId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of Codice_Deposito]"
+                              cachedDataType="wstr"
+                              cachedLength="10"
+                              cachedName="Copy of Codice_Deposito"
+                              externalMetadataColumnId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Codice_Deposito]"
+                              lineageId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Codice_Deposito]" />
+                            <inputColumn
+                              refId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of Codice_Collegato]"
+                              cachedDataType="wstr"
+                              cachedLength="20"
+                              cachedName="Copy of Codice_Collegato"
+                              externalMetadataColumnId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Codice_Collegato]"
+                              lineageId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Codice_Collegato]" />
+                            <inputColumn
+                              refId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of Codice_VoceCosto]"
+                              cachedDataType="wstr"
+                              cachedLength="15"
+                              cachedName="Copy of Codice_VoceCosto"
+                              externalMetadataColumnId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Codice_VoceCosto]"
+                              lineageId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Codice_VoceCosto]" />
+                            <inputColumn
+                              refId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of Codice_VoceRicavo]"
+                              cachedDataType="wstr"
+                              cachedLength="15"
+                              cachedName="Copy of Codice_VoceRicavo"
+                              externalMetadataColumnId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Codice_VoceRicavo]"
+                              lineageId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Codice_VoceRicavo]" />
+                            <inputColumn
+                              refId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of Codice_StatoMat]"
+                              cachedDataType="wstr"
+                              cachedLength="10"
+                              cachedName="Copy of Codice_StatoMat"
+                              externalMetadataColumnId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Codice_StatoMat]"
+                              lineageId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Codice_StatoMat]" />
+                            <inputColumn
+                              refId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of C_Confezione]"
+                              cachedDataType="wstr"
+                              cachedLength="10"
+                              cachedName="Copy of C_Confezione"
+                              externalMetadataColumnId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[C_Confezione]"
+                              lineageId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of C_Confezione]" />
+                            <inputColumn
+                              refId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of Codice_Nazione]"
+                              cachedDataType="wstr"
+                              cachedLength="10"
+                              cachedName="Copy of Codice_Nazione"
+                              externalMetadataColumnId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Codice_Nazione]"
+                              lineageId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Codice_Nazione]" />
+                            <inputColumn
+                              refId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of UMTitolo]"
+                              cachedDataType="wstr"
+                              cachedLength="10"
+                              cachedName="Copy of UMTitolo"
+                              externalMetadataColumnId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[UMTitolo]"
+                              lineageId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of UMTitolo]" />
+                            <inputColumn
+                              refId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of C_ClasseArticolo]"
+                              cachedDataType="wstr"
+                              cachedLength="10"
+                              cachedName="Copy of C_ClasseArticolo"
+                              externalMetadataColumnId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[C_ClasseArticolo]"
+                              lineageId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of C_ClasseArticolo]" />
+                            <inputColumn
+                              refId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of C_Contropartita_R]"
+                              cachedDataType="wstr"
+                              cachedLength="15"
+                              cachedName="Copy of C_Contropartita_R"
+                              externalMetadataColumnId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[C_Contropartita_R]"
+                              lineageId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of C_Contropartita_R]" />
+                            <inputColumn
+                              refId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of C_Contropartita_C]"
+                              cachedDataType="wstr"
+                              cachedLength="15"
+                              cachedName="Copy of C_Contropartita_C"
+                              externalMetadataColumnId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[C_Contropartita_C]"
+                              lineageId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of C_Contropartita_C]" />
+                            <inputColumn
+                              refId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of C_Famiglia]"
+                              cachedDataType="wstr"
+                              cachedLength="10"
+                              cachedName="Copy of C_Famiglia"
+                              externalMetadataColumnId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[C_Famiglia]"
+                              lineageId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of C_Famiglia]" />
+                            <inputColumn
+                              refId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of C_Volume]"
+                              cachedDataType="wstr"
+                              cachedLength="10"
+                              cachedName="Copy of C_Volume"
+                              externalMetadataColumnId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[C_Volume]"
+                              lineageId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of C_Volume]" />
+                            <inputColumn
+                              refId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of C_WIS_Stato]"
+                              cachedDataType="wstr"
+                              cachedLength="10"
+                              cachedName="Copy of C_WIS_Stato"
+                              externalMetadataColumnId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[C_WIS_Stato]"
+                              lineageId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of C_WIS_Stato]" />
+                            <inputColumn
+                              refId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of Classe_Articolo]"
+                              cachedDataType="wstr"
+                              cachedLength="10"
+                              cachedName="Copy of Classe_Articolo"
+                              externalMetadataColumnId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Classe_Articolo]"
+                              lineageId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Classe_Articolo]" />
+                            <inputColumn
+                              refId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of C_Config_DataEntrata]"
+                              cachedDataType="wstr"
+                              cachedLength="10"
+                              cachedName="Copy of C_Config_DataEntrata"
+                              externalMetadataColumnId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[C_Config_DataEntrata]"
+                              lineageId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of C_Config_DataEntrata]" />
+                            <inputColumn
+                              refId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of C_Config_DataScadenza]"
+                              cachedDataType="wstr"
+                              cachedLength="10"
+                              cachedName="Copy of C_Config_DataScadenza"
+                              externalMetadataColumnId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[C_Config_DataScadenza]"
+                              lineageId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of C_Config_DataScadenza]" />
+                            <inputColumn
+                              refId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of C_Config_DataReTest]"
+                              cachedDataType="wstr"
+                              cachedLength="10"
+                              cachedName="Copy of C_Config_DataReTest"
+                              externalMetadataColumnId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[C_Config_DataReTest]"
+                              lineageId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of C_Config_DataReTest]" />
+                            <inputColumn
+                              refId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of C_Config_DataProdInt]"
+                              cachedDataType="wstr"
+                              cachedLength="10"
+                              cachedName="Copy of C_Config_DataProdInt"
+                              externalMetadataColumnId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[C_Config_DataProdInt]"
+                              lineageId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of C_Config_DataProdInt]" />
+                            <inputColumn
+                              refId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of C_Config_DataProdEst]"
+                              cachedDataType="wstr"
+                              cachedLength="10"
+                              cachedName="Copy of C_Config_DataProdEst"
+                              externalMetadataColumnId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[C_Config_DataProdEst]"
+                              lineageId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of C_Config_DataProdEst]" />
+                            <inputColumn
+                              refId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of C_Config_DataProdFor]"
+                              cachedDataType="wstr"
+                              cachedLength="10"
+                              cachedName="Copy of C_Config_DataProdFor"
+                              externalMetadataColumnId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[C_Config_DataProdFor]"
+                              lineageId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of C_Config_DataProdFor]" />
+                            <inputColumn
+                              refId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of C_Caratteristica]"
+                              cachedDataType="wstr"
+                              cachedLength="20"
+                              cachedName="Copy of C_Caratteristica"
+                              externalMetadataColumnId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[C_Caratteristica]"
+                              lineageId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of C_Caratteristica]" />
+                            <inputColumn
+                              refId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of I_User]"
+                              cachedDataType="wstr"
+                              cachedLength="20"
+                              cachedName="Copy of I_User"
+                              externalMetadataColumnId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[I_User]"
+                              lineageId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of I_User]" />
+                            <inputColumn
+                              refId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of UM_Etichetta]"
+                              cachedDataType="wstr"
+                              cachedLength="20"
+                              cachedName="Copy of UM_Etichetta"
+                              externalMetadataColumnId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[UM_Etichetta]"
+                              lineageId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of UM_Etichetta]" />
+                            <inputColumn
+                              refId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of Utilizzo_Intra]"
+                              cachedDataType="wstr"
+                              cachedLength="1"
+                              cachedName="Copy of Utilizzo_Intra"
+                              externalMetadataColumnId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Utilizzo_Intra]"
+                              lineageId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Utilizzo_Intra]" />
+                            <inputColumn
+                              refId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of Mod_Erogazione]"
+                              cachedDataType="wstr"
+                              cachedLength="1"
+                              cachedName="Copy of Mod_Erogazione"
+                              externalMetadataColumnId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Mod_Erogazione]"
+                              lineageId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Mod_Erogazione]" />
+                            <inputColumn
+                              refId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of Elenchi_Intra]"
+                              cachedDataType="wstr"
+                              cachedLength="1"
+                              cachedName="Copy of Elenchi_Intra"
+                              externalMetadataColumnId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Elenchi_Intra]"
+                              lineageId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Elenchi_Intra]" />
+                            <inputColumn
+                              refId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of C_Anagrafica_Moduli]"
+                              cachedDataType="wstr"
+                              cachedLength="10"
+                              cachedName="Copy of C_Anagrafica_Moduli"
+                              externalMetadataColumnId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[C_Anagrafica_Moduli]"
+                              lineageId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of C_Anagrafica_Moduli]" />
+                            <inputColumn
+                              refId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of CPNP]"
+                              cachedDataType="wstr"
+                              cachedLength="50"
+                              cachedName="Copy of CPNP"
+                              externalMetadataColumnId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CPNP]"
+                              lineageId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of CPNP]" />
+                            <inputColumn
+                              refId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of C_Anagrafica_BU]"
+                              cachedDataType="wstr"
+                              cachedLength="20"
+                              cachedName="Copy of C_Anagrafica_BU"
+                              externalMetadataColumnId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[C_Anagrafica_BU]"
+                              lineageId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of C_Anagrafica_BU]" />
+                            <inputColumn
+                              refId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of Codice_CentroCostoRicavo]"
+                              cachedDataType="wstr"
+                              cachedLength="15"
+                              cachedName="Copy of Codice_CentroCostoRicavo"
+                              externalMetadataColumnId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Codice_CentroCostoRicavo]"
+                              lineageId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Codice_CentroCostoRicavo]" />
+                            <inputColumn
+                              refId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Con_Lotto]"
+                              cachedDataType="bool"
+                              cachedName="Con_Lotto"
+                              externalMetadataColumnId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Con_Lotto]"
+                              lineageId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Source.Outputs[OLE DB Source Output].Columns[Con_Lotto]" />
+                            <inputColumn
+                              refId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Tipo_Articolo]"
+                              cachedDataType="i2"
+                              cachedName="Tipo_Articolo"
+                              externalMetadataColumnId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Tipo_Articolo]"
+                              lineageId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Source.Outputs[OLE DB Source Output].Columns[Tipo_Articolo]" />
+                            <inputColumn
+                              refId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Principio_Attivo]"
+                              cachedDataType="bool"
+                              cachedName="Principio_Attivo"
+                              externalMetadataColumnId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Principio_Attivo]"
+                              lineageId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Source.Outputs[OLE DB Source Output].Columns[Principio_Attivo]" />
+                            <inputColumn
+                              refId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Prodotto_VIP]"
+                              cachedDataType="bool"
+                              cachedName="Prodotto_VIP"
+                              externalMetadataColumnId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Prodotto_VIP]"
+                              lineageId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Source.Outputs[OLE DB Source Output].Columns[Prodotto_VIP]" />
+                            <inputColumn
+                              refId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Valore_Standard]"
+                              cachedDataType="numeric"
+                              cachedName="Valore_Standard"
+                              cachedPrecision="19"
+                              cachedScale="5"
+                              externalMetadataColumnId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Valore_Standard]"
+                              lineageId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Source.Outputs[OLE DB Source Output].Columns[Valore_Standard]" />
+                            <inputColumn
+                              refId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Valorizzazione_Fiscale]"
+                              cachedDataType="bool"
+                              cachedName="Valorizzazione_Fiscale"
+                              externalMetadataColumnId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Valorizzazione_Fiscale]"
+                              lineageId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Source.Outputs[OLE DB Source Output].Columns[Valorizzazione_Fiscale]" />
+                            <inputColumn
+                              refId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Costo_Standard]"
+                              cachedDataType="numeric"
+                              cachedName="Costo_Standard"
+                              cachedPrecision="19"
+                              cachedScale="5"
+                              externalMetadataColumnId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Costo_Standard]"
+                              lineageId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Source.Outputs[OLE DB Source Output].Columns[Costo_Standard]" />
+                            <inputColumn
+                              refId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Scorta_Minima]"
+                              cachedDataType="numeric"
+                              cachedName="Scorta_Minima"
+                              cachedPrecision="19"
+                              cachedScale="5"
+                              externalMetadataColumnId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Scorta_Minima]"
+                              lineageId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Source.Outputs[OLE DB Source Output].Columns[Scorta_Minima]" />
+                            <inputColumn
+                              refId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Scadenza_GG]"
+                              cachedDataType="i2"
+                              cachedName="Scadenza_GG"
+                              externalMetadataColumnId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Scadenza_GG]"
+                              lineageId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Source.Outputs[OLE DB Source Output].Columns[Scadenza_GG]" />
+                            <inputColumn
+                              refId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Scorta_Desiderata]"
+                              cachedDataType="numeric"
+                              cachedName="Scorta_Desiderata"
+                              cachedPrecision="19"
+                              cachedScale="5"
+                              externalMetadataColumnId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Scorta_Desiderata]"
+                              lineageId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Source.Outputs[OLE DB Source Output].Columns[Scorta_Desiderata]" />
+                            <inputColumn
+                              refId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Scorta_Massima]"
+                              cachedDataType="numeric"
+                              cachedName="Scorta_Massima"
+                              cachedPrecision="19"
+                              cachedScale="5"
+                              externalMetadataColumnId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Scorta_Massima]"
+                              lineageId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Source.Outputs[OLE DB Source Output].Columns[Scorta_Massima]" />
+                            <inputColumn
+                              refId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Lotto_Minimo_Riordino]"
+                              cachedDataType="numeric"
+                              cachedName="Lotto_Minimo_Riordino"
+                              cachedPrecision="19"
+                              cachedScale="5"
+                              externalMetadataColumnId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Lotto_Minimo_Riordino]"
+                              lineageId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Source.Outputs[OLE DB Source Output].Columns[Lotto_Minimo_Riordino]" />
+                            <inputColumn
+                              refId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Flag_Provenienza_Interna]"
+                              cachedDataType="bool"
+                              cachedName="Flag_Provenienza_Interna"
+                              externalMetadataColumnId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Flag_Provenienza_Interna]"
+                              lineageId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Source.Outputs[OLE DB Source Output].Columns[Flag_Provenienza_Interna]" />
+                            <inputColumn
+                              refId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Flag_Provenienza_Esterna]"
+                              cachedDataType="bool"
+                              cachedName="Flag_Provenienza_Esterna"
+                              externalMetadataColumnId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Flag_Provenienza_Esterna]"
+                              lineageId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Source.Outputs[OLE DB Source Output].Columns[Flag_Provenienza_Esterna]" />
+                            <inputColumn
+                              refId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Flag_Provenienza_Lavoro]"
+                              cachedDataType="bool"
+                              cachedName="Flag_Provenienza_Lavoro"
+                              externalMetadataColumnId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Flag_Provenienza_Lavoro]"
+                              lineageId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Source.Outputs[OLE DB Source Output].Columns[Flag_Provenienza_Lavoro]" />
+                            <inputColumn
+                              refId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Provenienza_Pref]"
+                              cachedDataType="ui1"
+                              cachedName="Provenienza_Pref"
+                              externalMetadataColumnId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Provenienza_Pref]"
+                              lineageId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Source.Outputs[OLE DB Source Output].Columns[Provenienza_Pref]" />
+                            <inputColumn
+                              refId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Qtà_Anidri]"
+                              cachedDataType="numeric"
+                              cachedName="Qtà_Anidri"
+                              cachedPrecision="19"
+                              cachedScale="5"
+                              externalMetadataColumnId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Qtà_Anidri]"
+                              lineageId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Source.Outputs[OLE DB Source Output].Columns[Qtà_Anidri]" />
+                            <inputColumn
+                              refId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Qtà_Idrati]"
+                              cachedDataType="numeric"
+                              cachedName="Qtà_Idrati"
+                              cachedPrecision="19"
+                              cachedScale="5"
+                              externalMetadataColumnId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Qtà_Idrati]"
+                              lineageId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Source.Outputs[OLE DB Source Output].Columns[Qtà_Idrati]" />
+                            <inputColumn
+                              refId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[flg_StampaDescr]"
+                              cachedDataType="bool"
+                              cachedName="flg_StampaDescr"
+                              externalMetadataColumnId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[flg_StampaDescr]"
+                              lineageId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Source.Outputs[OLE DB Source Output].Columns[flg_StampaDescr]" />
+                            <inputColumn
+                              refId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Usa_Percentuale]"
+                              cachedDataType="bool"
+                              cachedName="Usa_Percentuale"
+                              externalMetadataColumnId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Usa_Percentuale]"
+                              lineageId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Source.Outputs[OLE DB Source Output].Columns[Usa_Percentuale]" />
+                            <inputColumn
+                              refId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Flag_Provenienza_Terzista]"
+                              cachedDataType="bool"
+                              cachedName="Flag_Provenienza_Terzista"
+                              externalMetadataColumnId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Flag_Provenienza_Terzista]"
+                              lineageId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Source.Outputs[OLE DB Source Output].Columns[Flag_Provenienza_Terzista]" />
+                            <inputColumn
+                              refId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Giorni_App]"
+                              cachedDataType="i2"
+                              cachedName="Giorni_App"
+                              externalMetadataColumnId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Giorni_App]"
+                              lineageId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Source.Outputs[OLE DB Source Output].Columns[Giorni_App]" />
+                            <inputColumn
+                              refId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Codice_INCI_EU]"
+                              cachedDataType="i4"
+                              cachedName="Codice_INCI_EU"
+                              externalMetadataColumnId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Codice_INCI_EU]"
+                              lineageId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Source.Outputs[OLE DB Source Output].Columns[Codice_INCI_EU]" />
+                            <inputColumn
+                              refId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Codice_INCI_US]"
+                              cachedDataType="i4"
+                              cachedName="Codice_INCI_US"
+                              externalMetadataColumnId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Codice_INCI_US]"
+                              lineageId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Source.Outputs[OLE DB Source Output].Columns[Codice_INCI_US]" />
+                            <inputColumn
+                              refId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Codice_CAS]"
+                              cachedDataType="i4"
+                              cachedName="Codice_CAS"
+                              externalMetadataColumnId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Codice_CAS]"
+                              lineageId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Source.Outputs[OLE DB Source Output].Columns[Codice_CAS]" />
+                            <inputColumn
+                              refId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Rianalisi1_GG]"
+                              cachedDataType="i2"
+                              cachedName="Rianalisi1_GG"
+                              externalMetadataColumnId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Rianalisi1_GG]"
+                              lineageId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Source.Outputs[OLE DB Source Output].Columns[Rianalisi1_GG]" />
+                            <inputColumn
+                              refId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Rianalisi2_GG]"
+                              cachedDataType="i2"
+                              cachedName="Rianalisi2_GG"
+                              externalMetadataColumnId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Rianalisi2_GG]"
+                              lineageId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Source.Outputs[OLE DB Source Output].Columns[Rianalisi2_GG]" />
+                            <inputColumn
+                              refId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Apertura_GG]"
+                              cachedDataType="i2"
+                              cachedName="Apertura_GG"
+                              externalMetadataColumnId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Apertura_GG]"
+                              lineageId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Source.Outputs[OLE DB Source Output].Columns[Apertura_GG]" />
+                            <inputColumn
+                              refId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[LimiteDist_GG]"
+                              cachedDataType="i2"
+                              cachedName="LimiteDist_GG"
+                              externalMetadataColumnId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[LimiteDist_GG]"
+                              lineageId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Source.Outputs[OLE DB Source Output].Columns[LimiteDist_GG]" />
+                            <inputColumn
+                              refId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Flag_Quarantena]"
+                              cachedDataType="bool"
+                              cachedName="Flag_Quarantena"
+                              externalMetadataColumnId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Flag_Quarantena]"
+                              lineageId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Source.Outputs[OLE DB Source Output].Columns[Flag_Quarantena]" />
+                            <inputColumn
+                              refId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Stupefacente]"
+                              cachedDataType="i2"
+                              cachedName="Stupefacente"
+                              externalMetadataColumnId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Stupefacente]"
+                              lineageId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Source.Outputs[OLE DB Source Output].Columns[Stupefacente]" />
+                            <inputColumn
+                              refId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Analisi_MRP]"
+                              cachedDataType="i2"
+                              cachedName="Analisi_MRP"
+                              externalMetadataColumnId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Analisi_MRP]"
+                              lineageId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Source.Outputs[OLE DB Source Output].Columns[Analisi_MRP]" />
+                            <inputColumn
+                              refId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Campione_Tipo_Qta]"
+                              cachedDataType="i2"
+                              cachedName="Campione_Tipo_Qta"
+                              externalMetadataColumnId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Campione_Tipo_Qta]"
+                              lineageId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Source.Outputs[OLE DB Source Output].Columns[Campione_Tipo_Qta]" />
+                            <inputColumn
+                              refId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Campione_Qta]"
+                              cachedDataType="numeric"
+                              cachedName="Campione_Qta"
+                              cachedPrecision="19"
+                              cachedScale="5"
+                              externalMetadataColumnId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Campione_Qta]"
+                              lineageId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Source.Outputs[OLE DB Source Output].Columns[Campione_Qta]" />
+                            <inputColumn
+                              refId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Campione_Perc]"
+                              cachedDataType="numeric"
+                              cachedName="Campione_Perc"
+                              cachedPrecision="6"
+                              cachedScale="3"
+                              externalMetadataColumnId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Campione_Perc]"
+                              lineageId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Source.Outputs[OLE DB Source Output].Columns[Campione_Perc]" />
+                            <inputColumn
+                              refId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Campione_QtaMin]"
+                              cachedDataType="numeric"
+                              cachedName="Campione_QtaMin"
+                              cachedPrecision="19"
+                              cachedScale="5"
+                              externalMetadataColumnId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Campione_QtaMin]"
+                              lineageId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Source.Outputs[OLE DB Source Output].Columns[Campione_QtaMin]" />
+                            <inputColumn
+                              refId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Campione_QtaMax]"
+                              cachedDataType="numeric"
+                              cachedName="Campione_QtaMax"
+                              cachedPrecision="19"
+                              cachedScale="5"
+                              externalMetadataColumnId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Campione_QtaMax]"
+                              lineageId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Source.Outputs[OLE DB Source Output].Columns[Campione_QtaMax]" />
+                            <inputColumn
+                              refId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[ValoreNonProv]"
+                              cachedDataType="numeric"
+                              cachedName="ValoreNonProv"
+                              cachedPrecision="19"
+                              cachedScale="5"
+                              externalMetadataColumnId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ValoreNonProv]"
+                              lineageId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Source.Outputs[OLE DB Source Output].Columns[ValoreNonProv]" />
+                            <inputColumn
+                              refId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Servizio_Accessorio]"
+                              cachedDataType="bool"
+                              cachedName="Servizio_Accessorio"
+                              externalMetadataColumnId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Servizio_Accessorio]"
+                              lineageId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Source.Outputs[OLE DB Source Output].Columns[Servizio_Accessorio]" />
+                            <inputColumn
+                              refId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Leave_On]"
+                              cachedDataType="bool"
+                              cachedName="Leave_On"
+                              externalMetadataColumnId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Leave_On]"
+                              lineageId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Source.Outputs[OLE DB Source Output].Columns[Leave_On]" />
+                            <inputColumn
+                              refId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Rinse_Off]"
+                              cachedDataType="bool"
+                              cachedName="Rinse_Off"
+                              externalMetadataColumnId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Rinse_Off]"
+                              lineageId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Source.Outputs[OLE DB Source Output].Columns[Rinse_Off]" />
+                            <inputColumn
+                              refId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[CPNP_Data]"
+                              cachedDataType="dbTimeStamp"
+                              cachedName="CPNP_Data"
+                              externalMetadataColumnId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CPNP_Data]"
+                              lineageId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Source.Outputs[OLE DB Source Output].Columns[CPNP_Data]" />
+                            <inputColumn
+                              refId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[KitLogico]"
+                              cachedDataType="bool"
+                              cachedName="KitLogico"
+                              externalMetadataColumnId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[KitLogico]"
+                              lineageId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Source.Outputs[OLE DB Source Output].Columns[KitLogico]" />
+                            <inputColumn
+                              refId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[ProdottoWIP]"
+                              cachedDataType="bool"
+                              cachedName="ProdottoWIP"
+                              externalMetadataColumnId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ProdottoWIP]"
+                              lineageId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Source.Outputs[OLE DB Source Output].Columns[ProdottoWIP]" />
+                            <inputColumn
+                              refId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[I_Data]"
+                              cachedDataType="dbTimeStamp"
+                              cachedName="I_Data"
+                              externalMetadataColumnId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[I_Data]"
+                              lineageId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Source.Outputs[OLE DB Source Output].Columns[I_Data]" />
+                            <inputColumn
+                              refId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[ID_Commessa]"
+                              cachedDataType="i4"
+                              cachedName="ID_Commessa"
+                              externalMetadataColumnId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ID_Commessa]"
+                              lineageId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Source.Outputs[OLE DB Source Output].Columns[ID_Commessa]" />
+                            <inputColumn
+                              refId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Tipo_Spesa]"
+                              cachedDataType="i2"
+                              cachedName="Tipo_Spesa"
+                              externalMetadataColumnId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Tipo_Spesa]"
+                              lineageId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Source.Outputs[OLE DB Source Output].Columns[Tipo_Spesa]" />
+                            <inputColumn
+                              refId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Perc_SpeseDoganali]"
+                              cachedDataType="numeric"
+                              cachedName="Perc_SpeseDoganali"
+                              cachedPrecision="6"
+                              cachedScale="3"
+                              externalMetadataColumnId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Perc_SpeseDoganali]"
+                              lineageId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Source.Outputs[OLE DB Source Output].Columns[Perc_SpeseDoganali]" />
+                            <inputColumn
+                              refId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Ricalcolo_Etichetta]"
+                              cachedDataType="bool"
+                              cachedName="Ricalcolo_Etichetta"
+                              externalMetadataColumnId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Ricalcolo_Etichetta]"
+                              lineageId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Source.Outputs[OLE DB Source Output].Columns[Ricalcolo_Etichetta]" />
+                            <inputColumn
+                              refId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Percentuale_Etichetta]"
+                              cachedDataType="bool"
+                              cachedName="Percentuale_Etichetta"
+                              externalMetadataColumnId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Percentuale_Etichetta]"
+                              lineageId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Source.Outputs[OLE DB Source Output].Columns[Percentuale_Etichetta]" />
+                            <inputColumn
+                              refId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Valore_Etichetta]"
+                              cachedDataType="numeric"
+                              cachedName="Valore_Etichetta"
+                              cachedPrecision="19"
+                              cachedScale="5"
+                              externalMetadataColumnId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Valore_Etichetta]"
+                              lineageId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Source.Outputs[OLE DB Source Output].Columns[Valore_Etichetta]" />
+                            <inputColumn
+                              refId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[AbilitaRicalcolo]"
+                              cachedDataType="bool"
+                              cachedName="AbilitaRicalcolo"
+                              externalMetadataColumnId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[AbilitaRicalcolo]"
+                              lineageId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Source.Outputs[OLE DB Source Output].Columns[AbilitaRicalcolo]" />
+                            <inputColumn
+                              refId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[AltezzaCm]"
+                              cachedDataType="numeric"
+                              cachedName="AltezzaCm"
+                              cachedPrecision="19"
+                              cachedScale="5"
+                              externalMetadataColumnId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[AltezzaCm]"
+                              lineageId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Source.Outputs[OLE DB Source Output].Columns[AltezzaCm]" />
+                            <inputColumn
+                              refId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[ArticoloNONOrdinabile]"
+                              cachedDataType="bool"
+                              cachedName="ArticoloNONOrdinabile"
+                              externalMetadataColumnId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ArticoloNONOrdinabile]"
+                              lineageId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Source.Outputs[OLE DB Source Output].Columns[ArticoloNONOrdinabile]" />
+                            <inputColumn
+                              refId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Attivo]"
+                              cachedDataType="bool"
+                              cachedName="Attivo"
+                              externalMetadataColumnId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Attivo]"
+                              lineageId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Source.Outputs[OLE DB Source Output].Columns[Attivo]" />
+                            <inputColumn
+                              refId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Calibro]"
+                              cachedDataType="numeric"
+                              cachedName="Calibro"
+                              cachedPrecision="19"
+                              cachedScale="5"
+                              externalMetadataColumnId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Calibro]"
+                              lineageId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Source.Outputs[OLE DB Source Output].Columns[Calibro]" />
+                            <inputColumn
+                              refId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Controc_Perc]"
+                              cachedDataType="numeric"
+                              cachedName="Controc_Perc"
+                              cachedPrecision="6"
+                              cachedScale="3"
+                              externalMetadataColumnId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Controc_Perc]"
+                              lineageId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Source.Outputs[OLE DB Source Output].Columns[Controc_Perc]" />
+                            <inputColumn
+                              refId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Controc_Qta]"
+                              cachedDataType="numeric"
+                              cachedName="Controc_Qta"
+                              cachedPrecision="19"
+                              cachedScale="5"
+                              externalMetadataColumnId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Controc_Qta]"
+                              lineageId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Source.Outputs[OLE DB Source Output].Columns[Controc_Qta]" />
+                            <inputColumn
+                              refId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Controc_QtaMax]"
+                              cachedDataType="numeric"
+                              cachedName="Controc_QtaMax"
+                              cachedPrecision="19"
+                              cachedScale="5"
+                              externalMetadataColumnId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Controc_QtaMax]"
+                              lineageId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Source.Outputs[OLE DB Source Output].Columns[Controc_QtaMax]" />
+                            <inputColumn
+                              refId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Controc_QtaMin]"
+                              cachedDataType="numeric"
+                              cachedName="Controc_QtaMin"
+                              cachedPrecision="19"
+                              cachedScale="5"
+                              externalMetadataColumnId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Controc_QtaMin]"
+                              lineageId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Source.Outputs[OLE DB Source Output].Columns[Controc_QtaMin]" />
+                            <inputColumn
+                              refId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Controc_Tipo_Qta]"
+                              cachedDataType="i2"
+                              cachedName="Controc_Tipo_Qta"
+                              externalMetadataColumnId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Controc_Tipo_Qta]"
+                              lineageId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Source.Outputs[OLE DB Source Output].Columns[Controc_Tipo_Qta]" />
+                            <inputColumn
+                              refId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copertura]"
+                              cachedDataType="i2"
+                              cachedName="Copertura"
+                              externalMetadataColumnId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Copertura]"
+                              lineageId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Source.Outputs[OLE DB Source Output].Columns[Copertura]" />
+                            <inputColumn
+                              refId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Data_Inizio_Validità]"
+                              cachedDataType="dbTimeStamp"
+                              cachedName="Data_Inizio_Validità"
+                              externalMetadataColumnId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Data_Inizio_Validità]"
+                              lineageId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Source.Outputs[OLE DB Source Output].Columns[Data_Inizio_Validità]" />
+                            <inputColumn
+                              refId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Data_Obsolescenza]"
+                              cachedDataType="dbTimeStamp"
+                              cachedName="Data_Obsolescenza"
+                              externalMetadataColumnId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Data_Obsolescenza]"
+                              lineageId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Source.Outputs[OLE DB Source Output].Columns[Data_Obsolescenza]" />
+                            <inputColumn
+                              refId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Flag_Eredita_Lotto]"
+                              cachedDataType="bool"
+                              cachedName="Flag_Eredita_Lotto"
+                              externalMetadataColumnId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Flag_Eredita_Lotto]"
+                              lineageId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Source.Outputs[OLE DB Source Output].Columns[Flag_Eredita_Lotto]" />
+                            <inputColumn
+                              refId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Gestione_Scadenza]"
+                              cachedDataType="i2"
+                              cachedName="Gestione_Scadenza"
+                              externalMetadataColumnId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Gestione_Scadenza]"
+                              lineageId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Source.Outputs[OLE DB Source Output].Columns[Gestione_Scadenza]" />
+                            <inputColumn
+                              refId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[GestioneMultiStocca]"
+                              cachedDataType="i2"
+                              cachedName="GestioneMultiStocca"
+                              externalMetadataColumnId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[GestioneMultiStocca]"
+                              lineageId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Source.Outputs[OLE DB Source Output].Columns[GestioneMultiStocca]" />
+                            <inputColumn
+                              refId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Lotto_Minimo_Riordino2]"
+                              cachedDataType="numeric"
+                              cachedName="Lotto_Minimo_Riordino2"
+                              cachedPrecision="19"
+                              cachedScale="5"
+                              externalMetadataColumnId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Lotto_Minimo_Riordino2]"
+                              lineageId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Source.Outputs[OLE DB Source Output].Columns[Lotto_Minimo_Riordino2]" />
+                            <inputColumn
+                              refId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Lotto_Multiplo_Riordino]"
+                              cachedDataType="numeric"
+                              cachedName="Lotto_Multiplo_Riordino"
+                              cachedPrecision="19"
+                              cachedScale="5"
+                              externalMetadataColumnId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Lotto_Multiplo_Riordino]"
+                              lineageId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Source.Outputs[OLE DB Source Output].Columns[Lotto_Multiplo_Riordino]" />
+                            <inputColumn
+                              refId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Lotto_Multiplo_Riordino2]"
+                              cachedDataType="numeric"
+                              cachedName="Lotto_Multiplo_Riordino2"
+                              cachedPrecision="19"
+                              cachedScale="5"
+                              externalMetadataColumnId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Lotto_Multiplo_Riordino2]"
+                              lineageId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Source.Outputs[OLE DB Source Output].Columns[Lotto_Multiplo_Riordino2]" />
+                            <inputColumn
+                              refId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[LunghezzaCm]"
+                              cachedDataType="numeric"
+                              cachedName="LunghezzaCm"
+                              cachedPrecision="19"
+                              cachedScale="5"
+                              externalMetadataColumnId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[LunghezzaCm]"
+                              lineageId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Source.Outputs[OLE DB Source Output].Columns[LunghezzaCm]" />
+                            <inputColumn
+                              refId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Moltip_Nomenclatura]"
+                              cachedDataType="numeric"
+                              cachedName="Moltip_Nomenclatura"
+                              cachedPrecision="19"
+                              cachedScale="5"
+                              externalMetadataColumnId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Moltip_Nomenclatura]"
+                              lineageId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Source.Outputs[OLE DB Source Output].Columns[Moltip_Nomenclatura]" />
+                            <inputColumn
+                              refId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Peso_Lordo]"
+                              cachedDataType="numeric"
+                              cachedName="Peso_Lordo"
+                              cachedPrecision="19"
+                              cachedScale="5"
+                              externalMetadataColumnId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Peso_Lordo]"
+                              lineageId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Source.Outputs[OLE DB Source Output].Columns[Peso_Lordo]" />
+                            <inputColumn
+                              refId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Peso_Netto]"
+                              cachedDataType="numeric"
+                              cachedName="Peso_Netto"
+                              cachedPrecision="19"
+                              cachedScale="5"
+                              externalMetadataColumnId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Peso_Netto]"
+                              lineageId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Source.Outputs[OLE DB Source Output].Columns[Peso_Netto]" />
+                            <inputColumn
+                              refId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[PrezzoCessione]"
+                              cachedDataType="bool"
+                              cachedName="PrezzoCessione"
+                              externalMetadataColumnId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[PrezzoCessione]"
+                              lineageId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Source.Outputs[OLE DB Source Output].Columns[PrezzoCessione]" />
+                            <inputColumn
+                              refId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[ProfonditàCm]"
+                              cachedDataType="numeric"
+                              cachedName="ProfonditàCm"
+                              cachedPrecision="19"
+                              cachedScale="5"
+                              externalMetadataColumnId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ProfonditàCm]"
+                              lineageId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Source.Outputs[OLE DB Source Output].Columns[ProfonditàCm]" />
+                            <inputColumn
+                              refId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Scorporo]"
+                              cachedDataType="bool"
+                              cachedName="Scorporo"
+                              externalMetadataColumnId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Scorporo]"
+                              lineageId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Source.Outputs[OLE DB Source Output].Columns[Scorporo]" />
+                            <inputColumn
+                              refId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Scorta_Minima2]"
+                              cachedDataType="numeric"
+                              cachedName="Scorta_Minima2"
+                              cachedPrecision="19"
+                              cachedScale="5"
+                              externalMetadataColumnId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Scorta_Minima2]"
+                              lineageId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Source.Outputs[OLE DB Source Output].Columns[Scorta_Minima2]" />
+                            <inputColumn
+                              refId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Scorta_Stagionale2]"
+                              cachedDataType="numeric"
+                              cachedName="Scorta_Stagionale2"
+                              cachedPrecision="19"
+                              cachedScale="5"
+                              externalMetadataColumnId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Scorta_Stagionale2]"
+                              lineageId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Source.Outputs[OLE DB Source Output].Columns[Scorta_Stagionale2]" />
+                            <inputColumn
+                              refId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Volume]"
+                              cachedDataType="numeric"
+                              cachedName="Volume"
+                              cachedPrecision="19"
+                              cachedScale="5"
+                              externalMetadataColumnId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Volume]"
+                              lineageId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Source.Outputs[OLE DB Source Output].Columns[Volume]" />
+                            <inputColumn
+                              refId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Scorta_Massima2]"
+                              cachedDataType="numeric"
+                              cachedName="Scorta_Massima2"
+                              cachedPrecision="19"
+                              cachedScale="5"
+                              externalMetadataColumnId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Scorta_Massima2]"
+                              lineageId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Source.Outputs[OLE DB Source Output].Columns[Scorta_Massima2]" />
+                            <inputColumn
+                              refId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of ScMin_UM]"
+                              cachedDataType="wstr"
+                              cachedLength="10"
+                              cachedName="Copy of ScMin_UM"
+                              externalMetadataColumnId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ScMin_UM]"
+                              lineageId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of ScMin_UM]" />
+                            <inputColumn
+                              refId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of ScMax_UM]"
+                              cachedDataType="wstr"
+                              cachedLength="10"
+                              cachedName="Copy of ScMax_UM"
+                              externalMetadataColumnId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ScMax_UM]"
+                              lineageId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of ScMax_UM]" />
+                            <inputColumn
+                              refId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of Listino_Kit_Inventario]"
+                              cachedDataType="wstr"
+                              cachedLength="10"
+                              cachedName="Copy of Listino_Kit_Inventario"
+                              externalMetadataColumnId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Listino_Kit_Inventario]"
+                              lineageId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Listino_Kit_Inventario]" />
+                            <inputColumn
+                              refId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of U_User]"
+                              cachedDataType="wstr"
+                              cachedLength="20"
+                              cachedName="Copy of U_User"
+                              externalMetadataColumnId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[U_User]"
+                              lineageId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of U_User]" />
+                            <inputColumn
+                              refId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of C_Marchio]"
+                              cachedDataType="wstr"
+                              cachedLength="10"
+                              cachedName="Copy of C_Marchio"
+                              externalMetadataColumnId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[C_Marchio]"
+                              lineageId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of C_Marchio]" />
+                            <inputColumn
+                              refId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of Grp_Prod_Linea]"
+                              cachedDataType="wstr"
+                              cachedLength="50"
+                              cachedName="Copy of Grp_Prod_Linea"
+                              externalMetadataColumnId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Grp_Prod_Linea]"
+                              lineageId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Grp_Prod_Linea]" />
+                            <inputColumn
+                              refId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of C_UM_Nomenclatura]"
+                              cachedDataType="wstr"
+                              cachedLength="10"
+                              cachedName="Copy of C_UM_Nomenclatura"
+                              externalMetadataColumnId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[C_UM_Nomenclatura]"
+                              lineageId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of C_UM_Nomenclatura]" />
+                            <inputColumn
+                              refId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of C_Nomenclatura]"
+                              cachedDataType="wstr"
+                              cachedLength="8"
+                              cachedName="Copy of C_Nomenclatura"
+                              externalMetadataColumnId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[C_Nomenclatura]"
+                              lineageId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of C_Nomenclatura]" />
+                            <inputColumn
+                              refId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of C_Azienda]"
+                              cachedDataType="wstr"
+                              cachedLength="10"
+                              cachedName="Copy of C_Azienda"
+                              externalMetadataColumnId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[C_Azienda]"
+                              lineageId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of C_Azienda]" />
+                            <inputColumn
+                              refId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of Forma_Galenica]"
+                              cachedDataType="wstr"
+                              cachedLength="150"
+                              cachedName="Copy of Forma_Galenica"
+                              externalMetadataColumnId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Forma_Galenica]"
+                              lineageId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Forma_Galenica]" />
+                            <inputColumn
+                              refId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of Lotto_Multi_UM]"
+                              cachedDataType="wstr"
+                              cachedLength="10"
+                              cachedName="Copy of Lotto_Multi_UM"
+                              externalMetadataColumnId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Lotto_Multi_UM]"
+                              lineageId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Lotto_Multi_UM]" />
+                            <inputColumn
+                              refId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of Lotto_Min_UM]"
+                              cachedDataType="wstr"
+                              cachedLength="10"
+                              cachedName="Copy of Lotto_Min_UM"
+                              externalMetadataColumnId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Lotto_Min_UM]"
+                              lineageId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Lotto_Min_UM]" />
+                            <inputColumn
+                              refId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of ScSta_UM]"
+                              cachedDataType="wstr"
+                              cachedLength="10"
+                              cachedName="Copy of ScSta_UM"
+                              externalMetadataColumnId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ScSta_UM]"
+                              lineageId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of ScSta_UM]" />
+                            <inputColumn
+                              refId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of U_Modify]"
+                              cachedDataType="wstr"
+                              cachedLength="50"
+                              cachedName="Copy of U_Modify"
+                              externalMetadataColumnId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[U_Modify]"
+                              lineageId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of U_Modify]" />
+                            <inputColumn
+                              refId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Particolari_WSTR]"
+                              cachedDataType="wstr"
+                              cachedLength="4000"
+                              cachedName="Particolari_WSTR"
+                              externalMetadataColumnId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Particolari]"
+                              lineageId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\Derived Column.Outputs[Derived Column Output].Columns[Particolari_WSTR]" />
                           </inputColumns>
                           <externalMetadataColumns
                             isUsed="True">
@@ -4662,76 +5522,10 @@
                               dataType="bool"
                               name="ROW_STS_FLG" />
                             <externalMetadataColumn
-                              refId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ID_Lotto]"
-                              dataType="i4"
-                              name="ID_Lotto" />
-                            <externalMetadataColumn
                               refId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Codice_Articolo]"
                               dataType="wstr"
                               length="20"
                               name="Codice_Articolo" />
-                            <externalMetadataColumn
-                              refId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Lotto_Principale]"
-                              dataType="wstr"
-                              length="20"
-                              name="Lotto_Principale" />
-                            <externalMetadataColumn
-                              refId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Data_Entrata]"
-                              dataType="dbTimeStamp"
-                              name="Data_Entrata" />
-                            <externalMetadataColumn
-                              refId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Data_Scadenza]"
-                              dataType="dbTimeStamp"
-                              name="Data_Scadenza" />
-                            <externalMetadataColumn
-                              refId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Limite_Distribuibilita]"
-                              dataType="i4"
-                              name="Limite_Distribuibilita" />
-                            <externalMetadataColumn
-                              refId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Data_Re_Test]"
-                              dataType="dbTimeStamp"
-                              name="Data_Re_Test" />
-                            <externalMetadataColumn
-                              refId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Data_Produzione_Fornitore]"
-                              dataType="dbTimeStamp"
-                              name="Data_Produzione_Fornitore" />
-                            <externalMetadataColumn
-                              refId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Data_Produzione_Interna]"
-                              dataType="dbTimeStamp"
-                              name="Data_Produzione_Interna" />
-                            <externalMetadataColumn
-                              refId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Data_Produzione_Esterna]"
-                              dataType="dbTimeStamp"
-                              name="Data_Produzione_Esterna" />
-                            <externalMetadataColumn
-                              refId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Codice_Qualita]"
-                              dataType="wstr"
-                              length="10"
-                              name="Codice_Qualita" />
-                            <externalMetadataColumn
-                              refId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Codice_Qualita_Richiesta]"
-                              dataType="wstr"
-                              length="10"
-                              name="Codice_Qualita_Richiesta" />
-                            <externalMetadataColumn
-                              refId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Table_ID]"
-                              dataType="wstr"
-                              length="100"
-                              name="Table_ID" />
-                            <externalMetadataColumn
-                              refId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Flag_Lotto_Interno]"
-                              dataType="bool"
-                              name="Flag_Lotto_Interno" />
-                            <externalMetadataColumn
-                              refId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[C_Controparte_Tipo]"
-                              dataType="wstr"
-                              length="1"
-                              name="C_Controparte_Tipo" />
-                            <externalMetadataColumn
-                              refId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[C_Controparte]"
-                              dataType="wstr"
-                              length="20"
-                              name="C_Controparte" />
                             <externalMetadataColumn
                               refId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[U_User]"
                               dataType="wstr"
@@ -4747,23 +5541,685 @@
                               length="50"
                               name="U_Modify" />
                             <externalMetadataColumn
-                              refId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[C_Produttore]"
-                              dataType="wstr"
-                              length="20"
-                              name="C_Produttore" />
-                            <externalMetadataColumn
-                              refId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[N_Colli_Ori]"
-                              dataType="i4"
-                              name="N_Colli_Ori" />
-                            <externalMetadataColumn
                               refId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ccksum]"
                               dataType="wstr"
                               length="100"
                               name="ccksum" />
                             <externalMetadataColumn
-                              refId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Versione_Utente]"
+                              refId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Con_Lotto]"
+                              dataType="bool"
+                              name="Con_Lotto" />
+                            <externalMetadataColumn
+                              refId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Descrizione_Articolo]"
+                              dataType="wstr"
+                              length="150"
+                              name="Descrizione_Articolo" />
+                            <externalMetadataColumn
+                              refId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Particolari]"
+                              dataType="wstr"
+                              length="4000"
+                              name="Particolari" />
+                            <externalMetadataColumn
+                              refId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Tipo_Articolo]"
+                              dataType="i2"
+                              name="Tipo_Articolo" />
+                            <externalMetadataColumn
+                              refId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Principio_Attivo]"
+                              dataType="bool"
+                              name="Principio_Attivo" />
+                            <externalMetadataColumn
+                              refId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Prodotto_VIP]"
+                              dataType="bool"
+                              name="Prodotto_VIP" />
+                            <externalMetadataColumn
+                              refId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Codice_UM]"
+                              dataType="wstr"
+                              length="10"
+                              name="Codice_UM" />
+                            <externalMetadataColumn
+                              refId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Codice_Gruppo_Merc]"
+                              dataType="wstr"
+                              length="10"
+                              name="Codice_Gruppo_Merc" />
+                            <externalMetadataColumn
+                              refId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Codice_Sottogruppo_Merc]"
+                              dataType="wstr"
+                              length="10"
+                              name="Codice_Sottogruppo_Merc" />
+                            <externalMetadataColumn
+                              refId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Codice_Norme_Sicurezza]"
+                              dataType="wstr"
+                              length="10"
+                              name="Codice_Norme_Sicurezza" />
+                            <externalMetadataColumn
+                              refId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Codice_Pericolosità]"
+                              dataType="wstr"
+                              length="10"
+                              name="Codice_Pericolosità" />
+                            <externalMetadataColumn
+                              refId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Codice_Conservazione]"
+                              dataType="wstr"
+                              length="10"
+                              name="Codice_Conservazione" />
+                            <externalMetadataColumn
+                              refId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Scadenza_GG]"
+                              dataType="i2"
+                              name="Scadenza_GG" />
+                            <externalMetadataColumn
+                              refId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Valore_Standard]"
+                              dataType="numeric"
+                              name="Valore_Standard"
+                              precision="19"
+                              scale="5" />
+                            <externalMetadataColumn
+                              refId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Valorizzazione_Fiscale]"
+                              dataType="bool"
+                              name="Valorizzazione_Fiscale" />
+                            <externalMetadataColumn
+                              refId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Costo_Standard]"
+                              dataType="numeric"
+                              name="Costo_Standard"
+                              precision="19"
+                              scale="5" />
+                            <externalMetadataColumn
+                              refId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Scorta_Minima]"
+                              dataType="numeric"
+                              name="Scorta_Minima"
+                              precision="19"
+                              scale="5" />
+                            <externalMetadataColumn
+                              refId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Scorta_Massima]"
+                              dataType="numeric"
+                              name="Scorta_Massima"
+                              precision="19"
+                              scale="5" />
+                            <externalMetadataColumn
+                              refId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Scorta_Desiderata]"
+                              dataType="numeric"
+                              name="Scorta_Desiderata"
+                              precision="19"
+                              scale="5" />
+                            <externalMetadataColumn
+                              refId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Lotto_Minimo_Riordino]"
+                              dataType="numeric"
+                              name="Lotto_Minimo_Riordino"
+                              precision="19"
+                              scale="5" />
+                            <externalMetadataColumn
+                              refId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Flag_Provenienza_Interna]"
+                              dataType="bool"
+                              name="Flag_Provenienza_Interna" />
+                            <externalMetadataColumn
+                              refId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Flag_Provenienza_Esterna]"
+                              dataType="bool"
+                              name="Flag_Provenienza_Esterna" />
+                            <externalMetadataColumn
+                              refId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Flag_Provenienza_Lavoro]"
+                              dataType="bool"
+                              name="Flag_Provenienza_Lavoro" />
+                            <externalMetadataColumn
+                              refId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Provenienza_Pref]"
+                              dataType="ui1"
+                              name="Provenienza_Pref" />
+                            <externalMetadataColumn
+                              refId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Codice_Iva]"
+                              dataType="wstr"
+                              length="10"
+                              name="Codice_Iva" />
+                            <externalMetadataColumn
+                              refId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Qtà_Anidri]"
+                              dataType="numeric"
+                              name="Qtà_Anidri"
+                              precision="19"
+                              scale="5" />
+                            <externalMetadataColumn
+                              refId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Qtà_Idrati]"
+                              dataType="numeric"
+                              name="Qtà_Idrati"
+                              precision="19"
+                              scale="5" />
+                            <externalMetadataColumn
+                              refId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Codice_Cat_Contabile]"
+                              dataType="wstr"
+                              length="10"
+                              name="Codice_Cat_Contabile" />
+                            <externalMetadataColumn
+                              refId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Codice_Cat_Omogenea]"
+                              dataType="wstr"
+                              length="10"
+                              name="Codice_Cat_Omogenea" />
+                            <externalMetadataColumn
+                              refId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Codice_Cat_Analitica]"
+                              dataType="wstr"
+                              length="10"
+                              name="Codice_Cat_Analitica" />
+                            <externalMetadataColumn
+                              refId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Codice_Cat_Provvigioni]"
+                              dataType="wstr"
+                              length="10"
+                              name="Codice_Cat_Provvigioni" />
+                            <externalMetadataColumn
+                              refId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Codice_Cat_ScontiMagg]"
+                              dataType="wstr"
+                              length="10"
+                              name="Codice_Cat_ScontiMagg" />
+                            <externalMetadataColumn
+                              refId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[flg_StampaDescr]"
+                              dataType="bool"
+                              name="flg_StampaDescr" />
+                            <externalMetadataColumn
+                              refId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Analisi_MRP]"
+                              dataType="i2"
+                              name="Analisi_MRP" />
+                            <externalMetadataColumn
+                              refId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Codice_Deposito]"
+                              dataType="wstr"
+                              length="10"
+                              name="Codice_Deposito" />
+                            <externalMetadataColumn
+                              refId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Codice_Collegato]"
+                              dataType="wstr"
+                              length="20"
+                              name="Codice_Collegato" />
+                            <externalMetadataColumn
+                              refId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Codice_VoceCosto]"
+                              dataType="wstr"
+                              length="15"
+                              name="Codice_VoceCosto" />
+                            <externalMetadataColumn
+                              refId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Codice_VoceRicavo]"
+                              dataType="wstr"
+                              length="15"
+                              name="Codice_VoceRicavo" />
+                            <externalMetadataColumn
+                              refId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Codice_StatoMat]"
+                              dataType="wstr"
+                              length="10"
+                              name="Codice_StatoMat" />
+                            <externalMetadataColumn
+                              refId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[C_Confezione]"
+                              dataType="wstr"
+                              length="10"
+                              name="C_Confezione" />
+                            <externalMetadataColumn
+                              refId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Codice_Nazione]"
+                              dataType="wstr"
+                              length="10"
+                              name="Codice_Nazione" />
+                            <externalMetadataColumn
+                              refId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[UMTitolo]"
+                              dataType="wstr"
+                              length="10"
+                              name="UMTitolo" />
+                            <externalMetadataColumn
+                              refId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Usa_Percentuale]"
+                              dataType="bool"
+                              name="Usa_Percentuale" />
+                            <externalMetadataColumn
+                              refId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Flag_Provenienza_Terzista]"
+                              dataType="bool"
+                              name="Flag_Provenienza_Terzista" />
+                            <externalMetadataColumn
+                              refId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Lotto_Multiplo_Riordino]"
+                              dataType="numeric"
+                              name="Lotto_Multiplo_Riordino"
+                              precision="19"
+                              scale="5" />
+                            <externalMetadataColumn
+                              refId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Giorni_App]"
+                              dataType="i2"
+                              name="Giorni_App" />
+                            <externalMetadataColumn
+                              refId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Codice_INCI_EU]"
                               dataType="i4"
-                              name="Versione_Utente" />
+                              name="Codice_INCI_EU" />
+                            <externalMetadataColumn
+                              refId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Codice_INCI_US]"
+                              dataType="i4"
+                              name="Codice_INCI_US" />
+                            <externalMetadataColumn
+                              refId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Codice_CAS]"
+                              dataType="i4"
+                              name="Codice_CAS" />
+                            <externalMetadataColumn
+                              refId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Rianalisi1_GG]"
+                              dataType="i2"
+                              name="Rianalisi1_GG" />
+                            <externalMetadataColumn
+                              refId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Rianalisi2_GG]"
+                              dataType="i2"
+                              name="Rianalisi2_GG" />
+                            <externalMetadataColumn
+                              refId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Apertura_GG]"
+                              dataType="i2"
+                              name="Apertura_GG" />
+                            <externalMetadataColumn
+                              refId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[LimiteDist_GG]"
+                              dataType="i2"
+                              name="LimiteDist_GG" />
+                            <externalMetadataColumn
+                              refId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Flag_Quarantena]"
+                              dataType="bool"
+                              name="Flag_Quarantena" />
+                            <externalMetadataColumn
+                              refId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Stupefacente]"
+                              dataType="i2"
+                              name="Stupefacente" />
+                            <externalMetadataColumn
+                              refId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[C_ClasseArticolo]"
+                              dataType="wstr"
+                              length="10"
+                              name="C_ClasseArticolo" />
+                            <externalMetadataColumn
+                              refId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[C_Contropartita_R]"
+                              dataType="wstr"
+                              length="15"
+                              name="C_Contropartita_R" />
+                            <externalMetadataColumn
+                              refId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[C_Contropartita_C]"
+                              dataType="wstr"
+                              length="15"
+                              name="C_Contropartita_C" />
+                            <externalMetadataColumn
+                              refId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Data_Inizio_Validità]"
+                              dataType="dbTimeStamp"
+                              name="Data_Inizio_Validità" />
+                            <externalMetadataColumn
+                              refId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Data_Obsolescenza]"
+                              dataType="dbTimeStamp"
+                              name="Data_Obsolescenza" />
+                            <externalMetadataColumn
+                              refId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[C_Famiglia]"
+                              dataType="wstr"
+                              length="10"
+                              name="C_Famiglia" />
+                            <externalMetadataColumn
+                              refId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Peso_Netto]"
+                              dataType="numeric"
+                              name="Peso_Netto"
+                              precision="19"
+                              scale="5" />
+                            <externalMetadataColumn
+                              refId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Peso_Lordo]"
+                              dataType="numeric"
+                              name="Peso_Lordo"
+                              precision="19"
+                              scale="5" />
+                            <externalMetadataColumn
+                              refId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[C_Volume]"
+                              dataType="wstr"
+                              length="10"
+                              name="C_Volume" />
+                            <externalMetadataColumn
+                              refId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Volume]"
+                              dataType="numeric"
+                              name="Volume"
+                              precision="19"
+                              scale="5" />
+                            <externalMetadataColumn
+                              refId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[C_WIS_Stato]"
+                              dataType="wstr"
+                              length="10"
+                              name="C_WIS_Stato" />
+                            <externalMetadataColumn
+                              refId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Attivo]"
+                              dataType="bool"
+                              name="Attivo" />
+                            <externalMetadataColumn
+                              refId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Classe_Articolo]"
+                              dataType="wstr"
+                              length="10"
+                              name="Classe_Articolo" />
+                            <externalMetadataColumn
+                              refId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[GestioneMultiStocca]"
+                              dataType="i2"
+                              name="GestioneMultiStocca" />
+                            <externalMetadataColumn
+                              refId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[C_Config_DataEntrata]"
+                              dataType="wstr"
+                              length="10"
+                              name="C_Config_DataEntrata" />
+                            <externalMetadataColumn
+                              refId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[C_Config_DataScadenza]"
+                              dataType="wstr"
+                              length="10"
+                              name="C_Config_DataScadenza" />
+                            <externalMetadataColumn
+                              refId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[C_Config_DataReTest]"
+                              dataType="wstr"
+                              length="10"
+                              name="C_Config_DataReTest" />
+                            <externalMetadataColumn
+                              refId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[C_Config_DataProdInt]"
+                              dataType="wstr"
+                              length="10"
+                              name="C_Config_DataProdInt" />
+                            <externalMetadataColumn
+                              refId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[C_Config_DataProdEst]"
+                              dataType="wstr"
+                              length="10"
+                              name="C_Config_DataProdEst" />
+                            <externalMetadataColumn
+                              refId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[C_Config_DataProdFor]"
+                              dataType="wstr"
+                              length="10"
+                              name="C_Config_DataProdFor" />
+                            <externalMetadataColumn
+                              refId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Campione_Tipo_Qta]"
+                              dataType="i2"
+                              name="Campione_Tipo_Qta" />
+                            <externalMetadataColumn
+                              refId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Campione_Qta]"
+                              dataType="numeric"
+                              name="Campione_Qta"
+                              precision="19"
+                              scale="5" />
+                            <externalMetadataColumn
+                              refId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Campione_Perc]"
+                              dataType="numeric"
+                              name="Campione_Perc"
+                              precision="6"
+                              scale="3" />
+                            <externalMetadataColumn
+                              refId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Campione_QtaMin]"
+                              dataType="numeric"
+                              name="Campione_QtaMin"
+                              precision="19"
+                              scale="5" />
+                            <externalMetadataColumn
+                              refId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Campione_QtaMax]"
+                              dataType="numeric"
+                              name="Campione_QtaMax"
+                              precision="19"
+                              scale="5" />
+                            <externalMetadataColumn
+                              refId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Controc_Tipo_Qta]"
+                              dataType="i2"
+                              name="Controc_Tipo_Qta" />
+                            <externalMetadataColumn
+                              refId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Controc_Qta]"
+                              dataType="numeric"
+                              name="Controc_Qta"
+                              precision="19"
+                              scale="5" />
+                            <externalMetadataColumn
+                              refId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Controc_Perc]"
+                              dataType="numeric"
+                              name="Controc_Perc"
+                              precision="6"
+                              scale="3" />
+                            <externalMetadataColumn
+                              refId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Controc_QtaMin]"
+                              dataType="numeric"
+                              name="Controc_QtaMin"
+                              precision="19"
+                              scale="5" />
+                            <externalMetadataColumn
+                              refId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Controc_QtaMax]"
+                              dataType="numeric"
+                              name="Controc_QtaMax"
+                              precision="19"
+                              scale="5" />
+                            <externalMetadataColumn
+                              refId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[AbilitaRicalcolo]"
+                              dataType="bool"
+                              name="AbilitaRicalcolo" />
+                            <externalMetadataColumn
+                              refId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[C_Caratteristica]"
+                              dataType="wstr"
+                              length="20"
+                              name="C_Caratteristica" />
+                            <externalMetadataColumn
+                              refId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Gestione_Scadenza]"
+                              dataType="i2"
+                              name="Gestione_Scadenza" />
+                            <externalMetadataColumn
+                              refId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Calibro]"
+                              dataType="numeric"
+                              name="Calibro"
+                              precision="19"
+                              scale="5" />
+                            <externalMetadataColumn
+                              refId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[LunghezzaCm]"
+                              dataType="numeric"
+                              name="LunghezzaCm"
+                              precision="19"
+                              scale="5" />
+                            <externalMetadataColumn
+                              refId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[AltezzaCm]"
+                              dataType="numeric"
+                              name="AltezzaCm"
+                              precision="19"
+                              scale="5" />
+                            <externalMetadataColumn
+                              refId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ProfonditàCm]"
+                              dataType="numeric"
+                              name="ProfonditàCm"
+                              precision="19"
+                              scale="5" />
+                            <externalMetadataColumn
+                              refId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Flag_Eredita_Lotto]"
+                              dataType="bool"
+                              name="Flag_Eredita_Lotto" />
+                            <externalMetadataColumn
+                              refId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Scorta_Minima2]"
+                              dataType="numeric"
+                              name="Scorta_Minima2"
+                              precision="19"
+                              scale="5" />
+                            <externalMetadataColumn
+                              refId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ScMin_UM]"
+                              dataType="wstr"
+                              length="10"
+                              name="ScMin_UM" />
+                            <externalMetadataColumn
+                              refId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Scorta_Massima2]"
+                              dataType="numeric"
+                              name="Scorta_Massima2"
+                              precision="19"
+                              scale="5" />
+                            <externalMetadataColumn
+                              refId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ScMax_UM]"
+                              dataType="wstr"
+                              length="10"
+                              name="ScMax_UM" />
+                            <externalMetadataColumn
+                              refId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Scorta_Stagionale2]"
+                              dataType="numeric"
+                              name="Scorta_Stagionale2"
+                              precision="19"
+                              scale="5" />
+                            <externalMetadataColumn
+                              refId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ScSta_UM]"
+                              dataType="wstr"
+                              length="10"
+                              name="ScSta_UM" />
+                            <externalMetadataColumn
+                              refId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Lotto_Minimo_Riordino2]"
+                              dataType="numeric"
+                              name="Lotto_Minimo_Riordino2"
+                              precision="19"
+                              scale="5" />
+                            <externalMetadataColumn
+                              refId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Lotto_Min_UM]"
+                              dataType="wstr"
+                              length="10"
+                              name="Lotto_Min_UM" />
+                            <externalMetadataColumn
+                              refId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Lotto_Multiplo_Riordino2]"
+                              dataType="numeric"
+                              name="Lotto_Multiplo_Riordino2"
+                              precision="19"
+                              scale="5" />
+                            <externalMetadataColumn
+                              refId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Lotto_Multi_UM]"
+                              dataType="wstr"
+                              length="10"
+                              name="Lotto_Multi_UM" />
+                            <externalMetadataColumn
+                              refId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Copertura]"
+                              dataType="i2"
+                              name="Copertura" />
+                            <externalMetadataColumn
+                              refId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Forma_Galenica]"
+                              dataType="wstr"
+                              length="150"
+                              name="Forma_Galenica" />
+                            <externalMetadataColumn
+                              refId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[C_Azienda]"
+                              dataType="wstr"
+                              length="10"
+                              name="C_Azienda" />
+                            <externalMetadataColumn
+                              refId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[C_Nomenclatura]"
+                              dataType="wstr"
+                              length="8"
+                              name="C_Nomenclatura" />
+                            <externalMetadataColumn
+                              refId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[C_UM_Nomenclatura]"
+                              dataType="wstr"
+                              length="10"
+                              name="C_UM_Nomenclatura" />
+                            <externalMetadataColumn
+                              refId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Moltip_Nomenclatura]"
+                              dataType="numeric"
+                              name="Moltip_Nomenclatura"
+                              precision="19"
+                              scale="5" />
+                            <externalMetadataColumn
+                              refId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Grp_Prod_Linea]"
+                              dataType="wstr"
+                              length="50"
+                              name="Grp_Prod_Linea" />
+                            <externalMetadataColumn
+                              refId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ArticoloNONOrdinabile]"
+                              dataType="bool"
+                              name="ArticoloNONOrdinabile" />
+                            <externalMetadataColumn
+                              refId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Codice_CentroCostoRicavo]"
+                              dataType="wstr"
+                              length="15"
+                              name="Codice_CentroCostoRicavo" />
+                            <externalMetadataColumn
+                              refId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[C_Marchio]"
+                              dataType="wstr"
+                              length="10"
+                              name="C_Marchio" />
+                            <externalMetadataColumn
+                              refId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Scorporo]"
+                              dataType="bool"
+                              name="Scorporo" />
+                            <externalMetadataColumn
+                              refId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[PrezzoCessione]"
+                              dataType="bool"
+                              name="PrezzoCessione" />
+                            <externalMetadataColumn
+                              refId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[I_User]"
+                              dataType="wstr"
+                              length="20"
+                              name="I_User" />
+                            <externalMetadataColumn
+                              refId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[I_Data]"
+                              dataType="dbTimeStamp"
+                              name="I_Data" />
+                            <externalMetadataColumn
+                              refId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ID_Commessa]"
+                              dataType="i4"
+                              name="ID_Commessa" />
+                            <externalMetadataColumn
+                              refId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Tipo_Spesa]"
+                              dataType="i2"
+                              name="Tipo_Spesa" />
+                            <externalMetadataColumn
+                              refId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Perc_SpeseDoganali]"
+                              dataType="numeric"
+                              name="Perc_SpeseDoganali"
+                              precision="6"
+                              scale="3" />
+                            <externalMetadataColumn
+                              refId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Ricalcolo_Etichetta]"
+                              dataType="bool"
+                              name="Ricalcolo_Etichetta" />
+                            <externalMetadataColumn
+                              refId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Percentuale_Etichetta]"
+                              dataType="bool"
+                              name="Percentuale_Etichetta" />
+                            <externalMetadataColumn
+                              refId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Valore_Etichetta]"
+                              dataType="numeric"
+                              name="Valore_Etichetta"
+                              precision="19"
+                              scale="5" />
+                            <externalMetadataColumn
+                              refId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[UM_Etichetta]"
+                              dataType="wstr"
+                              length="20"
+                              name="UM_Etichetta" />
+                            <externalMetadataColumn
+                              refId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ProdottoWIP]"
+                              dataType="bool"
+                              name="ProdottoWIP" />
+                            <externalMetadataColumn
+                              refId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[KitLogico]"
+                              dataType="bool"
+                              name="KitLogico" />
+                            <externalMetadataColumn
+                              refId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Listino_Kit_Inventario]"
+                              dataType="wstr"
+                              length="10"
+                              name="Listino_Kit_Inventario" />
+                            <externalMetadataColumn
+                              refId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Utilizzo_Intra]"
+                              dataType="wstr"
+                              length="1"
+                              name="Utilizzo_Intra" />
+                            <externalMetadataColumn
+                              refId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Mod_Erogazione]"
+                              dataType="wstr"
+                              length="1"
+                              name="Mod_Erogazione" />
+                            <externalMetadataColumn
+                              refId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Elenchi_Intra]"
+                              dataType="wstr"
+                              length="1"
+                              name="Elenchi_Intra" />
+                            <externalMetadataColumn
+                              refId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[C_Anagrafica_Moduli]"
+                              dataType="wstr"
+                              length="10"
+                              name="C_Anagrafica_Moduli" />
+                            <externalMetadataColumn
+                              refId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CPNP]"
+                              dataType="wstr"
+                              length="50"
+                              name="CPNP" />
+                            <externalMetadataColumn
+                              refId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CPNP_Data]"
+                              dataType="dbTimeStamp"
+                              name="CPNP_Data" />
+                            <externalMetadataColumn
+                              refId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Leave_On]"
+                              dataType="bool"
+                              name="Leave_On" />
+                            <externalMetadataColumn
+                              refId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Rinse_Off]"
+                              dataType="bool"
+                              name="Rinse_Off" />
+                            <externalMetadataColumn
+                              refId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Servizio_Accessorio]"
+                              dataType="bool"
+                              name="Servizio_Accessorio" />
+                            <externalMetadataColumn
+                              refId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[C_Anagrafica_BU]"
+                              dataType="wstr"
+                              length="20"
+                              name="C_Anagrafica_BU" />
+                            <externalMetadataColumn
+                              refId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ValoreNonProv]"
+                              dataType="numeric"
+                              name="ValoreNonProv"
+                              precision="19"
+                              scale="5" />
                           </externalMetadataColumns>
                         </input>
                       </inputs>
@@ -8546,9 +10002,9 @@
           TopLeft="37.5,314.5" />
         <ContainerLayout
           HeaderHeight="43"
-          IsExpanded="True"
+          IsExpanded="False"
           PanelSize="493,612"
-          Size="493,654"
+          Size="493,43"
           Id="Package\STAGING LOAD\TBST_PRC_ANAGRAFICA_LOTTI"
           TopLeft="5.5,5.50000000000011" />
         <NodeLayout
@@ -8771,16 +10227,16 @@
           TopLeft="29.5,10.5" />
         <ContainerLayout
           HeaderHeight="43"
-          IsExpanded="True"
+          IsExpanded="False"
           PanelSize="504,608"
-          Size="504,651"
+          Size="504,43"
           Id="Package\STAGING LOAD\TBST_PRC_ARTICOLO"
           TopLeft="559.5,5.5" />
         <ContainerLayout
           HeaderHeight="43"
-          IsExpanded="True"
+          IsExpanded="False"
           PanelSize="1455,996"
-          Size="1455,1039"
+          Size="1455,43"
           Id="Package\STAGING LOAD"
           TopLeft="183,205" />
         <NodeLayout
@@ -8811,30 +10267,30 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 1]"
-          TopLeft="910.5,1244">
+          TopLeft="910.5,248">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-169.166666666667,-630.888888888889"
+              EndConnector="-169.166666666667,365.111111111111"
               Start="0,0"
-              End="-169.166666666667,-623.388888888889">
+              End="-169.166666666667,357.611111111111">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,-311.444444444445" />
+                    End="0,178.555555555555" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,-311.444444444445"
-                    Point2="0,-315.444444444445"
-                    Point3="-4,-315.444444444445" />
+                    Point1="0,178.555555555555"
+                    Point2="0,182.555555555555"
+                    Point3="-4,182.555555555555" />
                   <mssgle:LineSegment
-                    End="-165.166666666667,-315.444444444445" />
+                    End="-165.166666666667,182.555555555555" />
                   <mssgle:CubicBezierSegment
-                    Point1="-165.166666666667,-315.444444444445"
-                    Point2="-169.166666666667,-315.444444444445"
-                    Point3="-169.166666666667,-319.444444444445" />
+                    Point1="-165.166666666667,182.555555555555"
+                    Point2="-169.166666666667,182.555555555555"
+                    Point3="-169.166666666667,186.555555555555" />
                   <mssgle:LineSegment
-                    End="-169.166666666667,-623.388888888889" />
+                    End="-169.166666666667,357.611111111111" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -9070,7 +10526,7 @@
     design-time-name="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="158,42"
           Id="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\Derived Column"
@@ -9078,7 +10534,7 @@
         <NodeLayout
           Size="177,42"
           Id="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination"
-          TopLeft="254,466" />
+          TopLeft="276,392" />
         <NodeLayout
           Size="157,42"
           Id="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Source"
@@ -9133,43 +10589,42 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE.Paths[Derived Column Output]"
-          TopLeft="361,313">
+          TopLeft="362.75,313">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-18.5,153"
+              EndConnector="0,79"
               Start="0,0"
-              End="-18.5,145.5">
+              End="0,71.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,72.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,72.5"
-                    Point2="0,76.5"
-                    Point3="-4,76.5" />
-                  <mssgle:LineSegment
-                    End="-14.5,76.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-14.5,76.5"
-                    Point2="-18.5,76.5"
-                    Point3="-18.5,80.5" />
-                  <mssgle:LineSegment
-                    End="-18.5,145.5" />
+                    End="0,71.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-17.25,81.5,16,16"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
   <PipelineComponentMetadata
     design-time-name="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Load STG TRG TABLE\OLE DB Source">
     <Properties>
