@@ -11,8 +11,8 @@
   DTS:LocaleID="2064"
   DTS:ObjectName="PARCEL_MFG_DWAN"
   DTS:PackageType="5"
-  DTS:VersionBuild="259"
-  DTS:VersionGUID="{5929C89E-002F-4F6C-BCE4-D979002E74A6}">
+  DTS:VersionBuild="279"
+  DTS:VersionGUID="{7E012B5B-718A-4B98-9CFB-4C2F8A21EACB}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -27,7 +27,7 @@
           <DTS:Password
             DTS:Name="Password"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAZ1W4zPu86k256zsBij2bAQAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAABq26/FogYafbHS5pc621Y6AAAAAASAAACgAAAAEAAAAF+JC03q1seEoBjdl4YCUuUgAAAADN8TVtWBRpXPRl9K3zohZefggPhVg/5+aMoV41U9TI4UAAAA2yvjEtgzZG3RJ8USmSh/lV7K6dA</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAZ1W4zPu86k256zsBij2bAQAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAABfjSGYgyUBlbAJxZcCQ3lMAAAAAASAAACgAAAAEAAAAMsaySs6ner6NJV5ajGhoyAgAAAAuGtIog/ZXBEXZC62FljmNL4zw3pFCO+OqSgL5JhI6/AUAAAAVoiIdQjhco0s21in2ARTnhjdWrE</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -1099,10 +1099,11 @@ SITE_ID=? and ARTICLE_CD=?</property>
                           dataType="System.String"
                           description="The SQL command to be executed."
                           name="SqlCommand"
-                          UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select *
+                          UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select a.Codice_Articolo, a.Con_Lotto, a.Descrizione_Articolo, a.Particolari, a.Tipo_Articolo, a.Principio_Attivo, a.Prodotto_VIP, a.Codice_UM, a.Codice_Gruppo_Merc, 
+a.Codice_Sottogruppo_Merc, a.Codice_Norme_Sicurezza, a.Codice_Pericolosita, a.Codice_Conservazione, a.Scadenza_GG, b.article_cd, b.row_sts_flg
 from
 (SELECT * FROM tbst_prc_articolo WHERE site_id =? and row_sts_flg=1) a full join
-(SELECT article_cd FROM tbdwan_article WHERE site_id =?) b on a.Codice_Articolo = b.article_cd</property>
+(SELECT article_cd, row_sts_flg FROM tbdwan_article WHERE site_id =?) b on a.Codice_Articolo = b.article_cd</property>
                         <property
                           dataType="System.String"
                           description="The variable that contains the SQL command to be executed."
@@ -1283,6 +1284,15 @@ from
                               lineageId="Package\DWH LOAD\TBDWAN_ARTICLE\TBDWAN_ARTICLE\Load SRC tables.Outputs[OLE DB Source Output].Columns[article_cd]"
                               name="article_cd"
                               truncationRowDisposition="FailComponent" />
+                            <outputColumn
+                              refId="Package\DWH LOAD\TBDWAN_ARTICLE\TBDWAN_ARTICLE\Load SRC tables.Outputs[OLE DB Source Output].Columns[row_sts_flg]"
+                              dataType="bool"
+                              errorOrTruncationOperation="Conversion"
+                              errorRowDisposition="FailComponent"
+                              externalMetadataColumnId="Package\DWH LOAD\TBDWAN_ARTICLE\TBDWAN_ARTICLE\Load SRC tables.Outputs[OLE DB Source Output].ExternalColumns[row_sts_flg]"
+                              lineageId="Package\DWH LOAD\TBDWAN_ARTICLE\TBDWAN_ARTICLE\Load SRC tables.Outputs[OLE DB Source Output].Columns[row_sts_flg]"
+                              name="row_sts_flg"
+                              truncationRowDisposition="FailComponent" />
                           </outputColumns>
                           <externalMetadataColumns
                             isUsed="True">
@@ -1296,43 +1306,6 @@ from
                               dataType="wstr"
                               length="20"
                               name="article_cd" />
-                            <externalMetadataColumn
-                              refId="Package\DWH LOAD\TBDWAN_ARTICLE\TBDWAN_ARTICLE\Load SRC tables.Outputs[OLE DB Source Output].ExternalColumns[TBLOG_PACKAGE_ID]"
-                              dataType="i8"
-                              name="TBLOG_PACKAGE_ID" />
-                            <externalMetadataColumn
-                              refId="Package\DWH LOAD\TBDWAN_ARTICLE\TBDWAN_ARTICLE\Load SRC tables.Outputs[OLE DB Source Output].ExternalColumns[TBLOG_PACKAGE_TABLE_ID]"
-                              dataType="i8"
-                              name="TBLOG_PACKAGE_TABLE_ID" />
-                            <externalMetadataColumn
-                              refId="Package\DWH LOAD\TBDWAN_ARTICLE\TBDWAN_ARTICLE\Load SRC tables.Outputs[OLE DB Source Output].ExternalColumns[INSERT_DT]"
-                              dataType="dbTimeStamp"
-                              name="INSERT_DT" />
-                            <externalMetadataColumn
-                              refId="Package\DWH LOAD\TBDWAN_ARTICLE\TBDWAN_ARTICLE\Load SRC tables.Outputs[OLE DB Source Output].ExternalColumns[UPDATE_DT]"
-                              dataType="dbTimeStamp"
-                              name="UPDATE_DT" />
-                            <externalMetadataColumn
-                              refId="Package\DWH LOAD\TBDWAN_ARTICLE\TBDWAN_ARTICLE\Load SRC tables.Outputs[OLE DB Source Output].ExternalColumns[DELETE_DT]"
-                              dataType="dbTimeStamp"
-                              name="DELETE_DT" />
-                            <externalMetadataColumn
-                              refId="Package\DWH LOAD\TBDWAN_ARTICLE\TBDWAN_ARTICLE\Load SRC tables.Outputs[OLE DB Source Output].ExternalColumns[USER_CD]"
-                              dataType="wstr"
-                              length="100"
-                              name="USER_CD" />
-                            <externalMetadataColumn
-                              refId="Package\DWH LOAD\TBDWAN_ARTICLE\TBDWAN_ARTICLE\Load SRC tables.Outputs[OLE DB Source Output].ExternalColumns[SITE_ID]"
-                              dataType="i8"
-                              name="SITE_ID" />
-                            <externalMetadataColumn
-                              refId="Package\DWH LOAD\TBDWAN_ARTICLE\TBDWAN_ARTICLE\Load SRC tables.Outputs[OLE DB Source Output].ExternalColumns[SOURCE_SYSTEM_ID]"
-                              dataType="i8"
-                              name="SOURCE_SYSTEM_ID" />
-                            <externalMetadataColumn
-                              refId="Package\DWH LOAD\TBDWAN_ARTICLE\TBDWAN_ARTICLE\Load SRC tables.Outputs[OLE DB Source Output].ExternalColumns[ROW_STS_FLG]"
-                              dataType="bool"
-                              name="ROW_STS_FLG" />
                             <externalMetadataColumn
                               refId="Package\DWH LOAD\TBDWAN_ARTICLE\TBDWAN_ARTICLE\Load SRC tables.Outputs[OLE DB Source Output].ExternalColumns[Con_Lotto]"
                               dataType="bool"
@@ -1394,639 +1367,9 @@ from
                               dataType="i2"
                               name="Scadenza_GG" />
                             <externalMetadataColumn
-                              refId="Package\DWH LOAD\TBDWAN_ARTICLE\TBDWAN_ARTICLE\Load SRC tables.Outputs[OLE DB Source Output].ExternalColumns[Valore_Standard]"
-                              dataType="numeric"
-                              name="Valore_Standard"
-                              precision="19"
-                              scale="5" />
-                            <externalMetadataColumn
-                              refId="Package\DWH LOAD\TBDWAN_ARTICLE\TBDWAN_ARTICLE\Load SRC tables.Outputs[OLE DB Source Output].ExternalColumns[Valorizzazione_Fiscale]"
+                              refId="Package\DWH LOAD\TBDWAN_ARTICLE\TBDWAN_ARTICLE\Load SRC tables.Outputs[OLE DB Source Output].ExternalColumns[row_sts_flg]"
                               dataType="bool"
-                              name="Valorizzazione_Fiscale" />
-                            <externalMetadataColumn
-                              refId="Package\DWH LOAD\TBDWAN_ARTICLE\TBDWAN_ARTICLE\Load SRC tables.Outputs[OLE DB Source Output].ExternalColumns[Costo_Standard]"
-                              dataType="numeric"
-                              name="Costo_Standard"
-                              precision="19"
-                              scale="5" />
-                            <externalMetadataColumn
-                              refId="Package\DWH LOAD\TBDWAN_ARTICLE\TBDWAN_ARTICLE\Load SRC tables.Outputs[OLE DB Source Output].ExternalColumns[Scorta_Minima]"
-                              dataType="numeric"
-                              name="Scorta_Minima"
-                              precision="19"
-                              scale="5" />
-                            <externalMetadataColumn
-                              refId="Package\DWH LOAD\TBDWAN_ARTICLE\TBDWAN_ARTICLE\Load SRC tables.Outputs[OLE DB Source Output].ExternalColumns[Scorta_Massima]"
-                              dataType="numeric"
-                              name="Scorta_Massima"
-                              precision="19"
-                              scale="5" />
-                            <externalMetadataColumn
-                              refId="Package\DWH LOAD\TBDWAN_ARTICLE\TBDWAN_ARTICLE\Load SRC tables.Outputs[OLE DB Source Output].ExternalColumns[Scorta_Desiderata]"
-                              dataType="numeric"
-                              name="Scorta_Desiderata"
-                              precision="19"
-                              scale="5" />
-                            <externalMetadataColumn
-                              refId="Package\DWH LOAD\TBDWAN_ARTICLE\TBDWAN_ARTICLE\Load SRC tables.Outputs[OLE DB Source Output].ExternalColumns[Lotto_Minimo_Riordino]"
-                              dataType="numeric"
-                              name="Lotto_Minimo_Riordino"
-                              precision="19"
-                              scale="5" />
-                            <externalMetadataColumn
-                              refId="Package\DWH LOAD\TBDWAN_ARTICLE\TBDWAN_ARTICLE\Load SRC tables.Outputs[OLE DB Source Output].ExternalColumns[Flag_Provenienza_Interna]"
-                              dataType="bool"
-                              name="Flag_Provenienza_Interna" />
-                            <externalMetadataColumn
-                              refId="Package\DWH LOAD\TBDWAN_ARTICLE\TBDWAN_ARTICLE\Load SRC tables.Outputs[OLE DB Source Output].ExternalColumns[Flag_Provenienza_Esterna]"
-                              dataType="bool"
-                              name="Flag_Provenienza_Esterna" />
-                            <externalMetadataColumn
-                              refId="Package\DWH LOAD\TBDWAN_ARTICLE\TBDWAN_ARTICLE\Load SRC tables.Outputs[OLE DB Source Output].ExternalColumns[Flag_Provenienza_Lavoro]"
-                              dataType="bool"
-                              name="Flag_Provenienza_Lavoro" />
-                            <externalMetadataColumn
-                              refId="Package\DWH LOAD\TBDWAN_ARTICLE\TBDWAN_ARTICLE\Load SRC tables.Outputs[OLE DB Source Output].ExternalColumns[Provenienza_Pref]"
-                              dataType="ui1"
-                              name="Provenienza_Pref" />
-                            <externalMetadataColumn
-                              refId="Package\DWH LOAD\TBDWAN_ARTICLE\TBDWAN_ARTICLE\Load SRC tables.Outputs[OLE DB Source Output].ExternalColumns[Codice_Iva]"
-                              dataType="wstr"
-                              length="10"
-                              name="Codice_Iva" />
-                            <externalMetadataColumn
-                              refId="Package\DWH LOAD\TBDWAN_ARTICLE\TBDWAN_ARTICLE\Load SRC tables.Outputs[OLE DB Source Output].ExternalColumns[Qta_Anidri]"
-                              dataType="numeric"
-                              name="Qta_Anidri"
-                              precision="19"
-                              scale="5" />
-                            <externalMetadataColumn
-                              refId="Package\DWH LOAD\TBDWAN_ARTICLE\TBDWAN_ARTICLE\Load SRC tables.Outputs[OLE DB Source Output].ExternalColumns[Qta_Idrati]"
-                              dataType="numeric"
-                              name="Qta_Idrati"
-                              precision="19"
-                              scale="5" />
-                            <externalMetadataColumn
-                              refId="Package\DWH LOAD\TBDWAN_ARTICLE\TBDWAN_ARTICLE\Load SRC tables.Outputs[OLE DB Source Output].ExternalColumns[Codice_Cat_Contabile]"
-                              dataType="wstr"
-                              length="10"
-                              name="Codice_Cat_Contabile" />
-                            <externalMetadataColumn
-                              refId="Package\DWH LOAD\TBDWAN_ARTICLE\TBDWAN_ARTICLE\Load SRC tables.Outputs[OLE DB Source Output].ExternalColumns[Codice_Cat_Omogenea]"
-                              dataType="wstr"
-                              length="10"
-                              name="Codice_Cat_Omogenea" />
-                            <externalMetadataColumn
-                              refId="Package\DWH LOAD\TBDWAN_ARTICLE\TBDWAN_ARTICLE\Load SRC tables.Outputs[OLE DB Source Output].ExternalColumns[Codice_Cat_Analitica]"
-                              dataType="wstr"
-                              length="10"
-                              name="Codice_Cat_Analitica" />
-                            <externalMetadataColumn
-                              refId="Package\DWH LOAD\TBDWAN_ARTICLE\TBDWAN_ARTICLE\Load SRC tables.Outputs[OLE DB Source Output].ExternalColumns[Codice_Cat_Provvigioni]"
-                              dataType="wstr"
-                              length="10"
-                              name="Codice_Cat_Provvigioni" />
-                            <externalMetadataColumn
-                              refId="Package\DWH LOAD\TBDWAN_ARTICLE\TBDWAN_ARTICLE\Load SRC tables.Outputs[OLE DB Source Output].ExternalColumns[Codice_Cat_ScontiMagg]"
-                              dataType="wstr"
-                              length="10"
-                              name="Codice_Cat_ScontiMagg" />
-                            <externalMetadataColumn
-                              refId="Package\DWH LOAD\TBDWAN_ARTICLE\TBDWAN_ARTICLE\Load SRC tables.Outputs[OLE DB Source Output].ExternalColumns[flg_StampaDescr]"
-                              dataType="bool"
-                              name="flg_StampaDescr" />
-                            <externalMetadataColumn
-                              refId="Package\DWH LOAD\TBDWAN_ARTICLE\TBDWAN_ARTICLE\Load SRC tables.Outputs[OLE DB Source Output].ExternalColumns[Analisi_MRP]"
-                              dataType="i2"
-                              name="Analisi_MRP" />
-                            <externalMetadataColumn
-                              refId="Package\DWH LOAD\TBDWAN_ARTICLE\TBDWAN_ARTICLE\Load SRC tables.Outputs[OLE DB Source Output].ExternalColumns[Codice_Deposito]"
-                              dataType="wstr"
-                              length="10"
-                              name="Codice_Deposito" />
-                            <externalMetadataColumn
-                              refId="Package\DWH LOAD\TBDWAN_ARTICLE\TBDWAN_ARTICLE\Load SRC tables.Outputs[OLE DB Source Output].ExternalColumns[Codice_Collegato]"
-                              dataType="wstr"
-                              length="20"
-                              name="Codice_Collegato" />
-                            <externalMetadataColumn
-                              refId="Package\DWH LOAD\TBDWAN_ARTICLE\TBDWAN_ARTICLE\Load SRC tables.Outputs[OLE DB Source Output].ExternalColumns[Codice_VoceCosto]"
-                              dataType="wstr"
-                              length="15"
-                              name="Codice_VoceCosto" />
-                            <externalMetadataColumn
-                              refId="Package\DWH LOAD\TBDWAN_ARTICLE\TBDWAN_ARTICLE\Load SRC tables.Outputs[OLE DB Source Output].ExternalColumns[Codice_VoceRicavo]"
-                              dataType="wstr"
-                              length="15"
-                              name="Codice_VoceRicavo" />
-                            <externalMetadataColumn
-                              refId="Package\DWH LOAD\TBDWAN_ARTICLE\TBDWAN_ARTICLE\Load SRC tables.Outputs[OLE DB Source Output].ExternalColumns[Codice_StatoMat]"
-                              dataType="wstr"
-                              length="10"
-                              name="Codice_StatoMat" />
-                            <externalMetadataColumn
-                              refId="Package\DWH LOAD\TBDWAN_ARTICLE\TBDWAN_ARTICLE\Load SRC tables.Outputs[OLE DB Source Output].ExternalColumns[C_Confezione]"
-                              dataType="wstr"
-                              length="10"
-                              name="C_Confezione" />
-                            <externalMetadataColumn
-                              refId="Package\DWH LOAD\TBDWAN_ARTICLE\TBDWAN_ARTICLE\Load SRC tables.Outputs[OLE DB Source Output].ExternalColumns[Codice_Nazione]"
-                              dataType="wstr"
-                              length="10"
-                              name="Codice_Nazione" />
-                            <externalMetadataColumn
-                              refId="Package\DWH LOAD\TBDWAN_ARTICLE\TBDWAN_ARTICLE\Load SRC tables.Outputs[OLE DB Source Output].ExternalColumns[UMTitolo]"
-                              dataType="wstr"
-                              length="10"
-                              name="UMTitolo" />
-                            <externalMetadataColumn
-                              refId="Package\DWH LOAD\TBDWAN_ARTICLE\TBDWAN_ARTICLE\Load SRC tables.Outputs[OLE DB Source Output].ExternalColumns[Usa_Percentuale]"
-                              dataType="bool"
-                              name="Usa_Percentuale" />
-                            <externalMetadataColumn
-                              refId="Package\DWH LOAD\TBDWAN_ARTICLE\TBDWAN_ARTICLE\Load SRC tables.Outputs[OLE DB Source Output].ExternalColumns[Flag_Provenienza_Terzista]"
-                              dataType="bool"
-                              name="Flag_Provenienza_Terzista" />
-                            <externalMetadataColumn
-                              refId="Package\DWH LOAD\TBDWAN_ARTICLE\TBDWAN_ARTICLE\Load SRC tables.Outputs[OLE DB Source Output].ExternalColumns[Lotto_Multiplo_Riordino]"
-                              dataType="numeric"
-                              name="Lotto_Multiplo_Riordino"
-                              precision="19"
-                              scale="5" />
-                            <externalMetadataColumn
-                              refId="Package\DWH LOAD\TBDWAN_ARTICLE\TBDWAN_ARTICLE\Load SRC tables.Outputs[OLE DB Source Output].ExternalColumns[Giorni_App]"
-                              dataType="i2"
-                              name="Giorni_App" />
-                            <externalMetadataColumn
-                              refId="Package\DWH LOAD\TBDWAN_ARTICLE\TBDWAN_ARTICLE\Load SRC tables.Outputs[OLE DB Source Output].ExternalColumns[Codice_INCI_EU]"
-                              dataType="i4"
-                              name="Codice_INCI_EU" />
-                            <externalMetadataColumn
-                              refId="Package\DWH LOAD\TBDWAN_ARTICLE\TBDWAN_ARTICLE\Load SRC tables.Outputs[OLE DB Source Output].ExternalColumns[Codice_INCI_US]"
-                              dataType="i4"
-                              name="Codice_INCI_US" />
-                            <externalMetadataColumn
-                              refId="Package\DWH LOAD\TBDWAN_ARTICLE\TBDWAN_ARTICLE\Load SRC tables.Outputs[OLE DB Source Output].ExternalColumns[Codice_CAS]"
-                              dataType="i4"
-                              name="Codice_CAS" />
-                            <externalMetadataColumn
-                              refId="Package\DWH LOAD\TBDWAN_ARTICLE\TBDWAN_ARTICLE\Load SRC tables.Outputs[OLE DB Source Output].ExternalColumns[Rianalisi1_GG]"
-                              dataType="i2"
-                              name="Rianalisi1_GG" />
-                            <externalMetadataColumn
-                              refId="Package\DWH LOAD\TBDWAN_ARTICLE\TBDWAN_ARTICLE\Load SRC tables.Outputs[OLE DB Source Output].ExternalColumns[Rianalisi2_GG]"
-                              dataType="i2"
-                              name="Rianalisi2_GG" />
-                            <externalMetadataColumn
-                              refId="Package\DWH LOAD\TBDWAN_ARTICLE\TBDWAN_ARTICLE\Load SRC tables.Outputs[OLE DB Source Output].ExternalColumns[Apertura_GG]"
-                              dataType="i2"
-                              name="Apertura_GG" />
-                            <externalMetadataColumn
-                              refId="Package\DWH LOAD\TBDWAN_ARTICLE\TBDWAN_ARTICLE\Load SRC tables.Outputs[OLE DB Source Output].ExternalColumns[LimiteDist_GG]"
-                              dataType="i2"
-                              name="LimiteDist_GG" />
-                            <externalMetadataColumn
-                              refId="Package\DWH LOAD\TBDWAN_ARTICLE\TBDWAN_ARTICLE\Load SRC tables.Outputs[OLE DB Source Output].ExternalColumns[Flag_Quarantena]"
-                              dataType="bool"
-                              name="Flag_Quarantena" />
-                            <externalMetadataColumn
-                              refId="Package\DWH LOAD\TBDWAN_ARTICLE\TBDWAN_ARTICLE\Load SRC tables.Outputs[OLE DB Source Output].ExternalColumns[Stupefacente]"
-                              dataType="i2"
-                              name="Stupefacente" />
-                            <externalMetadataColumn
-                              refId="Package\DWH LOAD\TBDWAN_ARTICLE\TBDWAN_ARTICLE\Load SRC tables.Outputs[OLE DB Source Output].ExternalColumns[C_ClasseArticolo]"
-                              dataType="wstr"
-                              length="10"
-                              name="C_ClasseArticolo" />
-                            <externalMetadataColumn
-                              refId="Package\DWH LOAD\TBDWAN_ARTICLE\TBDWAN_ARTICLE\Load SRC tables.Outputs[OLE DB Source Output].ExternalColumns[C_Contropartita_R]"
-                              dataType="wstr"
-                              length="15"
-                              name="C_Contropartita_R" />
-                            <externalMetadataColumn
-                              refId="Package\DWH LOAD\TBDWAN_ARTICLE\TBDWAN_ARTICLE\Load SRC tables.Outputs[OLE DB Source Output].ExternalColumns[C_Contropartita_C]"
-                              dataType="wstr"
-                              length="15"
-                              name="C_Contropartita_C" />
-                            <externalMetadataColumn
-                              refId="Package\DWH LOAD\TBDWAN_ARTICLE\TBDWAN_ARTICLE\Load SRC tables.Outputs[OLE DB Source Output].ExternalColumns[Data_Inizio_Validita]"
-                              dataType="dbTimeStamp"
-                              name="Data_Inizio_Validita" />
-                            <externalMetadataColumn
-                              refId="Package\DWH LOAD\TBDWAN_ARTICLE\TBDWAN_ARTICLE\Load SRC tables.Outputs[OLE DB Source Output].ExternalColumns[Data_Obsolescenza]"
-                              dataType="dbTimeStamp"
-                              name="Data_Obsolescenza" />
-                            <externalMetadataColumn
-                              refId="Package\DWH LOAD\TBDWAN_ARTICLE\TBDWAN_ARTICLE\Load SRC tables.Outputs[OLE DB Source Output].ExternalColumns[C_Famiglia]"
-                              dataType="wstr"
-                              length="10"
-                              name="C_Famiglia" />
-                            <externalMetadataColumn
-                              refId="Package\DWH LOAD\TBDWAN_ARTICLE\TBDWAN_ARTICLE\Load SRC tables.Outputs[OLE DB Source Output].ExternalColumns[Peso_Netto]"
-                              dataType="numeric"
-                              name="Peso_Netto"
-                              precision="19"
-                              scale="5" />
-                            <externalMetadataColumn
-                              refId="Package\DWH LOAD\TBDWAN_ARTICLE\TBDWAN_ARTICLE\Load SRC tables.Outputs[OLE DB Source Output].ExternalColumns[Peso_Lordo]"
-                              dataType="numeric"
-                              name="Peso_Lordo"
-                              precision="19"
-                              scale="5" />
-                            <externalMetadataColumn
-                              refId="Package\DWH LOAD\TBDWAN_ARTICLE\TBDWAN_ARTICLE\Load SRC tables.Outputs[OLE DB Source Output].ExternalColumns[C_Volume]"
-                              dataType="wstr"
-                              length="10"
-                              name="C_Volume" />
-                            <externalMetadataColumn
-                              refId="Package\DWH LOAD\TBDWAN_ARTICLE\TBDWAN_ARTICLE\Load SRC tables.Outputs[OLE DB Source Output].ExternalColumns[Volume]"
-                              dataType="numeric"
-                              name="Volume"
-                              precision="19"
-                              scale="5" />
-                            <externalMetadataColumn
-                              refId="Package\DWH LOAD\TBDWAN_ARTICLE\TBDWAN_ARTICLE\Load SRC tables.Outputs[OLE DB Source Output].ExternalColumns[C_WIS_Stato]"
-                              dataType="wstr"
-                              length="10"
-                              name="C_WIS_Stato" />
-                            <externalMetadataColumn
-                              refId="Package\DWH LOAD\TBDWAN_ARTICLE\TBDWAN_ARTICLE\Load SRC tables.Outputs[OLE DB Source Output].ExternalColumns[Attivo]"
-                              dataType="bool"
-                              name="Attivo" />
-                            <externalMetadataColumn
-                              refId="Package\DWH LOAD\TBDWAN_ARTICLE\TBDWAN_ARTICLE\Load SRC tables.Outputs[OLE DB Source Output].ExternalColumns[Classe_Articolo]"
-                              dataType="wstr"
-                              length="10"
-                              name="Classe_Articolo" />
-                            <externalMetadataColumn
-                              refId="Package\DWH LOAD\TBDWAN_ARTICLE\TBDWAN_ARTICLE\Load SRC tables.Outputs[OLE DB Source Output].ExternalColumns[GestioneMultiStocca]"
-                              dataType="i2"
-                              name="GestioneMultiStocca" />
-                            <externalMetadataColumn
-                              refId="Package\DWH LOAD\TBDWAN_ARTICLE\TBDWAN_ARTICLE\Load SRC tables.Outputs[OLE DB Source Output].ExternalColumns[U_Modify]"
-                              dataType="wstr"
-                              length="50"
-                              name="U_Modify" />
-                            <externalMetadataColumn
-                              refId="Package\DWH LOAD\TBDWAN_ARTICLE\TBDWAN_ARTICLE\Load SRC tables.Outputs[OLE DB Source Output].ExternalColumns[C_Config_DataEntrata]"
-                              dataType="wstr"
-                              length="10"
-                              name="C_Config_DataEntrata" />
-                            <externalMetadataColumn
-                              refId="Package\DWH LOAD\TBDWAN_ARTICLE\TBDWAN_ARTICLE\Load SRC tables.Outputs[OLE DB Source Output].ExternalColumns[C_Config_DataScadenza]"
-                              dataType="wstr"
-                              length="10"
-                              name="C_Config_DataScadenza" />
-                            <externalMetadataColumn
-                              refId="Package\DWH LOAD\TBDWAN_ARTICLE\TBDWAN_ARTICLE\Load SRC tables.Outputs[OLE DB Source Output].ExternalColumns[C_Config_DataReTest]"
-                              dataType="wstr"
-                              length="10"
-                              name="C_Config_DataReTest" />
-                            <externalMetadataColumn
-                              refId="Package\DWH LOAD\TBDWAN_ARTICLE\TBDWAN_ARTICLE\Load SRC tables.Outputs[OLE DB Source Output].ExternalColumns[C_Config_DataProdInt]"
-                              dataType="wstr"
-                              length="10"
-                              name="C_Config_DataProdInt" />
-                            <externalMetadataColumn
-                              refId="Package\DWH LOAD\TBDWAN_ARTICLE\TBDWAN_ARTICLE\Load SRC tables.Outputs[OLE DB Source Output].ExternalColumns[C_Config_DataProdEst]"
-                              dataType="wstr"
-                              length="10"
-                              name="C_Config_DataProdEst" />
-                            <externalMetadataColumn
-                              refId="Package\DWH LOAD\TBDWAN_ARTICLE\TBDWAN_ARTICLE\Load SRC tables.Outputs[OLE DB Source Output].ExternalColumns[C_Config_DataProdFor]"
-                              dataType="wstr"
-                              length="10"
-                              name="C_Config_DataProdFor" />
-                            <externalMetadataColumn
-                              refId="Package\DWH LOAD\TBDWAN_ARTICLE\TBDWAN_ARTICLE\Load SRC tables.Outputs[OLE DB Source Output].ExternalColumns[Campione_Tipo_Qta]"
-                              dataType="i2"
-                              name="Campione_Tipo_Qta" />
-                            <externalMetadataColumn
-                              refId="Package\DWH LOAD\TBDWAN_ARTICLE\TBDWAN_ARTICLE\Load SRC tables.Outputs[OLE DB Source Output].ExternalColumns[Campione_Qta]"
-                              dataType="numeric"
-                              name="Campione_Qta"
-                              precision="19"
-                              scale="5" />
-                            <externalMetadataColumn
-                              refId="Package\DWH LOAD\TBDWAN_ARTICLE\TBDWAN_ARTICLE\Load SRC tables.Outputs[OLE DB Source Output].ExternalColumns[Campione_Perc]"
-                              dataType="numeric"
-                              name="Campione_Perc"
-                              precision="6"
-                              scale="3" />
-                            <externalMetadataColumn
-                              refId="Package\DWH LOAD\TBDWAN_ARTICLE\TBDWAN_ARTICLE\Load SRC tables.Outputs[OLE DB Source Output].ExternalColumns[Campione_QtaMin]"
-                              dataType="numeric"
-                              name="Campione_QtaMin"
-                              precision="19"
-                              scale="5" />
-                            <externalMetadataColumn
-                              refId="Package\DWH LOAD\TBDWAN_ARTICLE\TBDWAN_ARTICLE\Load SRC tables.Outputs[OLE DB Source Output].ExternalColumns[Campione_QtaMax]"
-                              dataType="numeric"
-                              name="Campione_QtaMax"
-                              precision="19"
-                              scale="5" />
-                            <externalMetadataColumn
-                              refId="Package\DWH LOAD\TBDWAN_ARTICLE\TBDWAN_ARTICLE\Load SRC tables.Outputs[OLE DB Source Output].ExternalColumns[Controc_Tipo_Qta]"
-                              dataType="i2"
-                              name="Controc_Tipo_Qta" />
-                            <externalMetadataColumn
-                              refId="Package\DWH LOAD\TBDWAN_ARTICLE\TBDWAN_ARTICLE\Load SRC tables.Outputs[OLE DB Source Output].ExternalColumns[Controc_Qta]"
-                              dataType="numeric"
-                              name="Controc_Qta"
-                              precision="19"
-                              scale="5" />
-                            <externalMetadataColumn
-                              refId="Package\DWH LOAD\TBDWAN_ARTICLE\TBDWAN_ARTICLE\Load SRC tables.Outputs[OLE DB Source Output].ExternalColumns[Controc_Perc]"
-                              dataType="numeric"
-                              name="Controc_Perc"
-                              precision="6"
-                              scale="3" />
-                            <externalMetadataColumn
-                              refId="Package\DWH LOAD\TBDWAN_ARTICLE\TBDWAN_ARTICLE\Load SRC tables.Outputs[OLE DB Source Output].ExternalColumns[Controc_QtaMin]"
-                              dataType="numeric"
-                              name="Controc_QtaMin"
-                              precision="19"
-                              scale="5" />
-                            <externalMetadataColumn
-                              refId="Package\DWH LOAD\TBDWAN_ARTICLE\TBDWAN_ARTICLE\Load SRC tables.Outputs[OLE DB Source Output].ExternalColumns[Controc_QtaMax]"
-                              dataType="numeric"
-                              name="Controc_QtaMax"
-                              precision="19"
-                              scale="5" />
-                            <externalMetadataColumn
-                              refId="Package\DWH LOAD\TBDWAN_ARTICLE\TBDWAN_ARTICLE\Load SRC tables.Outputs[OLE DB Source Output].ExternalColumns[AbilitaRicalcolo]"
-                              dataType="bool"
-                              name="AbilitaRicalcolo" />
-                            <externalMetadataColumn
-                              refId="Package\DWH LOAD\TBDWAN_ARTICLE\TBDWAN_ARTICLE\Load SRC tables.Outputs[OLE DB Source Output].ExternalColumns[C_Caratteristica]"
-                              dataType="wstr"
-                              length="20"
-                              name="C_Caratteristica" />
-                            <externalMetadataColumn
-                              refId="Package\DWH LOAD\TBDWAN_ARTICLE\TBDWAN_ARTICLE\Load SRC tables.Outputs[OLE DB Source Output].ExternalColumns[Gestione_Scadenza]"
-                              dataType="i2"
-                              name="Gestione_Scadenza" />
-                            <externalMetadataColumn
-                              refId="Package\DWH LOAD\TBDWAN_ARTICLE\TBDWAN_ARTICLE\Load SRC tables.Outputs[OLE DB Source Output].ExternalColumns[Calibro]"
-                              dataType="numeric"
-                              name="Calibro"
-                              precision="19"
-                              scale="5" />
-                            <externalMetadataColumn
-                              refId="Package\DWH LOAD\TBDWAN_ARTICLE\TBDWAN_ARTICLE\Load SRC tables.Outputs[OLE DB Source Output].ExternalColumns[LunghezzaCm]"
-                              dataType="numeric"
-                              name="LunghezzaCm"
-                              precision="19"
-                              scale="5" />
-                            <externalMetadataColumn
-                              refId="Package\DWH LOAD\TBDWAN_ARTICLE\TBDWAN_ARTICLE\Load SRC tables.Outputs[OLE DB Source Output].ExternalColumns[AltezzaCm]"
-                              dataType="numeric"
-                              name="AltezzaCm"
-                              precision="19"
-                              scale="5" />
-                            <externalMetadataColumn
-                              refId="Package\DWH LOAD\TBDWAN_ARTICLE\TBDWAN_ARTICLE\Load SRC tables.Outputs[OLE DB Source Output].ExternalColumns[ProfonditaCm]"
-                              dataType="numeric"
-                              name="ProfonditaCm"
-                              precision="19"
-                              scale="5" />
-                            <externalMetadataColumn
-                              refId="Package\DWH LOAD\TBDWAN_ARTICLE\TBDWAN_ARTICLE\Load SRC tables.Outputs[OLE DB Source Output].ExternalColumns[Flag_Eredita_Lotto]"
-                              dataType="bool"
-                              name="Flag_Eredita_Lotto" />
-                            <externalMetadataColumn
-                              refId="Package\DWH LOAD\TBDWAN_ARTICLE\TBDWAN_ARTICLE\Load SRC tables.Outputs[OLE DB Source Output].ExternalColumns[ccksum]"
-                              dataType="wstr"
-                              length="100"
-                              name="ccksum" />
-                            <externalMetadataColumn
-                              refId="Package\DWH LOAD\TBDWAN_ARTICLE\TBDWAN_ARTICLE\Load SRC tables.Outputs[OLE DB Source Output].ExternalColumns[Scorta_Minima2]"
-                              dataType="numeric"
-                              name="Scorta_Minima2"
-                              precision="19"
-                              scale="5" />
-                            <externalMetadataColumn
-                              refId="Package\DWH LOAD\TBDWAN_ARTICLE\TBDWAN_ARTICLE\Load SRC tables.Outputs[OLE DB Source Output].ExternalColumns[ScMin_UM]"
-                              dataType="wstr"
-                              length="10"
-                              name="ScMin_UM" />
-                            <externalMetadataColumn
-                              refId="Package\DWH LOAD\TBDWAN_ARTICLE\TBDWAN_ARTICLE\Load SRC tables.Outputs[OLE DB Source Output].ExternalColumns[Scorta_Massima2]"
-                              dataType="numeric"
-                              name="Scorta_Massima2"
-                              precision="19"
-                              scale="5" />
-                            <externalMetadataColumn
-                              refId="Package\DWH LOAD\TBDWAN_ARTICLE\TBDWAN_ARTICLE\Load SRC tables.Outputs[OLE DB Source Output].ExternalColumns[ScMax_UM]"
-                              dataType="wstr"
-                              length="10"
-                              name="ScMax_UM" />
-                            <externalMetadataColumn
-                              refId="Package\DWH LOAD\TBDWAN_ARTICLE\TBDWAN_ARTICLE\Load SRC tables.Outputs[OLE DB Source Output].ExternalColumns[Scorta_Stagionale2]"
-                              dataType="numeric"
-                              name="Scorta_Stagionale2"
-                              precision="19"
-                              scale="5" />
-                            <externalMetadataColumn
-                              refId="Package\DWH LOAD\TBDWAN_ARTICLE\TBDWAN_ARTICLE\Load SRC tables.Outputs[OLE DB Source Output].ExternalColumns[ScSta_UM]"
-                              dataType="wstr"
-                              length="10"
-                              name="ScSta_UM" />
-                            <externalMetadataColumn
-                              refId="Package\DWH LOAD\TBDWAN_ARTICLE\TBDWAN_ARTICLE\Load SRC tables.Outputs[OLE DB Source Output].ExternalColumns[Lotto_Minimo_Riordino2]"
-                              dataType="numeric"
-                              name="Lotto_Minimo_Riordino2"
-                              precision="19"
-                              scale="5" />
-                            <externalMetadataColumn
-                              refId="Package\DWH LOAD\TBDWAN_ARTICLE\TBDWAN_ARTICLE\Load SRC tables.Outputs[OLE DB Source Output].ExternalColumns[Lotto_Min_UM]"
-                              dataType="wstr"
-                              length="10"
-                              name="Lotto_Min_UM" />
-                            <externalMetadataColumn
-                              refId="Package\DWH LOAD\TBDWAN_ARTICLE\TBDWAN_ARTICLE\Load SRC tables.Outputs[OLE DB Source Output].ExternalColumns[Lotto_Multiplo_Riordino2]"
-                              dataType="numeric"
-                              name="Lotto_Multiplo_Riordino2"
-                              precision="19"
-                              scale="5" />
-                            <externalMetadataColumn
-                              refId="Package\DWH LOAD\TBDWAN_ARTICLE\TBDWAN_ARTICLE\Load SRC tables.Outputs[OLE DB Source Output].ExternalColumns[Lotto_Multi_UM]"
-                              dataType="wstr"
-                              length="10"
-                              name="Lotto_Multi_UM" />
-                            <externalMetadataColumn
-                              refId="Package\DWH LOAD\TBDWAN_ARTICLE\TBDWAN_ARTICLE\Load SRC tables.Outputs[OLE DB Source Output].ExternalColumns[Copertura]"
-                              dataType="i2"
-                              name="Copertura" />
-                            <externalMetadataColumn
-                              refId="Package\DWH LOAD\TBDWAN_ARTICLE\TBDWAN_ARTICLE\Load SRC tables.Outputs[OLE DB Source Output].ExternalColumns[Forma_Galenica]"
-                              dataType="wstr"
-                              length="150"
-                              name="Forma_Galenica" />
-                            <externalMetadataColumn
-                              refId="Package\DWH LOAD\TBDWAN_ARTICLE\TBDWAN_ARTICLE\Load SRC tables.Outputs[OLE DB Source Output].ExternalColumns[C_Azienda]"
-                              dataType="wstr"
-                              length="10"
-                              name="C_Azienda" />
-                            <externalMetadataColumn
-                              refId="Package\DWH LOAD\TBDWAN_ARTICLE\TBDWAN_ARTICLE\Load SRC tables.Outputs[OLE DB Source Output].ExternalColumns[C_Nomenclatura]"
-                              dataType="wstr"
-                              length="8"
-                              name="C_Nomenclatura" />
-                            <externalMetadataColumn
-                              refId="Package\DWH LOAD\TBDWAN_ARTICLE\TBDWAN_ARTICLE\Load SRC tables.Outputs[OLE DB Source Output].ExternalColumns[C_UM_Nomenclatura]"
-                              dataType="wstr"
-                              length="10"
-                              name="C_UM_Nomenclatura" />
-                            <externalMetadataColumn
-                              refId="Package\DWH LOAD\TBDWAN_ARTICLE\TBDWAN_ARTICLE\Load SRC tables.Outputs[OLE DB Source Output].ExternalColumns[Moltip_Nomenclatura]"
-                              dataType="numeric"
-                              name="Moltip_Nomenclatura"
-                              precision="19"
-                              scale="5" />
-                            <externalMetadataColumn
-                              refId="Package\DWH LOAD\TBDWAN_ARTICLE\TBDWAN_ARTICLE\Load SRC tables.Outputs[OLE DB Source Output].ExternalColumns[Grp_Prod_Linea]"
-                              dataType="wstr"
-                              length="50"
-                              name="Grp_Prod_Linea" />
-                            <externalMetadataColumn
-                              refId="Package\DWH LOAD\TBDWAN_ARTICLE\TBDWAN_ARTICLE\Load SRC tables.Outputs[OLE DB Source Output].ExternalColumns[ArticoloNONOrdinabile]"
-                              dataType="bool"
-                              name="ArticoloNONOrdinabile" />
-                            <externalMetadataColumn
-                              refId="Package\DWH LOAD\TBDWAN_ARTICLE\TBDWAN_ARTICLE\Load SRC tables.Outputs[OLE DB Source Output].ExternalColumns[Codice_CentroCostoRicavo]"
-                              dataType="wstr"
-                              length="15"
-                              name="Codice_CentroCostoRicavo" />
-                            <externalMetadataColumn
-                              refId="Package\DWH LOAD\TBDWAN_ARTICLE\TBDWAN_ARTICLE\Load SRC tables.Outputs[OLE DB Source Output].ExternalColumns[C_Marchio]"
-                              dataType="wstr"
-                              length="10"
-                              name="C_Marchio" />
-                            <externalMetadataColumn
-                              refId="Package\DWH LOAD\TBDWAN_ARTICLE\TBDWAN_ARTICLE\Load SRC tables.Outputs[OLE DB Source Output].ExternalColumns[Scorporo]"
-                              dataType="bool"
-                              name="Scorporo" />
-                            <externalMetadataColumn
-                              refId="Package\DWH LOAD\TBDWAN_ARTICLE\TBDWAN_ARTICLE\Load SRC tables.Outputs[OLE DB Source Output].ExternalColumns[PrezzoCessione]"
-                              dataType="bool"
-                              name="PrezzoCessione" />
-                            <externalMetadataColumn
-                              refId="Package\DWH LOAD\TBDWAN_ARTICLE\TBDWAN_ARTICLE\Load SRC tables.Outputs[OLE DB Source Output].ExternalColumns[I_User]"
-                              dataType="wstr"
-                              length="20"
-                              name="I_User" />
-                            <externalMetadataColumn
-                              refId="Package\DWH LOAD\TBDWAN_ARTICLE\TBDWAN_ARTICLE\Load SRC tables.Outputs[OLE DB Source Output].ExternalColumns[I_Data]"
-                              dataType="dbTimeStamp"
-                              name="I_Data" />
-                            <externalMetadataColumn
-                              refId="Package\DWH LOAD\TBDWAN_ARTICLE\TBDWAN_ARTICLE\Load SRC tables.Outputs[OLE DB Source Output].ExternalColumns[U_User]"
-                              dataType="wstr"
-                              length="20"
-                              name="U_User" />
-                            <externalMetadataColumn
-                              refId="Package\DWH LOAD\TBDWAN_ARTICLE\TBDWAN_ARTICLE\Load SRC tables.Outputs[OLE DB Source Output].ExternalColumns[U_Data]"
-                              dataType="dbTimeStamp"
-                              name="U_Data" />
-                            <externalMetadataColumn
-                              refId="Package\DWH LOAD\TBDWAN_ARTICLE\TBDWAN_ARTICLE\Load SRC tables.Outputs[OLE DB Source Output].ExternalColumns[ID_Commessa]"
-                              dataType="i4"
-                              name="ID_Commessa" />
-                            <externalMetadataColumn
-                              refId="Package\DWH LOAD\TBDWAN_ARTICLE\TBDWAN_ARTICLE\Load SRC tables.Outputs[OLE DB Source Output].ExternalColumns[Tipo_Spesa]"
-                              dataType="i2"
-                              name="Tipo_Spesa" />
-                            <externalMetadataColumn
-                              refId="Package\DWH LOAD\TBDWAN_ARTICLE\TBDWAN_ARTICLE\Load SRC tables.Outputs[OLE DB Source Output].ExternalColumns[Perc_SpeseDoganali]"
-                              dataType="numeric"
-                              name="Perc_SpeseDoganali"
-                              precision="6"
-                              scale="3" />
-                            <externalMetadataColumn
-                              refId="Package\DWH LOAD\TBDWAN_ARTICLE\TBDWAN_ARTICLE\Load SRC tables.Outputs[OLE DB Source Output].ExternalColumns[Ricalcolo_Etichetta]"
-                              dataType="bool"
-                              name="Ricalcolo_Etichetta" />
-                            <externalMetadataColumn
-                              refId="Package\DWH LOAD\TBDWAN_ARTICLE\TBDWAN_ARTICLE\Load SRC tables.Outputs[OLE DB Source Output].ExternalColumns[Percentuale_Etichetta]"
-                              dataType="bool"
-                              name="Percentuale_Etichetta" />
-                            <externalMetadataColumn
-                              refId="Package\DWH LOAD\TBDWAN_ARTICLE\TBDWAN_ARTICLE\Load SRC tables.Outputs[OLE DB Source Output].ExternalColumns[Valore_Etichetta]"
-                              dataType="numeric"
-                              name="Valore_Etichetta"
-                              precision="19"
-                              scale="5" />
-                            <externalMetadataColumn
-                              refId="Package\DWH LOAD\TBDWAN_ARTICLE\TBDWAN_ARTICLE\Load SRC tables.Outputs[OLE DB Source Output].ExternalColumns[UM_Etichetta]"
-                              dataType="wstr"
-                              length="20"
-                              name="UM_Etichetta" />
-                            <externalMetadataColumn
-                              refId="Package\DWH LOAD\TBDWAN_ARTICLE\TBDWAN_ARTICLE\Load SRC tables.Outputs[OLE DB Source Output].ExternalColumns[ProdottoWIP]"
-                              dataType="bool"
-                              name="ProdottoWIP" />
-                            <externalMetadataColumn
-                              refId="Package\DWH LOAD\TBDWAN_ARTICLE\TBDWAN_ARTICLE\Load SRC tables.Outputs[OLE DB Source Output].ExternalColumns[KitLogico]"
-                              dataType="bool"
-                              name="KitLogico" />
-                            <externalMetadataColumn
-                              refId="Package\DWH LOAD\TBDWAN_ARTICLE\TBDWAN_ARTICLE\Load SRC tables.Outputs[OLE DB Source Output].ExternalColumns[Listino_Kit_Inventario]"
-                              dataType="wstr"
-                              length="10"
-                              name="Listino_Kit_Inventario" />
-                            <externalMetadataColumn
-                              refId="Package\DWH LOAD\TBDWAN_ARTICLE\TBDWAN_ARTICLE\Load SRC tables.Outputs[OLE DB Source Output].ExternalColumns[Utilizzo_Intra]"
-                              dataType="wstr"
-                              length="1"
-                              name="Utilizzo_Intra" />
-                            <externalMetadataColumn
-                              refId="Package\DWH LOAD\TBDWAN_ARTICLE\TBDWAN_ARTICLE\Load SRC tables.Outputs[OLE DB Source Output].ExternalColumns[Mod_Erogazione]"
-                              dataType="wstr"
-                              length="1"
-                              name="Mod_Erogazione" />
-                            <externalMetadataColumn
-                              refId="Package\DWH LOAD\TBDWAN_ARTICLE\TBDWAN_ARTICLE\Load SRC tables.Outputs[OLE DB Source Output].ExternalColumns[Elenchi_Intra]"
-                              dataType="wstr"
-                              length="1"
-                              name="Elenchi_Intra" />
-                            <externalMetadataColumn
-                              refId="Package\DWH LOAD\TBDWAN_ARTICLE\TBDWAN_ARTICLE\Load SRC tables.Outputs[OLE DB Source Output].ExternalColumns[C_Anagrafica_Moduli]"
-                              dataType="wstr"
-                              length="10"
-                              name="C_Anagrafica_Moduli" />
-                            <externalMetadataColumn
-                              refId="Package\DWH LOAD\TBDWAN_ARTICLE\TBDWAN_ARTICLE\Load SRC tables.Outputs[OLE DB Source Output].ExternalColumns[CPNP]"
-                              dataType="wstr"
-                              length="50"
-                              name="CPNP" />
-                            <externalMetadataColumn
-                              refId="Package\DWH LOAD\TBDWAN_ARTICLE\TBDWAN_ARTICLE\Load SRC tables.Outputs[OLE DB Source Output].ExternalColumns[CPNP_Data]"
-                              dataType="dbTimeStamp"
-                              name="CPNP_Data" />
-                            <externalMetadataColumn
-                              refId="Package\DWH LOAD\TBDWAN_ARTICLE\TBDWAN_ARTICLE\Load SRC tables.Outputs[OLE DB Source Output].ExternalColumns[Leave_On]"
-                              dataType="bool"
-                              name="Leave_On" />
-                            <externalMetadataColumn
-                              refId="Package\DWH LOAD\TBDWAN_ARTICLE\TBDWAN_ARTICLE\Load SRC tables.Outputs[OLE DB Source Output].ExternalColumns[Rinse_Off]"
-                              dataType="bool"
-                              name="Rinse_Off" />
-                            <externalMetadataColumn
-                              refId="Package\DWH LOAD\TBDWAN_ARTICLE\TBDWAN_ARTICLE\Load SRC tables.Outputs[OLE DB Source Output].ExternalColumns[Servizio_Accessorio]"
-                              dataType="bool"
-                              name="Servizio_Accessorio" />
-                            <externalMetadataColumn
-                              refId="Package\DWH LOAD\TBDWAN_ARTICLE\TBDWAN_ARTICLE\Load SRC tables.Outputs[OLE DB Source Output].ExternalColumns[C_Anagrafica_BU]"
-                              dataType="wstr"
-                              length="20"
-                              name="C_Anagrafica_BU" />
-                            <externalMetadataColumn
-                              refId="Package\DWH LOAD\TBDWAN_ARTICLE\TBDWAN_ARTICLE\Load SRC tables.Outputs[OLE DB Source Output].ExternalColumns[ValoreNonProv]"
-                              dataType="numeric"
-                              name="ValoreNonProv"
-                              precision="19"
-                              scale="5" />
+                              name="row_sts_flg" />
                           </externalMetadataColumns>
                         </output>
                         <output
@@ -2131,6 +1474,11 @@ from
                               length="20"
                               lineageId="Package\DWH LOAD\TBDWAN_ARTICLE\TBDWAN_ARTICLE\Load SRC tables.Outputs[OLE DB Source Error Output].Columns[article_cd]"
                               name="article_cd" />
+                            <outputColumn
+                              refId="Package\DWH LOAD\TBDWAN_ARTICLE\TBDWAN_ARTICLE\Load SRC tables.Outputs[OLE DB Source Error Output].Columns[row_sts_flg]"
+                              dataType="bool"
+                              lineageId="Package\DWH LOAD\TBDWAN_ARTICLE\TBDWAN_ARTICLE\Load SRC tables.Outputs[OLE DB Source Error Output].Columns[row_sts_flg]"
+                              name="row_sts_flg" />
                           </outputColumns>
                           <externalMetadataColumns />
                         </output>
@@ -2161,6 +1509,11 @@ from
                               cachedLength="20"
                               cachedName="Codice_Articolo"
                               lineageId="Package\DWH LOAD\TBDWAN_ARTICLE\TBDWAN_ARTICLE\Load SRC tables.Outputs[OLE DB Source Output].Columns[Codice_Articolo]" />
+                            <inputColumn
+                              refId="Package\DWH LOAD\TBDWAN_ARTICLE\TBDWAN_ARTICLE\Split INS-UPD.Inputs[Conditional Split Input].Columns[row_sts_flg]"
+                              cachedDataType="bool"
+                              cachedName="row_sts_flg"
+                              lineageId="Package\DWH LOAD\TBDWAN_ARTICLE\TBDWAN_ARTICLE\Load SRC tables.Outputs[OLE DB Source Output].Columns[row_sts_flg]" />
                           </inputColumns>
                           <externalMetadataColumns />
                         </input>
@@ -2236,13 +1589,13 @@ from
                               containsID="true"
                               dataType="System.String"
                               description="Specifies the expression. This expression version uses lineage identifiers instead of column names."
-                              name="Expression">![ISNULL](#{Package\DWH LOAD\TBDWAN_ARTICLE\TBDWAN_ARTICLE\Load SRC tables.Outputs[OLE DB Source Output].Columns[article_cd]}) &amp;&amp; [ISNULL](#{Package\DWH LOAD\TBDWAN_ARTICLE\TBDWAN_ARTICLE\Load SRC tables.Outputs[OLE DB Source Output].Columns[Codice_Articolo]})</property>
+                              name="Expression">![ISNULL](#{Package\DWH LOAD\TBDWAN_ARTICLE\TBDWAN_ARTICLE\Load SRC tables.Outputs[OLE DB Source Output].Columns[article_cd]}) &amp;&amp; [ISNULL](#{Package\DWH LOAD\TBDWAN_ARTICLE\TBDWAN_ARTICLE\Load SRC tables.Outputs[OLE DB Source Output].Columns[Codice_Articolo]}) &amp;&amp; #{Package\DWH LOAD\TBDWAN_ARTICLE\TBDWAN_ARTICLE\Load SRC tables.Outputs[OLE DB Source Output].Columns[row_sts_flg]} ==  TRUE </property>
                             <property
                               containsID="true"
                               dataType="System.String"
                               description="Specifies the friendly version of the expression. This expression version uses column names."
                               expressionType="Notify"
-                              name="FriendlyExpression">!ISNULL(article_cd) &amp;&amp; ISNULL(Codice_Articolo)</property>
+                              name="FriendlyExpression">!ISNULL(article_cd) &amp;&amp; ISNULL(Codice_Articolo) &amp;&amp; row_sts_flg ==  TRUE </property>
                             <property
                               dataType="System.Int32"
                               description="Specifies the position of the condition in the list of conditions that the transformation evaluates. The evaluation order is from the lowest to the highest value."
@@ -3155,13 +2508,13 @@ SITE_ID=? and ARTICLE_CD=?</property>
           Id="Package\DWH LOAD\TBDWAN_ARTICLE\Last Upd TBLOG_PACKAGE_TABLE"
           TopLeft="224,413.5" />
         <NodeLayout
-          Size="179,42"
-          Id="Package\DWH LOAD\TBDWAN_ARTICLE\TBDWAN_ARTICLE"
-          TopLeft="259,311.5" />
-        <NodeLayout
           Size="155,42"
           Id="Package\DWH LOAD\TBDWAN_ARTICLE\MAX TABLE ID"
           TopLeft="278,209.5" />
+        <NodeLayout
+          Size="179,42"
+          Id="Package\DWH LOAD\TBDWAN_ARTICLE\TBDWAN_ARTICLE"
+          TopLeft="259,311.5" />
         <EdgeLayout
           Id="Package\DWH LOAD\TBDWAN_ARTICLE.PrecedenceConstraints[Constraint]"
           TopLeft="352,353.5">
@@ -3279,15 +2632,15 @@ SITE_ID=? and ARTICLE_CD=?</property>
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="504,512"
-          Size="504,554"
+          PanelSize="504,614"
+          Size="504,656"
           Id="Package\DWH LOAD\TBDWAN_ARTICLE"
           TopLeft="5.5,5.5" />
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="515,614"
-          Size="515,658"
+          PanelSize="515,716"
+          Size="515,760"
           Id="Package\DWH LOAD"
           TopLeft="1526,255" />
         <NodeLayout
@@ -3330,30 +2683,30 @@ SITE_ID=? and ARTICLE_CD=?</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 1]"
-          TopLeft="2041,683">
+          TopLeft="2041,760.333333333333">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="456.952380952382,193.492063492063"
+              EndConnector="456.95238095238,116.15873015873"
               Start="0,0"
-              End="449.452380952382,193.492063492063">
+              End="449.45238095238,116.15873015873">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="179.460435475306,0" />
+                    End="179.35694277711,0" />
                   <mssgle:CubicBezierSegment
-                    Point1="179.460435475306,0"
-                    Point2="183.460435475306,0"
-                    Point3="183.460435475306,4" />
+                    Point1="179.35694277711,0"
+                    Point2="183.35694277711,0"
+                    Point3="183.35694277711,4" />
                   <mssgle:LineSegment
-                    End="183.460435475306,189.492063492063" />
+                    End="183.35694277711,112.15873015873" />
                   <mssgle:CubicBezierSegment
-                    Point1="183.460435475306,189.492063492063"
-                    Point2="183.460435475306,193.492063492063"
-                    Point3="187.460435475306,193.492063492063" />
+                    Point1="183.35694277711,112.15873015873"
+                    Point2="183.35694277711,116.15873015873"
+                    Point3="187.35694277711,116.15873015873" />
                   <mssgle:LineSegment
-                    End="449.452380952382,193.492063492063" />
+                    End="449.45238095238,116.15873015873" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -3368,26 +2721,26 @@ SITE_ID=? and ARTICLE_CD=?</property>
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-476.063492063493,81.2857142857144"
+              EndConnector="-476.06349206349,119.952380952381"
               Start="0,0"
-              End="-468.563492063493,81.2857142857144">
+              End="-468.56349206349,119.952380952381">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="-280.930194134656,0" />
+                    End="-281.038015206081,0" />
                   <mssgle:CubicBezierSegment
-                    Point1="-280.930194134656,0"
-                    Point2="-284.930194134656,0"
-                    Point3="-284.930194134656,4" />
+                    Point1="-281.038015206081,0"
+                    Point2="-285.038015206081,0"
+                    Point3="-285.038015206081,4" />
                   <mssgle:LineSegment
-                    End="-284.930194134656,77.2857142857144" />
+                    End="-285.038015206081,115.952380952381" />
                   <mssgle:CubicBezierSegment
-                    Point1="-284.930194134656,77.2857142857144"
-                    Point2="-284.930194134656,81.2857142857144"
-                    Point3="-288.930194134656,81.2857142857144" />
+                    Point1="-285.038015206081,115.952380952381"
+                    Point2="-285.038015206081,119.952380952381"
+                    Point3="-289.038015206081,119.952380952381" />
                   <mssgle:LineSegment
-                    End="-468.563492063493,81.2857142857144" />
+                    End="-468.56349206349,119.952380952381" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -3471,9 +2824,57 @@ SITE_ID=? and ARTICLE_CD=?</property>
           Id="Package\DWH LOAD\TBDWAN_ARTICLE\TBDWAN_ARTICLE\Add Technical Fields"
           TopLeft="277,188" />
         <NodeLayout
+          Size="153,42"
+          Id="Package\DWH LOAD\TBDWAN_ARTICLE\TBDWAN_ARTICLE\DEL TRG table"
+          TopLeft="681,518" />
+        <NodeLayout
           Size="162,42"
           Id="Package\DWH LOAD\TBDWAN_ARTICLE\TBDWAN_ARTICLE\Load SRC tables"
           TopLeft="154,38" />
+        <NodeLayout
+          Size="152,42"
+          Id="Package\DWH LOAD\TBDWAN_ARTICLE\TBDWAN_ARTICLE\UPD TRG table"
+          TopLeft="425,516" />
+        <NodeLayout
+          Size="149,42"
+          Id="Package\DWH LOAD\TBDWAN_ARTICLE\TBDWAN_ARTICLE\Split INS-UPD"
+          TopLeft="317,343" />
+        <EdgeLayout
+          Id="Package\DWH LOAD\TBDWAN_ARTICLE\TBDWAN_ARTICLE.Paths[UPD]"
+          TopLeft="391.5,385">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="109.5,131"
+              Start="0,0"
+              End="109.5,123.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,61.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,61.5"
+                    Point2="0,65.5"
+                    Point3="4,65.5" />
+                  <mssgle:LineSegment
+                    End="105.5,65.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="105.5,65.5"
+                    Point2="109.5,65.5"
+                    Point3="109.5,69.5" />
+                  <mssgle:LineSegment
+                    End="109.5,123.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="44.80484375,70.5,19.8903125,9.421875"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
         <EdgeLayout
           Id="Package\DWH LOAD\TBDWAN_ARTICLE\TBDWAN_ARTICLE.Paths[OLE DB Source Output]"
           TopLeft="235,80">
@@ -3508,158 +2909,110 @@ SITE_ID=? and ARTICLE_CD=?</property>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="149,42"
-          Id="Package\DWH LOAD\TBDWAN_ARTICLE\TBDWAN_ARTICLE\Split INS-UPD"
-          TopLeft="317,342" />
+        <EdgeLayout
+          Id="Package\DWH LOAD\TBDWAN_ARTICLE\TBDWAN_ARTICLE.Paths[INS]"
+          TopLeft="356.25,385">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-148.25,131"
+              Start="0,0"
+              End="-148.25,123.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,41.2021978021978" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,41.2021978021978"
+                    Point2="0,45.2021978021978"
+                    Point3="-4,45.2021978021978" />
+                  <mssgle:LineSegment
+                    End="-144.25,45.2021978021978" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-144.25,45.2021978021978"
+                    Point2="-148.25,45.2021978021978"
+                    Point3="-148.25,49.2021978021978" />
+                  <mssgle:LineSegment
+                    End="-148.25,123.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-82.75908203125,50.2021978021978,17.2681640625,9.5341796875"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DWH LOAD\TBDWAN_ARTICLE\TBDWAN_ARTICLE.Paths[DEL]"
+          TopLeft="426.75,385">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="330.75,133"
+              Start="0,0"
+              End="330.75,125.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,41.8923076923077" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,41.8923076923077"
+                    Point2="0,45.8923076923077"
+                    Point3="4,45.8923076923077" />
+                  <mssgle:LineSegment
+                    End="326.75,45.8923076923077" />
+                  <mssgle:CubicBezierSegment
+                    Point1="326.75,45.8923076923077"
+                    Point2="330.75,45.8923076923077"
+                    Point3="330.75,49.8923076923077" />
+                  <mssgle:LineSegment
+                    End="330.75,125.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="156.07306640625,50.8923076923077,18.6038671875,9.2705078125"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
         <EdgeLayout
           Id="Package\DWH LOAD\TBDWAN_ARTICLE\TBDWAN_ARTICLE.Paths[Derived Column Output]"
           TopLeft="367.5,230">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="24,112"
+              EndConnector="24,113"
               Start="0,0"
-              End="24,104.5">
+              End="24,105.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,52" />
+                    End="0,52.5" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,52"
-                    Point2="0,56"
-                    Point3="4,56" />
+                    Point1="0,52.5"
+                    Point2="0,56.5"
+                    Point3="4,56.5" />
                   <mssgle:LineSegment
-                    End="20,56" />
+                    End="20,56.5" />
                   <mssgle:CubicBezierSegment
-                    Point1="20,56"
-                    Point2="24,56"
-                    Point3="24,60" />
+                    Point1="20,56.5"
+                    Point2="24,56.5"
+                    Point3="24,60.5" />
                   <mssgle:LineSegment
-                    End="24,104.5" />
+                    End="24,105.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\DWH LOAD\TBDWAN_ARTICLE\TBDWAN_ARTICLE.Paths[INS]"
-          TopLeft="368,384">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-160,132"
-              Start="0,0"
-              End="-160,124.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,49.6414342629482" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,49.6414342629482"
-                    Point2="0,53.6414342629482"
-                    Point3="-4,53.6414342629482" />
-                  <mssgle:LineSegment
-                    End="-156,53.6414342629482" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-156,53.6414342629482"
-                    Point2="-160,53.6414342629482"
-                    Point3="-160,57.6414342629482" />
-                  <mssgle:LineSegment
-                    End="-160,124.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-88.63408203125,58.6414342629482,17.2681640625,9.5341796875"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="152,42"
-          Id="Package\DWH LOAD\TBDWAN_ARTICLE\TBDWAN_ARTICLE\UPD TRG table"
-          TopLeft="425,516" />
-        <EdgeLayout
-          Id="Package\DWH LOAD\TBDWAN_ARTICLE\TBDWAN_ARTICLE.Paths[UPD]"
-          TopLeft="415,384">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="86,132"
-              Start="0,0"
-              End="86,124.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,49.6414342629482" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,49.6414342629482"
-                    Point2="0,53.6414342629482"
-                    Point3="4,53.6414342629482" />
-                  <mssgle:LineSegment
-                    End="82,53.6414342629482" />
-                  <mssgle:CubicBezierSegment
-                    Point1="82,53.6414342629482"
-                    Point2="86,53.6414342629482"
-                    Point3="86,57.6414342629482" />
-                  <mssgle:LineSegment
-                    End="86,124.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="33.05484375,58.6414342629482,19.8903125,9.421875"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="153,42"
-          Id="Package\DWH LOAD\TBDWAN_ARTICLE\TBDWAN_ARTICLE\DEL TRG table"
-          TopLeft="681,518" />
-        <EdgeLayout
-          Id="Package\DWH LOAD\TBDWAN_ARTICLE\TBDWAN_ARTICLE.Paths[DEL]"
-          TopLeft="426.75,384">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="330.75,134"
-              Start="0,0"
-              End="330.75,126.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,42.2373626373626" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,42.2373626373626"
-                    Point2="0,46.2373626373626"
-                    Point3="4,46.2373626373626" />
-                  <mssgle:LineSegment
-                    End="326.75,46.2373626373626" />
-                  <mssgle:CubicBezierSegment
-                    Point1="326.75,46.2373626373626"
-                    Point2="330.75,46.2373626373626"
-                    Point3="330.75,50.2373626373626" />
-                  <mssgle:LineSegment
-                    End="330.75,126.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="156.07306640625,51.2373626373626,18.6038671875,9.2705078125"
-              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
