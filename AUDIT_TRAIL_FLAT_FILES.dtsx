@@ -11,8 +11,8 @@
   DTS:LocaleID="2064"
   DTS:ObjectName="AUDIT_TRAIL_FLAT_FILES"
   DTS:PackageType="5"
-  DTS:VersionBuild="8"
-  DTS:VersionGUID="{6B89618A-3207-46FD-BF18-BF5CBE34AFCB}">
+  DTS:VersionBuild="9"
+  DTS:VersionGUID="{A6E8532B-4BB3-497A-A690-C95F08C0CE50}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables />
