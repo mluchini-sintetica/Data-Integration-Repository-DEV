@@ -11,27 +11,10 @@
   DTS:LocaleID="2064"
   DTS:ObjectName="PARCEL_MFG_STG"
   DTS:PackageType="5"
-  DTS:VersionBuild="235"
-  DTS:VersionGUID="{E8616CAA-313B-4AF6-92EB-D9C2C9603406}">
+  DTS:VersionBuild="239"
+  DTS:VersionGUID="{EC6C984B-92BF-482F-8AF0-0224524DCD27}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
-  <DTS:ConnectionManagers>
-    <DTS:ConnectionManager
-      DTS:refId="Package.ConnectionManagers[192.168.200.19.Parcel2008_SINT.PARCEL_DIR_R]"
-      DTS:CreationName="OLEDB"
-      DTS:DTSID="{FBAB268E-906B-45AE-AC8B-D69BCF8CA701}"
-      DTS:ObjectName="192.168.200.19.Parcel2008_SINT.PARCEL_DIR_R">
-      <DTS:ObjectData>
-        <DTS:ConnectionManager
-          DTS:ConnectionString="Data Source=192.168.200.19;User ID=PARCEL_DIR_R;Initial Catalog=Parcel2008_SINT;Provider=SQLNCLI11.1;Persist Security Info=True;Auto Translate=False;">
-          <DTS:Password
-            DTS:Name="Password"
-            Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAZ1W4zPu86k256zsBij2bAQAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAAD3rJ4OTdr0H/uABadGATWOAAAAAASAAACgAAAAEAAAANZf0YQCH0qvmyjTgUbtTSggAAAAJrpjCu/V5Dmp5MOfVuVxLAwEWJFXT52nb8eW6xV023oUAAAArqjxe+CAnZXMF6fuPNr1kdDVcZQ</DTS:Password>
-        </DTS:ConnectionManager>
-      </DTS:ObjectData>
-    </DTS:ConnectionManager>
-  </DTS:ConnectionManagers>
   <DTS:PackageParameters>
     <DTS:PackageParameter
       DTS:CreationName=""
@@ -1589,8 +1572,8 @@
                       <connections>
                         <connection
                           refId="Package\STAGING LOAD\TBST_PRC_ANAGRAFICA_LOTTI\TBST_PRC_ANAGRAFICA_LOTTI\OLE DB Source.Connections[OleDbConnection]"
-                          connectionManagerID="Package.ConnectionManagers[192.168.200.19.Parcel2008_SINT.PARCEL_DIR_R]"
-                          connectionManagerRefId="Package.ConnectionManagers[192.168.200.19.Parcel2008_SINT.PARCEL_DIR_R]"
+                          connectionManagerID="{FBAB268E-906B-45AE-AC8B-D69BCF8CA701}:external"
+                          connectionManagerRefId="Project.ConnectionManagers[192.168.200.19.Parcel2008_SINT.PARCEL_DIR_R]"
                           description="The OLE DB runtime connection used to access the database."
                           name="OleDbConnection" />
                       </connections>
@@ -6335,8 +6318,8 @@
                       <connections>
                         <connection
                           refId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\TBST_PRC_ARTICOLO\OLE DB Source.Connections[OleDbConnection]"
-                          connectionManagerID="Package.ConnectionManagers[192.168.200.19.Parcel2008_SINT.PARCEL_DIR_R]"
-                          connectionManagerRefId="Package.ConnectionManagers[192.168.200.19.Parcel2008_SINT.PARCEL_DIR_R]"
+                          connectionManagerID="{FBAB268E-906B-45AE-AC8B-D69BCF8CA701}:external"
+                          connectionManagerRefId="Project.ConnectionManagers[192.168.200.19.Parcel2008_SINT.PARCEL_DIR_R]"
                           description="The OLE DB runtime connection used to access the database."
                           name="OleDbConnection" />
                       </connections>
@@ -9797,13 +9780,13 @@
           Id="Package\STAGING LOAD\TBST_PRC_ANAGRAFICA_LOTTI\Last Upd TBLOG_PACKAGE_TABLE"
           TopLeft="224,413.5" />
         <NodeLayout
-          Size="251,42"
-          Id="Package\STAGING LOAD\TBST_PRC_ANAGRAFICA_LOTTI\TBST_PRC_ANAGRAFICA_LOTTI"
-          TopLeft="259,311.5" />
-        <NodeLayout
           Size="155,42"
           Id="Package\STAGING LOAD\TBST_PRC_ANAGRAFICA_LOTTI\MAX TABLE ID"
           TopLeft="278,209.5" />
+        <NodeLayout
+          Size="251,42"
+          Id="Package\STAGING LOAD\TBST_PRC_ANAGRAFICA_LOTTI\TBST_PRC_ANAGRAFICA_LOTTI"
+          TopLeft="259,311.5" />
         <NodeLayout
           Size="212,42"
           Id="Package\STAGING LOAD\TBST_PRC_ANAGRAFICA_LOTTI\Truncate STG TRG TABLE"
@@ -10034,13 +10017,13 @@
           Id="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Last Upd TBLOG_PACKAGE_TABLE"
           TopLeft="224,413.5" />
         <NodeLayout
-          Size="199,42"
-          Id="Package\STAGING LOAD\TBST_PRC_ARTICOLO\TBST_PRC_ARTICOLO"
-          TopLeft="259,311.5" />
-        <NodeLayout
           Size="155,42"
           Id="Package\STAGING LOAD\TBST_PRC_ARTICOLO\MAX TABLE ID"
           TopLeft="278,209.5" />
+        <NodeLayout
+          Size="199,42"
+          Id="Package\STAGING LOAD\TBST_PRC_ARTICOLO\TBST_PRC_ARTICOLO"
+          TopLeft="259,311.5" />
         <NodeLayout
           Size="212,42"
           Id="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Truncate STG TRG TABLE"
@@ -10248,9 +10231,9 @@
           TopLeft="559.5,5.5" />
         <ContainerLayout
           HeaderHeight="43"
-          IsExpanded="True"
+          IsExpanded="False"
           PanelSize="1455,996"
-          Size="1455,1039"
+          Size="1455,43"
           Id="Package\STAGING LOAD"
           TopLeft="206,255" />
         <NodeLayout
@@ -10281,30 +10264,30 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 1]"
-          TopLeft="933.5,1294">
+          TopLeft="933.5,298">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-192.166666666667,-680.888888888889"
+              EndConnector="-192.166666666667,315.111111111111"
               Start="0,0"
-              End="-192.166666666667,-673.388888888889">
+              End="-192.166666666667,307.611111111111">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,-336.444444444445" />
+                    End="0,153.555555555555" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,-336.444444444445"
-                    Point2="0,-340.444444444445"
-                    Point3="-4,-340.444444444445" />
+                    Point1="0,153.555555555555"
+                    Point2="0,157.555555555555"
+                    Point3="-4,157.555555555555" />
                   <mssgle:LineSegment
-                    End="-188.166666666667,-340.444444444445" />
+                    End="-188.166666666667,157.555555555555" />
                   <mssgle:CubicBezierSegment
-                    Point1="-188.166666666667,-340.444444444445"
-                    Point2="-192.166666666667,-340.444444444445"
-                    Point3="-192.166666666667,-344.444444444445" />
+                    Point1="-188.166666666667,157.555555555555"
+                    Point2="-192.166666666667,157.555555555555"
+                    Point3="-192.166666666667,161.555555555555" />
                   <mssgle:LineSegment
-                    End="-192.166666666667,-673.388888888889" />
+                    End="-192.166666666667,307.611111111111" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -10412,7 +10395,7 @@
     design-time-name="Package\STAGING LOAD\TBST_PRC_ANAGRAFICA_LOTTI\TBST_PRC_ANAGRAFICA_LOTTI">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="157,42"
           Id="Package\STAGING LOAD\TBST_PRC_ANAGRAFICA_LOTTI\TBST_PRC_ANAGRAFICA_LOTTI\OLE DB Source"
@@ -10448,7 +10431,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -10482,7 +10467,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -10504,7 +10491,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -10552,23 +10541,23 @@
     design-time-name="Package\STAGING LOAD\TBST_PRC_ARTICOLO\TBST_PRC_ARTICOLO">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
-        <NodeLayout
-          Size="157,42"
-          Id="Package\STAGING LOAD\TBST_PRC_ARTICOLO\TBST_PRC_ARTICOLO\OLE DB Source"
-          TopLeft="288,56" />
-        <NodeLayout
-          Size="177,42"
-          Id="Package\STAGING LOAD\TBST_PRC_ARTICOLO\TBST_PRC_ARTICOLO\OLE DB Destination"
-          TopLeft="276,392" />
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="161,42"
           Id="Package\STAGING LOAD\TBST_PRC_ARTICOLO\TBST_PRC_ARTICOLO\Data Conversion"
           TopLeft="284,156" />
         <NodeLayout
+          Size="177,42"
+          Id="Package\STAGING LOAD\TBST_PRC_ARTICOLO\TBST_PRC_ARTICOLO\OLE DB Destination"
+          TopLeft="276,392" />
+        <NodeLayout
           Size="181,42"
           Id="Package\STAGING LOAD\TBST_PRC_ARTICOLO\TBST_PRC_ARTICOLO\Add Technical Fields"
           TopLeft="282,271" />
+        <NodeLayout
+          Size="157,42"
+          Id="Package\STAGING LOAD\TBST_PRC_ARTICOLO\TBST_PRC_ARTICOLO\OLE DB Source"
+          TopLeft="288,56" />
         <EdgeLayout
           Id="Package\STAGING LOAD\TBST_PRC_ARTICOLO\TBST_PRC_ARTICOLO.Paths[OLE DB Source Output]"
           TopLeft="365.5,98">
@@ -10588,7 +10577,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -10622,7 +10613,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -10656,14 +10649,16 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\STAGING LOAD\TBST_PRC_ARTICOLO\TBST_PRC_ARTICOLO\OLE DB Source">
+    design-time-name="Package\STAGING LOAD\TBST_PRC_ARTICOLO\TBST_PRC_ARTICOLO\OLE DB Destination">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -10676,7 +10671,7 @@
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\STAGING LOAD\TBST_PRC_ARTICOLO\TBST_PRC_ARTICOLO\OLE DB Destination">
+    design-time-name="Package\STAGING LOAD\TBST_PRC_ARTICOLO\TBST_PRC_ARTICOLO\OLE DB Source">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>

@@ -1,0 +1,14 @@
+﻿<?xml version="1.0"?>
+<DTS:ConnectionManager xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:ObjectName="192.168.200.19.Parcel2008_SINT.PARCEL_DIR_R"
+  DTS:DTSID="{FBAB268E-906B-45AE-AC8B-D69BCF8CA701}"
+  DTS:CreationName="OLEDB">
+  <DTS:ObjectData>
+    <DTS:ConnectionManager
+      DTS:ConnectionString="Data Source=192.168.200.19;User ID=PARCEL_DIR_R;Initial Catalog=Parcel2008_SINT;Provider=SQLNCLI11.1;Persist Security Info=True;Auto Translate=False;">
+      <DTS:Password
+        DTS:Name="Password"
+        Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAZ1W4zPu86k256zsBij2bAQAAAAACAAAAAAADZgAAwAAAABAAAAC9s9OPimJ3vLBFdSP15wmmAAAAAASAAACgAAAAEAAAADTH/SyNG+P28VrxcS3sUSB4AAAAyWACIgiZC9PghGLivJuXeypU4kwVDth4I8XgdfvMYSys6s41N8ZyO4MjaULi0Ul45ryeIPMYbFeBndJaE1kcSdi9nhFd2F3lS0PibpQqQCWRTrXvud6OI34s/o9BMqv+wB+HjqDVoFxWfJGElPuUFlBI5y/JwLUCFAAAAOwG5bNEsFhrkVm6UY2+RlhNkCne</DTS:Password>
+    </DTS:ConnectionManager>
+  </DTS:ObjectData>
+</DTS:ConnectionManager>
