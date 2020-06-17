@@ -11,8 +11,8 @@
   DTS:LocaleID="2064"
   DTS:ObjectName="AUDIT_TRAIL_DWFT"
   DTS:PackageType="5"
-  DTS:VersionBuild="437"
-  DTS:VersionGUID="{1E09EC84-F03D-4519-A708-AB73E1E854DA}">
+  DTS:VersionBuild="441"
+  DTS:VersionGUID="{13B777F3-B1F5-4BAC-85CE-627D3C7A1F92}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -27,7 +27,7 @@
           <DTS:Password
             DTS:Name="Password"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAZ1W4zPu86k256zsBij2bAQAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAABb6SABYcmXYaIgaU6CZFuFAAAAAASAAACgAAAAEAAAAMfmvy7CpAPHuroTL9yecmkgAAAAnV4PLSK8RR9eZ17OGxevP0bRTZ6dUVBBJV2TtTXz1CwUAAAAiXawf1tzhDJ+T8VDSr9x4TqgUPY</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAZ1W4zPu86k256zsBij2bAQAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAADeTFZ1zZPy/TG619aSm4RpAAAAAASAAACgAAAAEAAAAOhjp/0aUi6XPOH3jd1cs98gAAAAm3geiYLOK7NaL6+qkjtiP2WWIvenxHd/O7aqenb4wtwUAAAAq7WV8HdaCzQs8RPask7eOddpMQA</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -199,7 +199,7 @@
       DTS:LocaleID="-1"
       DTS:ObjectName="Assign SITE_ID"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="1">
+      DTS:ThreadHint="0">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -227,7 +227,7 @@
       DTS:LocaleID="-1"
       DTS:ObjectName="Assign SOURCE_SYSTEM_ID"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="0">
+      DTS:ThreadHint="1">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -308,2163 +308,6 @@
                     SQLTask:ResultName="TABLE_TARGET_CD"
                     SQLTask:DtsVariableName="User::out_TABLE_TARGET_CD" />
                 </SQLTask:SqlTaskData>
-              </DTS:ObjectData>
-            </DTS:Executable>
-            <DTS:Executable
-              DTS:refId="Package\DWH LOAD\TBDWFT_AUDIT_TRAIL_EQUIP\Brevetti BM398 ins"
-              DTS:CreationName="Microsoft.Pipeline"
-              DTS:Description="Data Flow Task"
-              DTS:DTSID="{1A2C11D4-E457-49C1-830A-738CB3A9D683}"
-              DTS:ExecutableType="Microsoft.Pipeline"
-              DTS:LocaleID="-1"
-              DTS:ObjectName="Brevetti BM398 ins"
-              DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
-              <DTS:Variables>
-                <DTS:Variable
-                  DTS:CreationName=""
-                  DTS:Description="Brevetti BH-S600 serial name, refer to TBDWMN_PRODUCTION_MODEL"
-                  DTS:DTSID="{B741C802-7B34-45B0-BF8E-1DA3111B2E01}"
-                  DTS:IncludeInDebugDump="2345"
-                  DTS:Namespace="User"
-                  DTS:ObjectName="in_MACHINE_SERIAL_CD">
-                  <DTS:VariableValue
-                    DTS:DataType="8">BM398</DTS:VariableValue>
-                </DTS:Variable>
-              </DTS:Variables>
-              <DTS:ObjectData>
-                <pipeline
-                  version="1">
-                  <components>
-                    <component
-                      refId="Package\DWH LOAD\TBDWFT_AUDIT_TRAIL_EQUIP\Brevetti BM398 ins\Add Technical Fields and renaming"
-                      componentClassID="Microsoft.DerivedColumn"
-                      contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
-                      description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
-                      name="Add Technical Fields and renaming"
-                      usesDispositions="true">
-                      <inputs>
-                        <input
-                          refId="Package\DWH LOAD\TBDWFT_AUDIT_TRAIL_EQUIP\Brevetti BM398 ins\Add Technical Fields and renaming.Inputs[Derived Column Input]"
-                          description="Input to the Derived Column Transformation"
-                          name="Derived Column Input">
-                          <inputColumns>
-                            <inputColumn
-                              refId="Package\DWH LOAD\TBDWFT_AUDIT_TRAIL_EQUIP\Brevetti BM398 ins\Add Technical Fields and renaming.Inputs[Derived Column Input].Columns[SOURCE_COUNTER_ID]"
-                              cachedDataType="i4"
-                              cachedName="Counter"
-                              errorOrTruncationOperation="Computation"
-                              errorRowDisposition="FailComponent"
-                              lineageId="Package\DWH LOAD\TBDWFT_AUDIT_TRAIL_EQUIP\Brevetti BM398 ins\BM398.Outputs[Flat File Source Output].Columns[Counter]"
-                              name="SOURCE_COUNTER_ID"
-                              truncationRowDisposition="FailComponent"
-                              usageType="readWrite">
-                              <properties>
-                                <property
-                                  containsID="true"
-                                  dataType="System.String"
-                                  description="Derived Column Expression"
-                                  name="Expression">#{Package\DWH LOAD\TBDWFT_AUDIT_TRAIL_EQUIP\Brevetti BM398 ins\BM398.Outputs[Flat File Source Output].Columns[Counter]}</property>
-                                <property
-                                  containsID="true"
-                                  dataType="System.String"
-                                  description="Derived Column Friendly Expression"
-                                  expressionType="Notify"
-                                  name="FriendlyExpression">SOURCE_COUNTER_ID</property>
-                              </properties>
-                            </inputColumn>
-                            <inputColumn
-                              refId="Package\DWH LOAD\TBDWFT_AUDIT_TRAIL_EQUIP\Brevetti BM398 ins\Add Technical Fields and renaming.Inputs[Derived Column Input].Columns[SOURCE_EQUIPMENT_ID]"
-                              cachedDataType="i4"
-                              cachedName="SystemID"
-                              errorOrTruncationOperation="Computation"
-                              errorRowDisposition="FailComponent"
-                              lineageId="Package\DWH LOAD\TBDWFT_AUDIT_TRAIL_EQUIP\Brevetti BM398 ins\BM398.Outputs[Flat File Source Output].Columns[SystemID]"
-                              name="SOURCE_EQUIPMENT_ID"
-                              truncationRowDisposition="FailComponent"
-                              usageType="readWrite">
-                              <properties>
-                                <property
-                                  containsID="true"
-                                  dataType="System.String"
-                                  description="Derived Column Expression"
-                                  name="Expression">#{Package\DWH LOAD\TBDWFT_AUDIT_TRAIL_EQUIP\Brevetti BM398 ins\BM398.Outputs[Flat File Source Output].Columns[SystemID]}</property>
-                                <property
-                                  containsID="true"
-                                  dataType="System.String"
-                                  description="Derived Column Friendly Expression"
-                                  expressionType="Notify"
-                                  name="FriendlyExpression">SOURCE_EQUIPMENT_ID</property>
-                              </properties>
-                            </inputColumn>
-                            <inputColumn
-                              refId="Package\DWH LOAD\TBDWFT_AUDIT_TRAIL_EQUIP\Brevetti BM398 ins\Add Technical Fields and renaming.Inputs[Derived Column Input].Columns[DATE_DT]"
-                              cachedDataType="date"
-                              cachedName="Time"
-                              errorOrTruncationOperation="Computation"
-                              errorRowDisposition="FailComponent"
-                              lineageId="Package\DWH LOAD\TBDWFT_AUDIT_TRAIL_EQUIP\Brevetti BM398 ins\BM398.Outputs[Flat File Source Output].Columns[Time]"
-                              name="DATE_DT"
-                              truncationRowDisposition="FailComponent"
-                              usageType="readWrite">
-                              <properties>
-                                <property
-                                  containsID="true"
-                                  dataType="System.String"
-                                  description="Derived Column Expression"
-                                  name="Expression">#{Package\DWH LOAD\TBDWFT_AUDIT_TRAIL_EQUIP\Brevetti BM398 ins\BM398.Outputs[Flat File Source Output].Columns[Time]}</property>
-                                <property
-                                  containsID="true"
-                                  dataType="System.String"
-                                  description="Derived Column Friendly Expression"
-                                  expressionType="Notify"
-                                  name="FriendlyExpression">DATE_DT</property>
-                              </properties>
-                            </inputColumn>
-                            <inputColumn
-                              refId="Package\DWH LOAD\TBDWFT_AUDIT_TRAIL_EQUIP\Brevetti BM398 ins\Add Technical Fields and renaming.Inputs[Derived Column Input].Columns[USER_DESC]"
-                              cachedDataType="wstr"
-                              cachedLength="100"
-                              cachedName="User"
-                              errorOrTruncationOperation="Computation"
-                              errorRowDisposition="FailComponent"
-                              lineageId="Package\DWH LOAD\TBDWFT_AUDIT_TRAIL_EQUIP\Brevetti BM398 ins\BM398.Outputs[Flat File Source Output].Columns[User]"
-                              name="USER_DESC"
-                              truncationRowDisposition="FailComponent"
-                              usageType="readWrite">
-                              <properties>
-                                <property
-                                  containsID="true"
-                                  dataType="System.String"
-                                  description="Derived Column Expression"
-                                  name="Expression">#{Package\DWH LOAD\TBDWFT_AUDIT_TRAIL_EQUIP\Brevetti BM398 ins\BM398.Outputs[Flat File Source Output].Columns[User]}</property>
-                                <property
-                                  containsID="true"
-                                  dataType="System.String"
-                                  description="Derived Column Friendly Expression"
-                                  expressionType="Notify"
-                                  name="FriendlyExpression">USER_DESC</property>
-                              </properties>
-                            </inputColumn>
-                            <inputColumn
-                              refId="Package\DWH LOAD\TBDWFT_AUDIT_TRAIL_EQUIP\Brevetti BM398 ins\Add Technical Fields and renaming.Inputs[Derived Column Input].Columns[MESSAGE_DESC]"
-                              cachedDataType="wstr"
-                              cachedLength="4000"
-                              cachedName="Message"
-                              errorOrTruncationOperation="Computation"
-                              errorRowDisposition="FailComponent"
-                              lineageId="Package\DWH LOAD\TBDWFT_AUDIT_TRAIL_EQUIP\Brevetti BM398 ins\BM398.Outputs[Flat File Source Output].Columns[Message]"
-                              name="MESSAGE_DESC"
-                              truncationRowDisposition="FailComponent"
-                              usageType="readWrite">
-                              <properties>
-                                <property
-                                  containsID="true"
-                                  dataType="System.String"
-                                  description="Derived Column Expression"
-                                  name="Expression">#{Package\DWH LOAD\TBDWFT_AUDIT_TRAIL_EQUIP\Brevetti BM398 ins\BM398.Outputs[Flat File Source Output].Columns[Message]}</property>
-                                <property
-                                  containsID="true"
-                                  dataType="System.String"
-                                  description="Derived Column Friendly Expression"
-                                  expressionType="Notify"
-                                  name="FriendlyExpression">MESSAGE_DESC</property>
-                              </properties>
-                            </inputColumn>
-                          </inputColumns>
-                          <externalMetadataColumns />
-                        </input>
-                      </inputs>
-                      <outputs>
-                        <output
-                          refId="Package\DWH LOAD\TBDWFT_AUDIT_TRAIL_EQUIP\Brevetti BM398 ins\Add Technical Fields and renaming.Outputs[Derived Column Output]"
-                          description="Default Output of the Derived Column Transformation"
-                          exclusionGroup="1"
-                          name="Derived Column Output"
-                          synchronousInputId="Package\DWH LOAD\TBDWFT_AUDIT_TRAIL_EQUIP\Brevetti BM398 ins\Add Technical Fields and renaming.Inputs[Derived Column Input]">
-                          <outputColumns>
-                            <outputColumn
-                              refId="Package\DWH LOAD\TBDWFT_AUDIT_TRAIL_EQUIP\Brevetti BM398 ins\Add Technical Fields and renaming.Outputs[Derived Column Output].Columns[join_field]"
-                              dataType="i4"
-                              errorOrTruncationOperation="Computation"
-                              errorRowDisposition="FailComponent"
-                              lineageId="Package\DWH LOAD\TBDWFT_AUDIT_TRAIL_EQUIP\Brevetti BM398 ins\Add Technical Fields and renaming.Outputs[Derived Column Output].Columns[join_field]"
-                              name="join_field"
-                              truncationRowDisposition="FailComponent">
-                              <properties>
-                                <property
-                                  containsID="true"
-                                  dataType="System.String"
-                                  description="Derived Column Expression"
-                                  name="Expression">1</property>
-                                <property
-                                  containsID="true"
-                                  dataType="System.String"
-                                  description="Derived Column Friendly Expression"
-                                  expressionType="Notify"
-                                  name="FriendlyExpression">1</property>
-                              </properties>
-                            </outputColumn>
-                            <outputColumn
-                              refId="Package\DWH LOAD\TBDWFT_AUDIT_TRAIL_EQUIP\Brevetti BM398 ins\Add Technical Fields and renaming.Outputs[Derived Column Output].Columns[TBLOG_PACKAGE_ID]"
-                              dataType="i4"
-                              errorOrTruncationOperation="Computation"
-                              errorRowDisposition="FailComponent"
-                              lineageId="Package\DWH LOAD\TBDWFT_AUDIT_TRAIL_EQUIP\Brevetti BM398 ins\Add Technical Fields and renaming.Outputs[Derived Column Output].Columns[TBLOG_PACKAGE_ID]"
-                              name="TBLOG_PACKAGE_ID"
-                              truncationRowDisposition="FailComponent">
-                              <properties>
-                                <property
-                                  containsID="true"
-                                  dataType="System.String"
-                                  description="Derived Column Expression"
-                                  name="Expression">@[User::out_MAX_ID]</property>
-                                <property
-                                  containsID="true"
-                                  dataType="System.String"
-                                  description="Derived Column Friendly Expression"
-                                  expressionType="Notify"
-                                  name="FriendlyExpression">@[User::out_MAX_ID]</property>
-                              </properties>
-                            </outputColumn>
-                            <outputColumn
-                              refId="Package\DWH LOAD\TBDWFT_AUDIT_TRAIL_EQUIP\Brevetti BM398 ins\Add Technical Fields and renaming.Outputs[Derived Column Output].Columns[INSERT_DT]"
-                              dataType="dbTimeStamp"
-                              errorOrTruncationOperation="Computation"
-                              errorRowDisposition="FailComponent"
-                              lineageId="Package\DWH LOAD\TBDWFT_AUDIT_TRAIL_EQUIP\Brevetti BM398 ins\Add Technical Fields and renaming.Outputs[Derived Column Output].Columns[INSERT_DT]"
-                              name="INSERT_DT"
-                              truncationRowDisposition="FailComponent">
-                              <properties>
-                                <property
-                                  containsID="true"
-                                  dataType="System.String"
-                                  description="Derived Column Expression"
-                                  name="Expression">[GETDATE]()</property>
-                                <property
-                                  containsID="true"
-                                  dataType="System.String"
-                                  description="Derived Column Friendly Expression"
-                                  expressionType="Notify"
-                                  name="FriendlyExpression">GETDATE()</property>
-                              </properties>
-                            </outputColumn>
-                            <outputColumn
-                              refId="Package\DWH LOAD\TBDWFT_AUDIT_TRAIL_EQUIP\Brevetti BM398 ins\Add Technical Fields and renaming.Outputs[Derived Column Output].Columns[UPDATE_DT]"
-                              dataType="dbTimeStamp"
-                              errorOrTruncationOperation="Computation"
-                              errorRowDisposition="FailComponent"
-                              lineageId="Package\DWH LOAD\TBDWFT_AUDIT_TRAIL_EQUIP\Brevetti BM398 ins\Add Technical Fields and renaming.Outputs[Derived Column Output].Columns[UPDATE_DT]"
-                              name="UPDATE_DT"
-                              truncationRowDisposition="FailComponent">
-                              <properties>
-                                <property
-                                  containsID="true"
-                                  dataType="System.String"
-                                  description="Derived Column Expression"
-                                  name="Expression">[GETDATE]()</property>
-                                <property
-                                  containsID="true"
-                                  dataType="System.String"
-                                  description="Derived Column Friendly Expression"
-                                  expressionType="Notify"
-                                  name="FriendlyExpression">GETDATE()</property>
-                              </properties>
-                            </outputColumn>
-                            <outputColumn
-                              refId="Package\DWH LOAD\TBDWFT_AUDIT_TRAIL_EQUIP\Brevetti BM398 ins\Add Technical Fields and renaming.Outputs[Derived Column Output].Columns[USER_CD]"
-                              dataType="wstr"
-                              errorOrTruncationOperation="Computation"
-                              errorRowDisposition="FailComponent"
-                              length="11"
-                              lineageId="Package\DWH LOAD\TBDWFT_AUDIT_TRAIL_EQUIP\Brevetti BM398 ins\Add Technical Fields and renaming.Outputs[Derived Column Output].Columns[USER_CD]"
-                              name="USER_CD"
-                              truncationRowDisposition="FailComponent">
-                              <properties>
-                                <property
-                                  containsID="true"
-                                  dataType="System.String"
-                                  description="Derived Column Expression"
-                                  name="Expression">@[User::in_USER_CD]</property>
-                                <property
-                                  containsID="true"
-                                  dataType="System.String"
-                                  description="Derived Column Friendly Expression"
-                                  expressionType="Notify"
-                                  name="FriendlyExpression">@[User::in_USER_CD]</property>
-                              </properties>
-                            </outputColumn>
-                            <outputColumn
-                              refId="Package\DWH LOAD\TBDWFT_AUDIT_TRAIL_EQUIP\Brevetti BM398 ins\Add Technical Fields and renaming.Outputs[Derived Column Output].Columns[SITE_ID]"
-                              dataType="i4"
-                              errorOrTruncationOperation="Computation"
-                              errorRowDisposition="FailComponent"
-                              lineageId="Package\DWH LOAD\TBDWFT_AUDIT_TRAIL_EQUIP\Brevetti BM398 ins\Add Technical Fields and renaming.Outputs[Derived Column Output].Columns[SITE_ID]"
-                              name="SITE_ID"
-                              truncationRowDisposition="FailComponent">
-                              <properties>
-                                <property
-                                  containsID="true"
-                                  dataType="System.String"
-                                  description="Derived Column Expression"
-                                  name="Expression">@[User::out_SITE_ID]</property>
-                                <property
-                                  containsID="true"
-                                  dataType="System.String"
-                                  description="Derived Column Friendly Expression"
-                                  expressionType="Notify"
-                                  name="FriendlyExpression">@[User::out_SITE_ID]</property>
-                              </properties>
-                            </outputColumn>
-                            <outputColumn
-                              refId="Package\DWH LOAD\TBDWFT_AUDIT_TRAIL_EQUIP\Brevetti BM398 ins\Add Technical Fields and renaming.Outputs[Derived Column Output].Columns[SOURCE_SYSTEM_ID]"
-                              dataType="i4"
-                              errorOrTruncationOperation="Computation"
-                              errorRowDisposition="FailComponent"
-                              lineageId="Package\DWH LOAD\TBDWFT_AUDIT_TRAIL_EQUIP\Brevetti BM398 ins\Add Technical Fields and renaming.Outputs[Derived Column Output].Columns[SOURCE_SYSTEM_ID]"
-                              name="SOURCE_SYSTEM_ID"
-                              truncationRowDisposition="FailComponent">
-                              <properties>
-                                <property
-                                  containsID="true"
-                                  dataType="System.String"
-                                  description="Derived Column Expression"
-                                  name="Expression">@[User::out_SOURCE_SYSTEM_ID]</property>
-                                <property
-                                  containsID="true"
-                                  dataType="System.String"
-                                  description="Derived Column Friendly Expression"
-                                  expressionType="Notify"
-                                  name="FriendlyExpression">@[User::out_SOURCE_SYSTEM_ID]</property>
-                              </properties>
-                            </outputColumn>
-                            <outputColumn
-                              refId="Package\DWH LOAD\TBDWFT_AUDIT_TRAIL_EQUIP\Brevetti BM398 ins\Add Technical Fields and renaming.Outputs[Derived Column Output].Columns[TBLOG_PACKAGE_TABLE_ID]"
-                              dataType="i4"
-                              errorOrTruncationOperation="Computation"
-                              errorRowDisposition="FailComponent"
-                              lineageId="Package\DWH LOAD\TBDWFT_AUDIT_TRAIL_EQUIP\Brevetti BM398 ins\Add Technical Fields and renaming.Outputs[Derived Column Output].Columns[TBLOG_PACKAGE_TABLE_ID]"
-                              name="TBLOG_PACKAGE_TABLE_ID"
-                              truncationRowDisposition="FailComponent">
-                              <properties>
-                                <property
-                                  containsID="true"
-                                  dataType="System.String"
-                                  description="Derived Column Expression"
-                                  name="Expression">@[User::out_MAX_TABLE_ID]</property>
-                                <property
-                                  containsID="true"
-                                  dataType="System.String"
-                                  description="Derived Column Friendly Expression"
-                                  expressionType="Notify"
-                                  name="FriendlyExpression">@[User::out_MAX_TABLE_ID]</property>
-                              </properties>
-                            </outputColumn>
-                          </outputColumns>
-                          <externalMetadataColumns />
-                        </output>
-                        <output
-                          refId="Package\DWH LOAD\TBDWFT_AUDIT_TRAIL_EQUIP\Brevetti BM398 ins\Add Technical Fields and renaming.Outputs[Derived Column Error Output]"
-                          description="Error Output of the Derived Column Transformation"
-                          exclusionGroup="1"
-                          isErrorOut="true"
-                          name="Derived Column Error Output"
-                          synchronousInputId="Package\DWH LOAD\TBDWFT_AUDIT_TRAIL_EQUIP\Brevetti BM398 ins\Add Technical Fields and renaming.Inputs[Derived Column Input]">
-                          <outputColumns>
-                            <outputColumn
-                              refId="Package\DWH LOAD\TBDWFT_AUDIT_TRAIL_EQUIP\Brevetti BM398 ins\Add Technical Fields and renaming.Outputs[Derived Column Error Output].Columns[ErrorCode]"
-                              dataType="i4"
-                              lineageId="Package\DWH LOAD\TBDWFT_AUDIT_TRAIL_EQUIP\Brevetti BM398 ins\Add Technical Fields and renaming.Outputs[Derived Column Error Output].Columns[ErrorCode]"
-                              name="ErrorCode"
-                              specialFlags="1" />
-                            <outputColumn
-                              refId="Package\DWH LOAD\TBDWFT_AUDIT_TRAIL_EQUIP\Brevetti BM398 ins\Add Technical Fields and renaming.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
-                              dataType="i4"
-                              lineageId="Package\DWH LOAD\TBDWFT_AUDIT_TRAIL_EQUIP\Brevetti BM398 ins\Add Technical Fields and renaming.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
-                              name="ErrorColumn"
-                              specialFlags="2" />
-                          </outputColumns>
-                          <externalMetadataColumns />
-                        </output>
-                      </outputs>
-                    </component>
-                    <component
-                      refId="Package\DWH LOAD\TBDWFT_AUDIT_TRAIL_EQUIP\Brevetti BM398 ins\BM398"
-                      componentClassID="Microsoft.FlatFileSource"
-                      contactInfo="Flat File Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
-                      description="Flat File Source"
-                      localeId="2064"
-                      name="BM398"
-                      usesDispositions="true"
-                      version="1">
-                      <properties>
-                        <property
-                          dataType="System.Boolean"
-                          description="Specifies whether zero-length columns are treated as null."
-                          name="RetainNulls">false</property>
-                        <property
-                          dataType="System.String"
-                          description="Specifies the name of an output column containing the file name. If no name is specified, no output column containing the file name will be generated."
-                          name="FileNameColumnName"></property>
-                      </properties>
-                      <connections>
-                        <connection
-                          refId="Package\DWH LOAD\TBDWFT_AUDIT_TRAIL_EQUIP\Brevetti BM398 ins\BM398.Connections[FlatFileConnection]"
-                          connectionManagerID="{43DFF279-3C7E-41AC-8C5A-562469932760}:external"
-                          connectionManagerRefId="Project.ConnectionManagers[Flat Files - Mendrisio Brevetti BH-S600 - BM398]"
-                          name="FlatFileConnection" />
-                      </connections>
-                      <outputs>
-                        <output
-                          refId="Package\DWH LOAD\TBDWFT_AUDIT_TRAIL_EQUIP\Brevetti BM398 ins\BM398.Outputs[Flat File Source Output]"
-                          name="Flat File Source Output">
-                          <outputColumns>
-                            <outputColumn
-                              refId="Package\DWH LOAD\TBDWFT_AUDIT_TRAIL_EQUIP\Brevetti BM398 ins\BM398.Outputs[Flat File Source Output].Columns[Counter]"
-                              dataType="i4"
-                              errorOrTruncationOperation="Conversion"
-                              errorRowDisposition="FailComponent"
-                              externalMetadataColumnId="Package\DWH LOAD\TBDWFT_AUDIT_TRAIL_EQUIP\Brevetti BM398 ins\BM398.Outputs[Flat File Source Output].ExternalColumns[Counter]"
-                              lineageId="Package\DWH LOAD\TBDWFT_AUDIT_TRAIL_EQUIP\Brevetti BM398 ins\BM398.Outputs[Flat File Source Output].Columns[Counter]"
-                              name="Counter"
-                              truncationRowDisposition="FailComponent">
-                              <properties>
-                                <property
-                                  dataType="System.Boolean"
-                                  description="Indicates whether the column uses the faster, locale-neutral parsing routines."
-                                  name="FastParse">false</property>
-                                <property
-                                  dataType="System.Boolean"
-                                  description="Indicates whether the data is in binary format."
-                                  name="UseBinaryFormat">false</property>
-                              </properties>
-                            </outputColumn>
-                            <outputColumn
-                              refId="Package\DWH LOAD\TBDWFT_AUDIT_TRAIL_EQUIP\Brevetti BM398 ins\BM398.Outputs[Flat File Source Output].Columns[SystemID]"
-                              dataType="i4"
-                              errorOrTruncationOperation="Conversion"
-                              errorRowDisposition="FailComponent"
-                              externalMetadataColumnId="Package\DWH LOAD\TBDWFT_AUDIT_TRAIL_EQUIP\Brevetti BM398 ins\BM398.Outputs[Flat File Source Output].ExternalColumns[SystemID]"
-                              lineageId="Package\DWH LOAD\TBDWFT_AUDIT_TRAIL_EQUIP\Brevetti BM398 ins\BM398.Outputs[Flat File Source Output].Columns[SystemID]"
-                              name="SystemID"
-                              truncationRowDisposition="FailComponent">
-                              <properties>
-                                <property
-                                  dataType="System.Boolean"
-                                  description="Indicates whether the column uses the faster, locale-neutral parsing routines."
-                                  name="FastParse">false</property>
-                                <property
-                                  dataType="System.Boolean"
-                                  description="Indicates whether the data is in binary format."
-                                  name="UseBinaryFormat">false</property>
-                              </properties>
-                            </outputColumn>
-                            <outputColumn
-                              refId="Package\DWH LOAD\TBDWFT_AUDIT_TRAIL_EQUIP\Brevetti BM398 ins\BM398.Outputs[Flat File Source Output].Columns[Time]"
-                              dataType="date"
-                              errorOrTruncationOperation="Conversion"
-                              errorRowDisposition="FailComponent"
-                              externalMetadataColumnId="Package\DWH LOAD\TBDWFT_AUDIT_TRAIL_EQUIP\Brevetti BM398 ins\BM398.Outputs[Flat File Source Output].ExternalColumns[Time]"
-                              lineageId="Package\DWH LOAD\TBDWFT_AUDIT_TRAIL_EQUIP\Brevetti BM398 ins\BM398.Outputs[Flat File Source Output].Columns[Time]"
-                              name="Time"
-                              truncationRowDisposition="FailComponent">
-                              <properties>
-                                <property
-                                  dataType="System.Boolean"
-                                  description="Indicates whether the column uses the faster, locale-neutral parsing routines."
-                                  name="FastParse">false</property>
-                                <property
-                                  dataType="System.Boolean"
-                                  description="Indicates whether the data is in binary format."
-                                  name="UseBinaryFormat">false</property>
-                              </properties>
-                            </outputColumn>
-                            <outputColumn
-                              refId="Package\DWH LOAD\TBDWFT_AUDIT_TRAIL_EQUIP\Brevetti BM398 ins\BM398.Outputs[Flat File Source Output].Columns[User]"
-                              dataType="wstr"
-                              errorOrTruncationOperation="Conversion"
-                              errorRowDisposition="FailComponent"
-                              externalMetadataColumnId="Package\DWH LOAD\TBDWFT_AUDIT_TRAIL_EQUIP\Brevetti BM398 ins\BM398.Outputs[Flat File Source Output].ExternalColumns[User]"
-                              length="100"
-                              lineageId="Package\DWH LOAD\TBDWFT_AUDIT_TRAIL_EQUIP\Brevetti BM398 ins\BM398.Outputs[Flat File Source Output].Columns[User]"
-                              name="User"
-                              truncationRowDisposition="FailComponent">
-                              <properties>
-                                <property
-                                  dataType="System.Boolean"
-                                  description="Indicates whether the column uses the faster, locale-neutral parsing routines."
-                                  name="FastParse">false</property>
-                                <property
-                                  dataType="System.Boolean"
-                                  description="Indicates whether the data is in binary format."
-                                  name="UseBinaryFormat">false</property>
-                              </properties>
-                            </outputColumn>
-                            <outputColumn
-                              refId="Package\DWH LOAD\TBDWFT_AUDIT_TRAIL_EQUIP\Brevetti BM398 ins\BM398.Outputs[Flat File Source Output].Columns[Message]"
-                              dataType="wstr"
-                              errorOrTruncationOperation="Conversion"
-                              errorRowDisposition="FailComponent"
-                              externalMetadataColumnId="Package\DWH LOAD\TBDWFT_AUDIT_TRAIL_EQUIP\Brevetti BM398 ins\BM398.Outputs[Flat File Source Output].ExternalColumns[Message]"
-                              length="4000"
-                              lineageId="Package\DWH LOAD\TBDWFT_AUDIT_TRAIL_EQUIP\Brevetti BM398 ins\BM398.Outputs[Flat File Source Output].Columns[Message]"
-                              name="Message"
-                              truncationRowDisposition="FailComponent">
-                              <properties>
-                                <property
-                                  dataType="System.Boolean"
-                                  description="Indicates whether the column uses the faster, locale-neutral parsing routines."
-                                  name="FastParse">false</property>
-                                <property
-                                  dataType="System.Boolean"
-                                  description="Indicates whether the data is in binary format."
-                                  name="UseBinaryFormat">false</property>
-                              </properties>
-                            </outputColumn>
-                          </outputColumns>
-                          <externalMetadataColumns
-                            isUsed="True">
-                            <externalMetadataColumn
-                              refId="Package\DWH LOAD\TBDWFT_AUDIT_TRAIL_EQUIP\Brevetti BM398 ins\BM398.Outputs[Flat File Source Output].ExternalColumns[Counter]"
-                              dataType="i4"
-                              name="Counter" />
-                            <externalMetadataColumn
-                              refId="Package\DWH LOAD\TBDWFT_AUDIT_TRAIL_EQUIP\Brevetti BM398 ins\BM398.Outputs[Flat File Source Output].ExternalColumns[SystemID]"
-                              dataType="i4"
-                              name="SystemID" />
-                            <externalMetadataColumn
-                              refId="Package\DWH LOAD\TBDWFT_AUDIT_TRAIL_EQUIP\Brevetti BM398 ins\BM398.Outputs[Flat File Source Output].ExternalColumns[Time]"
-                              dataType="date"
-                              name="Time" />
-                            <externalMetadataColumn
-                              refId="Package\DWH LOAD\TBDWFT_AUDIT_TRAIL_EQUIP\Brevetti BM398 ins\BM398.Outputs[Flat File Source Output].ExternalColumns[User]"
-                              dataType="wstr"
-                              length="100"
-                              name="User" />
-                            <externalMetadataColumn
-                              refId="Package\DWH LOAD\TBDWFT_AUDIT_TRAIL_EQUIP\Brevetti BM398 ins\BM398.Outputs[Flat File Source Output].ExternalColumns[Message]"
-                              dataType="wstr"
-                              length="4000"
-                              name="Message" />
-                          </externalMetadataColumns>
-                        </output>
-                        <output
-                          refId="Package\DWH LOAD\TBDWFT_AUDIT_TRAIL_EQUIP\Brevetti BM398 ins\BM398.Outputs[Flat File Source Error Output]"
-                          isErrorOut="true"
-                          name="Flat File Source Error Output">
-                          <outputColumns>
-                            <outputColumn
-                              refId="Package\DWH LOAD\TBDWFT_AUDIT_TRAIL_EQUIP\Brevetti BM398 ins\BM398.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
-                              codePage="65001"
-                              dataType="text"
-                              description="Flat File Source Error Output Column"
-                              lineageId="Package\DWH LOAD\TBDWFT_AUDIT_TRAIL_EQUIP\Brevetti BM398 ins\BM398.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
-                              name="Flat File Source Error Output Column" />
-                            <outputColumn
-                              refId="Package\DWH LOAD\TBDWFT_AUDIT_TRAIL_EQUIP\Brevetti BM398 ins\BM398.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
-                              dataType="i4"
-                              lineageId="Package\DWH LOAD\TBDWFT_AUDIT_TRAIL_EQUIP\Brevetti BM398 ins\BM398.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
-                              name="ErrorCode"
-                              specialFlags="1" />
-                            <outputColumn
-                              refId="Package\DWH LOAD\TBDWFT_AUDIT_TRAIL_EQUIP\Brevetti BM398 ins\BM398.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
-                              dataType="i4"
-                              lineageId="Package\DWH LOAD\TBDWFT_AUDIT_TRAIL_EQUIP\Brevetti BM398 ins\BM398.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
-                              name="ErrorColumn"
-                              specialFlags="2" />
-                          </outputColumns>
-                          <externalMetadataColumns />
-                        </output>
-                      </outputs>
-                    </component>
-                    <component
-                      refId="Package\DWH LOAD\TBDWFT_AUDIT_TRAIL_EQUIP\Brevetti BM398 ins\Load TBMN data"
-                      componentClassID="Microsoft.OLEDBSource"
-                      contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
-                      description="OLE DB Source"
-                      name="Load TBMN data"
-                      usesDispositions="true"
-                      version="7">
-                      <properties>
-                        <property
-                          dataType="System.Int32"
-                          description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
-                          name="CommandTimeout">0</property>
-                        <property
-                          dataType="System.String"
-                          description="Specifies the name of the database object used to open a rowset."
-                          name="OpenRowset"></property>
-                        <property
-                          dataType="System.String"
-                          description="Specifies the variable that contains the name of the database object used to open a rowset."
-                          name="OpenRowsetVariable"></property>
-                        <property
-                          dataType="System.String"
-                          description="The SQL command to be executed."
-                          name="SqlCommand"
-                          UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT b.ID as TBDWMN_PRODUCTION_LINE, a.ID as TBDWMN_PRODUCTION_MODEL, b.SITE_CD, b.BUILDING_CD, b.PHASE_CD, b.PRODUCT_FAMILY_CD, b.PRODUCT_TYPE_CD, a.MACHINE_SERIAL_CD, a.MACHINE_CD, a.MACHINE_FUNCTION_DESC, 1 as join_field
-FROM 
-(SELECT * FROM TBDWMN_PRODUCTION_MODEL WHERE MACHINE_SERIAL_CD = ? and getdate() between VALIDITY_START_DT and VALIDITY_END_DT) a inner join
-(SELECT * FROM TBDWMN_PRODUCTION_LINE WHERE getdate() between VALIDITY_START_DT and VALIDITY_END_DT) b on a.PRODUCTION_LINE_ID = b.id</property>
-                        <property
-                          dataType="System.String"
-                          description="The variable that contains the SQL command to be executed."
-                          name="SqlCommandVariable"></property>
-                        <property
-                          dataType="System.Int32"
-                          description="Specifies the column code page to use when code page information is unavailable from the data source."
-                          name="DefaultCodePage">1252</property>
-                        <property
-                          dataType="System.Boolean"
-                          description="Forces the use of the DefaultCodePage property value when describing character data."
-                          name="AlwaysUseDefaultCodePage">false</property>
-                        <property
-                          dataType="System.Int32"
-                          description="Specifies the mode used to access the database."
-                          name="AccessMode"
-                          typeConverter="AccessMode">2</property>
-                        <property
-                          dataType="System.String"
-                          description="The mappings between the parameters in the SQL command and variables."
-                          name="ParameterMapping">"Parameter0:Input",{B741C802-7B34-45B0-BF8E-1DA3111B2E01};</property>
-                      </properties>
-                      <connections>
-                        <connection
-                          refId="Package\DWH LOAD\TBDWFT_AUDIT_TRAIL_EQUIP\Brevetti BM398 ins\Load TBMN data.Connections[OleDbConnection]"
-                          connectionManagerID="{62102490-454D-4B7E-9A09-120A46D18B10}:external"
-                          connectionManagerRefId="Project.ConnectionManagers[SRV-DIR-DEV_SRVDIRDEV.DIR_DWH.DIR_DWH_ETL]"
-                          description="The OLE DB runtime connection used to access the database."
-                          name="OleDbConnection" />
-                      </connections>
-                      <outputs>
-                        <output
-                          refId="Package\DWH LOAD\TBDWFT_AUDIT_TRAIL_EQUIP\Brevetti BM398 ins\Load TBMN data.Outputs[OLE DB Source Output]"
-                          name="OLE DB Source Output">
-                          <outputColumns>
-                            <outputColumn
-                              refId="Package\DWH LOAD\TBDWFT_AUDIT_TRAIL_EQUIP\Brevetti BM398 ins\Load TBMN data.Outputs[OLE DB Source Output].Columns[TBDWMN_PRODUCTION_LINE]"
-                              dataType="i2"
-                              errorOrTruncationOperation="Conversion"
-                              errorRowDisposition="FailComponent"
-                              externalMetadataColumnId="Package\DWH LOAD\TBDWFT_AUDIT_TRAIL_EQUIP\Brevetti BM398 ins\Load TBMN data.Outputs[OLE DB Source Output].ExternalColumns[TBDWMN_PRODUCTION_LINE]"
-                              lineageId="Package\DWH LOAD\TBDWFT_AUDIT_TRAIL_EQUIP\Brevetti BM398 ins\Load TBMN data.Outputs[OLE DB Source Output].Columns[TBDWMN_PRODUCTION_LINE]"
-                              name="TBDWMN_PRODUCTION_LINE"
-                              truncationRowDisposition="FailComponent" />
-                            <outputColumn
-                              refId="Package\DWH LOAD\TBDWFT_AUDIT_TRAIL_EQUIP\Brevetti BM398 ins\Load TBMN data.Outputs[OLE DB Source Output].Columns[TBDWMN_PRODUCTION_MODEL]"
-                              dataType="i2"
-                              errorOrTruncationOperation="Conversion"
-                              errorRowDisposition="FailComponent"
-                              externalMetadataColumnId="Package\DWH LOAD\TBDWFT_AUDIT_TRAIL_EQUIP\Brevetti BM398 ins\Load TBMN data.Outputs[OLE DB Source Output].ExternalColumns[TBDWMN_PRODUCTION_MODEL]"
-                              lineageId="Package\DWH LOAD\TBDWFT_AUDIT_TRAIL_EQUIP\Brevetti BM398 ins\Load TBMN data.Outputs[OLE DB Source Output].Columns[TBDWMN_PRODUCTION_MODEL]"
-                              name="TBDWMN_PRODUCTION_MODEL"
-                              truncationRowDisposition="FailComponent" />
-                            <outputColumn
-                              refId="Package\DWH LOAD\TBDWFT_AUDIT_TRAIL_EQUIP\Brevetti BM398 ins\Load TBMN data.Outputs[OLE DB Source Output].Columns[SITE_CD]"
-                              dataType="wstr"
-                              errorOrTruncationOperation="Conversion"
-                              errorRowDisposition="FailComponent"
-                              externalMetadataColumnId="Package\DWH LOAD\TBDWFT_AUDIT_TRAIL_EQUIP\Brevetti BM398 ins\Load TBMN data.Outputs[OLE DB Source Output].ExternalColumns[SITE_CD]"
-                              length="100"
-                              lineageId="Package\DWH LOAD\TBDWFT_AUDIT_TRAIL_EQUIP\Brevetti BM398 ins\Load TBMN data.Outputs[OLE DB Source Output].Columns[SITE_CD]"
-                              name="SITE_CD"
-                              truncationRowDisposition="FailComponent" />
-                            <outputColumn
-                              refId="Package\DWH LOAD\TBDWFT_AUDIT_TRAIL_EQUIP\Brevetti BM398 ins\Load TBMN data.Outputs[OLE DB Source Output].Columns[BUILDING_CD]"
-                              dataType="wstr"
-                              errorOrTruncationOperation="Conversion"
-                              errorRowDisposition="FailComponent"
-                              externalMetadataColumnId="Package\DWH LOAD\TBDWFT_AUDIT_TRAIL_EQUIP\Brevetti BM398 ins\Load TBMN data.Outputs[OLE DB Source Output].ExternalColumns[BUILDING_CD]"
-                              length="50"
-                              lineageId="Package\DWH LOAD\TBDWFT_AUDIT_TRAIL_EQUIP\Brevetti BM398 ins\Load TBMN data.Outputs[OLE DB Source Output].Columns[BUILDING_CD]"
-                              name="BUILDING_CD"
-                              truncationRowDisposition="FailComponent" />
-                            <outputColumn
-                              refId="Package\DWH LOAD\TBDWFT_AUDIT_TRAIL_EQUIP\Brevetti BM398 ins\Load TBMN data.Outputs[OLE DB Source Output].Columns[PHASE_CD]"
-                              dataType="wstr"
-                              errorOrTruncationOperation="Conversion"
-                              errorRowDisposition="FailComponent"
-                              externalMetadataColumnId="Package\DWH LOAD\TBDWFT_AUDIT_TRAIL_EQUIP\Brevetti BM398 ins\Load TBMN data.Outputs[OLE DB Source Output].ExternalColumns[PHASE_CD]"
-                              length="100"
-                              lineageId="Package\DWH LOAD\TBDWFT_AUDIT_TRAIL_EQUIP\Brevetti BM398 ins\Load TBMN data.Outputs[OLE DB Source Output].Columns[PHASE_CD]"
-                              name="PHASE_CD"
-                              truncationRowDisposition="FailComponent" />
-                            <outputColumn
-                              refId="Package\DWH LOAD\TBDWFT_AUDIT_TRAIL_EQUIP\Brevetti BM398 ins\Load TBMN data.Outputs[OLE DB Source Output].Columns[PRODUCT_FAMILY_CD]"
-                              dataType="wstr"
-                              errorOrTruncationOperation="Conversion"
-                              errorRowDisposition="FailComponent"
-                              externalMetadataColumnId="Package\DWH LOAD\TBDWFT_AUDIT_TRAIL_EQUIP\Brevetti BM398 ins\Load TBMN data.Outputs[OLE DB Source Output].ExternalColumns[PRODUCT_FAMILY_CD]"
-                              length="100"
-                              lineageId="Package\DWH LOAD\TBDWFT_AUDIT_TRAIL_EQUIP\Brevetti BM398 ins\Load TBMN data.Outputs[OLE DB Source Output].Columns[PRODUCT_FAMILY_CD]"
-                              name="PRODUCT_FAMILY_CD"
-                              truncationRowDisposition="FailComponent" />
-                            <outputColumn
-                              refId="Package\DWH LOAD\TBDWFT_AUDIT_TRAIL_EQUIP\Brevetti BM398 ins\Load TBMN data.Outputs[OLE DB Source Output].Columns[PRODUCT_TYPE_CD]"
-                              dataType="wstr"
-                              errorOrTruncationOperation="Conversion"
-                              errorRowDisposition="FailComponent"
-                              externalMetadataColumnId="Package\DWH LOAD\TBDWFT_AUDIT_TRAIL_EQUIP\Brevetti BM398 ins\Load TBMN data.Outputs[OLE DB Source Output].ExternalColumns[PRODUCT_TYPE_CD]"
-                              length="100"
-                              lineageId="Package\DWH LOAD\TBDWFT_AUDIT_TRAIL_EQUIP\Brevetti BM398 ins\Load TBMN data.Outputs[OLE DB Source Output].Columns[PRODUCT_TYPE_CD]"
-                              name="PRODUCT_TYPE_CD"
-                              truncationRowDisposition="FailComponent" />
-                            <outputColumn
-                              refId="Package\DWH LOAD\TBDWFT_AUDIT_TRAIL_EQUIP\Brevetti BM398 ins\Load TBMN data.Outputs[OLE DB Source Output].Columns[MACHINE_SERIAL_CD]"
-                              dataType="wstr"
-                              errorOrTruncationOperation="Conversion"
-                              errorRowDisposition="FailComponent"
-                              externalMetadataColumnId="Package\DWH LOAD\TBDWFT_AUDIT_TRAIL_EQUIP\Brevetti BM398 ins\Load TBMN data.Outputs[OLE DB Source Output].ExternalColumns[MACHINE_SERIAL_CD]"
-                              length="100"
-                              lineageId="Package\DWH LOAD\TBDWFT_AUDIT_TRAIL_EQUIP\Brevetti BM398 ins\Load TBMN data.Outputs[OLE DB Source Output].Columns[MACHINE_SERIAL_CD]"
-                              name="MACHINE_SERIAL_CD"
-                              truncationRowDisposition="FailComponent" />
-                            <outputColumn
-                              refId="Package\DWH LOAD\TBDWFT_AUDIT_TRAIL_EQUIP\Brevetti BM398 ins\Load TBMN data.Outputs[OLE DB Source Output].Columns[MACHINE_CD]"
-                              dataType="wstr"
-                              errorOrTruncationOperation="Conversion"
-                              errorRowDisposition="FailComponent"
-                              externalMetadataColumnId="Package\DWH LOAD\TBDWFT_AUDIT_TRAIL_EQUIP\Brevetti BM398 ins\Load TBMN data.Outputs[OLE DB Source Output].ExternalColumns[MACHINE_CD]"
-                              length="100"
-                              lineageId="Package\DWH LOAD\TBDWFT_AUDIT_TRAIL_EQUIP\Brevetti BM398 ins\Load TBMN data.Outputs[OLE DB Source Output].Columns[MACHINE_CD]"
-                              name="MACHINE_CD"
-                              truncationRowDisposition="FailComponent" />
-                            <outputColumn
-                              refId="Package\DWH LOAD\TBDWFT_AUDIT_TRAIL_EQUIP\Brevetti BM398 ins\Load TBMN data.Outputs[OLE DB Source Output].Columns[MACHINE_FUNCTION_DESC]"
-                              dataType="wstr"
-                              errorOrTruncationOperation="Conversion"
-                              errorRowDisposition="FailComponent"
-                              externalMetadataColumnId="Package\DWH LOAD\TBDWFT_AUDIT_TRAIL_EQUIP\Brevetti BM398 ins\Load TBMN data.Outputs[OLE DB Source Output].ExternalColumns[MACHINE_FUNCTION_DESC]"
-                              length="100"
-                              lineageId="Package\DWH LOAD\TBDWFT_AUDIT_TRAIL_EQUIP\Brevetti BM398 ins\Load TBMN data.Outputs[OLE DB Source Output].Columns[MACHINE_FUNCTION_DESC]"
-                              name="MACHINE_FUNCTION_DESC"
-                              truncationRowDisposition="FailComponent" />
-                            <outputColumn
-                              refId="Package\DWH LOAD\TBDWFT_AUDIT_TRAIL_EQUIP\Brevetti BM398 ins\Load TBMN data.Outputs[OLE DB Source Output].Columns[join_field]"
-                              dataType="i4"
-                              errorOrTruncationOperation="Conversion"
-                              errorRowDisposition="FailComponent"
-                              externalMetadataColumnId="Package\DWH LOAD\TBDWFT_AUDIT_TRAIL_EQUIP\Brevetti BM398 ins\Load TBMN data.Outputs[OLE DB Source Output].ExternalColumns[join_field]"
-                              lineageId="Package\DWH LOAD\TBDWFT_AUDIT_TRAIL_EQUIP\Brevetti BM398 ins\Load TBMN data.Outputs[OLE DB Source Output].Columns[join_field]"
-                              name="join_field"
-                              truncationRowDisposition="FailComponent" />
-                          </outputColumns>
-                          <externalMetadataColumns
-                            isUsed="True">
-                            <externalMetadataColumn
-                              refId="Package\DWH LOAD\TBDWFT_AUDIT_TRAIL_EQUIP\Brevetti BM398 ins\Load TBMN data.Outputs[OLE DB Source Output].ExternalColumns[TBDWMN_PRODUCTION_LINE]"
-                              dataType="i2"
-                              name="TBDWMN_PRODUCTION_LINE" />
-                            <externalMetadataColumn
-                              refId="Package\DWH LOAD\TBDWFT_AUDIT_TRAIL_EQUIP\Brevetti BM398 ins\Load TBMN data.Outputs[OLE DB Source Output].ExternalColumns[TBDWMN_PRODUCTION_MODEL]"
-                              dataType="i2"
-                              name="TBDWMN_PRODUCTION_MODEL" />
-                            <externalMetadataColumn
-                              refId="Package\DWH LOAD\TBDWFT_AUDIT_TRAIL_EQUIP\Brevetti BM398 ins\Load TBMN data.Outputs[OLE DB Source Output].ExternalColumns[SITE_CD]"
-                              dataType="wstr"
-                              length="100"
-                              name="SITE_CD" />
-                            <externalMetadataColumn
-                              refId="Package\DWH LOAD\TBDWFT_AUDIT_TRAIL_EQUIP\Brevetti BM398 ins\Load TBMN data.Outputs[OLE DB Source Output].ExternalColumns[BUILDING_CD]"
-                              dataType="wstr"
-                              length="50"
-                              name="BUILDING_CD" />
-                            <externalMetadataColumn
-                              refId="Package\DWH LOAD\TBDWFT_AUDIT_TRAIL_EQUIP\Brevetti BM398 ins\Load TBMN data.Outputs[OLE DB Source Output].ExternalColumns[PHASE_CD]"
-                              dataType="wstr"
-                              length="100"
-                              name="PHASE_CD" />
-                            <externalMetadataColumn
-                              refId="Package\DWH LOAD\TBDWFT_AUDIT_TRAIL_EQUIP\Brevetti BM398 ins\Load TBMN data.Outputs[OLE DB Source Output].ExternalColumns[PRODUCT_FAMILY_CD]"
-                              dataType="wstr"
-                              length="100"
-                              name="PRODUCT_FAMILY_CD" />
-                            <externalMetadataColumn
-                              refId="Package\DWH LOAD\TBDWFT_AUDIT_TRAIL_EQUIP\Brevetti BM398 ins\Load TBMN data.Outputs[OLE DB Source Output].ExternalColumns[PRODUCT_TYPE_CD]"
-                              dataType="wstr"
-                              length="100"
-                              name="PRODUCT_TYPE_CD" />
-                            <externalMetadataColumn
-                              refId="Package\DWH LOAD\TBDWFT_AUDIT_TRAIL_EQUIP\Brevetti BM398 ins\Load TBMN data.Outputs[OLE DB Source Output].ExternalColumns[MACHINE_SERIAL_CD]"
-                              dataType="wstr"
-                              length="100"
-                              name="MACHINE_SERIAL_CD" />
-                            <externalMetadataColumn
-                              refId="Package\DWH LOAD\TBDWFT_AUDIT_TRAIL_EQUIP\Brevetti BM398 ins\Load TBMN data.Outputs[OLE DB Source Output].ExternalColumns[MACHINE_CD]"
-                              dataType="wstr"
-                              length="100"
-                              name="MACHINE_CD" />
-                            <externalMetadataColumn
-                              refId="Package\DWH LOAD\TBDWFT_AUDIT_TRAIL_EQUIP\Brevetti BM398 ins\Load TBMN data.Outputs[OLE DB Source Output].ExternalColumns[MACHINE_FUNCTION_DESC]"
-                              dataType="wstr"
-                              length="100"
-                              name="MACHINE_FUNCTION_DESC" />
-                            <externalMetadataColumn
-                              refId="Package\DWH LOAD\TBDWFT_AUDIT_TRAIL_EQUIP\Brevetti BM398 ins\Load TBMN data.Outputs[OLE DB Source Output].ExternalColumns[join_field]"
-                              dataType="i4"
-                              name="join_field" />
-                          </externalMetadataColumns>
-                        </output>
-                        <output
-                          refId="Package\DWH LOAD\TBDWFT_AUDIT_TRAIL_EQUIP\Brevetti BM398 ins\Load TBMN data.Outputs[OLE DB Source Error Output]"
-                          isErrorOut="true"
-                          name="OLE DB Source Error Output">
-                          <outputColumns>
-                            <outputColumn
-                              refId="Package\DWH LOAD\TBDWFT_AUDIT_TRAIL_EQUIP\Brevetti BM398 ins\Load TBMN data.Outputs[OLE DB Source Error Output].Columns[TBDWMN_PRODUCTION_LINE]"
-                              dataType="i2"
-                              lineageId="Package\DWH LOAD\TBDWFT_AUDIT_TRAIL_EQUIP\Brevetti BM398 ins\Load TBMN data.Outputs[OLE DB Source Error Output].Columns[TBDWMN_PRODUCTION_LINE]"
-                              name="TBDWMN_PRODUCTION_LINE" />
-                            <outputColumn
-                              refId="Package\DWH LOAD\TBDWFT_AUDIT_TRAIL_EQUIP\Brevetti BM398 ins\Load TBMN data.Outputs[OLE DB Source Error Output].Columns[TBDWMN_PRODUCTION_MODEL]"
-                              dataType="i2"
-                              lineageId="Package\DWH LOAD\TBDWFT_AUDIT_TRAIL_EQUIP\Brevetti BM398 ins\Load TBMN data.Outputs[OLE DB Source Error Output].Columns[TBDWMN_PRODUCTION_MODEL]"
-                              name="TBDWMN_PRODUCTION_MODEL" />
-                            <outputColumn
-                              refId="Package\DWH LOAD\TBDWFT_AUDIT_TRAIL_EQUIP\Brevetti BM398 ins\Load TBMN data.Outputs[OLE DB Source Error Output].Columns[SITE_CD]"
-                              dataType="wstr"
-                              length="100"
-                              lineageId="Package\DWH LOAD\TBDWFT_AUDIT_TRAIL_EQUIP\Brevetti BM398 ins\Load TBMN data.Outputs[OLE DB Source Error Output].Columns[SITE_CD]"
-                              name="SITE_CD" />
-                            <outputColumn
-                              refId="Package\DWH LOAD\TBDWFT_AUDIT_TRAIL_EQUIP\Brevetti BM398 ins\Load TBMN data.Outputs[OLE DB Source Error Output].Columns[BUILDING_CD]"
-                              dataType="wstr"
-                              length="50"
-                              lineageId="Package\DWH LOAD\TBDWFT_AUDIT_TRAIL_EQUIP\Brevetti BM398 ins\Load TBMN data.Outputs[OLE DB Source Error Output].Columns[BUILDING_CD]"
-                              name="BUILDING_CD" />
-                            <outputColumn
-                              refId="Package\DWH LOAD\TBDWFT_AUDIT_TRAIL_EQUIP\Brevetti BM398 ins\Load TBMN data.Outputs[OLE DB Source Error Output].Columns[PHASE_CD]"
-                              dataType="wstr"
-                              length="100"
-                              lineageId="Package\DWH LOAD\TBDWFT_AUDIT_TRAIL_EQUIP\Brevetti BM398 ins\Load TBMN data.Outputs[OLE DB Source Error Output].Columns[PHASE_CD]"
-                              name="PHASE_CD" />
-                            <outputColumn
-                              refId="Package\DWH LOAD\TBDWFT_AUDIT_TRAIL_EQUIP\Brevetti BM398 ins\Load TBMN data.Outputs[OLE DB Source Error Output].Columns[PRODUCT_FAMILY_CD]"
-                              dataType="wstr"
-                              length="100"
-                              lineageId="Package\DWH LOAD\TBDWFT_AUDIT_TRAIL_EQUIP\Brevetti BM398 ins\Load TBMN data.Outputs[OLE DB Source Error Output].Columns[PRODUCT_FAMILY_CD]"
-                              name="PRODUCT_FAMILY_CD" />
-                            <outputColumn
-                              refId="Package\DWH LOAD\TBDWFT_AUDIT_TRAIL_EQUIP\Brevetti BM398 ins\Load TBMN data.Outputs[OLE DB Source Error Output].Columns[PRODUCT_TYPE_CD]"
-                              dataType="wstr"
-                              length="100"
-                              lineageId="Package\DWH LOAD\TBDWFT_AUDIT_TRAIL_EQUIP\Brevetti BM398 ins\Load TBMN data.Outputs[OLE DB Source Error Output].Columns[PRODUCT_TYPE_CD]"
-                              name="PRODUCT_TYPE_CD" />
-                            <outputColumn
-                              refId="Package\DWH LOAD\TBDWFT_AUDIT_TRAIL_EQUIP\Brevetti BM398 ins\Load TBMN data.Outputs[OLE DB Source Error Output].Columns[MACHINE_SERIAL_CD]"
-                              dataType="wstr"
-                              length="100"
-                              lineageId="Package\DWH LOAD\TBDWFT_AUDIT_TRAIL_EQUIP\Brevetti BM398 ins\Load TBMN data.Outputs[OLE DB Source Error Output].Columns[MACHINE_SERIAL_CD]"
-                              name="MACHINE_SERIAL_CD" />
-                            <outputColumn
-                              refId="Package\DWH LOAD\TBDWFT_AUDIT_TRAIL_EQUIP\Brevetti BM398 ins\Load TBMN data.Outputs[OLE DB Source Error Output].Columns[MACHINE_CD]"
-                              dataType="wstr"
-                              length="100"
-                              lineageId="Package\DWH LOAD\TBDWFT_AUDIT_TRAIL_EQUIP\Brevetti BM398 ins\Load TBMN data.Outputs[OLE DB Source Error Output].Columns[MACHINE_CD]"
-                              name="MACHINE_CD" />
-                            <outputColumn
-                              refId="Package\DWH LOAD\TBDWFT_AUDIT_TRAIL_EQUIP\Brevetti BM398 ins\Load TBMN data.Outputs[OLE DB Source Error Output].Columns[MACHINE_FUNCTION_DESC]"
-                              dataType="wstr"
-                              length="100"
-                              lineageId="Package\DWH LOAD\TBDWFT_AUDIT_TRAIL_EQUIP\Brevetti BM398 ins\Load TBMN data.Outputs[OLE DB Source Error Output].Columns[MACHINE_FUNCTION_DESC]"
-                              name="MACHINE_FUNCTION_DESC" />
-                            <outputColumn
-                              refId="Package\DWH LOAD\TBDWFT_AUDIT_TRAIL_EQUIP\Brevetti BM398 ins\Load TBMN data.Outputs[OLE DB Source Error Output].Columns[join_field]"
-                              dataType="i4"
-                              lineageId="Package\DWH LOAD\TBDWFT_AUDIT_TRAIL_EQUIP\Brevetti BM398 ins\Load TBMN data.Outputs[OLE DB Source Error Output].Columns[join_field]"
-                              name="join_field" />
-                            <outputColumn
-                              refId="Package\DWH LOAD\TBDWFT_AUDIT_TRAIL_EQUIP\Brevetti BM398 ins\Load TBMN data.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
-                              dataType="i4"
-                              lineageId="Package\DWH LOAD\TBDWFT_AUDIT_TRAIL_EQUIP\Brevetti BM398 ins\Load TBMN data.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
-                              name="ErrorCode"
-                              specialFlags="1" />
-                            <outputColumn
-                              refId="Package\DWH LOAD\TBDWFT_AUDIT_TRAIL_EQUIP\Brevetti BM398 ins\Load TBMN data.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
-                              dataType="i4"
-                              lineageId="Package\DWH LOAD\TBDWFT_AUDIT_TRAIL_EQUIP\Brevetti BM398 ins\Load TBMN data.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
-                              name="ErrorColumn"
-                              specialFlags="2" />
-                          </outputColumns>
-                          <externalMetadataColumns />
-                        </output>
-                      </outputs>
-                    </component>
-                    <component
-                      refId="Package\DWH LOAD\TBDWFT_AUDIT_TRAIL_EQUIP\Brevetti BM398 ins\Merge Join"
-                      componentClassID="Microsoft.MergeJoin"
-                      contactInfo="Merge Join;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
-                      description="Combine two sorted data flows into one using the FULL, LEFT, or INNER join. We recommend this transformation when data flows can be sorted at their sources."
-                      name="Merge Join"
-                      version="1">
-                      <properties>
-                        <property
-                          dataType="System.Int32"
-                          description="Specifies the type of join to perform."
-                          name="JoinType"
-                          typeConverter="JoinType">2</property>
-                        <property
-                          dataType="System.Int32"
-                          description="Specifies the number of columns in the ordering key."
-                          name="NumKeyColumns">1</property>
-                        <property
-                          dataType="System.Boolean"
-                          description="Indicates whether the null values are treated as equal values."
-                          name="TreatNullsAsEqual">true</property>
-                        <property
-                          dataType="System.Int32"
-                          description="Indicates the requested maximum buffers per input before blocking."
-                          name="MaxBuffersPerInput">5</property>
-                      </properties>
-                      <inputs>
-                        <input
-                          refId="Package\DWH LOAD\TBDWFT_AUDIT_TRAIL_EQUIP\Brevetti BM398 ins\Merge Join.Inputs[Merge Join Left Input]"
-                          hasSideEffects="true"
-                          name="Merge Join Left Input">
-                          <inputColumns>
-                            <inputColumn
-                              refId="Package\DWH LOAD\TBDWFT_AUDIT_TRAIL_EQUIP\Brevetti BM398 ins\Merge Join.Inputs[Merge Join Left Input].Columns[join_field]"
-                              cachedDataType="i4"
-                              cachedName="join_field"
-                              cachedSortKeyPosition="1"
-                              lineageId="Package\DWH LOAD\TBDWFT_AUDIT_TRAIL_EQUIP\Brevetti BM398 ins\Sort on Join Field.Outputs[Sort Output].Columns[join_field]" />
-                            <inputColumn
-                              refId="Package\DWH LOAD\TBDWFT_AUDIT_TRAIL_EQUIP\Brevetti BM398 ins\Merge Join.Inputs[Merge Join Left Input].Columns[SOURCE_COUNTER_ID]"
-                              cachedDataType="i4"
-                              cachedName="SOURCE_COUNTER_ID"
-                              lineageId="Package\DWH LOAD\TBDWFT_AUDIT_TRAIL_EQUIP\Brevetti BM398 ins\Sort on Join Field.Outputs[Sort Output].Columns[SOURCE_COUNTER_ID]" />
-                            <inputColumn
-                              refId="Package\DWH LOAD\TBDWFT_AUDIT_TRAIL_EQUIP\Brevetti BM398 ins\Merge Join.Inputs[Merge Join Left Input].Columns[SOURCE_EQUIPMENT_ID]"
-                              cachedDataType="i4"
-                              cachedName="SOURCE_EQUIPMENT_ID"
-                              lineageId="Package\DWH LOAD\TBDWFT_AUDIT_TRAIL_EQUIP\Brevetti BM398 ins\Sort on Join Field.Outputs[Sort Output].Columns[SOURCE_EQUIPMENT_ID]" />
-                            <inputColumn
-                              refId="Package\DWH LOAD\TBDWFT_AUDIT_TRAIL_EQUIP\Brevetti BM398 ins\Merge Join.Inputs[Merge Join Left Input].Columns[DATE_DT]"
-                              cachedDataType="date"
-                              cachedName="DATE_DT"
-                              lineageId="Package\DWH LOAD\TBDWFT_AUDIT_TRAIL_EQUIP\Brevetti BM398 ins\Sort on Join Field.Outputs[Sort Output].Columns[DATE_DT]" />
-                            <inputColumn
-                              refId="Package\DWH LOAD\TBDWFT_AUDIT_TRAIL_EQUIP\Brevetti BM398 ins\Merge Join.Inputs[Merge Join Left Input].Columns[USER_DESC]"
-                              cachedDataType="wstr"
-                              cachedLength="100"
-                              cachedName="USER_DESC"
-                              lineageId="Package\DWH LOAD\TBDWFT_AUDIT_TRAIL_EQUIP\Brevetti BM398 ins\Sort on Join Field.Outputs[Sort Output].Columns[USER_DESC]" />
-                            <inputColumn
-                              refId="Package\DWH LOAD\TBDWFT_AUDIT_TRAIL_EQUIP\Brevetti BM398 ins\Merge Join.Inputs[Merge Join Left Input].Columns[MESSAGE_DESC]"
-                              cachedDataType="wstr"
-                              cachedLength="4000"
-                              cachedName="MESSAGE_DESC"
-                              lineageId="Package\DWH LOAD\TBDWFT_AUDIT_TRAIL_EQUIP\Brevetti BM398 ins\Sort on Join Field.Outputs[Sort Output].Columns[MESSAGE_DESC]" />
-                          </inputColumns>
-                          <externalMetadataColumns />
-                        </input>
-                        <input
-                          refId="Package\DWH LOAD\TBDWFT_AUDIT_TRAIL_EQUIP\Brevetti BM398 ins\Merge Join.Inputs[Merge Join Right Input]"
-                          hasSideEffects="true"
-                          name="Merge Join Right Input">
-                          <inputColumns>
-                            <inputColumn
-                              refId="Package\DWH LOAD\TBDWFT_AUDIT_TRAIL_EQUIP\Brevetti BM398 ins\Merge Join.Inputs[Merge Join Right Input].Columns[join_field]"
-                              cachedDataType="i4"
-                              cachedName="join_field"
-                              cachedSortKeyPosition="1"
-                              lineageId="Package\DWH LOAD\TBDWFT_AUDIT_TRAIL_EQUIP\Brevetti BM398 ins\Sort on Join Field 2.Outputs[Sort Output].Columns[join_field]" />
-                            <inputColumn
-                              refId="Package\DWH LOAD\TBDWFT_AUDIT_TRAIL_EQUIP\Brevetti BM398 ins\Merge Join.Inputs[Merge Join Right Input].Columns[TBDWMN_PRODUCTION_LINE]"
-                              cachedDataType="i2"
-                              cachedName="TBDWMN_PRODUCTION_LINE"
-                              lineageId="Package\DWH LOAD\TBDWFT_AUDIT_TRAIL_EQUIP\Brevetti BM398 ins\Sort on Join Field 2.Outputs[Sort Output].Columns[TBDWMN_PRODUCTION_LINE]" />
-                            <inputColumn
-                              refId="Package\DWH LOAD\TBDWFT_AUDIT_TRAIL_EQUIP\Brevetti BM398 ins\Merge Join.Inputs[Merge Join Right Input].Columns[TBDWMN_PRODUCTION_MODEL]"
-                              cachedDataType="i2"
-                              cachedName="TBDWMN_PRODUCTION_MODEL"
-                              lineageId="Package\DWH LOAD\TBDWFT_AUDIT_TRAIL_EQUIP\Brevetti BM398 ins\Sort on Join Field 2.Outputs[Sort Output].Columns[TBDWMN_PRODUCTION_MODEL]" />
-                            <inputColumn
-                              refId="Package\DWH LOAD\TBDWFT_AUDIT_TRAIL_EQUIP\Brevetti BM398 ins\Merge Join.Inputs[Merge Join Right Input].Columns[SITE_CD]"
-                              cachedDataType="wstr"
-                              cachedLength="100"
-                              cachedName="SITE_CD"
-                              lineageId="Package\DWH LOAD\TBDWFT_AUDIT_TRAIL_EQUIP\Brevetti BM398 ins\Sort on Join Field 2.Outputs[Sort Output].Columns[SITE_CD]" />
-                            <inputColumn
-                              refId="Package\DWH LOAD\TBDWFT_AUDIT_TRAIL_EQUIP\Brevetti BM398 ins\Merge Join.Inputs[Merge Join Right Input].Columns[BUILDING_CD]"
-                              cachedDataType="wstr"
-                              cachedLength="50"
-                              cachedName="BUILDING_CD"
-                              lineageId="Package\DWH LOAD\TBDWFT_AUDIT_TRAIL_EQUIP\Brevetti BM398 ins\Sort on Join Field 2.Outputs[Sort Output].Columns[BUILDING_CD]" />
-                            <inputColumn
-                              refId="Package\DWH LOAD\TBDWFT_AUDIT_TRAIL_EQUIP\Brevetti BM398 ins\Merge Join.Inputs[Merge Join Right Input].Columns[PHASE_CD]"
-                              cachedDataType="wstr"
-                              cachedLength="100"
-                              cachedName="PHASE_CD"
-                              lineageId="Package\DWH LOAD\TBDWFT_AUDIT_TRAIL_EQUIP\Brevetti BM398 ins\Sort on Join Field 2.Outputs[Sort Output].Columns[PHASE_CD]" />
-                            <inputColumn
-                              refId="Package\DWH LOAD\TBDWFT_AUDIT_TRAIL_EQUIP\Brevetti BM398 ins\Merge Join.Inputs[Merge Join Right Input].Columns[PRODUCT_FAMILY_CD]"
-                              cachedDataType="wstr"
-                              cachedLength="100"
-                              cachedName="PRODUCT_FAMILY_CD"
-                              lineageId="Package\DWH LOAD\TBDWFT_AUDIT_TRAIL_EQUIP\Brevetti BM398 ins\Sort on Join Field 2.Outputs[Sort Output].Columns[PRODUCT_FAMILY_CD]" />
-                            <inputColumn
-                              refId="Package\DWH LOAD\TBDWFT_AUDIT_TRAIL_EQUIP\Brevetti BM398 ins\Merge Join.Inputs[Merge Join Right Input].Columns[PRODUCT_TYPE_CD]"
-                              cachedDataType="wstr"
-                              cachedLength="100"
-                              cachedName="PRODUCT_TYPE_CD"
-                              lineageId="Package\DWH LOAD\TBDWFT_AUDIT_TRAIL_EQUIP\Brevetti BM398 ins\Sort on Join Field 2.Outputs[Sort Output].Columns[PRODUCT_TYPE_CD]" />
-                            <inputColumn
-                              refId="Package\DWH LOAD\TBDWFT_AUDIT_TRAIL_EQUIP\Brevetti BM398 ins\Merge Join.Inputs[Merge Join Right Input].Columns[MACHINE_SERIAL_CD]"
-                              cachedDataType="wstr"
-                              cachedLength="100"
-                              cachedName="MACHINE_SERIAL_CD"
-                              lineageId="Package\DWH LOAD\TBDWFT_AUDIT_TRAIL_EQUIP\Brevetti BM398 ins\Sort on Join Field 2.Outputs[Sort Output].Columns[MACHINE_SERIAL_CD]" />
-                            <inputColumn
-                              refId="Package\DWH LOAD\TBDWFT_AUDIT_TRAIL_EQUIP\Brevetti BM398 ins\Merge Join.Inputs[Merge Join Right Input].Columns[MACHINE_CD]"
-                              cachedDataType="wstr"
-                              cachedLength="100"
-                              cachedName="MACHINE_CD"
-                              lineageId="Package\DWH LOAD\TBDWFT_AUDIT_TRAIL_EQUIP\Brevetti BM398 ins\Sort on Join Field 2.Outputs[Sort Output].Columns[MACHINE_CD]" />
-                            <inputColumn
-                              refId="Package\DWH LOAD\TBDWFT_AUDIT_TRAIL_EQUIP\Brevetti BM398 ins\Merge Join.Inputs[Merge Join Right Input].Columns[MACHINE_FUNCTION_DESC]"
-                              cachedDataType="wstr"
-                              cachedLength="100"
-                              cachedName="MACHINE_FUNCTION_DESC"
-                              lineageId="Package\DWH LOAD\TBDWFT_AUDIT_TRAIL_EQUIP\Brevetti BM398 ins\Sort on Join Field 2.Outputs[Sort Output].Columns[MACHINE_FUNCTION_DESC]" />
-                          </inputColumns>
-                          <externalMetadataColumns />
-                        </input>
-                      </inputs>
-                      <outputs>
-                        <output
-                          refId="Package\DWH LOAD\TBDWFT_AUDIT_TRAIL_EQUIP\Brevetti BM398 ins\Merge Join.Outputs[Merge Join Output]"
-                          name="Merge Join Output">
-                          <outputColumns>
-                            <outputColumn
-                              refId="Package\DWH LOAD\TBDWFT_AUDIT_TRAIL_EQUIP\Brevetti BM398 ins\Merge Join.Outputs[Merge Join Output].Columns[TBDWMN_PRODUCTION_LINE]"
-                              dataType="i2"
-                              lineageId="Package\DWH LOAD\TBDWFT_AUDIT_TRAIL_EQUIP\Brevetti BM398 ins\Merge Join.Outputs[Merge Join Output].Columns[TBDWMN_PRODUCTION_LINE]"
-                              name="TBDWMN_PRODUCTION_LINE">
-                              <properties>
-                                <property
-                                  containsID="true"
-                                  dataType="System.Int32"
-                                  description="The input column associated with this output column"
-                                  name="InputColumnID">#{Package\DWH LOAD\TBDWFT_AUDIT_TRAIL_EQUIP\Brevetti BM398 ins\Merge Join.Inputs[Merge Join Right Input].Columns[TBDWMN_PRODUCTION_LINE]}</property>
-                              </properties>
-                            </outputColumn>
-                            <outputColumn
-                              refId="Package\DWH LOAD\TBDWFT_AUDIT_TRAIL_EQUIP\Brevetti BM398 ins\Merge Join.Outputs[Merge Join Output].Columns[TBDWMN_PRODUCTION_MODEL]"
-                              dataType="i2"
-                              lineageId="Package\DWH LOAD\TBDWFT_AUDIT_TRAIL_EQUIP\Brevetti BM398 ins\Merge Join.Outputs[Merge Join Output].Columns[TBDWMN_PRODUCTION_MODEL]"
-                              name="TBDWMN_PRODUCTION_MODEL">
-                              <properties>
-                                <property
-                                  containsID="true"
-                                  dataType="System.Int32"
-                                  description="The input column associated with this output column"
-                                  name="InputColumnID">#{Package\DWH LOAD\TBDWFT_AUDIT_TRAIL_EQUIP\Brevetti BM398 ins\Merge Join.Inputs[Merge Join Right Input].Columns[TBDWMN_PRODUCTION_MODEL]}</property>
-                              </properties>
-                            </outputColumn>
-                            <outputColumn
-                              refId="Package\DWH LOAD\TBDWFT_AUDIT_TRAIL_EQUIP\Brevetti BM398 ins\Merge Join.Outputs[Merge Join Output].Columns[SITE_CD]"
-                              dataType="wstr"
-                              length="100"
-                              lineageId="Package\DWH LOAD\TBDWFT_AUDIT_TRAIL_EQUIP\Brevetti BM398 ins\Merge Join.Outputs[Merge Join Output].Columns[SITE_CD]"
-                              name="SITE_CD">
-                              <properties>
-                                <property
-                                  containsID="true"
-                                  dataType="System.Int32"
-                                  description="The input column associated with this output column"
-                                  name="InputColumnID">#{Package\DWH LOAD\TBDWFT_AUDIT_TRAIL_EQUIP\Brevetti BM398 ins\Merge Join.Inputs[Merge Join Right Input].Columns[SITE_CD]}</property>
-                              </properties>
-                            </outputColumn>
-                            <outputColumn
-                              refId="Package\DWH LOAD\TBDWFT_AUDIT_TRAIL_EQUIP\Brevetti BM398 ins\Merge Join.Outputs[Merge Join Output].Columns[BUILDING_CD]"
-                              dataType="wstr"
-                              length="50"
-                              lineageId="Package\DWH LOAD\TBDWFT_AUDIT_TRAIL_EQUIP\Brevetti BM398 ins\Merge Join.Outputs[Merge Join Output].Columns[BUILDING_CD]"
-                              name="BUILDING_CD">
-                              <properties>
-                                <property
-                                  containsID="true"
-                                  dataType="System.Int32"
-                                  description="The input column associated with this output column"
-                                  name="InputColumnID">#{Package\DWH LOAD\TBDWFT_AUDIT_TRAIL_EQUIP\Brevetti BM398 ins\Merge Join.Inputs[Merge Join Right Input].Columns[BUILDING_CD]}</property>
-                              </properties>
-                            </outputColumn>
-                            <outputColumn
-                              refId="Package\DWH LOAD\TBDWFT_AUDIT_TRAIL_EQUIP\Brevetti BM398 ins\Merge Join.Outputs[Merge Join Output].Columns[PHASE_CD]"
-                              dataType="wstr"
-                              length="100"
-                              lineageId="Package\DWH LOAD\TBDWFT_AUDIT_TRAIL_EQUIP\Brevetti BM398 ins\Merge Join.Outputs[Merge Join Output].Columns[PHASE_CD]"
-                              name="PHASE_CD">
-                              <properties>
-                                <property
-                                  containsID="true"
-                                  dataType="System.Int32"
-                                  description="The input column associated with this output column"
-                                  name="InputColumnID">#{Package\DWH LOAD\TBDWFT_AUDIT_TRAIL_EQUIP\Brevetti BM398 ins\Merge Join.Inputs[Merge Join Right Input].Columns[PHASE_CD]}</property>
-                              </properties>
-                            </outputColumn>
-                            <outputColumn
-                              refId="Package\DWH LOAD\TBDWFT_AUDIT_TRAIL_EQUIP\Brevetti BM398 ins\Merge Join.Outputs[Merge Join Output].Columns[PRODUCT_FAMILY_CD]"
-                              dataType="wstr"
-                              length="100"
-                              lineageId="Package\DWH LOAD\TBDWFT_AUDIT_TRAIL_EQUIP\Brevetti BM398 ins\Merge Join.Outputs[Merge Join Output].Columns[PRODUCT_FAMILY_CD]"
-                              name="PRODUCT_FAMILY_CD">
-                              <properties>
-                                <property
-                                  containsID="true"
-                                  dataType="System.Int32"
-                                  description="The input column associated with this output column"
-                                  name="InputColumnID">#{Package\DWH LOAD\TBDWFT_AUDIT_TRAIL_EQUIP\Brevetti BM398 ins\Merge Join.Inputs[Merge Join Right Input].Columns[PRODUCT_FAMILY_CD]}</property>
-                              </properties>
-                            </outputColumn>
-                            <outputColumn
-                              refId="Package\DWH LOAD\TBDWFT_AUDIT_TRAIL_EQUIP\Brevetti BM398 ins\Merge Join.Outputs[Merge Join Output].Columns[PRODUCT_TYPE_CD]"
-                              dataType="wstr"
-                              length="100"
-                              lineageId="Package\DWH LOAD\TBDWFT_AUDIT_TRAIL_EQUIP\Brevetti BM398 ins\Merge Join.Outputs[Merge Join Output].Columns[PRODUCT_TYPE_CD]"
-                              name="PRODUCT_TYPE_CD">
-                              <properties>
-                                <property
-                                  containsID="true"
-                                  dataType="System.Int32"
-                                  description="The input column associated with this output column"
-                                  name="InputColumnID">#{Package\DWH LOAD\TBDWFT_AUDIT_TRAIL_EQUIP\Brevetti BM398 ins\Merge Join.Inputs[Merge Join Right Input].Columns[PRODUCT_TYPE_CD]}</property>
-                              </properties>
-                            </outputColumn>
-                            <outputColumn
-                              refId="Package\DWH LOAD\TBDWFT_AUDIT_TRAIL_EQUIP\Brevetti BM398 ins\Merge Join.Outputs[Merge Join Output].Columns[MACHINE_SERIAL_CD]"
-                              dataType="wstr"
-                              length="100"
-                              lineageId="Package\DWH LOAD\TBDWFT_AUDIT_TRAIL_EQUIP\Brevetti BM398 ins\Merge Join.Outputs[Merge Join Output].Columns[MACHINE_SERIAL_CD]"
-                              name="MACHINE_SERIAL_CD">
-                              <properties>
-                                <property
-                                  containsID="true"
-                                  dataType="System.Int32"
-                                  description="The input column associated with this output column"
-                                  name="InputColumnID">#{Package\DWH LOAD\TBDWFT_AUDIT_TRAIL_EQUIP\Brevetti BM398 ins\Merge Join.Inputs[Merge Join Right Input].Columns[MACHINE_SERIAL_CD]}</property>
-                              </properties>
-                            </outputColumn>
-                            <outputColumn
-                              refId="Package\DWH LOAD\TBDWFT_AUDIT_TRAIL_EQUIP\Brevetti BM398 ins\Merge Join.Outputs[Merge Join Output].Columns[MACHINE_CD]"
-                              dataType="wstr"
-                              length="100"
-                              lineageId="Package\DWH LOAD\TBDWFT_AUDIT_TRAIL_EQUIP\Brevetti BM398 ins\Merge Join.Outputs[Merge Join Output].Columns[MACHINE_CD]"
-                              name="MACHINE_CD">
-                              <properties>
-                                <property
-                                  containsID="true"
-                                  dataType="System.Int32"
-                                  description="The input column associated with this output column"
-                                  name="InputColumnID">#{Package\DWH LOAD\TBDWFT_AUDIT_TRAIL_EQUIP\Brevetti BM398 ins\Merge Join.Inputs[Merge Join Right Input].Columns[MACHINE_CD]}</property>
-                              </properties>
-                            </outputColumn>
-                            <outputColumn
-                              refId="Package\DWH LOAD\TBDWFT_AUDIT_TRAIL_EQUIP\Brevetti BM398 ins\Merge Join.Outputs[Merge Join Output].Columns[MACHINE_FUNCTION_DESC]"
-                              dataType="wstr"
-                              length="100"
-                              lineageId="Package\DWH LOAD\TBDWFT_AUDIT_TRAIL_EQUIP\Brevetti BM398 ins\Merge Join.Outputs[Merge Join Output].Columns[MACHINE_FUNCTION_DESC]"
-                              name="MACHINE_FUNCTION_DESC">
-                              <properties>
-                                <property
-                                  containsID="true"
-                                  dataType="System.Int32"
-                                  description="The input column associated with this output column"
-                                  name="InputColumnID">#{Package\DWH LOAD\TBDWFT_AUDIT_TRAIL_EQUIP\Brevetti BM398 ins\Merge Join.Inputs[Merge Join Right Input].Columns[MACHINE_FUNCTION_DESC]}</property>
-                              </properties>
-                            </outputColumn>
-                            <outputColumn
-                              refId="Package\DWH LOAD\TBDWFT_AUDIT_TRAIL_EQUIP\Brevetti BM398 ins\Merge Join.Outputs[Merge Join Output].Columns[Counter]"
-                              dataType="i4"
-                              lineageId="Package\DWH LOAD\TBDWFT_AUDIT_TRAIL_EQUIP\Brevetti BM398 ins\Merge Join.Outputs[Merge Join Output].Columns[Counter]"
-                              name="Counter">
-                              <properties>
-                                <property
-                                  containsID="true"
-                                  dataType="System.Int32"
-                                  description="The input column associated with this output column"
-                                  name="InputColumnID">#{Package\DWH LOAD\TBDWFT_AUDIT_TRAIL_EQUIP\Brevetti BM398 ins\Merge Join.Inputs[Merge Join Left Input].Columns[SOURCE_COUNTER_ID]}</property>
-                              </properties>
-                            </outputColumn>
-                            <outputColumn
-                              refId="Package\DWH LOAD\TBDWFT_AUDIT_TRAIL_EQUIP\Brevetti BM398 ins\Merge Join.Outputs[Merge Join Output].Columns[SystemID]"
-                              dataType="i4"
-                              lineageId="Package\DWH LOAD\TBDWFT_AUDIT_TRAIL_EQUIP\Brevetti BM398 ins\Merge Join.Outputs[Merge Join Output].Columns[SystemID]"
-                              name="SystemID">
-                              <properties>
-                                <property
-                                  containsID="true"
-                                  dataType="System.Int32"
-                                  description="The input column associated with this output column"
-                                  name="InputColumnID">#{Package\DWH LOAD\TBDWFT_AUDIT_TRAIL_EQUIP\Brevetti BM398 ins\Merge Join.Inputs[Merge Join Left Input].Columns[SOURCE_EQUIPMENT_ID]}</property>
-                              </properties>
-                            </outputColumn>
-                            <outputColumn
-                              refId="Package\DWH LOAD\TBDWFT_AUDIT_TRAIL_EQUIP\Brevetti BM398 ins\Merge Join.Outputs[Merge Join Output].Columns[Time]"
-                              dataType="date"
-                              lineageId="Package\DWH LOAD\TBDWFT_AUDIT_TRAIL_EQUIP\Brevetti BM398 ins\Merge Join.Outputs[Merge Join Output].Columns[Time]"
-                              name="Time">
-                              <properties>
-                                <property
-                                  containsID="true"
-                                  dataType="System.Int32"
-                                  description="The input column associated with this output column"
-                                  name="InputColumnID">#{Package\DWH LOAD\TBDWFT_AUDIT_TRAIL_EQUIP\Brevetti BM398 ins\Merge Join.Inputs[Merge Join Left Input].Columns[DATE_DT]}</property>
-                              </properties>
-                            </outputColumn>
-                            <outputColumn
-                              refId="Package\DWH LOAD\TBDWFT_AUDIT_TRAIL_EQUIP\Brevetti BM398 ins\Merge Join.Outputs[Merge Join Output].Columns[User]"
-                              dataType="wstr"
-                              length="100"
-                              lineageId="Package\DWH LOAD\TBDWFT_AUDIT_TRAIL_EQUIP\Brevetti BM398 ins\Merge Join.Outputs[Merge Join Output].Columns[User]"
-                              name="User">
-                              <properties>
-                                <property
-                                  containsID="true"
-                                  dataType="System.Int32"
-                                  description="The input column associated with this output column"
-                                  name="InputColumnID">#{Package\DWH LOAD\TBDWFT_AUDIT_TRAIL_EQUIP\Brevetti BM398 ins\Merge Join.Inputs[Merge Join Left Input].Columns[USER_DESC]}</property>
-                              </properties>
-                            </outputColumn>
-                            <outputColumn
-                              refId="Package\DWH LOAD\TBDWFT_AUDIT_TRAIL_EQUIP\Brevetti BM398 ins\Merge Join.Outputs[Merge Join Output].Columns[Message]"
-                              dataType="wstr"
-                              length="4000"
-                              lineageId="Package\DWH LOAD\TBDWFT_AUDIT_TRAIL_EQUIP\Brevetti BM398 ins\Merge Join.Outputs[Merge Join Output].Columns[Message]"
-                              name="Message">
-                              <properties>
-                                <property
-                                  containsID="true"
-                                  dataType="System.Int32"
-                                  description="The input column associated with this output column"
-                                  name="InputColumnID">#{Package\DWH LOAD\TBDWFT_AUDIT_TRAIL_EQUIP\Brevetti BM398 ins\Merge Join.Inputs[Merge Join Left Input].Columns[MESSAGE_DESC]}</property>
-                              </properties>
-                            </outputColumn>
-                          </outputColumns>
-                          <externalMetadataColumns />
-                        </output>
-                      </outputs>
-                    </component>
-                    <component
-                      refId="Package\DWH LOAD\TBDWFT_AUDIT_TRAIL_EQUIP\Brevetti BM398 ins\Sort on Join Field"
-                      componentClassID="Microsoft.Sort"
-                      contactInfo="Sort;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
-                      description="Sorts input data in ascending or descending order when it cannot be sorted at its source. For example, sort sales data by 'customer id' before it is written to a flat file and delivered to another department. Note: We do not recommend this transformation for large data flows."
-                      name="Sort on Join Field"
-                      version="1">
-                      <properties>
-                        <property
-                          dataType="System.Boolean"
-                          description="Indicates whether the Sort transformation removes rows with duplicate sort values."
-                          name="EliminateDuplicates">false</property>
-                        <property
-                          dataType="System.Int32"
-                          description="Specifies the maximum number of threads to use for sorting."
-                          expressionType="Notify"
-                          name="MaximumThreads">-1</property>
-                      </properties>
-                      <inputs>
-                        <input
-                          refId="Package\DWH LOAD\TBDWFT_AUDIT_TRAIL_EQUIP\Brevetti BM398 ins\Sort on Join Field.Inputs[Sort Input]"
-                          name="Sort Input">
-                          <inputColumns>
-                            <inputColumn
-                              refId="Package\DWH LOAD\TBDWFT_AUDIT_TRAIL_EQUIP\Brevetti BM398 ins\Sort on Join Field.Inputs[Sort Input].Columns[Counter]"
-                              cachedDataType="i4"
-                              cachedName="Counter"
-                              lineageId="Package\DWH LOAD\TBDWFT_AUDIT_TRAIL_EQUIP\Brevetti BM398 ins\BM398.Outputs[Flat File Source Output].Columns[Counter]">
-                              <properties>
-                                <property
-                                  dataType="System.Int32"
-                                  description="Specifies the comparison options for character data."
-                                  name="NewComparisonFlags">0</property>
-                                <property
-                                  dataType="System.Int32"
-                                  description="Specifies the sort order of the column."
-                                  name="NewSortKeyPosition">0</property>
-                              </properties>
-                            </inputColumn>
-                            <inputColumn
-                              refId="Package\DWH LOAD\TBDWFT_AUDIT_TRAIL_EQUIP\Brevetti BM398 ins\Sort on Join Field.Inputs[Sort Input].Columns[SystemID]"
-                              cachedDataType="i4"
-                              cachedName="SystemID"
-                              lineageId="Package\DWH LOAD\TBDWFT_AUDIT_TRAIL_EQUIP\Brevetti BM398 ins\BM398.Outputs[Flat File Source Output].Columns[SystemID]">
-                              <properties>
-                                <property
-                                  dataType="System.Int32"
-                                  description="Specifies the comparison options for character data."
-                                  name="NewComparisonFlags">0</property>
-                                <property
-                                  dataType="System.Int32"
-                                  description="Specifies the sort order of the column."
-                                  name="NewSortKeyPosition">0</property>
-                              </properties>
-                            </inputColumn>
-                            <inputColumn
-                              refId="Package\DWH LOAD\TBDWFT_AUDIT_TRAIL_EQUIP\Brevetti BM398 ins\Sort on Join Field.Inputs[Sort Input].Columns[Time]"
-                              cachedDataType="date"
-                              cachedName="Time"
-                              lineageId="Package\DWH LOAD\TBDWFT_AUDIT_TRAIL_EQUIP\Brevetti BM398 ins\BM398.Outputs[Flat File Source Output].Columns[Time]">
-                              <properties>
-                                <property
-                                  dataType="System.Int32"
-                                  description="Specifies the comparison options for character data."
-                                  name="NewComparisonFlags">0</property>
-                                <property
-                                  dataType="System.Int32"
-                                  description="Specifies the sort order of the column."
-                                  name="NewSortKeyPosition">0</property>
-                              </properties>
-                            </inputColumn>
-                            <inputColumn
-                              refId="Package\DWH LOAD\TBDWFT_AUDIT_TRAIL_EQUIP\Brevetti BM398 ins\Sort on Join Field.Inputs[Sort Input].Columns[User]"
-                              cachedDataType="wstr"
-                              cachedLength="100"
-                              cachedName="User"
-                              lineageId="Package\DWH LOAD\TBDWFT_AUDIT_TRAIL_EQUIP\Brevetti BM398 ins\BM398.Outputs[Flat File Source Output].Columns[User]">
-                              <properties>
-                                <property
-                                  dataType="System.Int32"
-                                  description="Specifies the comparison options for character data."
-                                  name="NewComparisonFlags">0</property>
-                                <property
-                                  dataType="System.Int32"
-                                  description="Specifies the sort order of the column."
-                                  name="NewSortKeyPosition">0</property>
-                              </properties>
-                            </inputColumn>
-                            <inputColumn
-                              refId="Package\DWH LOAD\TBDWFT_AUDIT_TRAIL_EQUIP\Brevetti BM398 ins\Sort on Join Field.Inputs[Sort Input].Columns[Message]"
-                              cachedDataType="wstr"
-                              cachedLength="4000"
-                              cachedName="Message"
-                              lineageId="Package\DWH LOAD\TBDWFT_AUDIT_TRAIL_EQUIP\Brevetti BM398 ins\BM398.Outputs[Flat File Source Output].Columns[Message]">
-                              <properties>
-                                <property
-                                  dataType="System.Int32"
-                                  description="Specifies the comparison options for character data."
-                                  name="NewComparisonFlags">0</property>
-                                <property
-                                  dataType="System.Int32"
-                                  description="Specifies the sort order of the column."
-                                  name="NewSortKeyPosition">0</property>
-                              </properties>
-                            </inputColumn>
-                            <inputColumn
-                              refId="Package\DWH LOAD\TBDWFT_AUDIT_TRAIL_EQUIP\Brevetti BM398 ins\Sort on Join Field.Inputs[Sort Input].Columns[join_field]"
-                              cachedDataType="i4"
-                              cachedName="join_field"
-                              lineageId="Package\DWH LOAD\TBDWFT_AUDIT_TRAIL_EQUIP\Brevetti BM398 ins\Add Technical Fields and renaming.Outputs[Derived Column Output].Columns[join_field]">
-                              <properties>
-                                <property
-                                  dataType="System.Int32"
-                                  description="Specifies the comparison options for character data."
-                                  name="NewComparisonFlags">0</property>
-                                <property
-                                  dataType="System.Int32"
-                                  description="Specifies the sort order of the column."
-                                  name="NewSortKeyPosition">1</property>
-                              </properties>
-                            </inputColumn>
-                            <inputColumn
-                              refId="Package\DWH LOAD\TBDWFT_AUDIT_TRAIL_EQUIP\Brevetti BM398 ins\Sort on Join Field.Inputs[Sort Input].Columns[TBLOG_PACKAGE_ID]"
-                              cachedDataType="i4"
-                              cachedName="TBLOG_PACKAGE_ID"
-                              lineageId="Package\DWH LOAD\TBDWFT_AUDIT_TRAIL_EQUIP\Brevetti BM398 ins\Add Technical Fields and renaming.Outputs[Derived Column Output].Columns[TBLOG_PACKAGE_ID]">
-                              <properties>
-                                <property
-                                  dataType="System.Int32"
-                                  description="Specifies the comparison options for character data."
-                                  name="NewComparisonFlags">0</property>
-                                <property
-                                  dataType="System.Int32"
-                                  description="Specifies the sort order of the column."
-                                  name="NewSortKeyPosition">0</property>
-                              </properties>
-                            </inputColumn>
-                            <inputColumn
-                              refId="Package\DWH LOAD\TBDWFT_AUDIT_TRAIL_EQUIP\Brevetti BM398 ins\Sort on Join Field.Inputs[Sort Input].Columns[INSERT_DT]"
-                              cachedDataType="dbTimeStamp"
-                              cachedName="INSERT_DT"
-                              lineageId="Package\DWH LOAD\TBDWFT_AUDIT_TRAIL_EQUIP\Brevetti BM398 ins\Add Technical Fields and renaming.Outputs[Derived Column Output].Columns[INSERT_DT]">
-                              <properties>
-                                <property
-                                  dataType="System.Int32"
-                                  description="Specifies the comparison options for character data."
-                                  name="NewComparisonFlags">0</property>
-                                <property
-                                  dataType="System.Int32"
-                                  description="Specifies the sort order of the column."
-                                  name="NewSortKeyPosition">0</property>
-                              </properties>
-                            </inputColumn>
-                            <inputColumn
-                              refId="Package\DWH LOAD\TBDWFT_AUDIT_TRAIL_EQUIP\Brevetti BM398 ins\Sort on Join Field.Inputs[Sort Input].Columns[UPDATE_DT]"
-                              cachedDataType="dbTimeStamp"
-                              cachedName="UPDATE_DT"
-                              lineageId="Package\DWH LOAD\TBDWFT_AUDIT_TRAIL_EQUIP\Brevetti BM398 ins\Add Technical Fields and renaming.Outputs[Derived Column Output].Columns[UPDATE_DT]">
-                              <properties>
-                                <property
-                                  dataType="System.Int32"
-                                  description="Specifies the comparison options for character data."
-                                  name="NewComparisonFlags">0</property>
-                                <property
-                                  dataType="System.Int32"
-                                  description="Specifies the sort order of the column."
-                                  name="NewSortKeyPosition">0</property>
-                              </properties>
-                            </inputColumn>
-                            <inputColumn
-                              refId="Package\DWH LOAD\TBDWFT_AUDIT_TRAIL_EQUIP\Brevetti BM398 ins\Sort on Join Field.Inputs[Sort Input].Columns[USER_CD]"
-                              cachedDataType="wstr"
-                              cachedLength="11"
-                              cachedName="USER_CD"
-                              lineageId="Package\DWH LOAD\TBDWFT_AUDIT_TRAIL_EQUIP\Brevetti BM398 ins\Add Technical Fields and renaming.Outputs[Derived Column Output].Columns[USER_CD]">
-                              <properties>
-                                <property
-                                  dataType="System.Int32"
-                                  description="Specifies the comparison options for character data."
-                                  name="NewComparisonFlags">0</property>
-                                <property
-                                  dataType="System.Int32"
-                                  description="Specifies the sort order of the column."
-                                  name="NewSortKeyPosition">0</property>
-                              </properties>
-                            </inputColumn>
-                            <inputColumn
-                              refId="Package\DWH LOAD\TBDWFT_AUDIT_TRAIL_EQUIP\Brevetti BM398 ins\Sort on Join Field.Inputs[Sort Input].Columns[SITE_ID]"
-                              cachedDataType="i4"
-                              cachedName="SITE_ID"
-                              lineageId="Package\DWH LOAD\TBDWFT_AUDIT_TRAIL_EQUIP\Brevetti BM398 ins\Add Technical Fields and renaming.Outputs[Derived Column Output].Columns[SITE_ID]">
-                              <properties>
-                                <property
-                                  dataType="System.Int32"
-                                  description="Specifies the comparison options for character data."
-                                  name="NewComparisonFlags">0</property>
-                                <property
-                                  dataType="System.Int32"
-                                  description="Specifies the sort order of the column."
-                                  name="NewSortKeyPosition">0</property>
-                              </properties>
-                            </inputColumn>
-                            <inputColumn
-                              refId="Package\DWH LOAD\TBDWFT_AUDIT_TRAIL_EQUIP\Brevetti BM398 ins\Sort on Join Field.Inputs[Sort Input].Columns[SOURCE_SYSTEM_ID]"
-                              cachedDataType="i4"
-                              cachedName="SOURCE_SYSTEM_ID"
-                              lineageId="Package\DWH LOAD\TBDWFT_AUDIT_TRAIL_EQUIP\Brevetti BM398 ins\Add Technical Fields and renaming.Outputs[Derived Column Output].Columns[SOURCE_SYSTEM_ID]">
-                              <properties>
-                                <property
-                                  dataType="System.Int32"
-                                  description="Specifies the comparison options for character data."
-                                  name="NewComparisonFlags">0</property>
-                                <property
-                                  dataType="System.Int32"
-                                  description="Specifies the sort order of the column."
-                                  name="NewSortKeyPosition">0</property>
-                              </properties>
-                            </inputColumn>
-                            <inputColumn
-                              refId="Package\DWH LOAD\TBDWFT_AUDIT_TRAIL_EQUIP\Brevetti BM398 ins\Sort on Join Field.Inputs[Sort Input].Columns[TBLOG_PACKAGE_TABLE_ID]"
-                              cachedDataType="i4"
-                              cachedName="TBLOG_PACKAGE_TABLE_ID"
-                              lineageId="Package\DWH LOAD\TBDWFT_AUDIT_TRAIL_EQUIP\Brevetti BM398 ins\Add Technical Fields and renaming.Outputs[Derived Column Output].Columns[TBLOG_PACKAGE_TABLE_ID]">
-                              <properties>
-                                <property
-                                  dataType="System.Int32"
-                                  description="Specifies the comparison options for character data."
-                                  name="NewComparisonFlags">0</property>
-                                <property
-                                  dataType="System.Int32"
-                                  description="Specifies the sort order of the column."
-                                  name="NewSortKeyPosition">0</property>
-                              </properties>
-                            </inputColumn>
-                          </inputColumns>
-                          <externalMetadataColumns />
-                        </input>
-                      </inputs>
-                      <outputs>
-                        <output
-                          refId="Package\DWH LOAD\TBDWFT_AUDIT_TRAIL_EQUIP\Brevetti BM398 ins\Sort on Join Field.Outputs[Sort Output]"
-                          isSorted="true"
-                          name="Sort Output">
-                          <outputColumns>
-                            <outputColumn
-                              refId="Package\DWH LOAD\TBDWFT_AUDIT_TRAIL_EQUIP\Brevetti BM398 ins\Sort on Join Field.Outputs[Sort Output].Columns[SOURCE_COUNTER_ID]"
-                              dataType="i4"
-                              lineageId="Package\DWH LOAD\TBDWFT_AUDIT_TRAIL_EQUIP\Brevetti BM398 ins\Sort on Join Field.Outputs[Sort Output].Columns[SOURCE_COUNTER_ID]"
-                              name="SOURCE_COUNTER_ID">
-                              <properties>
-                                <property
-                                  containsID="true"
-                                  dataType="System.Int32"
-                                  description="Specifies the lineage identifier of the input column that is associated with this output column."
-                                  name="SortColumnId">#{Package\DWH LOAD\TBDWFT_AUDIT_TRAIL_EQUIP\Brevetti BM398 ins\BM398.Outputs[Flat File Source Output].Columns[Counter]}</property>
-                              </properties>
-                            </outputColumn>
-                            <outputColumn
-                              refId="Package\DWH LOAD\TBDWFT_AUDIT_TRAIL_EQUIP\Brevetti BM398 ins\Sort on Join Field.Outputs[Sort Output].Columns[SOURCE_EQUIPMENT_ID]"
-                              dataType="i4"
-                              lineageId="Package\DWH LOAD\TBDWFT_AUDIT_TRAIL_EQUIP\Brevetti BM398 ins\Sort on Join Field.Outputs[Sort Output].Columns[SOURCE_EQUIPMENT_ID]"
-                              name="SOURCE_EQUIPMENT_ID">
-                              <properties>
-                                <property
-                                  containsID="true"
-                                  dataType="System.Int32"
-                                  description="Specifies the lineage identifier of the input column that is associated with this output column."
-                                  name="SortColumnId">#{Package\DWH LOAD\TBDWFT_AUDIT_TRAIL_EQUIP\Brevetti BM398 ins\BM398.Outputs[Flat File Source Output].Columns[SystemID]}</property>
-                              </properties>
-                            </outputColumn>
-                            <outputColumn
-                              refId="Package\DWH LOAD\TBDWFT_AUDIT_TRAIL_EQUIP\Brevetti BM398 ins\Sort on Join Field.Outputs[Sort Output].Columns[DATE_DT]"
-                              dataType="date"
-                              lineageId="Package\DWH LOAD\TBDWFT_AUDIT_TRAIL_EQUIP\Brevetti BM398 ins\Sort on Join Field.Outputs[Sort Output].Columns[DATE_DT]"
-                              name="DATE_DT">
-                              <properties>
-                                <property
-                                  containsID="true"
-                                  dataType="System.Int32"
-                                  description="Specifies the lineage identifier of the input column that is associated with this output column."
-                                  name="SortColumnId">#{Package\DWH LOAD\TBDWFT_AUDIT_TRAIL_EQUIP\Brevetti BM398 ins\BM398.Outputs[Flat File Source Output].Columns[Time]}</property>
-                              </properties>
-                            </outputColumn>
-                            <outputColumn
-                              refId="Package\DWH LOAD\TBDWFT_AUDIT_TRAIL_EQUIP\Brevetti BM398 ins\Sort on Join Field.Outputs[Sort Output].Columns[USER_DESC]"
-                              dataType="wstr"
-                              length="100"
-                              lineageId="Package\DWH LOAD\TBDWFT_AUDIT_TRAIL_EQUIP\Brevetti BM398 ins\Sort on Join Field.Outputs[Sort Output].Columns[USER_DESC]"
-                              name="USER_DESC">
-                              <properties>
-                                <property
-                                  containsID="true"
-                                  dataType="System.Int32"
-                                  description="Specifies the lineage identifier of the input column that is associated with this output column."
-                                  name="SortColumnId">#{Package\DWH LOAD\TBDWFT_AUDIT_TRAIL_EQUIP\Brevetti BM398 ins\BM398.Outputs[Flat File Source Output].Columns[User]}</property>
-                              </properties>
-                            </outputColumn>
-                            <outputColumn
-                              refId="Package\DWH LOAD\TBDWFT_AUDIT_TRAIL_EQUIP\Brevetti BM398 ins\Sort on Join Field.Outputs[Sort Output].Columns[MESSAGE_DESC]"
-                              dataType="wstr"
-                              length="4000"
-                              lineageId="Package\DWH LOAD\TBDWFT_AUDIT_TRAIL_EQUIP\Brevetti BM398 ins\Sort on Join Field.Outputs[Sort Output].Columns[MESSAGE_DESC]"
-                              name="MESSAGE_DESC">
-                              <properties>
-                                <property
-                                  containsID="true"
-                                  dataType="System.Int32"
-                                  description="Specifies the lineage identifier of the input column that is associated with this output column."
-                                  name="SortColumnId">#{Package\DWH LOAD\TBDWFT_AUDIT_TRAIL_EQUIP\Brevetti BM398 ins\BM398.Outputs[Flat File Source Output].Columns[Message]}</property>
-                              </properties>
-                            </outputColumn>
-                            <outputColumn
-                              refId="Package\DWH LOAD\TBDWFT_AUDIT_TRAIL_EQUIP\Brevetti BM398 ins\Sort on Join Field.Outputs[Sort Output].Columns[join_field]"
-                              dataType="i4"
-                              lineageId="Package\DWH LOAD\TBDWFT_AUDIT_TRAIL_EQUIP\Brevetti BM398 ins\Sort on Join Field.Outputs[Sort Output].Columns[join_field]"
-                              name="join_field"
-                              sortKeyPosition="1">
-                              <properties>
-                                <property
-                                  containsID="true"
-                                  dataType="System.Int32"
-                                  description="Specifies the lineage identifier of the input column that is associated with this output column."
-                                  name="SortColumnId">#{Package\DWH LOAD\TBDWFT_AUDIT_TRAIL_EQUIP\Brevetti BM398 ins\Add Technical Fields and renaming.Outputs[Derived Column Output].Columns[join_field]}</property>
-                              </properties>
-                            </outputColumn>
-                            <outputColumn
-                              refId="Package\DWH LOAD\TBDWFT_AUDIT_TRAIL_EQUIP\Brevetti BM398 ins\Sort on Join Field.Outputs[Sort Output].Columns[TBLOG_PACKAGE_ID]"
-                              dataType="i4"
-                              lineageId="Package\DWH LOAD\TBDWFT_AUDIT_TRAIL_EQUIP\Brevetti BM398 ins\Sort on Join Field.Outputs[Sort Output].Columns[TBLOG_PACKAGE_ID]"
-                              name="TBLOG_PACKAGE_ID">
-                              <properties>
-                                <property
-                                  containsID="true"
-                                  dataType="System.Int32"
-                                  description="Specifies the lineage identifier of the input column that is associated with this output column."
-                                  name="SortColumnId">#{Package\DWH LOAD\TBDWFT_AUDIT_TRAIL_EQUIP\Brevetti BM398 ins\Add Technical Fields and renaming.Outputs[Derived Column Output].Columns[TBLOG_PACKAGE_ID]}</property>
-                              </properties>
-                            </outputColumn>
-                            <outputColumn
-                              refId="Package\DWH LOAD\TBDWFT_AUDIT_TRAIL_EQUIP\Brevetti BM398 ins\Sort on Join Field.Outputs[Sort Output].Columns[INSERT_DT]"
-                              dataType="dbTimeStamp"
-                              lineageId="Package\DWH LOAD\TBDWFT_AUDIT_TRAIL_EQUIP\Brevetti BM398 ins\Sort on Join Field.Outputs[Sort Output].Columns[INSERT_DT]"
-                              name="INSERT_DT">
-                              <properties>
-                                <property
-                                  containsID="true"
-                                  dataType="System.Int32"
-                                  description="Specifies the lineage identifier of the input column that is associated with this output column."
-                                  name="SortColumnId">#{Package\DWH LOAD\TBDWFT_AUDIT_TRAIL_EQUIP\Brevetti BM398 ins\Add Technical Fields and renaming.Outputs[Derived Column Output].Columns[INSERT_DT]}</property>
-                              </properties>
-                            </outputColumn>
-                            <outputColumn
-                              refId="Package\DWH LOAD\TBDWFT_AUDIT_TRAIL_EQUIP\Brevetti BM398 ins\Sort on Join Field.Outputs[Sort Output].Columns[UPDATE_DT]"
-                              dataType="dbTimeStamp"
-                              lineageId="Package\DWH LOAD\TBDWFT_AUDIT_TRAIL_EQUIP\Brevetti BM398 ins\Sort on Join Field.Outputs[Sort Output].Columns[UPDATE_DT]"
-                              name="UPDATE_DT">
-                              <properties>
-                                <property
-                                  containsID="true"
-                                  dataType="System.Int32"
-                                  description="Specifies the lineage identifier of the input column that is associated with this output column."
-                                  name="SortColumnId">#{Package\DWH LOAD\TBDWFT_AUDIT_TRAIL_EQUIP\Brevetti BM398 ins\Add Technical Fields and renaming.Outputs[Derived Column Output].Columns[UPDATE_DT]}</property>
-                              </properties>
-                            </outputColumn>
-                            <outputColumn
-                              refId="Package\DWH LOAD\TBDWFT_AUDIT_TRAIL_EQUIP\Brevetti BM398 ins\Sort on Join Field.Outputs[Sort Output].Columns[USER_CD]"
-                              dataType="wstr"
-                              length="11"
-                              lineageId="Package\DWH LOAD\TBDWFT_AUDIT_TRAIL_EQUIP\Brevetti BM398 ins\Sort on Join Field.Outputs[Sort Output].Columns[USER_CD]"
-                              name="USER_CD">
-                              <properties>
-                                <property
-                                  containsID="true"
-                                  dataType="System.Int32"
-                                  description="Specifies the lineage identifier of the input column that is associated with this output column."
-                                  name="SortColumnId">#{Package\DWH LOAD\TBDWFT_AUDIT_TRAIL_EQUIP\Brevetti BM398 ins\Add Technical Fields and renaming.Outputs[Derived Column Output].Columns[USER_CD]}</property>
-                              </properties>
-                            </outputColumn>
-                            <outputColumn
-                              refId="Package\DWH LOAD\TBDWFT_AUDIT_TRAIL_EQUIP\Brevetti BM398 ins\Sort on Join Field.Outputs[Sort Output].Columns[SITE_ID]"
-                              dataType="i4"
-                              lineageId="Package\DWH LOAD\TBDWFT_AUDIT_TRAIL_EQUIP\Brevetti BM398 ins\Sort on Join Field.Outputs[Sort Output].Columns[SITE_ID]"
-                              name="SITE_ID">
-                              <properties>
-                                <property
-                                  containsID="true"
-                                  dataType="System.Int32"
-                                  description="Specifies the lineage identifier of the input column that is associated with this output column."
-                                  name="SortColumnId">#{Package\DWH LOAD\TBDWFT_AUDIT_TRAIL_EQUIP\Brevetti BM398 ins\Add Technical Fields and renaming.Outputs[Derived Column Output].Columns[SITE_ID]}</property>
-                              </properties>
-                            </outputColumn>
-                            <outputColumn
-                              refId="Package\DWH LOAD\TBDWFT_AUDIT_TRAIL_EQUIP\Brevetti BM398 ins\Sort on Join Field.Outputs[Sort Output].Columns[SOURCE_SYSTEM_ID]"
-                              dataType="i4"
-                              lineageId="Package\DWH LOAD\TBDWFT_AUDIT_TRAIL_EQUIP\Brevetti BM398 ins\Sort on Join Field.Outputs[Sort Output].Columns[SOURCE_SYSTEM_ID]"
-                              name="SOURCE_SYSTEM_ID">
-                              <properties>
-                                <property
-                                  containsID="true"
-                                  dataType="System.Int32"
-                                  description="Specifies the lineage identifier of the input column that is associated with this output column."
-                                  name="SortColumnId">#{Package\DWH LOAD\TBDWFT_AUDIT_TRAIL_EQUIP\Brevetti BM398 ins\Add Technical Fields and renaming.Outputs[Derived Column Output].Columns[SOURCE_SYSTEM_ID]}</property>
-                              </properties>
-                            </outputColumn>
-                            <outputColumn
-                              refId="Package\DWH LOAD\TBDWFT_AUDIT_TRAIL_EQUIP\Brevetti BM398 ins\Sort on Join Field.Outputs[Sort Output].Columns[TBLOG_PACKAGE_TABLE_ID]"
-                              dataType="i4"
-                              lineageId="Package\DWH LOAD\TBDWFT_AUDIT_TRAIL_EQUIP\Brevetti BM398 ins\Sort on Join Field.Outputs[Sort Output].Columns[TBLOG_PACKAGE_TABLE_ID]"
-                              name="TBLOG_PACKAGE_TABLE_ID">
-                              <properties>
-                                <property
-                                  containsID="true"
-                                  dataType="System.Int32"
-                                  description="Specifies the lineage identifier of the input column that is associated with this output column."
-                                  name="SortColumnId">#{Package\DWH LOAD\TBDWFT_AUDIT_TRAIL_EQUIP\Brevetti BM398 ins\Add Technical Fields and renaming.Outputs[Derived Column Output].Columns[TBLOG_PACKAGE_TABLE_ID]}</property>
-                              </properties>
-                            </outputColumn>
-                          </outputColumns>
-                          <externalMetadataColumns />
-                        </output>
-                      </outputs>
-                    </component>
-                    <component
-                      refId="Package\DWH LOAD\TBDWFT_AUDIT_TRAIL_EQUIP\Brevetti BM398 ins\Sort on Join Field 2"
-                      componentClassID="Microsoft.Sort"
-                      contactInfo="Sort;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
-                      description="Sorts input data in ascending or descending order when it cannot be sorted at its source. For example, sort sales data by 'customer id' before it is written to a flat file and delivered to another department. Note: We do not recommend this transformation for large data flows."
-                      name="Sort on Join Field 2"
-                      version="1">
-                      <properties>
-                        <property
-                          dataType="System.Boolean"
-                          description="Indicates whether the Sort transformation removes rows with duplicate sort values."
-                          name="EliminateDuplicates">false</property>
-                        <property
-                          dataType="System.Int32"
-                          description="Specifies the maximum number of threads to use for sorting."
-                          expressionType="Notify"
-                          name="MaximumThreads">-1</property>
-                      </properties>
-                      <inputs>
-                        <input
-                          refId="Package\DWH LOAD\TBDWFT_AUDIT_TRAIL_EQUIP\Brevetti BM398 ins\Sort on Join Field 2.Inputs[Sort Input]"
-                          name="Sort Input">
-                          <inputColumns>
-                            <inputColumn
-                              refId="Package\DWH LOAD\TBDWFT_AUDIT_TRAIL_EQUIP\Brevetti BM398 ins\Sort on Join Field 2.Inputs[Sort Input].Columns[TBDWMN_PRODUCTION_LINE]"
-                              cachedDataType="i2"
-                              cachedName="TBDWMN_PRODUCTION_LINE"
-                              lineageId="Package\DWH LOAD\TBDWFT_AUDIT_TRAIL_EQUIP\Brevetti BM398 ins\Load TBMN data.Outputs[OLE DB Source Output].Columns[TBDWMN_PRODUCTION_LINE]">
-                              <properties>
-                                <property
-                                  dataType="System.Int32"
-                                  description="Specifies the comparison options for character data."
-                                  name="NewComparisonFlags">0</property>
-                                <property
-                                  dataType="System.Int32"
-                                  description="Specifies the sort order of the column."
-                                  name="NewSortKeyPosition">0</property>
-                              </properties>
-                            </inputColumn>
-                            <inputColumn
-                              refId="Package\DWH LOAD\TBDWFT_AUDIT_TRAIL_EQUIP\Brevetti BM398 ins\Sort on Join Field 2.Inputs[Sort Input].Columns[TBDWMN_PRODUCTION_MODEL]"
-                              cachedDataType="i2"
-                              cachedName="TBDWMN_PRODUCTION_MODEL"
-                              lineageId="Package\DWH LOAD\TBDWFT_AUDIT_TRAIL_EQUIP\Brevetti BM398 ins\Load TBMN data.Outputs[OLE DB Source Output].Columns[TBDWMN_PRODUCTION_MODEL]">
-                              <properties>
-                                <property
-                                  dataType="System.Int32"
-                                  description="Specifies the comparison options for character data."
-                                  name="NewComparisonFlags">0</property>
-                                <property
-                                  dataType="System.Int32"
-                                  description="Specifies the sort order of the column."
-                                  name="NewSortKeyPosition">0</property>
-                              </properties>
-                            </inputColumn>
-                            <inputColumn
-                              refId="Package\DWH LOAD\TBDWFT_AUDIT_TRAIL_EQUIP\Brevetti BM398 ins\Sort on Join Field 2.Inputs[Sort Input].Columns[SITE_CD]"
-                              cachedDataType="wstr"
-                              cachedLength="100"
-                              cachedName="SITE_CD"
-                              lineageId="Package\DWH LOAD\TBDWFT_AUDIT_TRAIL_EQUIP\Brevetti BM398 ins\Load TBMN data.Outputs[OLE DB Source Output].Columns[SITE_CD]">
-                              <properties>
-                                <property
-                                  dataType="System.Int32"
-                                  description="Specifies the comparison options for character data."
-                                  name="NewComparisonFlags">0</property>
-                                <property
-                                  dataType="System.Int32"
-                                  description="Specifies the sort order of the column."
-                                  name="NewSortKeyPosition">0</property>
-                              </properties>
-                            </inputColumn>
-                            <inputColumn
-                              refId="Package\DWH LOAD\TBDWFT_AUDIT_TRAIL_EQUIP\Brevetti BM398 ins\Sort on Join Field 2.Inputs[Sort Input].Columns[BUILDING_CD]"
-                              cachedDataType="wstr"
-                              cachedLength="50"
-                              cachedName="BUILDING_CD"
-                              lineageId="Package\DWH LOAD\TBDWFT_AUDIT_TRAIL_EQUIP\Brevetti BM398 ins\Load TBMN data.Outputs[OLE DB Source Output].Columns[BUILDING_CD]">
-                              <properties>
-                                <property
-                                  dataType="System.Int32"
-                                  description="Specifies the comparison options for character data."
-                                  name="NewComparisonFlags">0</property>
-                                <property
-                                  dataType="System.Int32"
-                                  description="Specifies the sort order of the column."
-                                  name="NewSortKeyPosition">0</property>
-                              </properties>
-                            </inputColumn>
-                            <inputColumn
-                              refId="Package\DWH LOAD\TBDWFT_AUDIT_TRAIL_EQUIP\Brevetti BM398 ins\Sort on Join Field 2.Inputs[Sort Input].Columns[PHASE_CD]"
-                              cachedDataType="wstr"
-                              cachedLength="100"
-                              cachedName="PHASE_CD"
-                              lineageId="Package\DWH LOAD\TBDWFT_AUDIT_TRAIL_EQUIP\Brevetti BM398 ins\Load TBMN data.Outputs[OLE DB Source Output].Columns[PHASE_CD]">
-                              <properties>
-                                <property
-                                  dataType="System.Int32"
-                                  description="Specifies the comparison options for character data."
-                                  name="NewComparisonFlags">0</property>
-                                <property
-                                  dataType="System.Int32"
-                                  description="Specifies the sort order of the column."
-                                  name="NewSortKeyPosition">0</property>
-                              </properties>
-                            </inputColumn>
-                            <inputColumn
-                              refId="Package\DWH LOAD\TBDWFT_AUDIT_TRAIL_EQUIP\Brevetti BM398 ins\Sort on Join Field 2.Inputs[Sort Input].Columns[PRODUCT_FAMILY_CD]"
-                              cachedDataType="wstr"
-                              cachedLength="100"
-                              cachedName="PRODUCT_FAMILY_CD"
-                              lineageId="Package\DWH LOAD\TBDWFT_AUDIT_TRAIL_EQUIP\Brevetti BM398 ins\Load TBMN data.Outputs[OLE DB Source Output].Columns[PRODUCT_FAMILY_CD]">
-                              <properties>
-                                <property
-                                  dataType="System.Int32"
-                                  description="Specifies the comparison options for character data."
-                                  name="NewComparisonFlags">0</property>
-                                <property
-                                  dataType="System.Int32"
-                                  description="Specifies the sort order of the column."
-                                  name="NewSortKeyPosition">0</property>
-                              </properties>
-                            </inputColumn>
-                            <inputColumn
-                              refId="Package\DWH LOAD\TBDWFT_AUDIT_TRAIL_EQUIP\Brevetti BM398 ins\Sort on Join Field 2.Inputs[Sort Input].Columns[PRODUCT_TYPE_CD]"
-                              cachedDataType="wstr"
-                              cachedLength="100"
-                              cachedName="PRODUCT_TYPE_CD"
-                              lineageId="Package\DWH LOAD\TBDWFT_AUDIT_TRAIL_EQUIP\Brevetti BM398 ins\Load TBMN data.Outputs[OLE DB Source Output].Columns[PRODUCT_TYPE_CD]">
-                              <properties>
-                                <property
-                                  dataType="System.Int32"
-                                  description="Specifies the comparison options for character data."
-                                  name="NewComparisonFlags">0</property>
-                                <property
-                                  dataType="System.Int32"
-                                  description="Specifies the sort order of the column."
-                                  name="NewSortKeyPosition">0</property>
-                              </properties>
-                            </inputColumn>
-                            <inputColumn
-                              refId="Package\DWH LOAD\TBDWFT_AUDIT_TRAIL_EQUIP\Brevetti BM398 ins\Sort on Join Field 2.Inputs[Sort Input].Columns[MACHINE_SERIAL_CD]"
-                              cachedDataType="wstr"
-                              cachedLength="100"
-                              cachedName="MACHINE_SERIAL_CD"
-                              lineageId="Package\DWH LOAD\TBDWFT_AUDIT_TRAIL_EQUIP\Brevetti BM398 ins\Load TBMN data.Outputs[OLE DB Source Output].Columns[MACHINE_SERIAL_CD]">
-                              <properties>
-                                <property
-                                  dataType="System.Int32"
-                                  description="Specifies the comparison options for character data."
-                                  name="NewComparisonFlags">0</property>
-                                <property
-                                  dataType="System.Int32"
-                                  description="Specifies the sort order of the column."
-                                  name="NewSortKeyPosition">0</property>
-                              </properties>
-                            </inputColumn>
-                            <inputColumn
-                              refId="Package\DWH LOAD\TBDWFT_AUDIT_TRAIL_EQUIP\Brevetti BM398 ins\Sort on Join Field 2.Inputs[Sort Input].Columns[MACHINE_CD]"
-                              cachedDataType="wstr"
-                              cachedLength="100"
-                              cachedName="MACHINE_CD"
-                              lineageId="Package\DWH LOAD\TBDWFT_AUDIT_TRAIL_EQUIP\Brevetti BM398 ins\Load TBMN data.Outputs[OLE DB Source Output].Columns[MACHINE_CD]">
-                              <properties>
-                                <property
-                                  dataType="System.Int32"
-                                  description="Specifies the comparison options for character data."
-                                  name="NewComparisonFlags">0</property>
-                                <property
-                                  dataType="System.Int32"
-                                  description="Specifies the sort order of the column."
-                                  name="NewSortKeyPosition">0</property>
-                              </properties>
-                            </inputColumn>
-                            <inputColumn
-                              refId="Package\DWH LOAD\TBDWFT_AUDIT_TRAIL_EQUIP\Brevetti BM398 ins\Sort on Join Field 2.Inputs[Sort Input].Columns[MACHINE_FUNCTION_DESC]"
-                              cachedDataType="wstr"
-                              cachedLength="100"
-                              cachedName="MACHINE_FUNCTION_DESC"
-                              lineageId="Package\DWH LOAD\TBDWFT_AUDIT_TRAIL_EQUIP\Brevetti BM398 ins\Load TBMN data.Outputs[OLE DB Source Output].Columns[MACHINE_FUNCTION_DESC]">
-                              <properties>
-                                <property
-                                  dataType="System.Int32"
-                                  description="Specifies the comparison options for character data."
-                                  name="NewComparisonFlags">0</property>
-                                <property
-                                  dataType="System.Int32"
-                                  description="Specifies the sort order of the column."
-                                  name="NewSortKeyPosition">0</property>
-                              </properties>
-                            </inputColumn>
-                            <inputColumn
-                              refId="Package\DWH LOAD\TBDWFT_AUDIT_TRAIL_EQUIP\Brevetti BM398 ins\Sort on Join Field 2.Inputs[Sort Input].Columns[join_field]"
-                              cachedDataType="i4"
-                              cachedName="join_field"
-                              lineageId="Package\DWH LOAD\TBDWFT_AUDIT_TRAIL_EQUIP\Brevetti BM398 ins\Load TBMN data.Outputs[OLE DB Source Output].Columns[join_field]">
-                              <properties>
-                                <property
-                                  dataType="System.Int32"
-                                  description="Specifies the comparison options for character data."
-                                  name="NewComparisonFlags">0</property>
-                                <property
-                                  dataType="System.Int32"
-                                  description="Specifies the sort order of the column."
-                                  name="NewSortKeyPosition">1</property>
-                              </properties>
-                            </inputColumn>
-                          </inputColumns>
-                          <externalMetadataColumns />
-                        </input>
-                      </inputs>
-                      <outputs>
-                        <output
-                          refId="Package\DWH LOAD\TBDWFT_AUDIT_TRAIL_EQUIP\Brevetti BM398 ins\Sort on Join Field 2.Outputs[Sort Output]"
-                          isSorted="true"
-                          name="Sort Output">
-                          <outputColumns>
-                            <outputColumn
-                              refId="Package\DWH LOAD\TBDWFT_AUDIT_TRAIL_EQUIP\Brevetti BM398 ins\Sort on Join Field 2.Outputs[Sort Output].Columns[TBDWMN_PRODUCTION_LINE]"
-                              dataType="i2"
-                              lineageId="Package\DWH LOAD\TBDWFT_AUDIT_TRAIL_EQUIP\Brevetti BM398 ins\Sort on Join Field 2.Outputs[Sort Output].Columns[TBDWMN_PRODUCTION_LINE]"
-                              name="TBDWMN_PRODUCTION_LINE">
-                              <properties>
-                                <property
-                                  containsID="true"
-                                  dataType="System.Int32"
-                                  description="Specifies the lineage identifier of the input column that is associated with this output column."
-                                  name="SortColumnId">#{Package\DWH LOAD\TBDWFT_AUDIT_TRAIL_EQUIP\Brevetti BM398 ins\Load TBMN data.Outputs[OLE DB Source Output].Columns[TBDWMN_PRODUCTION_LINE]}</property>
-                              </properties>
-                            </outputColumn>
-                            <outputColumn
-                              refId="Package\DWH LOAD\TBDWFT_AUDIT_TRAIL_EQUIP\Brevetti BM398 ins\Sort on Join Field 2.Outputs[Sort Output].Columns[TBDWMN_PRODUCTION_MODEL]"
-                              dataType="i2"
-                              lineageId="Package\DWH LOAD\TBDWFT_AUDIT_TRAIL_EQUIP\Brevetti BM398 ins\Sort on Join Field 2.Outputs[Sort Output].Columns[TBDWMN_PRODUCTION_MODEL]"
-                              name="TBDWMN_PRODUCTION_MODEL">
-                              <properties>
-                                <property
-                                  containsID="true"
-                                  dataType="System.Int32"
-                                  description="Specifies the lineage identifier of the input column that is associated with this output column."
-                                  name="SortColumnId">#{Package\DWH LOAD\TBDWFT_AUDIT_TRAIL_EQUIP\Brevetti BM398 ins\Load TBMN data.Outputs[OLE DB Source Output].Columns[TBDWMN_PRODUCTION_MODEL]}</property>
-                              </properties>
-                            </outputColumn>
-                            <outputColumn
-                              refId="Package\DWH LOAD\TBDWFT_AUDIT_TRAIL_EQUIP\Brevetti BM398 ins\Sort on Join Field 2.Outputs[Sort Output].Columns[SITE_CD]"
-                              dataType="wstr"
-                              length="100"
-                              lineageId="Package\DWH LOAD\TBDWFT_AUDIT_TRAIL_EQUIP\Brevetti BM398 ins\Sort on Join Field 2.Outputs[Sort Output].Columns[SITE_CD]"
-                              name="SITE_CD">
-                              <properties>
-                                <property
-                                  containsID="true"
-                                  dataType="System.Int32"
-                                  description="Specifies the lineage identifier of the input column that is associated with this output column."
-                                  name="SortColumnId">#{Package\DWH LOAD\TBDWFT_AUDIT_TRAIL_EQUIP\Brevetti BM398 ins\Load TBMN data.Outputs[OLE DB Source Output].Columns[SITE_CD]}</property>
-                              </properties>
-                            </outputColumn>
-                            <outputColumn
-                              refId="Package\DWH LOAD\TBDWFT_AUDIT_TRAIL_EQUIP\Brevetti BM398 ins\Sort on Join Field 2.Outputs[Sort Output].Columns[BUILDING_CD]"
-                              dataType="wstr"
-                              length="50"
-                              lineageId="Package\DWH LOAD\TBDWFT_AUDIT_TRAIL_EQUIP\Brevetti BM398 ins\Sort on Join Field 2.Outputs[Sort Output].Columns[BUILDING_CD]"
-                              name="BUILDING_CD">
-                              <properties>
-                                <property
-                                  containsID="true"
-                                  dataType="System.Int32"
-                                  description="Specifies the lineage identifier of the input column that is associated with this output column."
-                                  name="SortColumnId">#{Package\DWH LOAD\TBDWFT_AUDIT_TRAIL_EQUIP\Brevetti BM398 ins\Load TBMN data.Outputs[OLE DB Source Output].Columns[BUILDING_CD]}</property>
-                              </properties>
-                            </outputColumn>
-                            <outputColumn
-                              refId="Package\DWH LOAD\TBDWFT_AUDIT_TRAIL_EQUIP\Brevetti BM398 ins\Sort on Join Field 2.Outputs[Sort Output].Columns[PHASE_CD]"
-                              dataType="wstr"
-                              length="100"
-                              lineageId="Package\DWH LOAD\TBDWFT_AUDIT_TRAIL_EQUIP\Brevetti BM398 ins\Sort on Join Field 2.Outputs[Sort Output].Columns[PHASE_CD]"
-                              name="PHASE_CD">
-                              <properties>
-                                <property
-                                  containsID="true"
-                                  dataType="System.Int32"
-                                  description="Specifies the lineage identifier of the input column that is associated with this output column."
-                                  name="SortColumnId">#{Package\DWH LOAD\TBDWFT_AUDIT_TRAIL_EQUIP\Brevetti BM398 ins\Load TBMN data.Outputs[OLE DB Source Output].Columns[PHASE_CD]}</property>
-                              </properties>
-                            </outputColumn>
-                            <outputColumn
-                              refId="Package\DWH LOAD\TBDWFT_AUDIT_TRAIL_EQUIP\Brevetti BM398 ins\Sort on Join Field 2.Outputs[Sort Output].Columns[PRODUCT_FAMILY_CD]"
-                              dataType="wstr"
-                              length="100"
-                              lineageId="Package\DWH LOAD\TBDWFT_AUDIT_TRAIL_EQUIP\Brevetti BM398 ins\Sort on Join Field 2.Outputs[Sort Output].Columns[PRODUCT_FAMILY_CD]"
-                              name="PRODUCT_FAMILY_CD">
-                              <properties>
-                                <property
-                                  containsID="true"
-                                  dataType="System.Int32"
-                                  description="Specifies the lineage identifier of the input column that is associated with this output column."
-                                  name="SortColumnId">#{Package\DWH LOAD\TBDWFT_AUDIT_TRAIL_EQUIP\Brevetti BM398 ins\Load TBMN data.Outputs[OLE DB Source Output].Columns[PRODUCT_FAMILY_CD]}</property>
-                              </properties>
-                            </outputColumn>
-                            <outputColumn
-                              refId="Package\DWH LOAD\TBDWFT_AUDIT_TRAIL_EQUIP\Brevetti BM398 ins\Sort on Join Field 2.Outputs[Sort Output].Columns[PRODUCT_TYPE_CD]"
-                              dataType="wstr"
-                              length="100"
-                              lineageId="Package\DWH LOAD\TBDWFT_AUDIT_TRAIL_EQUIP\Brevetti BM398 ins\Sort on Join Field 2.Outputs[Sort Output].Columns[PRODUCT_TYPE_CD]"
-                              name="PRODUCT_TYPE_CD">
-                              <properties>
-                                <property
-                                  containsID="true"
-                                  dataType="System.Int32"
-                                  description="Specifies the lineage identifier of the input column that is associated with this output column."
-                                  name="SortColumnId">#{Package\DWH LOAD\TBDWFT_AUDIT_TRAIL_EQUIP\Brevetti BM398 ins\Load TBMN data.Outputs[OLE DB Source Output].Columns[PRODUCT_TYPE_CD]}</property>
-                              </properties>
-                            </outputColumn>
-                            <outputColumn
-                              refId="Package\DWH LOAD\TBDWFT_AUDIT_TRAIL_EQUIP\Brevetti BM398 ins\Sort on Join Field 2.Outputs[Sort Output].Columns[MACHINE_SERIAL_CD]"
-                              dataType="wstr"
-                              length="100"
-                              lineageId="Package\DWH LOAD\TBDWFT_AUDIT_TRAIL_EQUIP\Brevetti BM398 ins\Sort on Join Field 2.Outputs[Sort Output].Columns[MACHINE_SERIAL_CD]"
-                              name="MACHINE_SERIAL_CD">
-                              <properties>
-                                <property
-                                  containsID="true"
-                                  dataType="System.Int32"
-                                  description="Specifies the lineage identifier of the input column that is associated with this output column."
-                                  name="SortColumnId">#{Package\DWH LOAD\TBDWFT_AUDIT_TRAIL_EQUIP\Brevetti BM398 ins\Load TBMN data.Outputs[OLE DB Source Output].Columns[MACHINE_SERIAL_CD]}</property>
-                              </properties>
-                            </outputColumn>
-                            <outputColumn
-                              refId="Package\DWH LOAD\TBDWFT_AUDIT_TRAIL_EQUIP\Brevetti BM398 ins\Sort on Join Field 2.Outputs[Sort Output].Columns[MACHINE_CD]"
-                              dataType="wstr"
-                              length="100"
-                              lineageId="Package\DWH LOAD\TBDWFT_AUDIT_TRAIL_EQUIP\Brevetti BM398 ins\Sort on Join Field 2.Outputs[Sort Output].Columns[MACHINE_CD]"
-                              name="MACHINE_CD">
-                              <properties>
-                                <property
-                                  containsID="true"
-                                  dataType="System.Int32"
-                                  description="Specifies the lineage identifier of the input column that is associated with this output column."
-                                  name="SortColumnId">#{Package\DWH LOAD\TBDWFT_AUDIT_TRAIL_EQUIP\Brevetti BM398 ins\Load TBMN data.Outputs[OLE DB Source Output].Columns[MACHINE_CD]}</property>
-                              </properties>
-                            </outputColumn>
-                            <outputColumn
-                              refId="Package\DWH LOAD\TBDWFT_AUDIT_TRAIL_EQUIP\Brevetti BM398 ins\Sort on Join Field 2.Outputs[Sort Output].Columns[MACHINE_FUNCTION_DESC]"
-                              dataType="wstr"
-                              length="100"
-                              lineageId="Package\DWH LOAD\TBDWFT_AUDIT_TRAIL_EQUIP\Brevetti BM398 ins\Sort on Join Field 2.Outputs[Sort Output].Columns[MACHINE_FUNCTION_DESC]"
-                              name="MACHINE_FUNCTION_DESC">
-                              <properties>
-                                <property
-                                  containsID="true"
-                                  dataType="System.Int32"
-                                  description="Specifies the lineage identifier of the input column that is associated with this output column."
-                                  name="SortColumnId">#{Package\DWH LOAD\TBDWFT_AUDIT_TRAIL_EQUIP\Brevetti BM398 ins\Load TBMN data.Outputs[OLE DB Source Output].Columns[MACHINE_FUNCTION_DESC]}</property>
-                              </properties>
-                            </outputColumn>
-                            <outputColumn
-                              refId="Package\DWH LOAD\TBDWFT_AUDIT_TRAIL_EQUIP\Brevetti BM398 ins\Sort on Join Field 2.Outputs[Sort Output].Columns[join_field]"
-                              dataType="i4"
-                              lineageId="Package\DWH LOAD\TBDWFT_AUDIT_TRAIL_EQUIP\Brevetti BM398 ins\Sort on Join Field 2.Outputs[Sort Output].Columns[join_field]"
-                              name="join_field"
-                              sortKeyPosition="1">
-                              <properties>
-                                <property
-                                  containsID="true"
-                                  dataType="System.Int32"
-                                  description="Specifies the lineage identifier of the input column that is associated with this output column."
-                                  name="SortColumnId">#{Package\DWH LOAD\TBDWFT_AUDIT_TRAIL_EQUIP\Brevetti BM398 ins\Load TBMN data.Outputs[OLE DB Source Output].Columns[join_field]}</property>
-                              </properties>
-                            </outputColumn>
-                          </outputColumns>
-                          <externalMetadataColumns />
-                        </output>
-                      </outputs>
-                    </component>
-                    <component
-                      refId="Package\DWH LOAD\TBDWFT_AUDIT_TRAIL_EQUIP\Brevetti BM398 ins\Split INS-UPD-DEL"
-                      componentClassID="Microsoft.ConditionalSplit"
-                      contactInfo="Conditional Split;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
-                      description="Routes data rows to different outputs depending on the content of the data. Use conditions (SSIS expressions) to specify which rows are routed. For example, separate records that need to be cleaned from those that are ready to be loaded or route only a subset of records."
-                      name="Split INS-UPD-DEL"
-                      usesDispositions="true">
-                      <inputs>
-                        <input
-                          refId="Package\DWH LOAD\TBDWFT_AUDIT_TRAIL_EQUIP\Brevetti BM398 ins\Split INS-UPD-DEL.Inputs[Conditional Split Input]"
-                          description="Input to the Conditional Split Transformation"
-                          name="Conditional Split Input">
-                          <inputColumns>
-                            <inputColumn
-                              refId="Package\DWH LOAD\TBDWFT_AUDIT_TRAIL_EQUIP\Brevetti BM398 ins\Split INS-UPD-DEL.Inputs[Conditional Split Input].Columns[MACHINE_SERIAL_CD]"
-                              cachedDataType="wstr"
-                              cachedLength="100"
-                              cachedName="MACHINE_SERIAL_CD"
-                              lineageId="Package\DWH LOAD\TBDWFT_AUDIT_TRAIL_EQUIP\Brevetti BM398 ins\Merge Join.Outputs[Merge Join Output].Columns[MACHINE_SERIAL_CD]" />
-                          </inputColumns>
-                          <externalMetadataColumns />
-                        </input>
-                      </inputs>
-                      <outputs>
-                        <output
-                          refId="Package\DWH LOAD\TBDWFT_AUDIT_TRAIL_EQUIP\Brevetti BM398 ins\Split INS-UPD-DEL.Outputs[INS]"
-                          description="Output 1 of the Conditional Split Transformation"
-                          errorOrTruncationOperation="Computation"
-                          errorRowDisposition="FailComponent"
-                          exclusionGroup="1"
-                          name="INS"
-                          synchronousInputId="Package\DWH LOAD\TBDWFT_AUDIT_TRAIL_EQUIP\Brevetti BM398 ins\Split INS-UPD-DEL.Inputs[Conditional Split Input]"
-                          truncationRowDisposition="FailComponent">
-                          <properties>
-                            <property
-                              containsID="true"
-                              dataType="System.String"
-                              description="Specifies the expression. This expression version uses lineage identifiers instead of column names."
-                              name="Expression">![ISNULL](#{Package\DWH LOAD\TBDWFT_AUDIT_TRAIL_EQUIP\Brevetti BM398 ins\Merge Join.Outputs[Merge Join Output].Columns[MACHINE_SERIAL_CD]})</property>
-                            <property
-                              containsID="true"
-                              dataType="System.String"
-                              description="Specifies the friendly version of the expression. This expression version uses column names."
-                              expressionType="Notify"
-                              name="FriendlyExpression">!ISNULL(MACHINE_SERIAL_CD)</property>
-                            <property
-                              dataType="System.Int32"
-                              description="Specifies the position of the condition in the list of conditions that the transformation evaluates. The evaluation order is from the lowest to the highest value."
-                              name="EvaluationOrder">0</property>
-                          </properties>
-                          <externalMetadataColumns />
-                        </output>
-                        <output
-                          refId="Package\DWH LOAD\TBDWFT_AUDIT_TRAIL_EQUIP\Brevetti BM398 ins\Split INS-UPD-DEL.Outputs[Conditional Split Default Output]"
-                          description="Default Output of the Conditional Split Transformation"
-                          exclusionGroup="1"
-                          name="Conditional Split Default Output"
-                          synchronousInputId="Package\DWH LOAD\TBDWFT_AUDIT_TRAIL_EQUIP\Brevetti BM398 ins\Split INS-UPD-DEL.Inputs[Conditional Split Input]">
-                          <properties>
-                            <property
-                              dataType="System.Boolean"
-                              name="IsDefaultOut">true</property>
-                          </properties>
-                          <externalMetadataColumns />
-                        </output>
-                        <output
-                          refId="Package\DWH LOAD\TBDWFT_AUDIT_TRAIL_EQUIP\Brevetti BM398 ins\Split INS-UPD-DEL.Outputs[Conditional Split Error Output]"
-                          description="Error Output of the Conditional Split Transformation"
-                          exclusionGroup="1"
-                          isErrorOut="true"
-                          name="Conditional Split Error Output"
-                          synchronousInputId="Package\DWH LOAD\TBDWFT_AUDIT_TRAIL_EQUIP\Brevetti BM398 ins\Split INS-UPD-DEL.Inputs[Conditional Split Input]">
-                          <outputColumns>
-                            <outputColumn
-                              refId="Package\DWH LOAD\TBDWFT_AUDIT_TRAIL_EQUIP\Brevetti BM398 ins\Split INS-UPD-DEL.Outputs[Conditional Split Error Output].Columns[ErrorCode]"
-                              dataType="i4"
-                              lineageId="Package\DWH LOAD\TBDWFT_AUDIT_TRAIL_EQUIP\Brevetti BM398 ins\Split INS-UPD-DEL.Outputs[Conditional Split Error Output].Columns[ErrorCode]"
-                              name="ErrorCode"
-                              specialFlags="1" />
-                            <outputColumn
-                              refId="Package\DWH LOAD\TBDWFT_AUDIT_TRAIL_EQUIP\Brevetti BM398 ins\Split INS-UPD-DEL.Outputs[Conditional Split Error Output].Columns[ErrorColumn]"
-                              dataType="i4"
-                              lineageId="Package\DWH LOAD\TBDWFT_AUDIT_TRAIL_EQUIP\Brevetti BM398 ins\Split INS-UPD-DEL.Outputs[Conditional Split Error Output].Columns[ErrorColumn]"
-                              name="ErrorColumn"
-                              specialFlags="2" />
-                          </outputColumns>
-                          <externalMetadataColumns />
-                        </output>
-                      </outputs>
-                    </component>
-                  </components>
-                  <paths>
-                    <path
-                      refId="Package\DWH LOAD\TBDWFT_AUDIT_TRAIL_EQUIP\Brevetti BM398 ins.Paths[Derived Column Output]"
-                      endId="Package\DWH LOAD\TBDWFT_AUDIT_TRAIL_EQUIP\Brevetti BM398 ins\Sort on Join Field.Inputs[Sort Input]"
-                      name="Derived Column Output"
-                      startId="Package\DWH LOAD\TBDWFT_AUDIT_TRAIL_EQUIP\Brevetti BM398 ins\Add Technical Fields and renaming.Outputs[Derived Column Output]" />
-                    <path
-                      refId="Package\DWH LOAD\TBDWFT_AUDIT_TRAIL_EQUIP\Brevetti BM398 ins.Paths[Flat File Source Output]"
-                      endId="Package\DWH LOAD\TBDWFT_AUDIT_TRAIL_EQUIP\Brevetti BM398 ins\Add Technical Fields and renaming.Inputs[Derived Column Input]"
-                      name="Flat File Source Output"
-                      startId="Package\DWH LOAD\TBDWFT_AUDIT_TRAIL_EQUIP\Brevetti BM398 ins\BM398.Outputs[Flat File Source Output]" />
-                    <path
-                      refId="Package\DWH LOAD\TBDWFT_AUDIT_TRAIL_EQUIP\Brevetti BM398 ins.Paths[Merge Join Output]"
-                      endId="Package\DWH LOAD\TBDWFT_AUDIT_TRAIL_EQUIP\Brevetti BM398 ins\Split INS-UPD-DEL.Inputs[Conditional Split Input]"
-                      name="Merge Join Output"
-                      startId="Package\DWH LOAD\TBDWFT_AUDIT_TRAIL_EQUIP\Brevetti BM398 ins\Merge Join.Outputs[Merge Join Output]" />
-                    <path
-                      refId="Package\DWH LOAD\TBDWFT_AUDIT_TRAIL_EQUIP\Brevetti BM398 ins.Paths[OLE DB Source Output]"
-                      endId="Package\DWH LOAD\TBDWFT_AUDIT_TRAIL_EQUIP\Brevetti BM398 ins\Sort on Join Field 2.Inputs[Sort Input]"
-                      name="OLE DB Source Output"
-                      startId="Package\DWH LOAD\TBDWFT_AUDIT_TRAIL_EQUIP\Brevetti BM398 ins\Load TBMN data.Outputs[OLE DB Source Output]" />
-                    <path
-                      refId="Package\DWH LOAD\TBDWFT_AUDIT_TRAIL_EQUIP\Brevetti BM398 ins.Paths[Sort Output]"
-                      endId="Package\DWH LOAD\TBDWFT_AUDIT_TRAIL_EQUIP\Brevetti BM398 ins\Merge Join.Inputs[Merge Join Left Input]"
-                      name="Sort Output"
-                      startId="Package\DWH LOAD\TBDWFT_AUDIT_TRAIL_EQUIP\Brevetti BM398 ins\Sort on Join Field.Outputs[Sort Output]" />
-                    <path
-                      refId="Package\DWH LOAD\TBDWFT_AUDIT_TRAIL_EQUIP\Brevetti BM398 ins.Paths[Sort Output1]"
-                      endId="Package\DWH LOAD\TBDWFT_AUDIT_TRAIL_EQUIP\Brevetti BM398 ins\Merge Join.Inputs[Merge Join Right Input]"
-                      name="Sort Output"
-                      startId="Package\DWH LOAD\TBDWFT_AUDIT_TRAIL_EQUIP\Brevetti BM398 ins\Sort on Join Field 2.Outputs[Sort Output]" />
-                  </paths>
-                </pipeline>
               </DTS:ObjectData>
             </DTS:Executable>
             <DTS:Executable
@@ -2610,6 +453,32 @@ FROM
               </DTS:ObjectData>
             </DTS:Executable>
             <DTS:Executable
+              DTS:refId="Package\DWH LOAD\TBDWFT_AUDIT_TRAIL_EQUIP\TBDWFT_AUDIT_TRAIL_EQUIP ins"
+              DTS:CreationName="Microsoft.Pipeline"
+              DTS:Description="Data Flow Task"
+              DTS:DTSID="{1A2C11D4-E457-49C1-830A-738CB3A9D683}"
+              DTS:ExecutableType="Microsoft.Pipeline"
+              DTS:LocaleID="-1"
+              DTS:ObjectName="TBDWFT_AUDIT_TRAIL_EQUIP ins"
+              DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+              <DTS:Variables>
+                <DTS:Variable
+                  DTS:CreationName=""
+                  DTS:Description="Brevetti BH-S600 serial name, refer to TBDWMN_PRODUCTION_MODEL"
+                  DTS:DTSID="{B741C802-7B34-45B0-BF8E-1DA3111B2E01}"
+                  DTS:IncludeInDebugDump="2345"
+                  DTS:Namespace="User"
+                  DTS:ObjectName="in_MACHINE_SERIAL_CD">
+                  <DTS:VariableValue
+                    DTS:DataType="8">BM398</DTS:VariableValue>
+                </DTS:Variable>
+              </DTS:Variables>
+              <DTS:ObjectData>
+                <pipeline
+                  version="1" />
+              </DTS:ObjectData>
+            </DTS:Executable>
+            <DTS:Executable
               DTS:refId="Package\DWH LOAD\TBDWFT_AUDIT_TRAIL_EQUIP\TBDWFT_AUDIT_TRAIL_EQUIP upd"
               DTS:CreationName="Microsoft.ExecuteSQLTask"
               DTS:Description="Execute SQL Task"
@@ -2633,7 +502,7 @@ FROM
               DTS:refId="Package\DWH LOAD\TBDWFT_AUDIT_TRAIL_EQUIP.PrecedenceConstraints[Constraint]"
               DTS:CreationName=""
               DTS:DTSID="{8EC96ADD-0AAA-45D4-9891-8EE1143274F5}"
-              DTS:From="Package\DWH LOAD\TBDWFT_AUDIT_TRAIL_EQUIP\Brevetti BM398 ins"
+              DTS:From="Package\DWH LOAD\TBDWFT_AUDIT_TRAIL_EQUIP\TBDWFT_AUDIT_TRAIL_EQUIP ins"
               DTS:LogicalAnd="True"
               DTS:ObjectName="Constraint"
               DTS:To="Package\DWH LOAD\TBDWFT_AUDIT_TRAIL_EQUIP\TBDWFT_AUDIT_TRAIL_EQUIP upd" />
@@ -2668,7 +537,7 @@ FROM
               DTS:From="Package\DWH LOAD\TBDWFT_AUDIT_TRAIL_EQUIP\MAX TABLE ID"
               DTS:LogicalAnd="True"
               DTS:ObjectName="Constraint 5"
-              DTS:To="Package\DWH LOAD\TBDWFT_AUDIT_TRAIL_EQUIP\Brevetti BM398 ins" />
+              DTS:To="Package\DWH LOAD\TBDWFT_AUDIT_TRAIL_EQUIP\TBDWFT_AUDIT_TRAIL_EQUIP ins" />
           </DTS:PrecedenceConstraints>
           <DTS:EventHandlers>
             <DTS:EventHandler
@@ -3015,12 +884,20 @@ FROM
       <GraphLayout
         Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
+          Size="157,42"
+          Id="Package\Assign SITE_ID"
+          TopLeft="304,140" />
+        <NodeLayout
+          Size="230,42"
+          Id="Package\Assign SOURCE_SYSTEM_ID"
+          TopLeft="287,59" />
+        <NodeLayout
           Size="222,42"
           Id="Package\DWH LOAD\TBDWFT_AUDIT_TRAIL_EQUIP\Assign TABLE_TARGET_CD"
           TopLeft="244.5,5.5" />
         <NodeLayout
-          Size="171,42"
-          Id="Package\DWH LOAD\TBDWFT_AUDIT_TRAIL_EQUIP\Brevetti BM398 ins"
+          Size="258,42"
+          Id="Package\DWH LOAD\TBDWFT_AUDIT_TRAIL_EQUIP\TBDWFT_AUDIT_TRAIL_EQUIP ins"
           TopLeft="236,311.5" />
         <NodeLayout
           Size="260,42"
@@ -3040,30 +917,18 @@ FROM
           TopLeft="238,402" />
         <EdgeLayout
           Id="Package\DWH LOAD\TBDWFT_AUDIT_TRAIL_EQUIP.PrecedenceConstraints[Constraint]"
-          TopLeft="321.5,353.5">
+          TopLeft="367.25,353.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="48,48.5"
+              EndConnector="0,48.5"
               Start="0,0"
-              End="48,41">
+              End="0,41">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,20.25" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,20.25"
-                    Point2="0,24.25"
-                    Point3="4,24.25" />
-                  <mssgle:LineSegment
-                    End="44,24.25" />
-                  <mssgle:CubicBezierSegment
-                    Point1="44,24.25"
-                    Point2="48,24.25"
-                    Point3="48,28.25" />
-                  <mssgle:LineSegment
-                    End="48,41" />
+                    End="0,41" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -3168,9 +1033,9 @@ FROM
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-34,60"
+              EndConnector="9.5,60"
               Start="0,0"
-              End="-34,52.5">
+              End="9.5,52.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
@@ -3179,15 +1044,15 @@ FROM
                   <mssgle:CubicBezierSegment
                     Point1="0,26"
                     Point2="0,30"
-                    Point3="-4,30" />
+                    Point3="4,30" />
                   <mssgle:LineSegment
-                    End="-30,30" />
+                    End="5.5,30" />
                   <mssgle:CubicBezierSegment
-                    Point1="-30,30"
-                    Point2="-34,30"
-                    Point3="-34,34" />
+                    Point1="5.5,30"
+                    Point2="9.5,30"
+                    Point3="9.5,34" />
                   <mssgle:LineSegment
-                    End="-34,52.5" />
+                    End="9.5,52.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -3332,44 +1197,6 @@ FROM
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package.PrecedenceConstraints[Constraint 7]"
-          TopLeft="813.238095238094,738.920634920634">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-20.833333333333,65.888888888889"
-              Start="0,0"
-              End="-20.833333333333,58.388888888889">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,28.9444444444445" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,28.9444444444445"
-                    Point2="0,32.9444444444445"
-                    Point3="-4,32.9444444444445" />
-                  <mssgle:LineSegment
-                    End="-16.833333333333,32.9444444444445" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-16.833333333333,32.9444444444445"
-                    Point2="-20.833333333333,32.9444444444445"
-                    Point3="-20.833333333333,36.9444444444445" />
-                  <mssgle:LineSegment
-                    End="-20.833333333333,58.388888888889" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="230,42"
-          Id="Package\Assign SOURCE_SYSTEM_ID"
-          TopLeft="287,59" />
-        <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 3]"
           TopLeft="402,101">
           <EdgeLayout.Curve>
@@ -3403,10 +1230,6 @@ FROM
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="157,42"
-          Id="Package\Assign SITE_ID"
-          TopLeft="304,140" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 4]"
           TopLeft="461,157.793650793651">
@@ -3421,6 +1244,40 @@ FROM
                   Capacity="5">
                   <mssgle:LineSegment
                     End="232.071428571435,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 7]"
+          TopLeft="813.238095238094,738.920634920634">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-20.833333333333,65.888888888889"
+              Start="0,0"
+              End="-20.833333333333,58.388888888889">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,28.9444444444445" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,28.9444444444445"
+                    Point2="0,32.9444444444445"
+                    Point3="-4,32.9444444444445" />
+                  <mssgle:LineSegment
+                    End="-16.833333333333,32.9444444444445" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-16.833333333333,32.9444444444445"
+                    Point2="-20.833333333333,32.9444444444445"
+                    Point3="-20.833333333333,36.9444444444445" />
+                  <mssgle:LineSegment
+                    End="-20.833333333333,58.388888888889" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -3457,24 +1314,24 @@ FROM
     </LayoutInfo>
   </DtsEventHandler>
   <TaskHost
-    design-time-name="Package\DWH LOAD\TBDWFT_AUDIT_TRAIL_EQUIP\Brevetti BM398 ins">
+    design-time-name="Package\DWH LOAD\TBDWFT_AUDIT_TRAIL_EQUIP\TBDWFT_AUDIT_TRAIL_EQUIP ins">
     <LayoutInfo>
       <GraphLayout
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="114,42"
-          Id="Package\DWH LOAD\TBDWFT_AUDIT_TRAIL_EQUIP\Brevetti BM398 ins\BM398"
+          Id="47"
           TopLeft="84,40" />
         <NodeLayout
           Size="162,42"
-          Id="Package\DWH LOAD\TBDWFT_AUDIT_TRAIL_EQUIP\Brevetti BM398 ins\Load TBMN data"
+          Id="76"
           TopLeft="300,38" />
         <NodeLayout
           Size="251,42"
-          Id="Package\DWH LOAD\TBDWFT_AUDIT_TRAIL_EQUIP\Brevetti BM398 ins\Add Technical Fields and renaming"
+          Id="2"
           TopLeft="100,173" />
         <EdgeLayout
-          Id="Package\DWH LOAD\TBDWFT_AUDIT_TRAIL_EQUIP\Brevetti BM398 ins.Paths[Flat File Source Output]"
+          Id="322"
           TopLeft="141,82">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -3509,14 +1366,14 @@ FROM
         </EdgeLayout>
         <NodeLayout
           Size="164,42"
-          Id="Package\DWH LOAD\TBDWFT_AUDIT_TRAIL_EQUIP\Brevetti BM398 ins\Sort on Join Field"
+          Id="179"
           TopLeft="183,258" />
         <NodeLayout
           Size="133,42"
-          Id="Package\DWH LOAD\TBDWFT_AUDIT_TRAIL_EQUIP\Brevetti BM398 ins\Merge Join"
+          Id="124"
           TopLeft="252,373" />
         <EdgeLayout
-          Id="Package\DWH LOAD\TBDWFT_AUDIT_TRAIL_EQUIP\Brevetti BM398 ins.Paths[Derived Column Output]"
+          Id="321"
           TopLeft="225.5,215">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -3550,7 +1407,7 @@ FROM
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\DWH LOAD\TBDWFT_AUDIT_TRAIL_EQUIP\Brevetti BM398 ins.Paths[Sort Output]"
+          Id="325"
           TopLeft="265,300">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -3585,10 +1442,10 @@ FROM
         </EdgeLayout>
         <NodeLayout
           Size="173,42"
-          Id="Package\DWH LOAD\TBDWFT_AUDIT_TRAIL_EQUIP\Brevetti BM398 ins\Sort on Join Field 2"
+          Id="249"
           TopLeft="468,256" />
         <EdgeLayout
-          Id="Package\DWH LOAD\TBDWFT_AUDIT_TRAIL_EQUIP\Brevetti BM398 ins.Paths[OLE DB Source Output]"
+          Id="324"
           TopLeft="381,80">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -3622,7 +1479,7 @@ FROM
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\DWH LOAD\TBDWFT_AUDIT_TRAIL_EQUIP\Brevetti BM398 ins.Paths[Sort Output1]"
+          Id="326"
           TopLeft="554.5,298">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -3657,10 +1514,10 @@ FROM
         </EdgeLayout>
         <NodeLayout
           Size="174,42"
-          Id="Package\DWH LOAD\TBDWFT_AUDIT_TRAIL_EQUIP\Brevetti BM398 ins\Split INS-UPD-DEL"
+          Id="309"
           TopLeft="291,466" />
         <EdgeLayout
-          Id="Package\DWH LOAD\TBDWFT_AUDIT_TRAIL_EQUIP\Brevetti BM398 ins.Paths[Merge Join Output]"
+          Id="323"
           TopLeft="318.5,415">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -3696,13 +1553,5 @@ FROM
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
-  <PipelineComponentMetadata
-    design-time-name="Package\DWH LOAD\TBDWFT_AUDIT_TRAIL_EQUIP\Brevetti BM398 ins\Load TBMN data">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
 </Objects>]]></DTS:DesignTimeProperties>
 </DTS:Executable>
