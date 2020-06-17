@@ -5,21 +5,21 @@
   DTS:CreationName="Microsoft.Package"
   DTS:CreatorComputerName="SRV-DIR-DEV"
   DTS:CreatorName="SINTE00\mluchini"
-  DTS:DTSID="{BC8FDFFE-C37F-4040-9B3F-7326954E383E}"
+  DTS:DTSID="{D99BB601-DF30-45C1-A0BF-48A7A1C647D9}"
   DTS:ExecutableType="Microsoft.Package"
   DTS:LastModifiedProductVersion="15.0.2000.121"
   DTS:LocaleID="2064"
-  DTS:ObjectName="PARCEL_MFG_STG"
+  DTS:ObjectName="AUDIT_TRAIL_STG"
   DTS:PackageType="5"
   DTS:VersionBuild="243"
-  DTS:VersionGUID="{DBB4AD4E-1EA0-495B-AC9D-D0F087C339ED}">
+  DTS:VersionGUID="{DCF264C4-23B4-47EA-829B-EC733B8A2728}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:PackageParameters>
     <DTS:PackageParameter
       DTS:CreationName=""
       DTS:DataType="3"
-      DTS:DTSID="{8A5BC685-6D9C-45D3-A1F6-811C65E8298A}"
+      DTS:DTSID="{9D95A35F-E09E-4013-B556-136EF909684C}"
       DTS:ObjectName="Parameter">
       <DTS:Property
         DTS:DataType="3"
@@ -29,30 +29,32 @@
   <DTS:Variables>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{8FC49B32-AAE4-47B0-A0A4-54D61AE6F437}"
+      DTS:Description="Object for email in case of error"
+      DTS:DTSID="{D91A5532-FD0E-4B84-BBDF-79D837F31124}"
       DTS:EvaluateAsExpression="True"
       DTS:Expression="&quot;SSIS package: &quot; + @[System::PackageName] + &quot; ERROR&quot;"
       DTS:IncludeInDebugDump="2345"
       DTS:Namespace="User"
       DTS:ObjectName="in_MAIL_OBJECT_ERROR">
       <DTS:VariableValue
-        DTS:DataType="8">SSIS package: PARCEL_MFG_STG ERROR</DTS:VariableValue>
+        DTS:DataType="8">SSIS package: AUDIT_TRAIL_STG ERROR</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{4F0E467A-1470-4C4A-88FA-87B203D0DDC1}"
+      DTS:Description="Object for email in case of success"
+      DTS:DTSID="{EF4BBEF5-73AC-4168-9D8D-3C6D107249EE}"
       DTS:EvaluateAsExpression="True"
       DTS:Expression="&quot;SSIS package: &quot; + @[System::PackageName] + &quot; completed SUCCESSFULLY&quot;"
       DTS:IncludeInDebugDump="2345"
       DTS:Namespace="User"
       DTS:ObjectName="in_MAIL_OBJECT_SUCCESS">
       <DTS:VariableValue
-        DTS:DataType="8">SSIS package: PARCEL_MFG_STG completed SUCCESSFULLY</DTS:VariableValue>
+        DTS:DataType="8">SSIS package: AUDIT_TRAIL_STG completed SUCCESSFULLY</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
       DTS:Description="The SQL server database mail profile name used to send email"
-      DTS:DTSID="{ECA68102-32B8-44F4-A76F-C53050F7D10C}"
+      DTS:DTSID="{5B4CE691-6284-44A2-8611-83B85930F17B}"
       DTS:IncludeInDebugDump="2345"
       DTS:Namespace="User"
       DTS:ObjectName="in_MAIL_PROFILE">
@@ -62,7 +64,7 @@
     <DTS:Variable
       DTS:CreationName=""
       DTS:Description="The target users of the email. Use ; as separator"
-      DTS:DTSID="{4572ED32-EE86-4FA9-B450-A922D6FAD13B}"
+      DTS:DTSID="{85AF2165-A053-4702-ABAE-E2D0FDE1DD8F}"
       DTS:IncludeInDebugDump="2345"
       DTS:Namespace="User"
       DTS:ObjectName="in_MAIL_RECIPIENTS">
@@ -72,29 +74,29 @@
     <DTS:Variable
       DTS:CreationName=""
       DTS:Description="The package name"
-      DTS:DTSID="{0BEE70D6-9E70-469B-BB6D-0BDC05B6C68B}"
+      DTS:DTSID="{F4CEACF9-1CF2-4CF0-A8E1-5405A6AE824A}"
       DTS:EvaluateAsExpression="True"
       DTS:Expression="@[System::PackageName] "
       DTS:IncludeInDebugDump="2345"
       DTS:Namespace="User"
       DTS:ObjectName="in_PACKAGE_NAME_CD">
       <DTS:VariableValue
-        DTS:DataType="8">PARCEL_MFG_STG</DTS:VariableValue>
+        DTS:DataType="8">AUDIT_TRAIL_STG</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
       DTS:Description="The package scope"
-      DTS:DTSID="{6D66C22F-180C-46F2-A5B6-36669D6674BA}"
+      DTS:DTSID="{402D4F03-1F73-4F5B-9F7B-7CACC0EB7AC6}"
       DTS:IncludeInDebugDump="2345"
       DTS:Namespace="User"
       DTS:ObjectName="in_PACKAGE_SCOPE_DESC">
       <DTS:VariableValue
-        DTS:DataType="8">This package loads table from source system to DIR staging layer</DTS:VariableValue>
+        DTS:DataType="8">This package loads table from source Flat Files to DIR staging layer</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
       DTS:Description="Mendrisio ID, refer to TBDWMN_SITE"
-      DTS:DTSID="{ACF44B2E-24CD-4D47-8572-1FD00DCDDEA3}"
+      DTS:DTSID="{DA7ED3C7-AF33-4E01-98B2-3B2C32DCD7D6}"
       DTS:IncludeInDebugDump="6789"
       DTS:Namespace="User"
       DTS:ObjectName="in_SITE_ID">
@@ -104,27 +106,27 @@
     <DTS:Variable
       DTS:CreationName=""
       DTS:Description="The source system of this package"
-      DTS:DTSID="{8CB6032A-ADEF-4D2A-8F1B-DE47DE955CF3}"
+      DTS:DTSID="{507FE4BD-825C-41E8-AA03-F16795162C41}"
       DTS:IncludeInDebugDump="2345"
       DTS:Namespace="User"
       DTS:ObjectName="in_SOURCE_SYSTEM_DESC">
       <DTS:VariableValue
-        DTS:DataType="8">PARCEL MANUFACTURING</DTS:VariableValue>
+        DTS:DataType="8">FLAT FILES AUDIT TRAIL</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:Description="Parcel Mendrisio ID, refer to TBDWMN_SOURCE_SYSTEM"
-      DTS:DTSID="{EF0EDBF3-69E8-4133-B9C2-05FB032C0509}"
+      DTS:Description="Audit Trail Mendrisio ID, refer to TBDWMN_SOURCE_SYSTEM"
+      DTS:DTSID="{8AAB8149-91AC-497A-849D-1E8DE4B0E061}"
       DTS:IncludeInDebugDump="6789"
       DTS:Namespace="User"
       DTS:ObjectName="in_SOURCE_SYSTEM_ID">
       <DTS:VariableValue
-        DTS:DataType="3">1</DTS:VariableValue>
+        DTS:DataType="3">5</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
       DTS:Description="The target system of this package"
-      DTS:DTSID="{7A05B6C5-E5D3-4F3F-A0AE-F90072916060}"
+      DTS:DTSID="{98E32A3B-2F7E-4313-A51E-F6C810023352}"
       DTS:IncludeInDebugDump="2345"
       DTS:Namespace="User"
       DTS:ObjectName="in_TARGET_SYSTEM_DESC">
@@ -134,7 +136,7 @@
     <DTS:Variable
       DTS:CreationName=""
       DTS:Description="User used by SSIS flows"
-      DTS:DTSID="{801C43CD-22A4-4AAE-B4E2-A0C261F34225}"
+      DTS:DTSID="{6BC827F4-1518-458D-A7E3-6F629BE32BC8}"
       DTS:IncludeInDebugDump="2345"
       DTS:Namespace="User"
       DTS:ObjectName="in_USER_CD">
@@ -144,7 +146,7 @@
     <DTS:Variable
       DTS:CreationName=""
       DTS:Description="Output related to the last ID run for the package"
-      DTS:DTSID="{3B2CCA61-A152-47E6-91CA-88DCB5C4E151}"
+      DTS:DTSID="{7F09883C-48DB-406C-91D1-0BD79D83FC59}"
       DTS:IncludeInDebugDump="6789"
       DTS:Namespace="User"
       DTS:ObjectName="out_MAX_ID">
@@ -157,7 +159,7 @@
       DTS:refId="Package\Email SUCCESS"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Execute SQL Task"
-      DTS:DTSID="{1AD995A0-5AC4-4890-B4FC-195AA4556DBC}"
+      DTS:DTSID="{2237FA30-9A2B-4DD0-AEEC-63A4C92A1F28}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Email SUCCESS"
@@ -193,7 +195,7 @@
       DTS:refId="Package\Ins TBLOG_PACKAGE + Max ID"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Execute SQL Task"
-      DTS:DTSID="{9B1FF19D-9341-47D7-B2A4-FAB30B8C4382}"
+      DTS:DTSID="{CEFE6C1F-62FC-4F77-9671-B59B38765875}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Ins TBLOG_PACKAGE + Max ID"
@@ -269,7 +271,7 @@
       DTS:refId="Package\Last Upd TBLOG_PACKAGE"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Execute SQL Task"
-      DTS:DTSID="{C60E5C6E-37A4-4A57-9B17-F2EED37351BE}"
+      DTS:DTSID="{E639EDFC-AB39-441D-9D66-4241CE1A1AF8}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Last Upd TBLOG_PACKAGE"
@@ -311,7 +313,7 @@
       DTS:refId="Package\STAGING LOAD"
       DTS:CreationName="STOCK:SEQUENCE"
       DTS:Description="Sequence Container"
-      DTS:DTSID="{A60C8CCC-7A40-4A45-BCEC-6CDA6E54D076}"
+      DTS:DTSID="{967A9A01-915B-4FDB-A59D-D6D8B39BDCFA}"
       DTS:ExecutableType="STOCK:SEQUENCE"
       DTS:LocaleID="-1"
       DTS:ObjectName="STAGING LOAD">
@@ -321,15 +323,14 @@
           DTS:refId="Package\STAGING LOAD\TBST_PRC_ANAGRAFICA_LOTTI"
           DTS:CreationName="STOCK:SEQUENCE"
           DTS:Description="Sequence Container"
-          DTS:DTSID="{95B25B3E-6B58-4245-A374-83113EEDD4AF}"
+          DTS:DTSID="{5E07203A-B829-4B6B-9576-44AB4A8CE1EE}"
           DTS:ExecutableType="STOCK:SEQUENCE"
           DTS:LocaleID="-1"
           DTS:ObjectName="TBST_PRC_ANAGRAFICA_LOTTI">
           <DTS:Variables>
             <DTS:Variable
               DTS:CreationName=""
-              DTS:Description="Output related to the last ID run for the table"
-              DTS:DTSID="{25DE3B21-5B79-48F8-84E4-0032CAD8937B}"
+              DTS:DTSID="{D4434D7E-7A65-4F00-89B6-BDDC356F76C7}"
               DTS:IncludeInDebugDump="6789"
               DTS:Namespace="User"
               DTS:ObjectName="out_MAX_TABLE_ID">
@@ -338,8 +339,7 @@
             </DTS:Variable>
             <DTS:Variable
               DTS:CreationName=""
-              DTS:Description="Table target name to be loaded by the flow"
-              DTS:DTSID="{B509A49B-56B3-46C3-A75A-0E3AA34439F4}"
+              DTS:DTSID="{A5D2A6AE-68EF-430A-924B-7C7EF11862BB}"
               DTS:IncludeInDebugDump="2345"
               DTS:Namespace="User"
               DTS:ObjectName="out_TABLE_TARGET_CD">
@@ -353,7 +353,7 @@
               DTS:refId="Package\STAGING LOAD\TBST_PRC_ANAGRAFICA_LOTTI\Assign TABLE_TARGET_CD"
               DTS:CreationName="Microsoft.ExecuteSQLTask"
               DTS:Description="Execute SQL Task"
-              DTS:DTSID="{777281C6-7F68-40E7-971E-E13B461ADD85}"
+              DTS:DTSID="{413BE502-634B-4E24-9FCB-2BB7E21DE586}"
               DTS:ExecutableType="Microsoft.ExecuteSQLTask"
               DTS:LocaleID="-1"
               DTS:ObjectName="Assign TABLE_TARGET_CD"
@@ -375,7 +375,7 @@
               DTS:refId="Package\STAGING LOAD\TBST_PRC_ANAGRAFICA_LOTTI\Ins_Upd TBLOG_PACKAGE_TABLE"
               DTS:CreationName="Microsoft.ExecuteSQLTask"
               DTS:Description="Execute SQL Task"
-              DTS:DTSID="{0FFF57A5-9BB0-451E-8A8C-D7C39FF41C8C}"
+              DTS:DTSID="{54E29F45-527B-4746-9D0F-FBED6FFC30CE}"
               DTS:ExecutableType="Microsoft.ExecuteSQLTask"
               DTS:LocaleID="-1"
               DTS:ObjectName="Ins_Upd TBLOG_PACKAGE_TABLE"
@@ -447,7 +447,7 @@
               DTS:refId="Package\STAGING LOAD\TBST_PRC_ANAGRAFICA_LOTTI\Last Upd TBLOG_PACKAGE_TABLE"
               DTS:CreationName="Microsoft.ExecuteSQLTask"
               DTS:Description="Execute SQL Task"
-              DTS:DTSID="{A8C791A2-64ED-40CF-8972-E3F47397A0C6}"
+              DTS:DTSID="{DE629C31-6D3A-427B-88C5-3C84637F3E85}"
               DTS:ExecutableType="Microsoft.ExecuteSQLTask"
               DTS:LocaleID="-1"
               DTS:ObjectName="Last Upd TBLOG_PACKAGE_TABLE"
@@ -483,7 +483,7 @@
               DTS:refId="Package\STAGING LOAD\TBST_PRC_ANAGRAFICA_LOTTI\MAX TABLE ID"
               DTS:CreationName="Microsoft.ExecuteSQLTask"
               DTS:Description="Execute SQL Task"
-              DTS:DTSID="{BD98731D-652D-4568-AF0F-018834911B4E}"
+              DTS:DTSID="{32CF8559-FC44-4092-A76B-0C46F38F5E23}"
               DTS:ExecutableType="Microsoft.ExecuteSQLTask"
               DTS:LocaleID="-1"
               DTS:ObjectName="MAX TABLE ID"
@@ -517,7 +517,7 @@
               DTS:refId="Package\STAGING LOAD\TBST_PRC_ANAGRAFICA_LOTTI\TBST_PRC_ANAGRAFICA_LOTTI"
               DTS:CreationName="Microsoft.Pipeline"
               DTS:Description="Data Flow Task"
-              DTS:DTSID="{EF0D9A48-FA07-415D-BE37-269906599DC4}"
+              DTS:DTSID="{EC203C90-522E-4F20-8C71-AEA18036A1A6}"
               DTS:ExecutableType="Microsoft.Pipeline"
               DTS:LocaleID="-1"
               DTS:ObjectName="TBST_PRC_ANAGRAFICA_LOTTI"
@@ -2111,7 +2111,7 @@
               DTS:refId="Package\STAGING LOAD\TBST_PRC_ANAGRAFICA_LOTTI\Truncate STG TRG TABLE"
               DTS:CreationName="Microsoft.ExecuteSQLTask"
               DTS:Description="Execute SQL Task"
-              DTS:DTSID="{BF36C666-F715-43F3-B3A4-3E924AEBA2BC}"
+              DTS:DTSID="{B22D9C2C-CF74-4394-8779-8A49E30C31B2}"
               DTS:ExecutableType="Microsoft.ExecuteSQLTask"
               DTS:LocaleID="-1"
               DTS:ObjectName="Truncate STG TRG TABLE"
@@ -2131,7 +2131,7 @@
             <DTS:PrecedenceConstraint
               DTS:refId="Package\STAGING LOAD\TBST_PRC_ANAGRAFICA_LOTTI.PrecedenceConstraints[Constraint]"
               DTS:CreationName=""
-              DTS:DTSID="{3138430E-0097-4869-80D4-0B6F3528C639}"
+              DTS:DTSID="{65E5E1E7-6473-4EC3-B905-4D70C708F780}"
               DTS:From="Package\STAGING LOAD\TBST_PRC_ANAGRAFICA_LOTTI\TBST_PRC_ANAGRAFICA_LOTTI"
               DTS:LogicalAnd="True"
               DTS:ObjectName="Constraint"
@@ -2139,7 +2139,7 @@
             <DTS:PrecedenceConstraint
               DTS:refId="Package\STAGING LOAD\TBST_PRC_ANAGRAFICA_LOTTI.PrecedenceConstraints[Constraint 1]"
               DTS:CreationName=""
-              DTS:DTSID="{B0F9FF57-6F17-4EEA-B7B8-0F9CE5EE707A}"
+              DTS:DTSID="{889C81D3-7827-4014-B6AC-AEFC70EBE299}"
               DTS:From="Package\STAGING LOAD\TBST_PRC_ANAGRAFICA_LOTTI\Ins_Upd TBLOG_PACKAGE_TABLE"
               DTS:LogicalAnd="True"
               DTS:ObjectName="Constraint 1"
@@ -2147,7 +2147,7 @@
             <DTS:PrecedenceConstraint
               DTS:refId="Package\STAGING LOAD\TBST_PRC_ANAGRAFICA_LOTTI.PrecedenceConstraints[Constraint 2]"
               DTS:CreationName=""
-              DTS:DTSID="{3708F464-DF21-431B-AF4E-31FF4C6A5FA4}"
+              DTS:DTSID="{E6A34094-7B50-4699-AB90-6986AB59DB84}"
               DTS:From="Package\STAGING LOAD\TBST_PRC_ANAGRAFICA_LOTTI\Assign TABLE_TARGET_CD"
               DTS:LogicalAnd="True"
               DTS:ObjectName="Constraint 2"
@@ -2155,7 +2155,7 @@
             <DTS:PrecedenceConstraint
               DTS:refId="Package\STAGING LOAD\TBST_PRC_ANAGRAFICA_LOTTI.PrecedenceConstraints[Constraint 3]"
               DTS:CreationName=""
-              DTS:DTSID="{8AD941EE-8A00-48BF-A299-E2F9E15E7F88}"
+              DTS:DTSID="{80D80EA3-CE72-4C95-BB8E-B1E2050A6ED6}"
               DTS:From="Package\STAGING LOAD\TBST_PRC_ANAGRAFICA_LOTTI\Ins_Upd TBLOG_PACKAGE_TABLE"
               DTS:LogicalAnd="True"
               DTS:ObjectName="Constraint 3"
@@ -2163,7 +2163,7 @@
             <DTS:PrecedenceConstraint
               DTS:refId="Package\STAGING LOAD\TBST_PRC_ANAGRAFICA_LOTTI.PrecedenceConstraints[Constraint 4]"
               DTS:CreationName=""
-              DTS:DTSID="{03F84170-F3A5-4B3B-BB9E-79AD392DB4FE}"
+              DTS:DTSID="{3EDFAF3F-63B3-46A7-8E5A-D1692C34201F}"
               DTS:From="Package\STAGING LOAD\TBST_PRC_ANAGRAFICA_LOTTI\Truncate STG TRG TABLE"
               DTS:LogicalAnd="True"
               DTS:ObjectName="Constraint 4"
@@ -2171,7 +2171,7 @@
             <DTS:PrecedenceConstraint
               DTS:refId="Package\STAGING LOAD\TBST_PRC_ANAGRAFICA_LOTTI.PrecedenceConstraints[Constraint 5]"
               DTS:CreationName=""
-              DTS:DTSID="{CC08577A-DB7A-46EC-A0E9-317B4EEB1ADF}"
+              DTS:DTSID="{82EC98E4-DDB4-4E7B-AD08-6908B716581A}"
               DTS:From="Package\STAGING LOAD\TBST_PRC_ANAGRAFICA_LOTTI\MAX TABLE ID"
               DTS:LogicalAnd="True"
               DTS:ObjectName="Constraint 5"
@@ -2181,7 +2181,7 @@
             <DTS:EventHandler
               DTS:refId="Package\STAGING LOAD\TBST_PRC_ANAGRAFICA_LOTTI.EventHandlers[OnPreExecute]"
               DTS:CreationName="OnPreExecute"
-              DTS:DTSID="{008B219E-2D09-43AF-A351-233917C4CD59}"
+              DTS:DTSID="{F983A7D3-2C8D-4309-BB17-1D8789F9D46C}"
               DTS:EventID="0"
               DTS:EventName="OnPreExecute"
               DTS:LocaleID="-1">
@@ -2189,7 +2189,7 @@
                 <DTS:Variable
                   DTS:CreationName=""
                   DTS:Description="The propagate property of the event"
-                  DTS:DTSID="{1063A506-80AB-49BA-8659-4C3445A531C0}"
+                  DTS:DTSID="{C5972DE7-38C0-4E09-A583-9883D42242F0}"
                   DTS:IncludeInDebugDump="6789"
                   DTS:Namespace="System"
                   DTS:ObjectName="Propagate">
@@ -2205,15 +2205,14 @@
           DTS:refId="Package\STAGING LOAD\TBST_PRC_ARTICOLO"
           DTS:CreationName="STOCK:SEQUENCE"
           DTS:Description="Sequence Container"
-          DTS:DTSID="{3afe1f3c-c1fb-40a1-9436-b53f03a2460b}"
+          DTS:DTSID="{C004289C-51ED-4D66-903E-744E3CEECCAC}"
           DTS:ExecutableType="STOCK:SEQUENCE"
           DTS:LocaleID="-1"
           DTS:ObjectName="TBST_PRC_ARTICOLO">
           <DTS:Variables>
             <DTS:Variable
               DTS:CreationName=""
-              DTS:Description="Output related to the last ID run for the table"
-              DTS:DTSID="{e05b560c-9626-4c7e-9264-12754cfb80bd}"
+              DTS:DTSID="{A9850D36-BBEA-4038-8F0D-C4C9DB57FA2D}"
               DTS:IncludeInDebugDump="6789"
               DTS:Namespace="User"
               DTS:ObjectName="out_MAX_TABLE_ID">
@@ -2222,8 +2221,7 @@
             </DTS:Variable>
             <DTS:Variable
               DTS:CreationName=""
-              DTS:Description="Table target name to be loaded by the flow"
-              DTS:DTSID="{b1cc2a68-1e78-4208-b87a-a10fb1806dbb}"
+              DTS:DTSID="{86516033-768D-42DF-92DA-6DEFF9977E08}"
               DTS:IncludeInDebugDump="2345"
               DTS:Namespace="User"
               DTS:ObjectName="out_TABLE_TARGET_CD">
@@ -2237,7 +2235,7 @@
               DTS:refId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Assign TABLE_TARGET_CD"
               DTS:CreationName="Microsoft.ExecuteSQLTask"
               DTS:Description="Execute SQL Task"
-              DTS:DTSID="{8f91146b-de20-4ad5-aeae-6345b62db2ef}"
+              DTS:DTSID="{5BFC539F-DE31-491C-A557-D037CE067202}"
               DTS:ExecutableType="Microsoft.ExecuteSQLTask"
               DTS:LocaleID="-1"
               DTS:ObjectName="Assign TABLE_TARGET_CD"
@@ -2259,7 +2257,7 @@
               DTS:refId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Ins_Upd TBLOG_PACKAGE_TABLE"
               DTS:CreationName="Microsoft.ExecuteSQLTask"
               DTS:Description="Execute SQL Task"
-              DTS:DTSID="{bda092bd-5087-414d-b7e3-deb0edabb519}"
+              DTS:DTSID="{7ABBE7BF-E813-42E6-80B5-24F970A20104}"
               DTS:ExecutableType="Microsoft.ExecuteSQLTask"
               DTS:LocaleID="-1"
               DTS:ObjectName="Ins_Upd TBLOG_PACKAGE_TABLE"
@@ -2331,7 +2329,7 @@
               DTS:refId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Last Upd TBLOG_PACKAGE_TABLE"
               DTS:CreationName="Microsoft.ExecuteSQLTask"
               DTS:Description="Execute SQL Task"
-              DTS:DTSID="{6f3309d0-c935-4eee-b235-41863ceebffc}"
+              DTS:DTSID="{C9940D29-4717-4667-9602-8A8B38CC435A}"
               DTS:ExecutableType="Microsoft.ExecuteSQLTask"
               DTS:LocaleID="-1"
               DTS:ObjectName="Last Upd TBLOG_PACKAGE_TABLE"
@@ -2367,7 +2365,7 @@
               DTS:refId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\MAX TABLE ID"
               DTS:CreationName="Microsoft.ExecuteSQLTask"
               DTS:Description="Execute SQL Task"
-              DTS:DTSID="{b5153e4c-de91-4a16-ae0c-d05a616d5a0d}"
+              DTS:DTSID="{61E900EF-DF15-4C8E-9759-7C732C8D04AA}"
               DTS:ExecutableType="Microsoft.ExecuteSQLTask"
               DTS:LocaleID="-1"
               DTS:ObjectName="MAX TABLE ID"
@@ -2401,7 +2399,7 @@
               DTS:refId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\TBST_PRC_ARTICOLO"
               DTS:CreationName="Microsoft.Pipeline"
               DTS:Description="Data Flow Task"
-              DTS:DTSID="{3d3d731a-0869-4941-897d-8fdbdc36536f}"
+              DTS:DTSID="{216D4B5D-D036-44FC-BA03-B7E49F4CEF8C}"
               DTS:ExecutableType="Microsoft.Pipeline"
               DTS:LocaleID="-1"
               DTS:ObjectName="TBST_PRC_ARTICOLO"
@@ -9520,7 +9518,7 @@
               DTS:refId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Truncate STG TRG TABLE"
               DTS:CreationName="Microsoft.ExecuteSQLTask"
               DTS:Description="Execute SQL Task"
-              DTS:DTSID="{dbe827d5-f9c6-4933-9e1e-72093c07ac7f}"
+              DTS:DTSID="{2CBE3653-1609-4837-B537-E9E81BCF8611}"
               DTS:ExecutableType="Microsoft.ExecuteSQLTask"
               DTS:LocaleID="-1"
               DTS:ObjectName="Truncate STG TRG TABLE"
@@ -9540,7 +9538,7 @@
             <DTS:PrecedenceConstraint
               DTS:refId="Package\STAGING LOAD\TBST_PRC_ARTICOLO.PrecedenceConstraints[Constraint]"
               DTS:CreationName=""
-              DTS:DTSID="{9f4b5042-5a66-497d-8ec9-52ddb61b753f}"
+              DTS:DTSID="{DDDA07DA-74EC-4A24-8342-C1942F5B3C6E}"
               DTS:From="Package\STAGING LOAD\TBST_PRC_ARTICOLO\TBST_PRC_ARTICOLO"
               DTS:LogicalAnd="True"
               DTS:ObjectName="Constraint"
@@ -9548,7 +9546,7 @@
             <DTS:PrecedenceConstraint
               DTS:refId="Package\STAGING LOAD\TBST_PRC_ARTICOLO.PrecedenceConstraints[Constraint 1]"
               DTS:CreationName=""
-              DTS:DTSID="{67a1faf7-23da-4351-a3e0-2a6b2ae07710}"
+              DTS:DTSID="{D40CA1D1-9FBB-416C-8136-AAFC00F002E9}"
               DTS:From="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Ins_Upd TBLOG_PACKAGE_TABLE"
               DTS:LogicalAnd="True"
               DTS:ObjectName="Constraint 1"
@@ -9556,7 +9554,7 @@
             <DTS:PrecedenceConstraint
               DTS:refId="Package\STAGING LOAD\TBST_PRC_ARTICOLO.PrecedenceConstraints[Constraint 2]"
               DTS:CreationName=""
-              DTS:DTSID="{1426255c-bf31-4d71-9317-486f11cf57fe}"
+              DTS:DTSID="{09F0BCD2-9305-4BEB-9122-E843FFAB8210}"
               DTS:From="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Assign TABLE_TARGET_CD"
               DTS:LogicalAnd="True"
               DTS:ObjectName="Constraint 2"
@@ -9564,7 +9562,7 @@
             <DTS:PrecedenceConstraint
               DTS:refId="Package\STAGING LOAD\TBST_PRC_ARTICOLO.PrecedenceConstraints[Constraint 3]"
               DTS:CreationName=""
-              DTS:DTSID="{c4cae806-a2c2-4b69-80e2-2017c4f70c11}"
+              DTS:DTSID="{275BC802-57FE-487F-802F-B7F0D65442EE}"
               DTS:From="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Ins_Upd TBLOG_PACKAGE_TABLE"
               DTS:LogicalAnd="True"
               DTS:ObjectName="Constraint 3"
@@ -9572,7 +9570,7 @@
             <DTS:PrecedenceConstraint
               DTS:refId="Package\STAGING LOAD\TBST_PRC_ARTICOLO.PrecedenceConstraints[Constraint 4]"
               DTS:CreationName=""
-              DTS:DTSID="{46f07817-176d-4a51-bfc5-5255b235fb43}"
+              DTS:DTSID="{50C8518E-EC39-4A8D-B25A-6E61AA0D0F7F}"
               DTS:From="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Truncate STG TRG TABLE"
               DTS:LogicalAnd="True"
               DTS:ObjectName="Constraint 4"
@@ -9580,7 +9578,7 @@
             <DTS:PrecedenceConstraint
               DTS:refId="Package\STAGING LOAD\TBST_PRC_ARTICOLO.PrecedenceConstraints[Constraint 5]"
               DTS:CreationName=""
-              DTS:DTSID="{8060ab2c-1715-411b-aa5e-d5047e23bde9}"
+              DTS:DTSID="{58636506-2EFF-4459-9895-9D982A415E30}"
               DTS:From="Package\STAGING LOAD\TBST_PRC_ARTICOLO\MAX TABLE ID"
               DTS:LogicalAnd="True"
               DTS:ObjectName="Constraint 5"
@@ -9590,7 +9588,7 @@
             <DTS:EventHandler
               DTS:refId="Package\STAGING LOAD\TBST_PRC_ARTICOLO.EventHandlers[OnPreExecute]"
               DTS:CreationName="OnPreExecute"
-              DTS:DTSID="{4af54af3-c000-4eb3-801a-085db9a33729}"
+              DTS:DTSID="{E8F4C2B3-0E58-4ED5-BF4A-D33717FCDC4F}"
               DTS:EventID="0"
               DTS:EventName="OnPreExecute"
               DTS:LocaleID="-1">
@@ -9598,7 +9596,7 @@
                 <DTS:Variable
                   DTS:CreationName=""
                   DTS:Description="The propagate property of the event"
-                  DTS:DTSID="{e1d77bea-abaa-49c1-9651-9aa188d82c95}"
+                  DTS:DTSID="{A311D273-FA77-4695-8CEB-B6F39DDB4408}"
                   DTS:IncludeInDebugDump="6789"
                   DTS:Namespace="System"
                   DTS:ObjectName="Propagate">
@@ -9616,7 +9614,7 @@
       DTS:refId="Package\Upd TBLOG_PACKAGE"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Execute SQL Task"
-      DTS:DTSID="{A0070369-0F1C-4830-8E77-3D2208717AD7}"
+      DTS:DTSID="{DDD5D01A-10FF-44ED-93FF-F7FA1C0B9E75}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Upd TBLOG_PACKAGE"
@@ -9653,7 +9651,7 @@
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint]"
       DTS:CreationName=""
-      DTS:DTSID="{9FEAD47F-EDFD-4F97-A551-6CADB001A2BD}"
+      DTS:DTSID="{77B56E99-623F-49A4-8B7A-83E547D6EAD9}"
       DTS:From="Package\Ins TBLOG_PACKAGE + Max ID"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint"
@@ -9661,7 +9659,7 @@
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 1]"
       DTS:CreationName=""
-      DTS:DTSID="{2E049DDF-80B4-4335-B0B8-7E4874EDFE1A}"
+      DTS:DTSID="{6D9288A2-2957-4F38-84DA-DB57662712C1}"
       DTS:From="Package\STAGING LOAD"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 1"
@@ -9669,7 +9667,7 @@
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 2]"
       DTS:CreationName=""
-      DTS:DTSID="{56432168-C1A4-4A1B-B3E3-24C2C855C299}"
+      DTS:DTSID="{EF01338A-0BC2-4B21-B511-3DD6A7720F55}"
       DTS:From="Package\Upd TBLOG_PACKAGE"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 2"
@@ -9677,7 +9675,7 @@
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 7]"
       DTS:CreationName=""
-      DTS:DTSID="{375A1BD6-57D3-49B4-82EE-7547A57C46F8}"
+      DTS:DTSID="{6E50B854-0FA4-4B05-997B-02E1661F5D94}"
       DTS:From="Package\Last Upd TBLOG_PACKAGE"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 7"
@@ -9687,7 +9685,7 @@
     <DTS:EventHandler
       DTS:refId="Package.EventHandlers[OnError]"
       DTS:CreationName="OnError"
-      DTS:DTSID="{46EF492F-D961-4FE3-BA7B-56E1426039EC}"
+      DTS:DTSID="{8C36709D-E807-482D-B648-63230A7F0E7B}"
       DTS:EventID="9110279"
       DTS:EventName="OnError"
       DTS:LocaleID="-1">
@@ -9695,7 +9693,7 @@
         <DTS:Variable
           DTS:CreationName=""
           DTS:Description="The propagate property of the event"
-          DTS:DTSID="{03B1157B-18F4-41FC-B4D4-826BE464DD2C}"
+          DTS:DTSID="{9863E56D-4FAA-451C-8D3F-4DD2BD57BC0B}"
           DTS:IncludeInDebugDump="6789"
           DTS:Namespace="System"
           DTS:ObjectName="Propagate">
@@ -9708,7 +9706,7 @@
           DTS:refId="Package.EventHandlers[OnError]\Email ERROR"
           DTS:CreationName="Microsoft.ExecuteSQLTask"
           DTS:Description="Execute SQL Task"
-          DTS:DTSID="{15eff937-ba3e-4439-868c-ddb8dc061428}"
+          DTS:DTSID="{86664565-E941-4168-A567-A67406B284E8}"
           DTS:ExecutableType="Microsoft.ExecuteSQLTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="Email ERROR"

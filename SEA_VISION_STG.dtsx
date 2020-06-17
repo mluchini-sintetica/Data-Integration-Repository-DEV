@@ -11,8 +11,8 @@
   DTS:LocaleID="2064"
   DTS:ObjectName="SEA_VISION_STG"
   DTS:PackageType="5"
-  DTS:VersionBuild="254"
-  DTS:VersionGUID="{DBA12EAA-E62B-475F-9CDF-CCA31748DD26}">
+  DTS:VersionBuild="271"
+  DTS:VersionGUID="{7356151E-4180-45E6-A911-DDB3B3E91475}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:PackageParameters>
@@ -93,13 +93,23 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:Description="Mendrisio ID, refer to TBDWMN_SITE"
-      DTS:DTSID="{76FC5D4A-29BF-4D02-9160-8F3FE1E681BF}"
-      DTS:IncludeInDebugDump="6789"
+      DTS:Description="Site Mendrisio code, refer to TBDWMN_SITE"
+      DTS:DTSID="{E5B63364-D6E4-48F5-9AED-460BF19E60C3}"
+      DTS:IncludeInDebugDump="2345"
       DTS:Namespace="User"
-      DTS:ObjectName="in_SITE_ID">
+      DTS:ObjectName="in_SITE_CD">
       <DTS:VariableValue
-        DTS:DataType="3">1</DTS:VariableValue>
+        DTS:DataType="8">Mendrisio</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:Description="Mendrisio source system code, refer to TBDWMN_SOURCE_SYSTEM"
+      DTS:DTSID="{40DACC2F-C2B7-42F5-808C-81399E0615CF}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="in_SOURCE_SYSTEM_CD">
+      <DTS:VariableValue
+        DTS:DataType="8">SeaVisionPROD_ME</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
@@ -109,16 +119,7 @@
       DTS:Namespace="User"
       DTS:ObjectName="in_SOURCE_SYSTEM_DESC">
       <DTS:VariableValue
-        DTS:DataType="8">PARCEL MANUFACTURING</DTS:VariableValue>
-    </DTS:Variable>
-    <DTS:Variable
-      DTS:CreationName=""
-      DTS:DTSID="{6F909829-291B-4652-ADCC-7BC8214921FA}"
-      DTS:IncludeInDebugDump="6789"
-      DTS:Namespace="User"
-      DTS:ObjectName="in_SOURCE_SYSTEM_ID">
-      <DTS:VariableValue
-        DTS:DataType="3">3</DTS:VariableValue>
+        DTS:DataType="8">SEA VISION</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
@@ -150,8 +151,84 @@
       <DTS:VariableValue
         DTS:DataType="3">0</DTS:VariableValue>
     </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:Description="Mendrisio ID, refer to TBDWMN_SITE"
+      DTS:DTSID="{76FC5D4A-29BF-4D02-9160-8F3FE1E681BF}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="out_SITE_ID">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:Description="Source System ID, calculated by the flow from table TBDWMN_SOURCE_SYSTEM"
+      DTS:DTSID="{6F909829-291B-4652-ADCC-7BC8214921FA}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="out_SOURCE_SYSTEM_ID">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
   </DTS:Variables>
   <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Assign SITE_ID"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{075abfca-3ddd-46d1-910f-42da1d9dcfc9}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Assign SITE_ID"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{62102490-454D-4B7E-9A09-120A46D18B10}"
+          SQLTask:SqlStatementSource="SELECT ID &#xA;FROM TBDWMN_SITE &#xA;WHERE SITE_CD = ? and getdate() between VALIDITY_START_DT and VALIDITY_END_DT"
+          SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          <SQLTask:ResultBinding
+            SQLTask:ResultName="ID"
+            SQLTask:DtsVariableName="User::out_SITE_ID" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="0"
+            SQLTask:DtsVariableName="User::in_SITE_CD"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="130"
+            SQLTask:ParameterSize="-1" />
+        </SQLTask:SqlTaskData>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Assign SOURCE_SYSTEM_ID"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{474fe726-3a0d-4782-9fc6-b34db658175f}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Assign SOURCE_SYSTEM_ID"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{62102490-454D-4B7E-9A09-120A46D18B10}"
+          SQLTask:SqlStatementSource="SELECT ID&#xA;FROM TBDWMN_SOURCE_SYSTEM&#xA;WHERE SOURCE_SYSTEM_CD = ? and getdate() between VALIDITY_START_DT and VALIDITY_END_DT"
+          SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          <SQLTask:ResultBinding
+            SQLTask:ResultName="ID"
+            SQLTask:DtsVariableName="User::out_SOURCE_SYSTEM_ID" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="0"
+            SQLTask:DtsVariableName="User::in_SOURCE_SYSTEM_CD"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="131"
+            SQLTask:ParameterSize="-1" />
+        </SQLTask:SqlTaskData>
+      </DTS:ObjectData>
+    </DTS:Executable>
     <DTS:Executable
       DTS:refId="Package\Email SUCCESS"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
@@ -209,7 +286,7 @@
             SQLTask:DtsVariableName="User::out_MAX_ID" />
           <SQLTask:ParameterBinding
             SQLTask:ParameterName="0"
-            SQLTask:DtsVariableName="User::in_SITE_ID"
+            SQLTask:DtsVariableName="User::out_SITE_ID"
             SQLTask:ParameterDirection="Input"
             SQLTask:DataType="131"
             SQLTask:ParameterSize="-1" />
@@ -245,7 +322,7 @@
             SQLTask:ParameterSize="-1" />
           <SQLTask:ParameterBinding
             SQLTask:ParameterName="1"
-            SQLTask:DtsVariableName="User::in_SOURCE_SYSTEM_ID"
+            SQLTask:DtsVariableName="User::out_SOURCE_SYSTEM_ID"
             SQLTask:ParameterDirection="Input"
             SQLTask:DataType="131"
             SQLTask:ParameterSize="-1" />
@@ -257,7 +334,7 @@
             SQLTask:ParameterSize="-1" />
           <SQLTask:ParameterBinding
             SQLTask:ParameterName="8"
-            SQLTask:DtsVariableName="User::in_SOURCE_SYSTEM_ID"
+            SQLTask:DtsVariableName="User::out_SOURCE_SYSTEM_ID"
             SQLTask:ParameterDirection="Input"
             SQLTask:DataType="131"
             SQLTask:ParameterSize="-1" />
@@ -293,7 +370,7 @@
             SQLTask:ParameterSize="-1" />
           <SQLTask:ParameterBinding
             SQLTask:ParameterName="2"
-            SQLTask:DtsVariableName="User::in_SOURCE_SYSTEM_ID"
+            SQLTask:DtsVariableName="User::out_SOURCE_SYSTEM_ID"
             SQLTask:ParameterDirection="Input"
             SQLTask:DataType="131"
             SQLTask:ParameterSize="-1" />
@@ -327,6 +404,7 @@
           <DTS:Variables>
             <DTS:Variable
               DTS:CreationName=""
+              DTS:Description="Output related to the last ID run for the table"
               DTS:DTSID="{C95ADBD6-0F59-4A29-BFFD-FAE234A1509D}"
               DTS:IncludeInDebugDump="6789"
               DTS:Namespace="User"
@@ -336,6 +414,7 @@
             </DTS:Variable>
             <DTS:Variable
               DTS:CreationName=""
+              DTS:Description="Table target name to be loaded by the flow"
               DTS:DTSID="{D4FB1B6E-6B2D-4729-A51A-78210C91F237}"
               DTS:IncludeInDebugDump="2345"
               DTS:Namespace="User"
@@ -355,7 +434,7 @@
               DTS:LocaleID="-1"
               DTS:ObjectName="Assign TABLE_TARGET_CD"
               DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-              DTS:ThreadHint="0">
+              DTS:ThreadHint="2">
               <DTS:Variables />
               <DTS:ObjectData>
                 <SQLTask:SqlTaskData
@@ -377,7 +456,7 @@
               DTS:LocaleID="-1"
               DTS:ObjectName="Ins_Upd TBLOG_PACKAGE_TABLE"
               DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-              DTS:ThreadHint="0">
+              DTS:ThreadHint="2">
               <DTS:Variables />
               <DTS:ObjectData>
                 <SQLTask:SqlTaskData
@@ -391,13 +470,13 @@
                     SQLTask:ParameterSize="-1" />
                   <SQLTask:ParameterBinding
                     SQLTask:ParameterName="1"
-                    SQLTask:DtsVariableName="User::in_SITE_ID"
+                    SQLTask:DtsVariableName="User::out_SITE_ID"
                     SQLTask:ParameterDirection="Input"
                     SQLTask:DataType="131"
                     SQLTask:ParameterSize="-1" />
                   <SQLTask:ParameterBinding
                     SQLTask:ParameterName="2"
-                    SQLTask:DtsVariableName="User::in_SOURCE_SYSTEM_ID"
+                    SQLTask:DtsVariableName="User::out_SOURCE_SYSTEM_ID"
                     SQLTask:ParameterDirection="Input"
                     SQLTask:DataType="131"
                     SQLTask:ParameterSize="-1" />
@@ -421,7 +500,7 @@
                     SQLTask:ParameterSize="-1" />
                   <SQLTask:ParameterBinding
                     SQLTask:ParameterName="8"
-                    SQLTask:DtsVariableName="User::in_SOURCE_SYSTEM_ID"
+                    SQLTask:DtsVariableName="User::out_SOURCE_SYSTEM_ID"
                     SQLTask:ParameterDirection="Input"
                     SQLTask:DataType="131"
                     SQLTask:ParameterSize="-1" />
@@ -449,7 +528,7 @@
               DTS:LocaleID="-1"
               DTS:ObjectName="Last Upd TBLOG_PACKAGE_TABLE"
               DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-              DTS:ThreadHint="0">
+              DTS:ThreadHint="2">
               <DTS:Variables />
               <DTS:ObjectData>
                 <SQLTask:SqlTaskData
@@ -457,7 +536,7 @@
                   SQLTask:SqlStatementSource="--set the last successful flag to 0&#xA;UPDATE TBLOG_PACKAGE_TABLE&#xA;SET LAST_SUCCESS_TABLE_RUN_FLG = 0&#xA;WHERE &#xA;TABLE_TARGET_CD = ? and SOURCE_SYSTEM_ID = ? and LAST_SUCCESS_TABLE_RUN_FLG=1;&#xA;&#xA;--set the last successful flag to 1&#xA;UPDATE TBLOG_PACKAGE_TABLE&#xA;SET END_DT = getdate(), LAST_SUCCESS_TABLE_RUN_FLG=1&#xA;WHERE ID = ?&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
                   <SQLTask:ParameterBinding
                     SQLTask:ParameterName="1"
-                    SQLTask:DtsVariableName="User::in_SOURCE_SYSTEM_ID"
+                    SQLTask:DtsVariableName="User::out_SOURCE_SYSTEM_ID"
                     SQLTask:ParameterDirection="Input"
                     SQLTask:DataType="131"
                     SQLTask:ParameterSize="-1" />
@@ -485,7 +564,7 @@
               DTS:LocaleID="-1"
               DTS:ObjectName="MAX TABLE ID"
               DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-              DTS:ThreadHint="1">
+              DTS:ThreadHint="3">
               <DTS:Variables />
               <DTS:ObjectData>
                 <SQLTask:SqlTaskData
@@ -649,13 +728,13 @@
                                   containsID="true"
                                   dataType="System.String"
                                   description="Derived Column Expression"
-                                  name="Expression">@[User::in_SITE_ID]</property>
+                                  name="Expression">@[User::out_SITE_ID]</property>
                                 <property
                                   containsID="true"
                                   dataType="System.String"
                                   description="Derived Column Friendly Expression"
                                   expressionType="Notify"
-                                  name="FriendlyExpression">@[User::in_SITE_ID]</property>
+                                  name="FriendlyExpression">@[User::out_SITE_ID]</property>
                               </properties>
                             </outputColumn>
                             <outputColumn
@@ -671,13 +750,13 @@
                                   containsID="true"
                                   dataType="System.String"
                                   description="Derived Column Expression"
-                                  name="Expression">@[User::in_SOURCE_SYSTEM_ID]</property>
+                                  name="Expression">@[User::out_SOURCE_SYSTEM_ID]</property>
                                 <property
                                   containsID="true"
                                   dataType="System.String"
                                   description="Derived Column Friendly Expression"
                                   expressionType="Notify"
-                                  name="FriendlyExpression">@[User::in_SOURCE_SYSTEM_ID]</property>
+                                  name="FriendlyExpression">@[User::out_SOURCE_SYSTEM_ID]</property>
                               </properties>
                             </outputColumn>
                             <outputColumn
@@ -1806,7 +1885,7 @@
               DTS:LocaleID="-1"
               DTS:ObjectName="Truncate STG TRG TABLE"
               DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-              DTS:ThreadHint="0">
+              DTS:ThreadHint="2">
               <DTS:Variables />
               <DTS:PropertyExpression
                 DTS:Name="SqlStatementSource">"truncate table " + @[User::out_TABLE_TARGET_CD]</DTS:PropertyExpression>
@@ -1902,6 +1981,7 @@
           <DTS:Variables>
             <DTS:Variable
               DTS:CreationName=""
+              DTS:Description="Output related to the last ID run for the table"
               DTS:DTSID="{2B56355D-5E39-4B42-99FC-01D57283687D}"
               DTS:IncludeInDebugDump="6789"
               DTS:Namespace="User"
@@ -1911,6 +1991,7 @@
             </DTS:Variable>
             <DTS:Variable
               DTS:CreationName=""
+              DTS:Description="Table target name to be loaded by the flow"
               DTS:DTSID="{D334573B-23D2-4239-BC95-882A0F28EFA0}"
               DTS:IncludeInDebugDump="2345"
               DTS:Namespace="User"
@@ -1930,7 +2011,7 @@
               DTS:LocaleID="-1"
               DTS:ObjectName="Assign TABLE_TARGET_CD"
               DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-              DTS:ThreadHint="2">
+              DTS:ThreadHint="0">
               <DTS:Variables />
               <DTS:ObjectData>
                 <SQLTask:SqlTaskData
@@ -1952,7 +2033,7 @@
               DTS:LocaleID="-1"
               DTS:ObjectName="Ins_Upd TBLOG_PACKAGE_TABLE"
               DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-              DTS:ThreadHint="2">
+              DTS:ThreadHint="0">
               <DTS:Variables />
               <DTS:ObjectData>
                 <SQLTask:SqlTaskData
@@ -1966,13 +2047,13 @@
                     SQLTask:ParameterSize="-1" />
                   <SQLTask:ParameterBinding
                     SQLTask:ParameterName="1"
-                    SQLTask:DtsVariableName="User::in_SITE_ID"
+                    SQLTask:DtsVariableName="User::out_SITE_ID"
                     SQLTask:ParameterDirection="Input"
                     SQLTask:DataType="131"
                     SQLTask:ParameterSize="-1" />
                   <SQLTask:ParameterBinding
                     SQLTask:ParameterName="2"
-                    SQLTask:DtsVariableName="User::in_SOURCE_SYSTEM_ID"
+                    SQLTask:DtsVariableName="User::out_SOURCE_SYSTEM_ID"
                     SQLTask:ParameterDirection="Input"
                     SQLTask:DataType="131"
                     SQLTask:ParameterSize="-1" />
@@ -1996,7 +2077,7 @@
                     SQLTask:ParameterSize="-1" />
                   <SQLTask:ParameterBinding
                     SQLTask:ParameterName="8"
-                    SQLTask:DtsVariableName="User::in_SOURCE_SYSTEM_ID"
+                    SQLTask:DtsVariableName="User::out_SOURCE_SYSTEM_ID"
                     SQLTask:ParameterDirection="Input"
                     SQLTask:DataType="131"
                     SQLTask:ParameterSize="-1" />
@@ -2024,7 +2105,7 @@
               DTS:LocaleID="-1"
               DTS:ObjectName="Last Upd TBLOG_PACKAGE_TABLE"
               DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-              DTS:ThreadHint="2">
+              DTS:ThreadHint="0">
               <DTS:Variables />
               <DTS:ObjectData>
                 <SQLTask:SqlTaskData
@@ -2032,7 +2113,7 @@
                   SQLTask:SqlStatementSource="--set the last successful flag to 0&#xA;UPDATE TBLOG_PACKAGE_TABLE&#xA;SET LAST_SUCCESS_TABLE_RUN_FLG = 0&#xA;WHERE &#xA;TABLE_TARGET_CD = ? and SOURCE_SYSTEM_ID = ? and LAST_SUCCESS_TABLE_RUN_FLG=1;&#xA;&#xA;--set the last successful flag to 1&#xA;UPDATE TBLOG_PACKAGE_TABLE&#xA;SET END_DT = getdate(), LAST_SUCCESS_TABLE_RUN_FLG=1&#xA;WHERE ID = ?&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
                   <SQLTask:ParameterBinding
                     SQLTask:ParameterName="1"
-                    SQLTask:DtsVariableName="User::in_SOURCE_SYSTEM_ID"
+                    SQLTask:DtsVariableName="User::out_SOURCE_SYSTEM_ID"
                     SQLTask:ParameterDirection="Input"
                     SQLTask:DataType="131"
                     SQLTask:ParameterSize="-1" />
@@ -2060,7 +2141,7 @@
               DTS:LocaleID="-1"
               DTS:ObjectName="MAX TABLE ID"
               DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-              DTS:ThreadHint="2">
+              DTS:ThreadHint="0">
               <DTS:Variables />
               <DTS:ObjectData>
                 <SQLTask:SqlTaskData
@@ -2224,13 +2305,13 @@
                                   containsID="true"
                                   dataType="System.String"
                                   description="Derived Column Expression"
-                                  name="Expression">@[User::in_SITE_ID]</property>
+                                  name="Expression">@[User::out_SITE_ID]</property>
                                 <property
                                   containsID="true"
                                   dataType="System.String"
                                   description="Derived Column Friendly Expression"
                                   expressionType="Notify"
-                                  name="FriendlyExpression">@[User::in_SITE_ID]</property>
+                                  name="FriendlyExpression">@[User::out_SITE_ID]</property>
                               </properties>
                             </outputColumn>
                             <outputColumn
@@ -2246,13 +2327,13 @@
                                   containsID="true"
                                   dataType="System.String"
                                   description="Derived Column Expression"
-                                  name="Expression">@[User::in_SOURCE_SYSTEM_ID]</property>
+                                  name="Expression">@[User::out_SOURCE_SYSTEM_ID]</property>
                                 <property
                                   containsID="true"
                                   dataType="System.String"
                                   description="Derived Column Friendly Expression"
                                   expressionType="Notify"
-                                  name="FriendlyExpression">@[User::in_SOURCE_SYSTEM_ID]</property>
+                                  name="FriendlyExpression">@[User::out_SOURCE_SYSTEM_ID]</property>
                               </properties>
                             </outputColumn>
                             <outputColumn
@@ -2873,7 +2954,7 @@
               DTS:LocaleID="-1"
               DTS:ObjectName="Truncate STG TRG TABLE"
               DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-              DTS:ThreadHint="3">
+              DTS:ThreadHint="1">
               <DTS:Variables />
               <DTS:PropertyExpression
                 DTS:Name="SqlStatementSource">"truncate table " + @[User::out_TABLE_TARGET_CD]</DTS:PropertyExpression>
@@ -2989,7 +3070,7 @@
             SQLTask:ParameterSize="-1" />
           <SQLTask:ParameterBinding
             SQLTask:ParameterName="2"
-            SQLTask:DtsVariableName="User::in_SOURCE_SYSTEM_ID"
+            SQLTask:DtsVariableName="User::out_SOURCE_SYSTEM_ID"
             SQLTask:ParameterDirection="Input"
             SQLTask:DataType="131"
             SQLTask:ParameterSize="-1" />
@@ -3022,6 +3103,22 @@
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 2"
       DTS:To="Package\STAGING LOAD" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 3]"
+      DTS:CreationName=""
+      DTS:DTSID="{AEBBA651-C69D-4B96-BBD2-A144E30282B9}"
+      DTS:From="Package\Assign SOURCE_SYSTEM_ID"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 3"
+      DTS:To="Package\Ins TBLOG_PACKAGE + Max ID" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 4]"
+      DTS:CreationName=""
+      DTS:DTSID="{20CCEBE5-3B0D-48DA-94DC-DA148246ABA2}"
+      DTS:From="Package\Assign SITE_ID"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 4"
+      DTS:To="Package\Ins TBLOG_PACKAGE + Max ID" />
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 7]"
       DTS:CreationName=""
@@ -3729,6 +3826,82 @@
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
+        <NodeLayout
+          Size="230,42"
+          Id="Package\Assign SOURCE_SYSTEM_ID"
+          TopLeft="256.5,59.25" />
+        <NodeLayout
+          Size="157,42"
+          Id="Package\Assign SITE_ID"
+          TopLeft="273.5,140.25" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 3]"
+          TopLeft="486.5,80.25">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="142.166666666667,-9.4722222222222"
+              Start="0,0"
+              End="134.666666666667,-9.4722222222222">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="67.0833333333335,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="67.0833333333335,0"
+                    Point2="71.0833333333335,0"
+                    Point3="71.0833333333335,-4" />
+                  <mssgle:LineSegment
+                    End="71.0833333333335,-5.4722222222222" />
+                  <mssgle:CubicBezierSegment
+                    Point1="71.0833333333335,-5.4722222222222"
+                    Point2="71.0833333333335,-9.4722222222222"
+                    Point3="75.0833333333335,-9.4722222222222" />
+                  <mssgle:LineSegment
+                    End="134.666666666667,-9.4722222222222" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 4]"
+          TopLeft="352,140.25">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="358,-48.4722222222223"
+              Start="0,0"
+              End="358,-40.9722222222223">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,-24.8907284768212" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,-24.8907284768212"
+                    Point2="0,-28.8907284768212"
+                    Point3="4,-28.8907284768212" />
+                  <mssgle:LineSegment
+                    End="354,-28.8907284768212" />
+                  <mssgle:CubicBezierSegment
+                    Point1="354,-28.8907284768212"
+                    Point2="358,-28.8907284768212"
+                    Point3="358,-32.8907284768212" />
+                  <mssgle:LineSegment
+                    End="358,-40.9722222222223" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </Package>
@@ -3762,17 +3935,43 @@
       <GraphLayout
         Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="181,42"
-          Id="Package\STAGING LOAD\TBST_SEA_REG_BATCHES\TBST_SEA_REG_BATCHES\Add Technical Fields"
-          TopLeft="213,314" />
-        <NodeLayout
           Size="157,42"
           Id="Package\STAGING LOAD\TBST_SEA_REG_BATCHES\TBST_SEA_REG_BATCHES\OLE DB Source"
           TopLeft="231,112" />
         <NodeLayout
+          Size="181,42"
+          Id="Package\STAGING LOAD\TBST_SEA_REG_BATCHES\TBST_SEA_REG_BATCHES\Add Technical Fields"
+          TopLeft="213,314" />
+        <NodeLayout
+          Size="161,42"
+          Id="Package\STAGING LOAD\TBST_SEA_REG_BATCHES\TBST_SEA_REG_BATCHES\Data Conversion"
+          TopLeft="223,206" />
+        <NodeLayout
           Size="177,42"
           Id="Package\STAGING LOAD\TBST_SEA_REG_BATCHES\TBST_SEA_REG_BATCHES\OLE DB Destination"
           TopLeft="244,456" />
+        <EdgeLayout
+          Id="Package\STAGING LOAD\TBST_SEA_REG_BATCHES\TBST_SEA_REG_BATCHES.Paths[OLE DB Source Output]"
+          TopLeft="306.5,154">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,52"
+              Start="0,0"
+              End="0,44.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,44.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
         <EdgeLayout
           Id="Package\STAGING LOAD\TBST_SEA_REG_BATCHES\TBST_SEA_REG_BATCHES.Paths[Derived Column Output]"
           TopLeft="303.5,356">
@@ -3807,32 +4006,6 @@
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="161,42"
-          Id="Package\STAGING LOAD\TBST_SEA_REG_BATCHES\TBST_SEA_REG_BATCHES\Data Conversion"
-          TopLeft="223,206" />
-        <EdgeLayout
-          Id="Package\STAGING LOAD\TBST_SEA_REG_BATCHES\TBST_SEA_REG_BATCHES.Paths[OLE DB Source Output]"
-          TopLeft="306.5,154">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,52"
-              Start="0,0"
-              End="0,44.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,44.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
         <EdgeLayout
           Id="Package\STAGING LOAD\TBST_SEA_REG_BATCHES\TBST_SEA_REG_BATCHES.Paths[Data Conversion Output]"
           TopLeft="303.5,248">
@@ -3847,106 +4020,6 @@
                   Capacity="5">
                   <mssgle:LineSegment
                     End="0,58.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-      </GraphLayout>
-    </LayoutInfo>
-  </TaskHost>
-  <DtsEventHandler
-    design-time-name="Package\STAGING LOAD\TBST_SEA_REG_PROCESSORDER.EventHandlers[OnPreExecute]">
-    <LayoutInfo>
-      <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
-        <NodeLayout
-          Size="134,42"
-          Id="{CA0A6374-42C9-44B3-B808-C3C7F7A463CC}"
-          TopLeft="265,85" />
-      </GraphLayout>
-    </LayoutInfo>
-  </DtsEventHandler>
-  <TaskHost
-    design-time-name="Package\STAGING LOAD\TBST_SEA_REG_PROCESSORDER\TBST_SEA_REG_PROCESSORDER">
-    <LayoutInfo>
-      <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
-        <NodeLayout
-          Size="181,42"
-          Id="Package\STAGING LOAD\TBST_SEA_REG_PROCESSORDER\TBST_SEA_REG_PROCESSORDER\Add Technical Fields"
-          TopLeft="282,271" />
-        <NodeLayout
-          Size="157,42"
-          Id="Package\STAGING LOAD\TBST_SEA_REG_PROCESSORDER\TBST_SEA_REG_PROCESSORDER\OLE DB Source"
-          TopLeft="266,68" />
-        <NodeLayout
-          Size="177,42"
-          Id="Package\STAGING LOAD\TBST_SEA_REG_PROCESSORDER\TBST_SEA_REG_PROCESSORDER\OLE DB Destination"
-          TopLeft="329,417" />
-        <EdgeLayout
-          Id="Package\STAGING LOAD\TBST_SEA_REG_PROCESSORDER\TBST_SEA_REG_PROCESSORDER.Paths[Derived Column Output]"
-          TopLeft="372.5,313">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="45,104"
-              Start="0,0"
-              End="45,96.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,48" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,48"
-                    Point2="0,52"
-                    Point3="4,52" />
-                  <mssgle:LineSegment
-                    End="41,52" />
-                  <mssgle:CubicBezierSegment
-                    Point1="41,52"
-                    Point2="45,52"
-                    Point3="45,56" />
-                  <mssgle:LineSegment
-                    End="45,96.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\STAGING LOAD\TBST_SEA_REG_PROCESSORDER\TBST_SEA_REG_PROCESSORDER.Paths[OLE DB Source Output]"
-          TopLeft="344.5,110">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="28,161"
-              Start="0,0"
-              End="28,153.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,76.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,76.5"
-                    Point2="0,80.5"
-                    Point3="4,80.5" />
-                  <mssgle:LineSegment
-                    End="24,80.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="24,80.5"
-                    Point2="28,80.5"
-                    Point3="28,84.5" />
-                  <mssgle:LineSegment
-                    End="28,153.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -3984,6 +4057,106 @@
       </Property>
     </Properties>
   </PipelineComponentMetadata>
+  <DtsEventHandler
+    design-time-name="Package\STAGING LOAD\TBST_SEA_REG_PROCESSORDER.EventHandlers[OnPreExecute]">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="134,42"
+          Id="{CA0A6374-42C9-44B3-B808-C3C7F7A463CC}"
+          TopLeft="265,85" />
+      </GraphLayout>
+    </LayoutInfo>
+  </DtsEventHandler>
+  <TaskHost
+    design-time-name="Package\STAGING LOAD\TBST_SEA_REG_PROCESSORDER\TBST_SEA_REG_PROCESSORDER">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="157,42"
+          Id="Package\STAGING LOAD\TBST_SEA_REG_PROCESSORDER\TBST_SEA_REG_PROCESSORDER\OLE DB Source"
+          TopLeft="266,68" />
+        <NodeLayout
+          Size="181,42"
+          Id="Package\STAGING LOAD\TBST_SEA_REG_PROCESSORDER\TBST_SEA_REG_PROCESSORDER\Add Technical Fields"
+          TopLeft="282,271" />
+        <NodeLayout
+          Size="177,42"
+          Id="Package\STAGING LOAD\TBST_SEA_REG_PROCESSORDER\TBST_SEA_REG_PROCESSORDER\OLE DB Destination"
+          TopLeft="329,417" />
+        <EdgeLayout
+          Id="Package\STAGING LOAD\TBST_SEA_REG_PROCESSORDER\TBST_SEA_REG_PROCESSORDER.Paths[OLE DB Source Output]"
+          TopLeft="344.5,110">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="28,161"
+              Start="0,0"
+              End="28,153.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,76.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,76.5"
+                    Point2="0,80.5"
+                    Point3="4,80.5" />
+                  <mssgle:LineSegment
+                    End="24,80.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="24,80.5"
+                    Point2="28,80.5"
+                    Point3="28,84.5" />
+                  <mssgle:LineSegment
+                    End="28,153.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\STAGING LOAD\TBST_SEA_REG_PROCESSORDER\TBST_SEA_REG_PROCESSORDER.Paths[Derived Column Output]"
+          TopLeft="372.5,313">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="45,104"
+              Start="0,0"
+              End="45,96.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,48" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,48"
+                    Point2="0,52"
+                    Point3="4,52" />
+                  <mssgle:LineSegment
+                    End="41,52" />
+                  <mssgle:CubicBezierSegment
+                    Point1="41,52"
+                    Point2="45,52"
+                    Point3="45,56" />
+                  <mssgle:LineSegment
+                    End="45,96.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
   <PipelineComponentMetadata
     design-time-name="Package\STAGING LOAD\TBST_SEA_REG_PROCESSORDER\TBST_SEA_REG_PROCESSORDER\OLE DB Source">
     <Properties>

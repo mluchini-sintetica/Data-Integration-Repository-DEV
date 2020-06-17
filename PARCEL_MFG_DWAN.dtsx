@@ -11,8 +11,8 @@
   DTS:LocaleID="2064"
   DTS:ObjectName="PARCEL_MFG_DWAN"
   DTS:PackageType="5"
-  DTS:VersionBuild="380"
-  DTS:VersionGUID="{15371995-80A5-4AE3-B618-12F9E509112A}">
+  DTS:VersionBuild="384"
+  DTS:VersionGUID="{20CBADFA-75AE-4EC4-AC23-CE731DF82016}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -27,7 +27,7 @@
           <DTS:Password
             DTS:Name="Password"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAZ1W4zPu86k256zsBij2bAQAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAADlxrQu3BLGdt4MhVdH9tJeAAAAAASAAACgAAAAEAAAAM6JqkNk6HwvL9Q1J/10fAcgAAAAtOkZGJQ+D+zTdyO/c811WWeHxOH+DfEtQSCaMp0Rh34UAAAAY0X5dT59C6nAEXx+zl2atmhOY2s</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAZ1W4zPu86k256zsBij2bAQAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAAAPMEIhFUEXA2L4sFwLRLy3AAAAAASAAACgAAAAEAAAAM+rcHU9Be5aURES74vHSDkgAAAAzWWKdepVy01AiGmHfljxCbrsAupT+dSD002LG0/pdO4UAAAARr6Rzp7fvD2JAu3rxSEP4KC2HgU</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -130,6 +130,7 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
+      DTS:Description="Parcel Mendrisio ID, refer to TBDWMN_SOURCE_SYSTEM"
       DTS:DTSID="{FF374D58-AF5C-4294-A41A-02A6A8785AA6}"
       DTS:IncludeInDebugDump="6789"
       DTS:Namespace="User"
@@ -190,6 +191,7 @@
           <DTS:Variables>
             <DTS:Variable
               DTS:CreationName=""
+              DTS:Description="Output related to the last ID run for the table"
               DTS:DTSID="{163BAC07-95FE-40FD-8109-B4D20C9CB265}"
               DTS:IncludeInDebugDump="6789"
               DTS:Namespace="User"
@@ -199,6 +201,7 @@
             </DTS:Variable>
             <DTS:Variable
               DTS:CreationName=""
+              DTS:Description="Table target name to be loaded by the flow"
               DTS:DTSID="{1FA0FC02-72BA-48E0-8965-C83CD539DCA5}"
               DTS:IncludeInDebugDump="2345"
               DTS:Namespace="User"
@@ -2492,6 +2495,7 @@ from
           <DTS:Variables>
             <DTS:Variable
               DTS:CreationName=""
+              DTS:Description="Output related to the last ID run for the table"
               DTS:DTSID="{fea22c59-a495-4308-82f2-6c29488a9e74}"
               DTS:IncludeInDebugDump="6789"
               DTS:Namespace="User"
@@ -2501,6 +2505,7 @@ from
             </DTS:Variable>
             <DTS:Variable
               DTS:CreationName=""
+              DTS:Description="Table target name to be loaded by the flow"
               DTS:DTSID="{702a773b-045d-4f9b-af0a-f610683d8f41}"
               DTS:IncludeInDebugDump="2345"
               DTS:Namespace="User"
@@ -5762,7 +5767,9 @@ FROM
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -5784,7 +5791,9 @@ FROM
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -5806,7 +5815,9 @@ FROM
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -5840,7 +5851,9 @@ FROM
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -5862,28 +5875,30 @@ FROM
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <AnnotationLayout
           Text="To be modified according table"
           ParentId="Package\DWH LOAD\TBDWAN_ARTICLE"
           FontInfo="{assembly:Null}"
-          Size="194,40"
+          Size="194,NaN"
           Id="3a32ec32-6ec9-4287-8f3a-b58ed7f11262"
           TopLeft="35.5,310.5" />
         <AnnotationLayout
           Text="To be specify target table name"
           ParentId="Package\DWH LOAD\TBDWAN_ARTICLE"
           FontInfo="{assembly:Null}"
-          Size="195,40"
+          Size="195,NaN"
           Id="c6f553ec-c823-4c2c-9643-8a8ddd9f60c6"
           TopLeft="29.5,10.5" />
         <AnnotationLayout
           Text="To be modified according table"
           ParentId="Package\DWH LOAD\TBDWAN_ARTICLE"
           FontInfo="{assembly:Null}"
-          Size="194,40"
+          Size="194,NaN"
           Id="9dbd84db-82c5-4c5e-a967-e4181bf58d72"
           TopLeft="46.5,396.5" />
         <ContainerLayout
@@ -6074,23 +6089,35 @@ FROM
           HeaderHeight="43"
           IsExpanded="False"
           PanelSize="504,712"
-          Size="504,43"
+          Size="193,43"
           Id="Package\DWH LOAD\TBDWAN_BATCH"
           TopLeft="26.5,96" />
         <EdgeLayout
           Id="Package\DWH LOAD.PrecedenceConstraints[Constraint]"
-          TopLeft="279.25,48.5">
+          TopLeft="280,48.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,47.5"
+              EndConnector="-157,47.5"
               Start="0,0"
-              End="0,40">
+              End="-157,40">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,40" />
+                    End="0,19.75" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,19.75"
+                    Point2="0,23.75"
+                    Point3="-4,23.75" />
+                  <mssgle:LineSegment
+                    End="-153,23.75" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-153,23.75"
+                    Point2="-157,23.75"
+                    Point3="-157,27.75" />
+                  <mssgle:LineSegment
+                    End="-157,40" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -6101,9 +6128,9 @@ FROM
         </EdgeLayout>
         <ContainerLayout
           HeaderHeight="43"
-          IsExpanded="False"
+          IsExpanded="True"
           PanelSize="827,907"
-          Size="827,43"
+          Size="827,950"
           Id="Package\DWH LOAD"
           TopLeft="61.714285714286,360.428571428571" />
         <NodeLayout
@@ -6146,30 +6173,24 @@ FROM
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 1]"
-          TopLeft="475.214285714286,403.428571428571">
+          TopLeft="888.714285714286,835.428571428571">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="338.023809523808,293.492063492063"
+              EndConnector="-111.142857142859,-96.507936507937"
               Start="0,0"
-              End="338.023809523808,285.992063492063">
+              End="-111.142857142859,-89.007936507937">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,142.746031746032" />
+                    End="-107.142857142859,0" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,142.746031746032"
-                    Point2="0,146.746031746032"
-                    Point3="4,146.746031746032" />
+                    Point1="-107.142857142859,0"
+                    Point2="-111.142857142859,0"
+                    Point3="-111.142857142859,-4" />
                   <mssgle:LineSegment
-                    End="334.023809523808,146.746031746032" />
-                  <mssgle:CubicBezierSegment
-                    Point1="334.023809523808,146.746031746032"
-                    Point2="338.023809523808,146.746031746032"
-                    Point3="338.023809523808,150.746031746032" />
-                  <mssgle:LineSegment
-                    End="338.023809523808,285.992063492063" />
+                    End="-111.142857142859,-89.007936507937" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -6357,9 +6378,7 @@ FROM
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -6465,9 +6484,7 @@ FROM
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>

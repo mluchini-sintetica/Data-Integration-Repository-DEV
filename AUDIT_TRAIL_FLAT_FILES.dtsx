@@ -11,8 +11,8 @@
   DTS:LocaleID="2064"
   DTS:ObjectName="AUDIT_TRAIL_FLAT_FILES"
   DTS:PackageType="5"
-  DTS:VersionBuild="9"
-  DTS:VersionGUID="{A6E8532B-4BB3-497A-A690-C95F08C0CE50}">
+  DTS:VersionBuild="11"
+  DTS:VersionGUID="{DE5FEB93-7944-4D15-A285-13D83F50FA39}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables />
@@ -21,7 +21,6 @@
       DTS:refId="Package\Kill MatLab"
       DTS:CreationName="Microsoft.ExecuteProcess"
       DTS:Description="Execute Process Task"
-      DTS:Disabled="True"
       DTS:DTSID="{E600B262-4967-490B-BBA9-87865C50884B}"
       DTS:ExecutableType="Microsoft.ExecuteProcess"
       DTS:LocaleID="-1"

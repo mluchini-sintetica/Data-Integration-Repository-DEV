@@ -11,8 +11,8 @@
   DTS:LocaleID="2064"
   DTS:ObjectName="SEA_VISION_DWFT"
   DTS:PackageType="5"
-  DTS:VersionBuild="400"
-  DTS:VersionGUID="{08A914E0-06DF-4CB6-81BD-6E26162078BC}">
+  DTS:VersionBuild="410"
+  DTS:VersionGUID="{778D891F-5895-4845-B31D-DBDA02B9B04A}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -27,7 +27,7 @@
           <DTS:Password
             DTS:Name="Password"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAZ1W4zPu86k256zsBij2bAQAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAAA6GrRkGmj4EHj2vdnNM2ZhAAAAAASAAACgAAAAEAAAAGVl2UcT8zvaEv00M4kQBPsgAAAA8sdE9Z490VuYrImTvoTsa11G8pzWss8Z5xCkU9OmjqkUAAAAKl9bFdQQZoqxAFlQ0UKJOG1pELs</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAZ1W4zPu86k256zsBij2bAQAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAACikm6e/QOh8vjTi3AQqHAFAAAAAASAAACgAAAAEAAAAL7CyCeNu6Xo1NPG04P4JrwgAAAA9fdSH1SrtmhsEHnW6VzXGbzvfVwZebLPustw4uyHNtQUAAAA/DZ8Gb7aiYqbTyqrYZT5ex1iNqQ</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -110,6 +110,7 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
+      DTS:Description="Mendrisio A Packaging Ampoules Production Line ID, refer to TBDWMN_PRODUCTION_LINE"
       DTS:DTSID="{D0EF91A4-9E2D-4FCB-87C0-079247DF987F}"
       DTS:IncludeInDebugDump="6789"
       DTS:Namespace="User"
@@ -139,6 +140,7 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
+      DTS:Description="Sea Vision Mendrisio ID, refer to TBDWMN_SOURCE_SYSTEM"
       DTS:DTSID="{08D61D23-7193-4CCB-860D-138522E0DD64}"
       DTS:IncludeInDebugDump="6789"
       DTS:Namespace="User"
@@ -199,6 +201,7 @@
           <DTS:Variables>
             <DTS:Variable
               DTS:CreationName=""
+              DTS:Description="Output related to the last ID run for the table"
               DTS:DTSID="{DA046E01-6111-4201-BB6C-47234AD072BE}"
               DTS:IncludeInDebugDump="6789"
               DTS:Namespace="User"
@@ -208,6 +211,7 @@
             </DTS:Variable>
             <DTS:Variable
               DTS:CreationName=""
+              DTS:Description="Table target name to be loaded by the flow"
               DTS:DTSID="{E34941BD-86BD-4224-94F0-76E876309134}"
               DTS:IncludeInDebugDump="2345"
               DTS:Namespace="User"
@@ -3691,93 +3695,29 @@ FROM
       <GraphLayout
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="174,42"
-          Id="Package\DWH LOAD\TBDWFT_PROCESS_ORDER\TBDWFT_PROCESS_ORDER ins\Split INS-UPD-DEL"
-          TopLeft="226,266" />
-        <NodeLayout
           Size="153,42"
           Id="Package\DWH LOAD\TBDWFT_PROCESS_ORDER\TBDWFT_PROCESS_ORDER ins\DEL TRG table"
           TopLeft="641,523" />
+        <NodeLayout
+          Size="150,42"
+          Id="Package\DWH LOAD\TBDWFT_PROCESS_ORDER\TBDWFT_PROCESS_ORDER ins\INS TRG table"
+          TopLeft="121,527" />
         <NodeLayout
           Size="162,42"
           Id="Package\DWH LOAD\TBDWFT_PROCESS_ORDER\TBDWFT_PROCESS_ORDER ins\Load SRC tables"
           TopLeft="125,27" />
         <NodeLayout
-          Size="251,42"
-          Id="Package\DWH LOAD\TBDWFT_PROCESS_ORDER\TBDWFT_PROCESS_ORDER ins\Add Technical Fields and renaming"
-          TopLeft="205,142" />
-        <EdgeLayout
-          Id="Package\DWH LOAD\TBDWFT_PROCESS_ORDER\TBDWFT_PROCESS_ORDER ins.Paths[OLE DB Source Output]"
-          TopLeft="206,69">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="124.5,73"
-              Start="0,0"
-              End="124.5,65.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,32.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,32.5"
-                    Point2="0,36.5"
-                    Point3="4,36.5" />
-                  <mssgle:LineSegment
-                    End="120.5,36.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="120.5,36.5"
-                    Point2="124.5,36.5"
-                    Point3="124.5,40.5" />
-                  <mssgle:LineSegment
-                    End="124.5,65.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\DWH LOAD\TBDWFT_PROCESS_ORDER\TBDWFT_PROCESS_ORDER ins.Paths[Derived Column Output]"
-          TopLeft="330.5,184">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-17.5,82"
-              Start="0,0"
-              End="-17.5,74.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,37" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,37"
-                    Point2="0,41"
-                    Point3="-4,41" />
-                  <mssgle:LineSegment
-                    End="-13.5,41" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-13.5,41"
-                    Point2="-17.5,41"
-                    Point3="-17.5,45" />
-                  <mssgle:LineSegment
-                    End="-17.5,74.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
           Size="240,42"
           Id="Package\DWH LOAD\TBDWFT_PROCESS_ORDER\TBDWFT_PROCESS_ORDER ins\TBDWTMP_PROCESS_ORDER"
           TopLeft="330,522" />
+        <NodeLayout
+          Size="251,42"
+          Id="Package\DWH LOAD\TBDWFT_PROCESS_ORDER\TBDWFT_PROCESS_ORDER ins\Add Technical Fields and renaming"
+          TopLeft="205,142" />
+        <NodeLayout
+          Size="174,42"
+          Id="Package\DWH LOAD\TBDWFT_PROCESS_ORDER\TBDWFT_PROCESS_ORDER ins\Split INS-UPD-DEL"
+          TopLeft="226,266" />
         <EdgeLayout
           Id="Package\DWH LOAD\TBDWFT_PROCESS_ORDER\TBDWFT_PROCESS_ORDER ins.Paths[UPD]"
           TopLeft="313,308">
@@ -3814,10 +3754,40 @@ FROM
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="150,42"
-          Id="Package\DWH LOAD\TBDWFT_PROCESS_ORDER\TBDWFT_PROCESS_ORDER ins\INS TRG table"
-          TopLeft="121,527" />
+        <EdgeLayout
+          Id="Package\DWH LOAD\TBDWFT_PROCESS_ORDER\TBDWFT_PROCESS_ORDER ins.Paths[OLE DB Source Output]"
+          TopLeft="206,69">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="124.5,73"
+              Start="0,0"
+              End="124.5,65.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,32.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,32.5"
+                    Point2="0,36.5"
+                    Point3="4,36.5" />
+                  <mssgle:LineSegment
+                    End="120.5,36.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="120.5,36.5"
+                    Point2="124.5,36.5"
+                    Point3="124.5,40.5" />
+                  <mssgle:LineSegment
+                    End="124.5,65.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
         <EdgeLayout
           Id="Package\DWH LOAD\TBDWFT_PROCESS_ORDER\TBDWFT_PROCESS_ORDER ins.Paths[INS]"
           TopLeft="271.5,308">
@@ -3852,6 +3822,40 @@ FROM
             <mssgm:EdgeLabel
               BoundingBox="-46.38408203125,80.2037735849057,17.2681640625,9.5341796875"
               RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DWH LOAD\TBDWFT_PROCESS_ORDER\TBDWFT_PROCESS_ORDER ins.Paths[Derived Column Output]"
+          TopLeft="330.5,184">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-17.5,82"
+              Start="0,0"
+              End="-17.5,74.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,37" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,37"
+                    Point2="0,41"
+                    Point3="-4,41" />
+                  <mssgle:LineSegment
+                    End="-13.5,41" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-13.5,41"
+                    Point2="-17.5,41"
+                    Point3="-17.5,45" />
+                  <mssgle:LineSegment
+                    End="-17.5,74.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -3894,15 +3898,7 @@ FROM
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\DWH LOAD\TBDWFT_PROCESS_ORDER\TBDWFT_PROCESS_ORDER ins\Load SRC tables">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\DWH LOAD\TBDWFT_PROCESS_ORDER\TBDWFT_PROCESS_ORDER ins\TBDWTMP_PROCESS_ORDER">
+    design-time-name="Package\DWH LOAD\TBDWFT_PROCESS_ORDER\TBDWFT_PROCESS_ORDER ins\INS TRG table">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -3915,7 +3911,15 @@ FROM
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\DWH LOAD\TBDWFT_PROCESS_ORDER\TBDWFT_PROCESS_ORDER ins\INS TRG table">
+    design-time-name="Package\DWH LOAD\TBDWFT_PROCESS_ORDER\TBDWFT_PROCESS_ORDER ins\Load SRC tables">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\DWH LOAD\TBDWFT_PROCESS_ORDER\TBDWFT_PROCESS_ORDER ins\TBDWTMP_PROCESS_ORDER">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
