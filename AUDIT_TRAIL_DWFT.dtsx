@@ -11,8 +11,8 @@
   DTS:LocaleID="2064"
   DTS:ObjectName="AUDIT_TRAIL_DWFT"
   DTS:PackageType="5"
-  DTS:VersionBuild="441"
-  DTS:VersionGUID="{13B777F3-B1F5-4BAC-85CE-627D3C7A1F92}">
+  DTS:VersionBuild="465"
+  DTS:VersionGUID="{BB7EC312-BE9C-40D3-8451-CCFADCC5E52B}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -27,7 +27,7 @@
           <DTS:Password
             DTS:Name="Password"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAZ1W4zPu86k256zsBij2bAQAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAADeTFZ1zZPy/TG619aSm4RpAAAAAASAAACgAAAAEAAAAOhjp/0aUi6XPOH3jd1cs98gAAAAm3geiYLOK7NaL6+qkjtiP2WWIvenxHd/O7aqenb4wtwUAAAAq7WV8HdaCzQs8RPask7eOddpMQA</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAZ1W4zPu86k256zsBij2bAQAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAAB9QD5HEQxgMm6w7n9VgYKKAAAAAASAAACgAAAAEAAAAACY6xfc5ca4DzP8LnMuDu8gAAAAxrDqXnp/3l+CoLLZJ5huNw1W+Q4wUlawXq1Z+dsAVykUAAAAPZ+U6bZCemMHY2Sf5fxcqWnb27U</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -896,10 +896,6 @@
           Id="Package\DWH LOAD\TBDWFT_AUDIT_TRAIL_EQUIP\Assign TABLE_TARGET_CD"
           TopLeft="244.5,5.5" />
         <NodeLayout
-          Size="258,42"
-          Id="Package\DWH LOAD\TBDWFT_AUDIT_TRAIL_EQUIP\TBDWFT_AUDIT_TRAIL_EQUIP ins"
-          TopLeft="236,311.5" />
-        <NodeLayout
           Size="260,42"
           Id="Package\DWH LOAD\TBDWFT_AUDIT_TRAIL_EQUIP\Ins_Upd TBLOG_PACKAGE_TABLE"
           TopLeft="225.5,107.5" />
@@ -911,6 +907,10 @@
           Size="155,42"
           Id="Package\DWH LOAD\TBDWFT_AUDIT_TRAIL_EQUIP\MAX TABLE ID"
           TopLeft="278,209.5" />
+        <NodeLayout
+          Size="258,42"
+          Id="Package\DWH LOAD\TBDWFT_AUDIT_TRAIL_EQUIP\TBDWFT_AUDIT_TRAIL_EQUIP ins"
+          TopLeft="236,311.5" />
         <NodeLayout
           Size="263,42"
           Id="Package\DWH LOAD\TBDWFT_AUDIT_TRAIL_EQUIP\TBDWFT_AUDIT_TRAIL_EQUIP upd"
