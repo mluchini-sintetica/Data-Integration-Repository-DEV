@@ -26,7 +26,7 @@
           <SSIS:Property SSIS:Name="CreatorComputerName">SRV-DIR-DEV</SSIS:Property>
           <SSIS:Property SSIS:Name="Description">
           </SSIS:Property>
-          <SSIS:Property SSIS:Name="PasswordVerifier" SSIS:Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAZ1W4zPu86k256zsBij2bAQAAAAACAAAAAAADZgAAwAAAABAAAABs3SR2HYxdKibh7I87sPK+AAAAAASAAACgAAAAEAAAAOPqQXGZoH+YXjGL2TWt5pmIAAAAjJcCeL/imdGfXSlB2CfIwNJMfQM2LJwfeV1lShZy128IW8FQdCLqS4x17srfu3QDSu/dzqQs4TCe2wrnWq0DI/C+9Ohx/SdhO+8ZTTRUgwkRGTPIVKoLvl4FIxk/vU31nhvHB8t7mthqum22tPEUgev8C/4Bkfke6j/NMFBLeoO6fhw4HhSf/RQAAADOvJ93PmbAXkNnPF1OdOtWpbw3kg==</SSIS:Property>
+          <SSIS:Property SSIS:Name="PasswordVerifier" SSIS:Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAZ1W4zPu86k256zsBij2bAQAAAAACAAAAAAADZgAAwAAAABAAAACkFTf7IL3oer8hJTZwN7cpAAAAAASAAACgAAAAEAAAALeCrRnJ0Wi3Cbrx9LsoyfCIAAAAV1NgQwuEd19UPAl/HxEEIr8VQpK32Eaa0ybgnIk1d8ipxLDAe7Rl9Gi2pi2oDDUgd0gJFMhg4I/BJTVHl8nGhlBgl20JPkuzzlPx8LGtdhccYHsQ0UGoPoKLbXOFfZ/tQz9AX6g6oSED8aNT/tWTTTV+VZ4NvSrUZNePB9sinsrZgfrgr5FIOBQAAAAVEJIczcHFxHEekS25jsNdWftgoQ==</SSIS:Property>
           <SSIS:Property SSIS:Name="FormatVersion">1</SSIS:Property>
         </SSIS:Properties>
         <SSIS:Packages>
@@ -35,8 +35,8 @@
           <SSIS:Package SSIS:Name="AUDIT_TRAIL_FLAT_FILES.dtsx" SSIS:EntryPoint="1" />
           <SSIS:Package SSIS:Name="SEA_VISION_STG.dtsx" SSIS:EntryPoint="1" />
           <SSIS:Package SSIS:Name="SEA_VISION_DWFT.dtsx" SSIS:EntryPoint="1" />
-          <SSIS:Package SSIS:Name="AUDIT_TRAIL_DWFT.dtsx" SSIS:EntryPoint="1" />
           <SSIS:Package SSIS:Name="AUDIT_TRAIL_STG.dtsx" SSIS:EntryPoint="1" />
+          <SSIS:Package SSIS:Name="AUDIT_TRAIL_DW.dtsx" SSIS:EntryPoint="1" />
         </SSIS:Packages>
         <SSIS:ConnectionManagers>
           <SSIS:ConnectionManager SSIS:Name="SRV-DIR-DEV_SRVDIRDEV.DIR_DWH.DIR_DWH_ETL.conmgr" />
@@ -2550,6 +2550,8 @@
                 <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
                 <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
                 <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
+                <SSIS:Property SSIS:Name="Value">
+                </SSIS:Property>
                 <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
               </SSIS:Properties>
             </SSIS:Parameter>
@@ -2745,6 +2747,8 @@
                 <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
                 <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
                 <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
+                <SSIS:Property SSIS:Name="Value">
+                </SSIS:Property>
                 <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
               </SSIS:Properties>
             </SSIS:Parameter>
@@ -2940,6 +2944,8 @@
                 <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
                 <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
                 <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
+                <SSIS:Property SSIS:Name="Value">
+                </SSIS:Property>
                 <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
               </SSIS:Properties>
             </SSIS:Parameter>
@@ -3135,6 +3141,8 @@
                 <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
                 <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
                 <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
+                <SSIS:Property SSIS:Name="Value">
+                </SSIS:Property>
                 <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
               </SSIS:Properties>
             </SSIS:Parameter>
@@ -3330,6 +3338,8 @@
                 <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
                 <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
                 <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
+                <SSIS:Property SSIS:Name="Value">
+                </SSIS:Property>
                 <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
               </SSIS:Properties>
             </SSIS:Parameter>
@@ -3525,6 +3535,8 @@
                 <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
                 <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
                 <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
+                <SSIS:Property SSIS:Name="Value">
+                </SSIS:Property>
                 <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
               </SSIS:Properties>
             </SSIS:Parameter>
@@ -3943,16 +3955,48 @@
                 </SSIS:Parameter>
               </SSIS:Parameters>
             </SSIS:PackageMetaData>
-            <SSIS:PackageMetaData SSIS:Name="AUDIT_TRAIL_DWFT.dtsx">
+            <SSIS:PackageMetaData SSIS:Name="AUDIT_TRAIL_STG.dtsx">
               <SSIS:Properties>
-                <SSIS:Property SSIS:Name="ID">{9A13F3DA-1603-42FC-89B6-2B577C12A428}</SSIS:Property>
-                <SSIS:Property SSIS:Name="Name">AUDIT_TRAIL_DWFT</SSIS:Property>
+                <SSIS:Property SSIS:Name="ID">{F38CA5B7-BA02-4425-889C-EB28D9DFEC90}</SSIS:Property>
+                <SSIS:Property SSIS:Name="Name">AUDIT_TRAIL_STG</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionBuild">465</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">368</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionComments">
                 </SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionGUID">{BB7EC312-BE9C-40D3-8451-CCFADCC5E52B}</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{25B85C4A-70C2-4C67-B9F1-7A03E8FB17A3}</SSIS:Property>
+                <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
+                <SSIS:Property SSIS:Name="Description">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="ProtectionLevel">1</SSIS:Property>
+              </SSIS:Properties>
+              <SSIS:Parameters>
+                <SSIS:Parameter SSIS:Name="Parameter">
+                  <SSIS:Properties>
+                    <SSIS:Property SSIS:Name="ID">{90E173D4-B18F-4E84-9EFD-F402421730A2}</SSIS:Property>
+                    <SSIS:Property SSIS:Name="CreationName">
+                    </SSIS:Property>
+                    <SSIS:Property SSIS:Name="Description">
+                    </SSIS:Property>
+                    <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Value">0</SSIS:Property>
+                    <SSIS:Property SSIS:Name="DataType">9</SSIS:Property>
+                  </SSIS:Properties>
+                </SSIS:Parameter>
+              </SSIS:Parameters>
+            </SSIS:PackageMetaData>
+            <SSIS:PackageMetaData SSIS:Name="AUDIT_TRAIL_DW.dtsx">
+              <SSIS:Properties>
+                <SSIS:Property SSIS:Name="ID">{88207945-4F4B-4675-9D67-C7E6CAB4440C}</SSIS:Property>
+                <SSIS:Property SSIS:Name="Name">AUDIT_TRAIL_DW</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">469</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionComments">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{BF40E10E-2DCF-4317-9FA6-07893308DDAD}</SSIS:Property>
                 <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
                 <SSIS:Property SSIS:Name="Description">
                 </SSIS:Property>
@@ -4090,38 +4134,6 @@
                     <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
                     <SSIS:Property SSIS:Name="Value">PARCEL_DIR_R</SSIS:Property>
                     <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
-                  </SSIS:Properties>
-                </SSIS:Parameter>
-              </SSIS:Parameters>
-            </SSIS:PackageMetaData>
-            <SSIS:PackageMetaData SSIS:Name="AUDIT_TRAIL_STG.dtsx">
-              <SSIS:Properties>
-                <SSIS:Property SSIS:Name="ID">{F38CA5B7-BA02-4425-889C-EB28D9DFEC90}</SSIS:Property>
-                <SSIS:Property SSIS:Name="Name">AUDIT_TRAIL_STG</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionBuild">349</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionComments">
-                </SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionGUID">{E61849FC-29F5-4202-9A3B-72834989954A}</SSIS:Property>
-                <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
-                <SSIS:Property SSIS:Name="Description">
-                </SSIS:Property>
-                <SSIS:Property SSIS:Name="ProtectionLevel">1</SSIS:Property>
-              </SSIS:Properties>
-              <SSIS:Parameters>
-                <SSIS:Parameter SSIS:Name="Parameter">
-                  <SSIS:Properties>
-                    <SSIS:Property SSIS:Name="ID">{90E173D4-B18F-4E84-9EFD-F402421730A2}</SSIS:Property>
-                    <SSIS:Property SSIS:Name="CreationName">
-                    </SSIS:Property>
-                    <SSIS:Property SSIS:Name="Description">
-                    </SSIS:Property>
-                    <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
-                    <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
-                    <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
-                    <SSIS:Property SSIS:Name="Value">0</SSIS:Property>
-                    <SSIS:Property SSIS:Name="DataType">9</SSIS:Property>
                   </SSIS:Properties>
                 </SSIS:Parameter>
               </SSIS:Parameters>

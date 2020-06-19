@@ -11,8 +11,8 @@
   DTS:LocaleID="2064"
   DTS:ObjectName="SEA_VISION_DWFT"
   DTS:PackageType="5"
-  DTS:VersionBuild="420"
-  DTS:VersionGUID="{FAD76475-FC40-4462-B6AD-66C46C497B7C}">
+  DTS:VersionBuild="426"
+  DTS:VersionGUID="{7D408818-C081-4EA5-AF27-F62C7F172D55}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -27,7 +27,7 @@
           <DTS:Password
             DTS:Name="Password"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAZ1W4zPu86k256zsBij2bAQAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAAAV/YnlFCK44SHUqESDZNbhAAAAAASAAACgAAAAEAAAAFh49sFHa5/XxLhdtfXv/LggAAAAPH6bgNKwTcF/QB7fkGCEi+1W3UuckCOwG/5lZK6wdf0UAAAAy0P5NhSJgqlLF80sHoGgxxcQlyc</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAZ1W4zPu86k256zsBij2bAQAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAADA7d3+x7ZHBWDN2gt7um/JAAAAAASAAACgAAAAEAAAADiJTvxVbHuWlu7ZPXOkg5cgAAAANHpH0AYrQdEDmr1NnbHBqbTZ6MByBHdz+UGCj3F4tzsUAAAAJKzNIYhwEInHVl1RKnPrwsvvxvc</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -1284,7 +1284,10 @@
                           UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">UPDATE tbdwft_process_order
 SET
 DELETE_DT =?,
-ROW_STS_FLG=0
+ROW_STS_FLG=0,
+TBLOG_PACKAGE_ID = ?,
+TBLOG_PACKAGE_TABLE_ID = ?,
+USER_CD = ?
 WHERE
 ID = ?</property>
                         <property
@@ -1315,10 +1318,29 @@ ID = ?</property>
                               externalMetadataColumnId="Package\DWH LOAD\TBDWFT_PROCESS_ORDER\TBDWFT_PROCESS_ORDER ins\DEL TRG table.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
                               lineageId="Package\DWH LOAD\TBDWFT_PROCESS_ORDER\TBDWFT_PROCESS_ORDER ins\Add Technical Fields and renaming.Outputs[Derived Column Output].Columns[UPDATE_DT]" />
                             <inputColumn
+                              refId="Package\DWH LOAD\TBDWFT_PROCESS_ORDER\TBDWFT_PROCESS_ORDER ins\DEL TRG table.Inputs[OLE DB Command Input].Columns[TBLOG_PACKAGE_ID]"
+                              cachedDataType="i4"
+                              cachedName="TBLOG_PACKAGE_ID"
+                              externalMetadataColumnId="Package\DWH LOAD\TBDWFT_PROCESS_ORDER\TBDWFT_PROCESS_ORDER ins\DEL TRG table.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
+                              lineageId="Package\DWH LOAD\TBDWFT_PROCESS_ORDER\TBDWFT_PROCESS_ORDER ins\Add Technical Fields and renaming.Outputs[Derived Column Output].Columns[TBLOG_PACKAGE_ID]" />
+                            <inputColumn
+                              refId="Package\DWH LOAD\TBDWFT_PROCESS_ORDER\TBDWFT_PROCESS_ORDER ins\DEL TRG table.Inputs[OLE DB Command Input].Columns[TBLOG_PACKAGE_TABLE_ID]"
+                              cachedDataType="i4"
+                              cachedName="TBLOG_PACKAGE_TABLE_ID"
+                              externalMetadataColumnId="Package\DWH LOAD\TBDWFT_PROCESS_ORDER\TBDWFT_PROCESS_ORDER ins\DEL TRG table.Inputs[OLE DB Command Input].ExternalColumns[Param_2]"
+                              lineageId="Package\DWH LOAD\TBDWFT_PROCESS_ORDER\TBDWFT_PROCESS_ORDER ins\Add Technical Fields and renaming.Outputs[Derived Column Output].Columns[TBLOG_PACKAGE_TABLE_ID]" />
+                            <inputColumn
+                              refId="Package\DWH LOAD\TBDWFT_PROCESS_ORDER\TBDWFT_PROCESS_ORDER ins\DEL TRG table.Inputs[OLE DB Command Input].Columns[USER_CD]"
+                              cachedDataType="wstr"
+                              cachedLength="11"
+                              cachedName="USER_CD"
+                              externalMetadataColumnId="Package\DWH LOAD\TBDWFT_PROCESS_ORDER\TBDWFT_PROCESS_ORDER ins\DEL TRG table.Inputs[OLE DB Command Input].ExternalColumns[Param_3]"
+                              lineageId="Package\DWH LOAD\TBDWFT_PROCESS_ORDER\TBDWFT_PROCESS_ORDER ins\Add Technical Fields and renaming.Outputs[Derived Column Output].Columns[USER_CD]" />
+                            <inputColumn
                               refId="Package\DWH LOAD\TBDWFT_PROCESS_ORDER\TBDWFT_PROCESS_ORDER ins\DEL TRG table.Inputs[OLE DB Command Input].Columns[trg_ID]"
                               cachedDataType="i8"
                               cachedName="trg_ID"
-                              externalMetadataColumnId="Package\DWH LOAD\TBDWFT_PROCESS_ORDER\TBDWFT_PROCESS_ORDER ins\DEL TRG table.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
+                              externalMetadataColumnId="Package\DWH LOAD\TBDWFT_PROCESS_ORDER\TBDWFT_PROCESS_ORDER ins\DEL TRG table.Inputs[OLE DB Command Input].ExternalColumns[Param_4]"
                               lineageId="Package\DWH LOAD\TBDWFT_PROCESS_ORDER\TBDWFT_PROCESS_ORDER ins\Load SRC tables.Outputs[OLE DB Source Output].Columns[trg_ID]" />
                           </inputColumns>
                           <externalMetadataColumns
@@ -1338,6 +1360,40 @@ ID = ?</property>
                               refId="Package\DWH LOAD\TBDWFT_PROCESS_ORDER\TBDWFT_PROCESS_ORDER ins\DEL TRG table.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
                               dataType="i8"
                               name="Param_1">
+                              <properties>
+                                <property
+                                  dataType="System.Int32"
+                                  description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                                  name="DBParamInfoFlags">81</property>
+                              </properties>
+                            </externalMetadataColumn>
+                            <externalMetadataColumn
+                              refId="Package\DWH LOAD\TBDWFT_PROCESS_ORDER\TBDWFT_PROCESS_ORDER ins\DEL TRG table.Inputs[OLE DB Command Input].ExternalColumns[Param_2]"
+                              dataType="i8"
+                              name="Param_2">
+                              <properties>
+                                <property
+                                  dataType="System.Int32"
+                                  description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                                  name="DBParamInfoFlags">81</property>
+                              </properties>
+                            </externalMetadataColumn>
+                            <externalMetadataColumn
+                              refId="Package\DWH LOAD\TBDWFT_PROCESS_ORDER\TBDWFT_PROCESS_ORDER ins\DEL TRG table.Inputs[OLE DB Command Input].ExternalColumns[Param_3]"
+                              dataType="wstr"
+                              length="100"
+                              name="Param_3">
+                              <properties>
+                                <property
+                                  dataType="System.Int32"
+                                  description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                                  name="DBParamInfoFlags">65</property>
+                              </properties>
+                            </externalMetadataColumn>
+                            <externalMetadataColumn
+                              refId="Package\DWH LOAD\TBDWFT_PROCESS_ORDER\TBDWFT_PROCESS_ORDER ins\DEL TRG table.Inputs[OLE DB Command Input].ExternalColumns[Param_4]"
+                              dataType="i8"
+                              name="Param_4">
                               <properties>
                                 <property
                                   dataType="System.Int32"
@@ -3036,7 +3092,7 @@ FROM
               <DTS:ObjectData>
                 <SQLTask:SqlTaskData
                   SQLTask:Connection="{62102490-454D-4B7E-9A09-120A46D18B10}"
-                  SQLTask:SqlStatementSource="UPDATE TBDWFT_PROCESS_ORDER&#xA;SET &#xA;TBLOG_PACKAGE_TABLE_ID = b.TBLOG_PACKAGE_TABLE_ID&#xA;      ,UPDATE_DT = b.UPDATE_DT&#xA;      ,USER_CD = b.USER_CD&#xA;      ,SITE_ID = b.SITE_ID&#xA;      ,SOURCE_SYSTEM_ID = b.SOURCE_SYSTEM_ID&#xA;      ,ROW_STS_FLG = 1&#xA;      ,PROCESS_ORDER_CD = b.PROCESS_ORDER_CD&#xA;&#x9;  ,BATCH_CD = b.BATCH_CD&#xA;      ,ARTICLE_CD = b.ARTICLE_CD&#xA;      ,TBDWAN_BATCH_ID = b.TBDWAN_BATCH_ID&#xA;      ,TBDWAN_ARTICLE_ID = b.TBDWAN_ARTICLE_ID&#xA;      ,PRODUCTION_LINE_ID = B.PRODUCTION_LINE_ID&#xA;&#x9;  ,SOURCE_BATCH_ID = b.SOURCE_BATCH_ID&#xA;&#x9;  ,START_DT = B.START_DT&#xA;&#x9;  ,END_DT  = B.END_DT&#xA;      ,EXPIRY_DT = b.EXPIRY_DT&#xA;&#x9;  ,MANUFACTURING_DT = B.MANUFACTURING_DT&#xA;&#x9;  ,OPERATOR1_DESC = B.OPERATOR1_DESC&#xA;&#x9;  ,OPERATOR2_DESC = B.OPERATOR2_DESC&#xA;&#x9;  ,OPERATOR3_DESC = B.OPERATOR3_DESC&#xA;&#x9;  ,SERIALIZATION_FLG = B.SERIALIZATION_FLG&#xA;&#x9;  ,QA_RELEASE_FLG = B.QA_RELEASE_FLG&#xA;&#x9;  ,SOURCE_LINE_ID = b.SOURCE_LINE_ID&#xA;&#x9;  ,RECIPE_VERSION_NBR = B.RECIPE_VERSION_NBR&#xA;&#x9;  ,ACTIVE_FLG = B.ACTIVE_FLG&#xA;&#x9;  ,CONSUMED_FLG = B.CONSUMED_FLG&#xA;&#x9;  ,DATA_COLLECTION_FLG = B.DATA_COLLECTION_FLG&#xA;&#x9;  ,ONLINE_FLG = B.ONLINE_FLG&#xA;&#x9;  ,STATUS_NBR = B.STATUS_NBR&#xA;&#x9;  ,REPORT_PRINT_NBR = B.REPORT_PRINT_NBR&#xA;FROM TBDWFT_PROCESS_ORDER a join TBDWTMP_PROCESS_ORDER b on a.id=b.id;&#xA;&#xA;--truncate support table &#xA;TRUNCATE TABLE TBDWTMP_PROCESS_ORDER; " xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+                  SQLTask:SqlStatementSource="UPDATE TBDWFT_PROCESS_ORDER&#xA;SET &#xA;TBLOG_PACKAGE_ID = b.TBLOG_PACKAGE_ID&#xA;      ,TBLOG_PACKAGE_TABLE_ID = b.TBLOG_PACKAGE_TABLE_ID&#xA;      ,UPDATE_DT = b.UPDATE_DT&#xA;      ,USER_CD = b.USER_CD&#xA;      ,SITE_ID = b.SITE_ID&#xA;      ,SOURCE_SYSTEM_ID = b.SOURCE_SYSTEM_ID&#xA;      ,ROW_STS_FLG = 1&#xA;      ,PROCESS_ORDER_CD = b.PROCESS_ORDER_CD&#xA;&#x9;  ,BATCH_CD = b.BATCH_CD&#xA;      ,ARTICLE_CD = b.ARTICLE_CD&#xA;      ,TBDWAN_BATCH_ID = b.TBDWAN_BATCH_ID&#xA;      ,TBDWAN_ARTICLE_ID = b.TBDWAN_ARTICLE_ID&#xA;      ,PRODUCTION_LINE_ID = B.PRODUCTION_LINE_ID&#xA;&#x9;  ,SOURCE_BATCH_ID = b.SOURCE_BATCH_ID&#xA;&#x9;  ,START_DT = B.START_DT&#xA;&#x9;  ,END_DT  = B.END_DT&#xA;      ,EXPIRY_DT = b.EXPIRY_DT&#xA;&#x9;  ,MANUFACTURING_DT = B.MANUFACTURING_DT&#xA;&#x9;  ,OPERATOR1_DESC = B.OPERATOR1_DESC&#xA;&#x9;  ,OPERATOR2_DESC = B.OPERATOR2_DESC&#xA;&#x9;  ,OPERATOR3_DESC = B.OPERATOR3_DESC&#xA;&#x9;  ,SERIALIZATION_FLG = B.SERIALIZATION_FLG&#xA;&#x9;  ,QA_RELEASE_FLG = B.QA_RELEASE_FLG&#xA;&#x9;  ,SOURCE_LINE_ID = b.SOURCE_LINE_ID&#xA;&#x9;  ,RECIPE_VERSION_NBR = B.RECIPE_VERSION_NBR&#xA;&#x9;  ,ACTIVE_FLG = B.ACTIVE_FLG&#xA;&#x9;  ,CONSUMED_FLG = B.CONSUMED_FLG&#xA;&#x9;  ,DATA_COLLECTION_FLG = B.DATA_COLLECTION_FLG&#xA;&#x9;  ,ONLINE_FLG = B.ONLINE_FLG&#xA;&#x9;  ,STATUS_NBR = B.STATUS_NBR&#xA;&#x9;  ,REPORT_PRINT_NBR = B.REPORT_PRINT_NBR&#xA;FROM TBDWFT_PROCESS_ORDER a join TBDWTMP_PROCESS_ORDER b on a.id=b.id;&#xA;&#xA;--truncate support table &#xA;TRUNCATE TABLE TBDWTMP_PROCESS_ORDER; " xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
               </DTS:ObjectData>
             </DTS:Executable>
           </DTS:Executables>

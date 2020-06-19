@@ -11,8 +11,8 @@
   DTS:LocaleID="2064"
   DTS:ObjectName="AUDIT_TRAIL_STG"
   DTS:PackageType="5"
-  DTS:VersionBuild="367"
-  DTS:VersionGUID="{FF6779D6-EB7F-4666-BDA5-DEA242363848}">
+  DTS:VersionBuild="368"
+  DTS:VersionGUID="{25B85C4A-70C2-4C67-B9F1-7A03E8FB17A3}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:PackageParameters>
@@ -35589,7 +35589,7 @@ FROM
           PanelSize="515,958"
           Size="515,1001"
           Id="Package\STAGING LOAD\TBST_FLAT_EQUIP_AUDIT_TRAIL"
-          TopLeft="5.5,6.50000000000011" />
+          TopLeft="6.5,6.50000000000011" />
         <NodeLayout
           Size="222,42"
           Id="Package\STAGING LOAD\TBST_FLAT_EQUIP_PARAMETER\Assign TABLE_TARGET_CD"
