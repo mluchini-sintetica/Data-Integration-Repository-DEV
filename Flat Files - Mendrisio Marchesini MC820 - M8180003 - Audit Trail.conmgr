@@ -1,8 +1,8 @@
 ﻿<?xml version="1.0"?>
 <DTS:ConnectionManager xmlns:DTS="www.microsoft.com/SqlServer/Dts"
-  DTS:ObjectName="Flat Files - Mendrisio Marchesini Neri BL600 - N6180027"
-  DTS:DTSID="{811D4F20-222E-4490-AF8A-4718804D5949}"
-  DTS:Description="Marchesini Neri BL600"
+  DTS:ObjectName="Flat Files - Mendrisio Marchesini MC820 - M8180003 - Audit Trail"
+  DTS:DTSID="{F63ADDD5-7E3F-4528-B892-C7D4C2808500}"
+  DTS:Description="Marchesini MC820"
   DTS:CreationName="FLATFILE">
   <DTS:ObjectData>
     <DTS:ConnectionManager
@@ -13,7 +13,7 @@
       DTS:RowDelimiter=""
       DTS:TextQualifier="_x003C_none_x003E_"
       DTS:CodePage="65001"
-      DTS:ConnectionString="D:\Files_output\Mendrisio\BLF600.csv">
+      DTS:ConnectionString="D:\Files_output\Mendrisio\MC820TT.csv">
       <DTS:FlatFileColumns>
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"
@@ -21,7 +21,7 @@
           DTS:DataType="3"
           DTS:TextQualified="True"
           DTS:ObjectName="Counter"
-          DTS:DTSID="{5FD14A6C-E428-498C-8C03-E20EF7972A45}"
+          DTS:DTSID="{C3785081-D744-4E1D-B44F-1877AC87C6E4}"
           DTS:CreationName="" />
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"
@@ -29,7 +29,7 @@
           DTS:DataType="3"
           DTS:TextQualified="True"
           DTS:ObjectName="SystemID"
-          DTS:DTSID="{B5C7A244-0FB4-4BB2-8EF2-D17FF64A92F4}"
+          DTS:DTSID="{E5B64335-BC90-4FBF-B3AB-134ABB2A3A8E}"
           DTS:CreationName="" />
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"
@@ -37,7 +37,7 @@
           DTS:DataType="7"
           DTS:TextQualified="True"
           DTS:ObjectName="Time"
-          DTS:DTSID="{45185C5D-6E96-40C1-9FCD-A9A3BE411F87}"
+          DTS:DTSID="{81CFAADE-28A8-40F9-9C24-1F8D61FE5F41}"
           DTS:CreationName="" />
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"
@@ -46,7 +46,7 @@
           DTS:DataType="130"
           DTS:TextQualified="True"
           DTS:ObjectName="User"
-          DTS:DTSID="{BDC607DB-602F-4440-A64E-A9B046278498}"
+          DTS:DTSID="{60A3CFD9-548F-4B11-94CB-37F35AF0E717}"
           DTS:CreationName="" />
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"
@@ -55,7 +55,7 @@
           DTS:DataType="130"
           DTS:TextQualified="True"
           DTS:ObjectName="Message"
-          DTS:DTSID="{3C630F93-1C40-4358-9852-F46861C012CD}"
+          DTS:DTSID="{AD2333CA-5174-4BBB-BE57-AA7ABA08EC16}"
           DTS:CreationName="" />
       </DTS:FlatFileColumns>
     </DTS:ConnectionManager>

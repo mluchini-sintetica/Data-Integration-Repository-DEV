@@ -1,0 +1,63 @@
+﻿<?xml version="1.0"?>
+<DTS:ConnectionManager xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:ObjectName="Flat Files - Mendrisio Dividella Neo Top 804 - 068062 - Audit Trail"
+  DTS:DTSID="{04291D1A-B4D2-4E42-A650-83EF7E015060}"
+  DTS:Description="Dividella Neo Top 804"
+  DTS:CreationName="FLATFILE">
+  <DTS:ObjectData>
+    <DTS:ConnectionManager
+      DTS:Format="Delimited"
+      DTS:LocaleID="2064"
+      DTS:HeaderRowDelimiter="_x000D__x000A_"
+      DTS:ColumnNamesInFirstDataRow="True"
+      DTS:RowDelimiter=""
+      DTS:TextQualifier="_x003C_none_x003E_"
+      DTS:CodePage="65001"
+      DTS:ConnectionString="D:\Files_output\Mendrisio\NeoTOP804.csv">
+      <DTS:FlatFileColumns>
+        <DTS:FlatFileColumn
+          DTS:ColumnType="Delimited"
+          DTS:ColumnDelimiter="_x007C_"
+          DTS:DataType="3"
+          DTS:TextQualified="True"
+          DTS:ObjectName="Counter"
+          DTS:DTSID="{1068A481-AC3B-4D97-82B8-2E2B5D579B00}"
+          DTS:CreationName="" />
+        <DTS:FlatFileColumn
+          DTS:ColumnType="Delimited"
+          DTS:ColumnDelimiter="_x007C_"
+          DTS:DataType="3"
+          DTS:TextQualified="True"
+          DTS:ObjectName="SystemID"
+          DTS:DTSID="{4B40AE52-7AA2-4280-AA7F-7E3439AB49F5}"
+          DTS:CreationName="" />
+        <DTS:FlatFileColumn
+          DTS:ColumnType="Delimited"
+          DTS:ColumnDelimiter="_x007C_"
+          DTS:DataType="7"
+          DTS:TextQualified="True"
+          DTS:ObjectName="Time"
+          DTS:DTSID="{22C3EE81-D0E5-4328-9772-BF7AB66779B2}"
+          DTS:CreationName="" />
+        <DTS:FlatFileColumn
+          DTS:ColumnType="Delimited"
+          DTS:ColumnDelimiter="_x007C_"
+          DTS:MaximumWidth="100"
+          DTS:DataType="130"
+          DTS:TextQualified="True"
+          DTS:ObjectName="User"
+          DTS:DTSID="{798FED89-7734-4DF9-A630-88B3C5CD4953}"
+          DTS:CreationName="" />
+        <DTS:FlatFileColumn
+          DTS:ColumnType="Delimited"
+          DTS:ColumnDelimiter="_x000D__x000A_"
+          DTS:MaximumWidth="4000"
+          DTS:DataType="130"
+          DTS:TextQualified="True"
+          DTS:ObjectName="Message"
+          DTS:DTSID="{4985F3DD-034E-4C8D-A026-4DF5D4A0E6B9}"
+          DTS:CreationName="" />
+      </DTS:FlatFileColumns>
+    </DTS:ConnectionManager>
+  </DTS:ObjectData>
+</DTS:ConnectionManager>

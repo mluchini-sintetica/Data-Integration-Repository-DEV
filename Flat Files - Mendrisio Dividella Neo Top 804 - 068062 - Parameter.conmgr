@@ -1,8 +1,8 @@
 ﻿<?xml version="1.0"?>
 <DTS:ConnectionManager xmlns:DTS="www.microsoft.com/SqlServer/Dts"
-  DTS:ObjectName="Flat Files - Mendrisio Marchesini Ministratus Plus - M8180031"
-  DTS:DTSID="{233D33F1-E43F-4A5E-B510-E413146299FD}"
-  DTS:Description="Marchesini Ministratus Plus"
+  DTS:ObjectName="Flat Files - Mendrisio Dividella Neo Top 804 - 068062 - Parameter"
+  DTS:DTSID="{65A160DD-C0F3-4A37-AB75-AE82BE1BECC7}"
+  DTS:Description="Dividella Neo Top 804"
   DTS:CreationName="FLATFILE">
   <DTS:ObjectData>
     <DTS:ConnectionManager
@@ -11,33 +11,26 @@
       DTS:HeaderRowDelimiter="_x000D__x000A_"
       DTS:ColumnNamesInFirstDataRow="True"
       DTS:RowDelimiter=""
-      DTS:TextQualifier="_x003C_none_x003E_"
+      DTS:TextQualifier="Vertical_x0020_Bar_x0020__x007B__x007C__x007D_"
       DTS:CodePage="65001"
-      DTS:ConnectionString="D:\Files_output\Mendrisio\Ministratus.csv">
+      DTS:ConnectionString="D:\Files_output\Mendrisio\NeoTOP804_Formato.csv">
       <DTS:FlatFileColumns>
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"
           DTS:ColumnDelimiter="_x007C_"
           DTS:DataType="3"
           DTS:TextQualified="True"
-          DTS:ObjectName="Counter"
-          DTS:DTSID="{B809E56C-5AE2-44EE-B44D-922293E5F7AC}"
+          DTS:ObjectName="Contatore"
+          DTS:DTSID="{C9C2537C-8BEB-47A1-B8B4-EB0C37240CEC}"
           DTS:CreationName="" />
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"
           DTS:ColumnDelimiter="_x007C_"
-          DTS:DataType="3"
+          DTS:MaximumWidth="1000"
+          DTS:DataType="130"
           DTS:TextQualified="True"
-          DTS:ObjectName="SystemID"
-          DTS:DTSID="{BF33FA0E-C85F-42D2-B92F-4B621D01BE65}"
-          DTS:CreationName="" />
-        <DTS:FlatFileColumn
-          DTS:ColumnType="Delimited"
-          DTS:ColumnDelimiter="_x007C_"
-          DTS:DataType="7"
-          DTS:TextQualified="True"
-          DTS:ObjectName="Time"
-          DTS:DTSID="{6CE27221-F6EF-4259-8E63-5E6DFCE32167}"
+          DTS:ObjectName="Parametro"
+          DTS:DTSID="{D26999C1-3E54-4233-92E7-9F0BC3C591D7}"
           DTS:CreationName="" />
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"
@@ -45,17 +38,26 @@
           DTS:MaximumWidth="100"
           DTS:DataType="130"
           DTS:TextQualified="True"
-          DTS:ObjectName="User"
-          DTS:DTSID="{E811C061-6E9F-4686-BF3F-EB63CB10DD56}"
+          DTS:ObjectName="Valore"
+          DTS:DTSID="{F226F7E2-B296-4810-AB8D-EDEECACCA32D}"
+          DTS:CreationName="" />
+        <DTS:FlatFileColumn
+          DTS:ColumnType="Delimited"
+          DTS:ColumnDelimiter="_x007C_"
+          DTS:MaximumWidth="50"
+          DTS:DataType="130"
+          DTS:TextQualified="True"
+          DTS:ObjectName="Unita di Misura"
+          DTS:DTSID="{B49291E3-A8F6-431A-99A9-8882F7D0380D}"
           DTS:CreationName="" />
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"
           DTS:ColumnDelimiter="_x000D__x000A_"
-          DTS:MaximumWidth="4000"
+          DTS:MaximumWidth="100"
           DTS:DataType="130"
           DTS:TextQualified="True"
-          DTS:ObjectName="Message"
-          DTS:DTSID="{F5A8287B-C472-4953-9914-8EF48AEB784B}"
+          DTS:ObjectName="Massimo"
+          DTS:DTSID="{3B01D689-2AFE-4ED4-AAE5-531FE39755D0}"
           DTS:CreationName="" />
       </DTS:FlatFileColumns>
     </DTS:ConnectionManager>

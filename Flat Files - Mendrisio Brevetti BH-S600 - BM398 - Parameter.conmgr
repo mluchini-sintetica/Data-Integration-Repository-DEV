@@ -1,0 +1,73 @@
+﻿<?xml version="1.0"?>
+<DTS:ConnectionManager xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:ObjectName="Flat Files - Mendrisio Brevetti BH-S600 - BM398 - Parameter"
+  DTS:DTSID="{E79BC8EF-61F8-4B59-B5BF-89473DCB51F7}"
+  DTS:Description="Brevetti BH-S600"
+  DTS:CreationName="FLATFILE">
+  <DTS:ObjectData>
+    <DTS:ConnectionManager
+      DTS:Format="Delimited"
+      DTS:LocaleID="2064"
+      DTS:HeaderRowDelimiter="_x000D__x000A_"
+      DTS:ColumnNamesInFirstDataRow="True"
+      DTS:RowDelimiter=""
+      DTS:TextQualifier="_x003C_none_x003E_"
+      DTS:CodePage="65001"
+      DTS:ConnectionString="D:\Files_output\Mendrisio\BHS600LD_Formato.csv">
+      <DTS:FlatFileColumns>
+        <DTS:FlatFileColumn
+          DTS:ColumnType="Delimited"
+          DTS:ColumnDelimiter="_x007C_"
+          DTS:DataType="3"
+          DTS:TextQualified="True"
+          DTS:ObjectName="Contatore"
+          DTS:DTSID="{B2447B6C-EECB-4069-B81A-B82FC161D746}"
+          DTS:CreationName="" />
+        <DTS:FlatFileColumn
+          DTS:ColumnType="Delimited"
+          DTS:ColumnDelimiter="_x007C_"
+          DTS:MaximumWidth="1000"
+          DTS:DataType="130"
+          DTS:TextQualified="True"
+          DTS:ObjectName="Parametro"
+          DTS:DTSID="{4E429641-0BBB-4442-B89B-FF4AA1DBCD05}"
+          DTS:CreationName="" />
+        <DTS:FlatFileColumn
+          DTS:ColumnType="Delimited"
+          DTS:ColumnDelimiter="_x007C_"
+          DTS:MaximumWidth="100"
+          DTS:DataType="130"
+          DTS:TextQualified="True"
+          DTS:ObjectName="Minimo"
+          DTS:DTSID="{C1314CBD-9A85-4817-BEC9-5D205901F3E0}"
+          DTS:CreationName="" />
+        <DTS:FlatFileColumn
+          DTS:ColumnType="Delimited"
+          DTS:ColumnDelimiter="_x007C_"
+          DTS:MaximumWidth="100"
+          DTS:DataType="130"
+          DTS:TextQualified="True"
+          DTS:ObjectName="Massimo"
+          DTS:DTSID="{3E729063-2B06-4028-93B7-6CAA91C3203F}"
+          DTS:CreationName="" />
+        <DTS:FlatFileColumn
+          DTS:ColumnType="Delimited"
+          DTS:ColumnDelimiter="_x007C_"
+          DTS:MaximumWidth="100"
+          DTS:DataType="130"
+          DTS:TextQualified="True"
+          DTS:ObjectName="Valore"
+          DTS:DTSID="{15BA0BC0-5386-4BAB-BCFE-2096A1DD8CE1}"
+          DTS:CreationName="" />
+        <DTS:FlatFileColumn
+          DTS:ColumnType="Delimited"
+          DTS:ColumnDelimiter="_x000D__x000A_"
+          DTS:DataType="3"
+          DTS:TextQualified="True"
+          DTS:ObjectName="Severità"
+          DTS:DTSID="{3B9D4FF3-8BB1-4413-9E72-AF9B0338C39D}"
+          DTS:CreationName="" />
+      </DTS:FlatFileColumns>
+    </DTS:ConnectionManager>
+  </DTS:ObjectData>
+</DTS:ConnectionManager>
