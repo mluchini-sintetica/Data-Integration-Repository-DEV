@@ -21,7 +21,7 @@
           DTS:DataType="3"
           DTS:TextQualified="True"
           DTS:ObjectName="Contatore"
-          DTS:DTSID="{5F3E13BB-1252-4F97-9203-61D3C89E490B}"
+          DTS:DTSID="{D1D06043-593F-4BD3-8BFA-CC11750726C7}"
           DTS:CreationName="" />
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"
@@ -30,7 +30,7 @@
           DTS:DataType="130"
           DTS:TextQualified="True"
           DTS:ObjectName="Parametro"
-          DTS:DTSID="{83643B7F-FAC4-4FED-8678-1AA719C7928B}"
+          DTS:DTSID="{0E6EC381-F7FC-443C-8CE6-7E8E2C95B357}"
           DTS:CreationName="" />
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"
@@ -39,7 +39,7 @@
           DTS:DataType="130"
           DTS:TextQualified="True"
           DTS:ObjectName="Valore"
-          DTS:DTSID="{35462006-8965-4966-B56E-B43C521019D7}"
+          DTS:DTSID="{3080A03A-D435-4838-BDFC-2920C64B379F}"
           DTS:CreationName="" />
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"
@@ -48,7 +48,7 @@
           DTS:DataType="130"
           DTS:TextQualified="True"
           DTS:ObjectName="Minimo"
-          DTS:DTSID="{61573503-38F0-4645-9E7E-6F44E6A0EA5C}"
+          DTS:DTSID="{C5F66339-FD83-4E3C-806C-3CCB76858A54}"
           DTS:CreationName="" />
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"
@@ -57,7 +57,7 @@
           DTS:DataType="130"
           DTS:TextQualified="True"
           DTS:ObjectName="Massimo"
-          DTS:DTSID="{6F65F712-CBDE-424F-AAB9-3A0A76D63158}"
+          DTS:DTSID="{A841B044-1409-4046-99E6-68C020755954}"
           DTS:CreationName="" />
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"
@@ -65,7 +65,7 @@
           DTS:DataType="3"
           DTS:TextQualified="True"
           DTS:ObjectName="ID"
-          DTS:DTSID="{8F51ACC5-2BA7-4BD4-85D1-976C684C973E}"
+          DTS:DTSID="{FA813901-AF0F-40D9-9971-8FB89C345D62}"
           DTS:CreationName="" />
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"
@@ -73,7 +73,7 @@
           DTS:DataType="3"
           DTS:TextQualified="True"
           DTS:ObjectName="SeveritÃ "
-          DTS:DTSID="{3DA22C7E-A59D-48D6-9078-AA12744272EA}"
+          DTS:DTSID="{35E8DA31-40C6-4579-BC55-67A06908D3E0}"
           DTS:CreationName="" />
       </DTS:FlatFileColumns>
     </DTS:ConnectionManager>

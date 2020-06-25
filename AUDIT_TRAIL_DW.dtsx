@@ -11,8 +11,8 @@
   DTS:LocaleID="2064"
   DTS:ObjectName="AUDIT_TRAIL_DW"
   DTS:PackageType="5"
-  DTS:VersionBuild="550"
-  DTS:VersionGUID="{55293F50-5B8D-45F3-A559-446C18A385D9}">
+  DTS:VersionBuild="556"
+  DTS:VersionGUID="{21554209-B430-4800-8EDA-287F5CBF8D1C}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -27,7 +27,7 @@
           <DTS:Password
             DTS:Name="Password"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAZ1W4zPu86k256zsBij2bAQAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAACDcZHU1mNS/0TSIzF22m0jAAAAAASAAACgAAAAEAAAAMdCPfwL28vIQ7y3q8XMmXggAAAAiX14ZVTFZAM0peGS2moklU41UtStp47DpMHo8UeryCwUAAAAH2Kezu61d8lyeVmKGB2mjfBV3JE</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAZ1W4zPu86k256zsBij2bAQAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAAARIGGmUxXKekDHfP1Ry0B7AAAAAASAAACgAAAAEAAAAFDIxwA9dGUt++Rvv4eHZ84gAAAANQdQ+qr/BUwodNEedzlAkgLlm/cLkUxJClwt2/IJBt0UAAAAtWPPE5tPSndkWZun4nBJ/EDOaLQ</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -2362,7 +2362,907 @@ FROM
             </DTS:EventHandler>
           </DTS:EventHandlers>
         </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\DWH AN LOAD\TBDWMN_EQUIP_PARAMETER"
+          DTS:CreationName="STOCK:SEQUENCE"
+          DTS:Description="Sequence Container"
+          DTS:DTSID="{54e992aa-c643-4de2-b180-d23b20a351b1}"
+          DTS:ExecutableType="STOCK:SEQUENCE"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="TBDWMN_EQUIP_PARAMETER">
+          <DTS:Variables>
+            <DTS:Variable
+              DTS:CreationName=""
+              DTS:Description="Output related to the last ID run for the table"
+              DTS:DTSID="{bf0f153d-4793-46c5-8f33-f171ee7dc8c6}"
+              DTS:IncludeInDebugDump="6789"
+              DTS:Namespace="User"
+              DTS:ObjectName="out_MAX_TABLE_ID">
+              <DTS:VariableValue
+                DTS:DataType="3">0</DTS:VariableValue>
+            </DTS:Variable>
+            <DTS:Variable
+              DTS:CreationName=""
+              DTS:Description="Table target name to be loaded by the flow"
+              DTS:DTSID="{f44d8507-6841-419e-98a6-49733e43e064}"
+              DTS:IncludeInDebugDump="2345"
+              DTS:Namespace="User"
+              DTS:ObjectName="out_TABLE_TARGET_CD">
+              <DTS:VariableValue
+                DTS:DataType="8"
+                xml:space="preserve"></DTS:VariableValue>
+            </DTS:Variable>
+          </DTS:Variables>
+          <DTS:Executables>
+            <DTS:Executable
+              DTS:refId="Package\DWH AN LOAD\TBDWMN_EQUIP_PARAMETER\Assign TABLE_TARGET_CD"
+              DTS:CreationName="Microsoft.ExecuteSQLTask"
+              DTS:Description="Execute SQL Task"
+              DTS:DTSID="{adca367c-3b4d-46e4-a0b7-285ac5e5ee4a}"
+              DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+              DTS:LocaleID="-1"
+              DTS:ObjectName="Assign TABLE_TARGET_CD"
+              DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+              DTS:ThreadHint="0">
+              <DTS:Variables />
+              <DTS:ObjectData>
+                <SQLTask:SqlTaskData
+                  SQLTask:Connection="{62102490-454D-4B7E-9A09-120A46D18B10}"
+                  SQLTask:SqlStatementSource="select 'TBDWMN_EQUIP_PARAMETER' as TABLE_TARGET_CD"
+                  SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+                  <SQLTask:ResultBinding
+                    SQLTask:ResultName="TABLE_TARGET_CD"
+                    SQLTask:DtsVariableName="User::out_TABLE_TARGET_CD" />
+                </SQLTask:SqlTaskData>
+              </DTS:ObjectData>
+            </DTS:Executable>
+            <DTS:Executable
+              DTS:refId="Package\DWH AN LOAD\TBDWMN_EQUIP_PARAMETER\Ins_Upd TBLOG_PACKAGE_TABLE"
+              DTS:CreationName="Microsoft.ExecuteSQLTask"
+              DTS:Description="Execute SQL Task"
+              DTS:DTSID="{767fe590-54d5-45e0-9ff1-b36d07c45788}"
+              DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+              DTS:LocaleID="-1"
+              DTS:ObjectName="Ins_Upd TBLOG_PACKAGE_TABLE"
+              DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+              DTS:ThreadHint="0">
+              <DTS:Variables />
+              <DTS:ObjectData>
+                <SQLTask:SqlTaskData
+                  SQLTask:Connection="{62102490-454D-4B7E-9A09-120A46D18B10}"
+                  SQLTask:SqlStatementSource="--insert new row&#xA;INSERT INTO TBLOG_PACKAGE_TABLE&#xA;VALUES (?,?,?,?,?, getdate(),null, ?, 1, 0);&#xA;&#xA;--update previous last table run to 0&#xA;UPDATE TBLOG_PACKAGE_TABLE&#xA;SET LAST_TABLE_RUN_FLG = 0&#xA;WHERE TBLOG_PACKAGE_ID &lt;&gt; ? and TABLE_TARGET_CD = ? and SOURCE_SYSTEM_ID = ? and LAST_TABLE_RUN_FLG = 1;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+                  <SQLTask:ParameterBinding
+                    SQLTask:ParameterName="0"
+                    SQLTask:DtsVariableName="User::out_MAX_ID"
+                    SQLTask:ParameterDirection="Input"
+                    SQLTask:DataType="131"
+                    SQLTask:ParameterSize="-1" />
+                  <SQLTask:ParameterBinding
+                    SQLTask:ParameterName="1"
+                    SQLTask:DtsVariableName="User::out_SITE_ID"
+                    SQLTask:ParameterDirection="Input"
+                    SQLTask:DataType="131"
+                    SQLTask:ParameterSize="-1" />
+                  <SQLTask:ParameterBinding
+                    SQLTask:ParameterName="2"
+                    SQLTask:DtsVariableName="User::out_SOURCE_SYSTEM_ID"
+                    SQLTask:ParameterDirection="Input"
+                    SQLTask:DataType="131"
+                    SQLTask:ParameterSize="-1" />
+                  <SQLTask:ParameterBinding
+                    SQLTask:ParameterName="3"
+                    SQLTask:DtsVariableName="System::PackageName"
+                    SQLTask:ParameterDirection="Input"
+                    SQLTask:DataType="130"
+                    SQLTask:ParameterSize="-1" />
+                  <SQLTask:ParameterBinding
+                    SQLTask:ParameterName="5"
+                    SQLTask:DtsVariableName="User::in_USER_CD"
+                    SQLTask:ParameterDirection="Input"
+                    SQLTask:DataType="130"
+                    SQLTask:ParameterSize="-1" />
+                  <SQLTask:ParameterBinding
+                    SQLTask:ParameterName="6"
+                    SQLTask:DtsVariableName="User::out_MAX_ID"
+                    SQLTask:ParameterDirection="Input"
+                    SQLTask:DataType="131"
+                    SQLTask:ParameterSize="-1" />
+                  <SQLTask:ParameterBinding
+                    SQLTask:ParameterName="8"
+                    SQLTask:DtsVariableName="User::out_SOURCE_SYSTEM_ID"
+                    SQLTask:ParameterDirection="Input"
+                    SQLTask:DataType="131"
+                    SQLTask:ParameterSize="-1" />
+                  <SQLTask:ParameterBinding
+                    SQLTask:ParameterName="4"
+                    SQLTask:DtsVariableName="User::out_TABLE_TARGET_CD"
+                    SQLTask:ParameterDirection="Input"
+                    SQLTask:DataType="130"
+                    SQLTask:ParameterSize="-1" />
+                  <SQLTask:ParameterBinding
+                    SQLTask:ParameterName="7"
+                    SQLTask:DtsVariableName="User::out_TABLE_TARGET_CD"
+                    SQLTask:ParameterDirection="Input"
+                    SQLTask:DataType="130"
+                    SQLTask:ParameterSize="-1" />
+                </SQLTask:SqlTaskData>
+              </DTS:ObjectData>
+            </DTS:Executable>
+            <DTS:Executable
+              DTS:refId="Package\DWH AN LOAD\TBDWMN_EQUIP_PARAMETER\Last Upd TBLOG_PACKAGE_TABLE"
+              DTS:CreationName="Microsoft.ExecuteSQLTask"
+              DTS:Description="Execute SQL Task"
+              DTS:DTSID="{a69630c2-a684-4737-8e3f-7d3e8ee9c82d}"
+              DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+              DTS:LocaleID="-1"
+              DTS:ObjectName="Last Upd TBLOG_PACKAGE_TABLE"
+              DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+              DTS:ThreadHint="0">
+              <DTS:Variables />
+              <DTS:ObjectData>
+                <SQLTask:SqlTaskData
+                  SQLTask:Connection="{62102490-454D-4B7E-9A09-120A46D18B10}"
+                  SQLTask:SqlStatementSource="--set the last successful flag to 0&#xA;UPDATE TBLOG_PACKAGE_TABLE&#xA;SET LAST_SUCCESS_TABLE_RUN_FLG = 0&#xA;WHERE &#xA;TABLE_TARGET_CD = ? and SOURCE_SYSTEM_ID = ? and LAST_SUCCESS_TABLE_RUN_FLG=1;&#xA;&#xA;--set the last successful flag to 1&#xA;UPDATE TBLOG_PACKAGE_TABLE&#xA;SET END_DT = getdate(), LAST_SUCCESS_TABLE_RUN_FLG=1&#xA;WHERE ID = ?&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+                  <SQLTask:ParameterBinding
+                    SQLTask:ParameterName="1"
+                    SQLTask:DtsVariableName="User::out_SOURCE_SYSTEM_ID"
+                    SQLTask:ParameterDirection="Input"
+                    SQLTask:DataType="131"
+                    SQLTask:ParameterSize="-1" />
+                  <SQLTask:ParameterBinding
+                    SQLTask:ParameterName="2"
+                    SQLTask:DtsVariableName="User::out_MAX_TABLE_ID"
+                    SQLTask:ParameterDirection="Input"
+                    SQLTask:DataType="131"
+                    SQLTask:ParameterSize="-1" />
+                  <SQLTask:ParameterBinding
+                    SQLTask:ParameterName="0"
+                    SQLTask:DtsVariableName="User::out_TABLE_TARGET_CD"
+                    SQLTask:ParameterDirection="Input"
+                    SQLTask:DataType="130"
+                    SQLTask:ParameterSize="-1" />
+                </SQLTask:SqlTaskData>
+              </DTS:ObjectData>
+            </DTS:Executable>
+            <DTS:Executable
+              DTS:refId="Package\DWH AN LOAD\TBDWMN_EQUIP_PARAMETER\MAX TABLE ID"
+              DTS:CreationName="Microsoft.ExecuteSQLTask"
+              DTS:Description="Execute SQL Task"
+              DTS:DTSID="{fbed86fb-e4fd-44ab-8407-7ab425264815}"
+              DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+              DTS:LocaleID="-1"
+              DTS:ObjectName="MAX TABLE ID"
+              DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+              DTS:ThreadHint="0">
+              <DTS:Variables />
+              <DTS:ObjectData>
+                <SQLTask:SqlTaskData
+                  SQLTask:Connection="{62102490-454D-4B7E-9A09-120A46D18B10}"
+                  SQLTask:SqlStatementSource="--retrieve tha last ID&#xA;SELECT MAX(ID) as MAX_TABLE_ID&#xA;FROM TBLOG_PACKAGE_TABLE&#xA;WHERE TBLOG_PACKAGE_ID = ? and TABLE_TARGET_CD = ? "
+                  SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+                  <SQLTask:ResultBinding
+                    SQLTask:ResultName="MAX_TABLE_ID"
+                    SQLTask:DtsVariableName="User::out_MAX_TABLE_ID" />
+                  <SQLTask:ParameterBinding
+                    SQLTask:ParameterName="0"
+                    SQLTask:DtsVariableName="User::out_MAX_ID"
+                    SQLTask:ParameterDirection="Input"
+                    SQLTask:DataType="131"
+                    SQLTask:ParameterSize="-1" />
+                  <SQLTask:ParameterBinding
+                    SQLTask:ParameterName="1"
+                    SQLTask:DtsVariableName="User::out_TABLE_TARGET_CD"
+                    SQLTask:ParameterDirection="Input"
+                    SQLTask:DataType="130"
+                    SQLTask:ParameterSize="-1" />
+                </SQLTask:SqlTaskData>
+              </DTS:ObjectData>
+            </DTS:Executable>
+            <DTS:Executable
+              DTS:refId="Package\DWH AN LOAD\TBDWMN_EQUIP_PARAMETER\TBDWMN_EQUIP_PARAMETER"
+              DTS:CreationName="Microsoft.Pipeline"
+              DTS:Description="Data Flow Task"
+              DTS:DTSID="{165f0156-a6eb-4e70-993f-5d2ae90193e8}"
+              DTS:ExecutableType="Microsoft.Pipeline"
+              DTS:LocaleID="-1"
+              DTS:ObjectName="TBDWMN_EQUIP_PARAMETER"
+              DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+              <DTS:Variables />
+              <DTS:ObjectData>
+                <pipeline
+                  version="1">
+                  <components>
+                    <component
+                      refId="Package\DWH AN LOAD\TBDWMN_EQUIP_PARAMETER\TBDWMN_EQUIP_PARAMETER\Add Technical Fields"
+                      componentClassID="Microsoft.DerivedColumn"
+                      contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+                      description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+                      name="Add Technical Fields"
+                      usesDispositions="true">
+                      <inputs>
+                        <input
+                          refId="Package\DWH AN LOAD\TBDWMN_EQUIP_PARAMETER\TBDWMN_EQUIP_PARAMETER\Add Technical Fields.Inputs[Derived Column Input]"
+                          description="Input to the Derived Column Transformation"
+                          name="Derived Column Input">
+                          <externalMetadataColumns />
+                        </input>
+                      </inputs>
+                      <outputs>
+                        <output
+                          refId="Package\DWH AN LOAD\TBDWMN_EQUIP_PARAMETER\TBDWMN_EQUIP_PARAMETER\Add Technical Fields.Outputs[Derived Column Output]"
+                          description="Default Output of the Derived Column Transformation"
+                          exclusionGroup="1"
+                          name="Derived Column Output"
+                          synchronousInputId="Package\DWH AN LOAD\TBDWMN_EQUIP_PARAMETER\TBDWMN_EQUIP_PARAMETER\Add Technical Fields.Inputs[Derived Column Input]">
+                          <outputColumns>
+                            <outputColumn
+                              refId="Package\DWH AN LOAD\TBDWMN_EQUIP_PARAMETER\TBDWMN_EQUIP_PARAMETER\Add Technical Fields.Outputs[Derived Column Output].Columns[USER_CD]"
+                              dataType="wstr"
+                              errorOrTruncationOperation="Computation"
+                              errorRowDisposition="FailComponent"
+                              length="11"
+                              lineageId="Package\DWH AN LOAD\TBDWMN_EQUIP_PARAMETER\TBDWMN_EQUIP_PARAMETER\Add Technical Fields.Outputs[Derived Column Output].Columns[USER_CD]"
+                              name="USER_CD"
+                              truncationRowDisposition="FailComponent">
+                              <properties>
+                                <property
+                                  containsID="true"
+                                  dataType="System.String"
+                                  description="Derived Column Expression"
+                                  name="Expression">@[User::in_USER_CD]</property>
+                                <property
+                                  containsID="true"
+                                  dataType="System.String"
+                                  description="Derived Column Friendly Expression"
+                                  expressionType="Notify"
+                                  name="FriendlyExpression">@[User::in_USER_CD]</property>
+                              </properties>
+                            </outputColumn>
+                            <outputColumn
+                              refId="Package\DWH AN LOAD\TBDWMN_EQUIP_PARAMETER\TBDWMN_EQUIP_PARAMETER\Add Technical Fields.Outputs[Derived Column Output].Columns[TRANSACTION_CD]"
+                              dataType="wstr"
+                              errorOrTruncationOperation="Computation"
+                              errorRowDisposition="FailComponent"
+                              length="1"
+                              lineageId="Package\DWH AN LOAD\TBDWMN_EQUIP_PARAMETER\TBDWMN_EQUIP_PARAMETER\Add Technical Fields.Outputs[Derived Column Output].Columns[TRANSACTION_CD]"
+                              name="TRANSACTION_CD"
+                              truncationRowDisposition="FailComponent">
+                              <properties>
+                                <property
+                                  containsID="true"
+                                  dataType="System.String"
+                                  description="Derived Column Expression"
+                                  name="Expression">"I"</property>
+                                <property
+                                  containsID="true"
+                                  dataType="System.String"
+                                  description="Derived Column Friendly Expression"
+                                  expressionType="Notify"
+                                  name="FriendlyExpression">"I"</property>
+                              </properties>
+                            </outputColumn>
+                          </outputColumns>
+                          <externalMetadataColumns />
+                        </output>
+                        <output
+                          refId="Package\DWH AN LOAD\TBDWMN_EQUIP_PARAMETER\TBDWMN_EQUIP_PARAMETER\Add Technical Fields.Outputs[Derived Column Error Output]"
+                          description="Error Output of the Derived Column Transformation"
+                          exclusionGroup="1"
+                          isErrorOut="true"
+                          name="Derived Column Error Output"
+                          synchronousInputId="Package\DWH AN LOAD\TBDWMN_EQUIP_PARAMETER\TBDWMN_EQUIP_PARAMETER\Add Technical Fields.Inputs[Derived Column Input]">
+                          <outputColumns>
+                            <outputColumn
+                              refId="Package\DWH AN LOAD\TBDWMN_EQUIP_PARAMETER\TBDWMN_EQUIP_PARAMETER\Add Technical Fields.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                              dataType="i4"
+                              lineageId="Package\DWH AN LOAD\TBDWMN_EQUIP_PARAMETER\TBDWMN_EQUIP_PARAMETER\Add Technical Fields.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                              name="ErrorCode"
+                              specialFlags="1" />
+                            <outputColumn
+                              refId="Package\DWH AN LOAD\TBDWMN_EQUIP_PARAMETER\TBDWMN_EQUIP_PARAMETER\Add Technical Fields.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                              dataType="i4"
+                              lineageId="Package\DWH AN LOAD\TBDWMN_EQUIP_PARAMETER\TBDWMN_EQUIP_PARAMETER\Add Technical Fields.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                              name="ErrorColumn"
+                              specialFlags="2" />
+                          </outputColumns>
+                          <externalMetadataColumns />
+                        </output>
+                      </outputs>
+                    </component>
+                    <component
+                      refId="Package\DWH AN LOAD\TBDWMN_EQUIP_PARAMETER\TBDWMN_EQUIP_PARAMETER\INS TRG table"
+                      componentClassID="Microsoft.OLEDBDestination"
+                      contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+                      description="OLE DB Destination"
+                      name="INS TRG table"
+                      usesDispositions="true"
+                      version="4">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                          name="CommandTimeout">0</property>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the name of the database object used to open a rowset."
+                          name="OpenRowset">[db_owner].[TBDWMN_EQUIP_PARAMETER]</property>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the variable that contains the name of the database object used to open a rowset."
+                          name="OpenRowsetVariable"></property>
+                        <property
+                          dataType="System.String"
+                          description="The SQL command to be executed."
+                          name="SqlCommand"
+                          UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the column code page to use when code page information is unavailable from the data source."
+                          name="DefaultCodePage">1252</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Forces the use of the DefaultCodePage property value when describing character data."
+                          name="AlwaysUseDefaultCodePage">false</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the mode used to access the database."
+                          name="AccessMode"
+                          typeConverter="AccessMode">3</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                          name="FastLoadKeepIdentity">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                          name="FastLoadKeepNulls">false</property>
+                        <property
+                          dataType="System.String"
+                          description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                          name="FastLoadOptions">TABLOCK</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                          name="FastLoadMaxInsertCommitSize">2147483647</property>
+                      </properties>
+                      <connections>
+                        <connection
+                          refId="Package\DWH AN LOAD\TBDWMN_EQUIP_PARAMETER\TBDWMN_EQUIP_PARAMETER\INS TRG table.Connections[OleDbConnection]"
+                          connectionManagerID="{62102490-454D-4B7E-9A09-120A46D18B10}:external"
+                          connectionManagerRefId="Project.ConnectionManagers[SRV-DIR-DEV_SRVDIRDEV.DIR_DWH.DIR_DWH_ETL]"
+                          description="The OLE DB runtime connection used to access the database."
+                          name="OleDbConnection" />
+                      </connections>
+                      <inputs>
+                        <input
+                          refId="Package\DWH AN LOAD\TBDWMN_EQUIP_PARAMETER\TBDWMN_EQUIP_PARAMETER\INS TRG table.Inputs[OLE DB Destination Input]"
+                          errorOrTruncationOperation="Insert"
+                          errorRowDisposition="FailComponent"
+                          hasSideEffects="true"
+                          name="OLE DB Destination Input">
+                          <inputColumns>
+                            <inputColumn
+                              refId="Package\DWH AN LOAD\TBDWMN_EQUIP_PARAMETER\TBDWMN_EQUIP_PARAMETER\INS TRG table.Inputs[OLE DB Destination Input].Columns[MACHINE_SERIAL_CD]"
+                              cachedDataType="wstr"
+                              cachedLength="100"
+                              cachedName="MACHINE_SERIAL_CD"
+                              externalMetadataColumnId="Package\DWH AN LOAD\TBDWMN_EQUIP_PARAMETER\TBDWMN_EQUIP_PARAMETER\INS TRG table.Inputs[OLE DB Destination Input].ExternalColumns[MACHINE_SERIAL_CD]"
+                              lineageId="Package\DWH AN LOAD\TBDWMN_EQUIP_PARAMETER\TBDWMN_EQUIP_PARAMETER\Load SRC tables.Outputs[OLE DB Source Output].Columns[MACHINE_SERIAL_CD]" />
+                            <inputColumn
+                              refId="Package\DWH AN LOAD\TBDWMN_EQUIP_PARAMETER\TBDWMN_EQUIP_PARAMETER\INS TRG table.Inputs[OLE DB Destination Input].Columns[PARAMETER_CD]"
+                              cachedDataType="wstr"
+                              cachedLength="4000"
+                              cachedName="PARAMETER_CD"
+                              externalMetadataColumnId="Package\DWH AN LOAD\TBDWMN_EQUIP_PARAMETER\TBDWMN_EQUIP_PARAMETER\INS TRG table.Inputs[OLE DB Destination Input].ExternalColumns[PARAMETER_CD]"
+                              lineageId="Package\DWH AN LOAD\TBDWMN_EQUIP_PARAMETER\TBDWMN_EQUIP_PARAMETER\Load SRC tables.Outputs[OLE DB Source Output].Columns[PARAMETER_CD]" />
+                            <inputColumn
+                              refId="Package\DWH AN LOAD\TBDWMN_EQUIP_PARAMETER\TBDWMN_EQUIP_PARAMETER\INS TRG table.Inputs[OLE DB Destination Input].Columns[INSERT_DT]"
+                              cachedDataType="dbTimeStamp"
+                              cachedName="INSERT_DT"
+                              externalMetadataColumnId="Package\DWH AN LOAD\TBDWMN_EQUIP_PARAMETER\TBDWMN_EQUIP_PARAMETER\INS TRG table.Inputs[OLE DB Destination Input].ExternalColumns[INSERT_DT]"
+                              lineageId="Package\DWH AN LOAD\TBDWMN_EQUIP_PARAMETER\TBDWMN_EQUIP_PARAMETER\Load SRC tables.Outputs[OLE DB Source Output].Columns[INSERT_DT]" />
+                            <inputColumn
+                              refId="Package\DWH AN LOAD\TBDWMN_EQUIP_PARAMETER\TBDWMN_EQUIP_PARAMETER\INS TRG table.Inputs[OLE DB Destination Input].Columns[USER_CD]"
+                              cachedDataType="wstr"
+                              cachedLength="11"
+                              cachedName="USER_CD"
+                              externalMetadataColumnId="Package\DWH AN LOAD\TBDWMN_EQUIP_PARAMETER\TBDWMN_EQUIP_PARAMETER\INS TRG table.Inputs[OLE DB Destination Input].ExternalColumns[USER_CD]"
+                              lineageId="Package\DWH AN LOAD\TBDWMN_EQUIP_PARAMETER\TBDWMN_EQUIP_PARAMETER\Add Technical Fields.Outputs[Derived Column Output].Columns[USER_CD]" />
+                            <inputColumn
+                              refId="Package\DWH AN LOAD\TBDWMN_EQUIP_PARAMETER\TBDWMN_EQUIP_PARAMETER\INS TRG table.Inputs[OLE DB Destination Input].Columns[SITE_ID]"
+                              cachedDataType="i8"
+                              cachedName="SITE_ID"
+                              externalMetadataColumnId="Package\DWH AN LOAD\TBDWMN_EQUIP_PARAMETER\TBDWMN_EQUIP_PARAMETER\INS TRG table.Inputs[OLE DB Destination Input].ExternalColumns[SITE_ID]"
+                              lineageId="Package\DWH AN LOAD\TBDWMN_EQUIP_PARAMETER\TBDWMN_EQUIP_PARAMETER\Load SRC tables.Outputs[OLE DB Source Output].Columns[SITE_ID]" />
+                            <inputColumn
+                              refId="Package\DWH AN LOAD\TBDWMN_EQUIP_PARAMETER\TBDWMN_EQUIP_PARAMETER\INS TRG table.Inputs[OLE DB Destination Input].Columns[TBDWAN_EQUIP_PARAMETER_ID]"
+                              cachedDataType="i8"
+                              cachedName="TBDWAN_EQUIP_PARAMETER_ID"
+                              externalMetadataColumnId="Package\DWH AN LOAD\TBDWMN_EQUIP_PARAMETER\TBDWMN_EQUIP_PARAMETER\INS TRG table.Inputs[OLE DB Destination Input].ExternalColumns[TBDWAN_EQUIP_PARAMETER_ID]"
+                              lineageId="Package\DWH AN LOAD\TBDWMN_EQUIP_PARAMETER\TBDWMN_EQUIP_PARAMETER\Load SRC tables.Outputs[OLE DB Source Output].Columns[TBDWAN_EQUIP_PARAMETER_ID]" />
+                            <inputColumn
+                              refId="Package\DWH AN LOAD\TBDWMN_EQUIP_PARAMETER\TBDWMN_EQUIP_PARAMETER\INS TRG table.Inputs[OLE DB Destination Input].Columns[PRODUCTION_LINE_ID]"
+                              cachedDataType="i8"
+                              cachedName="PRODUCTION_LINE_ID"
+                              externalMetadataColumnId="Package\DWH AN LOAD\TBDWMN_EQUIP_PARAMETER\TBDWMN_EQUIP_PARAMETER\INS TRG table.Inputs[OLE DB Destination Input].ExternalColumns[PRODUCTION_LINE_ID]"
+                              lineageId="Package\DWH AN LOAD\TBDWMN_EQUIP_PARAMETER\TBDWMN_EQUIP_PARAMETER\Load SRC tables.Outputs[OLE DB Source Output].Columns[PRODUCTION_LINE_ID]" />
+                            <inputColumn
+                              refId="Package\DWH AN LOAD\TBDWMN_EQUIP_PARAMETER\TBDWMN_EQUIP_PARAMETER\INS TRG table.Inputs[OLE DB Destination Input].Columns[PRODUCTION_MODEL_ID]"
+                              cachedDataType="i8"
+                              cachedName="PRODUCTION_MODEL_ID"
+                              externalMetadataColumnId="Package\DWH AN LOAD\TBDWMN_EQUIP_PARAMETER\TBDWMN_EQUIP_PARAMETER\INS TRG table.Inputs[OLE DB Destination Input].ExternalColumns[PRODUCTION_MODEL_ID]"
+                              lineageId="Package\DWH AN LOAD\TBDWMN_EQUIP_PARAMETER\TBDWMN_EQUIP_PARAMETER\Load SRC tables.Outputs[OLE DB Source Output].Columns[PRODUCTION_MODEL_ID]" />
+                            <inputColumn
+                              refId="Package\DWH AN LOAD\TBDWMN_EQUIP_PARAMETER\TBDWMN_EQUIP_PARAMETER\INS TRG table.Inputs[OLE DB Destination Input].Columns[VALIDITY_START_DT]"
+                              cachedCodepage="1252"
+                              cachedDataType="str"
+                              cachedLength="19"
+                              cachedName="VALIDITY_START_DT"
+                              externalMetadataColumnId="Package\DWH AN LOAD\TBDWMN_EQUIP_PARAMETER\TBDWMN_EQUIP_PARAMETER\INS TRG table.Inputs[OLE DB Destination Input].ExternalColumns[VALIDITY_START_DT]"
+                              lineageId="Package\DWH AN LOAD\TBDWMN_EQUIP_PARAMETER\TBDWMN_EQUIP_PARAMETER\Load SRC tables.Outputs[OLE DB Source Output].Columns[VALIDITY_START_DT]" />
+                            <inputColumn
+                              refId="Package\DWH AN LOAD\TBDWMN_EQUIP_PARAMETER\TBDWMN_EQUIP_PARAMETER\INS TRG table.Inputs[OLE DB Destination Input].Columns[VALIDITY_END_DT]"
+                              cachedCodepage="1252"
+                              cachedDataType="str"
+                              cachedLength="19"
+                              cachedName="VALIDITY_END_DT"
+                              externalMetadataColumnId="Package\DWH AN LOAD\TBDWMN_EQUIP_PARAMETER\TBDWMN_EQUIP_PARAMETER\INS TRG table.Inputs[OLE DB Destination Input].ExternalColumns[VALIDITY_END_DT]"
+                              lineageId="Package\DWH AN LOAD\TBDWMN_EQUIP_PARAMETER\TBDWMN_EQUIP_PARAMETER\Load SRC tables.Outputs[OLE DB Source Output].Columns[VALIDITY_END_DT]" />
+                            <inputColumn
+                              refId="Package\DWH AN LOAD\TBDWMN_EQUIP_PARAMETER\TBDWMN_EQUIP_PARAMETER\INS TRG table.Inputs[OLE DB Destination Input].Columns[TRANSACTION_CD]"
+                              cachedDataType="wstr"
+                              cachedLength="1"
+                              cachedName="TRANSACTION_CD"
+                              externalMetadataColumnId="Package\DWH AN LOAD\TBDWMN_EQUIP_PARAMETER\TBDWMN_EQUIP_PARAMETER\INS TRG table.Inputs[OLE DB Destination Input].ExternalColumns[TRANSACTION_CD]"
+                              lineageId="Package\DWH AN LOAD\TBDWMN_EQUIP_PARAMETER\TBDWMN_EQUIP_PARAMETER\Add Technical Fields.Outputs[Derived Column Output].Columns[TRANSACTION_CD]" />
+                          </inputColumns>
+                          <externalMetadataColumns
+                            isUsed="True">
+                            <externalMetadataColumn
+                              refId="Package\DWH AN LOAD\TBDWMN_EQUIP_PARAMETER\TBDWMN_EQUIP_PARAMETER\INS TRG table.Inputs[OLE DB Destination Input].ExternalColumns[INSERT_DT]"
+                              dataType="dbTimeStamp"
+                              name="INSERT_DT" />
+                            <externalMetadataColumn
+                              refId="Package\DWH AN LOAD\TBDWMN_EQUIP_PARAMETER\TBDWMN_EQUIP_PARAMETER\INS TRG table.Inputs[OLE DB Destination Input].ExternalColumns[USER_CD]"
+                              dataType="wstr"
+                              length="100"
+                              name="USER_CD" />
+                            <externalMetadataColumn
+                              refId="Package\DWH AN LOAD\TBDWMN_EQUIP_PARAMETER\TBDWMN_EQUIP_PARAMETER\INS TRG table.Inputs[OLE DB Destination Input].ExternalColumns[SITE_ID]"
+                              dataType="i8"
+                              name="SITE_ID" />
+                            <externalMetadataColumn
+                              refId="Package\DWH AN LOAD\TBDWMN_EQUIP_PARAMETER\TBDWMN_EQUIP_PARAMETER\INS TRG table.Inputs[OLE DB Destination Input].ExternalColumns[MACHINE_SERIAL_CD]"
+                              dataType="wstr"
+                              length="100"
+                              name="MACHINE_SERIAL_CD" />
+                            <externalMetadataColumn
+                              refId="Package\DWH AN LOAD\TBDWMN_EQUIP_PARAMETER\TBDWMN_EQUIP_PARAMETER\INS TRG table.Inputs[OLE DB Destination Input].ExternalColumns[PARAMETER_CD]"
+                              dataType="wstr"
+                              length="4000"
+                              name="PARAMETER_CD" />
+                            <externalMetadataColumn
+                              refId="Package\DWH AN LOAD\TBDWMN_EQUIP_PARAMETER\TBDWMN_EQUIP_PARAMETER\INS TRG table.Inputs[OLE DB Destination Input].ExternalColumns[TBDWAN_EQUIP_PARAMETER_ID]"
+                              dataType="i8"
+                              name="TBDWAN_EQUIP_PARAMETER_ID" />
+                            <externalMetadataColumn
+                              refId="Package\DWH AN LOAD\TBDWMN_EQUIP_PARAMETER\TBDWMN_EQUIP_PARAMETER\INS TRG table.Inputs[OLE DB Destination Input].ExternalColumns[PRODUCTION_LINE_ID]"
+                              dataType="i8"
+                              name="PRODUCTION_LINE_ID" />
+                            <externalMetadataColumn
+                              refId="Package\DWH AN LOAD\TBDWMN_EQUIP_PARAMETER\TBDWMN_EQUIP_PARAMETER\INS TRG table.Inputs[OLE DB Destination Input].ExternalColumns[PRODUCTION_MODEL_ID]"
+                              dataType="i8"
+                              name="PRODUCTION_MODEL_ID" />
+                            <externalMetadataColumn
+                              refId="Package\DWH AN LOAD\TBDWMN_EQUIP_PARAMETER\TBDWMN_EQUIP_PARAMETER\INS TRG table.Inputs[OLE DB Destination Input].ExternalColumns[PARAMETER_TRANSLATION_DESC]"
+                              dataType="wstr"
+                              length="4000"
+                              name="PARAMETER_TRANSLATION_DESC" />
+                            <externalMetadataColumn
+                              refId="Package\DWH AN LOAD\TBDWMN_EQUIP_PARAMETER\TBDWMN_EQUIP_PARAMETER\INS TRG table.Inputs[OLE DB Destination Input].ExternalColumns[SEVERITY_NBR]"
+                              dataType="i8"
+                              name="SEVERITY_NBR" />
+                            <externalMetadataColumn
+                              refId="Package\DWH AN LOAD\TBDWMN_EQUIP_PARAMETER\TBDWMN_EQUIP_PARAMETER\INS TRG table.Inputs[OLE DB Destination Input].ExternalColumns[VALIDITY_START_DT]"
+                              dataType="dbTimeStamp"
+                              name="VALIDITY_START_DT" />
+                            <externalMetadataColumn
+                              refId="Package\DWH AN LOAD\TBDWMN_EQUIP_PARAMETER\TBDWMN_EQUIP_PARAMETER\INS TRG table.Inputs[OLE DB Destination Input].ExternalColumns[VALIDITY_END_DT]"
+                              dataType="dbTimeStamp"
+                              name="VALIDITY_END_DT" />
+                            <externalMetadataColumn
+                              refId="Package\DWH AN LOAD\TBDWMN_EQUIP_PARAMETER\TBDWMN_EQUIP_PARAMETER\INS TRG table.Inputs[OLE DB Destination Input].ExternalColumns[TRANSACTION_CD]"
+                              dataType="wstr"
+                              length="1"
+                              name="TRANSACTION_CD" />
+                          </externalMetadataColumns>
+                        </input>
+                      </inputs>
+                      <outputs>
+                        <output
+                          refId="Package\DWH AN LOAD\TBDWMN_EQUIP_PARAMETER\TBDWMN_EQUIP_PARAMETER\INS TRG table.Outputs[OLE DB Destination Error Output]"
+                          exclusionGroup="1"
+                          isErrorOut="true"
+                          name="OLE DB Destination Error Output"
+                          synchronousInputId="Package\DWH AN LOAD\TBDWMN_EQUIP_PARAMETER\TBDWMN_EQUIP_PARAMETER\INS TRG table.Inputs[OLE DB Destination Input]">
+                          <outputColumns>
+                            <outputColumn
+                              refId="Package\DWH AN LOAD\TBDWMN_EQUIP_PARAMETER\TBDWMN_EQUIP_PARAMETER\INS TRG table.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                              dataType="i4"
+                              lineageId="Package\DWH AN LOAD\TBDWMN_EQUIP_PARAMETER\TBDWMN_EQUIP_PARAMETER\INS TRG table.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                              name="ErrorCode"
+                              specialFlags="1" />
+                            <outputColumn
+                              refId="Package\DWH AN LOAD\TBDWMN_EQUIP_PARAMETER\TBDWMN_EQUIP_PARAMETER\INS TRG table.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                              dataType="i4"
+                              lineageId="Package\DWH AN LOAD\TBDWMN_EQUIP_PARAMETER\TBDWMN_EQUIP_PARAMETER\INS TRG table.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                              name="ErrorColumn"
+                              specialFlags="2" />
+                          </outputColumns>
+                          <externalMetadataColumns />
+                        </output>
+                      </outputs>
+                    </component>
+                    <component
+                      refId="Package\DWH AN LOAD\TBDWMN_EQUIP_PARAMETER\TBDWMN_EQUIP_PARAMETER\Load SRC tables"
+                      componentClassID="Microsoft.OLEDBSource"
+                      contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+                      description="OLE DB Source"
+                      name="Load SRC tables"
+                      usesDispositions="true"
+                      version="7">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                          name="CommandTimeout">0</property>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the name of the database object used to open a rowset."
+                          name="OpenRowset"></property>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the variable that contains the name of the database object used to open a rowset."
+                          name="OpenRowsetVariable"></property>
+                        <property
+                          dataType="System.String"
+                          description="The SQL command to be executed."
+                          name="SqlCommand"
+                          UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT a.ID as TBDWAN_EQUIP_PARAMETER_ID, a.SITE_ID, a.PRODUCTION_LINE_ID, a.PRODUCTION_MODEL_ID, a.MACHINE_SERIAL_CD, a.PARAMETER_CD,
+		'2000-01-01 00:00:00' as VALIDITY_START_DT, '2999-12-31 23:59:59' AS VALIDITY_END_DT, GETDATE() AS INSERT_DT
+	FROM
+		(SELECT DISTINCT ID, SITE_ID, TBDWMN_PRODUCTION_LINE_ID as PRODUCTION_LINE_ID, TBDWMN_PRODUCTION_MODEL_ID as PRODUCTION_MODEL_ID, MACHINE_SERIAL_CD ,PARAMETER_CD 
+			FROM TBDWAN_EQUIP_PARAMETER WHERE SITE_ID = ?) a left join
+		(SELECT TBDWAN_EQUIP_PARAMETER_ID FROM TBDWMN_EQUIP_PARAMETER WHERE site_id = ?) trg on A.ID = trg.TBDWAN_EQUIP_PARAMETER_ID
+	WHERE trg.TBDWAN_EQUIP_PARAMETER_ID is null</property>
+                        <property
+                          dataType="System.String"
+                          description="The variable that contains the SQL command to be executed."
+                          name="SqlCommandVariable"></property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the column code page to use when code page information is unavailable from the data source."
+                          name="DefaultCodePage">1252</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Forces the use of the DefaultCodePage property value when describing character data."
+                          name="AlwaysUseDefaultCodePage">false</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the mode used to access the database."
+                          name="AccessMode"
+                          typeConverter="AccessMode">2</property>
+                        <property
+                          dataType="System.String"
+                          description="The mappings between the parameters in the SQL command and variables."
+                          name="ParameterMapping">"Parameter0:Input",{B17B2764-9175-442B-B35F-0E566080186F};"Parameter1:Input",{B17B2764-9175-442B-B35F-0E566080186F};</property>
+                      </properties>
+                      <connections>
+                        <connection
+                          refId="Package\DWH AN LOAD\TBDWMN_EQUIP_PARAMETER\TBDWMN_EQUIP_PARAMETER\Load SRC tables.Connections[OleDbConnection]"
+                          connectionManagerID="{62102490-454D-4B7E-9A09-120A46D18B10}:external"
+                          connectionManagerRefId="Project.ConnectionManagers[SRV-DIR-DEV_SRVDIRDEV.DIR_DWH.DIR_DWH_ETL]"
+                          description="The OLE DB runtime connection used to access the database."
+                          name="OleDbConnection" />
+                      </connections>
+                      <outputs>
+                        <output
+                          refId="Package\DWH AN LOAD\TBDWMN_EQUIP_PARAMETER\TBDWMN_EQUIP_PARAMETER\Load SRC tables.Outputs[OLE DB Source Output]"
+                          name="OLE DB Source Output">
+                          <outputColumns>
+                            <outputColumn
+                              refId="Package\DWH AN LOAD\TBDWMN_EQUIP_PARAMETER\TBDWMN_EQUIP_PARAMETER\Load SRC tables.Outputs[OLE DB Source Output].Columns[MACHINE_SERIAL_CD]"
+                              dataType="wstr"
+                              errorOrTruncationOperation="Conversion"
+                              errorRowDisposition="FailComponent"
+                              externalMetadataColumnId="Package\DWH AN LOAD\TBDWMN_EQUIP_PARAMETER\TBDWMN_EQUIP_PARAMETER\Load SRC tables.Outputs[OLE DB Source Output].ExternalColumns[MACHINE_SERIAL_CD]"
+                              length="100"
+                              lineageId="Package\DWH AN LOAD\TBDWMN_EQUIP_PARAMETER\TBDWMN_EQUIP_PARAMETER\Load SRC tables.Outputs[OLE DB Source Output].Columns[MACHINE_SERIAL_CD]"
+                              name="MACHINE_SERIAL_CD"
+                              truncationRowDisposition="FailComponent" />
+                            <outputColumn
+                              refId="Package\DWH AN LOAD\TBDWMN_EQUIP_PARAMETER\TBDWMN_EQUIP_PARAMETER\Load SRC tables.Outputs[OLE DB Source Output].Columns[PARAMETER_CD]"
+                              dataType="wstr"
+                              errorOrTruncationOperation="Conversion"
+                              errorRowDisposition="FailComponent"
+                              externalMetadataColumnId="Package\DWH AN LOAD\TBDWMN_EQUIP_PARAMETER\TBDWMN_EQUIP_PARAMETER\Load SRC tables.Outputs[OLE DB Source Output].ExternalColumns[PARAMETER_CD]"
+                              length="4000"
+                              lineageId="Package\DWH AN LOAD\TBDWMN_EQUIP_PARAMETER\TBDWMN_EQUIP_PARAMETER\Load SRC tables.Outputs[OLE DB Source Output].Columns[PARAMETER_CD]"
+                              name="PARAMETER_CD"
+                              truncationRowDisposition="FailComponent" />
+                            <outputColumn
+                              refId="Package\DWH AN LOAD\TBDWMN_EQUIP_PARAMETER\TBDWMN_EQUIP_PARAMETER\Load SRC tables.Outputs[OLE DB Source Output].Columns[TBDWAN_EQUIP_PARAMETER_ID]"
+                              dataType="i8"
+                              errorOrTruncationOperation="Conversion"
+                              errorRowDisposition="FailComponent"
+                              externalMetadataColumnId="Package\DWH AN LOAD\TBDWMN_EQUIP_PARAMETER\TBDWMN_EQUIP_PARAMETER\Load SRC tables.Outputs[OLE DB Source Output].ExternalColumns[TBDWAN_EQUIP_PARAMETER_ID]"
+                              lineageId="Package\DWH AN LOAD\TBDWMN_EQUIP_PARAMETER\TBDWMN_EQUIP_PARAMETER\Load SRC tables.Outputs[OLE DB Source Output].Columns[TBDWAN_EQUIP_PARAMETER_ID]"
+                              name="TBDWAN_EQUIP_PARAMETER_ID"
+                              truncationRowDisposition="FailComponent" />
+                            <outputColumn
+                              refId="Package\DWH AN LOAD\TBDWMN_EQUIP_PARAMETER\TBDWMN_EQUIP_PARAMETER\Load SRC tables.Outputs[OLE DB Source Output].Columns[SITE_ID]"
+                              dataType="i8"
+                              errorOrTruncationOperation="Conversion"
+                              errorRowDisposition="FailComponent"
+                              externalMetadataColumnId="Package\DWH AN LOAD\TBDWMN_EQUIP_PARAMETER\TBDWMN_EQUIP_PARAMETER\Load SRC tables.Outputs[OLE DB Source Output].ExternalColumns[SITE_ID]"
+                              lineageId="Package\DWH AN LOAD\TBDWMN_EQUIP_PARAMETER\TBDWMN_EQUIP_PARAMETER\Load SRC tables.Outputs[OLE DB Source Output].Columns[SITE_ID]"
+                              name="SITE_ID"
+                              truncationRowDisposition="FailComponent" />
+                            <outputColumn
+                              refId="Package\DWH AN LOAD\TBDWMN_EQUIP_PARAMETER\TBDWMN_EQUIP_PARAMETER\Load SRC tables.Outputs[OLE DB Source Output].Columns[PRODUCTION_LINE_ID]"
+                              dataType="i8"
+                              errorOrTruncationOperation="Conversion"
+                              errorRowDisposition="FailComponent"
+                              externalMetadataColumnId="Package\DWH AN LOAD\TBDWMN_EQUIP_PARAMETER\TBDWMN_EQUIP_PARAMETER\Load SRC tables.Outputs[OLE DB Source Output].ExternalColumns[PRODUCTION_LINE_ID]"
+                              lineageId="Package\DWH AN LOAD\TBDWMN_EQUIP_PARAMETER\TBDWMN_EQUIP_PARAMETER\Load SRC tables.Outputs[OLE DB Source Output].Columns[PRODUCTION_LINE_ID]"
+                              name="PRODUCTION_LINE_ID"
+                              truncationRowDisposition="FailComponent" />
+                            <outputColumn
+                              refId="Package\DWH AN LOAD\TBDWMN_EQUIP_PARAMETER\TBDWMN_EQUIP_PARAMETER\Load SRC tables.Outputs[OLE DB Source Output].Columns[PRODUCTION_MODEL_ID]"
+                              dataType="i8"
+                              errorOrTruncationOperation="Conversion"
+                              errorRowDisposition="FailComponent"
+                              externalMetadataColumnId="Package\DWH AN LOAD\TBDWMN_EQUIP_PARAMETER\TBDWMN_EQUIP_PARAMETER\Load SRC tables.Outputs[OLE DB Source Output].ExternalColumns[PRODUCTION_MODEL_ID]"
+                              lineageId="Package\DWH AN LOAD\TBDWMN_EQUIP_PARAMETER\TBDWMN_EQUIP_PARAMETER\Load SRC tables.Outputs[OLE DB Source Output].Columns[PRODUCTION_MODEL_ID]"
+                              name="PRODUCTION_MODEL_ID"
+                              truncationRowDisposition="FailComponent" />
+                            <outputColumn
+                              refId="Package\DWH AN LOAD\TBDWMN_EQUIP_PARAMETER\TBDWMN_EQUIP_PARAMETER\Load SRC tables.Outputs[OLE DB Source Output].Columns[VALIDITY_START_DT]"
+                              codePage="1252"
+                              dataType="str"
+                              errorOrTruncationOperation="Conversion"
+                              errorRowDisposition="FailComponent"
+                              externalMetadataColumnId="Package\DWH AN LOAD\TBDWMN_EQUIP_PARAMETER\TBDWMN_EQUIP_PARAMETER\Load SRC tables.Outputs[OLE DB Source Output].ExternalColumns[VALIDITY_START_DT]"
+                              length="19"
+                              lineageId="Package\DWH AN LOAD\TBDWMN_EQUIP_PARAMETER\TBDWMN_EQUIP_PARAMETER\Load SRC tables.Outputs[OLE DB Source Output].Columns[VALIDITY_START_DT]"
+                              name="VALIDITY_START_DT"
+                              truncationRowDisposition="FailComponent" />
+                            <outputColumn
+                              refId="Package\DWH AN LOAD\TBDWMN_EQUIP_PARAMETER\TBDWMN_EQUIP_PARAMETER\Load SRC tables.Outputs[OLE DB Source Output].Columns[VALIDITY_END_DT]"
+                              codePage="1252"
+                              dataType="str"
+                              errorOrTruncationOperation="Conversion"
+                              errorRowDisposition="FailComponent"
+                              externalMetadataColumnId="Package\DWH AN LOAD\TBDWMN_EQUIP_PARAMETER\TBDWMN_EQUIP_PARAMETER\Load SRC tables.Outputs[OLE DB Source Output].ExternalColumns[VALIDITY_END_DT]"
+                              length="19"
+                              lineageId="Package\DWH AN LOAD\TBDWMN_EQUIP_PARAMETER\TBDWMN_EQUIP_PARAMETER\Load SRC tables.Outputs[OLE DB Source Output].Columns[VALIDITY_END_DT]"
+                              name="VALIDITY_END_DT"
+                              truncationRowDisposition="FailComponent" />
+                            <outputColumn
+                              refId="Package\DWH AN LOAD\TBDWMN_EQUIP_PARAMETER\TBDWMN_EQUIP_PARAMETER\Load SRC tables.Outputs[OLE DB Source Output].Columns[INSERT_DT]"
+                              dataType="dbTimeStamp"
+                              errorOrTruncationOperation="Conversion"
+                              errorRowDisposition="FailComponent"
+                              externalMetadataColumnId="Package\DWH AN LOAD\TBDWMN_EQUIP_PARAMETER\TBDWMN_EQUIP_PARAMETER\Load SRC tables.Outputs[OLE DB Source Output].ExternalColumns[INSERT_DT]"
+                              lineageId="Package\DWH AN LOAD\TBDWMN_EQUIP_PARAMETER\TBDWMN_EQUIP_PARAMETER\Load SRC tables.Outputs[OLE DB Source Output].Columns[INSERT_DT]"
+                              name="INSERT_DT"
+                              truncationRowDisposition="FailComponent" />
+                          </outputColumns>
+                          <externalMetadataColumns
+                            isUsed="True">
+                            <externalMetadataColumn
+                              refId="Package\DWH AN LOAD\TBDWMN_EQUIP_PARAMETER\TBDWMN_EQUIP_PARAMETER\Load SRC tables.Outputs[OLE DB Source Output].ExternalColumns[MACHINE_SERIAL_CD]"
+                              dataType="wstr"
+                              length="100"
+                              name="MACHINE_SERIAL_CD" />
+                            <externalMetadataColumn
+                              refId="Package\DWH AN LOAD\TBDWMN_EQUIP_PARAMETER\TBDWMN_EQUIP_PARAMETER\Load SRC tables.Outputs[OLE DB Source Output].ExternalColumns[PARAMETER_CD]"
+                              dataType="wstr"
+                              length="4000"
+                              name="PARAMETER_CD" />
+                            <externalMetadataColumn
+                              refId="Package\DWH AN LOAD\TBDWMN_EQUIP_PARAMETER\TBDWMN_EQUIP_PARAMETER\Load SRC tables.Outputs[OLE DB Source Output].ExternalColumns[TBDWAN_EQUIP_PARAMETER_ID]"
+                              dataType="i8"
+                              name="TBDWAN_EQUIP_PARAMETER_ID" />
+                            <externalMetadataColumn
+                              refId="Package\DWH AN LOAD\TBDWMN_EQUIP_PARAMETER\TBDWMN_EQUIP_PARAMETER\Load SRC tables.Outputs[OLE DB Source Output].ExternalColumns[SITE_ID]"
+                              dataType="i8"
+                              name="SITE_ID" />
+                            <externalMetadataColumn
+                              refId="Package\DWH AN LOAD\TBDWMN_EQUIP_PARAMETER\TBDWMN_EQUIP_PARAMETER\Load SRC tables.Outputs[OLE DB Source Output].ExternalColumns[PRODUCTION_LINE_ID]"
+                              dataType="i8"
+                              name="PRODUCTION_LINE_ID" />
+                            <externalMetadataColumn
+                              refId="Package\DWH AN LOAD\TBDWMN_EQUIP_PARAMETER\TBDWMN_EQUIP_PARAMETER\Load SRC tables.Outputs[OLE DB Source Output].ExternalColumns[PRODUCTION_MODEL_ID]"
+                              dataType="i8"
+                              name="PRODUCTION_MODEL_ID" />
+                            <externalMetadataColumn
+                              refId="Package\DWH AN LOAD\TBDWMN_EQUIP_PARAMETER\TBDWMN_EQUIP_PARAMETER\Load SRC tables.Outputs[OLE DB Source Output].ExternalColumns[VALIDITY_START_DT]"
+                              codePage="1252"
+                              dataType="str"
+                              length="19"
+                              name="VALIDITY_START_DT" />
+                            <externalMetadataColumn
+                              refId="Package\DWH AN LOAD\TBDWMN_EQUIP_PARAMETER\TBDWMN_EQUIP_PARAMETER\Load SRC tables.Outputs[OLE DB Source Output].ExternalColumns[VALIDITY_END_DT]"
+                              codePage="1252"
+                              dataType="str"
+                              length="19"
+                              name="VALIDITY_END_DT" />
+                            <externalMetadataColumn
+                              refId="Package\DWH AN LOAD\TBDWMN_EQUIP_PARAMETER\TBDWMN_EQUIP_PARAMETER\Load SRC tables.Outputs[OLE DB Source Output].ExternalColumns[INSERT_DT]"
+                              dataType="dbTimeStamp"
+                              name="INSERT_DT" />
+                          </externalMetadataColumns>
+                        </output>
+                        <output
+                          refId="Package\DWH AN LOAD\TBDWMN_EQUIP_PARAMETER\TBDWMN_EQUIP_PARAMETER\Load SRC tables.Outputs[OLE DB Source Error Output]"
+                          isErrorOut="true"
+                          name="OLE DB Source Error Output">
+                          <outputColumns>
+                            <outputColumn
+                              refId="Package\DWH AN LOAD\TBDWMN_EQUIP_PARAMETER\TBDWMN_EQUIP_PARAMETER\Load SRC tables.Outputs[OLE DB Source Error Output].Columns[TBDWAN_EQUIP_PARAMETER_ID]"
+                              dataType="i8"
+                              lineageId="Package\DWH AN LOAD\TBDWMN_EQUIP_PARAMETER\TBDWMN_EQUIP_PARAMETER\Load SRC tables.Outputs[OLE DB Source Error Output].Columns[TBDWAN_EQUIP_PARAMETER_ID]"
+                              name="TBDWAN_EQUIP_PARAMETER_ID" />
+                            <outputColumn
+                              refId="Package\DWH AN LOAD\TBDWMN_EQUIP_PARAMETER\TBDWMN_EQUIP_PARAMETER\Load SRC tables.Outputs[OLE DB Source Error Output].Columns[SITE_ID]"
+                              dataType="i8"
+                              lineageId="Package\DWH AN LOAD\TBDWMN_EQUIP_PARAMETER\TBDWMN_EQUIP_PARAMETER\Load SRC tables.Outputs[OLE DB Source Error Output].Columns[SITE_ID]"
+                              name="SITE_ID" />
+                            <outputColumn
+                              refId="Package\DWH AN LOAD\TBDWMN_EQUIP_PARAMETER\TBDWMN_EQUIP_PARAMETER\Load SRC tables.Outputs[OLE DB Source Error Output].Columns[PRODUCTION_LINE_ID]"
+                              dataType="i8"
+                              lineageId="Package\DWH AN LOAD\TBDWMN_EQUIP_PARAMETER\TBDWMN_EQUIP_PARAMETER\Load SRC tables.Outputs[OLE DB Source Error Output].Columns[PRODUCTION_LINE_ID]"
+                              name="PRODUCTION_LINE_ID" />
+                            <outputColumn
+                              refId="Package\DWH AN LOAD\TBDWMN_EQUIP_PARAMETER\TBDWMN_EQUIP_PARAMETER\Load SRC tables.Outputs[OLE DB Source Error Output].Columns[PRODUCTION_MODEL_ID]"
+                              dataType="i8"
+                              lineageId="Package\DWH AN LOAD\TBDWMN_EQUIP_PARAMETER\TBDWMN_EQUIP_PARAMETER\Load SRC tables.Outputs[OLE DB Source Error Output].Columns[PRODUCTION_MODEL_ID]"
+                              name="PRODUCTION_MODEL_ID" />
+                            <outputColumn
+                              refId="Package\DWH AN LOAD\TBDWMN_EQUIP_PARAMETER\TBDWMN_EQUIP_PARAMETER\Load SRC tables.Outputs[OLE DB Source Error Output].Columns[MACHINE_SERIAL_CD]"
+                              dataType="wstr"
+                              length="100"
+                              lineageId="Package\DWH AN LOAD\TBDWMN_EQUIP_PARAMETER\TBDWMN_EQUIP_PARAMETER\Load SRC tables.Outputs[OLE DB Source Error Output].Columns[MACHINE_SERIAL_CD]"
+                              name="MACHINE_SERIAL_CD" />
+                            <outputColumn
+                              refId="Package\DWH AN LOAD\TBDWMN_EQUIP_PARAMETER\TBDWMN_EQUIP_PARAMETER\Load SRC tables.Outputs[OLE DB Source Error Output].Columns[PARAMETER_CD]"
+                              dataType="wstr"
+                              length="4000"
+                              lineageId="Package\DWH AN LOAD\TBDWMN_EQUIP_PARAMETER\TBDWMN_EQUIP_PARAMETER\Load SRC tables.Outputs[OLE DB Source Error Output].Columns[PARAMETER_CD]"
+                              name="PARAMETER_CD" />
+                            <outputColumn
+                              refId="Package\DWH AN LOAD\TBDWMN_EQUIP_PARAMETER\TBDWMN_EQUIP_PARAMETER\Load SRC tables.Outputs[OLE DB Source Error Output].Columns[VALIDITY_START_DT]"
+                              codePage="1252"
+                              dataType="str"
+                              length="19"
+                              lineageId="Package\DWH AN LOAD\TBDWMN_EQUIP_PARAMETER\TBDWMN_EQUIP_PARAMETER\Load SRC tables.Outputs[OLE DB Source Error Output].Columns[VALIDITY_START_DT]"
+                              name="VALIDITY_START_DT" />
+                            <outputColumn
+                              refId="Package\DWH AN LOAD\TBDWMN_EQUIP_PARAMETER\TBDWMN_EQUIP_PARAMETER\Load SRC tables.Outputs[OLE DB Source Error Output].Columns[VALIDITY_END_DT]"
+                              codePage="1252"
+                              dataType="str"
+                              length="19"
+                              lineageId="Package\DWH AN LOAD\TBDWMN_EQUIP_PARAMETER\TBDWMN_EQUIP_PARAMETER\Load SRC tables.Outputs[OLE DB Source Error Output].Columns[VALIDITY_END_DT]"
+                              name="VALIDITY_END_DT" />
+                            <outputColumn
+                              refId="Package\DWH AN LOAD\TBDWMN_EQUIP_PARAMETER\TBDWMN_EQUIP_PARAMETER\Load SRC tables.Outputs[OLE DB Source Error Output].Columns[INSERT_DT]"
+                              dataType="dbTimeStamp"
+                              lineageId="Package\DWH AN LOAD\TBDWMN_EQUIP_PARAMETER\TBDWMN_EQUIP_PARAMETER\Load SRC tables.Outputs[OLE DB Source Error Output].Columns[INSERT_DT]"
+                              name="INSERT_DT" />
+                            <outputColumn
+                              refId="Package\DWH AN LOAD\TBDWMN_EQUIP_PARAMETER\TBDWMN_EQUIP_PARAMETER\Load SRC tables.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                              dataType="i4"
+                              lineageId="Package\DWH AN LOAD\TBDWMN_EQUIP_PARAMETER\TBDWMN_EQUIP_PARAMETER\Load SRC tables.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                              name="ErrorCode"
+                              specialFlags="1" />
+                            <outputColumn
+                              refId="Package\DWH AN LOAD\TBDWMN_EQUIP_PARAMETER\TBDWMN_EQUIP_PARAMETER\Load SRC tables.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                              dataType="i4"
+                              lineageId="Package\DWH AN LOAD\TBDWMN_EQUIP_PARAMETER\TBDWMN_EQUIP_PARAMETER\Load SRC tables.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                              name="ErrorColumn"
+                              specialFlags="2" />
+                          </outputColumns>
+                          <externalMetadataColumns />
+                        </output>
+                      </outputs>
+                    </component>
+                  </components>
+                  <paths>
+                    <path
+                      refId="Package\DWH AN LOAD\TBDWMN_EQUIP_PARAMETER\TBDWMN_EQUIP_PARAMETER.Paths[Derived Column Output]"
+                      endId="Package\DWH AN LOAD\TBDWMN_EQUIP_PARAMETER\TBDWMN_EQUIP_PARAMETER\INS TRG table.Inputs[OLE DB Destination Input]"
+                      name="Derived Column Output"
+                      startId="Package\DWH AN LOAD\TBDWMN_EQUIP_PARAMETER\TBDWMN_EQUIP_PARAMETER\Add Technical Fields.Outputs[Derived Column Output]" />
+                    <path
+                      refId="Package\DWH AN LOAD\TBDWMN_EQUIP_PARAMETER\TBDWMN_EQUIP_PARAMETER.Paths[OLE DB Source Output]"
+                      endId="Package\DWH AN LOAD\TBDWMN_EQUIP_PARAMETER\TBDWMN_EQUIP_PARAMETER\Add Technical Fields.Inputs[Derived Column Input]"
+                      name="OLE DB Source Output"
+                      startId="Package\DWH AN LOAD\TBDWMN_EQUIP_PARAMETER\TBDWMN_EQUIP_PARAMETER\Load SRC tables.Outputs[OLE DB Source Output]" />
+                  </paths>
+                </pipeline>
+              </DTS:ObjectData>
+            </DTS:Executable>
+          </DTS:Executables>
+          <DTS:PrecedenceConstraints>
+            <DTS:PrecedenceConstraint
+              DTS:refId="Package\DWH AN LOAD\TBDWMN_EQUIP_PARAMETER.PrecedenceConstraints[Constraint]"
+              DTS:CreationName=""
+              DTS:DTSID="{037EE9C1-C648-494E-8A1C-2EAA0800A7FC}"
+              DTS:From="Package\DWH AN LOAD\TBDWMN_EQUIP_PARAMETER\TBDWMN_EQUIP_PARAMETER"
+              DTS:LogicalAnd="True"
+              DTS:ObjectName="Constraint"
+              DTS:To="Package\DWH AN LOAD\TBDWMN_EQUIP_PARAMETER\Last Upd TBLOG_PACKAGE_TABLE" />
+            <DTS:PrecedenceConstraint
+              DTS:refId="Package\DWH AN LOAD\TBDWMN_EQUIP_PARAMETER.PrecedenceConstraints[Constraint 2]"
+              DTS:CreationName=""
+              DTS:DTSID="{88cfaf26-8cf5-4d83-80d3-a6f1c10849e5}"
+              DTS:From="Package\DWH AN LOAD\TBDWMN_EQUIP_PARAMETER\Assign TABLE_TARGET_CD"
+              DTS:LogicalAnd="True"
+              DTS:ObjectName="Constraint 2"
+              DTS:To="Package\DWH AN LOAD\TBDWMN_EQUIP_PARAMETER\Ins_Upd TBLOG_PACKAGE_TABLE" />
+            <DTS:PrecedenceConstraint
+              DTS:refId="Package\DWH AN LOAD\TBDWMN_EQUIP_PARAMETER.PrecedenceConstraints[Constraint 3]"
+              DTS:CreationName=""
+              DTS:DTSID="{f4c3a89b-5b74-4b17-8fda-8f9b7be878dc}"
+              DTS:From="Package\DWH AN LOAD\TBDWMN_EQUIP_PARAMETER\Ins_Upd TBLOG_PACKAGE_TABLE"
+              DTS:LogicalAnd="True"
+              DTS:ObjectName="Constraint 3"
+              DTS:To="Package\DWH AN LOAD\TBDWMN_EQUIP_PARAMETER\MAX TABLE ID" />
+            <DTS:PrecedenceConstraint
+              DTS:refId="Package\DWH AN LOAD\TBDWMN_EQUIP_PARAMETER.PrecedenceConstraints[Constraint 5]"
+              DTS:CreationName=""
+              DTS:DTSID="{0bb940b5-371c-4264-ac38-fe8d7a2bd6c2}"
+              DTS:From="Package\DWH AN LOAD\TBDWMN_EQUIP_PARAMETER\MAX TABLE ID"
+              DTS:LogicalAnd="True"
+              DTS:ObjectName="Constraint 5"
+              DTS:To="Package\DWH AN LOAD\TBDWMN_EQUIP_PARAMETER\TBDWMN_EQUIP_PARAMETER" />
+          </DTS:PrecedenceConstraints>
+          <DTS:EventHandlers>
+            <DTS:EventHandler
+              DTS:refId="Package\DWH AN LOAD\TBDWMN_EQUIP_PARAMETER.EventHandlers[OnPreExecute]"
+              DTS:CreationName="OnPreExecute"
+              DTS:DTSID="{5239e549-8669-4f2d-be88-e42f712c02ec}"
+              DTS:EventID="0"
+              DTS:EventName="OnPreExecute"
+              DTS:LocaleID="-1">
+              <DTS:Variables>
+                <DTS:Variable
+                  DTS:CreationName=""
+                  DTS:Description="The propagate property of the event"
+                  DTS:DTSID="{8127558d-5d7d-4524-bab1-b5e5dffc50da}"
+                  DTS:IncludeInDebugDump="6789"
+                  DTS:Namespace="System"
+                  DTS:ObjectName="Propagate">
+                  <DTS:VariableValue
+                    DTS:DataType="11">-1</DTS:VariableValue>
+                </DTS:Variable>
+              </DTS:Variables>
+              <DTS:Executables />
+            </DTS:EventHandler>
+          </DTS:EventHandlers>
+        </DTS:Executable>
       </DTS:Executables>
+      <DTS:PrecedenceConstraints>
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\DWH AN LOAD.PrecedenceConstraints[Constraint]"
+          DTS:CreationName=""
+          DTS:DTSID="{40F74E8E-7F57-48EB-823F-6D86C26F32F4}"
+          DTS:From="Package\DWH AN LOAD\TBDWAN_EQUIP_PARAMETER"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint"
+          DTS:To="Package\DWH AN LOAD\TBDWMN_EQUIP_PARAMETER" />
+      </DTS:PrecedenceConstraints>
     </DTS:Executable>
     <DTS:Executable
       DTS:refId="Package\DWH FT LOAD"
@@ -3342,16 +4242,191 @@ FROM
           TopLeft="41.5,402.5" />
         <ContainerLayout
           HeaderHeight="43"
-          IsExpanded="True"
+          IsExpanded="False"
           PanelSize="512,712"
-          Size="512,755"
+          Size="512,43"
           Id="Package\DWH AN LOAD\TBDWAN_EQUIP_PARAMETER"
           TopLeft="86.5,47" />
+        <NodeLayout
+          Size="222,42"
+          Id="Package\DWH AN LOAD\TBDWMN_EQUIP_PARAMETER\Assign TABLE_TARGET_CD"
+          TopLeft="244.5,5.5" />
+        <NodeLayout
+          Size="260,42"
+          Id="Package\DWH AN LOAD\TBDWMN_EQUIP_PARAMETER\Ins_Upd TBLOG_PACKAGE_TABLE"
+          TopLeft="225.5,107.5" />
+        <NodeLayout
+          Size="263,43"
+          Id="Package\DWH AN LOAD\TBDWMN_EQUIP_PARAMETER\Last Upd TBLOG_PACKAGE_TABLE"
+          TopLeft="223,514.5" />
+        <NodeLayout
+          Size="155,42"
+          Id="Package\DWH AN LOAD\TBDWMN_EQUIP_PARAMETER\MAX TABLE ID"
+          TopLeft="278,209.5" />
+        <NodeLayout
+          Size="243,42"
+          Id="Package\DWH AN LOAD\TBDWMN_EQUIP_PARAMETER\TBDWMN_EQUIP_PARAMETER"
+          TopLeft="236,311.5" />
+        <EdgeLayout
+          Id="Package\DWH AN LOAD\TBDWMN_EQUIP_PARAMETER.PrecedenceConstraints[Constraint 2]"
+          TopLeft="355.5,47.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DWH AN LOAD\TBDWMN_EQUIP_PARAMETER.PrecedenceConstraints[Constraint 3]"
+          TopLeft="397.5,149.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-42,60"
+              Start="0,0"
+              End="-42,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,20.2201834862385" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,20.2201834862385"
+                    Point2="0,24.2201834862385"
+                    Point3="-4,24.2201834862385" />
+                  <mssgle:LineSegment
+                    End="-38,24.2201834862385" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-38,24.2201834862385"
+                    Point2="-42,24.2201834862385"
+                    Point3="-42,28.2201834862385" />
+                  <mssgle:LineSegment
+                    End="-42,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DWH AN LOAD\TBDWMN_EQUIP_PARAMETER.PrecedenceConstraints[Constraint 5]"
+          TopLeft="356.5,251.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <AnnotationLayout
+          Text="To be modified according table"
+          ParentId="Package\DWH AN LOAD\TBDWMN_EQUIP_PARAMETER"
+          FontInfo="{assembly:Null}"
+          Size="194,40"
+          Id="0003983d-482f-40b0-b55f-323370e610c7"
+          TopLeft="35.5,310.5" />
+        <AnnotationLayout
+          Text="To be specify target table name"
+          ParentId="Package\DWH AN LOAD\TBDWMN_EQUIP_PARAMETER"
+          FontInfo="{assembly:Null}"
+          Size="195,40"
+          Id="6268d8c3-b274-424e-905a-187d99c9f82c"
+          TopLeft="29.5,10.5" />
+        <EdgeLayout
+          Id="Package\DWH AN LOAD\TBDWMN_EQUIP_PARAMETER.PrecedenceConstraints[Constraint]"
+          TopLeft="356,353.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,161"
+              Start="0,0"
+              End="0,153.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,153.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="827,907"
-          Size="827,950"
+          PanelSize="512,712"
+          Size="512,755"
+          Id="Package\DWH AN LOAD\TBDWMN_EQUIP_PARAMETER"
+          TopLeft="143,180" />
+        <EdgeLayout
+          Id="Package\DWH AN LOAD.PrecedenceConstraints[Constraint]"
+          TopLeft="342.5,90">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="56.5,90"
+              Start="0,0"
+              End="56.5,82.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,41" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,41"
+                    Point2="0,45"
+                    Point3="4,45" />
+                  <mssgle:LineSegment
+                    End="52.5,45" />
+                  <mssgle:CubicBezierSegment
+                    Point1="52.5,45"
+                    Point2="56.5,45"
+                    Point3="56.5,49" />
+                  <mssgle:LineSegment
+                    End="56.5,82.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="False"
+          PanelSize="1136,990"
+          Size="1136,43"
           Id="Package\DWH AN LOAD"
           TopLeft="578.888888888889,380" />
         <NodeLayout
@@ -3666,24 +4741,30 @@ FROM
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 2]"
-          TopLeft="578.888888888889,855">
+          TopLeft="1146.88888888889,423">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-48.1190476190471,-381.238095238096"
+              EndConnector="-616.119047619047,50.761904761904"
               Start="0,0"
-              End="-48.1190476190471,-373.738095238096">
+              End="-616.119047619047,43.261904761904">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="-44.1190476190471,0" />
+                    End="0,21.380952380952" />
                   <mssgle:CubicBezierSegment
-                    Point1="-44.1190476190471,0"
-                    Point2="-48.1190476190471,0"
-                    Point3="-48.1190476190471,-4" />
+                    Point1="0,21.380952380952"
+                    Point2="0,25.380952380952"
+                    Point3="-4,25.380952380952" />
                   <mssgle:LineSegment
-                    End="-48.1190476190471,-373.738095238096" />
+                    End="-612.119047619047,25.380952380952" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-612.119047619047,25.380952380952"
+                    Point2="-616.119047619047,25.380952380952"
+                    Point3="-616.119047619047,29.380952380952" />
+                  <mssgle:LineSegment
+                    End="-616.119047619047,43.261904761904" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -3754,9 +4835,9 @@ FROM
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="42.6507936507961,127.857142857143"
+              EndConnector="197.150793650796,127.857142857143"
               Start="0,0"
-              End="42.6507936507961,120.357142857143">
+              End="197.150793650796,120.357142857143">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
@@ -3767,13 +4848,13 @@ FROM
                     Point2="0,63.9285714285715"
                     Point3="4,63.9285714285715" />
                   <mssgle:LineSegment
-                    End="38.6507936507961,63.9285714285715" />
+                    End="193.150793650796,63.9285714285715" />
                   <mssgle:CubicBezierSegment
-                    Point1="38.6507936507961,63.9285714285715"
-                    Point2="42.6507936507961,63.9285714285715"
-                    Point3="42.6507936507961,67.9285714285715" />
+                    Point1="193.150793650796,63.9285714285715"
+                    Point2="197.150793650796,63.9285714285715"
+                    Point3="197.150793650796,67.9285714285715" />
                   <mssgle:LineSegment
-                    End="42.6507936507961,120.357142857143" />
+                    End="197.150793650796,120.357142857143" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -3887,7 +4968,9 @@ FROM
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0.0855859374999994,45.5,49.328828125,9.7490234375"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <NodeLayout
@@ -3925,7 +5008,9 @@ FROM
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="-19.9144140625,38.5,49.328828125,9.7490234375"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <NodeLayout
@@ -4044,7 +5129,7 @@ FROM
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="73.30484375,75,19.8903125,9.421875"
+              BoundingBox="44.02431640625,75,78.4513671875,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -4094,6 +5179,127 @@ FROM
         <Name>TableInfoObjectType</Name>
         <Value
           type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <DtsEventHandler
+    design-time-name="Package\DWH AN LOAD\TBDWMN_EQUIP_PARAMETER.EventHandlers[OnPreExecute]">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="134,42"
+          Id="{CA0A6374-42C9-44B3-B808-C3C7F7A463CC}"
+          TopLeft="265,85" />
+      </GraphLayout>
+    </LayoutInfo>
+  </DtsEventHandler>
+  <TaskHost
+    design-time-name="Package\DWH AN LOAD\TBDWMN_EQUIP_PARAMETER\TBDWMN_EQUIP_PARAMETER">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="150,42"
+          Id="Package\DWH AN LOAD\TBDWMN_EQUIP_PARAMETER\TBDWMN_EQUIP_PARAMETER\INS TRG table"
+          TopLeft="261,403" />
+        <NodeLayout
+          Size="162,42"
+          Id="Package\DWH AN LOAD\TBDWMN_EQUIP_PARAMETER\TBDWMN_EQUIP_PARAMETER\Load SRC tables"
+          TopLeft="173,37" />
+        <NodeLayout
+          Size="181,42"
+          Id="Package\DWH AN LOAD\TBDWMN_EQUIP_PARAMETER\TBDWMN_EQUIP_PARAMETER\Add Technical Fields"
+          TopLeft="222,169" />
+        <EdgeLayout
+          Id="Package\DWH AN LOAD\TBDWMN_EQUIP_PARAMETER\TBDWMN_EQUIP_PARAMETER.Paths[OLE DB Source Output]"
+          TopLeft="254,79">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="58.5,90"
+              Start="0,0"
+              End="58.5,82.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,41" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,41"
+                    Point2="0,45"
+                    Point3="4,45" />
+                  <mssgle:LineSegment
+                    End="54.5,45" />
+                  <mssgle:CubicBezierSegment
+                    Point1="54.5,45"
+                    Point2="58.5,45"
+                    Point3="58.5,49" />
+                  <mssgle:LineSegment
+                    End="58.5,82.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DWH AN LOAD\TBDWMN_EQUIP_PARAMETER\TBDWMN_EQUIP_PARAMETER.Paths[Derived Column Output]"
+          TopLeft="312.5,211">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="23.5,192"
+              Start="0,0"
+              End="23.5,184.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,92" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,92"
+                    Point2="0,96"
+                    Point3="4,96" />
+                  <mssgle:LineSegment
+                    End="19.5,96" />
+                  <mssgle:CubicBezierSegment
+                    Point1="19.5,96"
+                    Point2="23.5,96"
+                    Point3="23.5,100" />
+                  <mssgle:LineSegment
+                    End="23.5,184.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\DWH AN LOAD\TBDWMN_EQUIP_PARAMETER\TBDWMN_EQUIP_PARAMETER\INS TRG table">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\DWH AN LOAD\TBDWMN_EQUIP_PARAMETER\TBDWMN_EQUIP_PARAMETER\Load SRC tables">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
       </Property>
     </Properties>
   </PipelineComponentMetadata>

@@ -21,7 +21,7 @@
           DTS:DataType="3"
           DTS:TextQualified="True"
           DTS:ObjectName="Counter"
-          DTS:DTSID="{3F2FA1A4-EEF4-4784-913D-32E37EDCDDDC}"
+          DTS:DTSID="{A52C131C-457F-4D71-B4A9-35BBCABC9331}"
           DTS:CreationName="" />
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"
@@ -29,7 +29,7 @@
           DTS:DataType="3"
           DTS:TextQualified="True"
           DTS:ObjectName="SystemID"
-          DTS:DTSID="{0F639871-2121-4C37-A91A-3319FBCA9647}"
+          DTS:DTSID="{60F21A6F-9ED1-4485-90B7-FB49FCA109F2}"
           DTS:CreationName="" />
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"
@@ -37,7 +37,7 @@
           DTS:DataType="7"
           DTS:TextQualified="True"
           DTS:ObjectName="Time"
-          DTS:DTSID="{613A16A2-8B0A-49BD-9839-53FD76FF49E2}"
+          DTS:DTSID="{7DF290BB-92B8-40CA-A1DC-AC02EE4DE04E}"
           DTS:CreationName="" />
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"
@@ -46,7 +46,7 @@
           DTS:DataType="130"
           DTS:TextQualified="True"
           DTS:ObjectName="User"
-          DTS:DTSID="{811EF3C1-A196-4DC9-B6D5-AA392908BE11}"
+          DTS:DTSID="{4A1E737E-DAE9-48DA-BA19-A49746959383}"
           DTS:CreationName="" />
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"
@@ -54,7 +54,7 @@
           DTS:DataType="302"
           DTS:TextQualified="True"
           DTS:ObjectName="Message"
-          DTS:DTSID="{2181ECB4-D46A-4A4F-BB51-1CD1B518BECE}"
+          DTS:DTSID="{52E9006C-4F90-4BD3-AADE-AA83864CCC03}"
           DTS:CreationName="" />
       </DTS:FlatFileColumns>
     </DTS:ConnectionManager>

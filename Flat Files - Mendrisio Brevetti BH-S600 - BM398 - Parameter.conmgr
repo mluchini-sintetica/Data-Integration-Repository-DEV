@@ -21,7 +21,7 @@
           DTS:DataType="3"
           DTS:TextQualified="True"
           DTS:ObjectName="Contatore"
-          DTS:DTSID="{92311368-0B1B-4F67-B180-7929E94B2BE1}"
+          DTS:DTSID="{5A52EC10-E289-4BB5-9750-CF850979747F}"
           DTS:CreationName="" />
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"
@@ -30,7 +30,7 @@
           DTS:DataType="130"
           DTS:TextQualified="True"
           DTS:ObjectName="Parametro"
-          DTS:DTSID="{532699A8-D2E2-4723-A476-31EF459399AD}"
+          DTS:DTSID="{9CB5AFD2-E27E-46D3-A91E-FCB0B5C8B1D1}"
           DTS:CreationName="" />
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"
@@ -39,7 +39,7 @@
           DTS:DataType="130"
           DTS:TextQualified="True"
           DTS:ObjectName="Minimo"
-          DTS:DTSID="{4BA646E4-BA96-4FAE-9587-D6017BE6E088}"
+          DTS:DTSID="{130E53C7-BDF9-4812-8D61-F96A3A1C5F4C}"
           DTS:CreationName="" />
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"
@@ -48,7 +48,7 @@
           DTS:DataType="130"
           DTS:TextQualified="True"
           DTS:ObjectName="Massimo"
-          DTS:DTSID="{87B98967-8AE2-4452-8C19-83B22736EF51}"
+          DTS:DTSID="{69E89CB1-27EC-4047-8E2F-5625E77FBA45}"
           DTS:CreationName="" />
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"
@@ -57,7 +57,7 @@
           DTS:DataType="130"
           DTS:TextQualified="True"
           DTS:ObjectName="Valore"
-          DTS:DTSID="{BFDCC72A-27A7-43AD-9802-D973B6FCAAEB}"
+          DTS:DTSID="{F24D4BDD-FBB7-44E6-A168-38B223C9A331}"
           DTS:CreationName="" />
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"
@@ -65,7 +65,7 @@
           DTS:DataType="3"
           DTS:TextQualified="True"
           DTS:ObjectName="Severità"
-          DTS:DTSID="{A9939874-C360-45CA-A0F8-70A3FE612AB8}"
+          DTS:DTSID="{7987E060-BCBB-4914-ACF9-8031398713F4}"
           DTS:CreationName="" />
       </DTS:FlatFileColumns>
     </DTS:ConnectionManager>

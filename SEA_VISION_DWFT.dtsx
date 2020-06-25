@@ -11,8 +11,8 @@
   DTS:LocaleID="2064"
   DTS:ObjectName="SEA_VISION_DWFT"
   DTS:PackageType="5"
-  DTS:VersionBuild="438"
-  DTS:VersionGUID="{DB761A6B-7185-4D66-A3AB-D616FB615A3A}">
+  DTS:VersionBuild="440"
+  DTS:VersionGUID="{B58C8B95-DB6C-4F15-8706-1DB33B84CC02}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -27,7 +27,7 @@
           <DTS:Password
             DTS:Name="Password"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAZ1W4zPu86k256zsBij2bAQAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAAC5iyk7tIY+wTKsD/ZThjm/AAAAAASAAACgAAAAEAAAABo/ZmCwV3ICs8hHoqc6GMUgAAAAIgcSwK1hrmoPft7YUbAzykED6NYEGWB76RPZLDOWGG8UAAAA9FDduQjpf7zYpFUBqmA0qyMhDRQ</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAZ1W4zPu86k256zsBij2bAQAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAADgjIDn4wXKW6P3bzkDTjHdAAAAAASAAACgAAAAEAAAAAyBHZ7EgJLmnR9kEIwEGCkgAAAATElxwGAM07bFHPjZ/Bk54WUiiQXVgGdmuX3EehHu4lUUAAAAyeNIfBwkZhySkCgYXMtaXkD8Ja0</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>

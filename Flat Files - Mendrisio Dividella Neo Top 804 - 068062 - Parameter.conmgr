@@ -21,7 +21,7 @@
           DTS:DataType="3"
           DTS:TextQualified="True"
           DTS:ObjectName="Contatore"
-          DTS:DTSID="{E39F059C-F29E-41F0-BE4D-AC3F8D318F48}"
+          DTS:DTSID="{7DD6AB4B-E60E-4CB0-8BBA-5FC33B22F9AE}"
           DTS:CreationName="" />
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"
@@ -30,7 +30,7 @@
           DTS:DataType="130"
           DTS:TextQualified="True"
           DTS:ObjectName="Parametro"
-          DTS:DTSID="{199D9690-3426-491B-B88E-5F7E5996126C}"
+          DTS:DTSID="{7BFEED3B-BCC4-44D8-89BA-A0EE097E920A}"
           DTS:CreationName="" />
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"
@@ -39,7 +39,7 @@
           DTS:DataType="130"
           DTS:TextQualified="True"
           DTS:ObjectName="Valore"
-          DTS:DTSID="{44528AD8-C551-4EC0-A0BD-CBBFA5BB6712}"
+          DTS:DTSID="{C67DBC3C-9A86-4D28-A12B-33D0B5347F23}"
           DTS:CreationName="" />
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"
@@ -48,7 +48,7 @@
           DTS:DataType="130"
           DTS:TextQualified="True"
           DTS:ObjectName="Unita di Misura"
-          DTS:DTSID="{3A88D6B4-2028-4FAD-81AD-05F19459B8AC}"
+          DTS:DTSID="{44857AB4-5687-49D1-A5E3-23E37ED69AE3}"
           DTS:CreationName="" />
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"
@@ -57,7 +57,7 @@
           DTS:DataType="130"
           DTS:TextQualified="True"
           DTS:ObjectName="Massimo"
-          DTS:DTSID="{0158EE68-165B-4278-B17F-CCD4F5EA0787}"
+          DTS:DTSID="{E82A95E2-B547-46CA-A1F2-85C6A90C6B70}"
           DTS:CreationName="" />
       </DTS:FlatFileColumns>
     </DTS:ConnectionManager>

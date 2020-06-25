@@ -21,7 +21,7 @@
           DTS:DataType="3"
           DTS:TextQualified="True"
           DTS:ObjectName="Contatore"
-          DTS:DTSID="{43312CF7-44CE-4634-8ADF-AD3C9CECBB46}"
+          DTS:DTSID="{05D45C15-FB12-4D56-8ECC-CE9B33AC68B1}"
           DTS:CreationName="" />
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"
@@ -30,7 +30,7 @@
           DTS:DataType="130"
           DTS:TextQualified="True"
           DTS:ObjectName="Parametro"
-          DTS:DTSID="{13866846-2669-4ABF-A1B7-E623A757AC9F}"
+          DTS:DTSID="{8B10B084-F421-46F8-831E-A29251C1D686}"
           DTS:CreationName="" />
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"
@@ -38,7 +38,7 @@
           DTS:DataType="3"
           DTS:TextQualified="True"
           DTS:ObjectName="Severità"
-          DTS:DTSID="{E56DE189-22A6-4ACB-8CE0-3F4B80570F88}"
+          DTS:DTSID="{4F7A7FC9-7241-4DB5-9DB2-2FA05EB3D826}"
           DTS:CreationName="" />
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"
@@ -47,7 +47,7 @@
           DTS:DataType="130"
           DTS:TextQualified="True"
           DTS:ObjectName="TagRicerca"
-          DTS:DTSID="{06ADEB09-9CC4-41AD-9FAF-EF2FF6A530DE}"
+          DTS:DTSID="{4A8DF1E9-0686-4298-9AB4-62A3646488EE}"
           DTS:CreationName="" />
       </DTS:FlatFileColumns>
     </DTS:ConnectionManager>
