@@ -11,8 +11,8 @@
   DTS:LocaleID="2064"
   DTS:ObjectName="AUDIT_TRAIL_STG"
   DTS:PackageType="5"
-  DTS:VersionBuild="368"
-  DTS:VersionGUID="{25B85C4A-70C2-4C67-B9F1-7A03E8FB17A3}">
+  DTS:VersionBuild="386"
+  DTS:VersionGUID="{85155640-21FD-4368-8697-1A0920C7A815}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:PackageParameters>
@@ -182,7 +182,7 @@
       DTS:LocaleID="-1"
       DTS:ObjectName="Assign SITE_ID"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="0">
+      DTS:ThreadHint="1">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -210,7 +210,7 @@
       DTS:LocaleID="-1"
       DTS:ObjectName="Assign SOURCE_SYSTEM_ID"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="1">
+      DTS:ThreadHint="0">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -18466,7 +18466,7 @@ FROM
               DTS:LocaleID="-1"
               DTS:ObjectName="MAX TABLE ID"
               DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-              DTS:ThreadHint="1">
+              DTS:ThreadHint="0">
               <DTS:Variables />
               <DTS:ObjectData>
                 <SQLTask:SqlTaskData
@@ -18500,7 +18500,7 @@ FROM
               DTS:LocaleID="-1"
               DTS:ObjectName="Truncate STG TRG TABLE"
               DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-              DTS:ThreadHint="0">
+              DTS:ThreadHint="1">
               <DTS:Variables />
               <DTS:PropertyExpression
                 DTS:Name="SqlStatementSource">"truncate table " + @[User::out_TABLE_TARGET_CD]</DTS:PropertyExpression>
@@ -18731,7 +18731,7 @@ FROM
                                   errorOrTruncationOperation="Conversion"
                                   errorRowDisposition="FailComponent"
                                   externalMetadataColumnId="Package\STAGING LOAD\TBST_FLAT_EQUIP_PARAMETER\DATA LOADING\068062 Par\068062.Outputs[Flat File Source Output].ExternalColumns[Parametro]"
-                                  length="1000"
+                                  length="4000"
                                   lineageId="Package\STAGING LOAD\TBST_FLAT_EQUIP_PARAMETER\DATA LOADING\068062 Par\068062.Outputs[Flat File Source Output].Columns[Parametro]"
                                   name="Parametro"
                                   truncationRowDisposition="FailComponent">
@@ -18752,7 +18752,7 @@ FROM
                                   errorOrTruncationOperation="Conversion"
                                   errorRowDisposition="FailComponent"
                                   externalMetadataColumnId="Package\STAGING LOAD\TBST_FLAT_EQUIP_PARAMETER\DATA LOADING\068062 Par\068062.Outputs[Flat File Source Output].ExternalColumns[Valore]"
-                                  length="100"
+                                  length="1000"
                                   lineageId="Package\STAGING LOAD\TBST_FLAT_EQUIP_PARAMETER\DATA LOADING\068062 Par\068062.Outputs[Flat File Source Output].Columns[Valore]"
                                   name="Valore"
                                   truncationRowDisposition="FailComponent">
@@ -18819,12 +18819,12 @@ FROM
                                 <externalMetadataColumn
                                   refId="Package\STAGING LOAD\TBST_FLAT_EQUIP_PARAMETER\DATA LOADING\068062 Par\068062.Outputs[Flat File Source Output].ExternalColumns[Parametro]"
                                   dataType="wstr"
-                                  length="1000"
+                                  length="4000"
                                   name="Parametro" />
                                 <externalMetadataColumn
                                   refId="Package\STAGING LOAD\TBST_FLAT_EQUIP_PARAMETER\DATA LOADING\068062 Par\068062.Outputs[Flat File Source Output].ExternalColumns[Valore]"
                                   dataType="wstr"
-                                  length="100"
+                                  length="1000"
                                   name="Valore" />
                                 <externalMetadataColumn
                                   refId="Package\STAGING LOAD\TBST_FLAT_EQUIP_PARAMETER\DATA LOADING\068062 Par\068062.Outputs[Flat File Source Output].ExternalColumns[Massimo]"
@@ -19323,13 +19323,13 @@ FROM
                                 <inputColumn
                                   refId="Package\STAGING LOAD\TBST_FLAT_EQUIP_PARAMETER\DATA LOADING\068062 Par\Merge Join.Inputs[Merge Join Left Input].Columns[Valore]"
                                   cachedDataType="wstr"
-                                  cachedLength="100"
+                                  cachedLength="1000"
                                   cachedName="Valore"
                                   lineageId="Package\STAGING LOAD\TBST_FLAT_EQUIP_PARAMETER\DATA LOADING\068062 Par\Sort Join Field 1.Outputs[Sort Output].Columns[Valore]" />
                                 <inputColumn
                                   refId="Package\STAGING LOAD\TBST_FLAT_EQUIP_PARAMETER\DATA LOADING\068062 Par\Merge Join.Inputs[Merge Join Left Input].Columns[Parametro]"
                                   cachedDataType="wstr"
-                                  cachedLength="1000"
+                                  cachedLength="4000"
                                   cachedName="Parametro"
                                   lineageId="Package\STAGING LOAD\TBST_FLAT_EQUIP_PARAMETER\DATA LOADING\068062 Par\Sort Join Field 1.Outputs[Sort Output].Columns[Parametro]" />
                                 <inputColumn
@@ -19511,7 +19511,7 @@ FROM
                                 <outputColumn
                                   refId="Package\STAGING LOAD\TBST_FLAT_EQUIP_PARAMETER\DATA LOADING\068062 Par\Merge Join.Outputs[Merge Join Output].Columns[Valore]"
                                   dataType="wstr"
-                                  length="100"
+                                  length="1000"
                                   lineageId="Package\STAGING LOAD\TBST_FLAT_EQUIP_PARAMETER\DATA LOADING\068062 Par\Merge Join.Outputs[Merge Join Output].Columns[Valore]"
                                   name="Valore">
                                   <properties>
@@ -19525,7 +19525,7 @@ FROM
                                 <outputColumn
                                   refId="Package\STAGING LOAD\TBST_FLAT_EQUIP_PARAMETER\DATA LOADING\068062 Par\Merge Join.Outputs[Merge Join Output].Columns[Parametro]"
                                   dataType="wstr"
-                                  length="1000"
+                                  length="4000"
                                   lineageId="Package\STAGING LOAD\TBST_FLAT_EQUIP_PARAMETER\DATA LOADING\068062 Par\Merge Join.Outputs[Merge Join Output].Columns[Parametro]"
                                   name="Parametro">
                                   <properties>
@@ -19704,14 +19704,14 @@ FROM
                                 <inputColumn
                                   refId="Package\STAGING LOAD\TBST_FLAT_EQUIP_PARAMETER\DATA LOADING\068062 Par\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Parametro]"
                                   cachedDataType="wstr"
-                                  cachedLength="1000"
+                                  cachedLength="4000"
                                   cachedName="Parametro"
                                   externalMetadataColumnId="Package\STAGING LOAD\TBST_FLAT_EQUIP_PARAMETER\DATA LOADING\068062 Par\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Parametro]"
                                   lineageId="Package\STAGING LOAD\TBST_FLAT_EQUIP_PARAMETER\DATA LOADING\068062 Par\Merge Join.Outputs[Merge Join Output].Columns[Parametro]" />
                                 <inputColumn
                                   refId="Package\STAGING LOAD\TBST_FLAT_EQUIP_PARAMETER\DATA LOADING\068062 Par\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Valore]"
                                   cachedDataType="wstr"
-                                  cachedLength="100"
+                                  cachedLength="1000"
                                   cachedName="Valore"
                                   externalMetadataColumnId="Package\STAGING LOAD\TBST_FLAT_EQUIP_PARAMETER\DATA LOADING\068062 Par\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Valore]"
                                   lineageId="Package\STAGING LOAD\TBST_FLAT_EQUIP_PARAMETER\DATA LOADING\068062 Par\Merge Join.Outputs[Merge Join Output].Columns[Valore]" />
@@ -19784,7 +19784,7 @@ FROM
                                 <externalMetadataColumn
                                   refId="Package\STAGING LOAD\TBST_FLAT_EQUIP_PARAMETER\DATA LOADING\068062 Par\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Parametro]"
                                   dataType="wstr"
-                                  length="1000"
+                                  length="4000"
                                   name="Parametro" />
                                 <externalMetadataColumn
                                   refId="Package\STAGING LOAD\TBST_FLAT_EQUIP_PARAMETER\DATA LOADING\068062 Par\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Minimo]"
@@ -19799,7 +19799,7 @@ FROM
                                 <externalMetadataColumn
                                   refId="Package\STAGING LOAD\TBST_FLAT_EQUIP_PARAMETER\DATA LOADING\068062 Par\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Valore]"
                                   dataType="wstr"
-                                  length="100"
+                                  length="1000"
                                   name="Valore" />
                                 <externalMetadataColumn
                                   refId="Package\STAGING LOAD\TBST_FLAT_EQUIP_PARAMETER\DATA LOADING\068062 Par\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Severita]"
@@ -19812,7 +19812,7 @@ FROM
                                 <externalMetadataColumn
                                   refId="Package\STAGING LOAD\TBST_FLAT_EQUIP_PARAMETER\DATA LOADING\068062 Par\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[TagRicerca]"
                                   dataType="wstr"
-                                  length="1000"
+                                  length="4000"
                                   name="TagRicerca" />
                                 <externalMetadataColumn
                                   refId="Package\STAGING LOAD\TBST_FLAT_EQUIP_PARAMETER\DATA LOADING\068062 Par\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[UnitaMisura]"
@@ -20018,7 +20018,7 @@ FROM
                                 <inputColumn
                                   refId="Package\STAGING LOAD\TBST_FLAT_EQUIP_PARAMETER\DATA LOADING\068062 Par\Sort Join Field 1.Inputs[Sort Input].Columns[Parametro]"
                                   cachedDataType="wstr"
-                                  cachedLength="1000"
+                                  cachedLength="4000"
                                   cachedName="Parametro"
                                   lineageId="Package\STAGING LOAD\TBST_FLAT_EQUIP_PARAMETER\DATA LOADING\068062 Par\068062.Outputs[Flat File Source Output].Columns[Parametro]">
                                   <properties>
@@ -20035,7 +20035,7 @@ FROM
                                 <inputColumn
                                   refId="Package\STAGING LOAD\TBST_FLAT_EQUIP_PARAMETER\DATA LOADING\068062 Par\Sort Join Field 1.Inputs[Sort Input].Columns[Valore]"
                                   cachedDataType="wstr"
-                                  cachedLength="100"
+                                  cachedLength="1000"
                                   cachedName="Valore"
                                   lineageId="Package\STAGING LOAD\TBST_FLAT_EQUIP_PARAMETER\DATA LOADING\068062 Par\068062.Outputs[Flat File Source Output].Columns[Valore]">
                                   <properties>
@@ -20215,7 +20215,7 @@ FROM
                                 <outputColumn
                                   refId="Package\STAGING LOAD\TBST_FLAT_EQUIP_PARAMETER\DATA LOADING\068062 Par\Sort Join Field 1.Outputs[Sort Output].Columns[Parametro]"
                                   dataType="wstr"
-                                  length="1000"
+                                  length="4000"
                                   lineageId="Package\STAGING LOAD\TBST_FLAT_EQUIP_PARAMETER\DATA LOADING\068062 Par\Sort Join Field 1.Outputs[Sort Output].Columns[Parametro]"
                                   name="Parametro">
                                   <properties>
@@ -20229,7 +20229,7 @@ FROM
                                 <outputColumn
                                   refId="Package\STAGING LOAD\TBST_FLAT_EQUIP_PARAMETER\DATA LOADING\068062 Par\Sort Join Field 1.Outputs[Sort Output].Columns[Valore]"
                                   dataType="wstr"
-                                  length="100"
+                                  length="1000"
                                   lineageId="Package\STAGING LOAD\TBST_FLAT_EQUIP_PARAMETER\DATA LOADING\068062 Par\Sort Join Field 1.Outputs[Sort Output].Columns[Valore]"
                                   name="Valore">
                                   <properties>
@@ -20745,7 +20745,7 @@ FROM
                                   errorOrTruncationOperation="Conversion"
                                   errorRowDisposition="FailComponent"
                                   externalMetadataColumnId="Package\STAGING LOAD\TBST_FLAT_EQUIP_PARAMETER\DATA LOADING\BM398 Par\BM398.Outputs[Flat File Source Output].ExternalColumns[Parametro]"
-                                  length="1000"
+                                  length="4000"
                                   lineageId="Package\STAGING LOAD\TBST_FLAT_EQUIP_PARAMETER\DATA LOADING\BM398 Par\BM398.Outputs[Flat File Source Output].Columns[Parametro]"
                                   name="Parametro"
                                   truncationRowDisposition="FailComponent">
@@ -20808,7 +20808,7 @@ FROM
                                   errorOrTruncationOperation="Conversion"
                                   errorRowDisposition="FailComponent"
                                   externalMetadataColumnId="Package\STAGING LOAD\TBST_FLAT_EQUIP_PARAMETER\DATA LOADING\BM398 Par\BM398.Outputs[Flat File Source Output].ExternalColumns[Valore]"
-                                  length="100"
+                                  length="1000"
                                   lineageId="Package\STAGING LOAD\TBST_FLAT_EQUIP_PARAMETER\DATA LOADING\BM398 Par\BM398.Outputs[Flat File Source Output].Columns[Valore]"
                                   name="Valore"
                                   truncationRowDisposition="FailComponent">
@@ -20853,7 +20853,7 @@ FROM
                                 <externalMetadataColumn
                                   refId="Package\STAGING LOAD\TBST_FLAT_EQUIP_PARAMETER\DATA LOADING\BM398 Par\BM398.Outputs[Flat File Source Output].ExternalColumns[Parametro]"
                                   dataType="wstr"
-                                  length="1000"
+                                  length="4000"
                                   name="Parametro" />
                                 <externalMetadataColumn
                                   refId="Package\STAGING LOAD\TBST_FLAT_EQUIP_PARAMETER\DATA LOADING\BM398 Par\BM398.Outputs[Flat File Source Output].ExternalColumns[Minimo]"
@@ -20868,7 +20868,7 @@ FROM
                                 <externalMetadataColumn
                                   refId="Package\STAGING LOAD\TBST_FLAT_EQUIP_PARAMETER\DATA LOADING\BM398 Par\BM398.Outputs[Flat File Source Output].ExternalColumns[Valore]"
                                   dataType="wstr"
-                                  length="100"
+                                  length="1000"
                                   name="Valore" />
                                 <externalMetadataColumn
                                   refId="Package\STAGING LOAD\TBST_FLAT_EQUIP_PARAMETER\DATA LOADING\BM398 Par\BM398.Outputs[Flat File Source Output].ExternalColumns[Severità]"
@@ -21132,7 +21132,7 @@ FROM
                                 <inputColumn
                                   refId="Package\STAGING LOAD\TBST_FLAT_EQUIP_PARAMETER\DATA LOADING\BM398 Par\Merge Join.Inputs[Merge Join Left Input].Columns[Parametro]"
                                   cachedDataType="wstr"
-                                  cachedLength="1000"
+                                  cachedLength="4000"
                                   cachedName="Parametro"
                                   lineageId="Package\STAGING LOAD\TBST_FLAT_EQUIP_PARAMETER\DATA LOADING\BM398 Par\Sort Join Field 1.Outputs[Sort Output].Columns[Parametro]" />
                                 <inputColumn
@@ -21150,7 +21150,7 @@ FROM
                                 <inputColumn
                                   refId="Package\STAGING LOAD\TBST_FLAT_EQUIP_PARAMETER\DATA LOADING\BM398 Par\Merge Join.Inputs[Merge Join Left Input].Columns[Valore]"
                                   cachedDataType="wstr"
-                                  cachedLength="100"
+                                  cachedLength="1000"
                                   cachedName="Valore"
                                   lineageId="Package\STAGING LOAD\TBST_FLAT_EQUIP_PARAMETER\DATA LOADING\BM398 Par\Sort Join Field 1.Outputs[Sort Output].Columns[Valore]" />
                                 <inputColumn
@@ -21325,7 +21325,7 @@ FROM
                                 <outputColumn
                                   refId="Package\STAGING LOAD\TBST_FLAT_EQUIP_PARAMETER\DATA LOADING\BM398 Par\Merge Join.Outputs[Merge Join Output].Columns[Parametro]"
                                   dataType="wstr"
-                                  length="1000"
+                                  length="4000"
                                   lineageId="Package\STAGING LOAD\TBST_FLAT_EQUIP_PARAMETER\DATA LOADING\BM398 Par\Merge Join.Outputs[Merge Join Output].Columns[Parametro]"
                                   name="Parametro">
                                   <properties>
@@ -21367,7 +21367,7 @@ FROM
                                 <outputColumn
                                   refId="Package\STAGING LOAD\TBST_FLAT_EQUIP_PARAMETER\DATA LOADING\BM398 Par\Merge Join.Outputs[Merge Join Output].Columns[Valore]"
                                   dataType="wstr"
-                                  length="100"
+                                  length="1000"
                                   lineageId="Package\STAGING LOAD\TBST_FLAT_EQUIP_PARAMETER\DATA LOADING\BM398 Par\Merge Join.Outputs[Merge Join Output].Columns[Valore]"
                                   name="Valore">
                                   <properties>
@@ -21532,7 +21532,7 @@ FROM
                                 <inputColumn
                                   refId="Package\STAGING LOAD\TBST_FLAT_EQUIP_PARAMETER\DATA LOADING\BM398 Par\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Parametro]"
                                   cachedDataType="wstr"
-                                  cachedLength="1000"
+                                  cachedLength="4000"
                                   cachedName="Parametro"
                                   externalMetadataColumnId="Package\STAGING LOAD\TBST_FLAT_EQUIP_PARAMETER\DATA LOADING\BM398 Par\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Parametro]"
                                   lineageId="Package\STAGING LOAD\TBST_FLAT_EQUIP_PARAMETER\DATA LOADING\BM398 Par\Merge Join.Outputs[Merge Join Output].Columns[Parametro]" />
@@ -21553,7 +21553,7 @@ FROM
                                 <inputColumn
                                   refId="Package\STAGING LOAD\TBST_FLAT_EQUIP_PARAMETER\DATA LOADING\BM398 Par\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Valore]"
                                   cachedDataType="wstr"
-                                  cachedLength="100"
+                                  cachedLength="1000"
                                   cachedName="Valore"
                                   externalMetadataColumnId="Package\STAGING LOAD\TBST_FLAT_EQUIP_PARAMETER\DATA LOADING\BM398 Par\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Valore]"
                                   lineageId="Package\STAGING LOAD\TBST_FLAT_EQUIP_PARAMETER\DATA LOADING\BM398 Par\Merge Join.Outputs[Merge Join Output].Columns[Valore]" />
@@ -21618,7 +21618,7 @@ FROM
                                 <externalMetadataColumn
                                   refId="Package\STAGING LOAD\TBST_FLAT_EQUIP_PARAMETER\DATA LOADING\BM398 Par\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Parametro]"
                                   dataType="wstr"
-                                  length="1000"
+                                  length="4000"
                                   name="Parametro" />
                                 <externalMetadataColumn
                                   refId="Package\STAGING LOAD\TBST_FLAT_EQUIP_PARAMETER\DATA LOADING\BM398 Par\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Minimo]"
@@ -21633,7 +21633,7 @@ FROM
                                 <externalMetadataColumn
                                   refId="Package\STAGING LOAD\TBST_FLAT_EQUIP_PARAMETER\DATA LOADING\BM398 Par\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Valore]"
                                   dataType="wstr"
-                                  length="100"
+                                  length="1000"
                                   name="Valore" />
                                 <externalMetadataColumn
                                   refId="Package\STAGING LOAD\TBST_FLAT_EQUIP_PARAMETER\DATA LOADING\BM398 Par\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Severita]"
@@ -21646,7 +21646,7 @@ FROM
                                 <externalMetadataColumn
                                   refId="Package\STAGING LOAD\TBST_FLAT_EQUIP_PARAMETER\DATA LOADING\BM398 Par\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[TagRicerca]"
                                   dataType="wstr"
-                                  length="1000"
+                                  length="4000"
                                   name="TagRicerca" />
                                 <externalMetadataColumn
                                   refId="Package\STAGING LOAD\TBST_FLAT_EQUIP_PARAMETER\DATA LOADING\BM398 Par\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[UnitaMisura]"
@@ -21852,7 +21852,7 @@ FROM
                                 <inputColumn
                                   refId="Package\STAGING LOAD\TBST_FLAT_EQUIP_PARAMETER\DATA LOADING\BM398 Par\Sort Join Field 1.Inputs[Sort Input].Columns[Parametro]"
                                   cachedDataType="wstr"
-                                  cachedLength="1000"
+                                  cachedLength="4000"
                                   cachedName="Parametro"
                                   lineageId="Package\STAGING LOAD\TBST_FLAT_EQUIP_PARAMETER\DATA LOADING\BM398 Par\BM398.Outputs[Flat File Source Output].Columns[Parametro]">
                                   <properties>
@@ -21903,7 +21903,7 @@ FROM
                                 <inputColumn
                                   refId="Package\STAGING LOAD\TBST_FLAT_EQUIP_PARAMETER\DATA LOADING\BM398 Par\Sort Join Field 1.Inputs[Sort Input].Columns[Valore]"
                                   cachedDataType="wstr"
-                                  cachedLength="100"
+                                  cachedLength="1000"
                                   cachedName="Valore"
                                   lineageId="Package\STAGING LOAD\TBST_FLAT_EQUIP_PARAMETER\DATA LOADING\BM398 Par\BM398.Outputs[Flat File Source Output].Columns[Valore]">
                                   <properties>
@@ -22065,7 +22065,7 @@ FROM
                                 <outputColumn
                                   refId="Package\STAGING LOAD\TBST_FLAT_EQUIP_PARAMETER\DATA LOADING\BM398 Par\Sort Join Field 1.Outputs[Sort Output].Columns[Parametro]"
                                   dataType="wstr"
-                                  length="1000"
+                                  length="4000"
                                   lineageId="Package\STAGING LOAD\TBST_FLAT_EQUIP_PARAMETER\DATA LOADING\BM398 Par\Sort Join Field 1.Outputs[Sort Output].Columns[Parametro]"
                                   name="Parametro">
                                   <properties>
@@ -22107,7 +22107,7 @@ FROM
                                 <outputColumn
                                   refId="Package\STAGING LOAD\TBST_FLAT_EQUIP_PARAMETER\DATA LOADING\BM398 Par\Sort Join Field 1.Outputs[Sort Output].Columns[Valore]"
                                   dataType="wstr"
-                                  length="100"
+                                  length="1000"
                                   lineageId="Package\STAGING LOAD\TBST_FLAT_EQUIP_PARAMETER\DATA LOADING\BM398 Par\Sort Join Field 1.Outputs[Sort Output].Columns[Valore]"
                                   name="Valore">
                                   <properties>
@@ -22608,7 +22608,7 @@ FROM
                                   errorOrTruncationOperation="Conversion"
                                   errorRowDisposition="FailComponent"
                                   externalMetadataColumnId="Package\STAGING LOAD\TBST_FLAT_EQUIP_PARAMETER\DATA LOADING\BVOCV1TVC55200218 Par\BVOCV1TVC55200218.Outputs[Flat File Source Output].ExternalColumns[Parametro]"
-                                  length="1000"
+                                  length="4000"
                                   lineageId="Package\STAGING LOAD\TBST_FLAT_EQUIP_PARAMETER\DATA LOADING\BVOCV1TVC55200218 Par\BVOCV1TVC55200218.Outputs[Flat File Source Output].Columns[Parametro]"
                                   name="Parametro"
                                   truncationRowDisposition="FailComponent">
@@ -22649,7 +22649,7 @@ FROM
                                   errorOrTruncationOperation="Conversion"
                                   errorRowDisposition="FailComponent"
                                   externalMetadataColumnId="Package\STAGING LOAD\TBST_FLAT_EQUIP_PARAMETER\DATA LOADING\BVOCV1TVC55200218 Par\BVOCV1TVC55200218.Outputs[Flat File Source Output].ExternalColumns[TagRicerca]"
-                                  length="1000"
+                                  length="4000"
                                   lineageId="Package\STAGING LOAD\TBST_FLAT_EQUIP_PARAMETER\DATA LOADING\BVOCV1TVC55200218 Par\BVOCV1TVC55200218.Outputs[Flat File Source Output].Columns[TagRicerca]"
                                   name="TagRicerca"
                                   truncationRowDisposition="FailComponent">
@@ -22674,7 +22674,7 @@ FROM
                                 <externalMetadataColumn
                                   refId="Package\STAGING LOAD\TBST_FLAT_EQUIP_PARAMETER\DATA LOADING\BVOCV1TVC55200218 Par\BVOCV1TVC55200218.Outputs[Flat File Source Output].ExternalColumns[Parametro]"
                                   dataType="wstr"
-                                  length="1000"
+                                  length="4000"
                                   name="Parametro" />
                                 <externalMetadataColumn
                                   refId="Package\STAGING LOAD\TBST_FLAT_EQUIP_PARAMETER\DATA LOADING\BVOCV1TVC55200218 Par\BVOCV1TVC55200218.Outputs[Flat File Source Output].ExternalColumns[Severità]"
@@ -22683,7 +22683,7 @@ FROM
                                 <externalMetadataColumn
                                   refId="Package\STAGING LOAD\TBST_FLAT_EQUIP_PARAMETER\DATA LOADING\BVOCV1TVC55200218 Par\BVOCV1TVC55200218.Outputs[Flat File Source Output].ExternalColumns[TagRicerca]"
                                   dataType="wstr"
-                                  length="1000"
+                                  length="4000"
                                   name="TagRicerca" />
                               </externalMetadataColumns>
                             </output>
@@ -22943,7 +22943,7 @@ FROM
                                 <inputColumn
                                   refId="Package\STAGING LOAD\TBST_FLAT_EQUIP_PARAMETER\DATA LOADING\BVOCV1TVC55200218 Par\Merge Join.Inputs[Merge Join Left Input].Columns[Parametro]"
                                   cachedDataType="wstr"
-                                  cachedLength="1000"
+                                  cachedLength="4000"
                                   cachedName="Parametro"
                                   lineageId="Package\STAGING LOAD\TBST_FLAT_EQUIP_PARAMETER\DATA LOADING\BVOCV1TVC55200218 Par\Sort Join Field 1.Outputs[Sort Output].Columns[Parametro]" />
                                 <inputColumn
@@ -22954,7 +22954,7 @@ FROM
                                 <inputColumn
                                   refId="Package\STAGING LOAD\TBST_FLAT_EQUIP_PARAMETER\DATA LOADING\BVOCV1TVC55200218 Par\Merge Join.Inputs[Merge Join Left Input].Columns[TagRicerca]"
                                   cachedDataType="wstr"
-                                  cachedLength="1000"
+                                  cachedLength="4000"
                                   cachedName="TagRicerca"
                                   lineageId="Package\STAGING LOAD\TBST_FLAT_EQUIP_PARAMETER\DATA LOADING\BVOCV1TVC55200218 Par\Sort Join Field 1.Outputs[Sort Output].Columns[TagRicerca]" />
                               </inputColumns>
@@ -23124,7 +23124,7 @@ FROM
                                 <outputColumn
                                   refId="Package\STAGING LOAD\TBST_FLAT_EQUIP_PARAMETER\DATA LOADING\BVOCV1TVC55200218 Par\Merge Join.Outputs[Merge Join Output].Columns[Parametro]"
                                   dataType="wstr"
-                                  length="1000"
+                                  length="4000"
                                   lineageId="Package\STAGING LOAD\TBST_FLAT_EQUIP_PARAMETER\DATA LOADING\BVOCV1TVC55200218 Par\Merge Join.Outputs[Merge Join Output].Columns[Parametro]"
                                   name="Parametro">
                                   <properties>
@@ -23151,7 +23151,7 @@ FROM
                                 <outputColumn
                                   refId="Package\STAGING LOAD\TBST_FLAT_EQUIP_PARAMETER\DATA LOADING\BVOCV1TVC55200218 Par\Merge Join.Outputs[Merge Join Output].Columns[TagRicerca]"
                                   dataType="wstr"
-                                  length="1000"
+                                  length="4000"
                                   lineageId="Package\STAGING LOAD\TBST_FLAT_EQUIP_PARAMETER\DATA LOADING\BVOCV1TVC55200218 Par\Merge Join.Outputs[Merge Join Output].Columns[TagRicerca]"
                                   name="TagRicerca">
                                   <properties>
@@ -23303,7 +23303,7 @@ FROM
                                 <inputColumn
                                   refId="Package\STAGING LOAD\TBST_FLAT_EQUIP_PARAMETER\DATA LOADING\BVOCV1TVC55200218 Par\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Parametro]"
                                   cachedDataType="wstr"
-                                  cachedLength="1000"
+                                  cachedLength="4000"
                                   cachedName="Parametro"
                                   externalMetadataColumnId="Package\STAGING LOAD\TBST_FLAT_EQUIP_PARAMETER\DATA LOADING\BVOCV1TVC55200218 Par\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Parametro]"
                                   lineageId="Package\STAGING LOAD\TBST_FLAT_EQUIP_PARAMETER\DATA LOADING\BVOCV1TVC55200218 Par\Merge Join.Outputs[Merge Join Output].Columns[Parametro]" />
@@ -23316,7 +23316,7 @@ FROM
                                 <inputColumn
                                   refId="Package\STAGING LOAD\TBST_FLAT_EQUIP_PARAMETER\DATA LOADING\BVOCV1TVC55200218 Par\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[TagRicerca]"
                                   cachedDataType="wstr"
-                                  cachedLength="1000"
+                                  cachedLength="4000"
                                   cachedName="TagRicerca"
                                   externalMetadataColumnId="Package\STAGING LOAD\TBST_FLAT_EQUIP_PARAMETER\DATA LOADING\BVOCV1TVC55200218 Par\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[TagRicerca]"
                                   lineageId="Package\STAGING LOAD\TBST_FLAT_EQUIP_PARAMETER\DATA LOADING\BVOCV1TVC55200218 Par\Merge Join.Outputs[Merge Join Output].Columns[TagRicerca]" />
@@ -23375,19 +23375,22 @@ FROM
                                 <externalMetadataColumn
                                   refId="Package\STAGING LOAD\TBST_FLAT_EQUIP_PARAMETER\DATA LOADING\BVOCV1TVC55200218 Par\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Parametro]"
                                   dataType="wstr"
-                                  length="1000"
+                                  length="4000"
                                   name="Parametro" />
                                 <externalMetadataColumn
                                   refId="Package\STAGING LOAD\TBST_FLAT_EQUIP_PARAMETER\DATA LOADING\BVOCV1TVC55200218 Par\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Minimo]"
-                                  dataType="i8"
+                                  dataType="wstr"
+                                  length="100"
                                   name="Minimo" />
                                 <externalMetadataColumn
                                   refId="Package\STAGING LOAD\TBST_FLAT_EQUIP_PARAMETER\DATA LOADING\BVOCV1TVC55200218 Par\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Massimo]"
-                                  dataType="i8"
+                                  dataType="wstr"
+                                  length="100"
                                   name="Massimo" />
                                 <externalMetadataColumn
                                   refId="Package\STAGING LOAD\TBST_FLAT_EQUIP_PARAMETER\DATA LOADING\BVOCV1TVC55200218 Par\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Valore]"
-                                  dataType="i8"
+                                  dataType="wstr"
+                                  length="1000"
                                   name="Valore" />
                                 <externalMetadataColumn
                                   refId="Package\STAGING LOAD\TBST_FLAT_EQUIP_PARAMETER\DATA LOADING\BVOCV1TVC55200218 Par\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Severita]"
@@ -23400,7 +23403,7 @@ FROM
                                 <externalMetadataColumn
                                   refId="Package\STAGING LOAD\TBST_FLAT_EQUIP_PARAMETER\DATA LOADING\BVOCV1TVC55200218 Par\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[TagRicerca]"
                                   dataType="wstr"
-                                  length="1000"
+                                  length="4000"
                                   name="TagRicerca" />
                                 <externalMetadataColumn
                                   refId="Package\STAGING LOAD\TBST_FLAT_EQUIP_PARAMETER\DATA LOADING\BVOCV1TVC55200218 Par\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[UnitaMisura]"
@@ -23606,7 +23609,7 @@ FROM
                                 <inputColumn
                                   refId="Package\STAGING LOAD\TBST_FLAT_EQUIP_PARAMETER\DATA LOADING\BVOCV1TVC55200218 Par\Sort Join Field 1.Inputs[Sort Input].Columns[Parametro]"
                                   cachedDataType="wstr"
-                                  cachedLength="1000"
+                                  cachedLength="4000"
                                   cachedName="Parametro"
                                   lineageId="Package\STAGING LOAD\TBST_FLAT_EQUIP_PARAMETER\DATA LOADING\BVOCV1TVC55200218 Par\BVOCV1TVC55200218.Outputs[Flat File Source Output].Columns[Parametro]">
                                   <properties>
@@ -23639,7 +23642,7 @@ FROM
                                 <inputColumn
                                   refId="Package\STAGING LOAD\TBST_FLAT_EQUIP_PARAMETER\DATA LOADING\BVOCV1TVC55200218 Par\Sort Join Field 1.Inputs[Sort Input].Columns[TagRicerca]"
                                   cachedDataType="wstr"
-                                  cachedLength="1000"
+                                  cachedLength="4000"
                                   cachedName="TagRicerca"
                                   lineageId="Package\STAGING LOAD\TBST_FLAT_EQUIP_PARAMETER\DATA LOADING\BVOCV1TVC55200218 Par\BVOCV1TVC55200218.Outputs[Flat File Source Output].Columns[TagRicerca]">
                                   <properties>
@@ -23785,7 +23788,7 @@ FROM
                                 <outputColumn
                                   refId="Package\STAGING LOAD\TBST_FLAT_EQUIP_PARAMETER\DATA LOADING\BVOCV1TVC55200218 Par\Sort Join Field 1.Outputs[Sort Output].Columns[Parametro]"
                                   dataType="wstr"
-                                  length="1000"
+                                  length="4000"
                                   lineageId="Package\STAGING LOAD\TBST_FLAT_EQUIP_PARAMETER\DATA LOADING\BVOCV1TVC55200218 Par\Sort Join Field 1.Outputs[Sort Output].Columns[Parametro]"
                                   name="Parametro">
                                   <properties>
@@ -23812,7 +23815,7 @@ FROM
                                 <outputColumn
                                   refId="Package\STAGING LOAD\TBST_FLAT_EQUIP_PARAMETER\DATA LOADING\BVOCV1TVC55200218 Par\Sort Join Field 1.Outputs[Sort Output].Columns[TagRicerca]"
                                   dataType="wstr"
-                                  length="1000"
+                                  length="4000"
                                   lineageId="Package\STAGING LOAD\TBST_FLAT_EQUIP_PARAMETER\DATA LOADING\BVOCV1TVC55200218 Par\Sort Join Field 1.Outputs[Sort Output].Columns[TagRicerca]"
                                   name="TagRicerca">
                                   <properties>
@@ -24300,7 +24303,7 @@ FROM
                                   errorOrTruncationOperation="Conversion"
                                   errorRowDisposition="FailComponent"
                                   externalMetadataColumnId="Package\STAGING LOAD\TBST_FLAT_EQUIP_PARAMETER\DATA LOADING\BVOCV1TVC55200318 Par\BVOCV1TVC55200318.Outputs[Flat File Source Output].ExternalColumns[Parametro]"
-                                  length="1000"
+                                  length="4000"
                                   lineageId="Package\STAGING LOAD\TBST_FLAT_EQUIP_PARAMETER\DATA LOADING\BVOCV1TVC55200318 Par\BVOCV1TVC55200318.Outputs[Flat File Source Output].Columns[Parametro]"
                                   name="Parametro"
                                   truncationRowDisposition="FailComponent">
@@ -24341,7 +24344,7 @@ FROM
                                   errorOrTruncationOperation="Conversion"
                                   errorRowDisposition="FailComponent"
                                   externalMetadataColumnId="Package\STAGING LOAD\TBST_FLAT_EQUIP_PARAMETER\DATA LOADING\BVOCV1TVC55200318 Par\BVOCV1TVC55200318.Outputs[Flat File Source Output].ExternalColumns[TagRicerca]"
-                                  length="1000"
+                                  length="4000"
                                   lineageId="Package\STAGING LOAD\TBST_FLAT_EQUIP_PARAMETER\DATA LOADING\BVOCV1TVC55200318 Par\BVOCV1TVC55200318.Outputs[Flat File Source Output].Columns[TagRicerca]"
                                   name="TagRicerca"
                                   truncationRowDisposition="FailComponent">
@@ -24366,7 +24369,7 @@ FROM
                                 <externalMetadataColumn
                                   refId="Package\STAGING LOAD\TBST_FLAT_EQUIP_PARAMETER\DATA LOADING\BVOCV1TVC55200318 Par\BVOCV1TVC55200318.Outputs[Flat File Source Output].ExternalColumns[Parametro]"
                                   dataType="wstr"
-                                  length="1000"
+                                  length="4000"
                                   name="Parametro" />
                                 <externalMetadataColumn
                                   refId="Package\STAGING LOAD\TBST_FLAT_EQUIP_PARAMETER\DATA LOADING\BVOCV1TVC55200318 Par\BVOCV1TVC55200318.Outputs[Flat File Source Output].ExternalColumns[Severità]"
@@ -24375,7 +24378,7 @@ FROM
                                 <externalMetadataColumn
                                   refId="Package\STAGING LOAD\TBST_FLAT_EQUIP_PARAMETER\DATA LOADING\BVOCV1TVC55200318 Par\BVOCV1TVC55200318.Outputs[Flat File Source Output].ExternalColumns[TagRicerca]"
                                   dataType="wstr"
-                                  length="1000"
+                                  length="4000"
                                   name="TagRicerca" />
                               </externalMetadataColumns>
                             </output>
@@ -24635,7 +24638,7 @@ FROM
                                 <inputColumn
                                   refId="Package\STAGING LOAD\TBST_FLAT_EQUIP_PARAMETER\DATA LOADING\BVOCV1TVC55200318 Par\Merge Join.Inputs[Merge Join Left Input].Columns[Parametro]"
                                   cachedDataType="wstr"
-                                  cachedLength="1000"
+                                  cachedLength="4000"
                                   cachedName="Parametro"
                                   lineageId="Package\STAGING LOAD\TBST_FLAT_EQUIP_PARAMETER\DATA LOADING\BVOCV1TVC55200318 Par\Sort Join Field 1.Outputs[Sort Output].Columns[Parametro]" />
                                 <inputColumn
@@ -24646,7 +24649,7 @@ FROM
                                 <inputColumn
                                   refId="Package\STAGING LOAD\TBST_FLAT_EQUIP_PARAMETER\DATA LOADING\BVOCV1TVC55200318 Par\Merge Join.Inputs[Merge Join Left Input].Columns[TagRicerca]"
                                   cachedDataType="wstr"
-                                  cachedLength="1000"
+                                  cachedLength="4000"
                                   cachedName="TagRicerca"
                                   lineageId="Package\STAGING LOAD\TBST_FLAT_EQUIP_PARAMETER\DATA LOADING\BVOCV1TVC55200318 Par\Sort Join Field 1.Outputs[Sort Output].Columns[TagRicerca]" />
                               </inputColumns>
@@ -24816,7 +24819,7 @@ FROM
                                 <outputColumn
                                   refId="Package\STAGING LOAD\TBST_FLAT_EQUIP_PARAMETER\DATA LOADING\BVOCV1TVC55200318 Par\Merge Join.Outputs[Merge Join Output].Columns[Parametro]"
                                   dataType="wstr"
-                                  length="1000"
+                                  length="4000"
                                   lineageId="Package\STAGING LOAD\TBST_FLAT_EQUIP_PARAMETER\DATA LOADING\BVOCV1TVC55200318 Par\Merge Join.Outputs[Merge Join Output].Columns[Parametro]"
                                   name="Parametro">
                                   <properties>
@@ -24843,7 +24846,7 @@ FROM
                                 <outputColumn
                                   refId="Package\STAGING LOAD\TBST_FLAT_EQUIP_PARAMETER\DATA LOADING\BVOCV1TVC55200318 Par\Merge Join.Outputs[Merge Join Output].Columns[TagRicerca]"
                                   dataType="wstr"
-                                  length="1000"
+                                  length="4000"
                                   lineageId="Package\STAGING LOAD\TBST_FLAT_EQUIP_PARAMETER\DATA LOADING\BVOCV1TVC55200318 Par\Merge Join.Outputs[Merge Join Output].Columns[TagRicerca]"
                                   name="TagRicerca">
                                   <properties>
@@ -24989,7 +24992,7 @@ FROM
                                 <inputColumn
                                   refId="Package\STAGING LOAD\TBST_FLAT_EQUIP_PARAMETER\DATA LOADING\BVOCV1TVC55200318 Par\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[TagRicerca]"
                                   cachedDataType="wstr"
-                                  cachedLength="1000"
+                                  cachedLength="4000"
                                   cachedName="TagRicerca"
                                   externalMetadataColumnId="Package\STAGING LOAD\TBST_FLAT_EQUIP_PARAMETER\DATA LOADING\BVOCV1TVC55200318 Par\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[TagRicerca]"
                                   lineageId="Package\STAGING LOAD\TBST_FLAT_EQUIP_PARAMETER\DATA LOADING\BVOCV1TVC55200318 Par\Merge Join.Outputs[Merge Join Output].Columns[TagRicerca]" />
@@ -25002,7 +25005,7 @@ FROM
                                 <inputColumn
                                   refId="Package\STAGING LOAD\TBST_FLAT_EQUIP_PARAMETER\DATA LOADING\BVOCV1TVC55200318 Par\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Parametro]"
                                   cachedDataType="wstr"
-                                  cachedLength="1000"
+                                  cachedLength="4000"
                                   cachedName="Parametro"
                                   externalMetadataColumnId="Package\STAGING LOAD\TBST_FLAT_EQUIP_PARAMETER\DATA LOADING\BVOCV1TVC55200318 Par\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Parametro]"
                                   lineageId="Package\STAGING LOAD\TBST_FLAT_EQUIP_PARAMETER\DATA LOADING\BVOCV1TVC55200318 Par\Merge Join.Outputs[Merge Join Output].Columns[Parametro]" />
@@ -25067,19 +25070,22 @@ FROM
                                 <externalMetadataColumn
                                   refId="Package\STAGING LOAD\TBST_FLAT_EQUIP_PARAMETER\DATA LOADING\BVOCV1TVC55200318 Par\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Parametro]"
                                   dataType="wstr"
-                                  length="1000"
+                                  length="4000"
                                   name="Parametro" />
                                 <externalMetadataColumn
                                   refId="Package\STAGING LOAD\TBST_FLAT_EQUIP_PARAMETER\DATA LOADING\BVOCV1TVC55200318 Par\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Minimo]"
-                                  dataType="i8"
+                                  dataType="wstr"
+                                  length="100"
                                   name="Minimo" />
                                 <externalMetadataColumn
                                   refId="Package\STAGING LOAD\TBST_FLAT_EQUIP_PARAMETER\DATA LOADING\BVOCV1TVC55200318 Par\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Massimo]"
-                                  dataType="i8"
+                                  dataType="wstr"
+                                  length="100"
                                   name="Massimo" />
                                 <externalMetadataColumn
                                   refId="Package\STAGING LOAD\TBST_FLAT_EQUIP_PARAMETER\DATA LOADING\BVOCV1TVC55200318 Par\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Valore]"
-                                  dataType="i8"
+                                  dataType="wstr"
+                                  length="1000"
                                   name="Valore" />
                                 <externalMetadataColumn
                                   refId="Package\STAGING LOAD\TBST_FLAT_EQUIP_PARAMETER\DATA LOADING\BVOCV1TVC55200318 Par\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Severita]"
@@ -25092,7 +25098,7 @@ FROM
                                 <externalMetadataColumn
                                   refId="Package\STAGING LOAD\TBST_FLAT_EQUIP_PARAMETER\DATA LOADING\BVOCV1TVC55200318 Par\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[TagRicerca]"
                                   dataType="wstr"
-                                  length="1000"
+                                  length="4000"
                                   name="TagRicerca" />
                                 <externalMetadataColumn
                                   refId="Package\STAGING LOAD\TBST_FLAT_EQUIP_PARAMETER\DATA LOADING\BVOCV1TVC55200318 Par\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[UnitaMisura]"
@@ -25298,7 +25304,7 @@ FROM
                                 <inputColumn
                                   refId="Package\STAGING LOAD\TBST_FLAT_EQUIP_PARAMETER\DATA LOADING\BVOCV1TVC55200318 Par\Sort Join Field 1.Inputs[Sort Input].Columns[Parametro]"
                                   cachedDataType="wstr"
-                                  cachedLength="1000"
+                                  cachedLength="4000"
                                   cachedName="Parametro"
                                   lineageId="Package\STAGING LOAD\TBST_FLAT_EQUIP_PARAMETER\DATA LOADING\BVOCV1TVC55200318 Par\BVOCV1TVC55200318.Outputs[Flat File Source Output].Columns[Parametro]">
                                   <properties>
@@ -25331,7 +25337,7 @@ FROM
                                 <inputColumn
                                   refId="Package\STAGING LOAD\TBST_FLAT_EQUIP_PARAMETER\DATA LOADING\BVOCV1TVC55200318 Par\Sort Join Field 1.Inputs[Sort Input].Columns[TagRicerca]"
                                   cachedDataType="wstr"
-                                  cachedLength="1000"
+                                  cachedLength="4000"
                                   cachedName="TagRicerca"
                                   lineageId="Package\STAGING LOAD\TBST_FLAT_EQUIP_PARAMETER\DATA LOADING\BVOCV1TVC55200318 Par\BVOCV1TVC55200318.Outputs[Flat File Source Output].Columns[TagRicerca]">
                                   <properties>
@@ -25477,7 +25483,7 @@ FROM
                                 <outputColumn
                                   refId="Package\STAGING LOAD\TBST_FLAT_EQUIP_PARAMETER\DATA LOADING\BVOCV1TVC55200318 Par\Sort Join Field 1.Outputs[Sort Output].Columns[Parametro]"
                                   dataType="wstr"
-                                  length="1000"
+                                  length="4000"
                                   lineageId="Package\STAGING LOAD\TBST_FLAT_EQUIP_PARAMETER\DATA LOADING\BVOCV1TVC55200318 Par\Sort Join Field 1.Outputs[Sort Output].Columns[Parametro]"
                                   name="Parametro">
                                   <properties>
@@ -25504,7 +25510,7 @@ FROM
                                 <outputColumn
                                   refId="Package\STAGING LOAD\TBST_FLAT_EQUIP_PARAMETER\DATA LOADING\BVOCV1TVC55200318 Par\Sort Join Field 1.Outputs[Sort Output].Columns[TagRicerca]"
                                   dataType="wstr"
-                                  length="1000"
+                                  length="4000"
                                   lineageId="Package\STAGING LOAD\TBST_FLAT_EQUIP_PARAMETER\DATA LOADING\BVOCV1TVC55200318 Par\Sort Join Field 1.Outputs[Sort Output].Columns[TagRicerca]"
                                   name="TagRicerca">
                                   <properties>
@@ -25992,7 +25998,7 @@ FROM
                                   errorOrTruncationOperation="Conversion"
                                   errorRowDisposition="FailComponent"
                                   externalMetadataColumnId="Package\STAGING LOAD\TBST_FLAT_EQUIP_PARAMETER\DATA LOADING\BVOCV1TVC55200718 Par\BVOCV1TVC55200718.Outputs[Flat File Source Output].ExternalColumns[Parametro]"
-                                  length="1000"
+                                  length="4000"
                                   lineageId="Package\STAGING LOAD\TBST_FLAT_EQUIP_PARAMETER\DATA LOADING\BVOCV1TVC55200718 Par\BVOCV1TVC55200718.Outputs[Flat File Source Output].Columns[Parametro]"
                                   name="Parametro"
                                   truncationRowDisposition="FailComponent">
@@ -26033,7 +26039,7 @@ FROM
                                   errorOrTruncationOperation="Conversion"
                                   errorRowDisposition="FailComponent"
                                   externalMetadataColumnId="Package\STAGING LOAD\TBST_FLAT_EQUIP_PARAMETER\DATA LOADING\BVOCV1TVC55200718 Par\BVOCV1TVC55200718.Outputs[Flat File Source Output].ExternalColumns[TagRicerca]"
-                                  length="1000"
+                                  length="4000"
                                   lineageId="Package\STAGING LOAD\TBST_FLAT_EQUIP_PARAMETER\DATA LOADING\BVOCV1TVC55200718 Par\BVOCV1TVC55200718.Outputs[Flat File Source Output].Columns[TagRicerca]"
                                   name="TagRicerca"
                                   truncationRowDisposition="FailComponent">
@@ -26058,7 +26064,7 @@ FROM
                                 <externalMetadataColumn
                                   refId="Package\STAGING LOAD\TBST_FLAT_EQUIP_PARAMETER\DATA LOADING\BVOCV1TVC55200718 Par\BVOCV1TVC55200718.Outputs[Flat File Source Output].ExternalColumns[Parametro]"
                                   dataType="wstr"
-                                  length="1000"
+                                  length="4000"
                                   name="Parametro" />
                                 <externalMetadataColumn
                                   refId="Package\STAGING LOAD\TBST_FLAT_EQUIP_PARAMETER\DATA LOADING\BVOCV1TVC55200718 Par\BVOCV1TVC55200718.Outputs[Flat File Source Output].ExternalColumns[Severità]"
@@ -26067,7 +26073,7 @@ FROM
                                 <externalMetadataColumn
                                   refId="Package\STAGING LOAD\TBST_FLAT_EQUIP_PARAMETER\DATA LOADING\BVOCV1TVC55200718 Par\BVOCV1TVC55200718.Outputs[Flat File Source Output].ExternalColumns[TagRicerca]"
                                   dataType="wstr"
-                                  length="1000"
+                                  length="4000"
                                   name="TagRicerca" />
                               </externalMetadataColumns>
                             </output>
@@ -26327,7 +26333,7 @@ FROM
                                 <inputColumn
                                   refId="Package\STAGING LOAD\TBST_FLAT_EQUIP_PARAMETER\DATA LOADING\BVOCV1TVC55200718 Par\Merge Join.Inputs[Merge Join Left Input].Columns[Parametro]"
                                   cachedDataType="wstr"
-                                  cachedLength="1000"
+                                  cachedLength="4000"
                                   cachedName="Parametro"
                                   lineageId="Package\STAGING LOAD\TBST_FLAT_EQUIP_PARAMETER\DATA LOADING\BVOCV1TVC55200718 Par\Sort Join Field 1.Outputs[Sort Output].Columns[Parametro]" />
                                 <inputColumn
@@ -26338,7 +26344,7 @@ FROM
                                 <inputColumn
                                   refId="Package\STAGING LOAD\TBST_FLAT_EQUIP_PARAMETER\DATA LOADING\BVOCV1TVC55200718 Par\Merge Join.Inputs[Merge Join Left Input].Columns[TagRicerca]"
                                   cachedDataType="wstr"
-                                  cachedLength="1000"
+                                  cachedLength="4000"
                                   cachedName="TagRicerca"
                                   lineageId="Package\STAGING LOAD\TBST_FLAT_EQUIP_PARAMETER\DATA LOADING\BVOCV1TVC55200718 Par\Sort Join Field 1.Outputs[Sort Output].Columns[TagRicerca]" />
                               </inputColumns>
@@ -26508,7 +26514,7 @@ FROM
                                 <outputColumn
                                   refId="Package\STAGING LOAD\TBST_FLAT_EQUIP_PARAMETER\DATA LOADING\BVOCV1TVC55200718 Par\Merge Join.Outputs[Merge Join Output].Columns[Parametro]"
                                   dataType="wstr"
-                                  length="1000"
+                                  length="4000"
                                   lineageId="Package\STAGING LOAD\TBST_FLAT_EQUIP_PARAMETER\DATA LOADING\BVOCV1TVC55200718 Par\Merge Join.Outputs[Merge Join Output].Columns[Parametro]"
                                   name="Parametro">
                                   <properties>
@@ -26535,7 +26541,7 @@ FROM
                                 <outputColumn
                                   refId="Package\STAGING LOAD\TBST_FLAT_EQUIP_PARAMETER\DATA LOADING\BVOCV1TVC55200718 Par\Merge Join.Outputs[Merge Join Output].Columns[TagRicerca]"
                                   dataType="wstr"
-                                  length="1000"
+                                  length="4000"
                                   lineageId="Package\STAGING LOAD\TBST_FLAT_EQUIP_PARAMETER\DATA LOADING\BVOCV1TVC55200718 Par\Merge Join.Outputs[Merge Join Output].Columns[TagRicerca]"
                                   name="TagRicerca">
                                   <properties>
@@ -26687,14 +26693,14 @@ FROM
                                 <inputColumn
                                   refId="Package\STAGING LOAD\TBST_FLAT_EQUIP_PARAMETER\DATA LOADING\BVOCV1TVC55200718 Par\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[TagRicerca]"
                                   cachedDataType="wstr"
-                                  cachedLength="1000"
+                                  cachedLength="4000"
                                   cachedName="TagRicerca"
                                   externalMetadataColumnId="Package\STAGING LOAD\TBST_FLAT_EQUIP_PARAMETER\DATA LOADING\BVOCV1TVC55200718 Par\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[TagRicerca]"
                                   lineageId="Package\STAGING LOAD\TBST_FLAT_EQUIP_PARAMETER\DATA LOADING\BVOCV1TVC55200718 Par\Merge Join.Outputs[Merge Join Output].Columns[TagRicerca]" />
                                 <inputColumn
                                   refId="Package\STAGING LOAD\TBST_FLAT_EQUIP_PARAMETER\DATA LOADING\BVOCV1TVC55200718 Par\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Parametro]"
                                   cachedDataType="wstr"
-                                  cachedLength="1000"
+                                  cachedLength="4000"
                                   cachedName="Parametro"
                                   externalMetadataColumnId="Package\STAGING LOAD\TBST_FLAT_EQUIP_PARAMETER\DATA LOADING\BVOCV1TVC55200718 Par\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Parametro]"
                                   lineageId="Package\STAGING LOAD\TBST_FLAT_EQUIP_PARAMETER\DATA LOADING\BVOCV1TVC55200718 Par\Merge Join.Outputs[Merge Join Output].Columns[Parametro]" />
@@ -26759,19 +26765,22 @@ FROM
                                 <externalMetadataColumn
                                   refId="Package\STAGING LOAD\TBST_FLAT_EQUIP_PARAMETER\DATA LOADING\BVOCV1TVC55200718 Par\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Parametro]"
                                   dataType="wstr"
-                                  length="1000"
+                                  length="4000"
                                   name="Parametro" />
                                 <externalMetadataColumn
                                   refId="Package\STAGING LOAD\TBST_FLAT_EQUIP_PARAMETER\DATA LOADING\BVOCV1TVC55200718 Par\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Minimo]"
-                                  dataType="i8"
+                                  dataType="wstr"
+                                  length="100"
                                   name="Minimo" />
                                 <externalMetadataColumn
                                   refId="Package\STAGING LOAD\TBST_FLAT_EQUIP_PARAMETER\DATA LOADING\BVOCV1TVC55200718 Par\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Massimo]"
-                                  dataType="i8"
+                                  dataType="wstr"
+                                  length="100"
                                   name="Massimo" />
                                 <externalMetadataColumn
                                   refId="Package\STAGING LOAD\TBST_FLAT_EQUIP_PARAMETER\DATA LOADING\BVOCV1TVC55200718 Par\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Valore]"
-                                  dataType="i8"
+                                  dataType="wstr"
+                                  length="1000"
                                   name="Valore" />
                                 <externalMetadataColumn
                                   refId="Package\STAGING LOAD\TBST_FLAT_EQUIP_PARAMETER\DATA LOADING\BVOCV1TVC55200718 Par\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Severita]"
@@ -26784,7 +26793,7 @@ FROM
                                 <externalMetadataColumn
                                   refId="Package\STAGING LOAD\TBST_FLAT_EQUIP_PARAMETER\DATA LOADING\BVOCV1TVC55200718 Par\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[TagRicerca]"
                                   dataType="wstr"
-                                  length="1000"
+                                  length="4000"
                                   name="TagRicerca" />
                                 <externalMetadataColumn
                                   refId="Package\STAGING LOAD\TBST_FLAT_EQUIP_PARAMETER\DATA LOADING\BVOCV1TVC55200718 Par\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[UnitaMisura]"
@@ -26990,7 +26999,7 @@ FROM
                                 <inputColumn
                                   refId="Package\STAGING LOAD\TBST_FLAT_EQUIP_PARAMETER\DATA LOADING\BVOCV1TVC55200718 Par\Sort Join Field 1.Inputs[Sort Input].Columns[Parametro]"
                                   cachedDataType="wstr"
-                                  cachedLength="1000"
+                                  cachedLength="4000"
                                   cachedName="Parametro"
                                   lineageId="Package\STAGING LOAD\TBST_FLAT_EQUIP_PARAMETER\DATA LOADING\BVOCV1TVC55200718 Par\BVOCV1TVC55200718.Outputs[Flat File Source Output].Columns[Parametro]">
                                   <properties>
@@ -27023,7 +27032,7 @@ FROM
                                 <inputColumn
                                   refId="Package\STAGING LOAD\TBST_FLAT_EQUIP_PARAMETER\DATA LOADING\BVOCV1TVC55200718 Par\Sort Join Field 1.Inputs[Sort Input].Columns[TagRicerca]"
                                   cachedDataType="wstr"
-                                  cachedLength="1000"
+                                  cachedLength="4000"
                                   cachedName="TagRicerca"
                                   lineageId="Package\STAGING LOAD\TBST_FLAT_EQUIP_PARAMETER\DATA LOADING\BVOCV1TVC55200718 Par\BVOCV1TVC55200718.Outputs[Flat File Source Output].Columns[TagRicerca]">
                                   <properties>
@@ -27169,7 +27178,7 @@ FROM
                                 <outputColumn
                                   refId="Package\STAGING LOAD\TBST_FLAT_EQUIP_PARAMETER\DATA LOADING\BVOCV1TVC55200718 Par\Sort Join Field 1.Outputs[Sort Output].Columns[Parametro]"
                                   dataType="wstr"
-                                  length="1000"
+                                  length="4000"
                                   lineageId="Package\STAGING LOAD\TBST_FLAT_EQUIP_PARAMETER\DATA LOADING\BVOCV1TVC55200718 Par\Sort Join Field 1.Outputs[Sort Output].Columns[Parametro]"
                                   name="Parametro">
                                   <properties>
@@ -27196,7 +27205,7 @@ FROM
                                 <outputColumn
                                   refId="Package\STAGING LOAD\TBST_FLAT_EQUIP_PARAMETER\DATA LOADING\BVOCV1TVC55200718 Par\Sort Join Field 1.Outputs[Sort Output].Columns[TagRicerca]"
                                   dataType="wstr"
-                                  length="1000"
+                                  length="4000"
                                   lineageId="Package\STAGING LOAD\TBST_FLAT_EQUIP_PARAMETER\DATA LOADING\BVOCV1TVC55200718 Par\Sort Join Field 1.Outputs[Sort Output].Columns[TagRicerca]"
                                   name="TagRicerca">
                                   <properties>
@@ -27684,7 +27693,7 @@ FROM
                                   errorOrTruncationOperation="Conversion"
                                   errorRowDisposition="FailComponent"
                                   externalMetadataColumnId="Package\STAGING LOAD\TBST_FLAT_EQUIP_PARAMETER\DATA LOADING\BVOCV2TVC55200418 Par\BVOCV2TVC55200418.Outputs[Flat File Source Output].ExternalColumns[Parametro]"
-                                  length="1000"
+                                  length="4000"
                                   lineageId="Package\STAGING LOAD\TBST_FLAT_EQUIP_PARAMETER\DATA LOADING\BVOCV2TVC55200418 Par\BVOCV2TVC55200418.Outputs[Flat File Source Output].Columns[Parametro]"
                                   name="Parametro"
                                   truncationRowDisposition="FailComponent">
@@ -27725,7 +27734,7 @@ FROM
                                   errorOrTruncationOperation="Conversion"
                                   errorRowDisposition="FailComponent"
                                   externalMetadataColumnId="Package\STAGING LOAD\TBST_FLAT_EQUIP_PARAMETER\DATA LOADING\BVOCV2TVC55200418 Par\BVOCV2TVC55200418.Outputs[Flat File Source Output].ExternalColumns[TagRicerca]"
-                                  length="1000"
+                                  length="4000"
                                   lineageId="Package\STAGING LOAD\TBST_FLAT_EQUIP_PARAMETER\DATA LOADING\BVOCV2TVC55200418 Par\BVOCV2TVC55200418.Outputs[Flat File Source Output].Columns[TagRicerca]"
                                   name="TagRicerca"
                                   truncationRowDisposition="FailComponent">
@@ -27750,7 +27759,7 @@ FROM
                                 <externalMetadataColumn
                                   refId="Package\STAGING LOAD\TBST_FLAT_EQUIP_PARAMETER\DATA LOADING\BVOCV2TVC55200418 Par\BVOCV2TVC55200418.Outputs[Flat File Source Output].ExternalColumns[Parametro]"
                                   dataType="wstr"
-                                  length="1000"
+                                  length="4000"
                                   name="Parametro" />
                                 <externalMetadataColumn
                                   refId="Package\STAGING LOAD\TBST_FLAT_EQUIP_PARAMETER\DATA LOADING\BVOCV2TVC55200418 Par\BVOCV2TVC55200418.Outputs[Flat File Source Output].ExternalColumns[Severità]"
@@ -27759,7 +27768,7 @@ FROM
                                 <externalMetadataColumn
                                   refId="Package\STAGING LOAD\TBST_FLAT_EQUIP_PARAMETER\DATA LOADING\BVOCV2TVC55200418 Par\BVOCV2TVC55200418.Outputs[Flat File Source Output].ExternalColumns[TagRicerca]"
                                   dataType="wstr"
-                                  length="1000"
+                                  length="4000"
                                   name="TagRicerca" />
                               </externalMetadataColumns>
                             </output>
@@ -28019,7 +28028,7 @@ FROM
                                 <inputColumn
                                   refId="Package\STAGING LOAD\TBST_FLAT_EQUIP_PARAMETER\DATA LOADING\BVOCV2TVC55200418 Par\Merge Join.Inputs[Merge Join Left Input].Columns[Parametro]"
                                   cachedDataType="wstr"
-                                  cachedLength="1000"
+                                  cachedLength="4000"
                                   cachedName="Parametro"
                                   lineageId="Package\STAGING LOAD\TBST_FLAT_EQUIP_PARAMETER\DATA LOADING\BVOCV2TVC55200418 Par\Sort Join Field 1.Outputs[Sort Output].Columns[Parametro]" />
                                 <inputColumn
@@ -28030,7 +28039,7 @@ FROM
                                 <inputColumn
                                   refId="Package\STAGING LOAD\TBST_FLAT_EQUIP_PARAMETER\DATA LOADING\BVOCV2TVC55200418 Par\Merge Join.Inputs[Merge Join Left Input].Columns[TagRicerca]"
                                   cachedDataType="wstr"
-                                  cachedLength="1000"
+                                  cachedLength="4000"
                                   cachedName="TagRicerca"
                                   lineageId="Package\STAGING LOAD\TBST_FLAT_EQUIP_PARAMETER\DATA LOADING\BVOCV2TVC55200418 Par\Sort Join Field 1.Outputs[Sort Output].Columns[TagRicerca]" />
                               </inputColumns>
@@ -28200,7 +28209,7 @@ FROM
                                 <outputColumn
                                   refId="Package\STAGING LOAD\TBST_FLAT_EQUIP_PARAMETER\DATA LOADING\BVOCV2TVC55200418 Par\Merge Join.Outputs[Merge Join Output].Columns[Parametro]"
                                   dataType="wstr"
-                                  length="1000"
+                                  length="4000"
                                   lineageId="Package\STAGING LOAD\TBST_FLAT_EQUIP_PARAMETER\DATA LOADING\BVOCV2TVC55200418 Par\Merge Join.Outputs[Merge Join Output].Columns[Parametro]"
                                   name="Parametro">
                                   <properties>
@@ -28227,7 +28236,7 @@ FROM
                                 <outputColumn
                                   refId="Package\STAGING LOAD\TBST_FLAT_EQUIP_PARAMETER\DATA LOADING\BVOCV2TVC55200418 Par\Merge Join.Outputs[Merge Join Output].Columns[TagRicerca]"
                                   dataType="wstr"
-                                  length="1000"
+                                  length="4000"
                                   lineageId="Package\STAGING LOAD\TBST_FLAT_EQUIP_PARAMETER\DATA LOADING\BVOCV2TVC55200418 Par\Merge Join.Outputs[Merge Join Output].Columns[TagRicerca]"
                                   name="TagRicerca">
                                   <properties>
@@ -28379,14 +28388,14 @@ FROM
                                 <inputColumn
                                   refId="Package\STAGING LOAD\TBST_FLAT_EQUIP_PARAMETER\DATA LOADING\BVOCV2TVC55200418 Par\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Parametro]"
                                   cachedDataType="wstr"
-                                  cachedLength="1000"
+                                  cachedLength="4000"
                                   cachedName="Parametro"
                                   externalMetadataColumnId="Package\STAGING LOAD\TBST_FLAT_EQUIP_PARAMETER\DATA LOADING\BVOCV2TVC55200418 Par\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Parametro]"
                                   lineageId="Package\STAGING LOAD\TBST_FLAT_EQUIP_PARAMETER\DATA LOADING\BVOCV2TVC55200418 Par\Merge Join.Outputs[Merge Join Output].Columns[Parametro]" />
                                 <inputColumn
                                   refId="Package\STAGING LOAD\TBST_FLAT_EQUIP_PARAMETER\DATA LOADING\BVOCV2TVC55200418 Par\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[TagRicerca]"
                                   cachedDataType="wstr"
-                                  cachedLength="1000"
+                                  cachedLength="4000"
                                   cachedName="TagRicerca"
                                   externalMetadataColumnId="Package\STAGING LOAD\TBST_FLAT_EQUIP_PARAMETER\DATA LOADING\BVOCV2TVC55200418 Par\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[TagRicerca]"
                                   lineageId="Package\STAGING LOAD\TBST_FLAT_EQUIP_PARAMETER\DATA LOADING\BVOCV2TVC55200418 Par\Merge Join.Outputs[Merge Join Output].Columns[TagRicerca]" />
@@ -28451,19 +28460,22 @@ FROM
                                 <externalMetadataColumn
                                   refId="Package\STAGING LOAD\TBST_FLAT_EQUIP_PARAMETER\DATA LOADING\BVOCV2TVC55200418 Par\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Parametro]"
                                   dataType="wstr"
-                                  length="1000"
+                                  length="4000"
                                   name="Parametro" />
                                 <externalMetadataColumn
                                   refId="Package\STAGING LOAD\TBST_FLAT_EQUIP_PARAMETER\DATA LOADING\BVOCV2TVC55200418 Par\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Minimo]"
-                                  dataType="i8"
+                                  dataType="wstr"
+                                  length="100"
                                   name="Minimo" />
                                 <externalMetadataColumn
                                   refId="Package\STAGING LOAD\TBST_FLAT_EQUIP_PARAMETER\DATA LOADING\BVOCV2TVC55200418 Par\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Massimo]"
-                                  dataType="i8"
+                                  dataType="wstr"
+                                  length="100"
                                   name="Massimo" />
                                 <externalMetadataColumn
                                   refId="Package\STAGING LOAD\TBST_FLAT_EQUIP_PARAMETER\DATA LOADING\BVOCV2TVC55200418 Par\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Valore]"
-                                  dataType="i8"
+                                  dataType="wstr"
+                                  length="1000"
                                   name="Valore" />
                                 <externalMetadataColumn
                                   refId="Package\STAGING LOAD\TBST_FLAT_EQUIP_PARAMETER\DATA LOADING\BVOCV2TVC55200418 Par\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Severita]"
@@ -28476,7 +28488,7 @@ FROM
                                 <externalMetadataColumn
                                   refId="Package\STAGING LOAD\TBST_FLAT_EQUIP_PARAMETER\DATA LOADING\BVOCV2TVC55200418 Par\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[TagRicerca]"
                                   dataType="wstr"
-                                  length="1000"
+                                  length="4000"
                                   name="TagRicerca" />
                                 <externalMetadataColumn
                                   refId="Package\STAGING LOAD\TBST_FLAT_EQUIP_PARAMETER\DATA LOADING\BVOCV2TVC55200418 Par\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[UnitaMisura]"
@@ -28682,7 +28694,7 @@ FROM
                                 <inputColumn
                                   refId="Package\STAGING LOAD\TBST_FLAT_EQUIP_PARAMETER\DATA LOADING\BVOCV2TVC55200418 Par\Sort Join Field 1.Inputs[Sort Input].Columns[Parametro]"
                                   cachedDataType="wstr"
-                                  cachedLength="1000"
+                                  cachedLength="4000"
                                   cachedName="Parametro"
                                   lineageId="Package\STAGING LOAD\TBST_FLAT_EQUIP_PARAMETER\DATA LOADING\BVOCV2TVC55200418 Par\BVOCV2TVC55200418.Outputs[Flat File Source Output].Columns[Parametro]">
                                   <properties>
@@ -28715,7 +28727,7 @@ FROM
                                 <inputColumn
                                   refId="Package\STAGING LOAD\TBST_FLAT_EQUIP_PARAMETER\DATA LOADING\BVOCV2TVC55200418 Par\Sort Join Field 1.Inputs[Sort Input].Columns[TagRicerca]"
                                   cachedDataType="wstr"
-                                  cachedLength="1000"
+                                  cachedLength="4000"
                                   cachedName="TagRicerca"
                                   lineageId="Package\STAGING LOAD\TBST_FLAT_EQUIP_PARAMETER\DATA LOADING\BVOCV2TVC55200418 Par\BVOCV2TVC55200418.Outputs[Flat File Source Output].Columns[TagRicerca]">
                                   <properties>
@@ -28861,7 +28873,7 @@ FROM
                                 <outputColumn
                                   refId="Package\STAGING LOAD\TBST_FLAT_EQUIP_PARAMETER\DATA LOADING\BVOCV2TVC55200418 Par\Sort Join Field 1.Outputs[Sort Output].Columns[Parametro]"
                                   dataType="wstr"
-                                  length="1000"
+                                  length="4000"
                                   lineageId="Package\STAGING LOAD\TBST_FLAT_EQUIP_PARAMETER\DATA LOADING\BVOCV2TVC55200418 Par\Sort Join Field 1.Outputs[Sort Output].Columns[Parametro]"
                                   name="Parametro">
                                   <properties>
@@ -28888,7 +28900,7 @@ FROM
                                 <outputColumn
                                   refId="Package\STAGING LOAD\TBST_FLAT_EQUIP_PARAMETER\DATA LOADING\BVOCV2TVC55200418 Par\Sort Join Field 1.Outputs[Sort Output].Columns[TagRicerca]"
                                   dataType="wstr"
-                                  length="1000"
+                                  length="4000"
                                   lineageId="Package\STAGING LOAD\TBST_FLAT_EQUIP_PARAMETER\DATA LOADING\BVOCV2TVC55200418 Par\Sort Join Field 1.Outputs[Sort Output].Columns[TagRicerca]"
                                   name="TagRicerca">
                                   <properties>
@@ -29521,7 +29533,7 @@ FROM
                                   errorOrTruncationOperation="Conversion"
                                   errorRowDisposition="FailComponent"
                                   externalMetadataColumnId="Package\STAGING LOAD\TBST_FLAT_EQUIP_PARAMETER\DATA LOADING\M8180003 Par\M8180003.Outputs[Flat File Source Output].ExternalColumns[Parametro]"
-                                  length="1000"
+                                  length="4000"
                                   lineageId="Package\STAGING LOAD\TBST_FLAT_EQUIP_PARAMETER\DATA LOADING\M8180003 Par\M8180003.Outputs[Flat File Source Output].Columns[Parametro]"
                                   name="Parametro"
                                   truncationRowDisposition="FailComponent">
@@ -29542,7 +29554,7 @@ FROM
                                   errorOrTruncationOperation="Conversion"
                                   errorRowDisposition="FailComponent"
                                   externalMetadataColumnId="Package\STAGING LOAD\TBST_FLAT_EQUIP_PARAMETER\DATA LOADING\M8180003 Par\M8180003.Outputs[Flat File Source Output].ExternalColumns[Valore]"
-                                  length="100"
+                                  length="1000"
                                   lineageId="Package\STAGING LOAD\TBST_FLAT_EQUIP_PARAMETER\DATA LOADING\M8180003 Par\M8180003.Outputs[Flat File Source Output].Columns[Valore]"
                                   name="Valore"
                                   truncationRowDisposition="FailComponent">
@@ -29649,12 +29661,12 @@ FROM
                                 <externalMetadataColumn
                                   refId="Package\STAGING LOAD\TBST_FLAT_EQUIP_PARAMETER\DATA LOADING\M8180003 Par\M8180003.Outputs[Flat File Source Output].ExternalColumns[Parametro]"
                                   dataType="wstr"
-                                  length="1000"
+                                  length="4000"
                                   name="Parametro" />
                                 <externalMetadataColumn
                                   refId="Package\STAGING LOAD\TBST_FLAT_EQUIP_PARAMETER\DATA LOADING\M8180003 Par\M8180003.Outputs[Flat File Source Output].ExternalColumns[Valore]"
                                   dataType="wstr"
-                                  length="100"
+                                  length="1000"
                                   name="Valore" />
                                 <externalMetadataColumn
                                   refId="Package\STAGING LOAD\TBST_FLAT_EQUIP_PARAMETER\DATA LOADING\M8180003 Par\M8180003.Outputs[Flat File Source Output].ExternalColumns[Minimo]"
@@ -29787,13 +29799,13 @@ FROM
                                 <inputColumn
                                   refId="Package\STAGING LOAD\TBST_FLAT_EQUIP_PARAMETER\DATA LOADING\M8180003 Par\Merge Join.Inputs[Merge Join Left Input].Columns[Parametro]"
                                   cachedDataType="wstr"
-                                  cachedLength="1000"
+                                  cachedLength="4000"
                                   cachedName="Parametro"
                                   lineageId="Package\STAGING LOAD\TBST_FLAT_EQUIP_PARAMETER\DATA LOADING\M8180003 Par\Sort Join Field 1.Outputs[Sort Output].Columns[Parametro]" />
                                 <inputColumn
                                   refId="Package\STAGING LOAD\TBST_FLAT_EQUIP_PARAMETER\DATA LOADING\M8180003 Par\Merge Join.Inputs[Merge Join Left Input].Columns[Valore]"
                                   cachedDataType="wstr"
-                                  cachedLength="100"
+                                  cachedLength="1000"
                                   cachedName="Valore"
                                   lineageId="Package\STAGING LOAD\TBST_FLAT_EQUIP_PARAMETER\DATA LOADING\M8180003 Par\Sort Join Field 1.Outputs[Sort Output].Columns[Valore]" />
                                 <inputColumn
@@ -29985,7 +29997,7 @@ FROM
                                 <outputColumn
                                   refId="Package\STAGING LOAD\TBST_FLAT_EQUIP_PARAMETER\DATA LOADING\M8180003 Par\Merge Join.Outputs[Merge Join Output].Columns[Parametro]"
                                   dataType="wstr"
-                                  length="1000"
+                                  length="4000"
                                   lineageId="Package\STAGING LOAD\TBST_FLAT_EQUIP_PARAMETER\DATA LOADING\M8180003 Par\Merge Join.Outputs[Merge Join Output].Columns[Parametro]"
                                   name="Parametro">
                                   <properties>
@@ -29999,7 +30011,7 @@ FROM
                                 <outputColumn
                                   refId="Package\STAGING LOAD\TBST_FLAT_EQUIP_PARAMETER\DATA LOADING\M8180003 Par\Merge Join.Outputs[Merge Join Output].Columns[Valore]"
                                   dataType="wstr"
-                                  length="100"
+                                  length="1000"
                                   lineageId="Package\STAGING LOAD\TBST_FLAT_EQUIP_PARAMETER\DATA LOADING\M8180003 Par\Merge Join.Outputs[Merge Join Output].Columns[Valore]"
                                   name="Valore">
                                   <properties>
@@ -30205,7 +30217,7 @@ FROM
                                 <inputColumn
                                   refId="Package\STAGING LOAD\TBST_FLAT_EQUIP_PARAMETER\DATA LOADING\M8180003 Par\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Parametro]"
                                   cachedDataType="wstr"
-                                  cachedLength="1000"
+                                  cachedLength="4000"
                                   cachedName="Parametro"
                                   externalMetadataColumnId="Package\STAGING LOAD\TBST_FLAT_EQUIP_PARAMETER\DATA LOADING\M8180003 Par\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Parametro]"
                                   lineageId="Package\STAGING LOAD\TBST_FLAT_EQUIP_PARAMETER\DATA LOADING\M8180003 Par\Merge Join.Outputs[Merge Join Output].Columns[Parametro]" />
@@ -30226,7 +30238,7 @@ FROM
                                 <inputColumn
                                   refId="Package\STAGING LOAD\TBST_FLAT_EQUIP_PARAMETER\DATA LOADING\M8180003 Par\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Valore]"
                                   cachedDataType="wstr"
-                                  cachedLength="100"
+                                  cachedLength="1000"
                                   cachedName="Valore"
                                   externalMetadataColumnId="Package\STAGING LOAD\TBST_FLAT_EQUIP_PARAMETER\DATA LOADING\M8180003 Par\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Valore]"
                                   lineageId="Package\STAGING LOAD\TBST_FLAT_EQUIP_PARAMETER\DATA LOADING\M8180003 Par\Merge Join.Outputs[Merge Join Output].Columns[Valore]" />
@@ -30297,7 +30309,7 @@ FROM
                                 <externalMetadataColumn
                                   refId="Package\STAGING LOAD\TBST_FLAT_EQUIP_PARAMETER\DATA LOADING\M8180003 Par\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Parametro]"
                                   dataType="wstr"
-                                  length="1000"
+                                  length="4000"
                                   name="Parametro" />
                                 <externalMetadataColumn
                                   refId="Package\STAGING LOAD\TBST_FLAT_EQUIP_PARAMETER\DATA LOADING\M8180003 Par\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Minimo]"
@@ -30312,7 +30324,7 @@ FROM
                                 <externalMetadataColumn
                                   refId="Package\STAGING LOAD\TBST_FLAT_EQUIP_PARAMETER\DATA LOADING\M8180003 Par\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Valore]"
                                   dataType="wstr"
-                                  length="100"
+                                  length="1000"
                                   name="Valore" />
                                 <externalMetadataColumn
                                   refId="Package\STAGING LOAD\TBST_FLAT_EQUIP_PARAMETER\DATA LOADING\M8180003 Par\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Severita]"
@@ -30325,7 +30337,7 @@ FROM
                                 <externalMetadataColumn
                                   refId="Package\STAGING LOAD\TBST_FLAT_EQUIP_PARAMETER\DATA LOADING\M8180003 Par\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[TagRicerca]"
                                   dataType="wstr"
-                                  length="1000"
+                                  length="4000"
                                   name="TagRicerca" />
                                 <externalMetadataColumn
                                   refId="Package\STAGING LOAD\TBST_FLAT_EQUIP_PARAMETER\DATA LOADING\M8180003 Par\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[UnitaMisura]"
@@ -30531,7 +30543,7 @@ FROM
                                 <inputColumn
                                   refId="Package\STAGING LOAD\TBST_FLAT_EQUIP_PARAMETER\DATA LOADING\M8180003 Par\Sort Join Field 1.Inputs[Sort Input].Columns[Parametro]"
                                   cachedDataType="wstr"
-                                  cachedLength="1000"
+                                  cachedLength="4000"
                                   cachedName="Parametro"
                                   lineageId="Package\STAGING LOAD\TBST_FLAT_EQUIP_PARAMETER\DATA LOADING\M8180003 Par\M8180003.Outputs[Flat File Source Output].Columns[Parametro]">
                                   <properties>
@@ -30548,7 +30560,7 @@ FROM
                                 <inputColumn
                                   refId="Package\STAGING LOAD\TBST_FLAT_EQUIP_PARAMETER\DATA LOADING\M8180003 Par\Sort Join Field 1.Inputs[Sort Input].Columns[Valore]"
                                   cachedDataType="wstr"
-                                  cachedLength="100"
+                                  cachedLength="1000"
                                   cachedName="Valore"
                                   lineageId="Package\STAGING LOAD\TBST_FLAT_EQUIP_PARAMETER\DATA LOADING\M8180003 Par\M8180003.Outputs[Flat File Source Output].Columns[Valore]">
                                   <properties>
@@ -30760,7 +30772,7 @@ FROM
                                 <outputColumn
                                   refId="Package\STAGING LOAD\TBST_FLAT_EQUIP_PARAMETER\DATA LOADING\M8180003 Par\Sort Join Field 1.Outputs[Sort Output].Columns[Parametro]"
                                   dataType="wstr"
-                                  length="1000"
+                                  length="4000"
                                   lineageId="Package\STAGING LOAD\TBST_FLAT_EQUIP_PARAMETER\DATA LOADING\M8180003 Par\Sort Join Field 1.Outputs[Sort Output].Columns[Parametro]"
                                   name="Parametro">
                                   <properties>
@@ -30774,7 +30786,7 @@ FROM
                                 <outputColumn
                                   refId="Package\STAGING LOAD\TBST_FLAT_EQUIP_PARAMETER\DATA LOADING\M8180003 Par\Sort Join Field 1.Outputs[Sort Output].Columns[Valore]"
                                   dataType="wstr"
-                                  length="100"
+                                  length="1000"
                                   lineageId="Package\STAGING LOAD\TBST_FLAT_EQUIP_PARAMETER\DATA LOADING\M8180003 Par\Sort Join Field 1.Outputs[Sort Output].Columns[Valore]"
                                   name="Valore">
                                   <properties>
@@ -31461,7 +31473,7 @@ FROM
                                   errorOrTruncationOperation="Conversion"
                                   errorRowDisposition="FailComponent"
                                   externalMetadataColumnId="Package\STAGING LOAD\TBST_FLAT_EQUIP_PARAMETER\DATA LOADING\M8180031 Par\M8180031.Outputs[Flat File Source Output].ExternalColumns[Parametro]"
-                                  length="1000"
+                                  length="4000"
                                   lineageId="Package\STAGING LOAD\TBST_FLAT_EQUIP_PARAMETER\DATA LOADING\M8180031 Par\M8180031.Outputs[Flat File Source Output].Columns[Parametro]"
                                   name="Parametro"
                                   truncationRowDisposition="FailComponent">
@@ -31482,7 +31494,7 @@ FROM
                                   errorOrTruncationOperation="Conversion"
                                   errorRowDisposition="FailComponent"
                                   externalMetadataColumnId="Package\STAGING LOAD\TBST_FLAT_EQUIP_PARAMETER\DATA LOADING\M8180031 Par\M8180031.Outputs[Flat File Source Output].ExternalColumns[Valore]"
-                                  length="100"
+                                  length="1000"
                                   lineageId="Package\STAGING LOAD\TBST_FLAT_EQUIP_PARAMETER\DATA LOADING\M8180031 Par\M8180031.Outputs[Flat File Source Output].Columns[Valore]"
                                   name="Valore"
                                   truncationRowDisposition="FailComponent">
@@ -31589,12 +31601,12 @@ FROM
                                 <externalMetadataColumn
                                   refId="Package\STAGING LOAD\TBST_FLAT_EQUIP_PARAMETER\DATA LOADING\M8180031 Par\M8180031.Outputs[Flat File Source Output].ExternalColumns[Parametro]"
                                   dataType="wstr"
-                                  length="1000"
+                                  length="4000"
                                   name="Parametro" />
                                 <externalMetadataColumn
                                   refId="Package\STAGING LOAD\TBST_FLAT_EQUIP_PARAMETER\DATA LOADING\M8180031 Par\M8180031.Outputs[Flat File Source Output].ExternalColumns[Valore]"
                                   dataType="wstr"
-                                  length="100"
+                                  length="1000"
                                   name="Valore" />
                                 <externalMetadataColumn
                                   refId="Package\STAGING LOAD\TBST_FLAT_EQUIP_PARAMETER\DATA LOADING\M8180031 Par\M8180031.Outputs[Flat File Source Output].ExternalColumns[Minimo]"
@@ -31727,13 +31739,13 @@ FROM
                                 <inputColumn
                                   refId="Package\STAGING LOAD\TBST_FLAT_EQUIP_PARAMETER\DATA LOADING\M8180031 Par\Merge Join.Inputs[Merge Join Left Input].Columns[Parametro]"
                                   cachedDataType="wstr"
-                                  cachedLength="1000"
+                                  cachedLength="4000"
                                   cachedName="Parametro"
                                   lineageId="Package\STAGING LOAD\TBST_FLAT_EQUIP_PARAMETER\DATA LOADING\M8180031 Par\Sort Join Field 1.Outputs[Sort Output].Columns[Parametro]" />
                                 <inputColumn
                                   refId="Package\STAGING LOAD\TBST_FLAT_EQUIP_PARAMETER\DATA LOADING\M8180031 Par\Merge Join.Inputs[Merge Join Left Input].Columns[Valore]"
                                   cachedDataType="wstr"
-                                  cachedLength="100"
+                                  cachedLength="1000"
                                   cachedName="Valore"
                                   lineageId="Package\STAGING LOAD\TBST_FLAT_EQUIP_PARAMETER\DATA LOADING\M8180031 Par\Sort Join Field 1.Outputs[Sort Output].Columns[Valore]" />
                                 <inputColumn
@@ -31925,7 +31937,7 @@ FROM
                                 <outputColumn
                                   refId="Package\STAGING LOAD\TBST_FLAT_EQUIP_PARAMETER\DATA LOADING\M8180031 Par\Merge Join.Outputs[Merge Join Output].Columns[Parametro]"
                                   dataType="wstr"
-                                  length="1000"
+                                  length="4000"
                                   lineageId="Package\STAGING LOAD\TBST_FLAT_EQUIP_PARAMETER\DATA LOADING\M8180031 Par\Merge Join.Outputs[Merge Join Output].Columns[Parametro]"
                                   name="Parametro">
                                   <properties>
@@ -31939,7 +31951,7 @@ FROM
                                 <outputColumn
                                   refId="Package\STAGING LOAD\TBST_FLAT_EQUIP_PARAMETER\DATA LOADING\M8180031 Par\Merge Join.Outputs[Merge Join Output].Columns[Valore]"
                                   dataType="wstr"
-                                  length="100"
+                                  length="1000"
                                   lineageId="Package\STAGING LOAD\TBST_FLAT_EQUIP_PARAMETER\DATA LOADING\M8180031 Par\Merge Join.Outputs[Merge Join Output].Columns[Valore]"
                                   name="Valore">
                                   <properties>
@@ -32145,7 +32157,7 @@ FROM
                                 <inputColumn
                                   refId="Package\STAGING LOAD\TBST_FLAT_EQUIP_PARAMETER\DATA LOADING\M8180031 Par\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Parametro]"
                                   cachedDataType="wstr"
-                                  cachedLength="1000"
+                                  cachedLength="4000"
                                   cachedName="Parametro"
                                   externalMetadataColumnId="Package\STAGING LOAD\TBST_FLAT_EQUIP_PARAMETER\DATA LOADING\M8180031 Par\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Parametro]"
                                   lineageId="Package\STAGING LOAD\TBST_FLAT_EQUIP_PARAMETER\DATA LOADING\M8180031 Par\Merge Join.Outputs[Merge Join Output].Columns[Parametro]" />
@@ -32166,7 +32178,7 @@ FROM
                                 <inputColumn
                                   refId="Package\STAGING LOAD\TBST_FLAT_EQUIP_PARAMETER\DATA LOADING\M8180031 Par\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Valore]"
                                   cachedDataType="wstr"
-                                  cachedLength="100"
+                                  cachedLength="1000"
                                   cachedName="Valore"
                                   externalMetadataColumnId="Package\STAGING LOAD\TBST_FLAT_EQUIP_PARAMETER\DATA LOADING\M8180031 Par\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Valore]"
                                   lineageId="Package\STAGING LOAD\TBST_FLAT_EQUIP_PARAMETER\DATA LOADING\M8180031 Par\Merge Join.Outputs[Merge Join Output].Columns[Valore]" />
@@ -32237,7 +32249,7 @@ FROM
                                 <externalMetadataColumn
                                   refId="Package\STAGING LOAD\TBST_FLAT_EQUIP_PARAMETER\DATA LOADING\M8180031 Par\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Parametro]"
                                   dataType="wstr"
-                                  length="1000"
+                                  length="4000"
                                   name="Parametro" />
                                 <externalMetadataColumn
                                   refId="Package\STAGING LOAD\TBST_FLAT_EQUIP_PARAMETER\DATA LOADING\M8180031 Par\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Minimo]"
@@ -32252,7 +32264,7 @@ FROM
                                 <externalMetadataColumn
                                   refId="Package\STAGING LOAD\TBST_FLAT_EQUIP_PARAMETER\DATA LOADING\M8180031 Par\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Valore]"
                                   dataType="wstr"
-                                  length="100"
+                                  length="1000"
                                   name="Valore" />
                                 <externalMetadataColumn
                                   refId="Package\STAGING LOAD\TBST_FLAT_EQUIP_PARAMETER\DATA LOADING\M8180031 Par\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Severita]"
@@ -32265,7 +32277,7 @@ FROM
                                 <externalMetadataColumn
                                   refId="Package\STAGING LOAD\TBST_FLAT_EQUIP_PARAMETER\DATA LOADING\M8180031 Par\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[TagRicerca]"
                                   dataType="wstr"
-                                  length="1000"
+                                  length="4000"
                                   name="TagRicerca" />
                                 <externalMetadataColumn
                                   refId="Package\STAGING LOAD\TBST_FLAT_EQUIP_PARAMETER\DATA LOADING\M8180031 Par\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[UnitaMisura]"
@@ -32471,7 +32483,7 @@ FROM
                                 <inputColumn
                                   refId="Package\STAGING LOAD\TBST_FLAT_EQUIP_PARAMETER\DATA LOADING\M8180031 Par\Sort Join Field 1.Inputs[Sort Input].Columns[Parametro]"
                                   cachedDataType="wstr"
-                                  cachedLength="1000"
+                                  cachedLength="4000"
                                   cachedName="Parametro"
                                   lineageId="Package\STAGING LOAD\TBST_FLAT_EQUIP_PARAMETER\DATA LOADING\M8180031 Par\M8180031.Outputs[Flat File Source Output].Columns[Parametro]">
                                   <properties>
@@ -32488,7 +32500,7 @@ FROM
                                 <inputColumn
                                   refId="Package\STAGING LOAD\TBST_FLAT_EQUIP_PARAMETER\DATA LOADING\M8180031 Par\Sort Join Field 1.Inputs[Sort Input].Columns[Valore]"
                                   cachedDataType="wstr"
-                                  cachedLength="100"
+                                  cachedLength="1000"
                                   cachedName="Valore"
                                   lineageId="Package\STAGING LOAD\TBST_FLAT_EQUIP_PARAMETER\DATA LOADING\M8180031 Par\M8180031.Outputs[Flat File Source Output].Columns[Valore]">
                                   <properties>
@@ -32700,7 +32712,7 @@ FROM
                                 <outputColumn
                                   refId="Package\STAGING LOAD\TBST_FLAT_EQUIP_PARAMETER\DATA LOADING\M8180031 Par\Sort Join Field 1.Outputs[Sort Output].Columns[Parametro]"
                                   dataType="wstr"
-                                  length="1000"
+                                  length="4000"
                                   lineageId="Package\STAGING LOAD\TBST_FLAT_EQUIP_PARAMETER\DATA LOADING\M8180031 Par\Sort Join Field 1.Outputs[Sort Output].Columns[Parametro]"
                                   name="Parametro">
                                   <properties>
@@ -32714,7 +32726,7 @@ FROM
                                 <outputColumn
                                   refId="Package\STAGING LOAD\TBST_FLAT_EQUIP_PARAMETER\DATA LOADING\M8180031 Par\Sort Join Field 1.Outputs[Sort Output].Columns[Valore]"
                                   dataType="wstr"
-                                  length="100"
+                                  length="1000"
                                   lineageId="Package\STAGING LOAD\TBST_FLAT_EQUIP_PARAMETER\DATA LOADING\M8180031 Par\Sort Join Field 1.Outputs[Sort Output].Columns[Valore]"
                                   name="Valore">
                                   <properties>
@@ -33421,13 +33433,13 @@ FROM
                                 <inputColumn
                                   refId="Package\STAGING LOAD\TBST_FLAT_EQUIP_PARAMETER\DATA LOADING\N6180027 Par\Merge Join.Inputs[Merge Join Left Input].Columns[Parametro]"
                                   cachedDataType="wstr"
-                                  cachedLength="1000"
+                                  cachedLength="4000"
                                   cachedName="Parametro"
                                   lineageId="Package\STAGING LOAD\TBST_FLAT_EQUIP_PARAMETER\DATA LOADING\N6180027 Par\Sort Join Field 1.Outputs[Sort Output].Columns[Parametro]" />
                                 <inputColumn
                                   refId="Package\STAGING LOAD\TBST_FLAT_EQUIP_PARAMETER\DATA LOADING\N6180027 Par\Merge Join.Inputs[Merge Join Left Input].Columns[Valore]"
                                   cachedDataType="wstr"
-                                  cachedLength="100"
+                                  cachedLength="1000"
                                   cachedName="Valore"
                                   lineageId="Package\STAGING LOAD\TBST_FLAT_EQUIP_PARAMETER\DATA LOADING\N6180027 Par\Sort Join Field 1.Outputs[Sort Output].Columns[Valore]" />
                                 <inputColumn
@@ -33611,7 +33623,7 @@ FROM
                                 <outputColumn
                                   refId="Package\STAGING LOAD\TBST_FLAT_EQUIP_PARAMETER\DATA LOADING\N6180027 Par\Merge Join.Outputs[Merge Join Output].Columns[Parametro]"
                                   dataType="wstr"
-                                  length="1000"
+                                  length="4000"
                                   lineageId="Package\STAGING LOAD\TBST_FLAT_EQUIP_PARAMETER\DATA LOADING\N6180027 Par\Merge Join.Outputs[Merge Join Output].Columns[Parametro]"
                                   name="Parametro">
                                   <properties>
@@ -33625,7 +33637,7 @@ FROM
                                 <outputColumn
                                   refId="Package\STAGING LOAD\TBST_FLAT_EQUIP_PARAMETER\DATA LOADING\N6180027 Par\Merge Join.Outputs[Merge Join Output].Columns[Valore]"
                                   dataType="wstr"
-                                  length="100"
+                                  length="1000"
                                   lineageId="Package\STAGING LOAD\TBST_FLAT_EQUIP_PARAMETER\DATA LOADING\N6180027 Par\Merge Join.Outputs[Merge Join Output].Columns[Valore]"
                                   name="Valore">
                                   <properties>
@@ -33765,7 +33777,7 @@ FROM
                                   errorOrTruncationOperation="Conversion"
                                   errorRowDisposition="FailComponent"
                                   externalMetadataColumnId="Package\STAGING LOAD\TBST_FLAT_EQUIP_PARAMETER\DATA LOADING\N6180027 Par\N6180027.Outputs[Flat File Source Output].ExternalColumns[Parametro]"
-                                  length="1000"
+                                  length="4000"
                                   lineageId="Package\STAGING LOAD\TBST_FLAT_EQUIP_PARAMETER\DATA LOADING\N6180027 Par\N6180027.Outputs[Flat File Source Output].Columns[Parametro]"
                                   name="Parametro"
                                   truncationRowDisposition="FailComponent">
@@ -33786,7 +33798,7 @@ FROM
                                   errorOrTruncationOperation="Conversion"
                                   errorRowDisposition="FailComponent"
                                   externalMetadataColumnId="Package\STAGING LOAD\TBST_FLAT_EQUIP_PARAMETER\DATA LOADING\N6180027 Par\N6180027.Outputs[Flat File Source Output].ExternalColumns[Valore]"
-                                  length="100"
+                                  length="1000"
                                   lineageId="Package\STAGING LOAD\TBST_FLAT_EQUIP_PARAMETER\DATA LOADING\N6180027 Par\N6180027.Outputs[Flat File Source Output].Columns[Valore]"
                                   name="Valore"
                                   truncationRowDisposition="FailComponent">
@@ -33893,12 +33905,12 @@ FROM
                                 <externalMetadataColumn
                                   refId="Package\STAGING LOAD\TBST_FLAT_EQUIP_PARAMETER\DATA LOADING\N6180027 Par\N6180027.Outputs[Flat File Source Output].ExternalColumns[Parametro]"
                                   dataType="wstr"
-                                  length="1000"
+                                  length="4000"
                                   name="Parametro" />
                                 <externalMetadataColumn
                                   refId="Package\STAGING LOAD\TBST_FLAT_EQUIP_PARAMETER\DATA LOADING\N6180027 Par\N6180027.Outputs[Flat File Source Output].ExternalColumns[Valore]"
                                   dataType="wstr"
-                                  length="100"
+                                  length="1000"
                                   name="Valore" />
                                 <externalMetadataColumn
                                   refId="Package\STAGING LOAD\TBST_FLAT_EQUIP_PARAMETER\DATA LOADING\N6180027 Par\N6180027.Outputs[Flat File Source Output].ExternalColumns[Minimo]"
@@ -34079,7 +34091,7 @@ FROM
                                 <inputColumn
                                   refId="Package\STAGING LOAD\TBST_FLAT_EQUIP_PARAMETER\DATA LOADING\N6180027 Par\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Parametro]"
                                   cachedDataType="wstr"
-                                  cachedLength="1000"
+                                  cachedLength="4000"
                                   cachedName="Parametro"
                                   externalMetadataColumnId="Package\STAGING LOAD\TBST_FLAT_EQUIP_PARAMETER\DATA LOADING\N6180027 Par\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Parametro]"
                                   lineageId="Package\STAGING LOAD\TBST_FLAT_EQUIP_PARAMETER\DATA LOADING\N6180027 Par\Merge Join.Outputs[Merge Join Output].Columns[Parametro]" />
@@ -34093,7 +34105,7 @@ FROM
                                 <inputColumn
                                   refId="Package\STAGING LOAD\TBST_FLAT_EQUIP_PARAMETER\DATA LOADING\N6180027 Par\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Valore]"
                                   cachedDataType="wstr"
-                                  cachedLength="100"
+                                  cachedLength="1000"
                                   cachedName="Valore"
                                   externalMetadataColumnId="Package\STAGING LOAD\TBST_FLAT_EQUIP_PARAMETER\DATA LOADING\N6180027 Par\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Valore]"
                                   lineageId="Package\STAGING LOAD\TBST_FLAT_EQUIP_PARAMETER\DATA LOADING\N6180027 Par\Merge Join.Outputs[Merge Join Output].Columns[Valore]" />
@@ -34177,7 +34189,7 @@ FROM
                                 <externalMetadataColumn
                                   refId="Package\STAGING LOAD\TBST_FLAT_EQUIP_PARAMETER\DATA LOADING\N6180027 Par\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Parametro]"
                                   dataType="wstr"
-                                  length="1000"
+                                  length="4000"
                                   name="Parametro" />
                                 <externalMetadataColumn
                                   refId="Package\STAGING LOAD\TBST_FLAT_EQUIP_PARAMETER\DATA LOADING\N6180027 Par\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Minimo]"
@@ -34192,7 +34204,7 @@ FROM
                                 <externalMetadataColumn
                                   refId="Package\STAGING LOAD\TBST_FLAT_EQUIP_PARAMETER\DATA LOADING\N6180027 Par\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Valore]"
                                   dataType="wstr"
-                                  length="100"
+                                  length="1000"
                                   name="Valore" />
                                 <externalMetadataColumn
                                   refId="Package\STAGING LOAD\TBST_FLAT_EQUIP_PARAMETER\DATA LOADING\N6180027 Par\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Severita]"
@@ -34205,7 +34217,7 @@ FROM
                                 <externalMetadataColumn
                                   refId="Package\STAGING LOAD\TBST_FLAT_EQUIP_PARAMETER\DATA LOADING\N6180027 Par\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[TagRicerca]"
                                   dataType="wstr"
-                                  length="1000"
+                                  length="4000"
                                   name="TagRicerca" />
                                 <externalMetadataColumn
                                   refId="Package\STAGING LOAD\TBST_FLAT_EQUIP_PARAMETER\DATA LOADING\N6180027 Par\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[UnitaMisura]"
@@ -34411,7 +34423,7 @@ FROM
                                 <inputColumn
                                   refId="Package\STAGING LOAD\TBST_FLAT_EQUIP_PARAMETER\DATA LOADING\N6180027 Par\Sort Join Field 1.Inputs[Sort Input].Columns[Parametro]"
                                   cachedDataType="wstr"
-                                  cachedLength="1000"
+                                  cachedLength="4000"
                                   cachedName="Parametro"
                                   lineageId="Package\STAGING LOAD\TBST_FLAT_EQUIP_PARAMETER\DATA LOADING\N6180027 Par\N6180027.Outputs[Flat File Source Output].Columns[Parametro]">
                                   <properties>
@@ -34428,7 +34440,7 @@ FROM
                                 <inputColumn
                                   refId="Package\STAGING LOAD\TBST_FLAT_EQUIP_PARAMETER\DATA LOADING\N6180027 Par\Sort Join Field 1.Inputs[Sort Input].Columns[Valore]"
                                   cachedDataType="wstr"
-                                  cachedLength="100"
+                                  cachedLength="1000"
                                   cachedName="Valore"
                                   lineageId="Package\STAGING LOAD\TBST_FLAT_EQUIP_PARAMETER\DATA LOADING\N6180027 Par\N6180027.Outputs[Flat File Source Output].Columns[Valore]">
                                   <properties>
@@ -34640,7 +34652,7 @@ FROM
                                 <outputColumn
                                   refId="Package\STAGING LOAD\TBST_FLAT_EQUIP_PARAMETER\DATA LOADING\N6180027 Par\Sort Join Field 1.Outputs[Sort Output].Columns[Parametro]"
                                   dataType="wstr"
-                                  length="1000"
+                                  length="4000"
                                   lineageId="Package\STAGING LOAD\TBST_FLAT_EQUIP_PARAMETER\DATA LOADING\N6180027 Par\Sort Join Field 1.Outputs[Sort Output].Columns[Parametro]"
                                   name="Parametro">
                                   <properties>
@@ -34654,7 +34666,7 @@ FROM
                                 <outputColumn
                                   refId="Package\STAGING LOAD\TBST_FLAT_EQUIP_PARAMETER\DATA LOADING\N6180027 Par\Sort Join Field 1.Outputs[Sort Output].Columns[Valore]"
                                   dataType="wstr"
-                                  length="100"
+                                  length="1000"
                                   lineageId="Package\STAGING LOAD\TBST_FLAT_EQUIP_PARAMETER\DATA LOADING\N6180027 Par\Sort Join Field 1.Outputs[Sort Output].Columns[Valore]"
                                   name="Valore">
                                   <properties>
@@ -35364,10 +35376,10 @@ FROM
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="477,381"
-          Size="477,424"
+          PanelSize="477,406"
+          Size="477,449"
           Id="Package\STAGING LOAD\TBST_FLAT_EQUIP_AUDIT_TRAIL\DATA LOADING"
-          TopLeft="5.5,332.161562829989" />
+          TopLeft="5.5,331.161562829989" />
         <NodeLayout
           Size="260,42"
           Id="Package\STAGING LOAD\TBST_FLAT_EQUIP_AUDIT_TRAIL\Ins_Upd TBLOG_PACKAGE_TABLE"
@@ -35390,26 +35402,26 @@ FROM
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="54.3333333333333,80.661562829989"
+              EndConnector="54.3333333333333,79.661562829989"
               Start="0,0"
-              End="54.3333333333333,73.161562829989">
+              End="54.3333333333333,72.161562829989">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,44.2351426701689" />
+                    End="0,43.6371485205659" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,44.2351426701689"
-                    Point2="0,48.2351426701689"
-                    Point3="4,48.2351426701689" />
+                    Point1="0,43.6371485205659"
+                    Point2="0,47.6371485205659"
+                    Point3="4,47.6371485205659" />
                   <mssgle:LineSegment
-                    End="50.3333333333333,48.2351426701689" />
+                    End="50.3333333333333,47.6371485205659" />
                   <mssgle:CubicBezierSegment
-                    Point1="50.3333333333333,48.2351426701689"
-                    Point2="54.3333333333333,48.2351426701689"
-                    Point3="54.3333333333333,52.2351426701689" />
+                    Point1="50.3333333333333,47.6371485205659"
+                    Point2="54.3333333333333,47.6371485205659"
+                    Point3="54.3333333333333,51.6371485205659" />
                   <mssgle:LineSegment
-                    End="54.3333333333333,73.161562829989" />
+                    End="54.3333333333333,72.161562829989" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -35514,26 +35526,26 @@ FROM
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-33.3333333333334,80.661562829989"
+              EndConnector="-33.3333333333334,79.661562829989"
               Start="0,0"
-              End="-33.3333333333334,73.161562829989">
+              End="-33.3333333333334,72.161562829989">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,44.2351426701689" />
+                    End="0,43.6371485205659" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,44.2351426701689"
-                    Point2="0,48.2351426701689"
-                    Point3="-4,48.2351426701689" />
+                    Point1="0,43.6371485205659"
+                    Point2="0,47.6371485205659"
+                    Point3="-4,47.6371485205659" />
                   <mssgle:LineSegment
-                    End="-29.3333333333334,48.2351426701689" />
+                    End="-29.3333333333334,47.6371485205659" />
                   <mssgle:CubicBezierSegment
-                    Point1="-29.3333333333334,48.2351426701689"
-                    Point2="-33.3333333333334,48.2351426701689"
-                    Point3="-33.3333333333334,52.2351426701689" />
+                    Point1="-29.3333333333334,47.6371485205659"
+                    Point2="-33.3333333333334,47.6371485205659"
+                    Point3="-33.3333333333334,51.6371485205659" />
                   <mssgle:LineSegment
-                    End="-33.3333333333334,73.161562829989" />
+                    End="-33.3333333333334,72.161562829989" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -35544,30 +35556,30 @@ FROM
         </EdgeLayout>
         <EdgeLayout
           Id="Package\STAGING LOAD\TBST_FLAT_EQUIP_AUDIT_TRAIL.PrecedenceConstraints[Constraint 5]"
-          TopLeft="244,756.161562829989">
+          TopLeft="244,755.161562829989">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="19.5,103.338437170011"
+              EndConnector="19.5,104.338437170011"
               Start="0,0"
-              End="19.5,95.838437170011">
+              End="19.5,96.838437170011">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,47.6692185850055" />
+                    End="0,48.1692185850055" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,47.6692185850055"
-                    Point2="0,51.6692185850055"
-                    Point3="4,51.6692185850055" />
+                    Point1="0,48.1692185850055"
+                    Point2="0,52.1692185850055"
+                    Point3="4,52.1692185850055" />
                   <mssgle:LineSegment
-                    End="15.5,51.6692185850055" />
+                    End="15.5,52.1692185850055" />
                   <mssgle:CubicBezierSegment
-                    Point1="15.5,51.6692185850055"
-                    Point2="19.5,51.6692185850055"
-                    Point3="19.5,55.6692185850055" />
+                    Point1="15.5,52.1692185850055"
+                    Point2="19.5,52.1692185850055"
+                    Point3="19.5,56.1692185850055" />
                   <mssgle:LineSegment
-                    End="19.5,95.838437170011" />
+                    End="19.5,96.838437170011" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -36373,7 +36385,7 @@ FROM
     design-time-name="Package\STAGING LOAD\TBST_FLAT_EQUIP_AUDIT_TRAIL\DATA LOADING\BM398">
     <LayoutInfo>
       <GraphLayout
-        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="158,42"
           Id="Package\STAGING LOAD\TBST_FLAT_EQUIP_AUDIT_TRAIL\DATA LOADING\BM398\Sort Join Field 2"
@@ -36433,9 +36445,7 @@ FROM
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -36469,9 +36479,7 @@ FROM
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -36505,9 +36513,7 @@ FROM
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -36541,9 +36547,7 @@ FROM
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -36565,9 +36569,7 @@ FROM
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -36601,9 +36603,7 @@ FROM
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -37838,7 +37838,7 @@ FROM
     design-time-name="Package\STAGING LOAD\TBST_FLAT_EQUIP_AUDIT_TRAIL\DATA LOADING\BVSVCC55200518">
     <LayoutInfo>
       <GraphLayout
-        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="173,42"
           Id="Package\STAGING LOAD\TBST_FLAT_EQUIP_AUDIT_TRAIL\DATA LOADING\BVSVCC55200518\BVSVCC55200518"
@@ -37902,9 +37902,7 @@ FROM
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -37938,9 +37936,7 @@ FROM
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -37974,9 +37970,7 @@ FROM
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -38010,9 +38004,7 @@ FROM
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -38034,9 +38026,7 @@ FROM
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -38070,9 +38060,7 @@ FROM
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -38106,9 +38094,7 @@ FROM
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -39239,7 +39225,7 @@ FROM
         <NodeLayout
           Size="114,42"
           Id="Package\STAGING LOAD\TBST_FLAT_EQUIP_PARAMETER\DATA LOADING\BM398 Par\BM398"
-          TopLeft="195,112" />
+          TopLeft="201,67" />
         <NodeLayout
           Size="162,42"
           Id="Package\STAGING LOAD\TBST_FLAT_EQUIP_PARAMETER\DATA LOADING\BM398 Par\Load TBMN data"
@@ -39255,7 +39241,7 @@ FROM
         <NodeLayout
           Size="133,42"
           Id="Package\STAGING LOAD\TBST_FLAT_EQUIP_PARAMETER\DATA LOADING\BM398 Par\Merge Join"
-          TopLeft="326,398" />
+          TopLeft="327,398" />
         <NodeLayout
           Size="181,42"
           Id="Package\STAGING LOAD\TBST_FLAT_EQUIP_PARAMETER\DATA LOADING\BM398 Par\Add Technical Fields"
@@ -39266,9 +39252,9 @@ FROM
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-72.6666666666667,51"
+              EndConnector="-71.6666666666667,51"
               Start="0,0"
-              End="-72.6666666666667,43.5">
+              End="-71.6666666666667,43.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
@@ -39279,13 +39265,13 @@ FROM
                     Point2="0,30.2362555720654"
                     Point3="-4,30.2362555720654" />
                   <mssgle:LineSegment
-                    End="-68.6666666666667,30.2362555720654" />
+                    End="-67.6666666666667,30.2362555720654" />
                   <mssgle:CubicBezierSegment
-                    Point1="-68.6666666666667,30.2362555720654"
-                    Point2="-72.6666666666667,30.2362555720654"
-                    Point3="-72.6666666666667,34.2362555720654" />
+                    Point1="-67.6666666666667,30.2362555720654"
+                    Point2="-71.6666666666667,30.2362555720654"
+                    Point3="-71.6666666666667,34.2362555720654" />
                   <mssgle:LineSegment
-                    End="-72.6666666666667,43.5" />
+                    End="-71.6666666666667,43.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -39300,9 +39286,9 @@ FROM
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="172.666666666667,51"
+              EndConnector="173.666666666667,51"
               Start="0,0"
-              End="172.666666666667,43.5">
+              End="173.666666666667,43.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
@@ -39313,13 +39299,13 @@ FROM
                     Point2="0,30.2362555720654"
                     Point3="4,30.2362555720654" />
                   <mssgle:LineSegment
-                    End="168.666666666667,30.2362555720654" />
+                    End="169.666666666667,30.2362555720654" />
                   <mssgle:CubicBezierSegment
-                    Point1="168.666666666667,30.2362555720654"
-                    Point2="172.666666666667,30.2362555720654"
-                    Point3="172.666666666667,34.2362555720654" />
+                    Point1="169.666666666667,30.2362555720654"
+                    Point2="173.666666666667,30.2362555720654"
+                    Point3="173.666666666667,34.2362555720654" />
                   <mssgle:LineSegment
-                    End="172.666666666667,43.5" />
+                    End="173.666666666667,43.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -39364,13 +39350,13 @@ FROM
         </EdgeLayout>
         <EdgeLayout
           Id="Package\STAGING LOAD\TBST_FLAT_EQUIP_PARAMETER\DATA LOADING\BM398 Par.Paths[Merge Join Output]"
-          TopLeft="392.5,440">
+          TopLeft="393.5,440">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="13,70"
+              EndConnector="12,70"
               Start="0,0"
-              End="13,62.5">
+              End="12,62.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
@@ -39381,35 +39367,13 @@ FROM
                     Point2="0,35"
                     Point3="4,35" />
                   <mssgle:LineSegment
-                    End="9,35" />
+                    End="8,35" />
                   <mssgle:CubicBezierSegment
-                    Point1="9,35"
-                    Point2="13,35"
-                    Point3="13,39" />
+                    Point1="8,35"
+                    Point2="12,35"
+                    Point3="12,39" />
                   <mssgle:LineSegment
-                    End="13,62.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\STAGING LOAD\TBST_FLAT_EQUIP_PARAMETER\DATA LOADING\BM398 Par.Paths[Flat File Source Output]"
-          TopLeft="253.25,154">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,50"
-              Start="0,0"
-              End="0,42.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,42.5" />
+                    End="12,62.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -39444,6 +39408,28 @@ FROM
                     Point3="-55.5,33.5" />
                   <mssgle:LineSegment
                     End="-55.5,51.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\STAGING LOAD\TBST_FLAT_EQUIP_PARAMETER\DATA LOADING\BM398 Par.Paths[Flat File Source Output]"
+          TopLeft="256.25,109">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,95"
+              Start="0,0"
+              End="0,87.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,87.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>

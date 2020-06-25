@@ -21,16 +21,16 @@
           DTS:DataType="3"
           DTS:TextQualified="True"
           DTS:ObjectName="Contatore"
-          DTS:DTSID="{B2447B6C-EECB-4069-B81A-B82FC161D746}"
+          DTS:DTSID="{92311368-0B1B-4F67-B180-7929E94B2BE1}"
           DTS:CreationName="" />
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"
           DTS:ColumnDelimiter="_x007C_"
-          DTS:MaximumWidth="1000"
+          DTS:MaximumWidth="4000"
           DTS:DataType="130"
           DTS:TextQualified="True"
           DTS:ObjectName="Parametro"
-          DTS:DTSID="{4E429641-0BBB-4442-B89B-FF4AA1DBCD05}"
+          DTS:DTSID="{532699A8-D2E2-4723-A476-31EF459399AD}"
           DTS:CreationName="" />
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"
@@ -39,7 +39,7 @@
           DTS:DataType="130"
           DTS:TextQualified="True"
           DTS:ObjectName="Minimo"
-          DTS:DTSID="{C1314CBD-9A85-4817-BEC9-5D205901F3E0}"
+          DTS:DTSID="{4BA646E4-BA96-4FAE-9587-D6017BE6E088}"
           DTS:CreationName="" />
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"
@@ -48,16 +48,16 @@
           DTS:DataType="130"
           DTS:TextQualified="True"
           DTS:ObjectName="Massimo"
-          DTS:DTSID="{3E729063-2B06-4028-93B7-6CAA91C3203F}"
+          DTS:DTSID="{87B98967-8AE2-4452-8C19-83B22736EF51}"
           DTS:CreationName="" />
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"
           DTS:ColumnDelimiter="_x007C_"
-          DTS:MaximumWidth="100"
+          DTS:MaximumWidth="1000"
           DTS:DataType="130"
           DTS:TextQualified="True"
           DTS:ObjectName="Valore"
-          DTS:DTSID="{15BA0BC0-5386-4BAB-BCFE-2096A1DD8CE1}"
+          DTS:DTSID="{BFDCC72A-27A7-43AD-9802-D973B6FCAAEB}"
           DTS:CreationName="" />
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"
@@ -65,7 +65,7 @@
           DTS:DataType="3"
           DTS:TextQualified="True"
           DTS:ObjectName="Severità"
-          DTS:DTSID="{3B9D4FF3-8BB1-4413-9E72-AF9B0338C39D}"
+          DTS:DTSID="{A9939874-C360-45CA-A0F8-70A3FE612AB8}"
           DTS:CreationName="" />
       </DTS:FlatFileColumns>
     </DTS:ConnectionManager>
