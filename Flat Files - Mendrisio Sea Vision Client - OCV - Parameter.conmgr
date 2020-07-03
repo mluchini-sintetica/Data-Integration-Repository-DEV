@@ -21,7 +21,7 @@
           DTS:DataType="3"
           DTS:TextQualified="True"
           DTS:ObjectName="Contatore"
-          DTS:DTSID="{05D45C15-FB12-4D56-8ECC-CE9B33AC68B1}"
+          DTS:DTSID="{1DA3F371-99D7-46F8-9BEE-F717970A4F13}"
           DTS:CreationName="" />
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"
@@ -30,7 +30,16 @@
           DTS:DataType="130"
           DTS:TextQualified="True"
           DTS:ObjectName="Parametro"
-          DTS:DTSID="{8B10B084-F421-46F8-831E-A29251C1D686}"
+          DTS:DTSID="{DAC18D89-06E7-4B54-A30D-74F00E8BC4A1}"
+          DTS:CreationName="" />
+        <DTS:FlatFileColumn
+          DTS:ColumnType="Delimited"
+          DTS:ColumnDelimiter="_x007C_"
+          DTS:MaximumWidth="1000"
+          DTS:DataType="130"
+          DTS:TextQualified="True"
+          DTS:ObjectName="Valore"
+          DTS:DTSID="{0745D5BF-9253-479F-91EE-66109FAC4DB7}"
           DTS:CreationName="" />
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"
@@ -38,7 +47,16 @@
           DTS:DataType="3"
           DTS:TextQualified="True"
           DTS:ObjectName="Severità"
-          DTS:DTSID="{4F7A7FC9-7241-4DB5-9DB2-2FA05EB3D826}"
+          DTS:DTSID="{304AFF6D-E7A9-4A1B-95F4-9AC73403D7D7}"
+          DTS:CreationName="" />
+        <DTS:FlatFileColumn
+          DTS:ColumnType="Delimited"
+          DTS:ColumnDelimiter="_x007C_"
+          DTS:MaximumWidth="4000"
+          DTS:DataType="130"
+          DTS:TextQualified="True"
+          DTS:ObjectName="Tag"
+          DTS:DTSID="{D6C7A69E-FB04-46CE-9B7E-F7C34B8FAD68}"
           DTS:CreationName="" />
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"
@@ -46,8 +64,8 @@
           DTS:MaximumWidth="4000"
           DTS:DataType="130"
           DTS:TextQualified="True"
-          DTS:ObjectName="TagRicerca"
-          DTS:DTSID="{4A8DF1E9-0686-4298-9AB4-62A3646488EE}"
+          DTS:ObjectName="Parametro in chiaro"
+          DTS:DTSID="{1CA931C9-6283-4EAB-B205-EB8FBD74ADC5}"
           DTS:CreationName="" />
       </DTS:FlatFileColumns>
     </DTS:ConnectionManager>
