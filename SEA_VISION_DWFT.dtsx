@@ -7,12 +7,12 @@
   DTS:CreatorName="SINTE00\mluchini"
   DTS:DTSID="{E3832917-21CE-48CA-8320-1DB4CF94B807}"
   DTS:ExecutableType="Microsoft.Package"
-  DTS:LastModifiedProductVersion="15.0.2000.121"
+  DTS:LastModifiedProductVersion="15.0.2000.123"
   DTS:LocaleID="2064"
   DTS:ObjectName="SEA_VISION_DWFT"
   DTS:PackageType="5"
-  DTS:VersionBuild="440"
-  DTS:VersionGUID="{B58C8B95-DB6C-4F15-8706-1DB33B84CC02}">
+  DTS:VersionBuild="446"
+  DTS:VersionGUID="{E299DACF-1E85-49E3-B319-B1020D8A9007}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -27,7 +27,7 @@
           <DTS:Password
             DTS:Name="Password"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAZ1W4zPu86k256zsBij2bAQAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAADgjIDn4wXKW6P3bzkDTjHdAAAAAASAAACgAAAAEAAAAAyBHZ7EgJLmnR9kEIwEGCkgAAAATElxwGAM07bFHPjZ/Bk54WUiiQXVgGdmuX3EehHu4lUUAAAAyeNIfBwkZhySkCgYXMtaXkD8Ja0</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAZ1W4zPu86k256zsBij2bAQAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAABNgAGMpmV0X8jGItNBE0sQAAAAAASAAACgAAAAEAAAAG9jW3+PL9HQFSutm5eF0VsgAAAACZA8sSad/BCu9RpJ5iRkEUTP5LgvauGvFkwRbEXt1KcUAAAARZsjq5ZIsR6ROBp1Cm+z5Vgn5Ks</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -75,16 +75,6 @@
       DTS:ObjectName="in_MAIL_PROFILE">
       <DTS:VariableValue
         DTS:DataType="8">ITatSINTETICA.COM</DTS:VariableValue>
-    </DTS:Variable>
-    <DTS:Variable
-      DTS:CreationName=""
-      DTS:Description="The target users of the email. Use ; as separator"
-      DTS:DTSID="{FC44D9A2-6B74-48A1-8DFA-D9F9F7A81249}"
-      DTS:IncludeInDebugDump="2345"
-      DTS:Namespace="User"
-      DTS:ObjectName="in_MAIL_RECIPIENTS">
-      <DTS:VariableValue
-        DTS:DataType="8">mluchini@sintetica.com</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
@@ -208,7 +198,7 @@
       DTS:LocaleID="-1"
       DTS:ObjectName="Assign SITE_ID"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="1">
+      DTS:ThreadHint="0">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -236,7 +226,7 @@
       DTS:LocaleID="-1"
       DTS:ObjectName="Assign SOURCE_SYSTEM_ID"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="0">
+      DTS:ThreadHint="1">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -3187,7 +3177,7 @@ FROM
             SQLTask:ParameterSize="-1" />
           <SQLTask:ParameterBinding
             SQLTask:ParameterName="1"
-            SQLTask:DtsVariableName="User::in_MAIL_RECIPIENTS"
+            SQLTask:DtsVariableName="$Project::in_MAIL_RECIPIENTS_SUCCESS"
             SQLTask:ParameterDirection="Input"
             SQLTask:DataType="130"
             SQLTask:ParameterSize="-1" />
@@ -3448,7 +3438,7 @@ FROM
                 SQLTask:ParameterSize="-1" />
               <SQLTask:ParameterBinding
                 SQLTask:ParameterName="1"
-                SQLTask:DtsVariableName="User::in_MAIL_RECIPIENTS"
+                SQLTask:DtsVariableName="$Project::in_MAIL_RECIPIENTS_ERROR"
                 SQLTask:ParameterDirection="Input"
                 SQLTask:DataType="130"
                 SQLTask:ParameterSize="-1" />
@@ -3678,11 +3668,11 @@ FROM
           TopLeft="86.5,47" />
         <ContainerLayout
           HeaderHeight="43"
-          IsExpanded="True"
+          IsExpanded="False"
           PanelSize="827,907"
-          Size="827,950"
+          Size="827,43"
           Id="Package\DWH LOAD"
-          TopLeft="61.714285714286,360.428571428571" />
+          TopLeft="60.714285714286,360.428571428571" />
         <NodeLayout
           Size="163,42"
           Id="Package\Email SUCCESS"
@@ -3723,24 +3713,30 @@ FROM
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 1]"
-          TopLeft="888.714285714286,835.428571428571">
+          TopLeft="474.214285714286,403.428571428571">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-111.142857142859,-96.507936507937"
+              EndConnector="339.023809523808,293.492063492063"
               Start="0,0"
-              End="-111.142857142859,-89.007936507937">
+              End="339.023809523808,285.992063492063">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="-107.142857142859,0" />
+                    End="0,142.746031746032" />
                   <mssgle:CubicBezierSegment
-                    Point1="-107.142857142859,0"
-                    Point2="-111.142857142859,0"
-                    Point3="-111.142857142859,-4" />
+                    Point1="0,142.746031746032"
+                    Point2="0,146.746031746032"
+                    Point3="4,146.746031746032" />
                   <mssgle:LineSegment
-                    End="-111.142857142859,-89.007936507937" />
+                    End="335.023809523808,146.746031746032" />
+                  <mssgle:CubicBezierSegment
+                    Point1="335.023809523808,146.746031746032"
+                    Point2="339.023809523808,146.746031746032"
+                    Point3="339.023809523808,150.746031746032" />
+                  <mssgle:LineSegment
+                    End="339.023809523808,285.992063492063" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -3755,9 +3751,9 @@ FROM
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-345.634920634918,108.285714285714"
+              EndConnector="-346.634920634918,108.285714285714"
               Start="0,0"
-              End="-345.634920634918,100.785714285714">
+              End="-346.634920634918,100.785714285714">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
@@ -3768,13 +3764,13 @@ FROM
                     Point2="0,54.142857142857"
                     Point3="-4,54.142857142857" />
                   <mssgle:LineSegment
-                    End="-341.634920634918,54.142857142857" />
+                    End="-342.634920634918,54.142857142857" />
                   <mssgle:CubicBezierSegment
-                    Point1="-341.634920634918,54.142857142857"
-                    Point2="-345.634920634918,54.142857142857"
-                    Point3="-345.634920634918,58.142857142857" />
+                    Point1="-342.634920634918,54.142857142857"
+                    Point2="-346.634920634918,54.142857142857"
+                    Point3="-346.634920634918,58.142857142857" />
                   <mssgle:LineSegment
-                    End="-345.634920634918,100.785714285714" />
+                    End="-346.634920634918,100.785714285714" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -3972,7 +3968,9 @@ FROM
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -4042,7 +4040,9 @@ FROM
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout

@@ -7,12 +7,12 @@
   DTS:CreatorName="SINTE00\mluchini"
   DTS:DTSID="{868E5217-EA3A-44A7-A1F5-536D6C200D2B}"
   DTS:ExecutableType="Microsoft.Package"
-  DTS:LastModifiedProductVersion="15.0.2000.121"
+  DTS:LastModifiedProductVersion="15.0.2000.123"
   DTS:LocaleID="2064"
   DTS:ObjectName="SEA_VISION_STG"
   DTS:PackageType="5"
-  DTS:VersionBuild="271"
-  DTS:VersionGUID="{7356151E-4180-45E6-A911-DDB3B3E91475}">
+  DTS:VersionBuild="273"
+  DTS:VersionGUID="{03B71FBD-8C5B-48CA-B35E-C950F3A4AD50}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:PackageParameters>
@@ -58,16 +58,6 @@
       DTS:ObjectName="in_MAIL_PROFILE">
       <DTS:VariableValue
         DTS:DataType="8">ITatSINTETICA.COM</DTS:VariableValue>
-    </DTS:Variable>
-    <DTS:Variable
-      DTS:CreationName=""
-      DTS:Description="The target users of the email. Use ; as separator"
-      DTS:DTSID="{7A3CA0E7-19C4-44DA-B2D2-57A8A99BB78D}"
-      DTS:IncludeInDebugDump="2345"
-      DTS:Namespace="User"
-      DTS:ObjectName="in_MAIL_RECIPIENTS">
-      <DTS:VariableValue
-        DTS:DataType="8">mluchini@sintetica.com</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
@@ -252,7 +242,7 @@
             SQLTask:ParameterSize="-1" />
           <SQLTask:ParameterBinding
             SQLTask:ParameterName="1"
-            SQLTask:DtsVariableName="User::in_MAIL_RECIPIENTS"
+            SQLTask:DtsVariableName="$Project::in_MAIL_RECIPIENTS_SUCCESS"
             SQLTask:ParameterDirection="Input"
             SQLTask:DataType="130"
             SQLTask:ParameterSize="-1" />
@@ -2141,7 +2131,7 @@
               DTS:LocaleID="-1"
               DTS:ObjectName="MAX TABLE ID"
               DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-              DTS:ThreadHint="0">
+              DTS:ThreadHint="1">
               <DTS:Variables />
               <DTS:ObjectData>
                 <SQLTask:SqlTaskData
@@ -2954,7 +2944,7 @@
               DTS:LocaleID="-1"
               DTS:ObjectName="Truncate STG TRG TABLE"
               DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-              DTS:ThreadHint="1">
+              DTS:ThreadHint="0">
               <DTS:Variables />
               <DTS:PropertyExpression
                 DTS:Name="SqlStatementSource">"truncate table " + @[User::out_TABLE_TARGET_CD]</DTS:PropertyExpression>
@@ -3171,7 +3161,7 @@
                 SQLTask:ParameterSize="-1" />
               <SQLTask:ParameterBinding
                 SQLTask:ParameterName="1"
-                SQLTask:DtsVariableName="User::in_MAIL_RECIPIENTS"
+                SQLTask:DtsVariableName="$Project::in_MAIL_RECIPIENTS_ERROR"
                 SQLTask:ParameterDirection="Input"
                 SQLTask:DataType="130"
                 SQLTask:ParameterSize="-1" />
@@ -3205,6 +3195,14 @@
     <LayoutInfo>
       <GraphLayout
         Capacity="64" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="157,42"
+          Id="Package\Assign SITE_ID"
+          TopLeft="273.5,140.25" />
+        <NodeLayout
+          Size="230,42"
+          Id="Package\Assign SOURCE_SYSTEM_ID"
+          TopLeft="256.5,59.25" />
         <NodeLayout
           Size="163,42"
           Id="Package\Email SUCCESS"
@@ -3693,9 +3691,9 @@
           TopLeft="559.5,5.5" />
         <ContainerLayout
           HeaderHeight="43"
-          IsExpanded="True"
+          IsExpanded="False"
           PanelSize="1455,996"
-          Size="1455,1039"
+          Size="1455,43"
           Id="Package\STAGING LOAD"
           TopLeft="206,255" />
         <NodeLayout
@@ -3726,30 +3724,30 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 1]"
-          TopLeft="933.5,1294">
+          TopLeft="933.5,298">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-192.166666666667,-680.888888888889"
+              EndConnector="-192.166666666667,315.111111111111"
               Start="0,0"
-              End="-192.166666666667,-673.388888888889">
+              End="-192.166666666667,307.611111111111">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,-336.444444444445" />
+                    End="0,153.555555555555" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,-336.444444444445"
-                    Point2="0,-340.444444444445"
-                    Point3="-4,-340.444444444445" />
+                    Point1="0,153.555555555555"
+                    Point2="0,157.555555555555"
+                    Point3="-4,157.555555555555" />
                   <mssgle:LineSegment
-                    End="-188.166666666667,-340.444444444445" />
+                    End="-188.166666666667,157.555555555555" />
                   <mssgle:CubicBezierSegment
-                    Point1="-188.166666666667,-340.444444444445"
-                    Point2="-192.166666666667,-340.444444444445"
-                    Point3="-192.166666666667,-344.444444444445" />
+                    Point1="-188.166666666667,157.555555555555"
+                    Point2="-192.166666666667,157.555555555555"
+                    Point3="-192.166666666667,161.555555555555" />
                   <mssgle:LineSegment
-                    End="-192.166666666667,-673.388888888889" />
+                    End="-192.166666666667,307.611111111111" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -3792,48 +3790,6 @@
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <EdgeLayout
-          Id="Package.PrecedenceConstraints[Constraint 7]"
-          TopLeft="741.333333333333,655.111111111111">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-20.833333333333,65.888888888889"
-              Start="0,0"
-              End="-20.833333333333,58.388888888889">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,28.9444444444445" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,28.9444444444445"
-                    Point2="0,32.9444444444445"
-                    Point3="-4,32.9444444444445" />
-                  <mssgle:LineSegment
-                    End="-16.833333333333,32.9444444444445" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-16.833333333333,32.9444444444445"
-                    Point2="-20.833333333333,32.9444444444445"
-                    Point3="-20.833333333333,36.9444444444445" />
-                  <mssgle:LineSegment
-                    End="-20.833333333333,58.388888888889" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="230,42"
-          Id="Package\Assign SOURCE_SYSTEM_ID"
-          TopLeft="256.5,59.25" />
-        <NodeLayout
-          Size="157,42"
-          Id="Package\Assign SITE_ID"
-          TopLeft="273.5,140.25" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 3]"
           TopLeft="486.5,80.25">
@@ -3902,6 +3858,40 @@
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 7]"
+          TopLeft="741.333333333333,655.111111111111">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-20.833333333333,65.888888888889"
+              Start="0,0"
+              End="-20.833333333333,58.388888888889">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,28.9444444444445" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,28.9444444444445"
+                    Point2="0,32.9444444444445"
+                    Point3="-4,32.9444444444445" />
+                  <mssgle:LineSegment
+                    End="-16.833333333333,32.9444444444445" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-16.833333333333,32.9444444444445"
+                    Point2="-20.833333333333,32.9444444444445"
+                    Point3="-20.833333333333,36.9444444444445" />
+                  <mssgle:LineSegment
+                    End="-20.833333333333,58.388888888889" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </Package>
@@ -3913,7 +3903,7 @@
         <NodeLayout
           Size="149,42"
           Id="Package.EventHandlers[OnError]\Email ERROR"
-          TopLeft="65,63" />
+          TopLeft="65,64" />
       </GraphLayout>
     </LayoutInfo>
   </DtsEventHandler>
