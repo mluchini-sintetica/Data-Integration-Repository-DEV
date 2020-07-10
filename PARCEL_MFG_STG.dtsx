@@ -11,8 +11,8 @@
   DTS:LocaleID="2064"
   DTS:ObjectName="PARCEL_MFG_STG"
   DTS:PackageType="5"
-  DTS:VersionBuild="267"
-  DTS:VersionGUID="{EB938468-6C87-422F-B9C1-4A5333E4C8DC}">
+  DTS:VersionBuild="272"
+  DTS:VersionGUID="{D7F2B6A0-EF39-49B3-80C1-AF179BF6DD5F}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:PackageParameters>
@@ -48,16 +48,6 @@
       DTS:ObjectName="in_MAIL_OBJECT_SUCCESS">
       <DTS:VariableValue
         DTS:DataType="8">SSIS package: PARCEL_MFG_STG completed SUCCESSFULLY</DTS:VariableValue>
-    </DTS:Variable>
-    <DTS:Variable
-      DTS:CreationName=""
-      DTS:Description="The SQL server database mail profile name used to send email"
-      DTS:DTSID="{ECA68102-32B8-44F4-A76F-C53050F7D10C}"
-      DTS:IncludeInDebugDump="2345"
-      DTS:Namespace="User"
-      DTS:ObjectName="in_MAIL_PROFILE">
-      <DTS:VariableValue
-        DTS:DataType="8">ITatSINTETICA.COM</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
@@ -184,7 +174,7 @@
             SQLTask:DtsVariableName="User::out_SITE_ID" />
           <SQLTask:ParameterBinding
             SQLTask:ParameterName="0"
-            SQLTask:DtsVariableName="User::in_SITE_CD"
+            SQLTask:DtsVariableName="$Project::in_SITE_CD"
             SQLTask:ParameterDirection="Input"
             SQLTask:DataType="130"
             SQLTask:ParameterSize="-1" />
@@ -223,6 +213,7 @@
       DTS:refId="Package\Email SUCCESS"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Execute SQL Task"
+      DTS:Disabled="True"
       DTS:DTSID="{1AD995A0-5AC4-4890-B4FC-195AA4556DBC}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
@@ -236,7 +227,7 @@
           SQLTask:SqlStatementSource="EXEC msdb.dbo.sp_send_dbmail @profile_name = ?, @recipients = ?, @subject= ?" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
           <SQLTask:ParameterBinding
             SQLTask:ParameterName="0"
-            SQLTask:DtsVariableName="User::in_MAIL_PROFILE"
+            SQLTask:DtsVariableName="$Project::in_MAIL_PROFILE"
             SQLTask:ParameterDirection="Input"
             SQLTask:DataType="130"
             SQLTask:ParameterSize="-1" />
@@ -306,7 +297,7 @@
             SQLTask:ParameterSize="-1" />
           <SQLTask:ParameterBinding
             SQLTask:ParameterName="6"
-            SQLTask:DtsVariableName="User::in_USER_CD"
+            SQLTask:DtsVariableName="$Project::in_USER_CD"
             SQLTask:ParameterDirection="Input"
             SQLTask:DataType="130"
             SQLTask:ParameterSize="-1" />
@@ -478,7 +469,7 @@
                     SQLTask:ParameterSize="-1" />
                   <SQLTask:ParameterBinding
                     SQLTask:ParameterName="5"
-                    SQLTask:DtsVariableName="User::in_USER_CD"
+                    SQLTask:DtsVariableName="$Project::in_USER_CD"
                     SQLTask:ParameterDirection="Input"
                     SQLTask:DataType="130"
                     SQLTask:ParameterSize="-1" />
@@ -696,13 +687,13 @@
                                   containsID="true"
                                   dataType="System.String"
                                   description="Derived Column Expression"
-                                  name="Expression">@[User::in_USER_CD]</property>
+                                  name="Expression">@[$Project::in_USER_CD]</property>
                                 <property
                                   containsID="true"
                                   dataType="System.String"
                                   description="Derived Column Friendly Expression"
                                   expressionType="Notify"
-                                  name="FriendlyExpression">@[User::in_USER_CD]</property>
+                                  name="FriendlyExpression">@[$Project::in_USER_CD]</property>
                               </properties>
                             </outputColumn>
                             <outputColumn
@@ -2362,7 +2353,7 @@
                     SQLTask:ParameterSize="-1" />
                   <SQLTask:ParameterBinding
                     SQLTask:ParameterName="5"
-                    SQLTask:DtsVariableName="User::in_USER_CD"
+                    SQLTask:DtsVariableName="$Project::in_USER_CD"
                     SQLTask:ParameterDirection="Input"
                     SQLTask:DataType="130"
                     SQLTask:ParameterSize="-1" />
@@ -2438,7 +2429,7 @@
               DTS:LocaleID="-1"
               DTS:ObjectName="MAX TABLE ID"
               DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-              DTS:ThreadHint="3">
+              DTS:ThreadHint="2">
               <DTS:Variables />
               <DTS:ObjectData>
                 <SQLTask:SqlTaskData
@@ -2588,13 +2579,13 @@
                                   containsID="true"
                                   dataType="System.String"
                                   description="Derived Column Expression"
-                                  name="Expression">@[User::in_USER_CD]</property>
+                                  name="Expression">@[$Project::in_USER_CD]</property>
                                 <property
                                   containsID="true"
                                   dataType="System.String"
                                   description="Derived Column Friendly Expression"
                                   expressionType="Notify"
-                                  name="FriendlyExpression">@[User::in_USER_CD]</property>
+                                  name="FriendlyExpression">@[$Project::in_USER_CD]</property>
                               </properties>
                             </outputColumn>
                             <outputColumn
@@ -9591,7 +9582,7 @@
               DTS:LocaleID="-1"
               DTS:ObjectName="Truncate STG TRG TABLE"
               DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-              DTS:ThreadHint="2">
+              DTS:ThreadHint="3">
               <DTS:Variables />
               <DTS:PropertyExpression
                 DTS:Name="SqlStatementSource">"truncate table " + @[User::out_TABLE_TARGET_CD]</DTS:PropertyExpression>
@@ -9802,7 +9793,7 @@
               SQLTask:SqlStatementSource="EXEC msdb.dbo.sp_send_dbmail @profile_name = ?, @recipients = ?, @subject= ?, @body =  ?" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
               <SQLTask:ParameterBinding
                 SQLTask:ParameterName="0"
-                SQLTask:DtsVariableName="User::in_MAIL_PROFILE"
+                SQLTask:DtsVariableName="$Project::in_MAIL_PROFILE"
                 SQLTask:ParameterDirection="Input"
                 SQLTask:DataType="130"
                 SQLTask:ParameterSize="-1" />
@@ -10352,7 +10343,7 @@
           HeaderHeight="43"
           IsExpanded="False"
           PanelSize="1455,996"
-          Size="1455,43"
+          Size="184,43"
           Id="Package\STAGING LOAD"
           TopLeft="206,271" />
         <NodeLayout
@@ -10383,13 +10374,13 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 1]"
-          TopLeft="933.5,314">
+          TopLeft="298,314">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-192.166666666667,315.111111111111"
+              EndConnector="443.333333333333,315.111111111111"
               Start="0,0"
-              End="-192.166666666667,307.611111111111">
+              End="443.333333333333,307.611111111111">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
@@ -10398,15 +10389,15 @@
                   <mssgle:CubicBezierSegment
                     Point1="0,153.555555555555"
                     Point2="0,157.555555555555"
-                    Point3="-4,157.555555555555" />
+                    Point3="4,157.555555555555" />
                   <mssgle:LineSegment
-                    End="-188.166666666667,157.555555555555" />
+                    End="439.333333333333,157.555555555555" />
                   <mssgle:CubicBezierSegment
-                    Point1="-188.166666666667,157.555555555555"
-                    Point2="-192.166666666667,157.555555555555"
-                    Point3="-192.166666666667,161.555555555555" />
+                    Point1="439.333333333333,157.555555555555"
+                    Point2="443.333333333333,157.555555555555"
+                    Point3="443.333333333333,161.555555555555" />
                   <mssgle:LineSegment
-                    End="-192.166666666667,307.611111111111" />
+                    End="443.333333333333,307.611111111111" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -10421,9 +10412,9 @@
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="184.555555555556,86.666666666667"
+              EndConnector="-450.944444444444,86.666666666667"
               Start="0,0"
-              End="184.555555555556,79.166666666667">
+              End="-450.944444444444,79.166666666667">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
@@ -10432,15 +10423,15 @@
                   <mssgle:CubicBezierSegment
                     Point1="0,39.3333333333335"
                     Point2="0,43.3333333333335"
-                    Point3="4,43.3333333333335" />
+                    Point3="-4,43.3333333333335" />
                   <mssgle:LineSegment
-                    End="180.555555555556,43.3333333333335" />
+                    End="-446.944444444444,43.3333333333335" />
                   <mssgle:CubicBezierSegment
-                    Point1="180.555555555556,43.3333333333335"
-                    Point2="184.555555555556,43.3333333333335"
-                    Point3="184.555555555556,47.3333333333335" />
+                    Point1="-446.944444444444,43.3333333333335"
+                    Point2="-450.944444444444,43.3333333333335"
+                    Point3="-450.944444444444,47.3333333333335" />
                   <mssgle:LineSegment
-                    End="184.555555555556,79.166666666667" />
+                    End="-450.944444444444,79.166666666667" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -10722,7 +10713,7 @@
     design-time-name="Package\STAGING LOAD\TBST_PRC_ARTICOLO\TBST_PRC_ARTICOLO">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="161,42"
           Id="Package\STAGING LOAD\TBST_PRC_ARTICOLO\TBST_PRC_ARTICOLO\Data Conversion"
@@ -10758,9 +10749,7 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -10794,9 +10783,7 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -10830,9 +10817,7 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>

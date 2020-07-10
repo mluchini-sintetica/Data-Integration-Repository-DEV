@@ -11,8 +11,8 @@
   DTS:LocaleID="2064"
   DTS:ObjectName="PARCEL_MFG_DWAN"
   DTS:PackageType="5"
-  DTS:VersionBuild="405"
-  DTS:VersionGUID="{A50E4074-5819-4386-B219-E320E27ADB3E}">
+  DTS:VersionBuild="408"
+  DTS:VersionGUID="{C1D34212-FE1F-4C28-90EB-E6FA07C622EC}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -27,7 +27,7 @@
           <DTS:Password
             DTS:Name="Password"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAZ1W4zPu86k256zsBij2bAQAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAABDmcctcktcS1CBVQV52PNlAAAAAASAAACgAAAAEAAAAGHFkt/N9cKS4WUs3sQwTiEgAAAAOlhNjzE6heMKWufZ33KXwJZwUX/Desve+6cK8rdSbpAUAAAAtK0LgI8Q+kuoc6xmo0uyvtGeZE4</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAZ1W4zPu86k256zsBij2bAQAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAAAMIxB/V10TRpC0ggrhVBN7AAAAAASAAACgAAAAEAAAACJpbqyn+fXnf389uUt73YYgAAAAFyTVi6DAJoyQqQ30gLRwvWDpzD+Mb6FW+SJbo7UkNosUAAAANKg2sd2BhgnPZAkelbUb9lLhSNo</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -68,16 +68,6 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:Description="The SQL server database mail profile name used to send email"
-      DTS:DTSID="{FEE70408-7EF3-4D3F-9CF5-3AF7923F54D6}"
-      DTS:IncludeInDebugDump="2345"
-      DTS:Namespace="User"
-      DTS:ObjectName="in_MAIL_PROFILE">
-      <DTS:VariableValue
-        DTS:DataType="8">ITatSINTETICA.COM</DTS:VariableValue>
-    </DTS:Variable>
-    <DTS:Variable
-      DTS:CreationName=""
       DTS:Description="The package name"
       DTS:DTSID="{F25482D6-9FC7-42D6-800C-9A27B5EB4191}"
       DTS:EvaluateAsExpression="True"
@@ -97,16 +87,6 @@
       DTS:ObjectName="in_PACKAGE_SCOPE_DESC">
       <DTS:VariableValue
         DTS:DataType="8">This package loads table from DIR staging layer to DIR datawarehouse</DTS:VariableValue>
-    </DTS:Variable>
-    <DTS:Variable
-      DTS:CreationName=""
-      DTS:Description="Site Mendrisio code, refer to TBDWMN_SITE"
-      DTS:DTSID="{C7D71246-DF5A-41BF-B540-70E64ACD34E6}"
-      DTS:IncludeInDebugDump="2345"
-      DTS:Namespace="User"
-      DTS:ObjectName="in_SITE_CD">
-      <DTS:VariableValue
-        DTS:DataType="8">Mendrisio</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
@@ -137,16 +117,6 @@
       DTS:ObjectName="in_TARGET_SYSTEM_DESC">
       <DTS:VariableValue
         DTS:DataType="8">DIR DWH</DTS:VariableValue>
-    </DTS:Variable>
-    <DTS:Variable
-      DTS:CreationName=""
-      DTS:Description="User used by SSIS flows"
-      DTS:DTSID="{B7DA57F3-4BC4-4642-B992-64CCB1F217F2}"
-      DTS:IncludeInDebugDump="2345"
-      DTS:Namespace="User"
-      DTS:ObjectName="in_USER_CD">
-      <DTS:VariableValue
-        DTS:DataType="8">DIR_DWH_ETL</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
@@ -189,7 +159,7 @@
       DTS:LocaleID="-1"
       DTS:ObjectName="Assign SITE_ID"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="0">
+      DTS:ThreadHint="1">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -201,7 +171,7 @@
             SQLTask:DtsVariableName="User::out_SITE_ID" />
           <SQLTask:ParameterBinding
             SQLTask:ParameterName="0"
-            SQLTask:DtsVariableName="User::in_SITE_CD"
+            SQLTask:DtsVariableName="$Project::in_SITE_CD"
             SQLTask:ParameterDirection="Input"
             SQLTask:DataType="130"
             SQLTask:ParameterSize="-1" />
@@ -217,7 +187,7 @@
       DTS:LocaleID="-1"
       DTS:ObjectName="Assign SOURCE_SYSTEM_ID"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="1">
+      DTS:ThreadHint="0">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -341,7 +311,7 @@
                     SQLTask:ParameterSize="-1" />
                   <SQLTask:ParameterBinding
                     SQLTask:ParameterName="5"
-                    SQLTask:DtsVariableName="User::in_USER_CD"
+                    SQLTask:DtsVariableName="$Project::in_USER_CD"
                     SQLTask:ParameterDirection="Input"
                     SQLTask:DataType="130"
                     SQLTask:ParameterSize="-1" />
@@ -954,13 +924,13 @@
                                   containsID="true"
                                   dataType="System.String"
                                   description="Derived Column Expression"
-                                  name="Expression">@[User::in_USER_CD]</property>
+                                  name="Expression">@[$Project::in_USER_CD]</property>
                                 <property
                                   containsID="true"
                                   dataType="System.String"
                                   description="Derived Column Friendly Expression"
                                   expressionType="Notify"
-                                  name="FriendlyExpression">@[User::in_USER_CD]</property>
+                                  name="FriendlyExpression">@[$Project::in_USER_CD]</property>
                               </properties>
                             </outputColumn>
                             <outputColumn
@@ -2701,7 +2671,7 @@ from
                     SQLTask:ParameterSize="-1" />
                   <SQLTask:ParameterBinding
                     SQLTask:ParameterName="5"
-                    SQLTask:DtsVariableName="User::in_USER_CD"
+                    SQLTask:DtsVariableName="$Project::in_USER_CD"
                     SQLTask:ParameterDirection="Input"
                     SQLTask:DataType="130"
                     SQLTask:ParameterSize="-1" />
@@ -3407,13 +3377,13 @@ from
                                   containsID="true"
                                   dataType="System.String"
                                   description="Derived Column Expression"
-                                  name="Expression">@[User::in_USER_CD]</property>
+                                  name="Expression">@[$Project::in_USER_CD]</property>
                                 <property
                                   containsID="true"
                                   dataType="System.String"
                                   description="Derived Column Friendly Expression"
                                   expressionType="Notify"
-                                  name="FriendlyExpression">@[User::in_USER_CD]</property>
+                                  name="FriendlyExpression">@[$Project::in_USER_CD]</property>
                               </properties>
                             </outputColumn>
                             <outputColumn
@@ -5604,6 +5574,7 @@ FROM
       DTS:refId="Package\Email SUCCESS"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Execute SQL Task"
+      DTS:Disabled="True"
       DTS:DTSID="{A5FF9E00-FA83-47E8-A26F-01D427A1E2C3}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
@@ -5617,7 +5588,7 @@ FROM
           SQLTask:SqlStatementSource="EXEC msdb.dbo.sp_send_dbmail @profile_name = ?, @recipients = ?, @subject= ?" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
           <SQLTask:ParameterBinding
             SQLTask:ParameterName="0"
-            SQLTask:DtsVariableName="User::in_MAIL_PROFILE"
+            SQLTask:DtsVariableName="$Project::in_MAIL_PROFILE"
             SQLTask:ParameterDirection="Input"
             SQLTask:DataType="130"
             SQLTask:ParameterSize="-1" />
@@ -5687,7 +5658,7 @@ FROM
             SQLTask:ParameterSize="-1" />
           <SQLTask:ParameterBinding
             SQLTask:ParameterName="6"
-            SQLTask:DtsVariableName="User::in_USER_CD"
+            SQLTask:DtsVariableName="$Project::in_USER_CD"
             SQLTask:ParameterDirection="Input"
             SQLTask:DataType="130"
             SQLTask:ParameterSize="-1" />
@@ -5878,7 +5849,7 @@ FROM
               SQLTask:SqlStatementSource="EXEC msdb.dbo.sp_send_dbmail @profile_name = ?, @recipients = ?, @subject= ?, @body =  ?" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
               <SQLTask:ParameterBinding
                 SQLTask:ParameterName="0"
-                SQLTask:DtsVariableName="User::in_MAIL_PROFILE"
+                SQLTask:DtsVariableName="$Project::in_MAIL_PROFILE"
                 SQLTask:ParameterDirection="Input"
                 SQLTask:DataType="130"
                 SQLTask:ParameterSize="-1" />
@@ -6107,7 +6078,7 @@ FROM
           HeaderHeight="43"
           IsExpanded="False"
           PanelSize="504,614"
-          Size="504,43"
+          Size="202,43"
           Id="Package\DWH LOAD\TBDWAN_ARTICLE"
           TopLeft="28,5.5" />
         <NodeLayout
@@ -6153,7 +6124,9 @@ FROM
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -6175,7 +6148,9 @@ FROM
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -6197,7 +6172,9 @@ FROM
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -6231,7 +6208,9 @@ FROM
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -6253,57 +6232,73 @@ FROM
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <AnnotationLayout
           Text="To be modified according table"
           ParentId="Package\DWH LOAD\TBDWAN_BATCH"
           FontInfo="{assembly:Null}"
-          Size="194,40"
+          Size="194,NaN"
           Id="81e5fc78-a1c5-460e-b948-96504377c887"
           TopLeft="35.5,310.5" />
         <AnnotationLayout
           Text="To be specify target table name"
           ParentId="Package\DWH LOAD\TBDWAN_BATCH"
           FontInfo="{assembly:Null}"
-          Size="195,40"
+          Size="195,NaN"
           Id="29d5484a-db39-47b9-9066-dea8063511cc"
           TopLeft="29.5,10.5" />
         <AnnotationLayout
           Text="To be modified according table"
           ParentId="Package\DWH LOAD\TBDWAN_BATCH"
           FontInfo="{assembly:Null}"
-          Size="194,40"
+          Size="194,NaN"
           Id="d58cef95-99df-4f7f-8bfd-2616e9041ef2"
           TopLeft="41.5,402.5" />
         <ContainerLayout
           HeaderHeight="43"
-          IsExpanded="True"
+          IsExpanded="False"
           PanelSize="504,712"
-          Size="504,755"
+          Size="504,43"
           Id="Package\DWH LOAD\TBDWAN_BATCH"
           TopLeft="26.5,95" />
         <EdgeLayout
           Id="Package\DWH LOAD.PrecedenceConstraints[Constraint]"
-          TopLeft="279.25,48.5">
+          TopLeft="129,48.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,46.5"
+              EndConnector="149.5,46.5"
               Start="0,0"
-              End="0,39">
+              End="149.5,39">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,39" />
+                    End="0,19.25" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,19.25"
+                    Point2="0,23.25"
+                    Point3="4,23.25" />
+                  <mssgle:LineSegment
+                    End="145.5,23.25" />
+                  <mssgle:CubicBezierSegment
+                    Point1="145.5,23.25"
+                    Point2="149.5,23.25"
+                    Point3="149.5,27.25" />
+                  <mssgle:LineSegment
+                    End="149.5,39" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <ContainerLayout
@@ -6644,9 +6639,7 @@ FROM
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -6704,9 +6697,7 @@ FROM
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
