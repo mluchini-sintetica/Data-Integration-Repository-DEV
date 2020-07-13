@@ -6,13 +6,14 @@
   DTS:CreatorComputerName="SRV-DIR-DEV"
   DTS:CreatorName="SINTE00\mluchini"
   DTS:DTSID="{88207945-4F4B-4675-9D67-C7E6CAB4440C}"
+  DTS:EnableConfig="True"
   DTS:ExecutableType="Microsoft.Package"
   DTS:LastModifiedProductVersion="15.0.2000.123"
   DTS:LocaleID="2064"
   DTS:ObjectName="AUDIT_TRAIL_DW"
   DTS:PackageType="5"
-  DTS:VersionBuild="593"
-  DTS:VersionGUID="{D95363D9-9575-4A58-BBCE-0BC5A7487B13}">
+  DTS:VersionBuild="596"
+  DTS:VersionGUID="{B12C5581-5880-420E-94CD-2CE65A21B9D6}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -27,11 +28,19 @@
           <DTS:Password
             DTS:Name="Password"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAZ1W4zPu86k256zsBij2bAQAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAAAWQdqMYq352aPxSmCAxg12AAAAAASAAACgAAAAEAAAAER1sO5YLb+AF6Zl5barU4kgAAAAb0XFAgLSb7OY5buZ0SSdTtk9+ZhhFiSR0wvNqdUyD6gUAAAAaLnxbK+OIgIdtnTQN8ryiPB3vbY</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAZ1W4zPu86k256zsBij2bAQAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAADgcKLuHfYnCdm+5ZsqehV6AAAAAASAAACgAAAAEAAAADuzzWy0BkwDMLYMUXq5oHQgAAAAJZZNB387QQ1r8m8QMiwqEZQZisVeJdoD46pFaPpvPusUAAAAP5YoK19Yoq6LMZNKXY8XWxNPizg</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
   </DTS:ConnectionManagers>
+  <DTS:Configurations>
+    <DTS:Configuration
+      DTS:ConfigurationString="out_MAX_ID"
+      DTS:ConfigurationVariable="\Package.Variables[User::in_PARENT_ID].Properties[Value]"
+      DTS:CreationName=""
+      DTS:DTSID="{A3944237-E232-4108-B12D-52595F696C68}"
+      DTS:ObjectName="in_PARENT_ID" />
+  </DTS:Configurations>
   <DTS:PackageParameters>
     <DTS:PackageParameter
       DTS:CreationName=""
@@ -87,6 +96,16 @@
       DTS:ObjectName="in_PACKAGE_SCOPE_DESC">
       <DTS:VariableValue
         DTS:DataType="8">This package loads equipments audit trail data from Staging to DIR datawarehouse tables</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:Description="If the package is called by the parent package, it represents the run ID of the parente"
+      DTS:DTSID="{54FA6C92-2959-469F-90D0-D3BFD33B75EE}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="in_PARENT_ID">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
@@ -3944,62 +3963,68 @@ FROM
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
           SQLTask:Connection="{62102490-454D-4B7E-9A09-120A46D18B10}"
-          SQLTask:SqlStatementSource="--insert new row&#xA;INSERT INTO TBLOG_PACKAGE VALUES (?,?,?,?,?,?,getdate(),null,?,1,0);&#xA;&#xA;--retrieve last ID just inserted&#xA;SELECT max(id) as Max_ID&#xA;FROM TBLOG_PACKAGE&#xA;WHERE package_name_cd=?&#xA;and source_system_id= ?;"
+          SQLTask:SqlStatementSource="--insert new row&#xA;INSERT INTO TBLOG_PACKAGE VALUES (?,?,?,?,?,?,?,getdate(),null,?,1,0);&#xA;&#xA;--retrieve last ID just inserted&#xA;SELECT max(id) as Max_ID&#xA;FROM TBLOG_PACKAGE&#xA;WHERE package_name_cd=?&#xA;and source_system_id= ?;"
           SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
           <SQLTask:ResultBinding
             SQLTask:ResultName="MAX_ID"
             SQLTask:DtsVariableName="User::out_MAX_ID" />
           <SQLTask:ParameterBinding
-            SQLTask:ParameterName="0"
+            SQLTask:ParameterName="1"
             SQLTask:DtsVariableName="User::out_SITE_ID"
             SQLTask:ParameterDirection="Input"
             SQLTask:DataType="131"
             SQLTask:ParameterSize="-1" />
           <SQLTask:ParameterBinding
-            SQLTask:ParameterName="2"
-            SQLTask:DtsVariableName="System::PackageName"
-            SQLTask:ParameterDirection="Input"
-            SQLTask:DataType="130"
-            SQLTask:ParameterSize="-1" />
-          <SQLTask:ParameterBinding
             SQLTask:ParameterName="3"
-            SQLTask:DtsVariableName="User::in_PACKAGE_SCOPE_DESC"
+            SQLTask:DtsVariableName="System::PackageName"
             SQLTask:ParameterDirection="Input"
             SQLTask:DataType="130"
             SQLTask:ParameterSize="-1" />
           <SQLTask:ParameterBinding
             SQLTask:ParameterName="4"
-            SQLTask:DtsVariableName="User::in_SOURCE_SYSTEM_DESC"
+            SQLTask:DtsVariableName="User::in_PACKAGE_SCOPE_DESC"
             SQLTask:ParameterDirection="Input"
             SQLTask:DataType="130"
             SQLTask:ParameterSize="-1" />
           <SQLTask:ParameterBinding
             SQLTask:ParameterName="5"
-            SQLTask:DtsVariableName="User::in_TARGET_SYSTEM_DESC"
+            SQLTask:DtsVariableName="User::in_SOURCE_SYSTEM_DESC"
             SQLTask:ParameterDirection="Input"
             SQLTask:DataType="130"
             SQLTask:ParameterSize="-1" />
           <SQLTask:ParameterBinding
             SQLTask:ParameterName="6"
+            SQLTask:DtsVariableName="User::in_TARGET_SYSTEM_DESC"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="130"
+            SQLTask:ParameterSize="-1" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="7"
             SQLTask:DtsVariableName="$Project::in_USER_CD"
             SQLTask:ParameterDirection="Input"
             SQLTask:DataType="130"
             SQLTask:ParameterSize="-1" />
           <SQLTask:ParameterBinding
-            SQLTask:ParameterName="1"
+            SQLTask:ParameterName="2"
             SQLTask:DtsVariableName="User::out_SOURCE_SYSTEM_ID"
             SQLTask:ParameterDirection="Input"
             SQLTask:DataType="131"
             SQLTask:ParameterSize="-1" />
           <SQLTask:ParameterBinding
-            SQLTask:ParameterName="7"
+            SQLTask:ParameterName="8"
             SQLTask:DtsVariableName="System::PackageName"
             SQLTask:ParameterDirection="Input"
             SQLTask:DataType="130"
             SQLTask:ParameterSize="-1" />
           <SQLTask:ParameterBinding
-            SQLTask:ParameterName="8"
+            SQLTask:ParameterName="9"
             SQLTask:DtsVariableName="User::out_SOURCE_SYSTEM_ID"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="131"
+            SQLTask:ParameterSize="-1" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="0"
+            SQLTask:DtsVariableName="User::in_PARENT_ID"
             SQLTask:ParameterDirection="Input"
             SQLTask:DataType="131"
             SQLTask:ParameterSize="-1" />
@@ -4475,9 +4500,7 @@ FROM
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -4499,9 +4522,7 @@ FROM
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -4535,9 +4556,7 @@ FROM
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -4559,23 +4578,21 @@ FROM
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <AnnotationLayout
           Text="To be modified according table"
           ParentId="Package\DWH AN LOAD\TBDWMN_EQUIP_PARAMETER"
           FontInfo="{assembly:Null}"
-          Size="194,NaN"
+          Size="194,40"
           Id="0003983d-482f-40b0-b55f-323370e610c7"
           TopLeft="35.5,310.5" />
         <AnnotationLayout
           Text="To be specify target table name"
           ParentId="Package\DWH AN LOAD\TBDWMN_EQUIP_PARAMETER"
           FontInfo="{assembly:Null}"
-          Size="195,NaN"
+          Size="195,40"
           Id="6268d8c3-b274-424e-905a-187d99c9f82c"
           TopLeft="29.5,10.5" />
         <ContainerLayout
@@ -4616,16 +4633,14 @@ FROM
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <ContainerLayout
           HeaderHeight="45"
           IsExpanded="False"
           PanelSize="1136,990"
-          Size="1136,45"
+          Size="179,45"
           Id="Package\DWH AN LOAD"
           TopLeft="578.888888888889,378" />
         <NodeLayout
@@ -4906,9 +4921,9 @@ FROM
           TopLeft="86.5000000000001,46" />
         <ContainerLayout
           HeaderHeight="43"
-          IsExpanded="False"
+          IsExpanded="True"
           PanelSize="827,991"
-          Size="827,43"
+          Size="827,1034"
           Id="Package\DWH FT LOAD"
           TopLeft="117.269841269842,472.761904761904" />
         <NodeLayout
@@ -4951,30 +4966,24 @@ FROM
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 1]"
-          TopLeft="530.769841269842,515.761904761904">
+          TopLeft="944.269841269842,989.761904761904">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="411.357142857141,181.15873015873"
+              EndConnector="-37.8095238095257,-250.84126984127"
               Start="0,0"
-              End="411.357142857141,173.65873015873">
+              End="-37.8095238095257,-243.34126984127">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,86.579365079365" />
+                    End="-33.8095238095257,0" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,86.579365079365"
-                    Point2="0,90.579365079365"
-                    Point3="4,90.579365079365" />
+                    Point1="-33.8095238095257,0"
+                    Point2="-37.8095238095257,0"
+                    Point3="-37.8095238095257,-4" />
                   <mssgle:LineSegment
-                    End="407.357142857141,90.579365079365" />
-                  <mssgle:CubicBezierSegment
-                    Point1="407.357142857141,90.579365079365"
-                    Point2="411.357142857141,90.579365079365"
-                    Point3="411.357142857141,94.579365079365" />
-                  <mssgle:LineSegment
-                    End="411.357142857141,173.65873015873" />
+                    End="-37.8095238095257,-243.34126984127" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -4985,13 +4994,13 @@ FROM
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 2]"
-          TopLeft="1146.88888888889,423">
+          TopLeft="668.388888888889,423">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-616.119047619047,49.761904761904"
+              EndConnector="-137.619047619047,49.761904761904"
               Start="0,0"
-              End="-616.119047619047,42.261904761904">
+              End="-137.619047619047,42.261904761904">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
@@ -5002,13 +5011,13 @@ FROM
                     Point2="0,24.880952380952"
                     Point3="-4,24.880952380952" />
                   <mssgle:LineSegment
-                    End="-612.119047619047,24.880952380952" />
+                    End="-133.619047619047,24.880952380952" />
                   <mssgle:CubicBezierSegment
-                    Point1="-612.119047619047,24.880952380952"
-                    Point2="-616.119047619047,24.880952380952"
-                    Point3="-616.119047619047,28.880952380952" />
+                    Point1="-133.619047619047,24.880952380952"
+                    Point2="-137.619047619047,24.880952380952"
+                    Point3="-137.619047619047,28.880952380952" />
                   <mssgle:LineSegment
-                    End="-616.119047619047,42.261904761904" />
+                    End="-137.619047619047,42.261904761904" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -5079,9 +5088,9 @@ FROM
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="197.150793650796,125.857142857143"
+              EndConnector="-281.349206349204,125.857142857143"
               Start="0,0"
-              End="197.150793650796,118.357142857143">
+              End="-281.349206349204,118.357142857143">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
@@ -5090,15 +5099,15 @@ FROM
                   <mssgle:CubicBezierSegment
                     Point1="0,58.9285714285715"
                     Point2="0,62.9285714285715"
-                    Point3="4,62.9285714285715" />
+                    Point3="-4,62.9285714285715" />
                   <mssgle:LineSegment
-                    End="193.150793650796,62.9285714285715" />
+                    End="-277.349206349204,62.9285714285715" />
                   <mssgle:CubicBezierSegment
-                    Point1="193.150793650796,62.9285714285715"
-                    Point2="197.150793650796,62.9285714285715"
-                    Point3="197.150793650796,66.9285714285715" />
+                    Point1="-277.349206349204,62.9285714285715"
+                    Point2="-281.349206349204,62.9285714285715"
+                    Point3="-281.349206349204,66.9285714285715" />
                   <mssgle:LineSegment
-                    End="197.150793650796,118.357142857143" />
+                    End="-281.349206349204,118.357142857143" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -5264,7 +5273,9 @@ FROM
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -5334,7 +5345,9 @@ FROM
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
