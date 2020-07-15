@@ -8,7 +8,10 @@
       DTS:ConnectionString="Data Source=192.168.200.19;User ID=PARCEL_DIR_R;Initial Catalog=Parcel2008_SINT;Provider=SQLNCLI11.1;Persist Security Info=True;Auto Translate=False;">
       <DTS:Password
         DTS:Name="Password"
-        Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAZ1W4zPu86k256zsBij2bAQAAAAACAAAAAAADZgAAwAAAABAAAAC9s9OPimJ3vLBFdSP15wmmAAAAAASAAACgAAAAEAAAADTH/SyNG+P28VrxcS3sUSB4AAAAyWACIgiZC9PghGLivJuXeypU4kwVDth4I8XgdfvMYSys6s41N8ZyO4MjaULi0Ul45ryeIPMYbFeBndJaE1kcSdi9nhFd2F3lS0PibpQqQCWRTrXvud6OI34s/o9BMqv+wB+HjqDVoFxWfJGElPuUFlBI5y/JwLUCFAAAAOwG5bNEsFhrkVm6UY2+RlhNkCne</DTS:Password>
+        Sensitive="1"
+        p4:Salt="hEBMSzkr2ds="
+        p4:IV="12jdJLItyKUHNmyzuofLew=="
+        p4:Algorithm="http://www.w3.org/2001/04/xmlenc#aes256-cbc" xmlns:p4="www.microsoft.com/SqlServer/SSIS">d1niY6YcxuBDVrfCj/MWNZyDoPhXPUDBQ51Bed8vROMsqmNlORO2y3dYjbisZ5atTT7WIH64xS/8LEfP9Td/94BS1UfjEVNV+mRWdnlnhEr5C9PNTLez0NQ67VDeyoCCghq/XsqURtNkvGlmjFyTLf+NaS76dX70/DM/WdYa5qc=</DTS:Password>
     </DTS:ConnectionManager>
   </DTS:ObjectData>
 </DTS:ConnectionManager>

@@ -8,7 +8,10 @@
       DTS:ConnectionString="Data Source=192.168.162.15;User ID=SEAVISION_DIR_R;Initial Catalog=SeaVisionPROD_ME;Provider=SQLNCLI11.1;Persist Security Info=True;Auto Translate=False;">
       <DTS:Password
         DTS:Name="Password"
-        Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAZ1W4zPu86k256zsBij2bAQAAAAACAAAAAAADZgAAwAAAABAAAABGd2eyqq1LhCBCWzKXz8k7AAAAAASAAACgAAAAEAAAABXywRDjl+XQwQUzIPs5qIKAAAAAErzx/3zzc7q9dyDJd+jgoC+eKl7USXqD+UCUafKAaheXQH5EpEMAluvB8DFU4f6BwRydu6w7XQ1pO4HIehQXy9NXoQA/AVuDl69o1GZVQLaUeMpfJHY10LVhMW5C5xXwqIEI/bHgC58tiZ9mn4y7LeqLyjlIC8xnbvZc+sjmpBAUAAAANeSuLDcl3lRDR0Zueq0k9/olYg8=</DTS:Password>
+        Sensitive="1"
+        p4:Salt="hOHvVp6nMx8="
+        p4:IV="KQsTI5F1yB8sLJ7hyd50DQ=="
+        p4:Algorithm="http://www.w3.org/2001/04/xmlenc#aes256-cbc" xmlns:p4="www.microsoft.com/SqlServer/SSIS">jT41FftupAGSXSyHoSurHY0ceZuHThbiFfw+ftb1Cp/Bz+ma13O+wkmsAYJYZKLCaN61JMOwn4eaBZMaNT79xrrOmjFGIDcKSeqBDIkc21agkoWX0sUdVZAHz8m/q/dhSdZ5x9eidf+2lSQCy4TsrlBo1/MNVDX2RfHN1Z34Wlo=</DTS:Password>
     </DTS:ConnectionManager>
   </DTS:ObjectData>
 </DTS:ConnectionManager>

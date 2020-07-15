@@ -12,8 +12,9 @@
   DTS:LocaleID="2064"
   DTS:ObjectName="AUDIT_TRAIL_DW"
   DTS:PackageType="5"
-  DTS:VersionBuild="596"
-  DTS:VersionGUID="{B12C5581-5880-420E-94CD-2CE65A21B9D6}">
+  DTS:ProtectionLevel="2"
+  DTS:VersionBuild="597"
+  DTS:VersionGUID="{F18E19CE-FD0B-4B7F-B072-68F6A6685C70}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -25,10 +26,16 @@
       <DTS:ObjectData>
         <DTS:ConnectionManager
           DTS:ConnectionString="Data Source=192.168.200.19;User ID=PARCEL_DIR_R;Initial Catalog=Parcel2008_SINT;Provider=SQLNCLI11.1;Persist Security Info=True;Auto Translate=False;">
-          <DTS:Password
-            DTS:Name="Password"
-            Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAZ1W4zPu86k256zsBij2bAQAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAADgcKLuHfYnCdm+5ZsqehV6AAAAAASAAACgAAAAEAAAADuzzWy0BkwDMLYMUXq5oHQgAAAAJZZNB387QQ1r8m8QMiwqEZQZisVeJdoD46pFaPpvPusUAAAAP5YoK19Yoq6LMZNKXY8XWxNPizg</DTS:Password>
+          <EncryptedData
+            Type="http://www.w3.org/2001/04/xmlenc#Element"
+            Salt="XrdbMmkcLjo="
+            IV="67zY18Ez5GQb/RRPDAAYkQ==" xmlns="http://www.w3.org/2001/04/xmlenc#">
+            <EncryptionMethod
+              Algorithm="http://www.w3.org/2001/04/xmlenc#aes256-cbc" />
+            <CipherData>
+              <CipherValue>67zY18Ez5GQb/RRPDAAYkW7dKUOg+fzaUo0aHSHvHo3hFGKlFY26eg6JWlzwPxt4XYnCbCbm77j8m3g5H7k7A6heOr92Oi0o9B7jNskEg8B0vz1z64KbYLl+M4bXoiLZf6Qyn7sa3Wra14EKlzgSf8MFDLoV9OTCvEbfZ4gN+bFt8IPlUANMz+n9wuSelyVb</CipherValue>
+            </CipherData>
+          </EncryptedData>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -178,7 +185,7 @@
       DTS:LocaleID="-1"
       DTS:ObjectName="Assign SITE_ID"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="0">
+      DTS:ThreadHint="1">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -206,7 +213,7 @@
       DTS:LocaleID="-1"
       DTS:ObjectName="Assign SOURCE_SYSTEM_ID"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="1">
+      DTS:ThreadHint="0">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -4500,7 +4507,9 @@ FROM
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -4522,7 +4531,9 @@ FROM
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -4556,7 +4567,9 @@ FROM
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -4578,21 +4591,23 @@ FROM
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <AnnotationLayout
           Text="To be modified according table"
           ParentId="Package\DWH AN LOAD\TBDWMN_EQUIP_PARAMETER"
           FontInfo="{assembly:Null}"
-          Size="194,40"
+          Size="194,NaN"
           Id="0003983d-482f-40b0-b55f-323370e610c7"
           TopLeft="35.5,310.5" />
         <AnnotationLayout
           Text="To be specify target table name"
           ParentId="Package\DWH AN LOAD\TBDWMN_EQUIP_PARAMETER"
           FontInfo="{assembly:Null}"
-          Size="195,40"
+          Size="195,NaN"
           Id="6268d8c3-b274-424e-905a-187d99c9f82c"
           TopLeft="29.5,10.5" />
         <ContainerLayout
@@ -4633,7 +4648,9 @@ FROM
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <ContainerLayout

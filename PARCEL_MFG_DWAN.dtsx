@@ -12,8 +12,9 @@
   DTS:LocaleID="2064"
   DTS:ObjectName="PARCEL_MFG_DWAN"
   DTS:PackageType="5"
-  DTS:VersionBuild="412"
-  DTS:VersionGUID="{BF4384FA-BEFE-4A2C-B110-828174BE7999}">
+  DTS:ProtectionLevel="2"
+  DTS:VersionBuild="413"
+  DTS:VersionGUID="{B019487C-0449-4C6A-A50C-8FE7840BF1A4}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -25,10 +26,16 @@
       <DTS:ObjectData>
         <DTS:ConnectionManager
           DTS:ConnectionString="Data Source=192.168.200.19;User ID=PARCEL_DIR_R;Initial Catalog=Parcel2008_SINT;Provider=SQLNCLI11.1;Persist Security Info=True;Auto Translate=False;">
-          <DTS:Password
-            DTS:Name="Password"
-            Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAZ1W4zPu86k256zsBij2bAQAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAACeh5jKYefI2vml2vXCRxeKAAAAAASAAACgAAAAEAAAAMxMHR0iMOOKqFfPRNeSwqkgAAAAvdFqxqBoO8+q/xGL/XHGuS52loMzCBKRgX2ZDE6rn3IUAAAA2OaMKQ26/9jUbxSgQcH9osiRmo8</DTS:Password>
+          <EncryptedData
+            Type="http://www.w3.org/2001/04/xmlenc#Element"
+            Salt="569XZ1bmm7k="
+            IV="o/mphwFikcTiIX0ITmzBIg==" xmlns="http://www.w3.org/2001/04/xmlenc#">
+            <EncryptionMethod
+              Algorithm="http://www.w3.org/2001/04/xmlenc#aes256-cbc" />
+            <CipherData>
+              <CipherValue>o/mphwFikcTiIX0ITmzBIup0BuKahZv8kM8hHU4wIC8szs4bKcryOCHyykJtzdgXeIkAcvY4+SDmC1yYM6Ms9cddOePhwGKlHO60udMyXU/92MQF4NvSRBbDWd0e4vw9L2JoKW1Hu8dL0f30gJlg9Nrc5mQytV8/SCKS8rRSX3gY0RSHcc9rZZhR6XWaiFYX</CipherValue>
+            </CipherData>
+          </EncryptedData>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -177,7 +184,7 @@
       DTS:LocaleID="-1"
       DTS:ObjectName="Assign SITE_ID"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="0">
+      DTS:ThreadHint="1">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -205,7 +212,7 @@
       DTS:LocaleID="-1"
       DTS:ObjectName="Assign SOURCE_SYSTEM_ID"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="1">
+      DTS:ThreadHint="0">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
