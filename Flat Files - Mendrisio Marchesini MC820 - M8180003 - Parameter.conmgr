@@ -21,7 +21,7 @@
           DTS:DataType="3"
           DTS:TextQualified="True"
           DTS:ObjectName="Contatore"
-          DTS:DTSID="{E4C4F4A9-5A62-402E-B941-A0911E61756D}"
+          DTS:DTSID="{BAE09316-E996-4574-941C-3C47F6CCD740}"
           DTS:CreationName="" />
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"
@@ -30,7 +30,7 @@
           DTS:DataType="130"
           DTS:TextQualified="True"
           DTS:ObjectName="Parametro"
-          DTS:DTSID="{37331EC3-6155-4DB0-B1B1-C753D23F08B2}"
+          DTS:DTSID="{8E794EE6-E6F5-4C14-B3F8-E04C49421DE2}"
           DTS:CreationName="" />
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"
@@ -39,7 +39,7 @@
           DTS:DataType="130"
           DTS:TextQualified="True"
           DTS:ObjectName="Valore"
-          DTS:DTSID="{724CF5FF-B7DA-4EF4-B480-BA83670046C5}"
+          DTS:DTSID="{6C3F552F-887A-4678-92B5-C963C5AAA19E}"
           DTS:CreationName="" />
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"
@@ -48,7 +48,7 @@
           DTS:DataType="130"
           DTS:TextQualified="True"
           DTS:ObjectName="Minimo"
-          DTS:DTSID="{85E772E9-A465-4B95-BD6B-0161B6773315}"
+          DTS:DTSID="{C6C23454-0EF9-4A2F-B4FD-E3113BD7191D}"
           DTS:CreationName="" />
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"
@@ -57,7 +57,7 @@
           DTS:DataType="130"
           DTS:TextQualified="True"
           DTS:ObjectName="Massimo"
-          DTS:DTSID="{5628D7D0-2713-499A-88BB-111F7DCD5D6A}"
+          DTS:DTSID="{3900AB32-E920-470E-A35B-146034437D4D}"
           DTS:CreationName="" />
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"
@@ -65,7 +65,7 @@
           DTS:DataType="3"
           DTS:TextQualified="True"
           DTS:ObjectName="ID"
-          DTS:DTSID="{064FD368-64D6-40DE-B849-2FC0FE8E1BCF}"
+          DTS:DTSID="{63697499-38BE-44EF-AF75-2301264DD24B}"
           DTS:CreationName="" />
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"
@@ -73,7 +73,7 @@
           DTS:DataType="3"
           DTS:TextQualified="True"
           DTS:ObjectName="Severità"
-          DTS:DTSID="{DEE2C407-B571-4C54-825B-B8CFDE21659B}"
+          DTS:DTSID="{35620EEE-B2CB-42B4-B29C-899D44ACDB99}"
           DTS:CreationName="" />
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"
@@ -82,16 +82,25 @@
           DTS:DataType="130"
           DTS:TextQualified="True"
           DTS:ObjectName="Tag"
-          DTS:DTSID="{2CA9FE31-7C02-47C9-AC5D-31D2AA2635CD}"
+          DTS:DTSID="{D940C508-9CAE-40F7-BE17-3EDA096EE6D0}"
           DTS:CreationName="" />
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"
-          DTS:ColumnDelimiter="_x000D__x000A_"
+          DTS:ColumnDelimiter="_x007C_"
           DTS:MaximumWidth="4000"
           DTS:DataType="130"
           DTS:TextQualified="True"
           DTS:ObjectName="Parametro in Chiaro"
-          DTS:DTSID="{8A46F4DF-5729-4270-8529-EA453EDA91CD}"
+          DTS:DTSID="{545E5A16-3A55-4387-9CCC-09EDF4F88310}"
+          DTS:CreationName="" />
+        <DTS:FlatFileColumn
+          DTS:ColumnType="Delimited"
+          DTS:ColumnDelimiter="_x000D__x000A_"
+          DTS:MaximumWidth="1000"
+          DTS:DataType="130"
+          DTS:TextQualified="True"
+          DTS:ObjectName="Filtro"
+          DTS:DTSID="{1B379DA6-B6E5-488E-A079-89625F50C248}"
           DTS:CreationName="" />
       </DTS:FlatFileColumns>
     </DTS:ConnectionManager>

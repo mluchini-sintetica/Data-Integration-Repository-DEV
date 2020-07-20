@@ -13,8 +13,8 @@
   DTS:ObjectName="AUDIT_TRAIL_DW"
   DTS:PackageType="5"
   DTS:ProtectionLevel="2"
-  DTS:VersionBuild="597"
-  DTS:VersionGUID="{F18E19CE-FD0B-4B7F-B072-68F6A6685C70}">
+  DTS:VersionBuild="607"
+  DTS:VersionGUID="{659BA79D-6EF3-4785-93BC-428E51566AE9}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -28,12 +28,12 @@
           DTS:ConnectionString="Data Source=192.168.200.19;User ID=PARCEL_DIR_R;Initial Catalog=Parcel2008_SINT;Provider=SQLNCLI11.1;Persist Security Info=True;Auto Translate=False;">
           <EncryptedData
             Type="http://www.w3.org/2001/04/xmlenc#Element"
-            Salt="XrdbMmkcLjo="
-            IV="67zY18Ez5GQb/RRPDAAYkQ==" xmlns="http://www.w3.org/2001/04/xmlenc#">
+            Salt="ggPHi6rD3WI="
+            IV="uBWKrQS1EP8Jdh70UKtkKA==" xmlns="http://www.w3.org/2001/04/xmlenc#">
             <EncryptionMethod
               Algorithm="http://www.w3.org/2001/04/xmlenc#aes256-cbc" />
             <CipherData>
-              <CipherValue>67zY18Ez5GQb/RRPDAAYkW7dKUOg+fzaUo0aHSHvHo3hFGKlFY26eg6JWlzwPxt4XYnCbCbm77j8m3g5H7k7A6heOr92Oi0o9B7jNskEg8B0vz1z64KbYLl+M4bXoiLZf6Qyn7sa3Wra14EKlzgSf8MFDLoV9OTCvEbfZ4gN+bFt8IPlUANMz+n9wuSelyVb</CipherValue>
+              <CipherValue>uBWKrQS1EP8Jdh70UKtkKGJEInosvcVKe/1tUjdIIEoqBPQ35vGxFcGuwDPntb4UF5nZEgHIRJcbRuSmz2o1nMoDAeULMRi831Z3EiZjaVpJEyOj5f2hOuNRUEsJz37MLxDFlJ98Wy9y66T8rNdNkcM/b8O+rJJwta99eeCLF/6ACnl4lzPebIhJOeyLHads</CipherValue>
             </CipherData>
           </EncryptedData>
         </DTS:ConnectionManager>
@@ -1124,6 +1124,13 @@ ID = ?</property>
                               cachedName="SOURCE_COUNTER_ID"
                               externalMetadataColumnId="Package\DWH AN LOAD\TBDWAN_EQUIP_PARAMETER\TBDWAN_EQUIP_PARAMETER ins\INS TRG table.Inputs[OLE DB Destination Input].ExternalColumns[SOURCE_COUNTER_ID]"
                               lineageId="Package\DWH AN LOAD\TBDWAN_EQUIP_PARAMETER\TBDWAN_EQUIP_PARAMETER ins\Load SRC tables.Outputs[OLE DB Source Output].Columns[SOURCE_COUNTER_ID]" />
+                            <inputColumn
+                              refId="Package\DWH AN LOAD\TBDWAN_EQUIP_PARAMETER\TBDWAN_EQUIP_PARAMETER ins\INS TRG table.Inputs[OLE DB Destination Input].Columns[PARAMETER_FILTER_SEARCH_DESC]"
+                              cachedDataType="wstr"
+                              cachedLength="1002"
+                              cachedName="PARAMETER_FILTER_SEARCH_DESC"
+                              externalMetadataColumnId="Package\DWH AN LOAD\TBDWAN_EQUIP_PARAMETER\TBDWAN_EQUIP_PARAMETER ins\INS TRG table.Inputs[OLE DB Destination Input].ExternalColumns[PARAMETER_FILTER_SEARCH_DESC]"
+                              lineageId="Package\DWH AN LOAD\TBDWAN_EQUIP_PARAMETER\TBDWAN_EQUIP_PARAMETER ins\Load SRC tables.Outputs[OLE DB Source Output].Columns[PARAMETER_FILTER_SEARCH_DESC]" />
                           </inputColumns>
                           <externalMetadataColumns
                             isUsed="True">
@@ -1258,6 +1265,11 @@ ID = ?</property>
                               dataType="wstr"
                               length="4000"
                               name="PARAMETER_ORIGINAL_TRANSLATION_DESC" />
+                            <externalMetadataColumn
+                              refId="Package\DWH AN LOAD\TBDWAN_EQUIP_PARAMETER\TBDWAN_EQUIP_PARAMETER ins\INS TRG table.Inputs[OLE DB Destination Input].ExternalColumns[PARAMETER_FILTER_SEARCH_DESC]"
+                              dataType="wstr"
+                              length="1000"
+                              name="PARAMETER_FILTER_SEARCH_DESC" />
                           </externalMetadataColumns>
                         </input>
                       </inputs>
@@ -1313,14 +1325,16 @@ ID = ?</property>
                           name="SqlCommand"
                           UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT b.ID as TBDWMN_PRODUCTION_LINE_ID, c.id as TBDWMN_PRODUCTION_MODEL_ID, b.SITE_CD, b.BUILDING_CD, b.PHASE_CD, b.PRODUCT_FAMILY_CD, b.PRODUCT_TYPE_CD, 
 C.MACHINE_SERIAL_CD, C.MACHINE_CD, C.MACHINE_FUNCTION_DESC, a.PARAMETER_CD, a.PARAMETER_TAG_SEARCH_DESC, a.SOURCE_PARAMETER_ID, a.PARAMETER_ORIGINAL_TRANSLATION_DESC,
-a.MIN_VAL, a.MAX_VAL, a.VALUE_VAL, a.SEVERITY_ORIGINAL_NBR, a.SOURCE_COUNTER_ID,
+a.MIN_VAL, a.MAX_VAL, a.VALUE_VAL, a.SEVERITY_ORIGINAL_NBR, a.SOURCE_COUNTER_ID, a.PARAMETER_FILTER_SEARCH_DESC,
 trg.trg_ID, trg.trg_row_sts_flg
 FROM
 	(SELECT  PRODUCTION_LINE_ID,PRODUCTION_MODEL_ID , PARAMETRO AS PARAMETER_CD,  
 	MINIMO as MIN_VAL, MASSIMO as MAX_VAL, VALORE as VALUE_VAL, SEVERITA as SEVERITY_ORIGINAL_NBR, CONTATORE as SOURCE_COUNTER_ID,
 	ID as SOURCE_PARAMETER_ID,
 	'%' + TAG + '%' as PARAMETER_TAG_SEARCH_DESC,
-	PARAMETROINCHIARO as PARAMETER_ORIGINAL_TRANSLATION_DESC
+	PARAMETROINCHIARO as PARAMETER_ORIGINAL_TRANSLATION_DESC,
+	'%' + FILTRO + '%' as PARAMETER_FILTER_SEARCH_DESC
+
 	FROM TBST_FLAT_EQUIP_PARAMETER 
 	WHERE site_id = ? and row_sts_flg=1) a join
 
@@ -1566,6 +1580,16 @@ FROM
                               lineageId="Package\DWH AN LOAD\TBDWAN_EQUIP_PARAMETER\TBDWAN_EQUIP_PARAMETER ins\Load SRC tables.Outputs[OLE DB Source Output].Columns[SOURCE_COUNTER_ID]"
                               name="SOURCE_COUNTER_ID"
                               truncationRowDisposition="FailComponent" />
+                            <outputColumn
+                              refId="Package\DWH AN LOAD\TBDWAN_EQUIP_PARAMETER\TBDWAN_EQUIP_PARAMETER ins\Load SRC tables.Outputs[OLE DB Source Output].Columns[PARAMETER_FILTER_SEARCH_DESC]"
+                              dataType="wstr"
+                              errorOrTruncationOperation="Conversion"
+                              errorRowDisposition="FailComponent"
+                              externalMetadataColumnId="Package\DWH AN LOAD\TBDWAN_EQUIP_PARAMETER\TBDWAN_EQUIP_PARAMETER ins\Load SRC tables.Outputs[OLE DB Source Output].ExternalColumns[PARAMETER_FILTER_SEARCH_DESC]"
+                              length="1002"
+                              lineageId="Package\DWH AN LOAD\TBDWAN_EQUIP_PARAMETER\TBDWAN_EQUIP_PARAMETER ins\Load SRC tables.Outputs[OLE DB Source Output].Columns[PARAMETER_FILTER_SEARCH_DESC]"
+                              name="PARAMETER_FILTER_SEARCH_DESC"
+                              truncationRowDisposition="FailComponent" />
                           </outputColumns>
                           <externalMetadataColumns
                             isUsed="True">
@@ -1667,6 +1691,11 @@ FROM
                               refId="Package\DWH AN LOAD\TBDWAN_EQUIP_PARAMETER\TBDWAN_EQUIP_PARAMETER ins\Load SRC tables.Outputs[OLE DB Source Output].ExternalColumns[SOURCE_COUNTER_ID]"
                               dataType="i8"
                               name="SOURCE_COUNTER_ID" />
+                            <externalMetadataColumn
+                              refId="Package\DWH AN LOAD\TBDWAN_EQUIP_PARAMETER\TBDWAN_EQUIP_PARAMETER ins\Load SRC tables.Outputs[OLE DB Source Output].ExternalColumns[PARAMETER_FILTER_SEARCH_DESC]"
+                              dataType="wstr"
+                              length="1002"
+                              name="PARAMETER_FILTER_SEARCH_DESC" />
                           </externalMetadataColumns>
                         </output>
                         <output
@@ -1783,6 +1812,12 @@ FROM
                               dataType="i8"
                               lineageId="Package\DWH AN LOAD\TBDWAN_EQUIP_PARAMETER\TBDWAN_EQUIP_PARAMETER ins\Load SRC tables.Outputs[OLE DB Source Error Output].Columns[SOURCE_COUNTER_ID]"
                               name="SOURCE_COUNTER_ID" />
+                            <outputColumn
+                              refId="Package\DWH AN LOAD\TBDWAN_EQUIP_PARAMETER\TBDWAN_EQUIP_PARAMETER ins\Load SRC tables.Outputs[OLE DB Source Error Output].Columns[PARAMETER_FILTER_SEARCH_DESC]"
+                              dataType="wstr"
+                              length="1002"
+                              lineageId="Package\DWH AN LOAD\TBDWAN_EQUIP_PARAMETER\TBDWAN_EQUIP_PARAMETER ins\Load SRC tables.Outputs[OLE DB Source Error Output].Columns[PARAMETER_FILTER_SEARCH_DESC]"
+                              name="PARAMETER_FILTER_SEARCH_DESC" />
                             <outputColumn
                               refId="Package\DWH AN LOAD\TBDWAN_EQUIP_PARAMETER\TBDWAN_EQUIP_PARAMETER ins\Load SRC tables.Outputs[OLE DB Source Error Output].Columns[trg_ID]"
                               dataType="i8"
@@ -2221,6 +2256,13 @@ FROM
                               cachedName="SOURCE_COUNTER_ID"
                               externalMetadataColumnId="Package\DWH AN LOAD\TBDWAN_EQUIP_PARAMETER\TBDWAN_EQUIP_PARAMETER ins\TBDWTMP_EQUIP_PARAMETER.Inputs[OLE DB Destination Input].ExternalColumns[SOURCE_COUNTER_ID]"
                               lineageId="Package\DWH AN LOAD\TBDWAN_EQUIP_PARAMETER\TBDWAN_EQUIP_PARAMETER ins\Load SRC tables.Outputs[OLE DB Source Output].Columns[SOURCE_COUNTER_ID]" />
+                            <inputColumn
+                              refId="Package\DWH AN LOAD\TBDWAN_EQUIP_PARAMETER\TBDWAN_EQUIP_PARAMETER ins\TBDWTMP_EQUIP_PARAMETER.Inputs[OLE DB Destination Input].Columns[PARAMETER_FILTER_SEARCH_DESC]"
+                              cachedDataType="wstr"
+                              cachedLength="1002"
+                              cachedName="PARAMETER_FILTER_SEARCH_DESC"
+                              externalMetadataColumnId="Package\DWH AN LOAD\TBDWAN_EQUIP_PARAMETER\TBDWAN_EQUIP_PARAMETER ins\TBDWTMP_EQUIP_PARAMETER.Inputs[OLE DB Destination Input].ExternalColumns[PARAMETER_FILTER_SEARCH_DESC]"
+                              lineageId="Package\DWH AN LOAD\TBDWAN_EQUIP_PARAMETER\TBDWAN_EQUIP_PARAMETER ins\Load SRC tables.Outputs[OLE DB Source Output].Columns[PARAMETER_FILTER_SEARCH_DESC]" />
                           </inputColumns>
                           <externalMetadataColumns
                             isUsed="True">
@@ -2355,6 +2397,11 @@ FROM
                               dataType="wstr"
                               length="4000"
                               name="PARAMETER_ORIGINAL_TRANSLATION_DESC" />
+                            <externalMetadataColumn
+                              refId="Package\DWH AN LOAD\TBDWAN_EQUIP_PARAMETER\TBDWAN_EQUIP_PARAMETER ins\TBDWTMP_EQUIP_PARAMETER.Inputs[OLE DB Destination Input].ExternalColumns[PARAMETER_FILTER_SEARCH_DESC]"
+                              dataType="wstr"
+                              length="1000"
+                              name="PARAMETER_FILTER_SEARCH_DESC" />
                           </externalMetadataColumns>
                         </input>
                       </inputs>
@@ -2428,7 +2475,7 @@ FROM
               <DTS:ObjectData>
                 <SQLTask:SqlTaskData
                   SQLTask:Connection="{62102490-454D-4B7E-9A09-120A46D18B10}"
-                  SQLTask:SqlStatementSource="UPDATE TBDWAN_EQUIP_PARAMETER&#xA;SET &#xA;TBLOG_PACKAGE_ID = b.TBLOG_PACKAGE_ID&#xA;,TBLOG_PACKAGE_TABLE_ID = b.TBLOG_PACKAGE_TABLE_ID&#xA;,UPDATE_DT = b.UPDATE_DT&#xA;,USER_CD = b.USER_CD&#xA;,SITE_ID = b.SITE_ID&#xA;,SOURCE_SYSTEM_ID = b.SOURCE_SYSTEM_ID&#xA;,ROW_STS_FLG = 1&#xA;,TBDWMN_PRODUCTION_LINE_ID = b.TBDWMN_PRODUCTION_LINE_ID&#xA;,TBDWMN_PRODUCTION_MODEL_ID=b.TBDWMN_PRODUCTION_MODEL_ID&#xA;,SITE_CD = b.SITE_CD&#xA;,BUILDING_CD= b.BUILDING_CD&#xA;,PHASE_CD= b.PHASE_CD&#xA;,PRODUCT_FAMILY_CD= b.PRODUCT_FAMILY_CD&#xA;,PRODUCT_TYPE_CD= b.PRODUCT_TYPE_CD&#xA;,MACHINE_SERIAL_CD= b.MACHINE_SERIAL_CD&#xA;,MACHINE_CD= b.MACHINE_CD&#xA;,MACHINE_FUNCTION_DESC= b.MACHINE_FUNCTION_DESC&#xA;,PARAMETER_CD= b.PARAMETER_CD&#xA;,MIN_VAL= b.MIN_VAL&#xA;,MAX_VAL= b.MAX_VAL&#xA;,VALUE_VAL= b.VALUE_VAL&#xA;,SEVERITY_ORIGINAL_NBR= b.SEVERITY_ORIGINAL_NBR&#xA;,PARAMETER_TAG_SEARCH_DESC= b.PARAMETER_TAG_SEARCH_DESC&#xA;,PARAMETER_ORIGINAL_TRANSLATION_DESC= b.PARAMETER_ORIGINAL_TRANSLATION_DESC&#xA;,SOURCE_COUNTER_ID= b.SOURCE_COUNTER_ID&#xA;,SOURCE_PARAMETER_ID= b.SOURCE_PARAMETER_ID&#xA;&#xA;FROM TBDWAN_EQUIP_PARAMETER a join TBDWTMP_EQUIP_PARAMETER b on a.id=b.id;&#xA;&#xA;--truncate support table &#xA;TRUNCATE TABLE TBDWTMP_EQUIP_PARAMETER; " xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+                  SQLTask:SqlStatementSource="UPDATE TBDWAN_EQUIP_PARAMETER&#xA;SET &#xA;TBLOG_PACKAGE_ID = b.TBLOG_PACKAGE_ID&#xA;,TBLOG_PACKAGE_TABLE_ID = b.TBLOG_PACKAGE_TABLE_ID&#xA;,UPDATE_DT = b.UPDATE_DT&#xA;,USER_CD = b.USER_CD&#xA;,SITE_ID = b.SITE_ID&#xA;,SOURCE_SYSTEM_ID = b.SOURCE_SYSTEM_ID&#xA;,ROW_STS_FLG = 1&#xA;,TBDWMN_PRODUCTION_LINE_ID = b.TBDWMN_PRODUCTION_LINE_ID&#xA;,TBDWMN_PRODUCTION_MODEL_ID=b.TBDWMN_PRODUCTION_MODEL_ID&#xA;,SITE_CD = b.SITE_CD&#xA;,BUILDING_CD= b.BUILDING_CD&#xA;,PHASE_CD= b.PHASE_CD&#xA;,PRODUCT_FAMILY_CD= b.PRODUCT_FAMILY_CD&#xA;,PRODUCT_TYPE_CD= b.PRODUCT_TYPE_CD&#xA;,MACHINE_SERIAL_CD= b.MACHINE_SERIAL_CD&#xA;,MACHINE_CD= b.MACHINE_CD&#xA;,MACHINE_FUNCTION_DESC= b.MACHINE_FUNCTION_DESC&#xA;,PARAMETER_CD= b.PARAMETER_CD&#xA;,MIN_VAL= b.MIN_VAL&#xA;,MAX_VAL= b.MAX_VAL&#xA;,VALUE_VAL= b.VALUE_VAL&#xA;,SEVERITY_ORIGINAL_NBR= b.SEVERITY_ORIGINAL_NBR&#xA;,PARAMETER_TAG_SEARCH_DESC= b.PARAMETER_TAG_SEARCH_DESC&#xA;,PARAMETER_ORIGINAL_TRANSLATION_DESC= b.PARAMETER_ORIGINAL_TRANSLATION_DESC&#xA;,PARAMETER_FILTER_SEARCH_DESC= b.PARAMETER_FILTER_SEARCH_DESC&#xA;,SOURCE_COUNTER_ID= b.SOURCE_COUNTER_ID&#xA;,SOURCE_PARAMETER_ID= b.SOURCE_PARAMETER_ID&#xA;&#xA;FROM TBDWAN_EQUIP_PARAMETER a join TBDWTMP_EQUIP_PARAMETER b on a.id=b.id;&#xA;&#xA;--truncate support table &#xA;TRUNCATE TABLE TBDWTMP_EQUIP_PARAMETER; " xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
               </DTS:ObjectData>
             </DTS:Executable>
           </DTS:Executables>
@@ -3800,7 +3847,7 @@ FROM
               <DTS:ObjectData>
                 <SQLTask:SqlTaskData
                   SQLTask:Connection="{62102490-454D-4B7E-9A09-120A46D18B10}"
-                  SQLTask:SqlStatementSource="--insert in a temporary table the record to update with the TBDWAN_EQUIP_PARAMETER_ID&#xA;INSERT INTO TBDWTMP_EQUIP_AUDIT_TRAIL (TBLOG_PACKAGE_ID, TBLOG_PACKAGE_TABLE_ID, UPDATE_DT,USER_CD, ID, TBDWAN_EQUIP_PARAMETER_ID)&#xA; &#xA;SELECT ?, ?, getdate(), ?, a.ID, a.TBDWAN_EQUIP_PARAMETER_ID&#xA;FROM&#xA;(&#xA;&#x9;SELECT a.ID, b.id as TBDWAN_EQUIP_PARAMETER_ID, ROW_NUMBER () over (partition by a.ID order by len(b.PARAMETER_TAG_SEARCH_DESC) desc) as ord&#xA;&#x9;FROM&#xA;&#x9;&#x9;(SELECT * FROM tbdwft_equip_audit_trail WHERE SITE_ID = ? and ROW_STS_FLG = 1) a join&#xA;&#x9;&#x9;(SELECT * FROM tbdwan_equip_parameter WHERE SITE_ID = ? and ROW_STS_FLG = 1) b on a.MESSAGE_TRUNC_DESC like b.PARAMETER_TAG_SEARCH_DESC and a.TBDWMN_PRODUCTION_MODEL_ID=b.TBDWMN_PRODUCTION_MODEL_ID and a.TBDWMN_PRODUCTION_LINE_ID=b.TBDWMN_PRODUCTION_LINE_ID&#xA;) a&#xA;WHERE a.ord = 1 --in case for the same audit several parameters are satisfying the request, the correct is the parameter with greater length (means that match better)&#xA;&#xA;--update record on the target DWH table&#xA;UPDATE TBDWFT_EQUIP_AUDIT_TRAIL&#xA;SET &#xA;&#x9;  TBLOG_PACKAGE_ID = b.TBLOG_PACKAGE_ID&#xA;&#x9;  ,TBLOG_PACKAGE_TABLE_ID = b.TBLOG_PACKAGE_TABLE_ID&#xA;      ,UPDATE_DT = b.UPDATE_DT&#xA;      ,USER_CD = b.USER_CD&#xA;      ,TBDWAN_EQUIP_PARAMETER_ID = b.TBDWAN_EQUIP_PARAMETER_ID&#xA;FROM TBDWFT_EQUIP_AUDIT_TRAIL a join TBDWTMP_EQUIP_AUDIT_TRAIL b on a.id=b.id;&#xA;&#xA;--truncate support table &#xA;TRUNCATE TABLE TBDWTMP_EQUIP_AUDIT_TRAIL;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+                  SQLTask:SqlStatementSource="--insert in a temporary table the record to update with the TBDWAN_EQUIP_PARAMETER_ID&#xA;INSERT INTO TBDWTMP_EQUIP_AUDIT_TRAIL (TBLOG_PACKAGE_ID, TBLOG_PACKAGE_TABLE_ID, UPDATE_DT,USER_CD, ID, TBDWAN_EQUIP_PARAMETER_ID)&#xA; &#xA;SELECT ?, ?, getdate(), ?, a.ID, a.TBDWAN_EQUIP_PARAMETER_ID&#xA;FROM&#xA;(&#xA;&#x9;SELECT a.ID, b.id as TBDWAN_EQUIP_PARAMETER_ID, ROW_NUMBER () over (partition by a.ID order by len(b.PARAMETER_TAG_SEARCH_DESC) desc) as ord&#xA;&#x9;FROM&#xA;&#x9;&#x9;(SELECT * FROM tbdwft_equip_audit_trail WHERE SITE_ID = ? and ROW_STS_FLG = 1) a join&#xA;&#x9;&#x9;(SELECT * FROM tbdwan_equip_parameter WHERE SITE_ID = ? and ROW_STS_FLG = 1) b on a.MESSAGE_TRUNC_DESC like b.PARAMETER_FILTER_SEARCH_DESC and a.MESSAGE_TRUNC_DESC like b.PARAMETER_TAG_SEARCH_DESC and a.TBDWMN_PRODUCTION_MODEL_ID=b.TBDWMN_PRODUCTION_MODEL_ID and a.TBDWMN_PRODUCTION_LINE_ID=b.TBDWMN_PRODUCTION_LINE_ID join&#xA;&#x9;&#x9;(SELECT * FROM tbdwmn_equip_parameter) c on a.date_dt between c.VALIDITY_START_DT and c.VALIDITY_END_DT and b.id = c.TBDWAN_EQUIP_PARAMETER_ID&#xA;) a&#xA;WHERE a.ord = 1 --in case for the same audit several parameters are satisfying the request, the correct is the parameter with greater length (means that match better)&#xA;&#xA;--update record on the target DWH table&#xA;UPDATE TBDWFT_EQUIP_AUDIT_TRAIL&#xA;SET &#xA;&#x9;  TBLOG_PACKAGE_ID = b.TBLOG_PACKAGE_ID&#xA;&#x9;  ,TBLOG_PACKAGE_TABLE_ID = b.TBLOG_PACKAGE_TABLE_ID&#xA;      ,UPDATE_DT = b.UPDATE_DT&#xA;      ,USER_CD = b.USER_CD&#xA;      ,TBDWAN_EQUIP_PARAMETER_ID = b.TBDWAN_EQUIP_PARAMETER_ID&#xA;FROM TBDWFT_EQUIP_AUDIT_TRAIL a join TBDWTMP_EQUIP_AUDIT_TRAIL b on a.id=b.id;&#xA;&#xA;--truncate support table &#xA;TRUNCATE TABLE TBDWTMP_EQUIP_AUDIT_TRAIL;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
                   <SQLTask:ParameterBinding
                     SQLTask:ParameterName="0"
                     SQLTask:DtsVariableName="User::out_MAX_ID"
@@ -4303,9 +4350,7 @@ FROM
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -4339,9 +4384,7 @@ FROM
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -4363,9 +4406,7 @@ FROM
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -4399,9 +4440,7 @@ FROM
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -4435,37 +4474,35 @@ FROM
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <AnnotationLayout
           Text="To be modified according table"
           ParentId="Package\DWH AN LOAD\TBDWAN_EQUIP_PARAMETER"
           FontInfo="{assembly:Null}"
-          Size="194,NaN"
+          Size="194,40"
           Id="bb83133a-472b-4887-9336-8712d47cb94d"
           TopLeft="35.5,310.5" />
         <AnnotationLayout
           Text="To be specify target table name"
           ParentId="Package\DWH AN LOAD\TBDWAN_EQUIP_PARAMETER"
           FontInfo="{assembly:Null}"
-          Size="195,NaN"
+          Size="195,40"
           Id="684b34f8-e38a-41f5-b322-4f0da67188f1"
           TopLeft="29.5,10.5" />
         <AnnotationLayout
           Text="To be modified according table"
           ParentId="Package\DWH AN LOAD\TBDWAN_EQUIP_PARAMETER"
           FontInfo="{assembly:Null}"
-          Size="194,NaN"
+          Size="194,40"
           Id="f03cdc76-5c83-4f48-a957-1b328cc50b11"
           TopLeft="41.5,402.5" />
         <ContainerLayout
           HeaderHeight="43"
-          IsExpanded="False"
+          IsExpanded="True"
           PanelSize="512,712"
-          Size="512,43"
+          Size="512,755"
           Id="Package\DWH AN LOAD\TBDWAN_EQUIP_PARAMETER"
           TopLeft="86.5,47" />
         <NodeLayout
@@ -4612,52 +4649,44 @@ FROM
           TopLeft="29.5,10.5" />
         <ContainerLayout
           HeaderHeight="43"
-          IsExpanded="True"
+          IsExpanded="False"
           PanelSize="512,712"
-          Size="512,755"
+          Size="512,43"
           Id="Package\DWH AN LOAD\TBDWMN_EQUIP_PARAMETER"
           TopLeft="143,180" />
         <EdgeLayout
           Id="Package\DWH AN LOAD.PrecedenceConstraints[Constraint]"
-          TopLeft="342.5,90">
+          TopLeft="598.5,424.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="56.5,90"
+              EndConnector="-199.5,-201.5"
               Start="0,0"
-              End="56.5,82.5">
+              End="-199.5,-194">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,41" />
+                    End="-195.5,0" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,41"
-                    Point2="0,45"
-                    Point3="4,45" />
+                    Point1="-195.5,0"
+                    Point2="-199.5,0"
+                    Point3="-199.5,-4" />
                   <mssgle:LineSegment
-                    End="52.5,45" />
-                  <mssgle:CubicBezierSegment
-                    Point1="52.5,45"
-                    Point2="56.5,45"
-                    Point3="56.5,49" />
-                  <mssgle:LineSegment
-                    End="56.5,82.5" />
+                    End="-199.5,-194" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <ContainerLayout
           HeaderHeight="45"
           IsExpanded="False"
           PanelSize="1136,990"
-          Size="179,45"
+          Size="1136,45"
           Id="Package\DWH AN LOAD"
           TopLeft="578.888888888889,378" />
         <NodeLayout
@@ -5011,13 +5040,13 @@ FROM
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 2]"
-          TopLeft="668.388888888889,423">
+          TopLeft="1146.88888888889,423">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-137.619047619047,49.761904761904"
+              EndConnector="-616.119047619047,49.761904761904"
               Start="0,0"
-              End="-137.619047619047,42.261904761904">
+              End="-616.119047619047,42.261904761904">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
@@ -5028,13 +5057,13 @@ FROM
                     Point2="0,24.880952380952"
                     Point3="-4,24.880952380952" />
                   <mssgle:LineSegment
-                    End="-133.619047619047,24.880952380952" />
+                    End="-612.119047619047,24.880952380952" />
                   <mssgle:CubicBezierSegment
-                    Point1="-133.619047619047,24.880952380952"
-                    Point2="-137.619047619047,24.880952380952"
-                    Point3="-137.619047619047,28.880952380952" />
+                    Point1="-612.119047619047,24.880952380952"
+                    Point2="-616.119047619047,24.880952380952"
+                    Point3="-616.119047619047,28.880952380952" />
                   <mssgle:LineSegment
-                    End="-137.619047619047,42.261904761904" />
+                    End="-616.119047619047,42.261904761904" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -5105,9 +5134,9 @@ FROM
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-281.349206349204,125.857142857143"
+              EndConnector="197.150793650796,125.857142857143"
               Start="0,0"
-              End="-281.349206349204,118.357142857143">
+              End="197.150793650796,118.357142857143">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
@@ -5116,15 +5145,15 @@ FROM
                   <mssgle:CubicBezierSegment
                     Point1="0,58.9285714285715"
                     Point2="0,62.9285714285715"
-                    Point3="-4,62.9285714285715" />
+                    Point3="4,62.9285714285715" />
                   <mssgle:LineSegment
-                    End="-277.349206349204,62.9285714285715" />
+                    End="193.150793650796,62.9285714285715" />
                   <mssgle:CubicBezierSegment
-                    Point1="-277.349206349204,62.9285714285715"
-                    Point2="-281.349206349204,62.9285714285715"
-                    Point3="-281.349206349204,66.9285714285715" />
+                    Point1="193.150793650796,62.9285714285715"
+                    Point2="197.150793650796,62.9285714285715"
+                    Point3="197.150793650796,66.9285714285715" />
                   <mssgle:LineSegment
-                    End="-281.349206349204,118.357142857143" />
+                    End="197.150793650796,118.357142857143" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -5200,21 +5229,21 @@ FROM
       <GraphLayout
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="162,42"
-          Id="Package\DWH AN LOAD\TBDWAN_EQUIP_PARAMETER\TBDWAN_EQUIP_PARAMETER ins\Load SRC tables"
-          TopLeft="173,37" />
-        <NodeLayout
           Size="249,42"
           Id="Package\DWH AN LOAD\TBDWAN_EQUIP_PARAMETER\TBDWAN_EQUIP_PARAMETER ins\TBDWTMP_EQUIP_PARAMETER"
           TopLeft="355,451" />
         <NodeLayout
-          Size="150,42"
-          Id="Package\DWH AN LOAD\TBDWAN_EQUIP_PARAMETER\TBDWAN_EQUIP_PARAMETER ins\INS TRG table"
-          TopLeft="74,456" />
+          Size="162,42"
+          Id="Package\DWH AN LOAD\TBDWAN_EQUIP_PARAMETER\TBDWAN_EQUIP_PARAMETER ins\Load SRC tables"
+          TopLeft="173,37" />
         <NodeLayout
           Size="174,42"
           Id="Package\DWH AN LOAD\TBDWAN_EQUIP_PARAMETER\TBDWAN_EQUIP_PARAMETER ins\Split INS-UPD-DEL"
           TopLeft="226,269" />
+        <NodeLayout
+          Size="150,42"
+          Id="Package\DWH AN LOAD\TBDWAN_EQUIP_PARAMETER\TBDWAN_EQUIP_PARAMETER ins\INS TRG table"
+          TopLeft="74,456" />
         <NodeLayout
           Size="251,42"
           Id="Package\DWH AN LOAD\TBDWAN_EQUIP_PARAMETER\TBDWAN_EQUIP_PARAMETER ins\Add Technical Fields and renaming"
@@ -5255,7 +5284,7 @@ FROM
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="44.02431640625,75,19.8903125,9.421875"
+              BoundingBox="73.30484375,75,19.8903125,9.421875"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -5290,9 +5319,7 @@ FROM
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -5362,9 +5389,7 @@ FROM
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -5407,14 +5432,6 @@ FROM
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\DWH AN LOAD\TBDWAN_EQUIP_PARAMETER\TBDWAN_EQUIP_PARAMETER ins\Load SRC tables">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
     design-time-name="Package\DWH AN LOAD\TBDWAN_EQUIP_PARAMETER\TBDWAN_EQUIP_PARAMETER ins\TBDWTMP_EQUIP_PARAMETER">
     <Properties>
       <Property>
@@ -5424,6 +5441,14 @@ FROM
         <Name>TableInfoObjectType</Name>
         <Value
           type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\DWH AN LOAD\TBDWAN_EQUIP_PARAMETER\TBDWAN_EQUIP_PARAMETER ins\Load SRC tables">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
       </Property>
     </Properties>
   </PipelineComponentMetadata>
