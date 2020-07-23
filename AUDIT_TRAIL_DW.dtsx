@@ -13,8 +13,8 @@
   DTS:ObjectName="AUDIT_TRAIL_DW"
   DTS:PackageType="5"
   DTS:ProtectionLevel="2"
-  DTS:VersionBuild="607"
-  DTS:VersionGUID="{659BA79D-6EF3-4785-93BC-428E51566AE9}">
+  DTS:VersionBuild="628"
+  DTS:VersionGUID="{44C92630-FD03-4ACA-B314-33BBA97075A3}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -28,12 +28,12 @@
           DTS:ConnectionString="Data Source=192.168.200.19;User ID=PARCEL_DIR_R;Initial Catalog=Parcel2008_SINT;Provider=SQLNCLI11.1;Persist Security Info=True;Auto Translate=False;">
           <EncryptedData
             Type="http://www.w3.org/2001/04/xmlenc#Element"
-            Salt="ggPHi6rD3WI="
-            IV="uBWKrQS1EP8Jdh70UKtkKA==" xmlns="http://www.w3.org/2001/04/xmlenc#">
+            Salt="fhx91eTaiWs="
+            IV="wD6FRvTJC6G6/qVFCzIARQ==" xmlns="http://www.w3.org/2001/04/xmlenc#">
             <EncryptionMethod
               Algorithm="http://www.w3.org/2001/04/xmlenc#aes256-cbc" />
             <CipherData>
-              <CipherValue>uBWKrQS1EP8Jdh70UKtkKGJEInosvcVKe/1tUjdIIEoqBPQ35vGxFcGuwDPntb4UF5nZEgHIRJcbRuSmz2o1nMoDAeULMRi831Z3EiZjaVpJEyOj5f2hOuNRUEsJz37MLxDFlJ98Wy9y66T8rNdNkcM/b8O+rJJwta99eeCLF/6ACnl4lzPebIhJOeyLHads</CipherValue>
+              <CipherValue>wD6FRvTJC6G6/qVFCzIARcJpPVMInw8XUUcd4vQtshq4bSh21b+SDg9OXmJiaAJb5qo8ZKn7SMrHaFMkspFTEQM8qZ0Vv002rFcgD0ZnjUJi1whh6uMsqQKEn3iM/DBTUiJgNB0jCUyrHzFNjZCucCFlc7aGv9eigSTqyMJhScNfE+5uJYn+wNTRfUZm8ZO5</CipherValue>
             </CipherData>
           </EncryptedData>
         </DTS:ConnectionManager>
@@ -146,6 +146,15 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
+      DTS:DTSID="{E9CFC3A4-01D8-4254-ADCD-9BFC8DB876CB}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="out_DWH_DELTA_DT">
+      <DTS:VariableValue
+        DTS:DataType="7">7/23/2020 4:36:17 PM</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
       DTS:Description="Output related to the last ID run for the package"
       DTS:DTSID="{708BF2CA-C6DE-4996-9ED8-DCD14597C623}"
       DTS:IncludeInDebugDump="6789"
@@ -185,7 +194,7 @@
       DTS:LocaleID="-1"
       DTS:ObjectName="Assign SITE_ID"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="1">
+      DTS:ThreadHint="0">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -213,7 +222,7 @@
       DTS:LocaleID="-1"
       DTS:ObjectName="Assign SOURCE_SYSTEM_ID"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="0">
+      DTS:ThreadHint="1">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -3468,6 +3477,16 @@ FROM
           <DTS:Variables>
             <DTS:Variable
               DTS:CreationName=""
+              DTS:Description="It represents the date of the last successfull load, used to select only new row in delta mode"
+              DTS:DTSID="{B9F39685-B5EE-4F7D-A7DB-2C6D41D1A252}"
+              DTS:IncludeInDebugDump="6789"
+              DTS:Namespace="User"
+              DTS:ObjectName="out_LAST_SUCCESS_LOAD_DT">
+              <DTS:VariableValue
+                DTS:DataType="7">7/23/2020 3:45:01 PM</DTS:VariableValue>
+            </DTS:Variable>
+            <DTS:Variable
+              DTS:CreationName=""
               DTS:Description="Output related to the last ID run for the table"
               DTS:DTSID="{C4F05569-1C48-4D7E-A8F1-77C49608F499}"
               DTS:IncludeInDebugDump="6789"
@@ -3475,6 +3494,16 @@ FROM
               DTS:ObjectName="out_MAX_TABLE_ID">
               <DTS:VariableValue
                 DTS:DataType="3">0</DTS:VariableValue>
+            </DTS:Variable>
+            <DTS:Variable
+              DTS:CreationName=""
+              DTS:Description="It will represent the date of the current load, to be used to update the last success load date information into TBLOG_DELTA_LOAD table"
+              DTS:DTSID="{7E80691F-5BF9-421D-958F-53234804A345}"
+              DTS:IncludeInDebugDump="6789"
+              DTS:Namespace="User"
+              DTS:ObjectName="out_NEW_LAST_SUCCESS_LOAD_DT">
+              <DTS:VariableValue
+                DTS:DataType="7">7/23/2020 3:53:51 PM</DTS:VariableValue>
             </DTS:Variable>
             <DTS:Variable
               DTS:CreationName=""
@@ -3584,6 +3613,49 @@ FROM
               </DTS:ObjectData>
             </DTS:Executable>
             <DTS:Executable
+              DTS:refId="Package\DWH FT LOAD\TBDWFT_EQUIP_AUDIT_TRAIL\Last Max DATE Loaded and DWH_DELTA_DT"
+              DTS:CreationName="Microsoft.ExecuteSQLTask"
+              DTS:Description="Execute SQL Task"
+              DTS:DTSID="{e02408a6-93ae-4b0c-9fbd-ea8a55683657}"
+              DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+              DTS:LocaleID="-1"
+              DTS:ObjectName="Last Max DATE Loaded and DWH_DELTA_DT"
+              DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+              DTS:ThreadHint="0">
+              <DTS:Variables />
+              <DTS:ObjectData>
+                <SQLTask:SqlTaskData
+                  SQLTask:Connection="{62102490-454D-4B7E-9A09-120A46D18B10}"
+                  SQLTask:SqlStatementSource="select max(a.LAST_SUCCESS_LOAD_DT) as LAST_SUCCESS_LOAD_DT, max(a.DWH_DELTA_DT) as DWH_DELTA_DT&#xA;from&#xA; (&#xA; select &#xA;  case when ONE_SHOT_FULL_LOAD_FLG=1 or ALWAYS_FULL_LOAD_FLG=1 then cast ('2000-01-01 00:00:00' as datetime) else dateadd(hour, -RANGE_HOUR_NBR, LAST_SUCCESS_LOAD_DT) end as LAST_SUCCESS_LOAD_DT,&#xA;  case when ONE_SHOT_FULL_LOAD_FLG=1 or ALWAYS_FULL_LOAD_FLG=1 then cast ('2000-01-01 00:00:00' as datetime) else getdate() end as DWH_DELTA_DT&#xA; from TBLOG_DELTA_LOAD&#xA;  where &#xA;  SOURCE_SYSTEM_ID = ?&#xA;  and TABLE_TARGET_CD = ?&#xA;  and ENTITY_CD = ?&#xA;  &#xA; UNION&#xA;&#xA; select cast ('2000-01-01 00:00:00' as datetime) as LAST_SUCCESS_LOAD_DT, cast ('2000-01-01 00:00:00' as datetime) as DWH_DELTA_DT&#xA; ) a"
+                  SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+                  <SQLTask:ResultBinding
+                    SQLTask:ResultName="LAST_SUCCESS_LOAD_DT"
+                    SQLTask:DtsVariableName="User::out_LAST_SUCCESS_LOAD_DT" />
+                  <SQLTask:ResultBinding
+                    SQLTask:ResultName="DWH_DELTA_DT"
+                    SQLTask:DtsVariableName="User::out_DWH_DELTA_DT" />
+                  <SQLTask:ParameterBinding
+                    SQLTask:ParameterName="0"
+                    SQLTask:DtsVariableName="User::out_SOURCE_SYSTEM_ID"
+                    SQLTask:ParameterDirection="Input"
+                    SQLTask:DataType="131"
+                    SQLTask:ParameterSize="-1" />
+                  <SQLTask:ParameterBinding
+                    SQLTask:ParameterName="1"
+                    SQLTask:DtsVariableName="User::out_TABLE_TARGET_CD"
+                    SQLTask:ParameterDirection="Input"
+                    SQLTask:DataType="130"
+                    SQLTask:ParameterSize="-1" />
+                  <SQLTask:ParameterBinding
+                    SQLTask:ParameterName="2"
+                    SQLTask:DtsVariableName="User::out_TABLE_TARGET_CD"
+                    SQLTask:ParameterDirection="Input"
+                    SQLTask:DataType="130"
+                    SQLTask:ParameterSize="-1" />
+                </SQLTask:SqlTaskData>
+              </DTS:ObjectData>
+            </DTS:Executable>
+            <DTS:Executable
               DTS:refId="Package\DWH FT LOAD\TBDWFT_EQUIP_AUDIT_TRAIL\Last Upd TBLOG_PACKAGE_TABLE"
               DTS:CreationName="Microsoft.ExecuteSQLTask"
               DTS:Description="Execute SQL Task"
@@ -3654,6 +3726,34 @@ FROM
               </DTS:ObjectData>
             </DTS:Executable>
             <DTS:Executable
+              DTS:refId="Package\DWH FT LOAD\TBDWFT_EQUIP_AUDIT_TRAIL\New Max DATE Loaded"
+              DTS:CreationName="Microsoft.ExecuteSQLTask"
+              DTS:Description="Execute SQL Task"
+              DTS:DTSID="{e4d42824-2b93-4725-bab4-30b65fe23b2a}"
+              DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+              DTS:LocaleID="-1"
+              DTS:ObjectName="New Max DATE Loaded"
+              DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+              DTS:ThreadHint="1">
+              <DTS:Variables />
+              <DTS:ObjectData>
+                <SQLTask:SqlTaskData
+                  SQLTask:Connection="{62102490-454D-4B7E-9A09-120A46D18B10}"
+                  SQLTask:SqlStatementSource="SELECT max(UPDATE_DT) as NEW_LAST_SUCCESS_LOAD_DT FROM TBST_FLAT_EQUIP_AUDIT_TRAIL WHERE row_sts_flg=1 and SOURCE_SYSTEM_ID = ?"
+                  SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+                  <SQLTask:ResultBinding
+                    SQLTask:ResultName="NEW_LAST_SUCCESS_LOAD_DT"
+                    SQLTask:DtsVariableName="User::out_NEW_LAST_SUCCESS_LOAD_DT" />
+                  <SQLTask:ParameterBinding
+                    SQLTask:ParameterName="0"
+                    SQLTask:DtsVariableName="User::out_SOURCE_SYSTEM_ID"
+                    SQLTask:ParameterDirection="Input"
+                    SQLTask:DataType="131"
+                    SQLTask:ParameterSize="-1" />
+                </SQLTask:SqlTaskData>
+              </DTS:ObjectData>
+            </DTS:Executable>
+            <DTS:Executable
               DTS:refId="Package\DWH FT LOAD\TBDWFT_EQUIP_AUDIT_TRAIL\TBDWFT_EQUIP_AUDIT_TRAIL del"
               DTS:CreationName="Microsoft.ExecuteSQLTask"
               DTS:Description="Execute SQL Task"
@@ -3667,7 +3767,7 @@ FROM
               <DTS:ObjectData>
                 <SQLTask:SqlTaskData
                   SQLTask:Connection="{62102490-454D-4B7E-9A09-120A46D18B10}"
-                  SQLTask:SqlStatementSource="--insert in a temporary table the record to delete&#xA;INSERT INTO TBDWTMP_EQUIP_AUDIT_TRAIL&#xA;(TBLOG_PACKAGE_ID, TBLOG_PACKAGE_TABLE_ID, DELETE_DT,USER_CD, ID)&#xA;&#x9;&#xA;&#x9;SELECT &#x9;?, ?, getdate(), ?,trg.trg_ID&#xA;&#xA;&#x9;FROM&#xA;&#x9;(SELECT PRODUCTION_LINE_ID as TBDWMN_PRODUCTION_LINE_ID, PRODUCTION_MODEL_ID as TBDWMN_PRODUCTION_MODEL_ID, SYSTEMID as SOURCE_EQUIPMENT_ID, &#xA;&#x9;&#x9;time as DATE_DT, &quot;user&quot; as USER_DESC,  message as MESSAGE_DESC, substring (MESSAGE,1,4000) as MESSAGE_TRUNC_DESC, MIN(counter) as SOURCE_COUNTER_ID&#xA;&#x9; FROM TBST_FLAT_EQUIP_AUDIT_TRAIL &#xA;&#x9; WHERE site_id = ? and row_sts_flg=1&#xA;&#x9; GROUP BY PRODUCTION_LINE_ID, PRODUCTION_MODEL_ID, SYSTEMID,  time, &quot;user&quot;, message, substring (MESSAGE,1,4000)) a join&#xA;&#xA;&#x9;(SELECT * FROM TBDWMN_PRODUCTION_LINE) b on a.TBDWMN_PRODUCTION_LINE_ID = b.id join&#xA;&#x9;(SELECT * FROM TBDWMN_PRODUCTION_MODEL) c on a.TBDWMN_PRODUCTION_MODEL_ID = c.id full join&#xA;&#xA;&#x9;(SELECT id as trg_ID, MACHINE_SERIAL_CD,  DATE_DT, MESSAGE_TRUNC_DESC, row_sts_flg as trg_row_sts_flg FROM TBDWFT_EQUIP_AUDIT_TRAIL WHERE site_id = ?) trg on c.MACHINE_SERIAL_CD = trg.MACHINE_SERIAL_CD and a.DATE_DT = trg.DATE_DT and a.MESSAGE_TRUNC_DESC = trg.MESSAGE_TRUNC_DESC&#xA;&#xA;&#x9;WHERE c.MACHINE_SERIAL_CD is null and trg.trg_ID is not null and trg.trg_row_sts_flg=1;&#xA;&#xA;--update for delete record on the target DWH table&#xA;UPDATE TBDWFT_EQUIP_AUDIT_TRAIL&#xA;SET &#xA;&#x9;  TBLOG_PACKAGE_ID = b.TBLOG_PACKAGE_ID&#xA;&#x9;  ,TBLOG_PACKAGE_TABLE_ID = b.TBLOG_PACKAGE_TABLE_ID&#xA;      ,DELETE_DT = b.DELETE_DT&#xA;      ,USER_CD = b.USER_CD&#xA;      ,ROW_STS_FLG = 0&#xA;FROM TBDWFT_EQUIP_AUDIT_TRAIL a join TBDWTMP_EQUIP_AUDIT_TRAIL b on a.id=b.id;&#xA;&#xA;--truncate support table &#xA;TRUNCATE TABLE TBDWTMP_EQUIP_AUDIT_TRAIL;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+                  SQLTask:SqlStatementSource="--insert in a temporary table the record to delete&#xA;INSERT INTO TBDWTMP_EQUIP_AUDIT_TRAIL&#xA;(TBLOG_PACKAGE_ID, TBLOG_PACKAGE_TABLE_ID, DELETE_DT,USER_CD, ID)&#xA;&#x9;&#xA;&#x9;SELECT &#x9;?, ?, getdate(), ?,trg.trg_ID&#xA;&#xA;&#x9;FROM&#xA;&#x9;(SELECT PRODUCTION_LINE_ID as TBDWMN_PRODUCTION_LINE_ID, PRODUCTION_MODEL_ID as TBDWMN_PRODUCTION_MODEL_ID, SYSTEMID as SOURCE_EQUIPMENT_ID, &#xA;&#x9;&#x9;time as DATE_DT, &quot;user&quot; as USER_DESC,  message as MESSAGE_DESC, substring (MESSAGE,1,4000) as MESSAGE_TRUNC_DESC, MIN(counter) as SOURCE_COUNTER_ID&#xA;&#x9; FROM TBST_FLAT_EQUIP_AUDIT_TRAIL &#xA;&#x9; WHERE site_id = ? and row_sts_flg=1 --to find the deleted rows, all active rows om staging must be taken and compared with the target dwh table. Only after a full staging load could be find a deleted one&#xA;&#x9; GROUP BY PRODUCTION_LINE_ID, PRODUCTION_MODEL_ID, SYSTEMID,  time, &quot;user&quot;, message, substring (MESSAGE,1,4000)) a join&#xA;&#xA;&#x9;(SELECT * FROM TBDWMN_PRODUCTION_LINE) b on a.TBDWMN_PRODUCTION_LINE_ID = b.id join&#xA;&#x9;(SELECT * FROM TBDWMN_PRODUCTION_MODEL) c on a.TBDWMN_PRODUCTION_MODEL_ID = c.id full join&#xA;&#xA;&#x9;(SELECT id as trg_ID, MACHINE_SERIAL_CD,  DATE_DT, MESSAGE_TRUNC_DESC, row_sts_flg as trg_row_sts_flg FROM TBDWFT_EQUIP_AUDIT_TRAIL WHERE site_id = ?) trg on c.MACHINE_SERIAL_CD = trg.MACHINE_SERIAL_CD and a.DATE_DT = trg.DATE_DT and a.MESSAGE_TRUNC_DESC = trg.MESSAGE_TRUNC_DESC&#xA;&#xA;&#x9;WHERE c.MACHINE_SERIAL_CD is null and trg.trg_ID is not null and trg.trg_row_sts_flg=1;&#xA;&#xA;--update for delete record on the target DWH table&#xA;UPDATE TBDWFT_EQUIP_AUDIT_TRAIL&#xA;SET &#xA;&#x9;  TBLOG_PACKAGE_ID = b.TBLOG_PACKAGE_ID&#xA;&#x9;  ,TBLOG_PACKAGE_TABLE_ID = b.TBLOG_PACKAGE_TABLE_ID&#xA;      ,DELETE_DT = b.DELETE_DT&#xA;      ,USER_CD = b.USER_CD&#xA;      ,ROW_STS_FLG = 0&#xA;FROM TBDWFT_EQUIP_AUDIT_TRAIL a join TBDWTMP_EQUIP_AUDIT_TRAIL b on a.id=b.id;&#xA;&#xA;--truncate support table &#xA;TRUNCATE TABLE TBDWTMP_EQUIP_AUDIT_TRAIL;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
                   <SQLTask:ParameterBinding
                     SQLTask:ParameterName="0"
                     SQLTask:DtsVariableName="User::out_MAX_ID"
@@ -3715,7 +3815,7 @@ FROM
               <DTS:ObjectData>
                 <SQLTask:SqlTaskData
                   SQLTask:Connection="{62102490-454D-4B7E-9A09-120A46D18B10}"
-                  SQLTask:SqlStatementSource="INSERT INTO TBDWFT_EQUIP_AUDIT_TRAIL&#xA;(TBLOG_PACKAGE_ID, TBLOG_PACKAGE_TABLE_ID, INSERT_DT,UPDATE_DT,USER_CD, SITE_ID, SOURCE_SYSTEM_ID,TBDWMN_PRODUCTION_LINE_ID, TBDWMN_PRODUCTION_MODEL_ID, SITE_CD,BUILDING_CD,&#xA;PHASE_CD, PRODUCT_FAMILY_CD, PRODUCT_TYPE_CD, MACHINE_SERIAL_CD, MACHINE_CD, MACHINE_FUNCTION_DESC,SOURCE_COUNTER_ID, SOURCE_EQUIPMENT_ID,DATE_DT,USER_DESC,MESSAGE_DESC, MESSAGE_TRUNC_DESC,&#xA;PROCESS_ORDER_CD, BATCH_CD, ARTICLE_CD, TBDWFT_PROCESS_ORDER_ID, TBDWAN_BATCH_ID, TBDWAN_ARTICLE_ID)&#xA;&#x9;&#xA;&#x9;SELECT &#x9;?, ?, getdate(), getdate(), ?, ?, ?, a.TBDWMN_PRODUCTION_LINE_ID, a.TBDWMN_PRODUCTION_MODEL_ID, b.site_cd, b.building_cd, b.phase_cd, b.product_family_cd, b.product_type_cd, c.MACHINE_SERIAL_CD, c.MACHINE_CD, c.MACHINE_FUNCTION_DESC,&#xA;&#x9; a.SOURCE_COUNTER_ID, a.SOURCE_EQUIPMENT_ID, a.DATE_DT, a.USER_DESC, a.MESSAGE_DESC, a.MESSAGE_TRUNC_DESC,&#xA;&#x9; isnull(d.process_order_cd,'N/A'), isnull(d.BATCH_CD,'N/A'), isnull(d.ARTICLE_CD,'N/A'), d.ID as TBDWFT_PROCESS_ORDER_ID, d.TBDWAN_BATCH_ID, d.TBDWAN_ARTICLE_ID&#xA;&#xA;&#x9;FROM&#xA;&#x9;(SELECT PRODUCTION_LINE_ID as TBDWMN_PRODUCTION_LINE_ID, PRODUCTION_MODEL_ID as TBDWMN_PRODUCTION_MODEL_ID, SYSTEMID as SOURCE_EQUIPMENT_ID, &#xA;&#x9;&#x9;time as DATE_DT, &quot;user&quot; as USER_DESC,  message as MESSAGE_DESC, substring (MESSAGE,1,4000) as MESSAGE_TRUNC_DESC, MIN(counter) as SOURCE_COUNTER_ID&#xA;&#x9; FROM TBST_FLAT_EQUIP_AUDIT_TRAIL &#xA;&#x9; WHERE site_id = ? and row_sts_flg=1&#xA;&#x9; GROUP BY PRODUCTION_LINE_ID, PRODUCTION_MODEL_ID, SYSTEMID,  time, &quot;user&quot;, message, substring (MESSAGE,1,4000)) a join&#xA;&#xA;&#x9;(SELECT * FROM TBDWMN_PRODUCTION_LINE) b on a.TBDWMN_PRODUCTION_LINE_ID = b.id join&#xA;&#x9;(SELECT * FROM TBDWMN_PRODUCTION_MODEL) c on a.TBDWMN_PRODUCTION_MODEL_ID = c.id left join&#xA;&#x9;&#xA;&#x9;(SELECT * FROM [db_owner].[TBDWFT_PROCESS_ORDER] WHERE site_id = ? and row_sts_flg=1) d on a.DATE_DT between d.START_DT and d.END_DT and a.TBDWMN_PRODUCTION_LINE_ID = d.production_line_id full join&#xA;&#xA;&#x9;(SELECT id as trg_ID, MACHINE_SERIAL_CD,  DATE_DT, MESSAGE_TRUNC_DESC, row_sts_flg as trg_row_sts_flg FROM TBDWFT_EQUIP_AUDIT_TRAIL WHERE site_id = ?) trg on c.MACHINE_SERIAL_CD = trg.MACHINE_SERIAL_CD and a.DATE_DT = trg.DATE_DT and a.MESSAGE_TRUNC_DESC = trg.MESSAGE_TRUNC_DESC&#xA;&#xA;&#x9;WHERE trg.trg_ID is null and c.MACHINE_SERIAL_CD is not null&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+                  SQLTask:SqlStatementSource="INSERT INTO TBDWFT_EQUIP_AUDIT_TRAIL&#xA;(TBLOG_PACKAGE_ID, TBLOG_PACKAGE_TABLE_ID, INSERT_DT,UPDATE_DT,USER_CD, SITE_ID, SOURCE_SYSTEM_ID,TBDWMN_PRODUCTION_LINE_ID, TBDWMN_PRODUCTION_MODEL_ID, SITE_CD,BUILDING_CD,&#xA;PHASE_CD, PRODUCT_FAMILY_CD, PRODUCT_TYPE_CD, MACHINE_SERIAL_CD, MACHINE_CD, MACHINE_FUNCTION_DESC,SOURCE_COUNTER_ID, SOURCE_EQUIPMENT_ID,DATE_DT,USER_DESC,MESSAGE_DESC, MESSAGE_TRUNC_DESC,&#xA;PROCESS_ORDER_CD, BATCH_CD, ARTICLE_CD, TBDWFT_PROCESS_ORDER_ID, TBDWAN_BATCH_ID, TBDWAN_ARTICLE_ID)&#xA;&#x9;&#xA;&#x9;SELECT &#x9;?, ?, getdate(), getdate(), ?, ?, ?, a.TBDWMN_PRODUCTION_LINE_ID, a.TBDWMN_PRODUCTION_MODEL_ID, b.site_cd, b.building_cd, b.phase_cd, b.product_family_cd, b.product_type_cd, c.MACHINE_SERIAL_CD, c.MACHINE_CD, c.MACHINE_FUNCTION_DESC,&#xA;&#x9; a.SOURCE_COUNTER_ID, a.SOURCE_EQUIPMENT_ID, a.DATE_DT, a.USER_DESC, a.MESSAGE_DESC, a.MESSAGE_TRUNC_DESC,&#xA;&#x9; isnull(d.process_order_cd,'N/A'), isnull(d.BATCH_CD,'N/A'), isnull(d.ARTICLE_CD,'N/A'), d.ID as TBDWFT_PROCESS_ORDER_ID, d.TBDWAN_BATCH_ID, d.TBDWAN_ARTICLE_ID&#xA;&#xA;&#x9;FROM&#xA;&#x9;(SELECT PRODUCTION_LINE_ID as TBDWMN_PRODUCTION_LINE_ID, PRODUCTION_MODEL_ID as TBDWMN_PRODUCTION_MODEL_ID, SYSTEMID as SOURCE_EQUIPMENT_ID, &#xA;&#x9;&#x9;time as DATE_DT, &quot;user&quot; as USER_DESC,  message as MESSAGE_DESC, substring (MESSAGE,1,4000) as MESSAGE_TRUNC_DESC, MIN(counter) as SOURCE_COUNTER_ID&#xA;&#x9; FROM TBST_FLAT_EQUIP_AUDIT_TRAIL &#xA;&#x9; WHERE site_id = ? and row_sts_flg=1 and update_dt &gt;= ?&#xA;&#x9; GROUP BY PRODUCTION_LINE_ID, PRODUCTION_MODEL_ID, SYSTEMID,  time, &quot;user&quot;, message, substring (MESSAGE,1,4000)) a join&#xA;&#xA;&#x9;(SELECT * FROM TBDWMN_PRODUCTION_LINE) b on a.TBDWMN_PRODUCTION_LINE_ID = b.id join&#xA;&#x9;(SELECT * FROM TBDWMN_PRODUCTION_MODEL) c on a.TBDWMN_PRODUCTION_MODEL_ID = c.id left join&#xA;&#x9;&#xA;&#x9;(SELECT * FROM [db_owner].[TBDWFT_PROCESS_ORDER] WHERE site_id = ? and row_sts_flg=1) d on a.DATE_DT between d.START_DT and d.END_DT and a.TBDWMN_PRODUCTION_LINE_ID = d.production_line_id full join&#xA;&#xA;&#x9;(SELECT id as trg_ID, MACHINE_SERIAL_CD,  DATE_DT, MESSAGE_TRUNC_DESC, row_sts_flg as trg_row_sts_flg FROM TBDWFT_EQUIP_AUDIT_TRAIL WHERE site_id = ?) trg on c.MACHINE_SERIAL_CD = trg.MACHINE_SERIAL_CD and a.DATE_DT = trg.DATE_DT and a.MESSAGE_TRUNC_DESC = trg.MESSAGE_TRUNC_DESC&#xA;&#xA;&#x9;WHERE trg.trg_ID is null and c.MACHINE_SERIAL_CD is not null&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
                   <SQLTask:ParameterBinding
                     SQLTask:ParameterName="0"
                     SQLTask:DtsVariableName="User::out_MAX_ID"
@@ -3753,16 +3853,22 @@ FROM
                     SQLTask:DataType="131"
                     SQLTask:ParameterSize="-1" />
                   <SQLTask:ParameterBinding
-                    SQLTask:ParameterName="6"
+                    SQLTask:ParameterName="7"
                     SQLTask:DtsVariableName="User::out_SITE_ID"
                     SQLTask:ParameterDirection="Input"
                     SQLTask:DataType="131"
                     SQLTask:ParameterSize="-1" />
                   <SQLTask:ParameterBinding
-                    SQLTask:ParameterName="7"
+                    SQLTask:ParameterName="8"
                     SQLTask:DtsVariableName="User::out_SITE_ID"
                     SQLTask:ParameterDirection="Input"
                     SQLTask:DataType="131"
+                    SQLTask:ParameterSize="-1" />
+                  <SQLTask:ParameterBinding
+                    SQLTask:ParameterName="6"
+                    SQLTask:DtsVariableName="User::out_LAST_SUCCESS_LOAD_DT"
+                    SQLTask:ParameterDirection="Input"
+                    SQLTask:DataType="7"
                     SQLTask:ParameterSize="-1" />
                 </SQLTask:SqlTaskData>
               </DTS:ObjectData>
@@ -3781,7 +3887,7 @@ FROM
               <DTS:ObjectData>
                 <SQLTask:SqlTaskData
                   SQLTask:Connection="{62102490-454D-4B7E-9A09-120A46D18B10}"
-                  SQLTask:SqlStatementSource="--insert in a temporary table the records to be updated&#xA;INSERT INTO TBDWTMP_EQUIP_AUDIT_TRAIL&#xA;(TBLOG_PACKAGE_ID, TBLOG_PACKAGE_TABLE_ID, INSERT_DT,UPDATE_DT,USER_CD, SITE_ID, SOURCE_SYSTEM_ID, ID,TBDWMN_PRODUCTION_LINE_ID, TBDWMN_PRODUCTION_MODEL_ID, SITE_CD,BUILDING_CD,&#xA;PHASE_CD, PRODUCT_FAMILY_CD, PRODUCT_TYPE_CD, MACHINE_SERIAL_CD, MACHINE_CD, MACHINE_FUNCTION_DESC,SOURCE_COUNTER_ID, SOURCE_EQUIPMENT_ID,DATE_DT,USER_DESC,MESSAGE_DESC, MESSAGE_TRUNC_DESC,&#xA;PROCESS_ORDER_CD, BATCH_CD, ARTICLE_CD, TBDWFT_PROCESS_ORDER_ID, TBDWAN_BATCH_ID, TBDWAN_ARTICLE_ID)&#xA;&#x9;&#xA;&#x9;SELECT &#x9;?, ?, getdate(), getdate(), ?, ?, ?, trg.trg_ID, a.TBDWMN_PRODUCTION_LINE_ID, a.TBDWMN_PRODUCTION_MODEL_ID, b.site_cd, b.building_cd, b.phase_cd, b.product_family_cd, b.product_type_cd, c.MACHINE_SERIAL_CD, c.MACHINE_CD, c.MACHINE_FUNCTION_DESC,&#xA;&#x9; a.SOURCE_COUNTER_ID, a.SOURCE_EQUIPMENT_ID, a.DATE_DT, a.USER_DESC, a.MESSAGE_DESC, a.MESSAGE_TRUNC_DESC,&#xA;&#x9;  isnull(d.process_order_cd,'N/A'), isnull(d.BATCH_CD,'N/A'), isnull(d.ARTICLE_CD,'N/A'), d.ID as TBDWFT_PROCESS_ORDER_ID, d.TBDWAN_BATCH_ID, d.TBDWAN_ARTICLE_ID&#xA;&#xA;&#x9;FROM&#xA;&#x9;(SELECT PRODUCTION_LINE_ID as TBDWMN_PRODUCTION_LINE_ID, PRODUCTION_MODEL_ID as TBDWMN_PRODUCTION_MODEL_ID, SYSTEMID as SOURCE_EQUIPMENT_ID, &#xA;&#x9;&#x9;time as DATE_DT, &quot;user&quot; as USER_DESC,  message as MESSAGE_DESC, substring (MESSAGE,1,4000) as MESSAGE_TRUNC_DESC, MIN(counter) as SOURCE_COUNTER_ID&#xA;&#x9; FROM TBST_FLAT_EQUIP_AUDIT_TRAIL &#xA;&#x9; WHERE site_id = ? and row_sts_flg=1&#xA;&#x9; GROUP BY PRODUCTION_LINE_ID, PRODUCTION_MODEL_ID, SYSTEMID,  time, &quot;user&quot;, message, substring (MESSAGE,1,4000)) a join&#xA;&#xA;&#x9;(SELECT * FROM TBDWMN_PRODUCTION_LINE) b on a.TBDWMN_PRODUCTION_LINE_ID = b.id  join&#xA;&#x9;(SELECT * FROM TBDWMN_PRODUCTION_MODEL) c on a.TBDWMN_PRODUCTION_MODEL_ID = c.id left join&#xA;&#x9;&#xA;&#x9;(SELECT * FROM [db_owner].[TBDWFT_PROCESS_ORDER] WHERE site_id = ? and row_sts_flg=1) d on a.DATE_DT between d.START_DT and d.END_DT and a.TBDWMN_PRODUCTION_LINE_ID = d.production_line_id full join&#xA;&#xA;&#x9;(SELECT id as trg_ID, MACHINE_SERIAL_CD,  DATE_DT, MESSAGE_TRUNC_DESC, row_sts_flg as trg_row_sts_flg FROM TBDWFT_EQUIP_AUDIT_TRAIL WHERE site_id = ?) trg on c.MACHINE_SERIAL_CD = trg.MACHINE_SERIAL_CD and a.DATE_DT = trg.DATE_DT and a.MESSAGE_TRUNC_DESC = trg.MESSAGE_TRUNC_DESC&#xA;&#xA;&#x9;WHERE trg.trg_ID is not null and c.MACHINE_SERIAL_CD is not null;&#xA;&#xA;--update the target DWH table&#xA;UPDATE TBDWFT_EQUIP_AUDIT_TRAIL&#xA;SET &#xA;&#x9;  TBLOG_PACKAGE_ID = b.TBLOG_PACKAGE_ID&#xA;&#x9;  ,TBLOG_PACKAGE_TABLE_ID = b.TBLOG_PACKAGE_TABLE_ID&#xA;      ,UPDATE_DT = b.UPDATE_DT&#xA;      ,USER_CD = b.USER_CD&#xA;      ,SITE_ID = b.SITE_ID&#xA;      ,SOURCE_SYSTEM_ID = b.SOURCE_SYSTEM_ID&#xA;      ,ROW_STS_FLG = 1&#xA;&#x9;  ,TBDWMN_PRODUCTION_LINE_ID = b.TBDWMN_PRODUCTION_LINE_ID&#xA;&#x9;  ,TBDWMN_PRODUCTION_MODEL_ID = b.TBDWMN_PRODUCTION_MODEL_ID&#xA;&#x9;  ,site_cd = b.site_cd&#xA;&#x9;  ,building_cd = b.building_cd&#xA;&#x9;  ,phase_cd = b.phase_cd&#xA;&#x9;  ,product_family_cd = b.product_family_cd&#xA;&#x9;  ,PRODUCT_TYPE_CD = b.PRODUCT_TYPE_CD&#xA;      ,MACHINE_SERIAL_CD = b.MACHINE_SERIAL_CD&#xA;&#x9;  ,MACHINE_CD = b.MACHINE_CD&#xA;&#x9;  ,MACHINE_FUNCTION_DESC = b.MACHINE_FUNCTION_DESC&#xA;&#x9;  ,SOURCE_COUNTER_ID = b.SOURCE_COUNTER_ID&#xA;&#x9;  ,SOURCE_EQUIPMENT_ID = b.SOURCE_EQUIPMENT_ID&#xA;&#x9;  ,DATE_DT = b.DATE_DT&#xA;&#x9;  ,USER_DESC = b.USER_DESC&#xA;&#x9;  ,MESSAGE_DESC = b.MESSAGE_DESC&#xA;&#x9;  ,MESSAGE_TRUNC_DESC = b.MESSAGE_TRUNC_DESC&#xA;&#x9;  ,PROCESS_ORDER_CD = B.PROCESS_ORDER_CD&#xA;&#x9;  ,BATCH_CD =b.BATCH_CD&#xA;&#x9;  ,ARTICLE_CD =b.ARTICLE_CD&#xA;&#x9;  ,TBDWFT_PROCESS_ORDER_ID =b.TBDWFT_PROCESS_ORDER_ID&#xA;&#x9;  ,TBDWAN_BATCH_ID = b.TBDWAN_BATCH_ID&#xA;&#x9;  ,TBDWAN_ARTICLE_ID = b.TBDWAN_ARTICLE_ID&#xA;&#xA;&#xA;FROM TBDWFT_EQUIP_AUDIT_TRAIL a join TBDWTMP_EQUIP_AUDIT_TRAIL b on a.id=b.id;&#xA;&#xA;--truncate support table &#xA;TRUNCATE TABLE TBDWTMP_EQUIP_AUDIT_TRAIL;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+                  SQLTask:SqlStatementSource="--insert in a temporary table the records to be updated&#xA;INSERT INTO TBDWTMP_EQUIP_AUDIT_TRAIL&#xA;(TBLOG_PACKAGE_ID, TBLOG_PACKAGE_TABLE_ID, INSERT_DT,UPDATE_DT,USER_CD, SITE_ID, SOURCE_SYSTEM_ID, ID,TBDWMN_PRODUCTION_LINE_ID, TBDWMN_PRODUCTION_MODEL_ID, SITE_CD,BUILDING_CD,&#xA;PHASE_CD, PRODUCT_FAMILY_CD, PRODUCT_TYPE_CD, MACHINE_SERIAL_CD, MACHINE_CD, MACHINE_FUNCTION_DESC,SOURCE_COUNTER_ID, SOURCE_EQUIPMENT_ID,DATE_DT,USER_DESC,MESSAGE_DESC, MESSAGE_TRUNC_DESC,&#xA;PROCESS_ORDER_CD, BATCH_CD, ARTICLE_CD, TBDWFT_PROCESS_ORDER_ID, TBDWAN_BATCH_ID, TBDWAN_ARTICLE_ID)&#xA;&#x9;&#xA;&#x9;SELECT &#x9;?, ?, getdate(), getdate(), ?, ?, ?, trg.trg_ID, a.TBDWMN_PRODUCTION_LINE_ID, a.TBDWMN_PRODUCTION_MODEL_ID, b.site_cd, b.building_cd, b.phase_cd, b.product_family_cd, b.product_type_cd, c.MACHINE_SERIAL_CD, c.MACHINE_CD, c.MACHINE_FUNCTION_DESC,&#xA;&#x9; a.SOURCE_COUNTER_ID, a.SOURCE_EQUIPMENT_ID, a.DATE_DT, a.USER_DESC, a.MESSAGE_DESC, a.MESSAGE_TRUNC_DESC,&#xA;&#x9;  isnull(d.process_order_cd,'N/A'), isnull(d.BATCH_CD,'N/A'), isnull(d.ARTICLE_CD,'N/A'), d.ID as TBDWFT_PROCESS_ORDER_ID, d.TBDWAN_BATCH_ID, d.TBDWAN_ARTICLE_ID&#xA;&#xA;&#x9;FROM&#xA;&#x9;(SELECT PRODUCTION_LINE_ID as TBDWMN_PRODUCTION_LINE_ID, PRODUCTION_MODEL_ID as TBDWMN_PRODUCTION_MODEL_ID, SYSTEMID as SOURCE_EQUIPMENT_ID, &#xA;&#x9;&#x9;time as DATE_DT, &quot;user&quot; as USER_DESC,  message as MESSAGE_DESC, substring (MESSAGE,1,4000) as MESSAGE_TRUNC_DESC, MIN(counter) as SOURCE_COUNTER_ID&#xA;&#x9; FROM TBST_FLAT_EQUIP_AUDIT_TRAIL &#xA;&#x9; WHERE site_id = ? and row_sts_flg=1 and UPDATE_DT &gt;= ?&#xA;&#x9; GROUP BY PRODUCTION_LINE_ID, PRODUCTION_MODEL_ID, SYSTEMID,  time, &quot;user&quot;, message, substring (MESSAGE,1,4000)) a join&#xA;&#xA;&#x9;(SELECT * FROM TBDWMN_PRODUCTION_LINE) b on a.TBDWMN_PRODUCTION_LINE_ID = b.id  join&#xA;&#x9;(SELECT * FROM TBDWMN_PRODUCTION_MODEL) c on a.TBDWMN_PRODUCTION_MODEL_ID = c.id left join&#xA;&#x9;&#xA;&#x9;(SELECT * FROM [db_owner].[TBDWFT_PROCESS_ORDER] WHERE site_id = ? and row_sts_flg=1) d on a.DATE_DT between d.START_DT and d.END_DT and a.TBDWMN_PRODUCTION_LINE_ID = d.production_line_id full join&#xA;&#xA;&#x9;(SELECT id as trg_ID, MACHINE_SERIAL_CD,  DATE_DT, MESSAGE_TRUNC_DESC, row_sts_flg as trg_row_sts_flg FROM TBDWFT_EQUIP_AUDIT_TRAIL WHERE site_id = ?) trg on c.MACHINE_SERIAL_CD = trg.MACHINE_SERIAL_CD and a.DATE_DT = trg.DATE_DT and a.MESSAGE_TRUNC_DESC = trg.MESSAGE_TRUNC_DESC&#xA;&#xA;&#x9;WHERE trg.trg_ID is not null and c.MACHINE_SERIAL_CD is not null;&#xA;&#xA;--update the target DWH table&#xA;UPDATE TBDWFT_EQUIP_AUDIT_TRAIL&#xA;SET &#xA;&#x9;  TBLOG_PACKAGE_ID = b.TBLOG_PACKAGE_ID&#xA;&#x9;  ,TBLOG_PACKAGE_TABLE_ID = b.TBLOG_PACKAGE_TABLE_ID&#xA;      ,UPDATE_DT = b.UPDATE_DT&#xA;      ,USER_CD = b.USER_CD&#xA;      ,SITE_ID = b.SITE_ID&#xA;      ,SOURCE_SYSTEM_ID = b.SOURCE_SYSTEM_ID&#xA;      ,ROW_STS_FLG = 1&#xA;&#x9;  ,TBDWMN_PRODUCTION_LINE_ID = b.TBDWMN_PRODUCTION_LINE_ID&#xA;&#x9;  ,TBDWMN_PRODUCTION_MODEL_ID = b.TBDWMN_PRODUCTION_MODEL_ID&#xA;&#x9;  ,site_cd = b.site_cd&#xA;&#x9;  ,building_cd = b.building_cd&#xA;&#x9;  ,phase_cd = b.phase_cd&#xA;&#x9;  ,product_family_cd = b.product_family_cd&#xA;&#x9;  ,PRODUCT_TYPE_CD = b.PRODUCT_TYPE_CD&#xA;      ,MACHINE_SERIAL_CD = b.MACHINE_SERIAL_CD&#xA;&#x9;  ,MACHINE_CD = b.MACHINE_CD&#xA;&#x9;  ,MACHINE_FUNCTION_DESC = b.MACHINE_FUNCTION_DESC&#xA;&#x9;  ,SOURCE_COUNTER_ID = b.SOURCE_COUNTER_ID&#xA;&#x9;  ,SOURCE_EQUIPMENT_ID = b.SOURCE_EQUIPMENT_ID&#xA;&#x9;  ,DATE_DT = b.DATE_DT&#xA;&#x9;  ,USER_DESC = b.USER_DESC&#xA;&#x9;  ,MESSAGE_DESC = b.MESSAGE_DESC&#xA;&#x9;  ,MESSAGE_TRUNC_DESC = b.MESSAGE_TRUNC_DESC&#xA;&#x9;  ,PROCESS_ORDER_CD = B.PROCESS_ORDER_CD&#xA;&#x9;  ,BATCH_CD =b.BATCH_CD&#xA;&#x9;  ,ARTICLE_CD =b.ARTICLE_CD&#xA;&#x9;  ,TBDWFT_PROCESS_ORDER_ID =b.TBDWFT_PROCESS_ORDER_ID&#xA;&#x9;  ,TBDWAN_BATCH_ID = b.TBDWAN_BATCH_ID&#xA;&#x9;  ,TBDWAN_ARTICLE_ID = b.TBDWAN_ARTICLE_ID&#xA;&#xA;&#xA;FROM TBDWFT_EQUIP_AUDIT_TRAIL a join TBDWTMP_EQUIP_AUDIT_TRAIL b on a.id=b.id;&#xA;&#xA;--truncate support table &#xA;TRUNCATE TABLE TBDWTMP_EQUIP_AUDIT_TRAIL;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
                   <SQLTask:ParameterBinding
                     SQLTask:ParameterName="0"
                     SQLTask:DtsVariableName="User::out_MAX_ID"
@@ -3819,16 +3925,22 @@ FROM
                     SQLTask:DataType="131"
                     SQLTask:ParameterSize="-1" />
                   <SQLTask:ParameterBinding
-                    SQLTask:ParameterName="6"
+                    SQLTask:ParameterName="7"
                     SQLTask:DtsVariableName="User::out_SITE_ID"
                     SQLTask:ParameterDirection="Input"
                     SQLTask:DataType="131"
                     SQLTask:ParameterSize="-1" />
                   <SQLTask:ParameterBinding
-                    SQLTask:ParameterName="7"
+                    SQLTask:ParameterName="8"
                     SQLTask:DtsVariableName="User::out_SITE_ID"
                     SQLTask:ParameterDirection="Input"
                     SQLTask:DataType="131"
+                    SQLTask:ParameterSize="-1" />
+                  <SQLTask:ParameterBinding
+                    SQLTask:ParameterName="6"
+                    SQLTask:DtsVariableName="User::out_LAST_SUCCESS_LOAD_DT"
+                    SQLTask:ParameterDirection="Input"
+                    SQLTask:DataType="7"
                     SQLTask:ParameterSize="-1" />
                 </SQLTask:SqlTaskData>
               </DTS:ObjectData>
@@ -3847,7 +3959,7 @@ FROM
               <DTS:ObjectData>
                 <SQLTask:SqlTaskData
                   SQLTask:Connection="{62102490-454D-4B7E-9A09-120A46D18B10}"
-                  SQLTask:SqlStatementSource="--insert in a temporary table the record to update with the TBDWAN_EQUIP_PARAMETER_ID&#xA;INSERT INTO TBDWTMP_EQUIP_AUDIT_TRAIL (TBLOG_PACKAGE_ID, TBLOG_PACKAGE_TABLE_ID, UPDATE_DT,USER_CD, ID, TBDWAN_EQUIP_PARAMETER_ID)&#xA; &#xA;SELECT ?, ?, getdate(), ?, a.ID, a.TBDWAN_EQUIP_PARAMETER_ID&#xA;FROM&#xA;(&#xA;&#x9;SELECT a.ID, b.id as TBDWAN_EQUIP_PARAMETER_ID, ROW_NUMBER () over (partition by a.ID order by len(b.PARAMETER_TAG_SEARCH_DESC) desc) as ord&#xA;&#x9;FROM&#xA;&#x9;&#x9;(SELECT * FROM tbdwft_equip_audit_trail WHERE SITE_ID = ? and ROW_STS_FLG = 1) a join&#xA;&#x9;&#x9;(SELECT * FROM tbdwan_equip_parameter WHERE SITE_ID = ? and ROW_STS_FLG = 1) b on a.MESSAGE_TRUNC_DESC like b.PARAMETER_FILTER_SEARCH_DESC and a.MESSAGE_TRUNC_DESC like b.PARAMETER_TAG_SEARCH_DESC and a.TBDWMN_PRODUCTION_MODEL_ID=b.TBDWMN_PRODUCTION_MODEL_ID and a.TBDWMN_PRODUCTION_LINE_ID=b.TBDWMN_PRODUCTION_LINE_ID join&#xA;&#x9;&#x9;(SELECT * FROM tbdwmn_equip_parameter) c on a.date_dt between c.VALIDITY_START_DT and c.VALIDITY_END_DT and b.id = c.TBDWAN_EQUIP_PARAMETER_ID&#xA;) a&#xA;WHERE a.ord = 1 --in case for the same audit several parameters are satisfying the request, the correct is the parameter with greater length (means that match better)&#xA;&#xA;--update record on the target DWH table&#xA;UPDATE TBDWFT_EQUIP_AUDIT_TRAIL&#xA;SET &#xA;&#x9;  TBLOG_PACKAGE_ID = b.TBLOG_PACKAGE_ID&#xA;&#x9;  ,TBLOG_PACKAGE_TABLE_ID = b.TBLOG_PACKAGE_TABLE_ID&#xA;      ,UPDATE_DT = b.UPDATE_DT&#xA;      ,USER_CD = b.USER_CD&#xA;      ,TBDWAN_EQUIP_PARAMETER_ID = b.TBDWAN_EQUIP_PARAMETER_ID&#xA;FROM TBDWFT_EQUIP_AUDIT_TRAIL a join TBDWTMP_EQUIP_AUDIT_TRAIL b on a.id=b.id;&#xA;&#xA;--truncate support table &#xA;TRUNCATE TABLE TBDWTMP_EQUIP_AUDIT_TRAIL;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+                  SQLTask:SqlStatementSource="--insert in a temporary table the record to update with the TBDWAN_EQUIP_PARAMETER_ID&#xA;INSERT INTO TBDWTMP_EQUIP_AUDIT_TRAIL (TBLOG_PACKAGE_ID, TBLOG_PACKAGE_TABLE_ID, UPDATE_DT,USER_CD, ID, TBDWAN_EQUIP_PARAMETER_ID)&#xA; &#xA;SELECT ?, ?, getdate(), ?, a.ID, a.TBDWAN_EQUIP_PARAMETER_ID&#xA;FROM&#xA;(&#xA;&#x9;SELECT a.ID, b.id as TBDWAN_EQUIP_PARAMETER_ID, ROW_NUMBER () over (partition by a.ID order by len(b.PARAMETER_TAG_SEARCH_DESC) desc) as ord&#xA;&#x9;FROM&#xA;&#x9;&#x9;(SELECT * FROM tbdwft_equip_audit_trail WHERE SITE_ID = ? and ROW_STS_FLG = 1 and UPDATE_DT &gt;= ?) a join&#xA;&#x9;&#x9;(SELECT * FROM tbdwan_equip_parameter WHERE SITE_ID = ? and ROW_STS_FLG = 1) b on a.MESSAGE_TRUNC_DESC like b.PARAMETER_FILTER_SEARCH_DESC and a.MESSAGE_TRUNC_DESC like b.PARAMETER_TAG_SEARCH_DESC and a.TBDWMN_PRODUCTION_MODEL_ID=b.TBDWMN_PRODUCTION_MODEL_ID and a.TBDWMN_PRODUCTION_LINE_ID=b.TBDWMN_PRODUCTION_LINE_ID join&#xA;&#x9;&#x9;(SELECT * FROM tbdwmn_equip_parameter) c on a.date_dt between c.VALIDITY_START_DT and c.VALIDITY_END_DT and b.id = c.TBDWAN_EQUIP_PARAMETER_ID&#xA;) a&#xA;WHERE a.ord = 1 --in case for the same audit several parameters are satisfying the request, the correct is the parameter with greater length (means that match better)&#xA;&#xA;--update record on the target DWH table&#xA;UPDATE TBDWFT_EQUIP_AUDIT_TRAIL&#xA;SET &#xA;&#x9;  TBLOG_PACKAGE_ID = b.TBLOG_PACKAGE_ID&#xA;&#x9;  ,TBLOG_PACKAGE_TABLE_ID = b.TBLOG_PACKAGE_TABLE_ID&#xA;      ,UPDATE_DT = b.UPDATE_DT&#xA;      ,USER_CD = b.USER_CD&#xA;      ,TBDWAN_EQUIP_PARAMETER_ID = b.TBDWAN_EQUIP_PARAMETER_ID&#xA;FROM TBDWFT_EQUIP_AUDIT_TRAIL a join TBDWTMP_EQUIP_AUDIT_TRAIL b on a.id=b.id;&#xA;&#xA;--truncate support table &#xA;TRUNCATE TABLE TBDWTMP_EQUIP_AUDIT_TRAIL;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
                   <SQLTask:ParameterBinding
                     SQLTask:ParameterName="0"
                     SQLTask:DtsVariableName="User::out_MAX_ID"
@@ -3873,8 +3985,134 @@ FROM
                     SQLTask:DataType="131"
                     SQLTask:ParameterSize="-1" />
                   <SQLTask:ParameterBinding
-                    SQLTask:ParameterName="4"
+                    SQLTask:ParameterName="5"
                     SQLTask:DtsVariableName="User::out_SITE_ID"
+                    SQLTask:ParameterDirection="Input"
+                    SQLTask:DataType="131"
+                    SQLTask:ParameterSize="-1" />
+                  <SQLTask:ParameterBinding
+                    SQLTask:ParameterName="4"
+                    SQLTask:DtsVariableName="User::out_DWH_DELTA_DT"
+                    SQLTask:ParameterDirection="Input"
+                    SQLTask:DataType="7"
+                    SQLTask:ParameterSize="-1" />
+                </SQLTask:SqlTaskData>
+              </DTS:ObjectData>
+            </DTS:Executable>
+            <DTS:Executable
+              DTS:refId="Package\DWH FT LOAD\TBDWFT_EQUIP_AUDIT_TRAIL\Upd DATE Loaded"
+              DTS:CreationName="Microsoft.ExecuteSQLTask"
+              DTS:Description="Execute SQL Task"
+              DTS:DTSID="{f26c961a-d06b-49cc-8caa-9ea1ab22a1a0}"
+              DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+              DTS:LocaleID="-1"
+              DTS:ObjectName="Upd DATE Loaded"
+              DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+              DTS:ThreadHint="0">
+              <DTS:Variables />
+              <DTS:ObjectData>
+                <SQLTask:SqlTaskData
+                  SQLTask:Connection="{62102490-454D-4B7E-9A09-120A46D18B10}"
+                  SQLTask:SqlStatementSource="IF EXISTS&#xA; (select *&#xA; from TBLOG_DELTA_LOAD &#xA; where  &#xA;  SOURCE_SYSTEM_ID = ?&#xA;  and TABLE_TARGET_CD = ?&#xA;  and ENTITY_CD = ?)&#xA;&#xA;update TBLOG_DELTA_LOAD &#xA;set LAST_SUCCESS_LOAD_DT= ?,&#xA;TBLOG_PACKAGE_ID=?,&#xA;TBLOG_PACKAGE_TABLE_ID=?,&#xA;ONE_SHOT_FULL_LOAD_FLG=0,&#xA;TRANSACTION_CD='U',&#xA;INSERT_DT=getdate()&#xA;where  &#xA; SOURCE_SYSTEM_ID = ?&#xA; and TABLE_TARGET_CD = ?&#xA; and ENTITY_CD = ?&#xA;ELSE&#xA;   insert into TBLOG_DELTA_LOAD values (?,?,?,?,?,?,?,0,0,0,'I',getdate(),?);" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+                  <SQLTask:ParameterBinding
+                    SQLTask:ParameterName="0"
+                    SQLTask:DtsVariableName="User::out_SOURCE_SYSTEM_ID"
+                    SQLTask:ParameterDirection="Input"
+                    SQLTask:DataType="131"
+                    SQLTask:ParameterSize="-1" />
+                  <SQLTask:ParameterBinding
+                    SQLTask:ParameterName="1"
+                    SQLTask:DtsVariableName="User::out_TABLE_TARGET_CD"
+                    SQLTask:ParameterDirection="Input"
+                    SQLTask:DataType="130"
+                    SQLTask:ParameterSize="-1" />
+                  <SQLTask:ParameterBinding
+                    SQLTask:ParameterName="2"
+                    SQLTask:DtsVariableName="User::out_TABLE_TARGET_CD"
+                    SQLTask:ParameterDirection="Input"
+                    SQLTask:DataType="130"
+                    SQLTask:ParameterSize="-1" />
+                  <SQLTask:ParameterBinding
+                    SQLTask:ParameterName="3"
+                    SQLTask:DtsVariableName="User::out_NEW_LAST_SUCCESS_LOAD_DT"
+                    SQLTask:ParameterDirection="Input"
+                    SQLTask:DataType="7"
+                    SQLTask:ParameterSize="-1" />
+                  <SQLTask:ParameterBinding
+                    SQLTask:ParameterName="6"
+                    SQLTask:DtsVariableName="User::out_SOURCE_SYSTEM_ID"
+                    SQLTask:ParameterDirection="Input"
+                    SQLTask:DataType="131"
+                    SQLTask:ParameterSize="-1" />
+                  <SQLTask:ParameterBinding
+                    SQLTask:ParameterName="7"
+                    SQLTask:DtsVariableName="User::out_TABLE_TARGET_CD"
+                    SQLTask:ParameterDirection="Input"
+                    SQLTask:DataType="130"
+                    SQLTask:ParameterSize="-1" />
+                  <SQLTask:ParameterBinding
+                    SQLTask:ParameterName="8"
+                    SQLTask:DtsVariableName="User::out_TABLE_TARGET_CD"
+                    SQLTask:ParameterDirection="Input"
+                    SQLTask:DataType="130"
+                    SQLTask:ParameterSize="-1" />
+                  <SQLTask:ParameterBinding
+                    SQLTask:ParameterName="9"
+                    SQLTask:DtsVariableName="User::out_MAX_ID"
+                    SQLTask:ParameterDirection="Input"
+                    SQLTask:DataType="131"
+                    SQLTask:ParameterSize="-1" />
+                  <SQLTask:ParameterBinding
+                    SQLTask:ParameterName="10"
+                    SQLTask:DtsVariableName="User::out_MAX_TABLE_ID"
+                    SQLTask:ParameterDirection="Input"
+                    SQLTask:DataType="131"
+                    SQLTask:ParameterSize="-1" />
+                  <SQLTask:ParameterBinding
+                    SQLTask:ParameterName="11"
+                    SQLTask:DtsVariableName="User::out_SOURCE_SYSTEM_ID"
+                    SQLTask:ParameterDirection="Input"
+                    SQLTask:DataType="131"
+                    SQLTask:ParameterSize="-1" />
+                  <SQLTask:ParameterBinding
+                    SQLTask:ParameterName="12"
+                    SQLTask:DtsVariableName="User::in_PACKAGE_NAME_CD"
+                    SQLTask:ParameterDirection="Input"
+                    SQLTask:DataType="130"
+                    SQLTask:ParameterSize="-1" />
+                  <SQLTask:ParameterBinding
+                    SQLTask:ParameterName="13"
+                    SQLTask:DtsVariableName="User::out_TABLE_TARGET_CD"
+                    SQLTask:ParameterDirection="Input"
+                    SQLTask:DataType="130"
+                    SQLTask:ParameterSize="-1" />
+                  <SQLTask:ParameterBinding
+                    SQLTask:ParameterName="14"
+                    SQLTask:DtsVariableName="User::out_TABLE_TARGET_CD"
+                    SQLTask:ParameterDirection="Input"
+                    SQLTask:DataType="130"
+                    SQLTask:ParameterSize="-1" />
+                  <SQLTask:ParameterBinding
+                    SQLTask:ParameterName="15"
+                    SQLTask:DtsVariableName="User::out_NEW_LAST_SUCCESS_LOAD_DT"
+                    SQLTask:ParameterDirection="Input"
+                    SQLTask:DataType="7"
+                    SQLTask:ParameterSize="-1" />
+                  <SQLTask:ParameterBinding
+                    SQLTask:ParameterName="16"
+                    SQLTask:DtsVariableName="$Project::in_USER_CD"
+                    SQLTask:ParameterDirection="Input"
+                    SQLTask:DataType="130"
+                    SQLTask:ParameterSize="-1" />
+                  <SQLTask:ParameterBinding
+                    SQLTask:ParameterName="4"
+                    SQLTask:DtsVariableName="User::out_MAX_ID"
+                    SQLTask:ParameterDirection="Input"
+                    SQLTask:DataType="131"
+                    SQLTask:ParameterSize="-1" />
+                  <SQLTask:ParameterBinding
+                    SQLTask:ParameterName="5"
+                    SQLTask:DtsVariableName="User::out_MAX_TABLE_ID"
                     SQLTask:ParameterDirection="Input"
                     SQLTask:DataType="131"
                     SQLTask:ParameterSize="-1" />
@@ -3900,6 +4138,22 @@ FROM
               DTS:ObjectName="Constraint 1"
               DTS:To="Package\DWH FT LOAD\TBDWFT_EQUIP_AUDIT_TRAIL\TBDWFT_EQUIP_AUDIT_TRAIL del" />
             <DTS:PrecedenceConstraint
+              DTS:refId="Package\DWH FT LOAD\TBDWFT_EQUIP_AUDIT_TRAIL.PrecedenceConstraints[Constraint 10]"
+              DTS:CreationName=""
+              DTS:DTSID="{3A2BEEF5-736E-4DA3-8306-DEDE409828E1}"
+              DTS:From="Package\DWH FT LOAD\TBDWFT_EQUIP_AUDIT_TRAIL\New Max DATE Loaded"
+              DTS:LogicalAnd="True"
+              DTS:ObjectName="Constraint 10"
+              DTS:To="Package\DWH FT LOAD\TBDWFT_EQUIP_AUDIT_TRAIL\TBDWFT_EQUIP_AUDIT_TRAIL ins" />
+            <DTS:PrecedenceConstraint
+              DTS:refId="Package\DWH FT LOAD\TBDWFT_EQUIP_AUDIT_TRAIL.PrecedenceConstraints[Constraint 11]"
+              DTS:CreationName=""
+              DTS:DTSID="{2AECFFBC-E34E-4F58-A619-A1BA476404ED}"
+              DTS:From="Package\DWH FT LOAD\TBDWFT_EQUIP_AUDIT_TRAIL\TBDWFT_EQUIP_AUDIT_TRAIL del"
+              DTS:LogicalAnd="True"
+              DTS:ObjectName="Constraint 11"
+              DTS:To="Package\DWH FT LOAD\TBDWFT_EQUIP_AUDIT_TRAIL\TBDWFT_EQUIP_AUDIT_TRAIL upd ID PARAMETER" />
+            <DTS:PrecedenceConstraint
               DTS:refId="Package\DWH FT LOAD\TBDWFT_EQUIP_AUDIT_TRAIL.PrecedenceConstraints[Constraint 2]"
               DTS:CreationName=""
               DTS:DTSID="{A2A9DB14-0A79-46AA-88D3-A95FC499BEA0}"
@@ -3918,26 +4172,42 @@ FROM
             <DTS:PrecedenceConstraint
               DTS:refId="Package\DWH FT LOAD\TBDWFT_EQUIP_AUDIT_TRAIL.PrecedenceConstraints[Constraint 4]"
               DTS:CreationName=""
-              DTS:DTSID="{FE64C741-F591-4730-8FB9-16AEB18685DC}"
+              DTS:DTSID="{A404C4BD-0677-44FE-A941-8D0C67B3A620}"
               DTS:From="Package\DWH FT LOAD\TBDWFT_EQUIP_AUDIT_TRAIL\MAX TABLE ID"
               DTS:LogicalAnd="True"
               DTS:ObjectName="Constraint 4"
-              DTS:To="Package\DWH FT LOAD\TBDWFT_EQUIP_AUDIT_TRAIL\TBDWFT_EQUIP_AUDIT_TRAIL ins" />
-            <DTS:PrecedenceConstraint
-              DTS:refId="Package\DWH FT LOAD\TBDWFT_EQUIP_AUDIT_TRAIL.PrecedenceConstraints[Constraint 5]"
-              DTS:CreationName=""
-              DTS:DTSID="{32628D8F-493B-4F68-A9FB-836B39314DC1}"
-              DTS:From="Package\DWH FT LOAD\TBDWFT_EQUIP_AUDIT_TRAIL\TBDWFT_EQUIP_AUDIT_TRAIL del"
-              DTS:LogicalAnd="True"
-              DTS:ObjectName="Constraint 5"
-              DTS:To="Package\DWH FT LOAD\TBDWFT_EQUIP_AUDIT_TRAIL\TBDWFT_EQUIP_AUDIT_TRAIL upd ID PARAMETER" />
+              DTS:To="Package\DWH FT LOAD\TBDWFT_EQUIP_AUDIT_TRAIL\New Max DATE Loaded" />
             <DTS:PrecedenceConstraint
               DTS:refId="Package\DWH FT LOAD\TBDWFT_EQUIP_AUDIT_TRAIL.PrecedenceConstraints[Constraint 6]"
               DTS:CreationName=""
-              DTS:DTSID="{6C8965E3-913E-4752-AA66-476FAD3BB651}"
-              DTS:From="Package\DWH FT LOAD\TBDWFT_EQUIP_AUDIT_TRAIL\TBDWFT_EQUIP_AUDIT_TRAIL upd ID PARAMETER"
+              DTS:DTSID="{783CEACC-9C38-4519-84F2-CF324D38D32E}"
+              DTS:From="Package\DWH FT LOAD\TBDWFT_EQUIP_AUDIT_TRAIL\Last Max DATE Loaded and DWH_DELTA_DT"
               DTS:LogicalAnd="True"
               DTS:ObjectName="Constraint 6"
+              DTS:To="Package\DWH FT LOAD\TBDWFT_EQUIP_AUDIT_TRAIL\TBDWFT_EQUIP_AUDIT_TRAIL ins" />
+            <DTS:PrecedenceConstraint
+              DTS:refId="Package\DWH FT LOAD\TBDWFT_EQUIP_AUDIT_TRAIL.PrecedenceConstraints[Constraint 7]"
+              DTS:CreationName=""
+              DTS:DTSID="{9ABF849B-F801-430A-A246-9D0168A4DA58}"
+              DTS:From="Package\DWH FT LOAD\TBDWFT_EQUIP_AUDIT_TRAIL\MAX TABLE ID"
+              DTS:LogicalAnd="True"
+              DTS:ObjectName="Constraint 7"
+              DTS:To="Package\DWH FT LOAD\TBDWFT_EQUIP_AUDIT_TRAIL\Last Max DATE Loaded and DWH_DELTA_DT" />
+            <DTS:PrecedenceConstraint
+              DTS:refId="Package\DWH FT LOAD\TBDWFT_EQUIP_AUDIT_TRAIL.PrecedenceConstraints[Constraint 8]"
+              DTS:CreationName=""
+              DTS:DTSID="{151E61E6-7BAD-4C1C-A001-AB74509E56E3}"
+              DTS:From="Package\DWH FT LOAD\TBDWFT_EQUIP_AUDIT_TRAIL\TBDWFT_EQUIP_AUDIT_TRAIL upd ID PARAMETER"
+              DTS:LogicalAnd="True"
+              DTS:ObjectName="Constraint 8"
+              DTS:To="Package\DWH FT LOAD\TBDWFT_EQUIP_AUDIT_TRAIL\Upd DATE Loaded" />
+            <DTS:PrecedenceConstraint
+              DTS:refId="Package\DWH FT LOAD\TBDWFT_EQUIP_AUDIT_TRAIL.PrecedenceConstraints[Constraint 9]"
+              DTS:CreationName=""
+              DTS:DTSID="{5A8E79FF-46D3-4A31-994A-1D94A984D1B2}"
+              DTS:From="Package\DWH FT LOAD\TBDWFT_EQUIP_AUDIT_TRAIL\Upd DATE Loaded"
+              DTS:LogicalAnd="True"
+              DTS:ObjectName="Constraint 9"
               DTS:To="Package\DWH FT LOAD\TBDWFT_EQUIP_AUDIT_TRAIL\Last Upd TBLOG_PACKAGE_TABLE" />
           </DTS:PrecedenceConstraints>
           <DTS:EventHandlers>
@@ -4298,7 +4568,7 @@ FROM
     design-time-name="Package">
     <LayoutInfo>
       <GraphLayout
-        Capacity="64" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="128" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="157,42"
           Id="Package\Assign SITE_ID"
@@ -4350,7 +4620,9 @@ FROM
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -4384,7 +4656,9 @@ FROM
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -4406,7 +4680,9 @@ FROM
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -4440,7 +4716,9 @@ FROM
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -4474,28 +4752,30 @@ FROM
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <AnnotationLayout
           Text="To be modified according table"
           ParentId="Package\DWH AN LOAD\TBDWAN_EQUIP_PARAMETER"
           FontInfo="{assembly:Null}"
-          Size="194,40"
+          Size="194,NaN"
           Id="bb83133a-472b-4887-9336-8712d47cb94d"
           TopLeft="35.5,310.5" />
         <AnnotationLayout
           Text="To be specify target table name"
           ParentId="Package\DWH AN LOAD\TBDWAN_EQUIP_PARAMETER"
           FontInfo="{assembly:Null}"
-          Size="195,40"
+          Size="195,NaN"
           Id="684b34f8-e38a-41f5-b322-4f0da67188f1"
           TopLeft="29.5,10.5" />
         <AnnotationLayout
           Text="To be modified according table"
           ParentId="Package\DWH AN LOAD\TBDWAN_EQUIP_PARAMETER"
           FontInfo="{assembly:Null}"
-          Size="194,40"
+          Size="194,NaN"
           Id="f03cdc76-5c83-4f48-a957-1b328cc50b11"
           TopLeft="41.5,402.5" />
         <ContainerLayout
@@ -4679,14 +4959,16 @@ FROM
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <ContainerLayout
           HeaderHeight="45"
           IsExpanded="False"
           PanelSize="1136,990"
-          Size="1136,45"
+          Size="179,45"
           Id="Package\DWH AN LOAD"
           TopLeft="578.888888888889,378" />
         <NodeLayout
@@ -4698,13 +4980,21 @@ FROM
           Id="Package\DWH FT LOAD\TBDWFT_EQUIP_AUDIT_TRAIL\Ins_Upd TBLOG_PACKAGE_TABLE"
           TopLeft="225.5,107.5" />
         <NodeLayout
+          Size="308,42"
+          Id="Package\DWH FT LOAD\TBDWFT_EQUIP_AUDIT_TRAIL\Last Max DATE Loaded and DWH_DELTA_DT"
+          TopLeft="18.5,251.5" />
+        <NodeLayout
           Size="263,42"
           Id="Package\DWH FT LOAD\TBDWFT_EQUIP_AUDIT_TRAIL\Last Upd TBLOG_PACKAGE_TABLE"
-          TopLeft="237,649.5" />
+          TopLeft="221,762.5" />
         <NodeLayout
           Size="155,42"
           Id="Package\DWH FT LOAD\TBDWFT_EQUIP_AUDIT_TRAIL\MAX TABLE ID"
           TopLeft="278,209.5" />
+        <NodeLayout
+          Size="197,42"
+          Id="Package\DWH FT LOAD\TBDWFT_EQUIP_AUDIT_TRAIL\New Max DATE Loaded"
+          TopLeft="420.5,253.5" />
         <NodeLayout
           Size="259,42"
           Id="Package\DWH FT LOAD\TBDWFT_EQUIP_AUDIT_TRAIL\TBDWFT_EQUIP_AUDIT_TRAIL del"
@@ -4721,6 +5011,10 @@ FROM
           Size="348,42"
           Id="Package\DWH FT LOAD\TBDWFT_EQUIP_AUDIT_TRAIL\TBDWFT_EQUIP_AUDIT_TRAIL upd ID PARAMETER"
           TopLeft="235.5,567.5" />
+        <NodeLayout
+          Size="171,42"
+          Id="Package\DWH FT LOAD\TBDWFT_EQUIP_AUDIT_TRAIL\Upd DATE Loaded"
+          TopLeft="54.5,659.5" />
         <EdgeLayout
           Id="Package\DWH FT LOAD\TBDWFT_EQUIP_AUDIT_TRAIL.PrecedenceConstraints[Constraint]"
           TopLeft="372.75,353">
@@ -4757,6 +5051,34 @@ FROM
                   Capacity="5">
                   <mssgle:LineSegment
                     End="0,30" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DWH FT LOAD\TBDWFT_EQUIP_AUDIT_TRAIL.PrecedenceConstraints[Constraint 10]"
+          TopLeft="420.5,274.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-47.5,36.5"
+              Start="0,0"
+              End="-47.5,29">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="-43.5,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-43.5,0"
+                    Point2="-47.5,0"
+                    Point3="-47.5,4" />
+                  <mssgle:LineSegment
+                    End="-47.5,29" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -4823,64 +5145,24 @@ FROM
         </EdgeLayout>
         <EdgeLayout
           Id="Package\DWH FT LOAD\TBDWFT_EQUIP_AUDIT_TRAIL.PrecedenceConstraints[Constraint 4]"
-          TopLeft="355.5,251.5">
+          TopLeft="433,230.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="17.5,59.5"
+              EndConnector="86,23"
               Start="0,0"
-              End="17.5,52">
+              End="86,15.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,25.75" />
+                    End="82,0" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,25.75"
-                    Point2="0,29.75"
-                    Point3="4,29.75" />
+                    Point1="82,0"
+                    Point2="86,0"
+                    Point3="86,4" />
                   <mssgle:LineSegment
-                    End="13.5,29.75" />
-                  <mssgle:CubicBezierSegment
-                    Point1="13.5,29.75"
-                    Point2="17.5,29.75"
-                    Point3="17.5,33.75" />
-                  <mssgle:LineSegment
-                    End="17.5,52" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\DWH FT LOAD\TBDWFT_EQUIP_AUDIT_TRAIL.PrecedenceConstraints[Constraint 5]"
-          TopLeft="377,523.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="32.5,44"
-              Start="0,0"
-              End="32.5,36.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,18" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,18"
-                    Point2="0,22"
-                    Point3="4,22" />
-                  <mssgle:LineSegment
-                    End="28.5,22" />
-                  <mssgle:CubicBezierSegment
-                    Point1="28.5,22"
-                    Point2="32.5,22"
-                    Point3="32.5,26" />
-                  <mssgle:LineSegment
-                    End="32.5,36.5" />
+                    End="86,15.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -4891,30 +5173,120 @@ FROM
         </EdgeLayout>
         <EdgeLayout
           Id="Package\DWH FT LOAD\TBDWFT_EQUIP_AUDIT_TRAIL.PrecedenceConstraints[Constraint 6]"
-          TopLeft="409.5,609.5">
+          TopLeft="326.5,272.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-41,40"
+              EndConnector="4.83333333333331,38.5"
               Start="0,0"
-              End="-41,32.5">
+              End="4.83333333333331,31">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,16" />
+                    End="0.833333333333314,0" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,16"
-                    Point2="0,20"
-                    Point3="-4,20" />
+                    Point1="0.833333333333314,0"
+                    Point2="4.83333333333331,0"
+                    Point3="4.83333333333331,4" />
                   <mssgle:LineSegment
-                    End="-37,20" />
+                    End="4.83333333333331,31" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DWH FT LOAD\TBDWFT_EQUIP_AUDIT_TRAIL.PrecedenceConstraints[Constraint 7]"
+          TopLeft="278,229">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-105.5,22.5"
+              Start="0,0"
+              End="-105.5,15">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="-101.5,0" />
                   <mssgle:CubicBezierSegment
-                    Point1="-37,20"
-                    Point2="-41,20"
-                    Point3="-41,24" />
+                    Point1="-101.5,0"
+                    Point2="-105.5,0"
+                    Point3="-105.5,4" />
                   <mssgle:LineSegment
-                    End="-41,32.5" />
+                    End="-105.5,15" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DWH FT LOAD\TBDWFT_EQUIP_AUDIT_TRAIL.PrecedenceConstraints[Constraint 8]"
+          TopLeft="409.5,609.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-269.5,50"
+              Start="0,0"
+              End="-269.5,42.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,21" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,21"
+                    Point2="0,25"
+                    Point3="-4,25" />
+                  <mssgle:LineSegment
+                    End="-265.5,25" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-265.5,25"
+                    Point2="-269.5,25"
+                    Point3="-269.5,29" />
+                  <mssgle:LineSegment
+                    End="-269.5,42.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DWH FT LOAD\TBDWFT_EQUIP_AUDIT_TRAIL.PrecedenceConstraints[Constraint 9]"
+          TopLeft="140,701.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="212.5,61"
+              Start="0,0"
+              End="212.5,53.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,26.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,26.5"
+                    Point2="0,30.5"
+                    Point3="4,30.5" />
+                  <mssgle:LineSegment
+                    End="208.5,30.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="208.5,30.5"
+                    Point2="212.5,30.5"
+                    Point3="212.5,34.5" />
+                  <mssgle:LineSegment
+                    End="212.5,53.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -4958,18 +5330,52 @@ FROM
           Size="194,40"
           Id="b6bbb5f3-0ccd-4968-a623-8210e63f0d35"
           TopLeft="37.5,565.5" />
+        <EdgeLayout
+          Id="Package\DWH FT LOAD\TBDWFT_EQUIP_AUDIT_TRAIL.PrecedenceConstraints[Constraint 11]"
+          TopLeft="377,523.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="32.5,44"
+              Start="0,0"
+              End="32.5,36.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,18" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,18"
+                    Point2="0,22"
+                    Point3="4,22" />
+                  <mssgle:LineSegment
+                    End="28.5,22" />
+                  <mssgle:CubicBezierSegment
+                    Point1="28.5,22"
+                    Point2="32.5,22"
+                    Point3="32.5,26" />
+                  <mssgle:LineSegment
+                    End="32.5,36.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="632,848"
-          Size="632,891"
+          PanelSize="722,912"
+          Size="722,955"
           Id="Package\DWH FT LOAD\TBDWFT_EQUIP_AUDIT_TRAIL"
           TopLeft="86.5000000000001,46" />
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="827,991"
-          Size="827,1034"
+          PanelSize="827,1055"
+          Size="827,1098"
           Id="Package\DWH FT LOAD"
           TopLeft="117.269841269842,472.761904761904" />
         <NodeLayout
@@ -5012,13 +5418,13 @@ FROM
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 1]"
-          TopLeft="944.269841269842,989.761904761904">
+          TopLeft="944.269841269842,1021.7619047619">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-37.8095238095257,-250.84126984127"
+              EndConnector="-37.8095238095257,-282.84126984127"
               Start="0,0"
-              End="-37.8095238095257,-243.34126984127">
+              End="-37.8095238095257,-275.34126984127">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
@@ -5029,7 +5435,7 @@ FROM
                     Point2="-37.8095238095257,0"
                     Point3="-37.8095238095257,-4" />
                   <mssgle:LineSegment
-                    End="-37.8095238095257,-243.34126984127" />
+                    End="-37.8095238095257,-275.34126984127" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -5040,13 +5446,13 @@ FROM
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 2]"
-          TopLeft="1146.88888888889,423">
+          TopLeft="668.388888888889,423">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-616.119047619047,49.761904761904"
+              EndConnector="-137.619047619047,49.761904761904"
               Start="0,0"
-              End="-616.119047619047,42.261904761904">
+              End="-137.619047619047,42.261904761904">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
@@ -5057,13 +5463,13 @@ FROM
                     Point2="0,24.880952380952"
                     Point3="-4,24.880952380952" />
                   <mssgle:LineSegment
-                    End="-612.119047619047,24.880952380952" />
+                    End="-133.619047619047,24.880952380952" />
                   <mssgle:CubicBezierSegment
-                    Point1="-612.119047619047,24.880952380952"
-                    Point2="-616.119047619047,24.880952380952"
-                    Point3="-616.119047619047,28.880952380952" />
+                    Point1="-133.619047619047,24.880952380952"
+                    Point2="-137.619047619047,24.880952380952"
+                    Point3="-137.619047619047,28.880952380952" />
                   <mssgle:LineSegment
-                    End="-616.119047619047,42.261904761904" />
+                    End="-137.619047619047,42.261904761904" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -5134,9 +5540,9 @@ FROM
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="197.150793650796,125.857142857143"
+              EndConnector="-281.349206349204,125.857142857143"
               Start="0,0"
-              End="197.150793650796,118.357142857143">
+              End="-281.349206349204,118.357142857143">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
@@ -5145,15 +5551,15 @@ FROM
                   <mssgle:CubicBezierSegment
                     Point1="0,58.9285714285715"
                     Point2="0,62.9285714285715"
-                    Point3="4,62.9285714285715" />
+                    Point3="-4,62.9285714285715" />
                   <mssgle:LineSegment
-                    End="193.150793650796,62.9285714285715" />
+                    End="-277.349206349204,62.9285714285715" />
                   <mssgle:CubicBezierSegment
-                    Point1="193.150793650796,62.9285714285715"
-                    Point2="197.150793650796,62.9285714285715"
-                    Point3="197.150793650796,66.9285714285715" />
+                    Point1="-277.349206349204,62.9285714285715"
+                    Point2="-281.349206349204,62.9285714285715"
+                    Point3="-281.349206349204,66.9285714285715" />
                   <mssgle:LineSegment
-                    End="197.150793650796,118.357142857143" />
+                    End="-281.349206349204,118.357142857143" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -5319,7 +5725,9 @@ FROM
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -5389,7 +5797,9 @@ FROM
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -5481,7 +5891,7 @@ FROM
     design-time-name="Package\DWH AN LOAD\TBDWMN_EQUIP_PARAMETER\TBDWMN_EQUIP_PARAMETER">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="162,42"
           Id="Package\DWH AN LOAD\TBDWMN_EQUIP_PARAMETER\TBDWMN_EQUIP_PARAMETER\Load SRC tables"
@@ -5525,7 +5935,9 @@ FROM
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -5559,7 +5971,9 @@ FROM
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
