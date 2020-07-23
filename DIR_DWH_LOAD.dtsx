@@ -12,8 +12,8 @@
   DTS:ObjectName="DIR_DWH_LOAD"
   DTS:PackageType="5"
   DTS:ProtectionLevel="2"
-  DTS:VersionBuild="67"
-  DTS:VersionGUID="{92673FF3-0991-44E2-B871-6419712BEDE9}">
+  DTS:VersionBuild="68"
+  DTS:VersionGUID="{06DE59F2-5383-4AC7-ADEB-44D73853E69B}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables>
@@ -120,7 +120,6 @@
           DTS:refId="Package\DIR_DWH_LOAD\AUDIT_TRAIL_DW"
           DTS:CreationName="Microsoft.ExecutePackageTask"
           DTS:Description="Execute Package Task"
-          DTS:Disabled="True"
           DTS:DTSID="{939A9BA3-73E2-413D-B1AB-B11C631D015B}"
           DTS:ExecutableType="Microsoft.ExecutePackageTask"
           DTS:FailPackageOnFailure="True"
@@ -140,7 +139,6 @@
           DTS:refId="Package\DIR_DWH_LOAD\AUDIT_TRAIL_STG"
           DTS:CreationName="Microsoft.ExecutePackageTask"
           DTS:Description="Execute Package Task"
-          DTS:Disabled="True"
           DTS:DTSID="{725CECDE-0195-46F3-8C2D-E0857A81E370}"
           DTS:ExecutableType="Microsoft.ExecutePackageTask"
           DTS:FailPackageOnFailure="True"
@@ -160,7 +158,6 @@
           DTS:refId="Package\DIR_DWH_LOAD\PARCEL_MFG_DWAN"
           DTS:CreationName="Microsoft.ExecutePackageTask"
           DTS:Description="Execute Package Task"
-          DTS:Disabled="True"
           DTS:DTSID="{C06F19E6-1E77-463D-B623-78F51A4A11F8}"
           DTS:ExecutableType="Microsoft.ExecutePackageTask"
           DTS:FailPackageOnFailure="True"
@@ -199,7 +196,6 @@
           DTS:refId="Package\DIR_DWH_LOAD\SEA_VISION_DWFT"
           DTS:CreationName="Microsoft.ExecutePackageTask"
           DTS:Description="Execute Package Task"
-          DTS:Disabled="True"
           DTS:DTSID="{75B76FFB-D3FE-44CB-8EB1-498CB2A9AFD8}"
           DTS:ExecutableType="Microsoft.ExecutePackageTask"
           DTS:FailPackageOnFailure="True"
@@ -219,7 +215,6 @@
           DTS:refId="Package\DIR_DWH_LOAD\SEA_VISION_STG"
           DTS:CreationName="Microsoft.ExecutePackageTask"
           DTS:Description="Execute Package Task"
-          DTS:Disabled="True"
           DTS:DTSID="{218A238B-658B-4E0F-8C1E-08D766D93BCB}"
           DTS:ExecutableType="Microsoft.ExecutePackageTask"
           DTS:FailPackageOnFailure="True"
@@ -676,27 +671,27 @@
       <GraphLayout
         Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="191.2,41.6"
+          Size="191,42"
           Id="Package\DIR_DWH_LOAD\AUDIT_TRAIL_DW"
           TopLeft="621.5,215" />
         <NodeLayout
-          Size="177.6,41.6"
+          Size="178,42"
           Id="Package\DIR_DWH_LOAD\AUDIT_TRAIL_STG"
           TopLeft="11.5,203" />
         <NodeLayout
-          Size="192.8,41.6"
+          Size="193,42"
           Id="Package\DIR_DWH_LOAD\PARCEL_MFG_DWAN"
           TopLeft="255.5,31" />
         <NodeLayout
-          Size="191.2,41.6"
+          Size="191,42"
           Id="Package\DIR_DWH_LOAD\PARCEL_MFG_STG"
           TopLeft="5.5,30" />
         <NodeLayout
-          Size="182.4,41.6"
+          Size="182,42"
           Id="Package\DIR_DWH_LOAD\SEA_VISION_DWFT"
           TopLeft="487.5,125" />
         <NodeLayout
-          Size="191.2,41.6"
+          Size="191,42"
           Id="Package\DIR_DWH_LOAD\SEA_VISION_STG"
           TopLeft="6.5,108" />
         <EdgeLayout
@@ -860,32 +855,32 @@
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="817.6,312"
-          Size="817.6,355.2"
+          PanelSize="818,312"
+          Size="818,355"
           Id="Package\DIR_DWH_LOAD"
           TopLeft="54,372" />
         <NodeLayout
-          Size="141.6,41.6"
+          Size="142,42"
           Id="Package\Email START"
           TopLeft="25.0000001986821,114.466666280958" />
         <NodeLayout
-          Size="163.2,41.6"
+          Size="163,42"
           Id="Package\Email SUCCESS"
           TopLeft="913,245" />
         <NodeLayout
-          Size="222.4,41.6"
+          Size="222,42"
           Id="Package\Last Upd TBLOG_PACKAGE"
           TopLeft="893,475" />
         <NodeLayout
-          Size="156.8,41.6"
+          Size="157,42"
           Id="Package\TBLOG_PACKAGE\Assign SITE_ID"
           TopLeft="27,29.4722222222222" />
         <NodeLayout
-          Size="240,41.6"
+          Size="240,42"
           Id="Package\TBLOG_PACKAGE\Ins TBLOG_PACKAGE + Max ID"
           TopLeft="323.166666666667,47" />
         <NodeLayout
-          Size="199.2,41.6"
+          Size="199,42"
           Id="Package\TBLOG_PACKAGE\Upd TBLOG_PACKAGE"
           TopLeft="343.944444444444,123.555555555555" />
         <EdgeLayout
@@ -959,7 +954,7 @@
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="568,220.8"
+          PanelSize="568,221"
           Size="568,264"
           Id="Package\TBLOG_PACKAGE"
           TopLeft="245,57" />
