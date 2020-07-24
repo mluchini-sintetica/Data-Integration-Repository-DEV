@@ -13,8 +13,8 @@
   DTS:ObjectName="PARCEL_MFG_DWAN"
   DTS:PackageType="5"
   DTS:ProtectionLevel="2"
-  DTS:VersionBuild="415"
-  DTS:VersionGUID="{7FBD2D8C-ABFF-406E-A536-6AC7A3246DC3}">
+  DTS:VersionBuild="416"
+  DTS:VersionGUID="{3D8DCA47-B075-4525-A7F7-A199421AECE3}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -28,12 +28,12 @@
           DTS:ConnectionString="Data Source=192.168.200.19;User ID=PARCEL_DIR_R;Initial Catalog=Parcel2008_SINT;Provider=SQLNCLI11.1;Persist Security Info=True;Auto Translate=False;">
           <EncryptedData
             Type="http://www.w3.org/2001/04/xmlenc#Element"
-            Salt="vNl7ZUtOM0M="
-            IV="bwsCS4cRaloMTwDqM5ObIw==" xmlns="http://www.w3.org/2001/04/xmlenc#">
+            Salt="+/SNxI+IT4w="
+            IV="rdYfd6RaJlndCWCNdidWdg==" xmlns="http://www.w3.org/2001/04/xmlenc#">
             <EncryptionMethod
               Algorithm="http://www.w3.org/2001/04/xmlenc#aes256-cbc" />
             <CipherData>
-              <CipherValue>bwsCS4cRaloMTwDqM5ObI7gFEezyRDrTRtiZ3i3wowfBtrweXvtV6FsehfdqGWwxsT5pidtJp5AG86it9jRF2aCmebWWNvtCAFAafwBjMMbXUeXGeJdDpUGA8c3T+lBj0muF4KeYdpEXSsQ3E0vP8YQbAgumtIDgxmKg+pH6s6AEd7AhopfdYFCfOvJl1XmF</CipherValue>
+              <CipherValue>rdYfd6RaJlndCWCNdidWdmtVqOjR4Zu2GP6V+opNAodn9m6VuuLyBhP7POJukJu0HEtvYpRTXTGt3CRmYT3L2I/tiJSvus2Z9Jv5OwwlCV0GDvbDwEO66FkZiZoibaSRpg4NTDW8uWRPPRx8iFdXmmOzxx1Nvb4qQYI3Pt/gToMd4AjeMaAqaecQi9CfdHA8</CipherValue>
             </CipherData>
           </EncryptedData>
         </DTS:ConnectionManager>
@@ -102,7 +102,7 @@
       DTS:Namespace="User"
       DTS:ObjectName="in_PACKAGE_SCOPE_DESC">
       <DTS:VariableValue
-        DTS:DataType="8">This package loads table from DIR staging layer to DIR datawarehouse</DTS:VariableValue>
+        DTS:DataType="8">This package loads tables from DIR staging layer to DIR datawarehouse</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
@@ -184,7 +184,7 @@
       DTS:LocaleID="-1"
       DTS:ObjectName="Assign SITE_ID"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="1">
+      DTS:ThreadHint="0">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -212,7 +212,7 @@
       DTS:LocaleID="-1"
       DTS:ObjectName="Assign SOURCE_SYSTEM_ID"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="0">
+      DTS:ThreadHint="1">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData

@@ -13,8 +13,8 @@
   DTS:ObjectName="SEA_VISION_DWFT"
   DTS:PackageType="5"
   DTS:ProtectionLevel="2"
-  DTS:VersionBuild="458"
-  DTS:VersionGUID="{537541D8-1687-464E-B6C3-DB95A598C1A3}">
+  DTS:VersionBuild="459"
+  DTS:VersionGUID="{F0C364CC-FB97-4FE1-8E07-851C778A628A}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -28,12 +28,12 @@
           DTS:ConnectionString="Data Source=192.168.200.19;User ID=PARCEL_DIR_R;Initial Catalog=Parcel2008_SINT;Provider=SQLNCLI11.1;Persist Security Info=True;Auto Translate=False;">
           <EncryptedData
             Type="http://www.w3.org/2001/04/xmlenc#Element"
-            Salt="+Qnjjl8X12M="
-            IV="EMbjDJ4sapyRefxoiCyU4A==" xmlns="http://www.w3.org/2001/04/xmlenc#">
+            Salt="mU2ByJHdaV4="
+            IV="a3Oza+s6AlPyehtKf4/LRA==" xmlns="http://www.w3.org/2001/04/xmlenc#">
             <EncryptionMethod
               Algorithm="http://www.w3.org/2001/04/xmlenc#aes256-cbc" />
             <CipherData>
-              <CipherValue>EMbjDJ4sapyRefxoiCyU4Dqw+rmDsV0yjtb1uG3TYI6/kA668FsSnqNmBwKw9x8Jwwi7u2Z5KjVIJfPQMRpXJY4+gz3QNPH0dRvT/ubQTwmrNdlamOJ6tWgPKt9/Mn2zwYU+808dOysJmXR+1wU0ejsK2XBySzwCg+jwuXWQ4wwt0kaVs/LuwIXSEAA3cwfk</CipherValue>
+              <CipherValue>a3Oza+s6AlPyehtKf4/LREbRquSV7ySrpKw7KDDVroaeq6WYPX5Ia14HHL2jdawizRupmAQYoHNJjRgUV8FRKplEV/hIP4KIfSfL33rLdp7ftd8n+AXc1YpvqQr5GDjT3ZBh6jVHeGd2dZAtRNfu9owsStgu9U4Q8atLMEh1VFHdPmuWoduVKLPdLkSEoEXO</CipherValue>
             </CipherData>
           </EncryptedData>
         </DTS:ConnectionManager>
@@ -102,7 +102,7 @@
       DTS:Namespace="User"
       DTS:ObjectName="in_PACKAGE_SCOPE_DESC">
       <DTS:VariableValue
-        DTS:DataType="8">This package loads table from DIR staging layer to DIR datawarehouse</DTS:VariableValue>
+        DTS:DataType="8">This package loads tables from DIR staging layer to DIR datawarehouse</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
