@@ -12,8 +12,8 @@
   DTS:ObjectName="AUDIT_TRAIL_FLAT_FILES"
   DTS:PackageType="5"
   DTS:ProtectionLevel="2"
-  DTS:VersionBuild="107"
-  DTS:VersionGUID="{D525E3F8-3519-4480-97DF-368403C64F5E}">
+  DTS:VersionBuild="112"
+  DTS:VersionGUID="{8427AF39-894F-458F-8B6F-C95640BCEEE0}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables>
@@ -150,7 +150,7 @@
       DTS:LocaleID="-1"
       DTS:ObjectName="Assign SITE_ID"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="0">
+      DTS:ThreadHint="1">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -178,7 +178,7 @@
       DTS:LocaleID="-1"
       DTS:ObjectName="Assign SOURCE_SYSTEM_ID"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="1">
+      DTS:ThreadHint="0">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -379,7 +379,6 @@
       DTS:refId="Package\Run MatLab"
       DTS:CreationName="Microsoft.ExecuteProcess"
       DTS:Description="Execute Process Task"
-      DTS:Disabled="True"
       DTS:DTSID="{06BFB5E2-EA82-4B43-BBA1-8892E55AA95A}"
       DTS:ExecutableType="Microsoft.ExecuteProcess"
       DTS:LocaleID="-1"
@@ -793,13 +792,13 @@
       </DTS:ObjectData>
     </DTS:Executable>
     <DTS:Executable
-      DTS:refId="Package\Upd MATLAB_RUN_FLG to 1"
+      DTS:refId="Package\Upd MATLAB_RUN_FLG to 1 and set MATLAB variables"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Execute SQL Task"
       DTS:DTSID="{c1d09f82-9f2f-43f7-bc1b-44b0e872ae50}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
-      DTS:ObjectName="Upd MATLAB_RUN_FLG to 1"
+      DTS:ObjectName="Upd MATLAB_RUN_FLG to 1 and set MATLAB variables"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
       DTS:ThreadHint="0">
       <DTS:Variables />
@@ -857,6 +856,7 @@
       DTS:refId="Package\Wait for MatLab"
       DTS:CreationName="STOCK:FORLOOP"
       DTS:Description="For Loop Container"
+      DTS:Disabled="True"
       DTS:DTSID="{F103C564-4DB4-4F8A-9AAB-6F671727F14D}"
       DTS:EvalExpression="@[out_MATLAB_RUN_FLG]==1 &amp;&amp; @[out_MATLAB_MAX_TIME] &gt; DATEADD(&quot;Minute&quot;, -30,GETDATE()) "
       DTS:ExecutableType="STOCK:FORLOOP"
@@ -1506,12 +1506,12 @@ where id=?</property>
       DTS:From="Package\Upd TBLOG_PACKAGE"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 8"
-      DTS:To="Package\Upd MATLAB_RUN_FLG to 1" />
+      DTS:To="Package\Upd MATLAB_RUN_FLG to 1 and set MATLAB variables" />
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 9]"
       DTS:CreationName=""
       DTS:DTSID="{4567CEAF-A8BA-46EC-9161-87FD8187DDE7}"
-      DTS:From="Package\Upd MATLAB_RUN_FLG to 1"
+      DTS:From="Package\Upd MATLAB_RUN_FLG to 1 and set MATLAB variables"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 9"
       DTS:To="Package\TBLOG_TRAFFICLIGHT to 1" />
@@ -1594,33 +1594,128 @@ where id=?</property>
       <GraphLayout
         Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="157,42"
+          Size="156.8,41.6"
           Id="Package\Assign SITE_ID"
           TopLeft="171,109" />
         <NodeLayout
-          Size="230,42"
+          Size="230.4,41.6"
           Id="Package\Assign SOURCE_SYSTEM_ID"
           TopLeft="154,28" />
         <NodeLayout
-          Size="163,42"
+          Size="163.2,41.6"
           Id="Package\Email SUCCESS"
           TopLeft="861,670" />
         <NodeLayout
-          Size="240,42"
+          Size="240,41.6"
           Id="Package\Ins TBLOG_PACKAGE + Max ID"
           TopLeft="567.571428571435,102.587301587301" />
         <NodeLayout
-          Size="222,42"
+          Size="132.8,41.6"
+          Id="Package\Kill MatLab"
+          TopLeft="250,625" />
+        <NodeLayout
+          Size="222.4,41.6"
           Id="Package\Last Upd TBLOG_PACKAGE"
           TopLeft="581,600" />
         <NodeLayout
-          Size="139,42"
+          Size="139.2,41.6"
           Id="Package\Run MatLab"
           TopLeft="259,281" />
         <NodeLayout
-          Size="199,42"
+          Size="222.4,41.6"
+          Id="Package\TBLOG_TRAFFICLIGHT to 1"
+          TopLeft="572,325" />
+        <NodeLayout
+          Size="356.8,41.6"
+          Id="Package\Upd MATLAB_RUN_FLG to 1 and set MATLAB variables"
+          TopLeft="569,255" />
+        <NodeLayout
+          Size="199.2,41.6"
           Id="Package\Upd TBLOG_PACKAGE"
           TopLeft="588.349206349204,179.142857142857" />
+        <NodeLayout
+          Size="320,41.6"
+          Id="Package\Wait for MatLab\Check TBLOG_TRAFFICLIGHT to 0 or Max Time"
+          TopLeft="36,26" />
+        <NodeLayout
+          Size="224,41.6"
+          Id="Package\Wait for MatLab\Retrieve MATLAB_RUN_FLG"
+          TopLeft="55,103" />
+        <EdgeLayout
+          Id="Package\Wait for MatLab.PrecedenceConstraints[Constraint]"
+          TopLeft="196,68">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-29,35"
+              Start="0,0"
+              End="-29,27.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,13.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,13.5"
+                    Point2="0,17.5"
+                    Point3="-4,17.5" />
+                  <mssgle:LineSegment
+                    End="-25,17.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-25,17.5"
+                    Point2="-29,17.5"
+                    Point3="-29,21.5" />
+                  <mssgle:LineSegment
+                    End="-29,27.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="360.8,200"
+          Size="360.8,243.2"
+          Id="Package\Wait for MatLab"
+          TopLeft="111.5,355" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="328.5,323">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-36.5,32"
+              Start="0,0"
+              End="-36.5,24.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,12" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,12"
+                    Point2="0,16"
+                    Point3="-4,16" />
+                  <mssgle:LineSegment
+                    End="-32.5,16" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-32.5,16"
+                    Point2="-36.5,16"
+                    Point3="-36.5,20" />
+                  <mssgle:LineSegment
+                    End="-36.5,24.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 1]"
           TopLeft="692,642">
@@ -1647,6 +1742,40 @@ where id=?</property>
                     Point3="250.5,18" />
                   <mssgle:LineSegment
                     End="250.5,20.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 10]"
+          TopLeft="572,346">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-174,-44"
+              Start="0,0"
+              End="-166.5,-44">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="-83,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-83,0"
+                    Point2="-87,0"
+                    Point3="-87,-4" />
+                  <mssgle:LineSegment
+                    End="-87,-40" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-87,-40"
+                    Point2="-87,-44"
+                    Point3="-91,-44" />
+                  <mssgle:LineSegment
+                    End="-166.5,-44" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -1733,40 +1862,32 @@ where id=?</property>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="224,42"
-          Id="Package\Wait for MatLab\Retrieve MATLAB_RUN_FLG"
-          TopLeft="55,103" />
-        <NodeLayout
-          Size="320,42"
-          Id="Package\Wait for MatLab\Check TBLOG_TRAFFICLIGHT to 0 or Max Time"
-          TopLeft="36,26" />
         <EdgeLayout
-          Id="Package\Wait for MatLab.PrecedenceConstraints[Constraint]"
-          TopLeft="196,68">
+          Id="Package.PrecedenceConstraints[Constraint 6]"
+          TopLeft="383,646">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-29,35"
+              EndConnector="198,-25"
               Start="0,0"
-              End="-29,27.5">
+              End="190.5,-25">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,13.5" />
+                    End="95,0" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,13.5"
-                    Point2="0,17.5"
-                    Point3="-4,17.5" />
+                    Point1="95,0"
+                    Point2="99,0"
+                    Point3="99,-4" />
                   <mssgle:LineSegment
-                    End="-25,17.5" />
+                    End="99,-21" />
                   <mssgle:CubicBezierSegment
-                    Point1="-25,17.5"
-                    Point2="-29,17.5"
-                    Point3="-29,21.5" />
+                    Point1="99,-21"
+                    Point2="99,-25"
+                    Point3="103,-25" />
                   <mssgle:LineSegment
-                    End="-29,27.5" />
+                    End="190.5,-25" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -1775,51 +1896,6 @@ where id=?</property>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <ContainerLayout
-          HeaderHeight="43"
-          IsExpanded="True"
-          PanelSize="361,200"
-          Size="361,243"
-          Id="Package\Wait for MatLab"
-          TopLeft="111.5,355" />
-        <EdgeLayout
-          Id="Package.PrecedenceConstraints[Constraint]"
-          TopLeft="328.5,323">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-36.5,32"
-              Start="0,0"
-              End="-36.5,24.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,12" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,12"
-                    Point2="0,16"
-                    Point3="-4,16" />
-                  <mssgle:LineSegment
-                    End="-32.5,16" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-32.5,16"
-                    Point2="-36.5,16"
-                    Point3="-36.5,20" />
-                  <mssgle:LineSegment
-                    End="-36.5,24.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="133,42"
-          Id="Package\Kill MatLab"
-          TopLeft="250,625" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 7]"
           TopLeft="292,598">
@@ -1855,57 +1931,31 @@ where id=?</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package.PrecedenceConstraints[Constraint 6]"
-          TopLeft="383,646">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="198,-25"
-              Start="0,0"
-              End="190.5,-25">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="95,0" />
-                  <mssgle:CubicBezierSegment
-                    Point1="95,0"
-                    Point2="99,0"
-                    Point3="99,-4" />
-                  <mssgle:LineSegment
-                    End="99,-21" />
-                  <mssgle:CubicBezierSegment
-                    Point1="99,-21"
-                    Point2="99,-25"
-                    Point3="103,-25" />
-                  <mssgle:LineSegment
-                    End="190.5,-25" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="225,42"
-          Id="Package\Upd MATLAB_RUN_FLG to 1"
-          TopLeft="569,255" />
-        <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 8]"
-          TopLeft="684.674603174602,221.142857142857">
+          TopLeft="687.849206349204,221.142857142857">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,33.857142857143"
+              EndConnector="59.650793650796,33.857142857143"
               Start="0,0"
-              End="0,26.357142857143">
+              End="59.650793650796,26.357142857143">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,26.357142857143" />
+                    End="0,12.9285714285715" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,12.9285714285715"
+                    Point2="0,16.9285714285715"
+                    Point3="4,16.9285714285715" />
+                  <mssgle:LineSegment
+                    End="55.650793650796,16.9285714285715" />
+                  <mssgle:CubicBezierSegment
+                    Point1="55.650793650796,16.9285714285715"
+                    Point2="59.650793650796,16.9285714285715"
+                    Point3="59.650793650796,20.9285714285715" />
+                  <mssgle:LineSegment
+                    End="59.650793650796,26.357142857143" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -1914,58 +1964,32 @@ where id=?</property>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="222,42"
-          Id="Package\TBLOG_TRAFFICLIGHT to 1"
-          TopLeft="572,325" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 9]"
-          TopLeft="682.25,297">
+          TopLeft="747.5,297">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,28"
+              EndConnector="-64.5,28"
               Start="0,0"
-              End="0,20.5">
+              End="-64.5,20.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,20.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package.PrecedenceConstraints[Constraint 10]"
-          TopLeft="572,346">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-174,-44"
-              Start="0,0"
-              End="-166.5,-44">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="-83,0" />
+                    End="0,10" />
                   <mssgle:CubicBezierSegment
-                    Point1="-83,0"
-                    Point2="-87,0"
-                    Point3="-87,-4" />
+                    Point1="0,10"
+                    Point2="0,14"
+                    Point3="-4,14" />
                   <mssgle:LineSegment
-                    End="-87,-40" />
+                    End="-60.5,14" />
                   <mssgle:CubicBezierSegment
-                    Point1="-87,-40"
-                    Point2="-87,-44"
-                    Point3="-91,-44" />
+                    Point1="-60.5,14"
+                    Point2="-64.5,14"
+                    Point3="-64.5,18" />
                   <mssgle:LineSegment
-                    End="-166.5,-44" />
+                    End="-64.5,20.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -1975,10 +1999,10 @@ where id=?</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <AnnotationLayout
-          Text="Exit from the loop if MatLab has finished (RUN_FLG=0) or&#xD;&#xA;it MatLab takes more than 30 minutes to be completed"
+          Text="Exit from the loop if MatLab has finished (RUN_FLG=0) or&#xA;it MatLab takes more than 30 minutes to be completed"
           ParentId="Package"
           FontInfo="{assembly:Null}"
-          Size="331,60"
+          Size="331.2,56"
           Id="409e098b-c0ae-44d8-ad3a-51b9a16271ca"
           TopLeft="504,441" />
       </GraphLayout>
@@ -1997,100 +2021,10 @@ where id=?</property>
     </LayoutInfo>
   </DtsEventHandler>
   <TaskHost
-    design-time-name="Package\Wait for MatLab\Check TBLOG_TRAFFICLIGHT to 0 or Max Time">
-    <LayoutInfo>
-      <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
-        <NodeLayout
-          Size="221,42"
-          Id="Package\Wait for MatLab\Check TBLOG_TRAFFICLIGHT to 0 or Max Time\TBLOG_TRAFFICLIGHT csv"
-          TopLeft="293,102" />
-        <NodeLayout
-          Size="173,42"
-          Id="Package\Wait for MatLab\Check TBLOG_TRAFFICLIGHT to 0 or Max Time\OLE DB Command"
-          TopLeft="314,347" />
-        <NodeLayout
-          Size="206,42"
-          Id="Package\Wait for MatLab\Check TBLOG_TRAFFICLIGHT to 0 or Max Time\Test RUN_FLG equal to 0"
-          TopLeft="621,253" />
-        <EdgeLayout
-          Id="Package\Wait for MatLab\Check TBLOG_TRAFFICLIGHT to 0 or Max Time.Paths[Flat File Source Output]"
-          TopLeft="403.5,144">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="320.5,109"
-              Start="0,0"
-              End="320.5,101.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,50.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,50.5"
-                    Point2="0,54.5"
-                    Point3="4,54.5" />
-                  <mssgle:LineSegment
-                    End="316.5,54.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="316.5,54.5"
-                    Point2="320.5,54.5"
-                    Point3="320.5,58.5" />
-                  <mssgle:LineSegment
-                    End="320.5,101.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Wait for MatLab\Check TBLOG_TRAFFICLIGHT to 0 or Max Time.Paths[RUN_FLG 0]"
-          TopLeft="724,295">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-323.5,52"
-              Start="0,0"
-              End="-323.5,44.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,22" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,22"
-                    Point2="0,26"
-                    Point3="-4,26" />
-                  <mssgle:LineSegment
-                    End="-319.5,26" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-319.5,26"
-                    Point2="-323.5,26"
-                    Point3="-323.5,30" />
-                  <mssgle:LineSegment
-                    End="-323.5,44.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-187.353203125,31,51.20640625,10.8818359375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-      </GraphLayout>
-    </LayoutInfo>
-  </TaskHost>
-  <TaskHost
     design-time-name="Package\TBLOG_TRAFFICLIGHT to 1">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="201,42"
           Id="Package\TBLOG_TRAFFICLIGHT to 1\TBLOG_TRAFFICLIGHT"
@@ -2130,7 +2064,9 @@ where id=?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -2149,5 +2085,97 @@ where id=?</property>
       </Property>
     </Properties>
   </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\Wait for MatLab\Check TBLOG_TRAFFICLIGHT to 0 or Max Time">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="206,42"
+          Id="Package\Wait for MatLab\Check TBLOG_TRAFFICLIGHT to 0 or Max Time\Test RUN_FLG equal to 0"
+          TopLeft="621,253" />
+        <NodeLayout
+          Size="221,42"
+          Id="Package\Wait for MatLab\Check TBLOG_TRAFFICLIGHT to 0 or Max Time\TBLOG_TRAFFICLIGHT csv"
+          TopLeft="293,102" />
+        <NodeLayout
+          Size="173,42"
+          Id="Package\Wait for MatLab\Check TBLOG_TRAFFICLIGHT to 0 or Max Time\OLE DB Command"
+          TopLeft="314,347" />
+        <EdgeLayout
+          Id="Package\Wait for MatLab\Check TBLOG_TRAFFICLIGHT to 0 or Max Time.Paths[RUN_FLG 0]"
+          TopLeft="724,295">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-323.5,52"
+              Start="0,0"
+              End="-323.5,44.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,22" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,22"
+                    Point2="0,26"
+                    Point3="-4,26" />
+                  <mssgle:LineSegment
+                    End="-319.5,26" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-319.5,26"
+                    Point2="-323.5,26"
+                    Point3="-323.5,30" />
+                  <mssgle:LineSegment
+                    End="-323.5,44.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-187.353203125,31,51.20640625,10.8818359375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Wait for MatLab\Check TBLOG_TRAFFICLIGHT to 0 or Max Time.Paths[Flat File Source Output]"
+          TopLeft="403.5,144">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="320.5,109"
+              Start="0,0"
+              End="320.5,101.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,50.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,50.5"
+                    Point2="0,54.5"
+                    Point3="4,54.5" />
+                  <mssgle:LineSegment
+                    End="316.5,54.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="316.5,54.5"
+                    Point2="320.5,54.5"
+                    Point3="320.5,58.5" />
+                  <mssgle:LineSegment
+                    End="320.5,101.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
 </Objects>]]></DTS:DesignTimeProperties>
 </DTS:Executable>

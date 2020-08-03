@@ -13,8 +13,8 @@
   DTS:ObjectName="PARCEL_MFG_DWAN"
   DTS:PackageType="5"
   DTS:ProtectionLevel="2"
-  DTS:VersionBuild="416"
-  DTS:VersionGUID="{3D8DCA47-B075-4525-A7F7-A199421AECE3}">
+  DTS:VersionBuild="418"
+  DTS:VersionGUID="{C84FCCF0-DB31-4F48-BB7C-D090C15D17A1}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -28,12 +28,12 @@
           DTS:ConnectionString="Data Source=192.168.200.19;User ID=PARCEL_DIR_R;Initial Catalog=Parcel2008_SINT;Provider=SQLNCLI11.1;Persist Security Info=True;Auto Translate=False;">
           <EncryptedData
             Type="http://www.w3.org/2001/04/xmlenc#Element"
-            Salt="+/SNxI+IT4w="
-            IV="rdYfd6RaJlndCWCNdidWdg==" xmlns="http://www.w3.org/2001/04/xmlenc#">
+            Salt="df0BovC7oLA="
+            IV="7WhLEIjyUpQRQvFspmFqDQ==" xmlns="http://www.w3.org/2001/04/xmlenc#">
             <EncryptionMethod
               Algorithm="http://www.w3.org/2001/04/xmlenc#aes256-cbc" />
             <CipherData>
-              <CipherValue>rdYfd6RaJlndCWCNdidWdmtVqOjR4Zu2GP6V+opNAodn9m6VuuLyBhP7POJukJu0HEtvYpRTXTGt3CRmYT3L2I/tiJSvus2Z9Jv5OwwlCV0GDvbDwEO66FkZiZoibaSRpg4NTDW8uWRPPRx8iFdXmmOzxx1Nvb4qQYI3Pt/gToMd4AjeMaAqaecQi9CfdHA8</CipherValue>
+              <CipherValue>7WhLEIjyUpQRQvFspmFqDVFWB9pKp0KayO3qczCub/YHJaCTto/b1bgL1sQOEYcGVDcor+G+86DrHdEFEtwr9TpzAuA66IiPMIURIiSfKKxKVrVF1yMfcWuoP3YicRNzFzHOwfKVPNFbSLjEdbjIovngtOMJOlmZ1jABjIwPl0w6NA8JuIWB/XT7SOdQenVE</CipherValue>
             </CipherData>
           </EncryptedData>
         </DTS:ConnectionManager>
@@ -184,7 +184,7 @@
       DTS:LocaleID="-1"
       DTS:ObjectName="Assign SITE_ID"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="0">
+      DTS:ThreadHint="1">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -212,7 +212,7 @@
       DTS:LocaleID="-1"
       DTS:ObjectName="Assign SOURCE_SYSTEM_ID"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="1">
+      DTS:ThreadHint="0">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -5919,7 +5919,7 @@ FROM
     design-time-name="Package">
     <LayoutInfo>
       <GraphLayout
-        Capacity="64" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="64" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="157,42"
           Id="Package\Assign SITE_ID"
@@ -5971,9 +5971,7 @@ FROM
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -5995,9 +5993,7 @@ FROM
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -6019,9 +6015,7 @@ FROM
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -6055,9 +6049,7 @@ FROM
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -6079,37 +6071,35 @@ FROM
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <AnnotationLayout
           Text="To be modified according table"
           ParentId="Package\DWH LOAD\TBDWAN_ARTICLE"
           FontInfo="{assembly:Null}"
-          Size="194,NaN"
+          Size="194,40"
           Id="3a32ec32-6ec9-4287-8f3a-b58ed7f11262"
           TopLeft="35.5,310.5" />
         <AnnotationLayout
           Text="To be specify target table name"
           ParentId="Package\DWH LOAD\TBDWAN_ARTICLE"
           FontInfo="{assembly:Null}"
-          Size="195,NaN"
+          Size="195,40"
           Id="c6f553ec-c823-4c2c-9643-8a8ddd9f60c6"
           TopLeft="29.5,10.5" />
         <AnnotationLayout
           Text="To be modified according table"
           ParentId="Package\DWH LOAD\TBDWAN_ARTICLE"
           FontInfo="{assembly:Null}"
-          Size="194,NaN"
+          Size="194,40"
           Id="9dbd84db-82c5-4c5e-a967-e4181bf58d72"
           TopLeft="46.5,396.5" />
         <ContainerLayout
           HeaderHeight="43"
-          IsExpanded="False"
+          IsExpanded="True"
           PanelSize="504,614"
-          Size="202,43"
+          Size="504,657"
           Id="Package\DWH LOAD\TBDWAN_ARTICLE"
           TopLeft="28,5.5" />
         <NodeLayout
@@ -6288,30 +6278,30 @@ FROM
           TopLeft="25.5,95" />
         <EdgeLayout
           Id="Package\DWH LOAD.PrecedenceConstraints[Constraint]"
-          TopLeft="129,48.5">
+          TopLeft="532,334">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="148.5,46.5"
+              EndConnector="-2.5,138.5"
               Start="0,0"
-              End="148.5,39">
+              End="5,138.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,19.25" />
+                    End="18.5,0" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,19.25"
-                    Point2="0,23.25"
-                    Point3="4,23.25" />
+                    Point1="18.5,0"
+                    Point2="22.5,0"
+                    Point3="22.5,4" />
                   <mssgle:LineSegment
-                    End="144.5,23.25" />
+                    End="22.5,134.5" />
                   <mssgle:CubicBezierSegment
-                    Point1="144.5,23.25"
-                    Point2="148.5,23.25"
-                    Point3="148.5,27.25" />
+                    Point1="22.5,134.5"
+                    Point2="22.5,138.5"
+                    Point3="18.5,138.5" />
                   <mssgle:LineSegment
-                    End="148.5,39" />
+                    End="5,138.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -6907,7 +6897,9 @@ FROM
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -7013,7 +7005,9 @@ FROM
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout

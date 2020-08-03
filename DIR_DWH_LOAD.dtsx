@@ -12,8 +12,8 @@
   DTS:ObjectName="DIR_DWH_LOAD"
   DTS:PackageType="5"
   DTS:ProtectionLevel="2"
-  DTS:VersionBuild="68"
-  DTS:VersionGUID="{06DE59F2-5383-4AC7-ADEB-44D73853E69B}">
+  DTS:VersionBuild="78"
+  DTS:VersionGUID="{99547AFF-EE5C-4A1D-8F7C-E4E39E913EBF}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables>
@@ -132,6 +132,34 @@
             <ExecutePackageTask>
               <UseProjectReference>True</UseProjectReference>
               <PackageName>AUDIT_TRAIL_DW.dtsx</PackageName>
+              <EncryptedData
+                Type="http://www.w3.org/2001/04/xmlenc#Element"
+                Salt="wW7GVyL0waU="
+                IV="5qRpVQ0JG11fiMCvENBnJA==" xmlns="http://www.w3.org/2001/04/xmlenc#">
+                <EncryptionMethod
+                  Algorithm="http://www.w3.org/2001/04/xmlenc#aes256-cbc" />
+                <CipherData>
+                  <CipherValue>5qRpVQ0JG11fiMCvENBnJK98qi7IUxAJDFCyQ70V3/MbhiKo2JSb51D5RCLBqeHFc2UoKwTSwubMm0y3NdCLTFCKhIXHw/b4sOEwz6tqc3w=</CipherValue>
+                </CipherData>
+              </EncryptedData>
+            </ExecutePackageTask>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\DIR_DWH_LOAD\AUDIT_TRAIL_FLAT_FILES"
+          DTS:CreationName="Microsoft.ExecutePackageTask"
+          DTS:Description="Execute Package Task"
+          DTS:Disabled="True"
+          DTS:DTSID="{EE0B42BB-341C-42E2-BD1F-7B2EE664188A}"
+          DTS:ExecutableType="Microsoft.ExecutePackageTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="AUDIT_TRAIL_FLAT_FILES"
+          DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <ExecutePackageTask>
+              <UseProjectReference>True</UseProjectReference>
+              <PackageName>AUDIT_TRAIL_FLAT_FILES.dtsx</PackageName>
             </ExecutePackageTask>
           </DTS:ObjectData>
         </DTS:Executable>
@@ -170,6 +198,16 @@
             <ExecutePackageTask>
               <UseProjectReference>True</UseProjectReference>
               <PackageName>PARCEL_MFG_DWAN.dtsx</PackageName>
+              <EncryptedData
+                Type="http://www.w3.org/2001/04/xmlenc#Element"
+                Salt="PniU0xQwjzM="
+                IV="gERfGnc87YyfO8X0lKqsgg==" xmlns="http://www.w3.org/2001/04/xmlenc#">
+                <EncryptionMethod
+                  Algorithm="http://www.w3.org/2001/04/xmlenc#aes256-cbc" />
+                <CipherData>
+                  <CipherValue>gERfGnc87YyfO8X0lKqsgmCV/hb8unCyJ72Ck/xj2DBNutyjRP5tYbF7yfrvEyPQvO6QyGA8ofbGsa0ok0SsQKt3xu4NK4vujqLoFs+fAdk=</CipherValue>
+                </CipherData>
+              </EncryptedData>
             </ExecutePackageTask>
           </DTS:ObjectData>
         </DTS:Executable>
@@ -208,6 +246,16 @@
             <ExecutePackageTask>
               <UseProjectReference>True</UseProjectReference>
               <PackageName>SEA_VISION_DWFT.dtsx</PackageName>
+              <EncryptedData
+                Type="http://www.w3.org/2001/04/xmlenc#Element"
+                Salt="VrkaDzn64CU="
+                IV="QUqFUjC2smgJqs/MOlWbHQ==" xmlns="http://www.w3.org/2001/04/xmlenc#">
+                <EncryptionMethod
+                  Algorithm="http://www.w3.org/2001/04/xmlenc#aes256-cbc" />
+                <CipherData>
+                  <CipherValue>QUqFUjC2smgJqs/MOlWbHUaPio2wcSmil7rqYaY2DNynZdnw5IYNwD6+rD5KkMuGtiOoqlLAdKfHTtrluVKOGwQJ8xfQbIJoG7Ni+DbQWsU=</CipherValue>
+                </CipherData>
+              </EncryptedData>
             </ExecutePackageTask>
           </DTS:ObjectData>
         </DTS:Executable>
@@ -272,6 +320,14 @@
           DTS:LogicalAnd="True"
           DTS:ObjectName="Constraint 4"
           DTS:To="Package\DIR_DWH_LOAD\AUDIT_TRAIL_DW" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\DIR_DWH_LOAD.PrecedenceConstraints[Constraint 5]"
+          DTS:CreationName=""
+          DTS:DTSID="{CAC19B57-2A57-4DC9-B19F-AD9B35141E27}"
+          DTS:From="Package\DIR_DWH_LOAD\AUDIT_TRAIL_FLAT_FILES"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 5"
+          DTS:To="Package\DIR_DWH_LOAD\AUDIT_TRAIL_STG" />
       </DTS:PrecedenceConstraints>
     </DTS:Executable>
     <DTS:Executable
@@ -675,9 +731,13 @@
           Id="Package\DIR_DWH_LOAD\AUDIT_TRAIL_DW"
           TopLeft="621.5,215" />
         <NodeLayout
+          Size="219,42"
+          Id="Package\DIR_DWH_LOAD\AUDIT_TRAIL_FLAT_FILES"
+          TopLeft="13,208" />
+        <NodeLayout
           Size="178,42"
           Id="Package\DIR_DWH_LOAD\AUDIT_TRAIL_STG"
-          TopLeft="11.5,203" />
+          TopLeft="264.5,211" />
         <NodeLayout
           Size="193,42"
           Id="Package\DIR_DWH_LOAD\PARCEL_MFG_DWAN"
@@ -786,30 +846,18 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package\DIR_DWH_LOAD.PrecedenceConstraints[Constraint 3]"
-          TopLeft="189.5,224">
+          TopLeft="442.5,234">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="432,12"
+              EndConnector="179,0"
               Start="0,0"
-              End="424.5,12">
+              End="171.5,0">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="212,0" />
-                  <mssgle:CubicBezierSegment
-                    Point1="212,0"
-                    Point2="216,0"
-                    Point3="216,4" />
-                  <mssgle:LineSegment
-                    End="216,8" />
-                  <mssgle:CubicBezierSegment
-                    Point1="216,8"
-                    Point2="216,12"
-                    Point3="220,12" />
-                  <mssgle:LineSegment
-                    End="424.5,12" />
+                    End="171.5,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -844,6 +892,28 @@
                     Point3="108,32.5607476635514" />
                   <mssgle:LineSegment
                     End="108,40.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DIR_DWH_LOAD.PrecedenceConstraints[Constraint 5]"
+          TopLeft="232,230.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="32.5,0"
+              Start="0,0"
+              End="25,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="25,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
