@@ -12,8 +12,8 @@
   DTS:ObjectName="DIR_DWH_LOAD"
   DTS:PackageType="5"
   DTS:ProtectionLevel="2"
-  DTS:VersionBuild="78"
-  DTS:VersionGUID="{99547AFF-EE5C-4A1D-8F7C-E4E39E913EBF}">
+  DTS:VersionBuild="79"
+  DTS:VersionGUID="{E3168ABF-051E-4C8B-A5D3-62E5A6565EDC}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables>
@@ -134,12 +134,12 @@
               <PackageName>AUDIT_TRAIL_DW.dtsx</PackageName>
               <EncryptedData
                 Type="http://www.w3.org/2001/04/xmlenc#Element"
-                Salt="wW7GVyL0waU="
-                IV="5qRpVQ0JG11fiMCvENBnJA==" xmlns="http://www.w3.org/2001/04/xmlenc#">
+                Salt="0QV0ciuavHk="
+                IV="HABLWo0miE96I2WiU9C20w==" xmlns="http://www.w3.org/2001/04/xmlenc#">
                 <EncryptionMethod
                   Algorithm="http://www.w3.org/2001/04/xmlenc#aes256-cbc" />
                 <CipherData>
-                  <CipherValue>5qRpVQ0JG11fiMCvENBnJK98qi7IUxAJDFCyQ70V3/MbhiKo2JSb51D5RCLBqeHFc2UoKwTSwubMm0y3NdCLTFCKhIXHw/b4sOEwz6tqc3w=</CipherValue>
+                  <CipherValue>HABLWo0miE96I2WiU9C20y3P/rqiKw4Ba+nszo08p+nmnrhqk6sUFPA7Z3sa+uKJOMNHZR9aLv79+W8W1f9ifFS1xTgQsk/AV9N6Gt3QeOc=</CipherValue>
                 </CipherData>
               </EncryptedData>
             </ExecutePackageTask>
@@ -149,7 +149,6 @@
           DTS:refId="Package\DIR_DWH_LOAD\AUDIT_TRAIL_FLAT_FILES"
           DTS:CreationName="Microsoft.ExecutePackageTask"
           DTS:Description="Execute Package Task"
-          DTS:Disabled="True"
           DTS:DTSID="{EE0B42BB-341C-42E2-BD1F-7B2EE664188A}"
           DTS:ExecutableType="Microsoft.ExecutePackageTask"
           DTS:LocaleID="-1"
@@ -200,12 +199,12 @@
               <PackageName>PARCEL_MFG_DWAN.dtsx</PackageName>
               <EncryptedData
                 Type="http://www.w3.org/2001/04/xmlenc#Element"
-                Salt="PniU0xQwjzM="
-                IV="gERfGnc87YyfO8X0lKqsgg==" xmlns="http://www.w3.org/2001/04/xmlenc#">
+                Salt="1SOc5+rOOos="
+                IV="wjlnyaKdiYxWxUl0CItJ7A==" xmlns="http://www.w3.org/2001/04/xmlenc#">
                 <EncryptionMethod
                   Algorithm="http://www.w3.org/2001/04/xmlenc#aes256-cbc" />
                 <CipherData>
-                  <CipherValue>gERfGnc87YyfO8X0lKqsgmCV/hb8unCyJ72Ck/xj2DBNutyjRP5tYbF7yfrvEyPQvO6QyGA8ofbGsa0ok0SsQKt3xu4NK4vujqLoFs+fAdk=</CipherValue>
+                  <CipherValue>wjlnyaKdiYxWxUl0CItJ7G65Yuf+RaKW6rEryHf1+gZWWRGML4vUlHEQw0Q6Hzx+SLRuSTnnECkpNVk35F2P8WWxI1JCmn0d5HLwiQBQdt4=</CipherValue>
                 </CipherData>
               </EncryptedData>
             </ExecutePackageTask>
@@ -248,12 +247,12 @@
               <PackageName>SEA_VISION_DWFT.dtsx</PackageName>
               <EncryptedData
                 Type="http://www.w3.org/2001/04/xmlenc#Element"
-                Salt="VrkaDzn64CU="
-                IV="QUqFUjC2smgJqs/MOlWbHQ==" xmlns="http://www.w3.org/2001/04/xmlenc#">
+                Salt="6rIkD/1TNhI="
+                IV="u9mXRhYvFg8jBvw0tcX6Eg==" xmlns="http://www.w3.org/2001/04/xmlenc#">
                 <EncryptionMethod
                   Algorithm="http://www.w3.org/2001/04/xmlenc#aes256-cbc" />
                 <CipherData>
-                  <CipherValue>QUqFUjC2smgJqs/MOlWbHUaPio2wcSmil7rqYaY2DNynZdnw5IYNwD6+rD5KkMuGtiOoqlLAdKfHTtrluVKOGwQJ8xfQbIJoG7Ni+DbQWsU=</CipherValue>
+                  <CipherValue>u9mXRhYvFg8jBvw0tcX6Eu+15F3TXMMGfcTEit/MdhrkALrlA6yjCm1HLqTJ/G+pojwYr1/3/l2b4w5QwZVdxjHfCz1KYqFZ7JC1n6c0jf0=</CipherValue>
                 </CipherData>
               </EncryptedData>
             </ExecutePackageTask>

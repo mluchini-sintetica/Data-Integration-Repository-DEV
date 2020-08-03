@@ -12,8 +12,8 @@
   DTS:ObjectName="AUDIT_TRAIL_FLAT_FILES"
   DTS:PackageType="5"
   DTS:ProtectionLevel="2"
-  DTS:VersionBuild="112"
-  DTS:VersionGUID="{8427AF39-894F-458F-8B6F-C95640BCEEE0}">
+  DTS:VersionBuild="126"
+  DTS:VersionGUID="{5EB49305-0BBC-402A-82F9-C9918E1C618F}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables>
@@ -96,6 +96,24 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
+      DTS:DTSID="{57825002-1349-433A-92D1-F59DCF5C02F6}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="out_CHECK_FREQUENCE_MIN_NBR">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{BE7B5FF0-172B-4111-96C4-8D704B29712D}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="out_CHECK_MAX_PERIOD_MIN_NBR">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
       DTS:DTSID="{EDBB7B78-2BCB-4C66-9A0B-5D52E0D81140}"
       DTS:IncludeInDebugDump="2345"
       DTS:Namespace="User"
@@ -150,7 +168,7 @@
       DTS:LocaleID="-1"
       DTS:ObjectName="Assign SITE_ID"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="1">
+      DTS:ThreadHint="0">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -178,7 +196,7 @@
       DTS:LocaleID="-1"
       DTS:ObjectName="Assign SOURCE_SYSTEM_ID"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="0">
+      DTS:ThreadHint="1">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -320,7 +338,6 @@
       DTS:refId="Package\Kill MatLab"
       DTS:CreationName="Microsoft.ExecuteProcess"
       DTS:Description="Execute Process Task"
-      DTS:Disabled="True"
       DTS:DTSID="{b033e7e7-75d4-4d3f-86f5-180095c57f36}"
       DTS:ExecutableType="Microsoft.ExecuteProcess"
       DTS:LocaleID="-1"
@@ -673,6 +690,24 @@
                       lineageId="Package\TBLOG_TRAFFICLIGHT to 1\TBLOG_TRAFFICLIGHT.Outputs[OLE DB Source Output].Columns[END_USER_CD]"
                       name="END_USER_CD"
                       truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\TBLOG_TRAFFICLIGHT to 1\TBLOG_TRAFFICLIGHT.Outputs[OLE DB Source Output].Columns[CHECK_MAX_PERIOD_MIN_NBR]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\TBLOG_TRAFFICLIGHT to 1\TBLOG_TRAFFICLIGHT.Outputs[OLE DB Source Output].ExternalColumns[CHECK_MAX_PERIOD_MIN_NBR]"
+                      lineageId="Package\TBLOG_TRAFFICLIGHT to 1\TBLOG_TRAFFICLIGHT.Outputs[OLE DB Source Output].Columns[CHECK_MAX_PERIOD_MIN_NBR]"
+                      name="CHECK_MAX_PERIOD_MIN_NBR"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\TBLOG_TRAFFICLIGHT to 1\TBLOG_TRAFFICLIGHT.Outputs[OLE DB Source Output].Columns[CHECK_FREQUENCE_MIN_NBR]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\TBLOG_TRAFFICLIGHT to 1\TBLOG_TRAFFICLIGHT.Outputs[OLE DB Source Output].ExternalColumns[CHECK_FREQUENCE_MIN_NBR]"
+                      lineageId="Package\TBLOG_TRAFFICLIGHT to 1\TBLOG_TRAFFICLIGHT.Outputs[OLE DB Source Output].Columns[CHECK_FREQUENCE_MIN_NBR]"
+                      name="CHECK_FREQUENCE_MIN_NBR"
+                      truncationRowDisposition="FailComponent" />
                   </outputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -712,6 +747,14 @@
                       dataType="wstr"
                       length="100"
                       name="END_USER_CD" />
+                    <externalMetadataColumn
+                      refId="Package\TBLOG_TRAFFICLIGHT to 1\TBLOG_TRAFFICLIGHT.Outputs[OLE DB Source Output].ExternalColumns[CHECK_MAX_PERIOD_MIN_NBR]"
+                      dataType="i4"
+                      name="CHECK_MAX_PERIOD_MIN_NBR" />
+                    <externalMetadataColumn
+                      refId="Package\TBLOG_TRAFFICLIGHT to 1\TBLOG_TRAFFICLIGHT.Outputs[OLE DB Source Output].ExternalColumns[CHECK_FREQUENCE_MIN_NBR]"
+                      dataType="i4"
+                      name="CHECK_FREQUENCE_MIN_NBR" />
                   </externalMetadataColumns>
                 </output>
                 <output
@@ -764,6 +807,16 @@
                       lineageId="Package\TBLOG_TRAFFICLIGHT to 1\TBLOG_TRAFFICLIGHT.Outputs[OLE DB Source Error Output].Columns[END_USER_CD]"
                       name="END_USER_CD" />
                     <outputColumn
+                      refId="Package\TBLOG_TRAFFICLIGHT to 1\TBLOG_TRAFFICLIGHT.Outputs[OLE DB Source Error Output].Columns[CHECK_MAX_PERIOD_MIN_NBR]"
+                      dataType="i4"
+                      lineageId="Package\TBLOG_TRAFFICLIGHT to 1\TBLOG_TRAFFICLIGHT.Outputs[OLE DB Source Error Output].Columns[CHECK_MAX_PERIOD_MIN_NBR]"
+                      name="CHECK_MAX_PERIOD_MIN_NBR" />
+                    <outputColumn
+                      refId="Package\TBLOG_TRAFFICLIGHT to 1\TBLOG_TRAFFICLIGHT.Outputs[OLE DB Source Error Output].Columns[CHECK_FREQUENCE_MIN_NBR]"
+                      dataType="i4"
+                      lineageId="Package\TBLOG_TRAFFICLIGHT to 1\TBLOG_TRAFFICLIGHT.Outputs[OLE DB Source Error Output].Columns[CHECK_FREQUENCE_MIN_NBR]"
+                      name="CHECK_FREQUENCE_MIN_NBR" />
+                    <outputColumn
                       refId="Package\TBLOG_TRAFFICLIGHT to 1\TBLOG_TRAFFICLIGHT.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
                       dataType="i4"
                       lineageId="Package\TBLOG_TRAFFICLIGHT to 1\TBLOG_TRAFFICLIGHT.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
@@ -805,7 +858,7 @@
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
           SQLTask:Connection="{62102490-454D-4B7E-9A09-120A46D18B10}"
-          SQLTask:SqlStatementSource="update TBLOG_TRAFFICLIGHT&#xA;set RUN_FLG=1, START_DT=getdate(), START_USER_CD='SSIS'&#xA;where system_cd ='MATLAB' and flow_name_cd='MAIN';&#xA;&#xA;select RUN_FLG, getdate() as MATLAB_MAX_TIME&#xA;from TBLOG_TRAFFICLIGHT&#xA;where system_cd ='MATLAB' and flow_name_cd='MAIN'; "
+          SQLTask:SqlStatementSource="update TBLOG_TRAFFICLIGHT&#xA;set RUN_FLG=1, START_DT=getdate(), START_USER_CD='SSIS'&#xA;where system_cd ='MATLAB' and flow_name_cd='MAIN';&#xA;&#xA;select RUN_FLG, getdate() as MATLAB_MAX_TIME, CHECK_MAX_PERIOD_MIN_NBR, CHECK_FREQUENCE_MIN_NBR&#xA;from TBLOG_TRAFFICLIGHT&#xA;where system_cd ='MATLAB' and flow_name_cd='MAIN'; "
           SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
           <SQLTask:ResultBinding
             SQLTask:ResultName="RUN_FLG"
@@ -813,6 +866,12 @@
           <SQLTask:ResultBinding
             SQLTask:ResultName="MATLAB_MAX_TIME"
             SQLTask:DtsVariableName="User::out_MATLAB_MAX_TIME" />
+          <SQLTask:ResultBinding
+            SQLTask:ResultName="CHECK_MAX_PERIOD_MIN_NBR"
+            SQLTask:DtsVariableName="User::out_CHECK_MAX_PERIOD_MIN_NBR" />
+          <SQLTask:ResultBinding
+            SQLTask:ResultName="CHECK_FREQUENCE_MIN_NBR"
+            SQLTask:DtsVariableName="User::out_CHECK_FREQUENCE_MIN_NBR" />
         </SQLTask:SqlTaskData>
       </DTS:ObjectData>
     </DTS:Executable>
@@ -856,9 +915,8 @@
       DTS:refId="Package\Wait for MatLab"
       DTS:CreationName="STOCK:FORLOOP"
       DTS:Description="For Loop Container"
-      DTS:Disabled="True"
       DTS:DTSID="{F103C564-4DB4-4F8A-9AAB-6F671727F14D}"
-      DTS:EvalExpression="@[out_MATLAB_RUN_FLG]==1 &amp;&amp; @[out_MATLAB_MAX_TIME] &gt; DATEADD(&quot;Minute&quot;, -30,GETDATE()) "
+      DTS:EvalExpression="@[out_MATLAB_RUN_FLG]==1 &amp;&amp; @[out_MATLAB_MAX_TIME] &gt; DATEADD(&quot;Minute&quot;, -@[out_CHECK_MAX_PERIOD_MIN_NBR],GETDATE()) "
       DTS:ExecutableType="STOCK:FORLOOP"
       DTS:LocaleID="-1"
       DTS:MaxConcurrent="1"
@@ -866,13 +924,35 @@
       <DTS:Variables />
       <DTS:Executables>
         <DTS:Executable
-          DTS:refId="Package\Wait for MatLab\Check TBLOG_TRAFFICLIGHT to 0 or Max Time"
+          DTS:refId="Package\Wait for MatLab\Assign MATLAB_RUN_FLG"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{eaa5aec3-2c77-48cf-bab5-226257ab7531}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Assign MATLAB_RUN_FLG"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{62102490-454D-4B7E-9A09-120A46D18B10}"
+              SQLTask:SqlStatementSource="select RUN_FLG&#xA;from TBLOG_TRAFFICLIGHT&#xA;where system_cd ='MATLAB' and flow_name_cd='MAIN';"
+              SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+              <SQLTask:ResultBinding
+                SQLTask:ResultName="RUN_FLG"
+                SQLTask:DtsVariableName="User::out_MATLAB_RUN_FLG" />
+            </SQLTask:SqlTaskData>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Wait for MatLab\Check TBLOG_TRAFFICLIGHT if equal to 0"
           DTS:CreationName="Microsoft.Pipeline"
           DTS:Description="Data Flow Task"
           DTS:DTSID="{55C79744-331B-4BB1-B1D0-1090E66E3AED}"
           DTS:ExecutableType="Microsoft.Pipeline"
           DTS:LocaleID="-1"
-          DTS:ObjectName="Check TBLOG_TRAFFICLIGHT to 0 or Max Time"
+          DTS:ObjectName="Check TBLOG_TRAFFICLIGHT if equal to 0"
           DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
           <DTS:Variables />
           <DTS:ObjectData>
@@ -880,7 +960,7 @@
               version="1">
               <components>
                 <component
-                  refId="Package\Wait for MatLab\Check TBLOG_TRAFFICLIGHT to 0 or Max Time\OLE DB Command"
+                  refId="Package\Wait for MatLab\Check TBLOG_TRAFFICLIGHT if equal to 0\OLE DB Command"
                   componentClassID="Microsoft.OLEDBCommand"
                   contactInfo="OLE DB Command;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;2"
                   description="Runs an SQL statement for each row in a data flow. For example, call a 'new employee setup' stored procedure for each row in the 'new employees' table. Note: running an SQL statement for each row of a large data flow may take a long time."
@@ -907,7 +987,7 @@ where id=?</property>
                   </properties>
                   <connections>
                     <connection
-                      refId="Package\Wait for MatLab\Check TBLOG_TRAFFICLIGHT to 0 or Max Time\OLE DB Command.Connections[OleDbConnection]"
+                      refId="Package\Wait for MatLab\Check TBLOG_TRAFFICLIGHT if equal to 0\OLE DB Command.Connections[OleDbConnection]"
                       connectionManagerID="{62102490-454D-4B7E-9A09-120A46D18B10}:external"
                       connectionManagerRefId="Project.ConnectionManagers[SRV-DIR-DEV_SRVDIRDEV.DIR_DWH.DIR_DWH_ETL]"
                       description="The OLE DB runtime connection used to access the database."
@@ -915,42 +995,42 @@ where id=?</property>
                   </connections>
                   <inputs>
                     <input
-                      refId="Package\Wait for MatLab\Check TBLOG_TRAFFICLIGHT to 0 or Max Time\OLE DB Command.Inputs[OLE DB Command Input]"
+                      refId="Package\Wait for MatLab\Check TBLOG_TRAFFICLIGHT if equal to 0\OLE DB Command.Inputs[OLE DB Command Input]"
                       errorOrTruncationOperation="Command Execution"
                       errorRowDisposition="FailComponent"
                       hasSideEffects="true"
                       name="OLE DB Command Input">
                       <inputColumns>
                         <inputColumn
-                          refId="Package\Wait for MatLab\Check TBLOG_TRAFFICLIGHT to 0 or Max Time\OLE DB Command.Inputs[OLE DB Command Input].Columns[ID]"
+                          refId="Package\Wait for MatLab\Check TBLOG_TRAFFICLIGHT if equal to 0\OLE DB Command.Inputs[OLE DB Command Input].Columns[ID]"
                           cachedDataType="i4"
                           cachedName="ID"
-                          externalMetadataColumnId="Package\Wait for MatLab\Check TBLOG_TRAFFICLIGHT to 0 or Max Time\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_3]"
-                          lineageId="Package\Wait for MatLab\Check TBLOG_TRAFFICLIGHT to 0 or Max Time\TBLOG_TRAFFICLIGHT csv.Outputs[Flat File Source Output].Columns[ID]" />
+                          externalMetadataColumnId="Package\Wait for MatLab\Check TBLOG_TRAFFICLIGHT if equal to 0\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_3]"
+                          lineageId="Package\Wait for MatLab\Check TBLOG_TRAFFICLIGHT if equal to 0\TBLOG_TRAFFICLIGHT csv.Outputs[Flat File Source Output].Columns[ID]" />
                         <inputColumn
-                          refId="Package\Wait for MatLab\Check TBLOG_TRAFFICLIGHT to 0 or Max Time\OLE DB Command.Inputs[OLE DB Command Input].Columns[END_USER_CD]"
+                          refId="Package\Wait for MatLab\Check TBLOG_TRAFFICLIGHT if equal to 0\OLE DB Command.Inputs[OLE DB Command Input].Columns[END_USER_CD]"
                           cachedDataType="wstr"
                           cachedLength="100"
                           cachedName="END_USER_CD"
-                          externalMetadataColumnId="Package\Wait for MatLab\Check TBLOG_TRAFFICLIGHT to 0 or Max Time\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_2]"
-                          lineageId="Package\Wait for MatLab\Check TBLOG_TRAFFICLIGHT to 0 or Max Time\TBLOG_TRAFFICLIGHT csv.Outputs[Flat File Source Output].Columns[END_USER_CD]" />
+                          externalMetadataColumnId="Package\Wait for MatLab\Check TBLOG_TRAFFICLIGHT if equal to 0\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_2]"
+                          lineageId="Package\Wait for MatLab\Check TBLOG_TRAFFICLIGHT if equal to 0\TBLOG_TRAFFICLIGHT csv.Outputs[Flat File Source Output].Columns[END_USER_CD]" />
                         <inputColumn
-                          refId="Package\Wait for MatLab\Check TBLOG_TRAFFICLIGHT to 0 or Max Time\OLE DB Command.Inputs[OLE DB Command Input].Columns[END_DT]"
+                          refId="Package\Wait for MatLab\Check TBLOG_TRAFFICLIGHT if equal to 0\OLE DB Command.Inputs[OLE DB Command Input].Columns[END_DT]"
                           cachedDataType="date"
                           cachedName="END_DT"
-                          externalMetadataColumnId="Package\Wait for MatLab\Check TBLOG_TRAFFICLIGHT to 0 or Max Time\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
-                          lineageId="Package\Wait for MatLab\Check TBLOG_TRAFFICLIGHT to 0 or Max Time\TBLOG_TRAFFICLIGHT csv.Outputs[Flat File Source Output].Columns[END_DT]" />
+                          externalMetadataColumnId="Package\Wait for MatLab\Check TBLOG_TRAFFICLIGHT if equal to 0\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
+                          lineageId="Package\Wait for MatLab\Check TBLOG_TRAFFICLIGHT if equal to 0\TBLOG_TRAFFICLIGHT csv.Outputs[Flat File Source Output].Columns[END_DT]" />
                         <inputColumn
-                          refId="Package\Wait for MatLab\Check TBLOG_TRAFFICLIGHT to 0 or Max Time\OLE DB Command.Inputs[OLE DB Command Input].Columns[RUN_FLG]"
+                          refId="Package\Wait for MatLab\Check TBLOG_TRAFFICLIGHT if equal to 0\OLE DB Command.Inputs[OLE DB Command Input].Columns[RUN_FLG]"
                           cachedDataType="i4"
                           cachedName="RUN_FLG"
-                          externalMetadataColumnId="Package\Wait for MatLab\Check TBLOG_TRAFFICLIGHT to 0 or Max Time\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
-                          lineageId="Package\Wait for MatLab\Check TBLOG_TRAFFICLIGHT to 0 or Max Time\TBLOG_TRAFFICLIGHT csv.Outputs[Flat File Source Output].Columns[RUN_FLG]" />
+                          externalMetadataColumnId="Package\Wait for MatLab\Check TBLOG_TRAFFICLIGHT if equal to 0\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
+                          lineageId="Package\Wait for MatLab\Check TBLOG_TRAFFICLIGHT if equal to 0\TBLOG_TRAFFICLIGHT csv.Outputs[Flat File Source Output].Columns[RUN_FLG]" />
                       </inputColumns>
                       <externalMetadataColumns
                         isUsed="True">
                         <externalMetadataColumn
-                          refId="Package\Wait for MatLab\Check TBLOG_TRAFFICLIGHT to 0 or Max Time\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
+                          refId="Package\Wait for MatLab\Check TBLOG_TRAFFICLIGHT if equal to 0\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
                           dataType="i2"
                           name="Param_0">
                           <properties>
@@ -961,7 +1041,7 @@ where id=?</property>
                           </properties>
                         </externalMetadataColumn>
                         <externalMetadataColumn
-                          refId="Package\Wait for MatLab\Check TBLOG_TRAFFICLIGHT to 0 or Max Time\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
+                          refId="Package\Wait for MatLab\Check TBLOG_TRAFFICLIGHT if equal to 0\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
                           dataType="dbTimeStamp"
                           name="Param_1">
                           <properties>
@@ -972,7 +1052,7 @@ where id=?</property>
                           </properties>
                         </externalMetadataColumn>
                         <externalMetadataColumn
-                          refId="Package\Wait for MatLab\Check TBLOG_TRAFFICLIGHT to 0 or Max Time\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_2]"
+                          refId="Package\Wait for MatLab\Check TBLOG_TRAFFICLIGHT if equal to 0\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_2]"
                           dataType="wstr"
                           length="100"
                           name="Param_2">
@@ -984,7 +1064,7 @@ where id=?</property>
                           </properties>
                         </externalMetadataColumn>
                         <externalMetadataColumn
-                          refId="Package\Wait for MatLab\Check TBLOG_TRAFFICLIGHT to 0 or Max Time\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_3]"
+                          refId="Package\Wait for MatLab\Check TBLOG_TRAFFICLIGHT if equal to 0\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_3]"
                           dataType="i8"
                           name="Param_3">
                           <properties>
@@ -999,29 +1079,29 @@ where id=?</property>
                   </inputs>
                   <outputs>
                     <output
-                      refId="Package\Wait for MatLab\Check TBLOG_TRAFFICLIGHT to 0 or Max Time\OLE DB Command.Outputs[OLE DB Command Output]"
+                      refId="Package\Wait for MatLab\Check TBLOG_TRAFFICLIGHT if equal to 0\OLE DB Command.Outputs[OLE DB Command Output]"
                       exclusionGroup="1"
                       name="OLE DB Command Output"
-                      synchronousInputId="Package\Wait for MatLab\Check TBLOG_TRAFFICLIGHT to 0 or Max Time\OLE DB Command.Inputs[OLE DB Command Input]">
+                      synchronousInputId="Package\Wait for MatLab\Check TBLOG_TRAFFICLIGHT if equal to 0\OLE DB Command.Inputs[OLE DB Command Input]">
                       <externalMetadataColumns />
                     </output>
                     <output
-                      refId="Package\Wait for MatLab\Check TBLOG_TRAFFICLIGHT to 0 or Max Time\OLE DB Command.Outputs[OLE DB Command Error Output]"
+                      refId="Package\Wait for MatLab\Check TBLOG_TRAFFICLIGHT if equal to 0\OLE DB Command.Outputs[OLE DB Command Error Output]"
                       exclusionGroup="1"
                       isErrorOut="true"
                       name="OLE DB Command Error Output"
-                      synchronousInputId="Package\Wait for MatLab\Check TBLOG_TRAFFICLIGHT to 0 or Max Time\OLE DB Command.Inputs[OLE DB Command Input]">
+                      synchronousInputId="Package\Wait for MatLab\Check TBLOG_TRAFFICLIGHT if equal to 0\OLE DB Command.Inputs[OLE DB Command Input]">
                       <outputColumns>
                         <outputColumn
-                          refId="Package\Wait for MatLab\Check TBLOG_TRAFFICLIGHT to 0 or Max Time\OLE DB Command.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
+                          refId="Package\Wait for MatLab\Check TBLOG_TRAFFICLIGHT if equal to 0\OLE DB Command.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
                           dataType="i4"
-                          lineageId="Package\Wait for MatLab\Check TBLOG_TRAFFICLIGHT to 0 or Max Time\OLE DB Command.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
+                          lineageId="Package\Wait for MatLab\Check TBLOG_TRAFFICLIGHT if equal to 0\OLE DB Command.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
                           name="ErrorCode"
                           specialFlags="1" />
                         <outputColumn
-                          refId="Package\Wait for MatLab\Check TBLOG_TRAFFICLIGHT to 0 or Max Time\OLE DB Command.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
+                          refId="Package\Wait for MatLab\Check TBLOG_TRAFFICLIGHT if equal to 0\OLE DB Command.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
                           dataType="i4"
-                          lineageId="Package\Wait for MatLab\Check TBLOG_TRAFFICLIGHT to 0 or Max Time\OLE DB Command.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
+                          lineageId="Package\Wait for MatLab\Check TBLOG_TRAFFICLIGHT if equal to 0\OLE DB Command.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
                           name="ErrorColumn"
                           specialFlags="2" />
                       </outputColumns>
@@ -1030,7 +1110,7 @@ where id=?</property>
                   </outputs>
                 </component>
                 <component
-                  refId="Package\Wait for MatLab\Check TBLOG_TRAFFICLIGHT to 0 or Max Time\TBLOG_TRAFFICLIGHT csv"
+                  refId="Package\Wait for MatLab\Check TBLOG_TRAFFICLIGHT if equal to 0\TBLOG_TRAFFICLIGHT csv"
                   componentClassID="Microsoft.FlatFileSource"
                   contactInfo="Flat File Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
                   description="Flat File Source"
@@ -1050,23 +1130,23 @@ where id=?</property>
                   </properties>
                   <connections>
                     <connection
-                      refId="Package\Wait for MatLab\Check TBLOG_TRAFFICLIGHT to 0 or Max Time\TBLOG_TRAFFICLIGHT csv.Connections[FlatFileConnection]"
+                      refId="Package\Wait for MatLab\Check TBLOG_TRAFFICLIGHT if equal to 0\TBLOG_TRAFFICLIGHT csv.Connections[FlatFileConnection]"
                       connectionManagerID="{CB6E9267-0E74-4558-BFD4-E9FA27DBA29E}:external"
                       connectionManagerRefId="Project.ConnectionManagers[TBLOG_TRAFFICLIGHT]"
                       name="FlatFileConnection" />
                   </connections>
                   <outputs>
                     <output
-                      refId="Package\Wait for MatLab\Check TBLOG_TRAFFICLIGHT to 0 or Max Time\TBLOG_TRAFFICLIGHT csv.Outputs[Flat File Source Output]"
+                      refId="Package\Wait for MatLab\Check TBLOG_TRAFFICLIGHT if equal to 0\TBLOG_TRAFFICLIGHT csv.Outputs[Flat File Source Output]"
                       name="Flat File Source Output">
                       <outputColumns>
                         <outputColumn
-                          refId="Package\Wait for MatLab\Check TBLOG_TRAFFICLIGHT to 0 or Max Time\TBLOG_TRAFFICLIGHT csv.Outputs[Flat File Source Output].Columns[ID]"
+                          refId="Package\Wait for MatLab\Check TBLOG_TRAFFICLIGHT if equal to 0\TBLOG_TRAFFICLIGHT csv.Outputs[Flat File Source Output].Columns[ID]"
                           dataType="i4"
                           errorOrTruncationOperation="Conversion"
                           errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\Wait for MatLab\Check TBLOG_TRAFFICLIGHT to 0 or Max Time\TBLOG_TRAFFICLIGHT csv.Outputs[Flat File Source Output].ExternalColumns[ID]"
-                          lineageId="Package\Wait for MatLab\Check TBLOG_TRAFFICLIGHT to 0 or Max Time\TBLOG_TRAFFICLIGHT csv.Outputs[Flat File Source Output].Columns[ID]"
+                          externalMetadataColumnId="Package\Wait for MatLab\Check TBLOG_TRAFFICLIGHT if equal to 0\TBLOG_TRAFFICLIGHT csv.Outputs[Flat File Source Output].ExternalColumns[ID]"
+                          lineageId="Package\Wait for MatLab\Check TBLOG_TRAFFICLIGHT if equal to 0\TBLOG_TRAFFICLIGHT csv.Outputs[Flat File Source Output].Columns[ID]"
                           name="ID"
                           truncationRowDisposition="FailComponent">
                           <properties>
@@ -1081,13 +1161,13 @@ where id=?</property>
                           </properties>
                         </outputColumn>
                         <outputColumn
-                          refId="Package\Wait for MatLab\Check TBLOG_TRAFFICLIGHT to 0 or Max Time\TBLOG_TRAFFICLIGHT csv.Outputs[Flat File Source Output].Columns[SYSTEM_CD]"
+                          refId="Package\Wait for MatLab\Check TBLOG_TRAFFICLIGHT if equal to 0\TBLOG_TRAFFICLIGHT csv.Outputs[Flat File Source Output].Columns[SYSTEM_CD]"
                           dataType="wstr"
                           errorOrTruncationOperation="Conversion"
                           errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\Wait for MatLab\Check TBLOG_TRAFFICLIGHT to 0 or Max Time\TBLOG_TRAFFICLIGHT csv.Outputs[Flat File Source Output].ExternalColumns[SYSTEM_CD]"
+                          externalMetadataColumnId="Package\Wait for MatLab\Check TBLOG_TRAFFICLIGHT if equal to 0\TBLOG_TRAFFICLIGHT csv.Outputs[Flat File Source Output].ExternalColumns[SYSTEM_CD]"
                           length="100"
-                          lineageId="Package\Wait for MatLab\Check TBLOG_TRAFFICLIGHT to 0 or Max Time\TBLOG_TRAFFICLIGHT csv.Outputs[Flat File Source Output].Columns[SYSTEM_CD]"
+                          lineageId="Package\Wait for MatLab\Check TBLOG_TRAFFICLIGHT if equal to 0\TBLOG_TRAFFICLIGHT csv.Outputs[Flat File Source Output].Columns[SYSTEM_CD]"
                           name="SYSTEM_CD"
                           truncationRowDisposition="FailComponent">
                           <properties>
@@ -1102,13 +1182,13 @@ where id=?</property>
                           </properties>
                         </outputColumn>
                         <outputColumn
-                          refId="Package\Wait for MatLab\Check TBLOG_TRAFFICLIGHT to 0 or Max Time\TBLOG_TRAFFICLIGHT csv.Outputs[Flat File Source Output].Columns[FLOW_NAME_CD]"
+                          refId="Package\Wait for MatLab\Check TBLOG_TRAFFICLIGHT if equal to 0\TBLOG_TRAFFICLIGHT csv.Outputs[Flat File Source Output].Columns[FLOW_NAME_CD]"
                           dataType="wstr"
                           errorOrTruncationOperation="Conversion"
                           errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\Wait for MatLab\Check TBLOG_TRAFFICLIGHT to 0 or Max Time\TBLOG_TRAFFICLIGHT csv.Outputs[Flat File Source Output].ExternalColumns[FLOW_NAME_CD]"
+                          externalMetadataColumnId="Package\Wait for MatLab\Check TBLOG_TRAFFICLIGHT if equal to 0\TBLOG_TRAFFICLIGHT csv.Outputs[Flat File Source Output].ExternalColumns[FLOW_NAME_CD]"
                           length="100"
-                          lineageId="Package\Wait for MatLab\Check TBLOG_TRAFFICLIGHT to 0 or Max Time\TBLOG_TRAFFICLIGHT csv.Outputs[Flat File Source Output].Columns[FLOW_NAME_CD]"
+                          lineageId="Package\Wait for MatLab\Check TBLOG_TRAFFICLIGHT if equal to 0\TBLOG_TRAFFICLIGHT csv.Outputs[Flat File Source Output].Columns[FLOW_NAME_CD]"
                           name="FLOW_NAME_CD"
                           truncationRowDisposition="FailComponent">
                           <properties>
@@ -1123,12 +1203,12 @@ where id=?</property>
                           </properties>
                         </outputColumn>
                         <outputColumn
-                          refId="Package\Wait for MatLab\Check TBLOG_TRAFFICLIGHT to 0 or Max Time\TBLOG_TRAFFICLIGHT csv.Outputs[Flat File Source Output].Columns[RUN_FLG]"
+                          refId="Package\Wait for MatLab\Check TBLOG_TRAFFICLIGHT if equal to 0\TBLOG_TRAFFICLIGHT csv.Outputs[Flat File Source Output].Columns[RUN_FLG]"
                           dataType="i4"
                           errorOrTruncationOperation="Conversion"
                           errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\Wait for MatLab\Check TBLOG_TRAFFICLIGHT to 0 or Max Time\TBLOG_TRAFFICLIGHT csv.Outputs[Flat File Source Output].ExternalColumns[RUN_FLG]"
-                          lineageId="Package\Wait for MatLab\Check TBLOG_TRAFFICLIGHT to 0 or Max Time\TBLOG_TRAFFICLIGHT csv.Outputs[Flat File Source Output].Columns[RUN_FLG]"
+                          externalMetadataColumnId="Package\Wait for MatLab\Check TBLOG_TRAFFICLIGHT if equal to 0\TBLOG_TRAFFICLIGHT csv.Outputs[Flat File Source Output].ExternalColumns[RUN_FLG]"
+                          lineageId="Package\Wait for MatLab\Check TBLOG_TRAFFICLIGHT if equal to 0\TBLOG_TRAFFICLIGHT csv.Outputs[Flat File Source Output].Columns[RUN_FLG]"
                           name="RUN_FLG"
                           truncationRowDisposition="FailComponent">
                           <properties>
@@ -1143,12 +1223,12 @@ where id=?</property>
                           </properties>
                         </outputColumn>
                         <outputColumn
-                          refId="Package\Wait for MatLab\Check TBLOG_TRAFFICLIGHT to 0 or Max Time\TBLOG_TRAFFICLIGHT csv.Outputs[Flat File Source Output].Columns[START_DT]"
+                          refId="Package\Wait for MatLab\Check TBLOG_TRAFFICLIGHT if equal to 0\TBLOG_TRAFFICLIGHT csv.Outputs[Flat File Source Output].Columns[START_DT]"
                           dataType="date"
                           errorOrTruncationOperation="Conversion"
                           errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\Wait for MatLab\Check TBLOG_TRAFFICLIGHT to 0 or Max Time\TBLOG_TRAFFICLIGHT csv.Outputs[Flat File Source Output].ExternalColumns[START_DT]"
-                          lineageId="Package\Wait for MatLab\Check TBLOG_TRAFFICLIGHT to 0 or Max Time\TBLOG_TRAFFICLIGHT csv.Outputs[Flat File Source Output].Columns[START_DT]"
+                          externalMetadataColumnId="Package\Wait for MatLab\Check TBLOG_TRAFFICLIGHT if equal to 0\TBLOG_TRAFFICLIGHT csv.Outputs[Flat File Source Output].ExternalColumns[START_DT]"
+                          lineageId="Package\Wait for MatLab\Check TBLOG_TRAFFICLIGHT if equal to 0\TBLOG_TRAFFICLIGHT csv.Outputs[Flat File Source Output].Columns[START_DT]"
                           name="START_DT"
                           truncationRowDisposition="FailComponent">
                           <properties>
@@ -1163,12 +1243,12 @@ where id=?</property>
                           </properties>
                         </outputColumn>
                         <outputColumn
-                          refId="Package\Wait for MatLab\Check TBLOG_TRAFFICLIGHT to 0 or Max Time\TBLOG_TRAFFICLIGHT csv.Outputs[Flat File Source Output].Columns[END_DT]"
+                          refId="Package\Wait for MatLab\Check TBLOG_TRAFFICLIGHT if equal to 0\TBLOG_TRAFFICLIGHT csv.Outputs[Flat File Source Output].Columns[END_DT]"
                           dataType="date"
                           errorOrTruncationOperation="Conversion"
                           errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\Wait for MatLab\Check TBLOG_TRAFFICLIGHT to 0 or Max Time\TBLOG_TRAFFICLIGHT csv.Outputs[Flat File Source Output].ExternalColumns[END_DT]"
-                          lineageId="Package\Wait for MatLab\Check TBLOG_TRAFFICLIGHT to 0 or Max Time\TBLOG_TRAFFICLIGHT csv.Outputs[Flat File Source Output].Columns[END_DT]"
+                          externalMetadataColumnId="Package\Wait for MatLab\Check TBLOG_TRAFFICLIGHT if equal to 0\TBLOG_TRAFFICLIGHT csv.Outputs[Flat File Source Output].ExternalColumns[END_DT]"
+                          lineageId="Package\Wait for MatLab\Check TBLOG_TRAFFICLIGHT if equal to 0\TBLOG_TRAFFICLIGHT csv.Outputs[Flat File Source Output].Columns[END_DT]"
                           name="END_DT"
                           truncationRowDisposition="FailComponent">
                           <properties>
@@ -1183,13 +1263,13 @@ where id=?</property>
                           </properties>
                         </outputColumn>
                         <outputColumn
-                          refId="Package\Wait for MatLab\Check TBLOG_TRAFFICLIGHT to 0 or Max Time\TBLOG_TRAFFICLIGHT csv.Outputs[Flat File Source Output].Columns[START_USER_CD]"
+                          refId="Package\Wait for MatLab\Check TBLOG_TRAFFICLIGHT if equal to 0\TBLOG_TRAFFICLIGHT csv.Outputs[Flat File Source Output].Columns[START_USER_CD]"
                           dataType="wstr"
                           errorOrTruncationOperation="Conversion"
                           errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\Wait for MatLab\Check TBLOG_TRAFFICLIGHT to 0 or Max Time\TBLOG_TRAFFICLIGHT csv.Outputs[Flat File Source Output].ExternalColumns[START_USER_CD]"
+                          externalMetadataColumnId="Package\Wait for MatLab\Check TBLOG_TRAFFICLIGHT if equal to 0\TBLOG_TRAFFICLIGHT csv.Outputs[Flat File Source Output].ExternalColumns[START_USER_CD]"
                           length="100"
-                          lineageId="Package\Wait for MatLab\Check TBLOG_TRAFFICLIGHT to 0 or Max Time\TBLOG_TRAFFICLIGHT csv.Outputs[Flat File Source Output].Columns[START_USER_CD]"
+                          lineageId="Package\Wait for MatLab\Check TBLOG_TRAFFICLIGHT if equal to 0\TBLOG_TRAFFICLIGHT csv.Outputs[Flat File Source Output].Columns[START_USER_CD]"
                           name="START_USER_CD"
                           truncationRowDisposition="FailComponent">
                           <properties>
@@ -1204,13 +1284,13 @@ where id=?</property>
                           </properties>
                         </outputColumn>
                         <outputColumn
-                          refId="Package\Wait for MatLab\Check TBLOG_TRAFFICLIGHT to 0 or Max Time\TBLOG_TRAFFICLIGHT csv.Outputs[Flat File Source Output].Columns[END_USER_CD]"
+                          refId="Package\Wait for MatLab\Check TBLOG_TRAFFICLIGHT if equal to 0\TBLOG_TRAFFICLIGHT csv.Outputs[Flat File Source Output].Columns[END_USER_CD]"
                           dataType="wstr"
                           errorOrTruncationOperation="Conversion"
                           errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\Wait for MatLab\Check TBLOG_TRAFFICLIGHT to 0 or Max Time\TBLOG_TRAFFICLIGHT csv.Outputs[Flat File Source Output].ExternalColumns[END_USER_CD]"
+                          externalMetadataColumnId="Package\Wait for MatLab\Check TBLOG_TRAFFICLIGHT if equal to 0\TBLOG_TRAFFICLIGHT csv.Outputs[Flat File Source Output].ExternalColumns[END_USER_CD]"
                           length="100"
-                          lineageId="Package\Wait for MatLab\Check TBLOG_TRAFFICLIGHT to 0 or Max Time\TBLOG_TRAFFICLIGHT csv.Outputs[Flat File Source Output].Columns[END_USER_CD]"
+                          lineageId="Package\Wait for MatLab\Check TBLOG_TRAFFICLIGHT if equal to 0\TBLOG_TRAFFICLIGHT csv.Outputs[Flat File Source Output].Columns[END_USER_CD]"
                           name="END_USER_CD"
                           truncationRowDisposition="FailComponent">
                           <properties>
@@ -1228,65 +1308,65 @@ where id=?</property>
                       <externalMetadataColumns
                         isUsed="True">
                         <externalMetadataColumn
-                          refId="Package\Wait for MatLab\Check TBLOG_TRAFFICLIGHT to 0 or Max Time\TBLOG_TRAFFICLIGHT csv.Outputs[Flat File Source Output].ExternalColumns[ID]"
+                          refId="Package\Wait for MatLab\Check TBLOG_TRAFFICLIGHT if equal to 0\TBLOG_TRAFFICLIGHT csv.Outputs[Flat File Source Output].ExternalColumns[ID]"
                           dataType="i4"
                           name="ID" />
                         <externalMetadataColumn
-                          refId="Package\Wait for MatLab\Check TBLOG_TRAFFICLIGHT to 0 or Max Time\TBLOG_TRAFFICLIGHT csv.Outputs[Flat File Source Output].ExternalColumns[SYSTEM_CD]"
+                          refId="Package\Wait for MatLab\Check TBLOG_TRAFFICLIGHT if equal to 0\TBLOG_TRAFFICLIGHT csv.Outputs[Flat File Source Output].ExternalColumns[SYSTEM_CD]"
                           dataType="wstr"
                           length="100"
                           name="SYSTEM_CD" />
                         <externalMetadataColumn
-                          refId="Package\Wait for MatLab\Check TBLOG_TRAFFICLIGHT to 0 or Max Time\TBLOG_TRAFFICLIGHT csv.Outputs[Flat File Source Output].ExternalColumns[FLOW_NAME_CD]"
+                          refId="Package\Wait for MatLab\Check TBLOG_TRAFFICLIGHT if equal to 0\TBLOG_TRAFFICLIGHT csv.Outputs[Flat File Source Output].ExternalColumns[FLOW_NAME_CD]"
                           dataType="wstr"
                           length="100"
                           name="FLOW_NAME_CD" />
                         <externalMetadataColumn
-                          refId="Package\Wait for MatLab\Check TBLOG_TRAFFICLIGHT to 0 or Max Time\TBLOG_TRAFFICLIGHT csv.Outputs[Flat File Source Output].ExternalColumns[RUN_FLG]"
+                          refId="Package\Wait for MatLab\Check TBLOG_TRAFFICLIGHT if equal to 0\TBLOG_TRAFFICLIGHT csv.Outputs[Flat File Source Output].ExternalColumns[RUN_FLG]"
                           dataType="i4"
                           name="RUN_FLG" />
                         <externalMetadataColumn
-                          refId="Package\Wait for MatLab\Check TBLOG_TRAFFICLIGHT to 0 or Max Time\TBLOG_TRAFFICLIGHT csv.Outputs[Flat File Source Output].ExternalColumns[START_DT]"
+                          refId="Package\Wait for MatLab\Check TBLOG_TRAFFICLIGHT if equal to 0\TBLOG_TRAFFICLIGHT csv.Outputs[Flat File Source Output].ExternalColumns[START_DT]"
                           dataType="date"
                           name="START_DT" />
                         <externalMetadataColumn
-                          refId="Package\Wait for MatLab\Check TBLOG_TRAFFICLIGHT to 0 or Max Time\TBLOG_TRAFFICLIGHT csv.Outputs[Flat File Source Output].ExternalColumns[END_DT]"
+                          refId="Package\Wait for MatLab\Check TBLOG_TRAFFICLIGHT if equal to 0\TBLOG_TRAFFICLIGHT csv.Outputs[Flat File Source Output].ExternalColumns[END_DT]"
                           dataType="date"
                           name="END_DT" />
                         <externalMetadataColumn
-                          refId="Package\Wait for MatLab\Check TBLOG_TRAFFICLIGHT to 0 or Max Time\TBLOG_TRAFFICLIGHT csv.Outputs[Flat File Source Output].ExternalColumns[START_USER_CD]"
+                          refId="Package\Wait for MatLab\Check TBLOG_TRAFFICLIGHT if equal to 0\TBLOG_TRAFFICLIGHT csv.Outputs[Flat File Source Output].ExternalColumns[START_USER_CD]"
                           dataType="wstr"
                           length="100"
                           name="START_USER_CD" />
                         <externalMetadataColumn
-                          refId="Package\Wait for MatLab\Check TBLOG_TRAFFICLIGHT to 0 or Max Time\TBLOG_TRAFFICLIGHT csv.Outputs[Flat File Source Output].ExternalColumns[END_USER_CD]"
+                          refId="Package\Wait for MatLab\Check TBLOG_TRAFFICLIGHT if equal to 0\TBLOG_TRAFFICLIGHT csv.Outputs[Flat File Source Output].ExternalColumns[END_USER_CD]"
                           dataType="wstr"
                           length="100"
                           name="END_USER_CD" />
                       </externalMetadataColumns>
                     </output>
                     <output
-                      refId="Package\Wait for MatLab\Check TBLOG_TRAFFICLIGHT to 0 or Max Time\TBLOG_TRAFFICLIGHT csv.Outputs[Flat File Source Error Output]"
+                      refId="Package\Wait for MatLab\Check TBLOG_TRAFFICLIGHT if equal to 0\TBLOG_TRAFFICLIGHT csv.Outputs[Flat File Source Error Output]"
                       isErrorOut="true"
                       name="Flat File Source Error Output">
                       <outputColumns>
                         <outputColumn
-                          refId="Package\Wait for MatLab\Check TBLOG_TRAFFICLIGHT to 0 or Max Time\TBLOG_TRAFFICLIGHT csv.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                          refId="Package\Wait for MatLab\Check TBLOG_TRAFFICLIGHT if equal to 0\TBLOG_TRAFFICLIGHT csv.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
                           codePage="65001"
                           dataType="text"
                           description="Flat File Source Error Output Column"
-                          lineageId="Package\Wait for MatLab\Check TBLOG_TRAFFICLIGHT to 0 or Max Time\TBLOG_TRAFFICLIGHT csv.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                          lineageId="Package\Wait for MatLab\Check TBLOG_TRAFFICLIGHT if equal to 0\TBLOG_TRAFFICLIGHT csv.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
                           name="Flat File Source Error Output Column" />
                         <outputColumn
-                          refId="Package\Wait for MatLab\Check TBLOG_TRAFFICLIGHT to 0 or Max Time\TBLOG_TRAFFICLIGHT csv.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                          refId="Package\Wait for MatLab\Check TBLOG_TRAFFICLIGHT if equal to 0\TBLOG_TRAFFICLIGHT csv.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
                           dataType="i4"
-                          lineageId="Package\Wait for MatLab\Check TBLOG_TRAFFICLIGHT to 0 or Max Time\TBLOG_TRAFFICLIGHT csv.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                          lineageId="Package\Wait for MatLab\Check TBLOG_TRAFFICLIGHT if equal to 0\TBLOG_TRAFFICLIGHT csv.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
                           name="ErrorCode"
                           specialFlags="1" />
                         <outputColumn
-                          refId="Package\Wait for MatLab\Check TBLOG_TRAFFICLIGHT to 0 or Max Time\TBLOG_TRAFFICLIGHT csv.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                          refId="Package\Wait for MatLab\Check TBLOG_TRAFFICLIGHT if equal to 0\TBLOG_TRAFFICLIGHT csv.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
                           dataType="i4"
-                          lineageId="Package\Wait for MatLab\Check TBLOG_TRAFFICLIGHT to 0 or Max Time\TBLOG_TRAFFICLIGHT csv.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                          lineageId="Package\Wait for MatLab\Check TBLOG_TRAFFICLIGHT if equal to 0\TBLOG_TRAFFICLIGHT csv.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
                           name="ErrorColumn"
                           specialFlags="2" />
                       </outputColumns>
@@ -1295,7 +1375,7 @@ where id=?</property>
                   </outputs>
                 </component>
                 <component
-                  refId="Package\Wait for MatLab\Check TBLOG_TRAFFICLIGHT to 0 or Max Time\Test RUN_FLG equal to 0"
+                  refId="Package\Wait for MatLab\Check TBLOG_TRAFFICLIGHT if equal to 0\Test RUN_FLG equal to 0"
                   componentClassID="Microsoft.ConditionalSplit"
                   contactInfo="Conditional Split;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
                   description="Routes data rows to different outputs depending on the content of the data. Use conditions (SSIS expressions) to specify which rows are routed. For example, separate records that need to be cleaned from those that are ready to be loaded or route only a subset of records."
@@ -1303,35 +1383,35 @@ where id=?</property>
                   usesDispositions="true">
                   <inputs>
                     <input
-                      refId="Package\Wait for MatLab\Check TBLOG_TRAFFICLIGHT to 0 or Max Time\Test RUN_FLG equal to 0.Inputs[Conditional Split Input]"
+                      refId="Package\Wait for MatLab\Check TBLOG_TRAFFICLIGHT if equal to 0\Test RUN_FLG equal to 0.Inputs[Conditional Split Input]"
                       description="Input to the Conditional Split Transformation"
                       name="Conditional Split Input">
                       <inputColumns>
                         <inputColumn
-                          refId="Package\Wait for MatLab\Check TBLOG_TRAFFICLIGHT to 0 or Max Time\Test RUN_FLG equal to 0.Inputs[Conditional Split Input].Columns[RUN_FLG]"
+                          refId="Package\Wait for MatLab\Check TBLOG_TRAFFICLIGHT if equal to 0\Test RUN_FLG equal to 0.Inputs[Conditional Split Input].Columns[RUN_FLG]"
                           cachedDataType="i4"
                           cachedName="RUN_FLG"
-                          lineageId="Package\Wait for MatLab\Check TBLOG_TRAFFICLIGHT to 0 or Max Time\TBLOG_TRAFFICLIGHT csv.Outputs[Flat File Source Output].Columns[RUN_FLG]" />
+                          lineageId="Package\Wait for MatLab\Check TBLOG_TRAFFICLIGHT if equal to 0\TBLOG_TRAFFICLIGHT csv.Outputs[Flat File Source Output].Columns[RUN_FLG]" />
                       </inputColumns>
                       <externalMetadataColumns />
                     </input>
                   </inputs>
                   <outputs>
                     <output
-                      refId="Package\Wait for MatLab\Check TBLOG_TRAFFICLIGHT to 0 or Max Time\Test RUN_FLG equal to 0.Outputs[RUN_FLG 0]"
+                      refId="Package\Wait for MatLab\Check TBLOG_TRAFFICLIGHT if equal to 0\Test RUN_FLG equal to 0.Outputs[RUN_FLG 0]"
                       description="Output 1 of the Conditional Split Transformation"
                       errorOrTruncationOperation="Computation"
                       errorRowDisposition="FailComponent"
                       exclusionGroup="1"
                       name="RUN_FLG 0"
-                      synchronousInputId="Package\Wait for MatLab\Check TBLOG_TRAFFICLIGHT to 0 or Max Time\Test RUN_FLG equal to 0.Inputs[Conditional Split Input]"
+                      synchronousInputId="Package\Wait for MatLab\Check TBLOG_TRAFFICLIGHT if equal to 0\Test RUN_FLG equal to 0.Inputs[Conditional Split Input]"
                       truncationRowDisposition="FailComponent">
                       <properties>
                         <property
                           containsID="true"
                           dataType="System.String"
                           description="Specifies the expression. This expression version uses lineage identifiers instead of column names."
-                          name="Expression">#{Package\Wait for MatLab\Check TBLOG_TRAFFICLIGHT to 0 or Max Time\TBLOG_TRAFFICLIGHT csv.Outputs[Flat File Source Output].Columns[RUN_FLG]} == 0</property>
+                          name="Expression">#{Package\Wait for MatLab\Check TBLOG_TRAFFICLIGHT if equal to 0\TBLOG_TRAFFICLIGHT csv.Outputs[Flat File Source Output].Columns[RUN_FLG]} == 0</property>
                         <property
                           containsID="true"
                           dataType="System.String"
@@ -1346,11 +1426,11 @@ where id=?</property>
                       <externalMetadataColumns />
                     </output>
                     <output
-                      refId="Package\Wait for MatLab\Check TBLOG_TRAFFICLIGHT to 0 or Max Time\Test RUN_FLG equal to 0.Outputs[Conditional Split Default Output]"
+                      refId="Package\Wait for MatLab\Check TBLOG_TRAFFICLIGHT if equal to 0\Test RUN_FLG equal to 0.Outputs[Conditional Split Default Output]"
                       description="Default Output of the Conditional Split Transformation"
                       exclusionGroup="1"
                       name="Conditional Split Default Output"
-                      synchronousInputId="Package\Wait for MatLab\Check TBLOG_TRAFFICLIGHT to 0 or Max Time\Test RUN_FLG equal to 0.Inputs[Conditional Split Input]">
+                      synchronousInputId="Package\Wait for MatLab\Check TBLOG_TRAFFICLIGHT if equal to 0\Test RUN_FLG equal to 0.Inputs[Conditional Split Input]">
                       <properties>
                         <property
                           dataType="System.Boolean"
@@ -1359,23 +1439,23 @@ where id=?</property>
                       <externalMetadataColumns />
                     </output>
                     <output
-                      refId="Package\Wait for MatLab\Check TBLOG_TRAFFICLIGHT to 0 or Max Time\Test RUN_FLG equal to 0.Outputs[Conditional Split Error Output]"
+                      refId="Package\Wait for MatLab\Check TBLOG_TRAFFICLIGHT if equal to 0\Test RUN_FLG equal to 0.Outputs[Conditional Split Error Output]"
                       description="Error Output of the Conditional Split Transformation"
                       exclusionGroup="1"
                       isErrorOut="true"
                       name="Conditional Split Error Output"
-                      synchronousInputId="Package\Wait for MatLab\Check TBLOG_TRAFFICLIGHT to 0 or Max Time\Test RUN_FLG equal to 0.Inputs[Conditional Split Input]">
+                      synchronousInputId="Package\Wait for MatLab\Check TBLOG_TRAFFICLIGHT if equal to 0\Test RUN_FLG equal to 0.Inputs[Conditional Split Input]">
                       <outputColumns>
                         <outputColumn
-                          refId="Package\Wait for MatLab\Check TBLOG_TRAFFICLIGHT to 0 or Max Time\Test RUN_FLG equal to 0.Outputs[Conditional Split Error Output].Columns[ErrorCode]"
+                          refId="Package\Wait for MatLab\Check TBLOG_TRAFFICLIGHT if equal to 0\Test RUN_FLG equal to 0.Outputs[Conditional Split Error Output].Columns[ErrorCode]"
                           dataType="i4"
-                          lineageId="Package\Wait for MatLab\Check TBLOG_TRAFFICLIGHT to 0 or Max Time\Test RUN_FLG equal to 0.Outputs[Conditional Split Error Output].Columns[ErrorCode]"
+                          lineageId="Package\Wait for MatLab\Check TBLOG_TRAFFICLIGHT if equal to 0\Test RUN_FLG equal to 0.Outputs[Conditional Split Error Output].Columns[ErrorCode]"
                           name="ErrorCode"
                           specialFlags="1" />
                         <outputColumn
-                          refId="Package\Wait for MatLab\Check TBLOG_TRAFFICLIGHT to 0 or Max Time\Test RUN_FLG equal to 0.Outputs[Conditional Split Error Output].Columns[ErrorColumn]"
+                          refId="Package\Wait for MatLab\Check TBLOG_TRAFFICLIGHT if equal to 0\Test RUN_FLG equal to 0.Outputs[Conditional Split Error Output].Columns[ErrorColumn]"
                           dataType="i4"
-                          lineageId="Package\Wait for MatLab\Check TBLOG_TRAFFICLIGHT to 0 or Max Time\Test RUN_FLG equal to 0.Outputs[Conditional Split Error Output].Columns[ErrorColumn]"
+                          lineageId="Package\Wait for MatLab\Check TBLOG_TRAFFICLIGHT if equal to 0\Test RUN_FLG equal to 0.Outputs[Conditional Split Error Output].Columns[ErrorColumn]"
                           name="ErrorColumn"
                           specialFlags="2" />
                       </outputColumns>
@@ -1386,39 +1466,36 @@ where id=?</property>
               </components>
               <paths>
                 <path
-                  refId="Package\Wait for MatLab\Check TBLOG_TRAFFICLIGHT to 0 or Max Time.Paths[Flat File Source Output]"
-                  endId="Package\Wait for MatLab\Check TBLOG_TRAFFICLIGHT to 0 or Max Time\Test RUN_FLG equal to 0.Inputs[Conditional Split Input]"
+                  refId="Package\Wait for MatLab\Check TBLOG_TRAFFICLIGHT if equal to 0.Paths[Flat File Source Output]"
+                  endId="Package\Wait for MatLab\Check TBLOG_TRAFFICLIGHT if equal to 0\Test RUN_FLG equal to 0.Inputs[Conditional Split Input]"
                   name="Flat File Source Output"
-                  startId="Package\Wait for MatLab\Check TBLOG_TRAFFICLIGHT to 0 or Max Time\TBLOG_TRAFFICLIGHT csv.Outputs[Flat File Source Output]" />
+                  startId="Package\Wait for MatLab\Check TBLOG_TRAFFICLIGHT if equal to 0\TBLOG_TRAFFICLIGHT csv.Outputs[Flat File Source Output]" />
                 <path
-                  refId="Package\Wait for MatLab\Check TBLOG_TRAFFICLIGHT to 0 or Max Time.Paths[RUN_FLG 0]"
-                  endId="Package\Wait for MatLab\Check TBLOG_TRAFFICLIGHT to 0 or Max Time\OLE DB Command.Inputs[OLE DB Command Input]"
+                  refId="Package\Wait for MatLab\Check TBLOG_TRAFFICLIGHT if equal to 0.Paths[RUN_FLG 0]"
+                  endId="Package\Wait for MatLab\Check TBLOG_TRAFFICLIGHT if equal to 0\OLE DB Command.Inputs[OLE DB Command Input]"
                   name="RUN_FLG 0"
-                  startId="Package\Wait for MatLab\Check TBLOG_TRAFFICLIGHT to 0 or Max Time\Test RUN_FLG equal to 0.Outputs[RUN_FLG 0]" />
+                  startId="Package\Wait for MatLab\Check TBLOG_TRAFFICLIGHT if equal to 0\Test RUN_FLG equal to 0.Outputs[RUN_FLG 0]" />
               </paths>
             </pipeline>
           </DTS:ObjectData>
         </DTS:Executable>
         <DTS:Executable
-          DTS:refId="Package\Wait for MatLab\Retrieve MATLAB_RUN_FLG"
+          DTS:refId="Package\Wait for MatLab\Wait For X minutes"
           DTS:CreationName="Microsoft.ExecuteSQLTask"
           DTS:Description="Execute SQL Task"
-          DTS:DTSID="{eaa5aec3-2c77-48cf-bab5-226257ab7531}"
+          DTS:DTSID="{814459CE-861A-4C98-9932-6DFFB262F878}"
           DTS:ExecutableType="Microsoft.ExecuteSQLTask"
           DTS:LocaleID="-1"
-          DTS:ObjectName="Retrieve MATLAB_RUN_FLG"
+          DTS:ObjectName="Wait For X minutes"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
           DTS:ThreadHint="0">
           <DTS:Variables />
+          <DTS:PropertyExpression
+            DTS:Name="SqlStatementSource">@[User::out_CHECK_FREQUENCE_MIN_NBR]&lt;10 ? "WAITFOR DELAY '00:0" +  (DT_WSTR, 1) @[User::out_CHECK_FREQUENCE_MIN_NBR] +"'" : "WAITFOR DELAY '00:" +  (DT_WSTR, 2) @[User::out_CHECK_FREQUENCE_MIN_NBR] +"'"</DTS:PropertyExpression>
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
               SQLTask:Connection="{62102490-454D-4B7E-9A09-120A46D18B10}"
-              SQLTask:SqlStatementSource="select RUN_FLG&#xA;from TBLOG_TRAFFICLIGHT&#xA;where system_cd ='MATLAB' and flow_name_cd='MAIN'"
-              SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
-              <SQLTask:ResultBinding
-                SQLTask:ResultName="RUN_FLG"
-                SQLTask:DtsVariableName="User::out_MATLAB_RUN_FLG" />
-            </SQLTask:SqlTaskData>
+              SQLTask:SqlStatementSource="WAITFOR DELAY '00:00'" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
           </DTS:ObjectData>
         </DTS:Executable>
       </DTS:Executables>
@@ -1427,10 +1504,18 @@ where id=?</property>
           DTS:refId="Package\Wait for MatLab.PrecedenceConstraints[Constraint]"
           DTS:CreationName=""
           DTS:DTSID="{CEA53130-918D-4913-9124-996BDF824095}"
-          DTS:From="Package\Wait for MatLab\Check TBLOG_TRAFFICLIGHT to 0 or Max Time"
+          DTS:From="Package\Wait for MatLab\Check TBLOG_TRAFFICLIGHT if equal to 0"
           DTS:LogicalAnd="True"
           DTS:ObjectName="Constraint"
-          DTS:To="Package\Wait for MatLab\Retrieve MATLAB_RUN_FLG" />
+          DTS:To="Package\Wait for MatLab\Assign MATLAB_RUN_FLG" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Wait for MatLab.PrecedenceConstraints[Constraint 1]"
+          DTS:CreationName=""
+          DTS:DTSID="{EFF93A06-080C-4DC4-AD01-CCC9F275D260}"
+          DTS:From="Package\Wait for MatLab\Wait For X minutes"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 1"
+          DTS:To="Package\Wait for MatLab\Check TBLOG_TRAFFICLIGHT if equal to 0" />
       </DTS:PrecedenceConstraints>
     </DTS:Executable>
   </DTS:Executables>
@@ -1592,94 +1677,124 @@ where id=?</property>
     design-time-name="Package">
     <LayoutInfo>
       <GraphLayout
-        Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="156.8,41.6"
+          Size="157,42"
           Id="Package\Assign SITE_ID"
           TopLeft="171,109" />
         <NodeLayout
-          Size="230.4,41.6"
+          Size="230,42"
           Id="Package\Assign SOURCE_SYSTEM_ID"
           TopLeft="154,28" />
         <NodeLayout
-          Size="163.2,41.6"
+          Size="163,42"
           Id="Package\Email SUCCESS"
           TopLeft="861,670" />
         <NodeLayout
-          Size="240,41.6"
+          Size="240,42"
           Id="Package\Ins TBLOG_PACKAGE + Max ID"
           TopLeft="567.571428571435,102.587301587301" />
         <NodeLayout
-          Size="132.8,41.6"
+          Size="133,42"
           Id="Package\Kill MatLab"
           TopLeft="250,625" />
         <NodeLayout
-          Size="222.4,41.6"
+          Size="222,42"
           Id="Package\Last Upd TBLOG_PACKAGE"
           TopLeft="581,600" />
         <NodeLayout
-          Size="139.2,41.6"
+          Size="139,42"
           Id="Package\Run MatLab"
           TopLeft="259,281" />
         <NodeLayout
-          Size="222.4,41.6"
+          Size="222,42"
           Id="Package\TBLOG_TRAFFICLIGHT to 1"
           TopLeft="572,325" />
         <NodeLayout
-          Size="356.8,41.6"
+          Size="357,42"
           Id="Package\Upd MATLAB_RUN_FLG to 1 and set MATLAB variables"
           TopLeft="569,255" />
         <NodeLayout
-          Size="199.2,41.6"
+          Size="199,42"
           Id="Package\Upd TBLOG_PACKAGE"
           TopLeft="588.349206349204,179.142857142857" />
         <NodeLayout
-          Size="320,41.6"
-          Id="Package\Wait for MatLab\Check TBLOG_TRAFFICLIGHT to 0 or Max Time"
-          TopLeft="36,26" />
+          Size="216,42"
+          Id="Package\Wait for MatLab\Assign MATLAB_RUN_FLG"
+          TopLeft="86,163" />
         <NodeLayout
-          Size="224,41.6"
-          Id="Package\Wait for MatLab\Retrieve MATLAB_RUN_FLG"
-          TopLeft="55,103" />
+          Size="295,42"
+          Id="Package\Wait for MatLab\Check TBLOG_TRAFFICLIGHT if equal to 0"
+          TopLeft="47,90" />
+        <NodeLayout
+          Size="172,42"
+          Id="Package\Wait for MatLab\Wait For X minutes"
+          TopLeft="113,15" />
         <EdgeLayout
           Id="Package\Wait for MatLab.PrecedenceConstraints[Constraint]"
-          TopLeft="196,68">
+          TopLeft="242.333333333333,132">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-29,35"
+              EndConnector="-48.3333333333333,31"
               Start="0,0"
-              End="-29,27.5">
+              End="-48.3333333333333,23.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,13.5" />
+                    End="0,8.50033715441672" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,13.5"
-                    Point2="0,17.5"
-                    Point3="-4,17.5" />
+                    Point1="0,8.50033715441672"
+                    Point2="0,12.5003371544167"
+                    Point3="-4,12.5003371544167" />
                   <mssgle:LineSegment
-                    End="-25,17.5" />
+                    End="-44.3333333333333,12.5003371544167" />
                   <mssgle:CubicBezierSegment
-                    Point1="-25,17.5"
-                    Point2="-29,17.5"
-                    Point3="-29,21.5" />
+                    Point1="-44.3333333333333,12.5003371544167"
+                    Point2="-48.3333333333333,12.5003371544167"
+                    Point3="-48.3333333333333,16.5003371544167" />
                   <mssgle:LineSegment
-                    End="-29,27.5" />
+                    End="-48.3333333333333,23.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Wait for MatLab.PrecedenceConstraints[Constraint 1]"
+          TopLeft="196.75,57">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,33"
+              Start="0,0"
+              End="0,25.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,25.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <ContainerLayout
           HeaderHeight="43"
-          IsExpanded="True"
-          PanelSize="360.8,200"
-          Size="360.8,243.2"
+          IsExpanded="False"
+          PanelSize="364,285"
+          Size="364,43"
           Id="Package\Wait for MatLab"
           TopLeft="111.5,355" />
         <EdgeLayout
@@ -1688,9 +1803,9 @@ where id=?</property>
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-36.5,32"
+              EndConnector="-35,32"
               Start="0,0"
-              End="-36.5,24.5">
+              End="-35,24.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
@@ -1701,13 +1816,13 @@ where id=?</property>
                     Point2="0,16"
                     Point3="-4,16" />
                   <mssgle:LineSegment
-                    End="-32.5,16" />
+                    End="-31,16" />
                   <mssgle:CubicBezierSegment
-                    Point1="-32.5,16"
-                    Point2="-36.5,16"
-                    Point3="-36.5,20" />
+                    Point1="-31,16"
+                    Point2="-35,16"
+                    Point3="-35,20" />
                   <mssgle:LineSegment
-                    End="-36.5,24.5" />
+                    End="-35,24.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -1898,30 +2013,30 @@ where id=?</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 7]"
-          TopLeft="292,598">
+          TopLeft="293.5,398">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="24.5,27"
+              EndConnector="23,227"
               Start="0,0"
-              End="24.5,19.5">
+              End="23,219.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,9.5" />
+                    End="0,109.5" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,9.5"
-                    Point2="0,13.5"
-                    Point3="4,13.5" />
+                    Point1="0,109.5"
+                    Point2="0,113.5"
+                    Point3="4,113.5" />
                   <mssgle:LineSegment
-                    End="20.5,13.5" />
+                    End="19,113.5" />
                   <mssgle:CubicBezierSegment
-                    Point1="20.5,13.5"
-                    Point2="24.5,13.5"
-                    Point3="24.5,17.5" />
+                    Point1="19,113.5"
+                    Point2="23,113.5"
+                    Point3="23,117.5" />
                   <mssgle:LineSegment
-                    End="24.5,19.5" />
+                    End="23,219.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -1999,10 +2114,10 @@ where id=?</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <AnnotationLayout
-          Text="Exit from the loop if MatLab has finished (RUN_FLG=0) or&#xA;it MatLab takes more than 30 minutes to be completed"
+          Text="Exit from the loop if MatLab has finished (RUN_FLG=0) or&#xA;if MatLab takes more than X minutes to be completed &#xA;(X is retrieved from TBLOG_TRAFFICLIGHT table)"
           ParentId="Package"
           FontInfo="{assembly:Null}"
-          Size="331.2,56"
+          Size="331,72"
           Id="409e098b-c0ae-44d8-ad3a-51b9a16271ca"
           TopLeft="504,441" />
       </GraphLayout>
@@ -2024,7 +2139,7 @@ where id=?</property>
     design-time-name="Package\TBLOG_TRAFFICLIGHT to 1">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="201,42"
           Id="Package\TBLOG_TRAFFICLIGHT to 1\TBLOG_TRAFFICLIGHT"
@@ -2064,9 +2179,7 @@ where id=?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -2086,24 +2199,24 @@ where id=?</property>
     </Properties>
   </PipelineComponentMetadata>
   <TaskHost
-    design-time-name="Package\Wait for MatLab\Check TBLOG_TRAFFICLIGHT to 0 or Max Time">
+    design-time-name="Package\Wait for MatLab\Check TBLOG_TRAFFICLIGHT if equal to 0">
     <LayoutInfo>
       <GraphLayout
         Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="206,42"
-          Id="Package\Wait for MatLab\Check TBLOG_TRAFFICLIGHT to 0 or Max Time\Test RUN_FLG equal to 0"
+          Id="Package\Wait for MatLab\Check TBLOG_TRAFFICLIGHT if equal to 0\Test RUN_FLG equal to 0"
           TopLeft="621,253" />
         <NodeLayout
           Size="221,42"
-          Id="Package\Wait for MatLab\Check TBLOG_TRAFFICLIGHT to 0 or Max Time\TBLOG_TRAFFICLIGHT csv"
+          Id="Package\Wait for MatLab\Check TBLOG_TRAFFICLIGHT if equal to 0\TBLOG_TRAFFICLIGHT csv"
           TopLeft="293,102" />
         <NodeLayout
           Size="173,42"
-          Id="Package\Wait for MatLab\Check TBLOG_TRAFFICLIGHT to 0 or Max Time\OLE DB Command"
+          Id="Package\Wait for MatLab\Check TBLOG_TRAFFICLIGHT if equal to 0\OLE DB Command"
           TopLeft="314,347" />
         <EdgeLayout
-          Id="Package\Wait for MatLab\Check TBLOG_TRAFFICLIGHT to 0 or Max Time.Paths[RUN_FLG 0]"
+          Id="Package\Wait for MatLab\Check TBLOG_TRAFFICLIGHT if equal to 0.Paths[RUN_FLG 0]"
           TopLeft="724,295">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -2139,7 +2252,7 @@ where id=?</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Wait for MatLab\Check TBLOG_TRAFFICLIGHT to 0 or Max Time.Paths[Flat File Source Output]"
+          Id="Package\Wait for MatLab\Check TBLOG_TRAFFICLIGHT if equal to 0.Paths[Flat File Source Output]"
           TopLeft="403.5,144">
           <EdgeLayout.Curve>
             <mssgle:Curve
