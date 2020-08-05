@@ -5,16 +5,16 @@
   DTS:CreationName="Microsoft.Package"
   DTS:CreatorComputerName="SRV-DIR-DEV"
   DTS:CreatorName="SINTE00\mluchini"
-  DTS:DTSID="{BC8FDFFE-C37F-4040-9B3F-7326954E383E}"
+  DTS:DTSID="{33B5EBDA-DF4D-4432-A2D3-42DC3A46564D}"
   DTS:EnableConfig="True"
   DTS:ExecutableType="Microsoft.Package"
   DTS:LastModifiedProductVersion="15.0.2000.123"
   DTS:LocaleID="2064"
-  DTS:ObjectName="PARCEL_MFG_STG"
+  DTS:ObjectName="PARCEL_MFG_STG_excercise"
   DTS:PackageType="5"
   DTS:ProtectionLevel="2"
-  DTS:VersionBuild="302"
-  DTS:VersionGUID="{5F08EBCE-7622-40BD-A178-CD436E660747}">
+  DTS:VersionBuild="297"
+  DTS:VersionGUID="{55C0AFD4-F1B1-4ADF-9624-849887241D1B}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Configurations>
@@ -22,14 +22,14 @@
       DTS:ConfigurationString="out_MAX_ID"
       DTS:ConfigurationVariable="\Package.Variables[User::in_PARENT_ID].Properties[Value]"
       DTS:CreationName=""
-      DTS:DTSID="{311E353E-40CC-4DF2-A147-AFE3D7FD68C0}"
+      DTS:DTSID="{1C52EACD-0083-4948-9394-26046595C60E}"
       DTS:ObjectName="in_PARENT_ID" />
   </DTS:Configurations>
   <DTS:PackageParameters>
     <DTS:PackageParameter
       DTS:CreationName=""
       DTS:DataType="3"
-      DTS:DTSID="{8A5BC685-6D9C-45D3-A1F6-811C65E8298A}"
+      DTS:DTSID="{8160A1B6-F745-4DA2-94A0-76713E38CC6E}"
       DTS:ObjectName="Parameter">
       <DTS:Property
         DTS:DataType="3"
@@ -39,42 +39,42 @@
   <DTS:Variables>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{8FC49B32-AAE4-47B0-A0A4-54D61AE6F437}"
+      DTS:DTSID="{D4EB7E33-9FA2-4515-93EE-BE213301A9A2}"
       DTS:EvaluateAsExpression="True"
       DTS:Expression="&quot;SSIS package: &quot; + @[System::PackageName] + &quot; ERROR&quot;"
       DTS:IncludeInDebugDump="2345"
       DTS:Namespace="User"
       DTS:ObjectName="in_MAIL_OBJECT_ERROR">
       <DTS:VariableValue
-        DTS:DataType="8">SSIS package: PARCEL_MFG_STG ERROR</DTS:VariableValue>
+        DTS:DataType="8">SSIS package: PARCEL_MFG_STG_excercise ERROR</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{4F0E467A-1470-4C4A-88FA-87B203D0DDC1}"
+      DTS:DTSID="{C1599233-FD33-44DB-9B77-5A43AB53059B}"
       DTS:EvaluateAsExpression="True"
       DTS:Expression="&quot;SSIS package: &quot; + @[System::PackageName] + &quot; completed SUCCESSFULLY&quot;"
       DTS:IncludeInDebugDump="2345"
       DTS:Namespace="User"
       DTS:ObjectName="in_MAIL_OBJECT_SUCCESS">
       <DTS:VariableValue
-        DTS:DataType="8">SSIS package: PARCEL_MFG_STG completed SUCCESSFULLY</DTS:VariableValue>
+        DTS:DataType="8">SSIS package: PARCEL_MFG_STG_excercise completed SUCCESSFULLY</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
       DTS:Description="The package name"
-      DTS:DTSID="{0BEE70D6-9E70-469B-BB6D-0BDC05B6C68B}"
+      DTS:DTSID="{C58C2ACF-65E9-4B5F-A4E4-70AE0B64361C}"
       DTS:EvaluateAsExpression="True"
       DTS:Expression="@[System::PackageName] "
       DTS:IncludeInDebugDump="2345"
       DTS:Namespace="User"
       DTS:ObjectName="in_PACKAGE_NAME_CD">
       <DTS:VariableValue
-        DTS:DataType="8">PARCEL_MFG_STG</DTS:VariableValue>
+        DTS:DataType="8">PARCEL_MFG_STG_excercise</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
       DTS:Description="The package scope"
-      DTS:DTSID="{6D66C22F-180C-46F2-A5B6-36669D6674BA}"
+      DTS:DTSID="{741C267A-52AA-4140-88D4-667BA332B4FC}"
       DTS:IncludeInDebugDump="2345"
       DTS:Namespace="User"
       DTS:ObjectName="in_PACKAGE_SCOPE_DESC">
@@ -84,7 +84,7 @@
     <DTS:Variable
       DTS:CreationName=""
       DTS:Description="If the package is called by the parent package, it represents the run ID of the parente"
-      DTS:DTSID="{A849AD5D-DA72-4B59-9DB2-353C106A6562}"
+      DTS:DTSID="{4FDB853D-7B4D-4210-8126-5B7F31D66A3D}"
       DTS:IncludeInDebugDump="6789"
       DTS:Namespace="User"
       DTS:ObjectName="in_PARENT_ID">
@@ -94,7 +94,7 @@
     <DTS:Variable
       DTS:CreationName=""
       DTS:Description="Site Mendrisio code, refer to TBDWMN_SITE"
-      DTS:DTSID="{ACF44B2E-24CD-4D47-8572-1FD00DCDDEA3}"
+      DTS:DTSID="{940C09CC-5FA2-45E8-934B-CEF18635D562}"
       DTS:IncludeInDebugDump="2345"
       DTS:Namespace="User"
       DTS:ObjectName="in_SITE_CD">
@@ -104,7 +104,7 @@
     <DTS:Variable
       DTS:CreationName=""
       DTS:Description="Mendrisio source system code, refer to TBDWMN_SOURCE_SYSTEM"
-      DTS:DTSID="{EF0EDBF3-69E8-4133-B9C2-05FB032C0509}"
+      DTS:DTSID="{45EBA1A0-4E46-40D5-8B29-8FCC0653A125}"
       DTS:IncludeInDebugDump="2345"
       DTS:Namespace="User"
       DTS:ObjectName="in_SOURCE_SYSTEM_CD">
@@ -114,7 +114,7 @@
     <DTS:Variable
       DTS:CreationName=""
       DTS:Description="The source system of this package"
-      DTS:DTSID="{8CB6032A-ADEF-4D2A-8F1B-DE47DE955CF3}"
+      DTS:DTSID="{55F977EF-3F3A-43FA-8338-6B6A6DB72318}"
       DTS:IncludeInDebugDump="2345"
       DTS:Namespace="User"
       DTS:ObjectName="in_SOURCE_SYSTEM_DESC">
@@ -124,7 +124,7 @@
     <DTS:Variable
       DTS:CreationName=""
       DTS:Description="The target system of this package"
-      DTS:DTSID="{7A05B6C5-E5D3-4F3F-A0AE-F90072916060}"
+      DTS:DTSID="{F5D83844-6CEF-4FB7-8011-1FD159E54470}"
       DTS:IncludeInDebugDump="2345"
       DTS:Namespace="User"
       DTS:ObjectName="in_TARGET_SYSTEM_DESC">
@@ -134,7 +134,7 @@
     <DTS:Variable
       DTS:CreationName=""
       DTS:Description="User used by SSIS flows"
-      DTS:DTSID="{801C43CD-22A4-4AAE-B4E2-A0C261F34225}"
+      DTS:DTSID="{B48D4C3B-AF40-4E5A-8F76-725E6EFFA967}"
       DTS:IncludeInDebugDump="2345"
       DTS:Namespace="User"
       DTS:ObjectName="in_USER_CD">
@@ -144,7 +144,7 @@
     <DTS:Variable
       DTS:CreationName=""
       DTS:Description="Output related to the last ID run for the package"
-      DTS:DTSID="{3B2CCA61-A152-47E6-91CA-88DCB5C4E151}"
+      DTS:DTSID="{91A4B79D-D3B1-48A8-B2DE-0D9298189212}"
       DTS:IncludeInDebugDump="6789"
       DTS:Namespace="User"
       DTS:ObjectName="out_MAX_ID">
@@ -154,7 +154,7 @@
     <DTS:Variable
       DTS:CreationName=""
       DTS:Description="Mendrisio ID, refer to TBDWMN_SITE"
-      DTS:DTSID="{F70B6632-4FAE-452D-95E0-4D78A71AFB61}"
+      DTS:DTSID="{62F4F9AC-4CA4-4278-84E9-17DBA687F5AB}"
       DTS:IncludeInDebugDump="6789"
       DTS:Namespace="User"
       DTS:ObjectName="out_SITE_ID">
@@ -164,7 +164,7 @@
     <DTS:Variable
       DTS:CreationName=""
       DTS:Description="Source System ID, calculated by the flow from table TBDWMN_SOURCE_SYSTEM"
-      DTS:DTSID="{9638270E-4348-4989-8A21-6DB125F6A1C3}"
+      DTS:DTSID="{75D99C85-3284-40F8-827E-6A5FCCD83C4D}"
       DTS:IncludeInDebugDump="6789"
       DTS:Namespace="User"
       DTS:ObjectName="out_SOURCE_SYSTEM_ID">
@@ -177,7 +177,7 @@
       DTS:refId="Package\Assign SITE_ID"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Execute SQL Task"
-      DTS:DTSID="{07287256-2a5c-44dd-a738-aace8a867b0b}"
+      DTS:DTSID="{035971A8-6ECA-4276-9E9F-3D8F1447A306}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Assign SITE_ID"
@@ -205,7 +205,7 @@
       DTS:refId="Package\Assign SOURCE_SYSTEM_ID"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Execute SQL Task"
-      DTS:DTSID="{82d31087-24a7-421c-ab5f-8f365911d343}"
+      DTS:DTSID="{33B2CD40-5938-4327-AB24-EDB4552CDB34}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Assign SOURCE_SYSTEM_ID"
@@ -234,7 +234,7 @@
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Execute SQL Task"
       DTS:Disabled="True"
-      DTS:DTSID="{1AD995A0-5AC4-4890-B4FC-195AA4556DBC}"
+      DTS:DTSID="{322C4309-3FFC-4CD2-A5DA-53A727074EBA}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Email SUCCESS"
@@ -270,7 +270,7 @@
       DTS:refId="Package\Ins TBLOG_PACKAGE + Max ID"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Execute SQL Task"
-      DTS:DTSID="{9B1FF19D-9341-47D7-B2A4-FAB30B8C4382}"
+      DTS:DTSID="{046A98DB-B788-42A1-A021-4FD20C451C1E}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Ins TBLOG_PACKAGE + Max ID"
@@ -352,7 +352,7 @@
       DTS:refId="Package\Last Upd TBLOG_PACKAGE"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Execute SQL Task"
-      DTS:DTSID="{C60E5C6E-37A4-4A57-9B17-F2EED37351BE}"
+      DTS:DTSID="{13DFDB84-02F6-4C06-8D02-B9FD1E8AEE8A}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Last Upd TBLOG_PACKAGE"
@@ -394,7 +394,7 @@
       DTS:refId="Package\STAGING LOAD"
       DTS:CreationName="STOCK:SEQUENCE"
       DTS:Description="Sequence Container"
-      DTS:DTSID="{A60C8CCC-7A40-4A45-BCEC-6CDA6E54D076}"
+      DTS:DTSID="{13024D08-9EE6-4A82-A986-064679177988}"
       DTS:ExecutableType="STOCK:SEQUENCE"
       DTS:LocaleID="-1"
       DTS:ObjectName="STAGING LOAD">
@@ -404,7 +404,7 @@
           DTS:refId="Package\STAGING LOAD\TBST_PRC_ANAGRAFICA_FAMIGLIE"
           DTS:CreationName="STOCK:SEQUENCE"
           DTS:Description="Sequence Container"
-          DTS:DTSID="{fed87d92-8b0a-42f9-b82b-5f06fec3bc8f}"
+          DTS:DTSID="{40a69d14-1b0c-477f-99b3-57ec5c428f4a}"
           DTS:ExecutableType="STOCK:SEQUENCE"
           DTS:LocaleID="-1"
           DTS:ObjectName="TBST_PRC_ANAGRAFICA_FAMIGLIE">
@@ -412,7 +412,7 @@
             <DTS:Variable
               DTS:CreationName=""
               DTS:Description="Output related to the last ID run for the table"
-              DTS:DTSID="{66820dcb-6f70-49b4-acbc-0a6eec0d76d1}"
+              DTS:DTSID="{0ebeb313-f7c6-4620-a8ab-98c1aafddd9f}"
               DTS:IncludeInDebugDump="6789"
               DTS:Namespace="User"
               DTS:ObjectName="out_MAX_TABLE_ID">
@@ -422,7 +422,7 @@
             <DTS:Variable
               DTS:CreationName=""
               DTS:Description="Table target name to be loaded by the flow"
-              DTS:DTSID="{8719991c-d37f-4c75-91e7-1e0b31a36351}"
+              DTS:DTSID="{be205c41-4015-47ea-8f70-0bccf73956bd}"
               DTS:IncludeInDebugDump="2345"
               DTS:Namespace="User"
               DTS:ObjectName="out_TABLE_TARGET_CD">
@@ -436,7 +436,7 @@
               DTS:refId="Package\STAGING LOAD\TBST_PRC_ANAGRAFICA_FAMIGLIE\Assign TABLE_TARGET_CD"
               DTS:CreationName="Microsoft.ExecuteSQLTask"
               DTS:Description="Execute SQL Task"
-              DTS:DTSID="{fea1d993-e77a-41a7-9c5b-cb6456367c02}"
+              DTS:DTSID="{442e5af2-74e2-4f4b-a286-d902e688c240}"
               DTS:ExecutableType="Microsoft.ExecuteSQLTask"
               DTS:LocaleID="-1"
               DTS:ObjectName="Assign TABLE_TARGET_CD"
@@ -458,7 +458,7 @@
               DTS:refId="Package\STAGING LOAD\TBST_PRC_ANAGRAFICA_FAMIGLIE\Ins_Upd TBLOG_PACKAGE_TABLE"
               DTS:CreationName="Microsoft.ExecuteSQLTask"
               DTS:Description="Execute SQL Task"
-              DTS:DTSID="{a324b8b9-ce35-450e-8ebf-f398149b9712}"
+              DTS:DTSID="{d7e527b2-328f-443d-a8a6-d0b6438ce583}"
               DTS:ExecutableType="Microsoft.ExecuteSQLTask"
               DTS:LocaleID="-1"
               DTS:ObjectName="Ins_Upd TBLOG_PACKAGE_TABLE"
@@ -530,7 +530,7 @@
               DTS:refId="Package\STAGING LOAD\TBST_PRC_ANAGRAFICA_FAMIGLIE\Last Upd TBLOG_PACKAGE_TABLE"
               DTS:CreationName="Microsoft.ExecuteSQLTask"
               DTS:Description="Execute SQL Task"
-              DTS:DTSID="{a0e5f4ac-6543-47a2-91af-1ea8bfe71c33}"
+              DTS:DTSID="{23522393-c478-47d4-b1f3-7491aef50e67}"
               DTS:ExecutableType="Microsoft.ExecuteSQLTask"
               DTS:LocaleID="-1"
               DTS:ObjectName="Last Upd TBLOG_PACKAGE_TABLE"
@@ -566,7 +566,7 @@
               DTS:refId="Package\STAGING LOAD\TBST_PRC_ANAGRAFICA_FAMIGLIE\MAX TABLE ID"
               DTS:CreationName="Microsoft.ExecuteSQLTask"
               DTS:Description="Execute SQL Task"
-              DTS:DTSID="{624343db-8768-481d-b607-aeaa8122a92f}"
+              DTS:DTSID="{b0e0b87d-631f-4e82-b74f-113e16ae0884}"
               DTS:ExecutableType="Microsoft.ExecuteSQLTask"
               DTS:LocaleID="-1"
               DTS:ObjectName="MAX TABLE ID"
@@ -600,7 +600,7 @@
               DTS:refId="Package\STAGING LOAD\TBST_PRC_ANAGRAFICA_FAMIGLIE\TBST_PRC_ANAGRAFICA_FAMIGLIE"
               DTS:CreationName="Microsoft.Pipeline"
               DTS:Description="Data Flow Task"
-              DTS:DTSID="{e0f0d140-dd52-441e-aecf-ced91c0adc67}"
+              DTS:DTSID="{21b01436-95af-4d09-9cbb-edcddda8a87d}"
               DTS:ExecutableType="Microsoft.Pipeline"
               DTS:LocaleID="-1"
               DTS:ObjectName="TBST_PRC_ANAGRAFICA_FAMIGLIE"
@@ -829,13 +829,6 @@
                           name="Data Conversion Input">
                           <inputColumns>
                             <inputColumn
-                              refId="Package\STAGING LOAD\TBST_PRC_ANAGRAFICA_FAMIGLIE\TBST_PRC_ANAGRAFICA_FAMIGLIE\Data Conversion.Inputs[Data Conversion Input].Columns[D_Anagrafica_Famiglie]"
-                              cachedCodepage="1252"
-                              cachedDataType="str"
-                              cachedLength="40"
-                              cachedName="D_Anagrafica_Famiglie"
-                              lineageId="Package\STAGING LOAD\TBST_PRC_ANAGRAFICA_FAMIGLIE\TBST_PRC_ANAGRAFICA_FAMIGLIE\OLE DB Source.Outputs[OLE DB Source Output].Columns[D_Anagrafica_Famiglie]" />
-                            <inputColumn
                               refId="Package\STAGING LOAD\TBST_PRC_ANAGRAFICA_FAMIGLIE\TBST_PRC_ANAGRAFICA_FAMIGLIE\Data Conversion.Inputs[Data Conversion Input].Columns[C_Anagrafica_Famiglie]"
                               cachedCodepage="1252"
                               cachedDataType="str"
@@ -843,12 +836,12 @@
                               cachedName="C_Anagrafica_Famiglie"
                               lineageId="Package\STAGING LOAD\TBST_PRC_ANAGRAFICA_FAMIGLIE\TBST_PRC_ANAGRAFICA_FAMIGLIE\OLE DB Source.Outputs[OLE DB Source Output].Columns[C_Anagrafica_Famiglie]" />
                             <inputColumn
-                              refId="Package\STAGING LOAD\TBST_PRC_ANAGRAFICA_FAMIGLIE\TBST_PRC_ANAGRAFICA_FAMIGLIE\Data Conversion.Inputs[Data Conversion Input].Columns[U_User]"
+                              refId="Package\STAGING LOAD\TBST_PRC_ANAGRAFICA_FAMIGLIE\TBST_PRC_ANAGRAFICA_FAMIGLIE\Data Conversion.Inputs[Data Conversion Input].Columns[D_Anagrafica_Famiglie]"
                               cachedCodepage="1252"
                               cachedDataType="str"
-                              cachedLength="20"
-                              cachedName="U_User"
-                              lineageId="Package\STAGING LOAD\TBST_PRC_ANAGRAFICA_FAMIGLIE\TBST_PRC_ANAGRAFICA_FAMIGLIE\OLE DB Source.Outputs[OLE DB Source Output].Columns[U_User]" />
+                              cachedLength="40"
+                              cachedName="D_Anagrafica_Famiglie"
+                              lineageId="Package\STAGING LOAD\TBST_PRC_ANAGRAFICA_FAMIGLIE\TBST_PRC_ANAGRAFICA_FAMIGLIE\OLE DB Source.Outputs[OLE DB Source Output].Columns[D_Anagrafica_Famiglie]" />
                             <inputColumn
                               refId="Package\STAGING LOAD\TBST_PRC_ANAGRAFICA_FAMIGLIE\TBST_PRC_ANAGRAFICA_FAMIGLIE\Data Conversion.Inputs[Data Conversion Input].Columns[I_User]"
                               cachedCodepage="1252"
@@ -857,12 +850,19 @@
                               cachedName="I_User"
                               lineageId="Package\STAGING LOAD\TBST_PRC_ANAGRAFICA_FAMIGLIE\TBST_PRC_ANAGRAFICA_FAMIGLIE\OLE DB Source.Outputs[OLE DB Source Output].Columns[I_User]" />
                             <inputColumn
-                              refId="Package\STAGING LOAD\TBST_PRC_ANAGRAFICA_FAMIGLIE\TBST_PRC_ANAGRAFICA_FAMIGLIE\Data Conversion.Inputs[Data Conversion Input].Columns[C_Azienda]"
+                              refId="Package\STAGING LOAD\TBST_PRC_ANAGRAFICA_FAMIGLIE\TBST_PRC_ANAGRAFICA_FAMIGLIE\Data Conversion.Inputs[Data Conversion Input].Columns[U_User]"
                               cachedCodepage="1252"
                               cachedDataType="str"
-                              cachedLength="10"
-                              cachedName="C_Azienda"
-                              lineageId="Package\STAGING LOAD\TBST_PRC_ANAGRAFICA_FAMIGLIE\TBST_PRC_ANAGRAFICA_FAMIGLIE\OLE DB Source.Outputs[OLE DB Source Output].Columns[C_Azienda]" />
+                              cachedLength="20"
+                              cachedName="U_User"
+                              lineageId="Package\STAGING LOAD\TBST_PRC_ANAGRAFICA_FAMIGLIE\TBST_PRC_ANAGRAFICA_FAMIGLIE\OLE DB Source.Outputs[OLE DB Source Output].Columns[U_User]" />
+                            <inputColumn
+                              refId="Package\STAGING LOAD\TBST_PRC_ANAGRAFICA_FAMIGLIE\TBST_PRC_ANAGRAFICA_FAMIGLIE\Data Conversion.Inputs[Data Conversion Input].Columns[U_Modify]"
+                              cachedCodepage="1252"
+                              cachedDataType="str"
+                              cachedLength="50"
+                              cachedName="U_Modify"
+                              lineageId="Package\STAGING LOAD\TBST_PRC_ANAGRAFICA_FAMIGLIE\TBST_PRC_ANAGRAFICA_FAMIGLIE\OLE DB Source.Outputs[OLE DB Source Output].Columns[U_Modify]" />
                             <inputColumn
                               refId="Package\STAGING LOAD\TBST_PRC_ANAGRAFICA_FAMIGLIE\TBST_PRC_ANAGRAFICA_FAMIGLIE\Data Conversion.Inputs[Data Conversion Input].Columns[ccksum]"
                               cachedCodepage="1252"
@@ -871,12 +871,12 @@
                               cachedName="ccksum"
                               lineageId="Package\STAGING LOAD\TBST_PRC_ANAGRAFICA_FAMIGLIE\TBST_PRC_ANAGRAFICA_FAMIGLIE\OLE DB Source.Outputs[OLE DB Source Output].Columns[ccksum]" />
                             <inputColumn
-                              refId="Package\STAGING LOAD\TBST_PRC_ANAGRAFICA_FAMIGLIE\TBST_PRC_ANAGRAFICA_FAMIGLIE\Data Conversion.Inputs[Data Conversion Input].Columns[U_Modify]"
+                              refId="Package\STAGING LOAD\TBST_PRC_ANAGRAFICA_FAMIGLIE\TBST_PRC_ANAGRAFICA_FAMIGLIE\Data Conversion.Inputs[Data Conversion Input].Columns[C_Azienda]"
                               cachedCodepage="1252"
                               cachedDataType="str"
-                              cachedLength="50"
-                              cachedName="U_Modify"
-                              lineageId="Package\STAGING LOAD\TBST_PRC_ANAGRAFICA_FAMIGLIE\TBST_PRC_ANAGRAFICA_FAMIGLIE\OLE DB Source.Outputs[OLE DB Source Output].Columns[U_Modify]" />
+                              cachedLength="10"
+                              cachedName="C_Azienda"
+                              lineageId="Package\STAGING LOAD\TBST_PRC_ANAGRAFICA_FAMIGLIE\TBST_PRC_ANAGRAFICA_FAMIGLIE\OLE DB Source.Outputs[OLE DB Source Output].Columns[C_Azienda]" />
                           </inputColumns>
                           <externalMetadataColumns />
                         </input>
@@ -889,34 +889,13 @@
                           synchronousInputId="Package\STAGING LOAD\TBST_PRC_ANAGRAFICA_FAMIGLIE\TBST_PRC_ANAGRAFICA_FAMIGLIE\Data Conversion.Inputs[Data Conversion Input]">
                           <outputColumns>
                             <outputColumn
-                              refId="Package\STAGING LOAD\TBST_PRC_ANAGRAFICA_FAMIGLIE\TBST_PRC_ANAGRAFICA_FAMIGLIE\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of D_Anagrafica_Famiglie]"
-                              dataType="wstr"
-                              errorOrTruncationOperation="Conversion"
-                              errorRowDisposition="FailComponent"
-                              length="40"
-                              lineageId="Package\STAGING LOAD\TBST_PRC_ANAGRAFICA_FAMIGLIE\TBST_PRC_ANAGRAFICA_FAMIGLIE\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of D_Anagrafica_Famiglie]"
-                              name="Copy of D_Anagrafica_Famiglie"
-                              truncationRowDisposition="FailComponent">
-                              <properties>
-                                <property
-                                  containsID="true"
-                                  dataType="System.Int32"
-                                  description="Specifies the input column used as the source of data for the conversion."
-                                  name="SourceInputColumnLineageID">#{Package\STAGING LOAD\TBST_PRC_ANAGRAFICA_FAMIGLIE\TBST_PRC_ANAGRAFICA_FAMIGLIE\OLE DB Source.Outputs[OLE DB Source Output].Columns[D_Anagrafica_Famiglie]}</property>
-                                <property
-                                  dataType="System.Boolean"
-                                  description="Indicates whether the column uses the faster, locale-neutral parsing routines."
-                                  name="FastParse">false</property>
-                              </properties>
-                            </outputColumn>
-                            <outputColumn
-                              refId="Package\STAGING LOAD\TBST_PRC_ANAGRAFICA_FAMIGLIE\TBST_PRC_ANAGRAFICA_FAMIGLIE\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of C_Anagrafica_Famiglie]"
+                              refId="Package\STAGING LOAD\TBST_PRC_ANAGRAFICA_FAMIGLIE\TBST_PRC_ANAGRAFICA_FAMIGLIE\Data Conversion.Outputs[Data Conversion Output].Columns[C_Anagrafica_Famiglie]"
                               dataType="wstr"
                               errorOrTruncationOperation="Conversion"
                               errorRowDisposition="FailComponent"
                               length="10"
-                              lineageId="Package\STAGING LOAD\TBST_PRC_ANAGRAFICA_FAMIGLIE\TBST_PRC_ANAGRAFICA_FAMIGLIE\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of C_Anagrafica_Famiglie]"
-                              name="Copy of C_Anagrafica_Famiglie"
+                              lineageId="Package\STAGING LOAD\TBST_PRC_ANAGRAFICA_FAMIGLIE\TBST_PRC_ANAGRAFICA_FAMIGLIE\Data Conversion.Outputs[Data Conversion Output].Columns[C_Anagrafica_Famiglie]"
+                              name="C_Anagrafica_Famiglie"
                               truncationRowDisposition="FailComponent">
                               <properties>
                                 <property
@@ -931,20 +910,20 @@
                               </properties>
                             </outputColumn>
                             <outputColumn
-                              refId="Package\STAGING LOAD\TBST_PRC_ANAGRAFICA_FAMIGLIE\TBST_PRC_ANAGRAFICA_FAMIGLIE\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of U_User]"
+                              refId="Package\STAGING LOAD\TBST_PRC_ANAGRAFICA_FAMIGLIE\TBST_PRC_ANAGRAFICA_FAMIGLIE\Data Conversion.Outputs[Data Conversion Output].Columns[D_Anagrafica_Famiglie]"
                               dataType="wstr"
                               errorOrTruncationOperation="Conversion"
                               errorRowDisposition="FailComponent"
-                              length="20"
-                              lineageId="Package\STAGING LOAD\TBST_PRC_ANAGRAFICA_FAMIGLIE\TBST_PRC_ANAGRAFICA_FAMIGLIE\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of U_User]"
-                              name="Copy of U_User"
+                              length="40"
+                              lineageId="Package\STAGING LOAD\TBST_PRC_ANAGRAFICA_FAMIGLIE\TBST_PRC_ANAGRAFICA_FAMIGLIE\Data Conversion.Outputs[Data Conversion Output].Columns[D_Anagrafica_Famiglie]"
+                              name="D_Anagrafica_Famiglie"
                               truncationRowDisposition="FailComponent">
                               <properties>
                                 <property
                                   containsID="true"
                                   dataType="System.Int32"
                                   description="Specifies the input column used as the source of data for the conversion."
-                                  name="SourceInputColumnLineageID">#{Package\STAGING LOAD\TBST_PRC_ANAGRAFICA_FAMIGLIE\TBST_PRC_ANAGRAFICA_FAMIGLIE\OLE DB Source.Outputs[OLE DB Source Output].Columns[U_User]}</property>
+                                  name="SourceInputColumnLineageID">#{Package\STAGING LOAD\TBST_PRC_ANAGRAFICA_FAMIGLIE\TBST_PRC_ANAGRAFICA_FAMIGLIE\OLE DB Source.Outputs[OLE DB Source Output].Columns[D_Anagrafica_Famiglie]}</property>
                                 <property
                                   dataType="System.Boolean"
                                   description="Indicates whether the column uses the faster, locale-neutral parsing routines."
@@ -952,13 +931,13 @@
                               </properties>
                             </outputColumn>
                             <outputColumn
-                              refId="Package\STAGING LOAD\TBST_PRC_ANAGRAFICA_FAMIGLIE\TBST_PRC_ANAGRAFICA_FAMIGLIE\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of I_User]"
+                              refId="Package\STAGING LOAD\TBST_PRC_ANAGRAFICA_FAMIGLIE\TBST_PRC_ANAGRAFICA_FAMIGLIE\Data Conversion.Outputs[Data Conversion Output].Columns[I_User]"
                               dataType="wstr"
                               errorOrTruncationOperation="Conversion"
                               errorRowDisposition="FailComponent"
                               length="20"
-                              lineageId="Package\STAGING LOAD\TBST_PRC_ANAGRAFICA_FAMIGLIE\TBST_PRC_ANAGRAFICA_FAMIGLIE\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of I_User]"
-                              name="Copy of I_User"
+                              lineageId="Package\STAGING LOAD\TBST_PRC_ANAGRAFICA_FAMIGLIE\TBST_PRC_ANAGRAFICA_FAMIGLIE\Data Conversion.Outputs[Data Conversion Output].Columns[I_User]"
+                              name="I_User"
                               truncationRowDisposition="FailComponent">
                               <properties>
                                 <property
@@ -973,20 +952,20 @@
                               </properties>
                             </outputColumn>
                             <outputColumn
-                              refId="Package\STAGING LOAD\TBST_PRC_ANAGRAFICA_FAMIGLIE\TBST_PRC_ANAGRAFICA_FAMIGLIE\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of C_Azienda]"
+                              refId="Package\STAGING LOAD\TBST_PRC_ANAGRAFICA_FAMIGLIE\TBST_PRC_ANAGRAFICA_FAMIGLIE\Data Conversion.Outputs[Data Conversion Output].Columns[U_User]"
                               dataType="wstr"
                               errorOrTruncationOperation="Conversion"
                               errorRowDisposition="FailComponent"
-                              length="10"
-                              lineageId="Package\STAGING LOAD\TBST_PRC_ANAGRAFICA_FAMIGLIE\TBST_PRC_ANAGRAFICA_FAMIGLIE\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of C_Azienda]"
-                              name="Copy of C_Azienda"
+                              length="20"
+                              lineageId="Package\STAGING LOAD\TBST_PRC_ANAGRAFICA_FAMIGLIE\TBST_PRC_ANAGRAFICA_FAMIGLIE\Data Conversion.Outputs[Data Conversion Output].Columns[U_User]"
+                              name="U_User"
                               truncationRowDisposition="FailComponent">
                               <properties>
                                 <property
                                   containsID="true"
                                   dataType="System.Int32"
                                   description="Specifies the input column used as the source of data for the conversion."
-                                  name="SourceInputColumnLineageID">#{Package\STAGING LOAD\TBST_PRC_ANAGRAFICA_FAMIGLIE\TBST_PRC_ANAGRAFICA_FAMIGLIE\OLE DB Source.Outputs[OLE DB Source Output].Columns[C_Azienda]}</property>
+                                  name="SourceInputColumnLineageID">#{Package\STAGING LOAD\TBST_PRC_ANAGRAFICA_FAMIGLIE\TBST_PRC_ANAGRAFICA_FAMIGLIE\OLE DB Source.Outputs[OLE DB Source Output].Columns[U_User]}</property>
                                 <property
                                   dataType="System.Boolean"
                                   description="Indicates whether the column uses the faster, locale-neutral parsing routines."
@@ -994,13 +973,34 @@
                               </properties>
                             </outputColumn>
                             <outputColumn
-                              refId="Package\STAGING LOAD\TBST_PRC_ANAGRAFICA_FAMIGLIE\TBST_PRC_ANAGRAFICA_FAMIGLIE\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of ccksum]"
+                              refId="Package\STAGING LOAD\TBST_PRC_ANAGRAFICA_FAMIGLIE\TBST_PRC_ANAGRAFICA_FAMIGLIE\Data Conversion.Outputs[Data Conversion Output].Columns[U_Modify]"
+                              dataType="wstr"
+                              errorOrTruncationOperation="Conversion"
+                              errorRowDisposition="FailComponent"
+                              length="50"
+                              lineageId="Package\STAGING LOAD\TBST_PRC_ANAGRAFICA_FAMIGLIE\TBST_PRC_ANAGRAFICA_FAMIGLIE\Data Conversion.Outputs[Data Conversion Output].Columns[U_Modify]"
+                              name="U_Modify"
+                              truncationRowDisposition="FailComponent">
+                              <properties>
+                                <property
+                                  containsID="true"
+                                  dataType="System.Int32"
+                                  description="Specifies the input column used as the source of data for the conversion."
+                                  name="SourceInputColumnLineageID">#{Package\STAGING LOAD\TBST_PRC_ANAGRAFICA_FAMIGLIE\TBST_PRC_ANAGRAFICA_FAMIGLIE\OLE DB Source.Outputs[OLE DB Source Output].Columns[U_Modify]}</property>
+                                <property
+                                  dataType="System.Boolean"
+                                  description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                                  name="FastParse">false</property>
+                              </properties>
+                            </outputColumn>
+                            <outputColumn
+                              refId="Package\STAGING LOAD\TBST_PRC_ANAGRAFICA_FAMIGLIE\TBST_PRC_ANAGRAFICA_FAMIGLIE\Data Conversion.Outputs[Data Conversion Output].Columns[ccksum]"
                               dataType="wstr"
                               errorOrTruncationOperation="Conversion"
                               errorRowDisposition="FailComponent"
                               length="100"
-                              lineageId="Package\STAGING LOAD\TBST_PRC_ANAGRAFICA_FAMIGLIE\TBST_PRC_ANAGRAFICA_FAMIGLIE\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of ccksum]"
-                              name="Copy of ccksum"
+                              lineageId="Package\STAGING LOAD\TBST_PRC_ANAGRAFICA_FAMIGLIE\TBST_PRC_ANAGRAFICA_FAMIGLIE\Data Conversion.Outputs[Data Conversion Output].Columns[ccksum]"
+                              name="ccksum"
                               truncationRowDisposition="FailComponent">
                               <properties>
                                 <property
@@ -1015,20 +1015,20 @@
                               </properties>
                             </outputColumn>
                             <outputColumn
-                              refId="Package\STAGING LOAD\TBST_PRC_ANAGRAFICA_FAMIGLIE\TBST_PRC_ANAGRAFICA_FAMIGLIE\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of U_Modify]"
+                              refId="Package\STAGING LOAD\TBST_PRC_ANAGRAFICA_FAMIGLIE\TBST_PRC_ANAGRAFICA_FAMIGLIE\Data Conversion.Outputs[Data Conversion Output].Columns[C_Azienda]"
                               dataType="wstr"
                               errorOrTruncationOperation="Conversion"
                               errorRowDisposition="FailComponent"
-                              length="50"
-                              lineageId="Package\STAGING LOAD\TBST_PRC_ANAGRAFICA_FAMIGLIE\TBST_PRC_ANAGRAFICA_FAMIGLIE\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of U_Modify]"
-                              name="Copy of U_Modify"
+                              length="10"
+                              lineageId="Package\STAGING LOAD\TBST_PRC_ANAGRAFICA_FAMIGLIE\TBST_PRC_ANAGRAFICA_FAMIGLIE\Data Conversion.Outputs[Data Conversion Output].Columns[C_Azienda]"
+                              name="C_Azienda"
                               truncationRowDisposition="FailComponent">
                               <properties>
                                 <property
                                   containsID="true"
                                   dataType="System.Int32"
                                   description="Specifies the input column used as the source of data for the conversion."
-                                  name="SourceInputColumnLineageID">#{Package\STAGING LOAD\TBST_PRC_ANAGRAFICA_FAMIGLIE\TBST_PRC_ANAGRAFICA_FAMIGLIE\OLE DB Source.Outputs[OLE DB Source Output].Columns[U_Modify]}</property>
+                                  name="SourceInputColumnLineageID">#{Package\STAGING LOAD\TBST_PRC_ANAGRAFICA_FAMIGLIE\TBST_PRC_ANAGRAFICA_FAMIGLIE\OLE DB Source.Outputs[OLE DB Source Output].Columns[C_Azienda]}</property>
                                 <property
                                   dataType="System.Boolean"
                                   description="Indicates whether the column uses the faster, locale-neutral parsing routines."
@@ -1196,60 +1196,60 @@
                               externalMetadataColumnId="Package\STAGING LOAD\TBST_PRC_ANAGRAFICA_FAMIGLIE\TBST_PRC_ANAGRAFICA_FAMIGLIE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[TBLOG_PACKAGE_TABLE_ID]"
                               lineageId="Package\STAGING LOAD\TBST_PRC_ANAGRAFICA_FAMIGLIE\TBST_PRC_ANAGRAFICA_FAMIGLIE\Add Technical Fields.Outputs[Derived Column Output].Columns[TBLOG_PACKAGE_TABLE_ID]" />
                             <inputColumn
-                              refId="Package\STAGING LOAD\TBST_PRC_ANAGRAFICA_FAMIGLIE\TBST_PRC_ANAGRAFICA_FAMIGLIE\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of C_Anagrafica_Famiglie]"
-                              cachedDataType="wstr"
-                              cachedLength="10"
-                              cachedName="Copy of C_Anagrafica_Famiglie"
-                              externalMetadataColumnId="Package\STAGING LOAD\TBST_PRC_ANAGRAFICA_FAMIGLIE\TBST_PRC_ANAGRAFICA_FAMIGLIE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[C_Anagrafica_Famiglie]"
-                              lineageId="Package\STAGING LOAD\TBST_PRC_ANAGRAFICA_FAMIGLIE\TBST_PRC_ANAGRAFICA_FAMIGLIE\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of C_Anagrafica_Famiglie]" />
-                            <inputColumn
-                              refId="Package\STAGING LOAD\TBST_PRC_ANAGRAFICA_FAMIGLIE\TBST_PRC_ANAGRAFICA_FAMIGLIE\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of D_Anagrafica_Famiglie]"
-                              cachedDataType="wstr"
-                              cachedLength="40"
-                              cachedName="Copy of D_Anagrafica_Famiglie"
-                              externalMetadataColumnId="Package\STAGING LOAD\TBST_PRC_ANAGRAFICA_FAMIGLIE\TBST_PRC_ANAGRAFICA_FAMIGLIE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[D_Anagrafica_Famiglie]"
-                              lineageId="Package\STAGING LOAD\TBST_PRC_ANAGRAFICA_FAMIGLIE\TBST_PRC_ANAGRAFICA_FAMIGLIE\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of D_Anagrafica_Famiglie]" />
-                            <inputColumn
                               refId="Package\STAGING LOAD\TBST_PRC_ANAGRAFICA_FAMIGLIE\TBST_PRC_ANAGRAFICA_FAMIGLIE\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Data_Inizio_Validità]"
                               cachedDataType="dbTimeStamp"
                               cachedName="Data_Inizio_Validità"
                               externalMetadataColumnId="Package\STAGING LOAD\TBST_PRC_ANAGRAFICA_FAMIGLIE\TBST_PRC_ANAGRAFICA_FAMIGLIE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Data_Inizio_Validita]"
                               lineageId="Package\STAGING LOAD\TBST_PRC_ANAGRAFICA_FAMIGLIE\TBST_PRC_ANAGRAFICA_FAMIGLIE\OLE DB Source.Outputs[OLE DB Source Output].Columns[Data_Inizio_Validità]" />
                             <inputColumn
-                              refId="Package\STAGING LOAD\TBST_PRC_ANAGRAFICA_FAMIGLIE\TBST_PRC_ANAGRAFICA_FAMIGLIE\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of I_User]"
-                              cachedDataType="wstr"
-                              cachedLength="20"
-                              cachedName="Copy of I_User"
-                              externalMetadataColumnId="Package\STAGING LOAD\TBST_PRC_ANAGRAFICA_FAMIGLIE\TBST_PRC_ANAGRAFICA_FAMIGLIE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[I_User]"
-                              lineageId="Package\STAGING LOAD\TBST_PRC_ANAGRAFICA_FAMIGLIE\TBST_PRC_ANAGRAFICA_FAMIGLIE\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of I_User]" />
-                            <inputColumn
-                              refId="Package\STAGING LOAD\TBST_PRC_ANAGRAFICA_FAMIGLIE\TBST_PRC_ANAGRAFICA_FAMIGLIE\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of U_User]"
-                              cachedDataType="wstr"
-                              cachedLength="20"
-                              cachedName="Copy of U_User"
-                              externalMetadataColumnId="Package\STAGING LOAD\TBST_PRC_ANAGRAFICA_FAMIGLIE\TBST_PRC_ANAGRAFICA_FAMIGLIE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[U_User]"
-                              lineageId="Package\STAGING LOAD\TBST_PRC_ANAGRAFICA_FAMIGLIE\TBST_PRC_ANAGRAFICA_FAMIGLIE\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of U_User]" />
-                            <inputColumn
-                              refId="Package\STAGING LOAD\TBST_PRC_ANAGRAFICA_FAMIGLIE\TBST_PRC_ANAGRAFICA_FAMIGLIE\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of ccksum]"
-                              cachedDataType="wstr"
-                              cachedLength="100"
-                              cachedName="Copy of ccksum"
-                              externalMetadataColumnId="Package\STAGING LOAD\TBST_PRC_ANAGRAFICA_FAMIGLIE\TBST_PRC_ANAGRAFICA_FAMIGLIE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ccksum]"
-                              lineageId="Package\STAGING LOAD\TBST_PRC_ANAGRAFICA_FAMIGLIE\TBST_PRC_ANAGRAFICA_FAMIGLIE\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of ccksum]" />
-                            <inputColumn
-                              refId="Package\STAGING LOAD\TBST_PRC_ANAGRAFICA_FAMIGLIE\TBST_PRC_ANAGRAFICA_FAMIGLIE\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of C_Azienda]"
+                              refId="Package\STAGING LOAD\TBST_PRC_ANAGRAFICA_FAMIGLIE\TBST_PRC_ANAGRAFICA_FAMIGLIE\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[C_Anagrafica_Famiglie]"
                               cachedDataType="wstr"
                               cachedLength="10"
-                              cachedName="Copy of C_Azienda"
-                              externalMetadataColumnId="Package\STAGING LOAD\TBST_PRC_ANAGRAFICA_FAMIGLIE\TBST_PRC_ANAGRAFICA_FAMIGLIE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[C_Azienda]"
-                              lineageId="Package\STAGING LOAD\TBST_PRC_ANAGRAFICA_FAMIGLIE\TBST_PRC_ANAGRAFICA_FAMIGLIE\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of C_Azienda]" />
+                              cachedName="C_Anagrafica_Famiglie"
+                              externalMetadataColumnId="Package\STAGING LOAD\TBST_PRC_ANAGRAFICA_FAMIGLIE\TBST_PRC_ANAGRAFICA_FAMIGLIE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[C_Anagrafica_Famiglie]"
+                              lineageId="Package\STAGING LOAD\TBST_PRC_ANAGRAFICA_FAMIGLIE\TBST_PRC_ANAGRAFICA_FAMIGLIE\Data Conversion.Outputs[Data Conversion Output].Columns[C_Anagrafica_Famiglie]" />
                             <inputColumn
-                              refId="Package\STAGING LOAD\TBST_PRC_ANAGRAFICA_FAMIGLIE\TBST_PRC_ANAGRAFICA_FAMIGLIE\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of U_Modify]"
+                              refId="Package\STAGING LOAD\TBST_PRC_ANAGRAFICA_FAMIGLIE\TBST_PRC_ANAGRAFICA_FAMIGLIE\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[D_Anagrafica_Famiglie]"
+                              cachedDataType="wstr"
+                              cachedLength="40"
+                              cachedName="D_Anagrafica_Famiglie"
+                              externalMetadataColumnId="Package\STAGING LOAD\TBST_PRC_ANAGRAFICA_FAMIGLIE\TBST_PRC_ANAGRAFICA_FAMIGLIE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[D_Anagrafica_Famiglie]"
+                              lineageId="Package\STAGING LOAD\TBST_PRC_ANAGRAFICA_FAMIGLIE\TBST_PRC_ANAGRAFICA_FAMIGLIE\Data Conversion.Outputs[Data Conversion Output].Columns[D_Anagrafica_Famiglie]" />
+                            <inputColumn
+                              refId="Package\STAGING LOAD\TBST_PRC_ANAGRAFICA_FAMIGLIE\TBST_PRC_ANAGRAFICA_FAMIGLIE\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[I_User]"
+                              cachedDataType="wstr"
+                              cachedLength="20"
+                              cachedName="I_User"
+                              externalMetadataColumnId="Package\STAGING LOAD\TBST_PRC_ANAGRAFICA_FAMIGLIE\TBST_PRC_ANAGRAFICA_FAMIGLIE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[I_User]"
+                              lineageId="Package\STAGING LOAD\TBST_PRC_ANAGRAFICA_FAMIGLIE\TBST_PRC_ANAGRAFICA_FAMIGLIE\Data Conversion.Outputs[Data Conversion Output].Columns[I_User]" />
+                            <inputColumn
+                              refId="Package\STAGING LOAD\TBST_PRC_ANAGRAFICA_FAMIGLIE\TBST_PRC_ANAGRAFICA_FAMIGLIE\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[U_User]"
+                              cachedDataType="wstr"
+                              cachedLength="20"
+                              cachedName="U_User"
+                              externalMetadataColumnId="Package\STAGING LOAD\TBST_PRC_ANAGRAFICA_FAMIGLIE\TBST_PRC_ANAGRAFICA_FAMIGLIE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[U_User]"
+                              lineageId="Package\STAGING LOAD\TBST_PRC_ANAGRAFICA_FAMIGLIE\TBST_PRC_ANAGRAFICA_FAMIGLIE\Data Conversion.Outputs[Data Conversion Output].Columns[U_User]" />
+                            <inputColumn
+                              refId="Package\STAGING LOAD\TBST_PRC_ANAGRAFICA_FAMIGLIE\TBST_PRC_ANAGRAFICA_FAMIGLIE\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[U_Modify]"
                               cachedDataType="wstr"
                               cachedLength="50"
-                              cachedName="Copy of U_Modify"
+                              cachedName="U_Modify"
                               externalMetadataColumnId="Package\STAGING LOAD\TBST_PRC_ANAGRAFICA_FAMIGLIE\TBST_PRC_ANAGRAFICA_FAMIGLIE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[U_Modify]"
-                              lineageId="Package\STAGING LOAD\TBST_PRC_ANAGRAFICA_FAMIGLIE\TBST_PRC_ANAGRAFICA_FAMIGLIE\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of U_Modify]" />
+                              lineageId="Package\STAGING LOAD\TBST_PRC_ANAGRAFICA_FAMIGLIE\TBST_PRC_ANAGRAFICA_FAMIGLIE\Data Conversion.Outputs[Data Conversion Output].Columns[U_Modify]" />
+                            <inputColumn
+                              refId="Package\STAGING LOAD\TBST_PRC_ANAGRAFICA_FAMIGLIE\TBST_PRC_ANAGRAFICA_FAMIGLIE\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[ccksum]"
+                              cachedDataType="wstr"
+                              cachedLength="100"
+                              cachedName="ccksum"
+                              externalMetadataColumnId="Package\STAGING LOAD\TBST_PRC_ANAGRAFICA_FAMIGLIE\TBST_PRC_ANAGRAFICA_FAMIGLIE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ccksum]"
+                              lineageId="Package\STAGING LOAD\TBST_PRC_ANAGRAFICA_FAMIGLIE\TBST_PRC_ANAGRAFICA_FAMIGLIE\Data Conversion.Outputs[Data Conversion Output].Columns[ccksum]" />
+                            <inputColumn
+                              refId="Package\STAGING LOAD\TBST_PRC_ANAGRAFICA_FAMIGLIE\TBST_PRC_ANAGRAFICA_FAMIGLIE\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[C_Azienda]"
+                              cachedDataType="wstr"
+                              cachedLength="10"
+                              cachedName="C_Azienda"
+                              externalMetadataColumnId="Package\STAGING LOAD\TBST_PRC_ANAGRAFICA_FAMIGLIE\TBST_PRC_ANAGRAFICA_FAMIGLIE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[C_Azienda]"
+                              lineageId="Package\STAGING LOAD\TBST_PRC_ANAGRAFICA_FAMIGLIE\TBST_PRC_ANAGRAFICA_FAMIGLIE\Data Conversion.Outputs[Data Conversion Output].Columns[C_Azienda]" />
                           </inputColumns>
                           <externalMetadataColumns
                             isUsed="True">
@@ -1431,6 +1431,28 @@
                           name="OLE DB Source Output">
                           <outputColumns>
                             <outputColumn
+                              refId="Package\STAGING LOAD\TBST_PRC_ANAGRAFICA_FAMIGLIE\TBST_PRC_ANAGRAFICA_FAMIGLIE\OLE DB Source.Outputs[OLE DB Source Output].Columns[C_Anagrafica_Famiglie]"
+                              codePage="1252"
+                              dataType="str"
+                              errorOrTruncationOperation="Conversion"
+                              errorRowDisposition="FailComponent"
+                              externalMetadataColumnId="Package\STAGING LOAD\TBST_PRC_ANAGRAFICA_FAMIGLIE\TBST_PRC_ANAGRAFICA_FAMIGLIE\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[C_Anagrafica_Famiglie]"
+                              length="10"
+                              lineageId="Package\STAGING LOAD\TBST_PRC_ANAGRAFICA_FAMIGLIE\TBST_PRC_ANAGRAFICA_FAMIGLIE\OLE DB Source.Outputs[OLE DB Source Output].Columns[C_Anagrafica_Famiglie]"
+                              name="C_Anagrafica_Famiglie"
+                              truncationRowDisposition="FailComponent" />
+                            <outputColumn
+                              refId="Package\STAGING LOAD\TBST_PRC_ANAGRAFICA_FAMIGLIE\TBST_PRC_ANAGRAFICA_FAMIGLIE\OLE DB Source.Outputs[OLE DB Source Output].Columns[D_Anagrafica_Famiglie]"
+                              codePage="1252"
+                              dataType="str"
+                              errorOrTruncationOperation="Conversion"
+                              errorRowDisposition="FailComponent"
+                              externalMetadataColumnId="Package\STAGING LOAD\TBST_PRC_ANAGRAFICA_FAMIGLIE\TBST_PRC_ANAGRAFICA_FAMIGLIE\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[D_Anagrafica_Famiglie]"
+                              length="40"
+                              lineageId="Package\STAGING LOAD\TBST_PRC_ANAGRAFICA_FAMIGLIE\TBST_PRC_ANAGRAFICA_FAMIGLIE\OLE DB Source.Outputs[OLE DB Source Output].Columns[D_Anagrafica_Famiglie]"
+                              name="D_Anagrafica_Famiglie"
+                              truncationRowDisposition="FailComponent" />
+                            <outputColumn
                               refId="Package\STAGING LOAD\TBST_PRC_ANAGRAFICA_FAMIGLIE\TBST_PRC_ANAGRAFICA_FAMIGLIE\OLE DB Source.Outputs[OLE DB Source Output].Columns[Data_Inizio_Validità]"
                               dataType="dbTimeStamp"
                               errorOrTruncationOperation="Conversion"
@@ -1447,39 +1469,6 @@
                               externalMetadataColumnId="Package\STAGING LOAD\TBST_PRC_ANAGRAFICA_FAMIGLIE\TBST_PRC_ANAGRAFICA_FAMIGLIE\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Data_Obsolescenza]"
                               lineageId="Package\STAGING LOAD\TBST_PRC_ANAGRAFICA_FAMIGLIE\TBST_PRC_ANAGRAFICA_FAMIGLIE\OLE DB Source.Outputs[OLE DB Source Output].Columns[Data_Obsolescenza]"
                               name="Data_Obsolescenza"
-                              truncationRowDisposition="FailComponent" />
-                            <outputColumn
-                              refId="Package\STAGING LOAD\TBST_PRC_ANAGRAFICA_FAMIGLIE\TBST_PRC_ANAGRAFICA_FAMIGLIE\OLE DB Source.Outputs[OLE DB Source Output].Columns[U_Modify]"
-                              codePage="1252"
-                              dataType="str"
-                              errorOrTruncationOperation="Conversion"
-                              errorRowDisposition="FailComponent"
-                              externalMetadataColumnId="Package\STAGING LOAD\TBST_PRC_ANAGRAFICA_FAMIGLIE\TBST_PRC_ANAGRAFICA_FAMIGLIE\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[U_Modify]"
-                              length="50"
-                              lineageId="Package\STAGING LOAD\TBST_PRC_ANAGRAFICA_FAMIGLIE\TBST_PRC_ANAGRAFICA_FAMIGLIE\OLE DB Source.Outputs[OLE DB Source Output].Columns[U_Modify]"
-                              name="U_Modify"
-                              truncationRowDisposition="FailComponent" />
-                            <outputColumn
-                              refId="Package\STAGING LOAD\TBST_PRC_ANAGRAFICA_FAMIGLIE\TBST_PRC_ANAGRAFICA_FAMIGLIE\OLE DB Source.Outputs[OLE DB Source Output].Columns[ccksum]"
-                              codePage="1252"
-                              dataType="str"
-                              errorOrTruncationOperation="Conversion"
-                              errorRowDisposition="FailComponent"
-                              externalMetadataColumnId="Package\STAGING LOAD\TBST_PRC_ANAGRAFICA_FAMIGLIE\TBST_PRC_ANAGRAFICA_FAMIGLIE\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[ccksum]"
-                              length="100"
-                              lineageId="Package\STAGING LOAD\TBST_PRC_ANAGRAFICA_FAMIGLIE\TBST_PRC_ANAGRAFICA_FAMIGLIE\OLE DB Source.Outputs[OLE DB Source Output].Columns[ccksum]"
-                              name="ccksum"
-                              truncationRowDisposition="FailComponent" />
-                            <outputColumn
-                              refId="Package\STAGING LOAD\TBST_PRC_ANAGRAFICA_FAMIGLIE\TBST_PRC_ANAGRAFICA_FAMIGLIE\OLE DB Source.Outputs[OLE DB Source Output].Columns[C_Azienda]"
-                              codePage="1252"
-                              dataType="str"
-                              errorOrTruncationOperation="Conversion"
-                              errorRowDisposition="FailComponent"
-                              externalMetadataColumnId="Package\STAGING LOAD\TBST_PRC_ANAGRAFICA_FAMIGLIE\TBST_PRC_ANAGRAFICA_FAMIGLIE\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[C_Azienda]"
-                              length="10"
-                              lineageId="Package\STAGING LOAD\TBST_PRC_ANAGRAFICA_FAMIGLIE\TBST_PRC_ANAGRAFICA_FAMIGLIE\OLE DB Source.Outputs[OLE DB Source Output].Columns[C_Azienda]"
-                              name="C_Azienda"
                               truncationRowDisposition="FailComponent" />
                             <outputColumn
                               refId="Package\STAGING LOAD\TBST_PRC_ANAGRAFICA_FAMIGLIE\TBST_PRC_ANAGRAFICA_FAMIGLIE\OLE DB Source.Outputs[OLE DB Source Output].Columns[I_User]"
@@ -1522,30 +1511,53 @@
                               name="U_Data"
                               truncationRowDisposition="FailComponent" />
                             <outputColumn
-                              refId="Package\STAGING LOAD\TBST_PRC_ANAGRAFICA_FAMIGLIE\TBST_PRC_ANAGRAFICA_FAMIGLIE\OLE DB Source.Outputs[OLE DB Source Output].Columns[C_Anagrafica_Famiglie]"
+                              refId="Package\STAGING LOAD\TBST_PRC_ANAGRAFICA_FAMIGLIE\TBST_PRC_ANAGRAFICA_FAMIGLIE\OLE DB Source.Outputs[OLE DB Source Output].Columns[U_Modify]"
                               codePage="1252"
                               dataType="str"
                               errorOrTruncationOperation="Conversion"
                               errorRowDisposition="FailComponent"
-                              externalMetadataColumnId="Package\STAGING LOAD\TBST_PRC_ANAGRAFICA_FAMIGLIE\TBST_PRC_ANAGRAFICA_FAMIGLIE\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[C_Anagrafica_Famiglie]"
-                              length="10"
-                              lineageId="Package\STAGING LOAD\TBST_PRC_ANAGRAFICA_FAMIGLIE\TBST_PRC_ANAGRAFICA_FAMIGLIE\OLE DB Source.Outputs[OLE DB Source Output].Columns[C_Anagrafica_Famiglie]"
-                              name="C_Anagrafica_Famiglie"
+                              externalMetadataColumnId="Package\STAGING LOAD\TBST_PRC_ANAGRAFICA_FAMIGLIE\TBST_PRC_ANAGRAFICA_FAMIGLIE\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[U_Modify]"
+                              length="50"
+                              lineageId="Package\STAGING LOAD\TBST_PRC_ANAGRAFICA_FAMIGLIE\TBST_PRC_ANAGRAFICA_FAMIGLIE\OLE DB Source.Outputs[OLE DB Source Output].Columns[U_Modify]"
+                              name="U_Modify"
                               truncationRowDisposition="FailComponent" />
                             <outputColumn
-                              refId="Package\STAGING LOAD\TBST_PRC_ANAGRAFICA_FAMIGLIE\TBST_PRC_ANAGRAFICA_FAMIGLIE\OLE DB Source.Outputs[OLE DB Source Output].Columns[D_Anagrafica_Famiglie]"
+                              refId="Package\STAGING LOAD\TBST_PRC_ANAGRAFICA_FAMIGLIE\TBST_PRC_ANAGRAFICA_FAMIGLIE\OLE DB Source.Outputs[OLE DB Source Output].Columns[ccksum]"
                               codePage="1252"
                               dataType="str"
                               errorOrTruncationOperation="Conversion"
                               errorRowDisposition="FailComponent"
-                              externalMetadataColumnId="Package\STAGING LOAD\TBST_PRC_ANAGRAFICA_FAMIGLIE\TBST_PRC_ANAGRAFICA_FAMIGLIE\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[D_Anagrafica_Famiglie]"
-                              length="40"
-                              lineageId="Package\STAGING LOAD\TBST_PRC_ANAGRAFICA_FAMIGLIE\TBST_PRC_ANAGRAFICA_FAMIGLIE\OLE DB Source.Outputs[OLE DB Source Output].Columns[D_Anagrafica_Famiglie]"
-                              name="D_Anagrafica_Famiglie"
+                              externalMetadataColumnId="Package\STAGING LOAD\TBST_PRC_ANAGRAFICA_FAMIGLIE\TBST_PRC_ANAGRAFICA_FAMIGLIE\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[ccksum]"
+                              length="100"
+                              lineageId="Package\STAGING LOAD\TBST_PRC_ANAGRAFICA_FAMIGLIE\TBST_PRC_ANAGRAFICA_FAMIGLIE\OLE DB Source.Outputs[OLE DB Source Output].Columns[ccksum]"
+                              name="ccksum"
+                              truncationRowDisposition="FailComponent" />
+                            <outputColumn
+                              refId="Package\STAGING LOAD\TBST_PRC_ANAGRAFICA_FAMIGLIE\TBST_PRC_ANAGRAFICA_FAMIGLIE\OLE DB Source.Outputs[OLE DB Source Output].Columns[C_Azienda]"
+                              codePage="1252"
+                              dataType="str"
+                              errorOrTruncationOperation="Conversion"
+                              errorRowDisposition="FailComponent"
+                              externalMetadataColumnId="Package\STAGING LOAD\TBST_PRC_ANAGRAFICA_FAMIGLIE\TBST_PRC_ANAGRAFICA_FAMIGLIE\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[C_Azienda]"
+                              length="10"
+                              lineageId="Package\STAGING LOAD\TBST_PRC_ANAGRAFICA_FAMIGLIE\TBST_PRC_ANAGRAFICA_FAMIGLIE\OLE DB Source.Outputs[OLE DB Source Output].Columns[C_Azienda]"
+                              name="C_Azienda"
                               truncationRowDisposition="FailComponent" />
                           </outputColumns>
                           <externalMetadataColumns
                             isUsed="True">
+                            <externalMetadataColumn
+                              refId="Package\STAGING LOAD\TBST_PRC_ANAGRAFICA_FAMIGLIE\TBST_PRC_ANAGRAFICA_FAMIGLIE\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[C_Anagrafica_Famiglie]"
+                              codePage="1252"
+                              dataType="str"
+                              length="10"
+                              name="C_Anagrafica_Famiglie" />
+                            <externalMetadataColumn
+                              refId="Package\STAGING LOAD\TBST_PRC_ANAGRAFICA_FAMIGLIE\TBST_PRC_ANAGRAFICA_FAMIGLIE\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[D_Anagrafica_Famiglie]"
+                              codePage="1252"
+                              dataType="str"
+                              length="40"
+                              name="D_Anagrafica_Famiglie" />
                             <externalMetadataColumn
                               refId="Package\STAGING LOAD\TBST_PRC_ANAGRAFICA_FAMIGLIE\TBST_PRC_ANAGRAFICA_FAMIGLIE\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Data_Inizio_Validità]"
                               dataType="dbTimeStamp"
@@ -1554,24 +1566,6 @@
                               refId="Package\STAGING LOAD\TBST_PRC_ANAGRAFICA_FAMIGLIE\TBST_PRC_ANAGRAFICA_FAMIGLIE\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Data_Obsolescenza]"
                               dataType="dbTimeStamp"
                               name="Data_Obsolescenza" />
-                            <externalMetadataColumn
-                              refId="Package\STAGING LOAD\TBST_PRC_ANAGRAFICA_FAMIGLIE\TBST_PRC_ANAGRAFICA_FAMIGLIE\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[U_Modify]"
-                              codePage="1252"
-                              dataType="str"
-                              length="50"
-                              name="U_Modify" />
-                            <externalMetadataColumn
-                              refId="Package\STAGING LOAD\TBST_PRC_ANAGRAFICA_FAMIGLIE\TBST_PRC_ANAGRAFICA_FAMIGLIE\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[ccksum]"
-                              codePage="1252"
-                              dataType="str"
-                              length="100"
-                              name="ccksum" />
-                            <externalMetadataColumn
-                              refId="Package\STAGING LOAD\TBST_PRC_ANAGRAFICA_FAMIGLIE\TBST_PRC_ANAGRAFICA_FAMIGLIE\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[C_Azienda]"
-                              codePage="1252"
-                              dataType="str"
-                              length="10"
-                              name="C_Azienda" />
                             <externalMetadataColumn
                               refId="Package\STAGING LOAD\TBST_PRC_ANAGRAFICA_FAMIGLIE\TBST_PRC_ANAGRAFICA_FAMIGLIE\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[I_User]"
                               codePage="1252"
@@ -1593,17 +1587,23 @@
                               dataType="dbTimeStamp"
                               name="U_Data" />
                             <externalMetadataColumn
-                              refId="Package\STAGING LOAD\TBST_PRC_ANAGRAFICA_FAMIGLIE\TBST_PRC_ANAGRAFICA_FAMIGLIE\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[C_Anagrafica_Famiglie]"
+                              refId="Package\STAGING LOAD\TBST_PRC_ANAGRAFICA_FAMIGLIE\TBST_PRC_ANAGRAFICA_FAMIGLIE\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[U_Modify]"
+                              codePage="1252"
+                              dataType="str"
+                              length="50"
+                              name="U_Modify" />
+                            <externalMetadataColumn
+                              refId="Package\STAGING LOAD\TBST_PRC_ANAGRAFICA_FAMIGLIE\TBST_PRC_ANAGRAFICA_FAMIGLIE\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[ccksum]"
+                              codePage="1252"
+                              dataType="str"
+                              length="100"
+                              name="ccksum" />
+                            <externalMetadataColumn
+                              refId="Package\STAGING LOAD\TBST_PRC_ANAGRAFICA_FAMIGLIE\TBST_PRC_ANAGRAFICA_FAMIGLIE\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[C_Azienda]"
                               codePage="1252"
                               dataType="str"
                               length="10"
-                              name="C_Anagrafica_Famiglie" />
-                            <externalMetadataColumn
-                              refId="Package\STAGING LOAD\TBST_PRC_ANAGRAFICA_FAMIGLIE\TBST_PRC_ANAGRAFICA_FAMIGLIE\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[D_Anagrafica_Famiglie]"
-                              codePage="1252"
-                              dataType="str"
-                              length="40"
-                              name="D_Anagrafica_Famiglie" />
+                              name="C_Azienda" />
                           </externalMetadataColumns>
                         </output>
                         <output
@@ -1636,27 +1636,6 @@
                               lineageId="Package\STAGING LOAD\TBST_PRC_ANAGRAFICA_FAMIGLIE\TBST_PRC_ANAGRAFICA_FAMIGLIE\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Data_Obsolescenza]"
                               name="Data_Obsolescenza" />
                             <outputColumn
-                              refId="Package\STAGING LOAD\TBST_PRC_ANAGRAFICA_FAMIGLIE\TBST_PRC_ANAGRAFICA_FAMIGLIE\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[U_Modify]"
-                              codePage="1252"
-                              dataType="str"
-                              length="50"
-                              lineageId="Package\STAGING LOAD\TBST_PRC_ANAGRAFICA_FAMIGLIE\TBST_PRC_ANAGRAFICA_FAMIGLIE\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[U_Modify]"
-                              name="U_Modify" />
-                            <outputColumn
-                              refId="Package\STAGING LOAD\TBST_PRC_ANAGRAFICA_FAMIGLIE\TBST_PRC_ANAGRAFICA_FAMIGLIE\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ccksum]"
-                              codePage="1252"
-                              dataType="str"
-                              length="100"
-                              lineageId="Package\STAGING LOAD\TBST_PRC_ANAGRAFICA_FAMIGLIE\TBST_PRC_ANAGRAFICA_FAMIGLIE\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ccksum]"
-                              name="ccksum" />
-                            <outputColumn
-                              refId="Package\STAGING LOAD\TBST_PRC_ANAGRAFICA_FAMIGLIE\TBST_PRC_ANAGRAFICA_FAMIGLIE\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[C_Azienda]"
-                              codePage="1252"
-                              dataType="str"
-                              length="10"
-                              lineageId="Package\STAGING LOAD\TBST_PRC_ANAGRAFICA_FAMIGLIE\TBST_PRC_ANAGRAFICA_FAMIGLIE\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[C_Azienda]"
-                              name="C_Azienda" />
-                            <outputColumn
                               refId="Package\STAGING LOAD\TBST_PRC_ANAGRAFICA_FAMIGLIE\TBST_PRC_ANAGRAFICA_FAMIGLIE\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[I_User]"
                               codePage="1252"
                               dataType="str"
@@ -1680,6 +1659,27 @@
                               dataType="dbTimeStamp"
                               lineageId="Package\STAGING LOAD\TBST_PRC_ANAGRAFICA_FAMIGLIE\TBST_PRC_ANAGRAFICA_FAMIGLIE\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[U_Data]"
                               name="U_Data" />
+                            <outputColumn
+                              refId="Package\STAGING LOAD\TBST_PRC_ANAGRAFICA_FAMIGLIE\TBST_PRC_ANAGRAFICA_FAMIGLIE\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[U_Modify]"
+                              codePage="1252"
+                              dataType="str"
+                              length="50"
+                              lineageId="Package\STAGING LOAD\TBST_PRC_ANAGRAFICA_FAMIGLIE\TBST_PRC_ANAGRAFICA_FAMIGLIE\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[U_Modify]"
+                              name="U_Modify" />
+                            <outputColumn
+                              refId="Package\STAGING LOAD\TBST_PRC_ANAGRAFICA_FAMIGLIE\TBST_PRC_ANAGRAFICA_FAMIGLIE\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ccksum]"
+                              codePage="1252"
+                              dataType="str"
+                              length="100"
+                              lineageId="Package\STAGING LOAD\TBST_PRC_ANAGRAFICA_FAMIGLIE\TBST_PRC_ANAGRAFICA_FAMIGLIE\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ccksum]"
+                              name="ccksum" />
+                            <outputColumn
+                              refId="Package\STAGING LOAD\TBST_PRC_ANAGRAFICA_FAMIGLIE\TBST_PRC_ANAGRAFICA_FAMIGLIE\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[C_Azienda]"
+                              codePage="1252"
+                              dataType="str"
+                              length="10"
+                              lineageId="Package\STAGING LOAD\TBST_PRC_ANAGRAFICA_FAMIGLIE\TBST_PRC_ANAGRAFICA_FAMIGLIE\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[C_Azienda]"
+                              name="C_Azienda" />
                             <outputColumn
                               refId="Package\STAGING LOAD\TBST_PRC_ANAGRAFICA_FAMIGLIE\TBST_PRC_ANAGRAFICA_FAMIGLIE\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
                               dataType="i4"
@@ -1722,7 +1722,7 @@
               DTS:refId="Package\STAGING LOAD\TBST_PRC_ANAGRAFICA_FAMIGLIE\Truncate STG TRG TABLE"
               DTS:CreationName="Microsoft.ExecuteSQLTask"
               DTS:Description="Execute SQL Task"
-              DTS:DTSID="{f8b6d811-70e6-40d3-abab-12ed655fd882}"
+              DTS:DTSID="{601e98cc-4e88-4b31-97d2-61049c0dc35f}"
               DTS:ExecutableType="Microsoft.ExecuteSQLTask"
               DTS:LocaleID="-1"
               DTS:ObjectName="Truncate STG TRG TABLE"
@@ -1742,7 +1742,7 @@
             <DTS:PrecedenceConstraint
               DTS:refId="Package\STAGING LOAD\TBST_PRC_ANAGRAFICA_FAMIGLIE.PrecedenceConstraints[Constraint]"
               DTS:CreationName=""
-              DTS:DTSID="{cd408c85-8b89-4908-a7d4-bc735a97b1bc}"
+              DTS:DTSID="{c3e2be63-755f-401e-b8ae-b42998cf9247}"
               DTS:From="Package\STAGING LOAD\TBST_PRC_ANAGRAFICA_FAMIGLIE\TBST_PRC_ANAGRAFICA_FAMIGLIE"
               DTS:LogicalAnd="True"
               DTS:ObjectName="Constraint"
@@ -1750,7 +1750,7 @@
             <DTS:PrecedenceConstraint
               DTS:refId="Package\STAGING LOAD\TBST_PRC_ANAGRAFICA_FAMIGLIE.PrecedenceConstraints[Constraint 1]"
               DTS:CreationName=""
-              DTS:DTSID="{971b7836-be20-4ea4-9f95-8a1490d545e7}"
+              DTS:DTSID="{2d9b2925-1a8c-4914-8722-cd0b28813fe7}"
               DTS:From="Package\STAGING LOAD\TBST_PRC_ANAGRAFICA_FAMIGLIE\Ins_Upd TBLOG_PACKAGE_TABLE"
               DTS:LogicalAnd="True"
               DTS:ObjectName="Constraint 1"
@@ -1758,7 +1758,7 @@
             <DTS:PrecedenceConstraint
               DTS:refId="Package\STAGING LOAD\TBST_PRC_ANAGRAFICA_FAMIGLIE.PrecedenceConstraints[Constraint 2]"
               DTS:CreationName=""
-              DTS:DTSID="{69a1d6f1-f3ca-4937-83ac-582b6516d921}"
+              DTS:DTSID="{8c9ee392-a0ae-4364-8198-40f1e2cff8f1}"
               DTS:From="Package\STAGING LOAD\TBST_PRC_ANAGRAFICA_FAMIGLIE\Assign TABLE_TARGET_CD"
               DTS:LogicalAnd="True"
               DTS:ObjectName="Constraint 2"
@@ -1766,7 +1766,7 @@
             <DTS:PrecedenceConstraint
               DTS:refId="Package\STAGING LOAD\TBST_PRC_ANAGRAFICA_FAMIGLIE.PrecedenceConstraints[Constraint 3]"
               DTS:CreationName=""
-              DTS:DTSID="{6ee5559a-8228-4b91-b287-e0b535bb245d}"
+              DTS:DTSID="{0f0464fc-eecf-434b-8bcb-6e6b054fcdcc}"
               DTS:From="Package\STAGING LOAD\TBST_PRC_ANAGRAFICA_FAMIGLIE\Ins_Upd TBLOG_PACKAGE_TABLE"
               DTS:LogicalAnd="True"
               DTS:ObjectName="Constraint 3"
@@ -1774,7 +1774,7 @@
             <DTS:PrecedenceConstraint
               DTS:refId="Package\STAGING LOAD\TBST_PRC_ANAGRAFICA_FAMIGLIE.PrecedenceConstraints[Constraint 4]"
               DTS:CreationName=""
-              DTS:DTSID="{7cae142b-9247-484e-8653-44e71210d03a}"
+              DTS:DTSID="{e288dbee-8041-459b-86af-6eee8f5f7411}"
               DTS:From="Package\STAGING LOAD\TBST_PRC_ANAGRAFICA_FAMIGLIE\Truncate STG TRG TABLE"
               DTS:LogicalAnd="True"
               DTS:ObjectName="Constraint 4"
@@ -1782,7 +1782,7 @@
             <DTS:PrecedenceConstraint
               DTS:refId="Package\STAGING LOAD\TBST_PRC_ANAGRAFICA_FAMIGLIE.PrecedenceConstraints[Constraint 5]"
               DTS:CreationName=""
-              DTS:DTSID="{5d11c378-3136-4093-90ce-e1d3b0710488}"
+              DTS:DTSID="{c30c9af5-5e95-41ee-93ab-27c7fb5d4943}"
               DTS:From="Package\STAGING LOAD\TBST_PRC_ANAGRAFICA_FAMIGLIE\MAX TABLE ID"
               DTS:LogicalAnd="True"
               DTS:ObjectName="Constraint 5"
@@ -1792,7 +1792,7 @@
             <DTS:EventHandler
               DTS:refId="Package\STAGING LOAD\TBST_PRC_ANAGRAFICA_FAMIGLIE.EventHandlers[OnPreExecute]"
               DTS:CreationName="OnPreExecute"
-              DTS:DTSID="{d0382429-3286-4ea1-94fe-09aac7574f47}"
+              DTS:DTSID="{f30e6679-f7c2-42ac-a168-ea10750277e6}"
               DTS:EventID="0"
               DTS:EventName="OnPreExecute"
               DTS:LocaleID="-1">
@@ -1800,7 +1800,7 @@
                 <DTS:Variable
                   DTS:CreationName=""
                   DTS:Description="The propagate property of the event"
-                  DTS:DTSID="{4e6c459a-1329-4327-ac8a-92b389cbedcf}"
+                  DTS:DTSID="{4952319e-177d-4cc4-a218-1a51face9ec9}"
                   DTS:IncludeInDebugDump="6789"
                   DTS:Namespace="System"
                   DTS:ObjectName="Propagate">
@@ -1816,7 +1816,7 @@
           DTS:refId="Package\STAGING LOAD\TBST_PRC_ANAGRAFICA_LOTTI"
           DTS:CreationName="STOCK:SEQUENCE"
           DTS:Description="Sequence Container"
-          DTS:DTSID="{95B25B3E-6B58-4245-A374-83113EEDD4AF}"
+          DTS:DTSID="{AFDFC8DA-A557-4730-ACA0-21749539F6CD}"
           DTS:ExecutableType="STOCK:SEQUENCE"
           DTS:LocaleID="-1"
           DTS:ObjectName="TBST_PRC_ANAGRAFICA_LOTTI">
@@ -1824,7 +1824,7 @@
             <DTS:Variable
               DTS:CreationName=""
               DTS:Description="Output related to the last ID run for the table"
-              DTS:DTSID="{25DE3B21-5B79-48F8-84E4-0032CAD8937B}"
+              DTS:DTSID="{40E6C726-C0E0-4F4A-936E-33897B86973C}"
               DTS:IncludeInDebugDump="6789"
               DTS:Namespace="User"
               DTS:ObjectName="out_MAX_TABLE_ID">
@@ -1834,7 +1834,7 @@
             <DTS:Variable
               DTS:CreationName=""
               DTS:Description="Table target name to be loaded by the flow"
-              DTS:DTSID="{B509A49B-56B3-46C3-A75A-0E3AA34439F4}"
+              DTS:DTSID="{317226C1-FCD8-4B96-8979-574465106215}"
               DTS:IncludeInDebugDump="2345"
               DTS:Namespace="User"
               DTS:ObjectName="out_TABLE_TARGET_CD">
@@ -1848,7 +1848,7 @@
               DTS:refId="Package\STAGING LOAD\TBST_PRC_ANAGRAFICA_LOTTI\Assign TABLE_TARGET_CD"
               DTS:CreationName="Microsoft.ExecuteSQLTask"
               DTS:Description="Execute SQL Task"
-              DTS:DTSID="{777281C6-7F68-40E7-971E-E13B461ADD85}"
+              DTS:DTSID="{7758ABBA-07A8-4E09-92F9-524D2778874A}"
               DTS:ExecutableType="Microsoft.ExecuteSQLTask"
               DTS:LocaleID="-1"
               DTS:ObjectName="Assign TABLE_TARGET_CD"
@@ -1870,7 +1870,7 @@
               DTS:refId="Package\STAGING LOAD\TBST_PRC_ANAGRAFICA_LOTTI\Ins_Upd TBLOG_PACKAGE_TABLE"
               DTS:CreationName="Microsoft.ExecuteSQLTask"
               DTS:Description="Execute SQL Task"
-              DTS:DTSID="{0FFF57A5-9BB0-451E-8A8C-D7C39FF41C8C}"
+              DTS:DTSID="{4E102653-5F30-43B2-A9D7-222C4F54E8FB}"
               DTS:ExecutableType="Microsoft.ExecuteSQLTask"
               DTS:LocaleID="-1"
               DTS:ObjectName="Ins_Upd TBLOG_PACKAGE_TABLE"
@@ -1942,7 +1942,7 @@
               DTS:refId="Package\STAGING LOAD\TBST_PRC_ANAGRAFICA_LOTTI\Last Upd TBLOG_PACKAGE_TABLE"
               DTS:CreationName="Microsoft.ExecuteSQLTask"
               DTS:Description="Execute SQL Task"
-              DTS:DTSID="{A8C791A2-64ED-40CF-8972-E3F47397A0C6}"
+              DTS:DTSID="{05AC59F2-52DD-409B-AA4E-E0888AAE6C8E}"
               DTS:ExecutableType="Microsoft.ExecuteSQLTask"
               DTS:LocaleID="-1"
               DTS:ObjectName="Last Upd TBLOG_PACKAGE_TABLE"
@@ -1978,12 +1978,12 @@
               DTS:refId="Package\STAGING LOAD\TBST_PRC_ANAGRAFICA_LOTTI\MAX TABLE ID"
               DTS:CreationName="Microsoft.ExecuteSQLTask"
               DTS:Description="Execute SQL Task"
-              DTS:DTSID="{BD98731D-652D-4568-AF0F-018834911B4E}"
+              DTS:DTSID="{C804755A-E426-4358-84E3-44B5F76D39C0}"
               DTS:ExecutableType="Microsoft.ExecuteSQLTask"
               DTS:LocaleID="-1"
               DTS:ObjectName="MAX TABLE ID"
               DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-              DTS:ThreadHint="0">
+              DTS:ThreadHint="1">
               <DTS:Variables />
               <DTS:ObjectData>
                 <SQLTask:SqlTaskData
@@ -2012,7 +2012,7 @@
               DTS:refId="Package\STAGING LOAD\TBST_PRC_ANAGRAFICA_LOTTI\TBST_PRC_ANAGRAFICA_LOTTI"
               DTS:CreationName="Microsoft.Pipeline"
               DTS:Description="Data Flow Task"
-              DTS:DTSID="{EF0D9A48-FA07-415D-BE37-269906599DC4}"
+              DTS:DTSID="{1DED4992-4146-42F0-82C5-3FFA890FEBB3}"
               DTS:ExecutableType="Microsoft.Pipeline"
               DTS:LocaleID="-1"
               DTS:ObjectName="TBST_PRC_ANAGRAFICA_LOTTI"
@@ -3606,12 +3606,12 @@
               DTS:refId="Package\STAGING LOAD\TBST_PRC_ANAGRAFICA_LOTTI\Truncate STG TRG TABLE"
               DTS:CreationName="Microsoft.ExecuteSQLTask"
               DTS:Description="Execute SQL Task"
-              DTS:DTSID="{BF36C666-F715-43F3-B3A4-3E924AEBA2BC}"
+              DTS:DTSID="{DED03891-1691-4CF6-A430-6BF67F141487}"
               DTS:ExecutableType="Microsoft.ExecuteSQLTask"
               DTS:LocaleID="-1"
               DTS:ObjectName="Truncate STG TRG TABLE"
               DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-              DTS:ThreadHint="1">
+              DTS:ThreadHint="0">
               <DTS:Variables />
               <DTS:PropertyExpression
                 DTS:Name="SqlStatementSource">"truncate table " + @[User::out_TABLE_TARGET_CD]</DTS:PropertyExpression>
@@ -3626,7 +3626,7 @@
             <DTS:PrecedenceConstraint
               DTS:refId="Package\STAGING LOAD\TBST_PRC_ANAGRAFICA_LOTTI.PrecedenceConstraints[Constraint]"
               DTS:CreationName=""
-              DTS:DTSID="{3138430E-0097-4869-80D4-0B6F3528C639}"
+              DTS:DTSID="{0DA73E42-B0B6-418E-86A2-CD307A4DE310}"
               DTS:From="Package\STAGING LOAD\TBST_PRC_ANAGRAFICA_LOTTI\TBST_PRC_ANAGRAFICA_LOTTI"
               DTS:LogicalAnd="True"
               DTS:ObjectName="Constraint"
@@ -3634,7 +3634,7 @@
             <DTS:PrecedenceConstraint
               DTS:refId="Package\STAGING LOAD\TBST_PRC_ANAGRAFICA_LOTTI.PrecedenceConstraints[Constraint 1]"
               DTS:CreationName=""
-              DTS:DTSID="{B0F9FF57-6F17-4EEA-B7B8-0F9CE5EE707A}"
+              DTS:DTSID="{EAAC1BC1-51BE-4465-B7E6-9BB09CD5F651}"
               DTS:From="Package\STAGING LOAD\TBST_PRC_ANAGRAFICA_LOTTI\Ins_Upd TBLOG_PACKAGE_TABLE"
               DTS:LogicalAnd="True"
               DTS:ObjectName="Constraint 1"
@@ -3642,7 +3642,7 @@
             <DTS:PrecedenceConstraint
               DTS:refId="Package\STAGING LOAD\TBST_PRC_ANAGRAFICA_LOTTI.PrecedenceConstraints[Constraint 2]"
               DTS:CreationName=""
-              DTS:DTSID="{3708F464-DF21-431B-AF4E-31FF4C6A5FA4}"
+              DTS:DTSID="{CF06C116-3702-4E3D-93B4-736B8B78E010}"
               DTS:From="Package\STAGING LOAD\TBST_PRC_ANAGRAFICA_LOTTI\Assign TABLE_TARGET_CD"
               DTS:LogicalAnd="True"
               DTS:ObjectName="Constraint 2"
@@ -3650,7 +3650,7 @@
             <DTS:PrecedenceConstraint
               DTS:refId="Package\STAGING LOAD\TBST_PRC_ANAGRAFICA_LOTTI.PrecedenceConstraints[Constraint 3]"
               DTS:CreationName=""
-              DTS:DTSID="{8AD941EE-8A00-48BF-A299-E2F9E15E7F88}"
+              DTS:DTSID="{C708D499-382F-4798-B0B6-B7EE1820E04C}"
               DTS:From="Package\STAGING LOAD\TBST_PRC_ANAGRAFICA_LOTTI\Ins_Upd TBLOG_PACKAGE_TABLE"
               DTS:LogicalAnd="True"
               DTS:ObjectName="Constraint 3"
@@ -3658,7 +3658,7 @@
             <DTS:PrecedenceConstraint
               DTS:refId="Package\STAGING LOAD\TBST_PRC_ANAGRAFICA_LOTTI.PrecedenceConstraints[Constraint 4]"
               DTS:CreationName=""
-              DTS:DTSID="{03F84170-F3A5-4B3B-BB9E-79AD392DB4FE}"
+              DTS:DTSID="{5967F40B-59F3-416D-A282-D97F7AA139E0}"
               DTS:From="Package\STAGING LOAD\TBST_PRC_ANAGRAFICA_LOTTI\Truncate STG TRG TABLE"
               DTS:LogicalAnd="True"
               DTS:ObjectName="Constraint 4"
@@ -3666,7 +3666,7 @@
             <DTS:PrecedenceConstraint
               DTS:refId="Package\STAGING LOAD\TBST_PRC_ANAGRAFICA_LOTTI.PrecedenceConstraints[Constraint 5]"
               DTS:CreationName=""
-              DTS:DTSID="{CC08577A-DB7A-46EC-A0E9-317B4EEB1ADF}"
+              DTS:DTSID="{842146E0-D854-42AE-93B0-F212E6D3AD4D}"
               DTS:From="Package\STAGING LOAD\TBST_PRC_ANAGRAFICA_LOTTI\MAX TABLE ID"
               DTS:LogicalAnd="True"
               DTS:ObjectName="Constraint 5"
@@ -3676,7 +3676,7 @@
             <DTS:EventHandler
               DTS:refId="Package\STAGING LOAD\TBST_PRC_ANAGRAFICA_LOTTI.EventHandlers[OnPreExecute]"
               DTS:CreationName="OnPreExecute"
-              DTS:DTSID="{008B219E-2D09-43AF-A351-233917C4CD59}"
+              DTS:DTSID="{1B85B95E-10B9-46B7-A7B1-B16542D13632}"
               DTS:EventID="0"
               DTS:EventName="OnPreExecute"
               DTS:LocaleID="-1">
@@ -3684,7 +3684,7 @@
                 <DTS:Variable
                   DTS:CreationName=""
                   DTS:Description="The propagate property of the event"
-                  DTS:DTSID="{1063A506-80AB-49BA-8659-4C3445A531C0}"
+                  DTS:DTSID="{313C10EF-EF03-41E1-A730-CDD39DA4A80E}"
                   DTS:IncludeInDebugDump="6789"
                   DTS:Namespace="System"
                   DTS:ObjectName="Propagate">
@@ -3700,7 +3700,7 @@
           DTS:refId="Package\STAGING LOAD\TBST_PRC_ARTICOLO"
           DTS:CreationName="STOCK:SEQUENCE"
           DTS:Description="Sequence Container"
-          DTS:DTSID="{3afe1f3c-c1fb-40a1-9436-b53f03a2460b}"
+          DTS:DTSID="{951133ED-7382-42AB-B0B9-43B856331F68}"
           DTS:ExecutableType="STOCK:SEQUENCE"
           DTS:LocaleID="-1"
           DTS:ObjectName="TBST_PRC_ARTICOLO">
@@ -3708,7 +3708,7 @@
             <DTS:Variable
               DTS:CreationName=""
               DTS:Description="Output related to the last ID run for the table"
-              DTS:DTSID="{e05b560c-9626-4c7e-9264-12754cfb80bd}"
+              DTS:DTSID="{3212A9A1-F9BB-466A-AC0E-8103AE04439A}"
               DTS:IncludeInDebugDump="6789"
               DTS:Namespace="User"
               DTS:ObjectName="out_MAX_TABLE_ID">
@@ -3718,7 +3718,7 @@
             <DTS:Variable
               DTS:CreationName=""
               DTS:Description="Table target name to be loaded by the flow"
-              DTS:DTSID="{b1cc2a68-1e78-4208-b87a-a10fb1806dbb}"
+              DTS:DTSID="{FEA2FF78-05C4-4296-BB54-D9A029152ADF}"
               DTS:IncludeInDebugDump="2345"
               DTS:Namespace="User"
               DTS:ObjectName="out_TABLE_TARGET_CD">
@@ -3732,7 +3732,7 @@
               DTS:refId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Assign TABLE_TARGET_CD"
               DTS:CreationName="Microsoft.ExecuteSQLTask"
               DTS:Description="Execute SQL Task"
-              DTS:DTSID="{8f91146b-de20-4ad5-aeae-6345b62db2ef}"
+              DTS:DTSID="{B72221E6-361C-443D-9BFE-0E45F2229EA1}"
               DTS:ExecutableType="Microsoft.ExecuteSQLTask"
               DTS:LocaleID="-1"
               DTS:ObjectName="Assign TABLE_TARGET_CD"
@@ -3754,7 +3754,7 @@
               DTS:refId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Ins_Upd TBLOG_PACKAGE_TABLE"
               DTS:CreationName="Microsoft.ExecuteSQLTask"
               DTS:Description="Execute SQL Task"
-              DTS:DTSID="{bda092bd-5087-414d-b7e3-deb0edabb519}"
+              DTS:DTSID="{6E937C02-ED8F-4780-82E2-E3E246A13EF6}"
               DTS:ExecutableType="Microsoft.ExecuteSQLTask"
               DTS:LocaleID="-1"
               DTS:ObjectName="Ins_Upd TBLOG_PACKAGE_TABLE"
@@ -3826,7 +3826,7 @@
               DTS:refId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Last Upd TBLOG_PACKAGE_TABLE"
               DTS:CreationName="Microsoft.ExecuteSQLTask"
               DTS:Description="Execute SQL Task"
-              DTS:DTSID="{6f3309d0-c935-4eee-b235-41863ceebffc}"
+              DTS:DTSID="{12DD2432-7FE4-4193-886F-53918043B73E}"
               DTS:ExecutableType="Microsoft.ExecuteSQLTask"
               DTS:LocaleID="-1"
               DTS:ObjectName="Last Upd TBLOG_PACKAGE_TABLE"
@@ -3862,7 +3862,7 @@
               DTS:refId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\MAX TABLE ID"
               DTS:CreationName="Microsoft.ExecuteSQLTask"
               DTS:Description="Execute SQL Task"
-              DTS:DTSID="{b5153e4c-de91-4a16-ae0c-d05a616d5a0d}"
+              DTS:DTSID="{E49991F6-8DC0-4DD5-B059-B9C4A33955EA}"
               DTS:ExecutableType="Microsoft.ExecuteSQLTask"
               DTS:LocaleID="-1"
               DTS:ObjectName="MAX TABLE ID"
@@ -3896,7 +3896,7 @@
               DTS:refId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\TBST_PRC_ARTICOLO"
               DTS:CreationName="Microsoft.Pipeline"
               DTS:Description="Data Flow Task"
-              DTS:DTSID="{3d3d731a-0869-4941-897d-8fdbdc36536f}"
+              DTS:DTSID="{87BD96E1-94D1-42E5-BAAA-0C8A9E9E0C8C}"
               DTS:ExecutableType="Microsoft.Pipeline"
               DTS:LocaleID="-1"
               DTS:ObjectName="TBST_PRC_ARTICOLO"
@@ -11015,7 +11015,7 @@
               DTS:refId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Truncate STG TRG TABLE"
               DTS:CreationName="Microsoft.ExecuteSQLTask"
               DTS:Description="Execute SQL Task"
-              DTS:DTSID="{dbe827d5-f9c6-4933-9e1e-72093c07ac7f}"
+              DTS:DTSID="{80C2AFBC-69CF-4172-B9CF-C1FE48E88805}"
               DTS:ExecutableType="Microsoft.ExecuteSQLTask"
               DTS:LocaleID="-1"
               DTS:ObjectName="Truncate STG TRG TABLE"
@@ -11035,7 +11035,7 @@
             <DTS:PrecedenceConstraint
               DTS:refId="Package\STAGING LOAD\TBST_PRC_ARTICOLO.PrecedenceConstraints[Constraint]"
               DTS:CreationName=""
-              DTS:DTSID="{9f4b5042-5a66-497d-8ec9-52ddb61b753f}"
+              DTS:DTSID="{D18ABB92-37AF-426A-9FE1-E964900F4BB8}"
               DTS:From="Package\STAGING LOAD\TBST_PRC_ARTICOLO\TBST_PRC_ARTICOLO"
               DTS:LogicalAnd="True"
               DTS:ObjectName="Constraint"
@@ -11043,7 +11043,7 @@
             <DTS:PrecedenceConstraint
               DTS:refId="Package\STAGING LOAD\TBST_PRC_ARTICOLO.PrecedenceConstraints[Constraint 1]"
               DTS:CreationName=""
-              DTS:DTSID="{67a1faf7-23da-4351-a3e0-2a6b2ae07710}"
+              DTS:DTSID="{043D458D-CC34-4634-B120-03F09C55BE09}"
               DTS:From="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Ins_Upd TBLOG_PACKAGE_TABLE"
               DTS:LogicalAnd="True"
               DTS:ObjectName="Constraint 1"
@@ -11051,7 +11051,7 @@
             <DTS:PrecedenceConstraint
               DTS:refId="Package\STAGING LOAD\TBST_PRC_ARTICOLO.PrecedenceConstraints[Constraint 2]"
               DTS:CreationName=""
-              DTS:DTSID="{1426255c-bf31-4d71-9317-486f11cf57fe}"
+              DTS:DTSID="{1BB40F1D-2E6C-42F2-ACEF-DD86C96C49FD}"
               DTS:From="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Assign TABLE_TARGET_CD"
               DTS:LogicalAnd="True"
               DTS:ObjectName="Constraint 2"
@@ -11059,7 +11059,7 @@
             <DTS:PrecedenceConstraint
               DTS:refId="Package\STAGING LOAD\TBST_PRC_ARTICOLO.PrecedenceConstraints[Constraint 3]"
               DTS:CreationName=""
-              DTS:DTSID="{c4cae806-a2c2-4b69-80e2-2017c4f70c11}"
+              DTS:DTSID="{1351A197-6447-4320-BC7B-019C03BE2826}"
               DTS:From="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Ins_Upd TBLOG_PACKAGE_TABLE"
               DTS:LogicalAnd="True"
               DTS:ObjectName="Constraint 3"
@@ -11067,7 +11067,7 @@
             <DTS:PrecedenceConstraint
               DTS:refId="Package\STAGING LOAD\TBST_PRC_ARTICOLO.PrecedenceConstraints[Constraint 4]"
               DTS:CreationName=""
-              DTS:DTSID="{46f07817-176d-4a51-bfc5-5255b235fb43}"
+              DTS:DTSID="{EA8626E0-6536-4372-8D95-6AF11C695300}"
               DTS:From="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Truncate STG TRG TABLE"
               DTS:LogicalAnd="True"
               DTS:ObjectName="Constraint 4"
@@ -11075,7 +11075,7 @@
             <DTS:PrecedenceConstraint
               DTS:refId="Package\STAGING LOAD\TBST_PRC_ARTICOLO.PrecedenceConstraints[Constraint 5]"
               DTS:CreationName=""
-              DTS:DTSID="{8060ab2c-1715-411b-aa5e-d5047e23bde9}"
+              DTS:DTSID="{3B629C4F-BB13-43C1-B7BD-A85A86E27E9D}"
               DTS:From="Package\STAGING LOAD\TBST_PRC_ARTICOLO\MAX TABLE ID"
               DTS:LogicalAnd="True"
               DTS:ObjectName="Constraint 5"
@@ -11085,7 +11085,7 @@
             <DTS:EventHandler
               DTS:refId="Package\STAGING LOAD\TBST_PRC_ARTICOLO.EventHandlers[OnPreExecute]"
               DTS:CreationName="OnPreExecute"
-              DTS:DTSID="{4af54af3-c000-4eb3-801a-085db9a33729}"
+              DTS:DTSID="{D89DC342-83C8-47EF-9A9A-D7E585C1B6C3}"
               DTS:EventID="0"
               DTS:EventName="OnPreExecute"
               DTS:LocaleID="-1">
@@ -11093,7 +11093,7 @@
                 <DTS:Variable
                   DTS:CreationName=""
                   DTS:Description="The propagate property of the event"
-                  DTS:DTSID="{e1d77bea-abaa-49c1-9651-9aa188d82c95}"
+                  DTS:DTSID="{4E435765-2680-46A8-984D-8DD3CB57079C}"
                   DTS:IncludeInDebugDump="6789"
                   DTS:Namespace="System"
                   DTS:ObjectName="Propagate">
@@ -11111,7 +11111,7 @@
       DTS:refId="Package\Upd TBLOG_PACKAGE"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Execute SQL Task"
-      DTS:DTSID="{A0070369-0F1C-4830-8E77-3D2208717AD7}"
+      DTS:DTSID="{DB8CF5DC-95D2-4E2A-854D-0D655E641F9C}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Upd TBLOG_PACKAGE"
@@ -11148,7 +11148,7 @@
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint]"
       DTS:CreationName=""
-      DTS:DTSID="{9FEAD47F-EDFD-4F97-A551-6CADB001A2BD}"
+      DTS:DTSID="{8B7AFEFD-2A6D-47B5-AA51-ECEECA6ECAA9}"
       DTS:From="Package\Ins TBLOG_PACKAGE + Max ID"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint"
@@ -11156,7 +11156,7 @@
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 1]"
       DTS:CreationName=""
-      DTS:DTSID="{2E049DDF-80B4-4335-B0B8-7E4874EDFE1A}"
+      DTS:DTSID="{4B04F71C-962F-4A42-8676-18FD94ECD9A6}"
       DTS:From="Package\STAGING LOAD"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 1"
@@ -11164,7 +11164,7 @@
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 2]"
       DTS:CreationName=""
-      DTS:DTSID="{56432168-C1A4-4A1B-B3E3-24C2C855C299}"
+      DTS:DTSID="{29E043DC-F770-4BF1-A42A-28E4FFBF6E13}"
       DTS:From="Package\Upd TBLOG_PACKAGE"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 2"
@@ -11172,7 +11172,7 @@
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 3]"
       DTS:CreationName=""
-      DTS:DTSID="{36CD146F-741B-44B7-84CC-082432A589AF}"
+      DTS:DTSID="{6D1F370A-D74C-45E5-9DD0-6A4CC0517483}"
       DTS:From="Package\Assign SOURCE_SYSTEM_ID"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 3"
@@ -11180,7 +11180,7 @@
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 4]"
       DTS:CreationName=""
-      DTS:DTSID="{9614C6D2-B2DB-4FB7-9556-EB1301597948}"
+      DTS:DTSID="{D20896DE-63EB-4D6A-AADE-EFC58E9E3757}"
       DTS:From="Package\Assign SITE_ID"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 4"
@@ -11188,7 +11188,7 @@
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 7]"
       DTS:CreationName=""
-      DTS:DTSID="{375A1BD6-57D3-49B4-82EE-7547A57C46F8}"
+      DTS:DTSID="{BB198855-8DC8-4A45-88BA-8D217F04B985}"
       DTS:From="Package\Last Upd TBLOG_PACKAGE"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 7"
@@ -11198,7 +11198,7 @@
     <DTS:EventHandler
       DTS:refId="Package.EventHandlers[OnError]"
       DTS:CreationName="OnError"
-      DTS:DTSID="{46EF492F-D961-4FE3-BA7B-56E1426039EC}"
+      DTS:DTSID="{284C15C8-8D2D-4E8A-B5AF-1589219A9EEB}"
       DTS:EventID="9110279"
       DTS:EventName="OnError"
       DTS:LocaleID="-1">
@@ -11206,7 +11206,7 @@
         <DTS:Variable
           DTS:CreationName=""
           DTS:Description="The propagate property of the event"
-          DTS:DTSID="{03B1157B-18F4-41FC-B4D4-826BE464DD2C}"
+          DTS:DTSID="{6BA78E6E-7F68-4068-94C0-6810B89BC180}"
           DTS:IncludeInDebugDump="6789"
           DTS:Namespace="System"
           DTS:ObjectName="Propagate">
@@ -11219,7 +11219,7 @@
           DTS:refId="Package.EventHandlers[OnError]\Email ERROR"
           DTS:CreationName="Microsoft.ExecuteSQLTask"
           DTS:Description="Execute SQL Task"
-          DTS:DTSID="{15eff937-ba3e-4439-868c-ddb8dc061428}"
+          DTS:DTSID="{28F63B6D-D75D-40F2-96E4-3395D97E7342}"
           DTS:ExecutableType="Microsoft.ExecuteSQLTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="Email ERROR"
@@ -11523,9 +11523,9 @@
           TopLeft="37.5,314.5" />
         <ContainerLayout
           HeaderHeight="43"
-          IsExpanded="True"
+          IsExpanded="False"
           PanelSize="515,612"
-          Size="515,655"
+          Size="515,43"
           Id="Package\STAGING LOAD\TBST_PRC_ANAGRAFICA_LOTTI"
           TopLeft="5.5,5.50000000000011" />
         <NodeLayout
@@ -11748,9 +11748,9 @@
           TopLeft="29.5,10.5" />
         <ContainerLayout
           HeaderHeight="43"
-          IsExpanded="True"
-          PanelSize="504,608"
-          Size="504,651"
+          IsExpanded="False"
+          PanelSize="584,711"
+          Size="584,43"
           Id="Package\STAGING LOAD\TBST_PRC_ARTICOLO"
           TopLeft="559.5,5.5" />
         <NodeLayout
@@ -11772,37 +11772,37 @@
         <NodeLayout
           Size="271,42"
           Id="Package\STAGING LOAD\TBST_PRC_ANAGRAFICA_FAMIGLIE\TBST_PRC_ANAGRAFICA_FAMIGLIE"
-          TopLeft="228,311.5" />
+          TopLeft="235,308.5" />
         <NodeLayout
           Size="212,42"
           Id="Package\STAGING LOAD\TBST_PRC_ANAGRAFICA_FAMIGLIE\Truncate STG TRG TABLE"
           TopLeft="5.50000000000003,209.5" />
         <EdgeLayout
           Id="Package\STAGING LOAD\TBST_PRC_ANAGRAFICA_FAMIGLIE.PrecedenceConstraints[Constraint]"
-          TopLeft="363.5,353.5">
+          TopLeft="370.5,350.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-8,60"
+              EndConnector="-15,63"
               Start="0,0"
-              End="-8,52.5">
+              End="-15,55.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,26" />
+                    End="0,27.5" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,26"
-                    Point2="0,30"
-                    Point3="-4,30" />
+                    Point1="0,27.5"
+                    Point2="0,31.5"
+                    Point3="-4,31.5" />
                   <mssgle:LineSegment
-                    End="-4,30" />
+                    End="-11,31.5" />
                   <mssgle:CubicBezierSegment
-                    Point1="-4,30"
-                    Point2="-8,30"
-                    Point3="-8,34" />
+                    Point1="-11,31.5"
+                    Point2="-15,31.5"
+                    Point3="-15,35.5" />
                   <mssgle:LineSegment
-                    End="-8,52.5" />
+                    End="-15,55.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -11907,26 +11907,26 @@
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="208.166666666667,60"
+              EndConnector="215.166666666667,57"
               Start="0,0"
-              End="208.166666666667,52.5">
+              End="215.166666666667,49.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,31.7887013939839" />
+                    End="0,29.9992663242847" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,31.7887013939839"
-                    Point2="0,35.7887013939839"
-                    Point3="4,35.7887013939839" />
+                    Point1="0,29.9992663242847"
+                    Point2="0,33.9992663242847"
+                    Point3="4,33.9992663242847" />
                   <mssgle:LineSegment
-                    End="204.166666666667,35.7887013939839" />
+                    End="211.166666666667,33.9992663242847" />
                   <mssgle:CubicBezierSegment
-                    Point1="204.166666666667,35.7887013939839"
-                    Point2="208.166666666667,35.7887013939839"
-                    Point3="208.166666666667,39.7887013939839" />
+                    Point1="211.166666666667,33.9992663242847"
+                    Point2="215.166666666667,33.9992663242847"
+                    Point3="215.166666666667,37.9992663242847" />
                   <mssgle:LineSegment
-                    End="208.166666666667,52.5" />
+                    End="215.166666666667,49.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -11941,26 +11941,26 @@
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="51.8333333333333,60"
+              EndConnector="58.8333333333333,57"
               Start="0,0"
-              End="51.8333333333333,52.5">
+              End="58.8333333333333,49.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,31.7887013939839" />
+                    End="0,29.9992663242847" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,31.7887013939839"
-                    Point2="0,35.7887013939839"
-                    Point3="4,35.7887013939839" />
+                    Point1="0,29.9992663242847"
+                    Point2="0,33.9992663242847"
+                    Point3="4,33.9992663242847" />
                   <mssgle:LineSegment
-                    End="47.8333333333333,35.7887013939839" />
+                    End="54.8333333333333,33.9992663242847" />
                   <mssgle:CubicBezierSegment
-                    Point1="47.8333333333333,35.7887013939839"
-                    Point2="51.8333333333333,35.7887013939839"
-                    Point3="51.8333333333333,39.7887013939839" />
+                    Point1="54.8333333333333,33.9992663242847"
+                    Point2="58.8333333333333,33.9992663242847"
+                    Point3="58.8333333333333,37.9992663242847" />
                   <mssgle:LineSegment
-                    End="51.8333333333333,52.5" />
+                    End="58.8333333333333,49.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -11974,14 +11974,14 @@
           ParentId="Package\STAGING LOAD\TBST_PRC_ANAGRAFICA_FAMIGLIE"
           FontInfo="{assembly:Null}"
           Size="194,40"
-          Id="6d3f57de-7b74-44ec-91ee-bc87a4f7eafc"
+          Id="4bfa6153-484e-48e2-a553-0927895f0723"
           TopLeft="35.5,310.5" />
         <AnnotationLayout
           Text="To be specify target table name"
           ParentId="Package\STAGING LOAD\TBST_PRC_ANAGRAFICA_FAMIGLIE"
           FontInfo="{assembly:Null}"
           Size="195,40"
-          Id="d4fcd34d-8d27-4a1d-bb6b-9f7c52a51de3"
+          Id="022c4c87-6712-43fa-9131-549d55d4a90d"
           TopLeft="29.5,10.5" />
         <ContainerLayout
           HeaderHeight="43"
@@ -11989,12 +11989,12 @@
           PanelSize="535,608"
           Size="535,651"
           Id="Package\STAGING LOAD\TBST_PRC_ANAGRAFICA_FAMIGLIE"
-          TopLeft="1123.5,5.5" />
+          TopLeft="600,55" />
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="1761,996"
-          Size="1761,1039"
+          PanelSize="1786,996"
+          Size="1786,1039"
           Id="Package\STAGING LOAD"
           TopLeft="206,271" />
         <NodeLayout
@@ -12025,13 +12025,13 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 1]"
-          TopLeft="1086.5,1310">
+          TopLeft="1099,1310">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-345.166666666667,-680.888888888889"
+              EndConnector="-357.666666666667,-680.888888888889"
               Start="0,0"
-              End="-345.166666666667,-673.388888888889">
+              End="-357.666666666667,-673.388888888889">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
@@ -12042,13 +12042,13 @@
                     Point2="0,-340.444444444445"
                     Point3="-4,-340.444444444445" />
                   <mssgle:LineSegment
-                    End="-341.166666666667,-340.444444444445" />
+                    End="-353.666666666667,-340.444444444445" />
                   <mssgle:CubicBezierSegment
-                    Point1="-341.166666666667,-340.444444444445"
-                    Point2="-345.166666666667,-340.444444444445"
-                    Point3="-345.166666666667,-344.444444444445" />
+                    Point1="-353.666666666667,-340.444444444445"
+                    Point2="-357.666666666667,-340.444444444445"
+                    Point3="-357.666666666667,-344.444444444445" />
                   <mssgle:LineSegment
-                    End="-345.166666666667,-673.388888888889" />
+                    End="-357.666666666667,-673.388888888889" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -12063,9 +12063,9 @@
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="337.555555555556,86.666666666667"
+              EndConnector="350.055555555556,86.666666666667"
               Start="0,0"
-              End="337.555555555556,79.166666666667">
+              End="350.055555555556,79.166666666667">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
@@ -12076,13 +12076,13 @@
                     Point2="0,43.3333333333335"
                     Point3="4,43.3333333333335" />
                   <mssgle:LineSegment
-                    End="333.555555555556,43.3333333333335" />
+                    End="346.055555555556,43.3333333333335" />
                   <mssgle:CubicBezierSegment
-                    Point1="333.555555555556,43.3333333333335"
-                    Point2="337.555555555556,43.3333333333335"
-                    Point3="337.555555555556,47.3333333333335" />
+                    Point1="346.055555555556,43.3333333333335"
+                    Point2="350.055555555556,43.3333333333335"
+                    Point3="350.055555555556,47.3333333333335" />
                   <mssgle:LineSegment
-                    End="337.555555555556,79.166666666667" />
+                    End="350.055555555556,79.166666666667" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -12526,41 +12526,41 @@
         <NodeLayout
           Size="181,42"
           Id="Package\STAGING LOAD\TBST_PRC_ANAGRAFICA_FAMIGLIE\TBST_PRC_ANAGRAFICA_FAMIGLIE\Add Technical Fields"
-          TopLeft="281,273" />
+          TopLeft="282,271" />
         <NodeLayout
           Size="157,42"
           Id="Package\STAGING LOAD\TBST_PRC_ANAGRAFICA_FAMIGLIE\TBST_PRC_ANAGRAFICA_FAMIGLIE\OLE DB Source"
-          TopLeft="288,56" />
+          TopLeft="555,74" />
         <NodeLayout
           Size="161,42"
           Id="Package\STAGING LOAD\TBST_PRC_ANAGRAFICA_FAMIGLIE\TBST_PRC_ANAGRAFICA_FAMIGLIE\Data Conversion"
-          TopLeft="302,174" />
+          TopLeft="619,170" />
         <EdgeLayout
           Id="Package\STAGING LOAD\TBST_PRC_ANAGRAFICA_FAMIGLIE\TBST_PRC_ANAGRAFICA_FAMIGLIE.Paths[OLE DB Source Output]"
-          TopLeft="366.5,98">
+          TopLeft="633.5,116">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="16,76"
+              EndConnector="66,54"
               Start="0,0"
-              End="16,68.5">
+              End="66,46.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,34" />
+                    End="0,23" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,34"
-                    Point2="0,38"
-                    Point3="4,38" />
+                    Point1="0,23"
+                    Point2="0,27"
+                    Point3="4,27" />
                   <mssgle:LineSegment
-                    End="12,38" />
+                    End="62,27" />
                   <mssgle:CubicBezierSegment
-                    Point1="12,38"
-                    Point2="16,38"
-                    Point3="16,42" />
+                    Point1="62,27"
+                    Point2="66,27"
+                    Point3="66,31" />
                   <mssgle:LineSegment
-                    End="16,68.5" />
+                    End="66,46.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -12571,30 +12571,30 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package\STAGING LOAD\TBST_PRC_ANAGRAFICA_FAMIGLIE\TBST_PRC_ANAGRAFICA_FAMIGLIE.Paths[Data Conversion Output]"
-          TopLeft="382.5,216">
+          TopLeft="699.5,212">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-11,57"
+              EndConnector="-327,59"
               Start="0,0"
-              End="-11,49.5">
+              End="-327,51.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,24.5" />
+                    End="0,25.5" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,24.5"
-                    Point2="0,28.5"
-                    Point3="-4,28.5" />
+                    Point1="0,25.5"
+                    Point2="0,29.5"
+                    Point3="-4,29.5" />
                   <mssgle:LineSegment
-                    End="-7,28.5" />
+                    End="-323,29.5" />
                   <mssgle:CubicBezierSegment
-                    Point1="-7,28.5"
-                    Point2="-11,28.5"
-                    Point3="-11,32.5" />
+                    Point1="-323,29.5"
+                    Point2="-327,29.5"
+                    Point3="-327,33.5" />
                   <mssgle:LineSegment
-                    End="-11,49.5" />
+                    End="-327,51.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -12606,33 +12606,33 @@
         <NodeLayout
           Size="177,42"
           Id="Package\STAGING LOAD\TBST_PRC_ANAGRAFICA_FAMIGLIE\TBST_PRC_ANAGRAFICA_FAMIGLIE\OLE DB Destination"
-          TopLeft="332,432" />
+          TopLeft="330,402" />
         <EdgeLayout
           Id="Package\STAGING LOAD\TBST_PRC_ANAGRAFICA_FAMIGLIE\TBST_PRC_ANAGRAFICA_FAMIGLIE.Paths[Derived Column Output]"
-          TopLeft="371.5,315">
+          TopLeft="372.5,313">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="49,117"
+              EndConnector="46,89"
               Start="0,0"
-              End="49,109.5">
+              End="46,81.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,54.5" />
+                    End="0,40.5" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,54.5"
-                    Point2="0,58.5"
-                    Point3="4,58.5" />
+                    Point1="0,40.5"
+                    Point2="0,44.5"
+                    Point3="4,44.5" />
                   <mssgle:LineSegment
-                    End="45,58.5" />
+                    End="42,44.5" />
                   <mssgle:CubicBezierSegment
-                    Point1="45,58.5"
-                    Point2="49,58.5"
-                    Point3="49,62.5" />
+                    Point1="42,44.5"
+                    Point2="46,44.5"
+                    Point3="46,48.5" />
                   <mssgle:LineSegment
-                    End="49,109.5" />
+                    End="46,81.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
