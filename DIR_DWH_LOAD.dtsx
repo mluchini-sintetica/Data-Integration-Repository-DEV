@@ -12,8 +12,8 @@
   DTS:ObjectName="DIR_DWH_LOAD"
   DTS:PackageType="5"
   DTS:ProtectionLevel="2"
-  DTS:VersionBuild="80"
-  DTS:VersionGUID="{768E82C3-B749-40E6-B537-0CE08377E690}">
+  DTS:VersionBuild="82"
+  DTS:VersionGUID="{777BE5C1-ED70-4B9A-A733-5292C557F856}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables>
@@ -120,6 +120,7 @@
           DTS:refId="Package\DIR_DWH_LOAD\AUDIT_TRAIL_DW"
           DTS:CreationName="Microsoft.ExecutePackageTask"
           DTS:Description="Execute Package Task"
+          DTS:Disabled="True"
           DTS:DTSID="{939A9BA3-73E2-413D-B1AB-B11C631D015B}"
           DTS:ExecutableType="Microsoft.ExecutePackageTask"
           DTS:FailPackageOnFailure="True"
@@ -134,12 +135,12 @@
               <PackageName>AUDIT_TRAIL_DW.dtsx</PackageName>
               <EncryptedData
                 Type="http://www.w3.org/2001/04/xmlenc#Element"
-                Salt="wF8K5IB43PM="
-                IV="0kRAKq+KtYHktoAGnlAkYg==" xmlns="http://www.w3.org/2001/04/xmlenc#">
+                Salt="62MAoHBe0cs="
+                IV="N58ircgbEbmkwwUticNtng==" xmlns="http://www.w3.org/2001/04/xmlenc#">
                 <EncryptionMethod
                   Algorithm="http://www.w3.org/2001/04/xmlenc#aes256-cbc" />
                 <CipherData>
-                  <CipherValue>0kRAKq+KtYHktoAGnlAkYpc63ME30u1fxFy4BTWHdEnYRMG1BDBRF8hws7dLcPYw1PPU6y3SnvP3T7nV5O0VeNgZOaJNsT1LQnZSCFVPEOE=</CipherValue>
+                  <CipherValue>N58ircgbEbmkwwUticNtnsYtTvgAklOh8Fp8tvkYp988CUa/Ri3o96vtpj0R4kwuaY/MEfigksWkr+KiTcoRQBtIoEw3VpDazhbxRauNxPA=</CipherValue>
                 </CipherData>
               </EncryptedData>
             </ExecutePackageTask>
@@ -167,6 +168,7 @@
           DTS:refId="Package\DIR_DWH_LOAD\AUDIT_TRAIL_STG"
           DTS:CreationName="Microsoft.ExecutePackageTask"
           DTS:Description="Execute Package Task"
+          DTS:Disabled="True"
           DTS:DTSID="{725CECDE-0195-46F3-8C2D-E0857A81E370}"
           DTS:ExecutableType="Microsoft.ExecutePackageTask"
           DTS:FailPackageOnFailure="True"
@@ -186,6 +188,7 @@
           DTS:refId="Package\DIR_DWH_LOAD\PARCEL_MFG_DWAN"
           DTS:CreationName="Microsoft.ExecutePackageTask"
           DTS:Description="Execute Package Task"
+          DTS:Disabled="True"
           DTS:DTSID="{C06F19E6-1E77-463D-B623-78F51A4A11F8}"
           DTS:ExecutableType="Microsoft.ExecutePackageTask"
           DTS:FailPackageOnFailure="True"
@@ -200,12 +203,12 @@
               <PackageName>PARCEL_MFG_DWAN.dtsx</PackageName>
               <EncryptedData
                 Type="http://www.w3.org/2001/04/xmlenc#Element"
-                Salt="0ncodZUg4Cc="
-                IV="b9J8SkCme/W4W3KCLMJsNg==" xmlns="http://www.w3.org/2001/04/xmlenc#">
+                Salt="2xIBjZuKAbk="
+                IV="9VaLTDl0ZGPy7tuZikO1jA==" xmlns="http://www.w3.org/2001/04/xmlenc#">
                 <EncryptionMethod
                   Algorithm="http://www.w3.org/2001/04/xmlenc#aes256-cbc" />
                 <CipherData>
-                  <CipherValue>b9J8SkCme/W4W3KCLMJsNnoOm0W9RU6LFb1Qp4Glb3/uW9IivcgyaRQGhUH+SKpdoT3nCyujcyQX0Y/ulpyx+7g7BjpOUHFMEdUst9MSIHA=</CipherValue>
+                  <CipherValue>9VaLTDl0ZGPy7tuZikO1jICedNvo6KVXXYjFPUfyx1G2CbC3tGKWrLNX84yHFJcL+a4AG0h1gRHN9csaN1tBV6UaVAx81kIXBIFoGgpPBok=</CipherValue>
                 </CipherData>
               </EncryptedData>
             </ExecutePackageTask>
@@ -215,6 +218,7 @@
           DTS:refId="Package\DIR_DWH_LOAD\PARCEL_MFG_STG"
           DTS:CreationName="Microsoft.ExecutePackageTask"
           DTS:Description="Execute Package Task"
+          DTS:Disabled="True"
           DTS:DTSID="{B1DFB4EA-0676-4742-9B13-C8E741C1ABB1}"
           DTS:ExecutableType="Microsoft.ExecutePackageTask"
           DTS:FailPackageOnFailure="True"
@@ -234,6 +238,7 @@
           DTS:refId="Package\DIR_DWH_LOAD\SEA_VISION_DWFT"
           DTS:CreationName="Microsoft.ExecutePackageTask"
           DTS:Description="Execute Package Task"
+          DTS:Disabled="True"
           DTS:DTSID="{75B76FFB-D3FE-44CB-8EB1-498CB2A9AFD8}"
           DTS:ExecutableType="Microsoft.ExecutePackageTask"
           DTS:FailPackageOnFailure="True"
@@ -248,12 +253,12 @@
               <PackageName>SEA_VISION_DWFT.dtsx</PackageName>
               <EncryptedData
                 Type="http://www.w3.org/2001/04/xmlenc#Element"
-                Salt="2ph9twdNLPM="
-                IV="M+0rinBtVFTbHn3W35LKTA==" xmlns="http://www.w3.org/2001/04/xmlenc#">
+                Salt="bbC63IV12/4="
+                IV="pLcjwX0baenhjUfyLieV/w==" xmlns="http://www.w3.org/2001/04/xmlenc#">
                 <EncryptionMethod
                   Algorithm="http://www.w3.org/2001/04/xmlenc#aes256-cbc" />
                 <CipherData>
-                  <CipherValue>M+0rinBtVFTbHn3W35LKTBjuffpCIB2bwr8w+0llx6W8Jj2vUQ0/Ent0CRxbTOhlN6dD0Y+veOqEsnuQswKIH7KaOtM+UF6JrOyuhllP8uE=</CipherValue>
+                  <CipherValue>pLcjwX0baenhjUfyLieV/6xaWIAazP1bvzfJr3KRDZx/l5PRsrPnQNzugyvUn3WagYvSr+txx0ssMxWHX3jaYQcCbleFvzUwCq4wAXKzZRo=</CipherValue>
                 </CipherData>
               </EncryptedData>
             </ExecutePackageTask>
@@ -263,6 +268,7 @@
           DTS:refId="Package\DIR_DWH_LOAD\SEA_VISION_STG"
           DTS:CreationName="Microsoft.ExecutePackageTask"
           DTS:Description="Execute Package Task"
+          DTS:Disabled="True"
           DTS:DTSID="{218A238B-658B-4E0F-8C1E-08D766D93BCB}"
           DTS:ExecutableType="Microsoft.ExecutePackageTask"
           DTS:FailPackageOnFailure="True"
