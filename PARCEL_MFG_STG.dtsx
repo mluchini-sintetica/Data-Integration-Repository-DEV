@@ -13,8 +13,8 @@
   DTS:ObjectName="PARCEL_MFG_STG"
   DTS:PackageType="5"
   DTS:ProtectionLevel="2"
-  DTS:VersionBuild="302"
-  DTS:VersionGUID="{5F08EBCE-7622-40BD-A178-CD436E660747}">
+  DTS:VersionBuild="304"
+  DTS:VersionGUID="{A8F7FCEF-E4BD-49E4-A0F6-53A33FD58546}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Configurations>
@@ -182,7 +182,7 @@
       DTS:LocaleID="-1"
       DTS:ObjectName="Assign SITE_ID"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="0">
+      DTS:ThreadHint="1">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -210,7 +210,7 @@
       DTS:LocaleID="-1"
       DTS:ObjectName="Assign SOURCE_SYSTEM_ID"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="1">
+      DTS:ThreadHint="0">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -441,7 +441,7 @@
               DTS:LocaleID="-1"
               DTS:ObjectName="Assign TABLE_TARGET_CD"
               DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-              DTS:ThreadHint="4">
+              DTS:ThreadHint="0">
               <DTS:Variables />
               <DTS:ObjectData>
                 <SQLTask:SqlTaskData
@@ -463,7 +463,7 @@
               DTS:LocaleID="-1"
               DTS:ObjectName="Ins_Upd TBLOG_PACKAGE_TABLE"
               DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-              DTS:ThreadHint="4">
+              DTS:ThreadHint="0">
               <DTS:Variables />
               <DTS:ObjectData>
                 <SQLTask:SqlTaskData
@@ -535,7 +535,7 @@
               DTS:LocaleID="-1"
               DTS:ObjectName="Last Upd TBLOG_PACKAGE_TABLE"
               DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-              DTS:ThreadHint="4">
+              DTS:ThreadHint="0">
               <DTS:Variables />
               <DTS:ObjectData>
                 <SQLTask:SqlTaskData
@@ -571,7 +571,7 @@
               DTS:LocaleID="-1"
               DTS:ObjectName="MAX TABLE ID"
               DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-              DTS:ThreadHint="4">
+              DTS:ThreadHint="1">
               <DTS:Variables />
               <DTS:ObjectData>
                 <SQLTask:SqlTaskData
@@ -1727,7 +1727,7 @@
               DTS:LocaleID="-1"
               DTS:ObjectName="Truncate STG TRG TABLE"
               DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-              DTS:ThreadHint="5">
+              DTS:ThreadHint="0">
               <DTS:Variables />
               <DTS:PropertyExpression
                 DTS:Name="SqlStatementSource">"truncate table " + @[User::out_TABLE_TARGET_CD]</DTS:PropertyExpression>
@@ -1853,7 +1853,7 @@
               DTS:LocaleID="-1"
               DTS:ObjectName="Assign TABLE_TARGET_CD"
               DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-              DTS:ThreadHint="0">
+              DTS:ThreadHint="2">
               <DTS:Variables />
               <DTS:ObjectData>
                 <SQLTask:SqlTaskData
@@ -1875,7 +1875,7 @@
               DTS:LocaleID="-1"
               DTS:ObjectName="Ins_Upd TBLOG_PACKAGE_TABLE"
               DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-              DTS:ThreadHint="0">
+              DTS:ThreadHint="2">
               <DTS:Variables />
               <DTS:ObjectData>
                 <SQLTask:SqlTaskData
@@ -1947,7 +1947,7 @@
               DTS:LocaleID="-1"
               DTS:ObjectName="Last Upd TBLOG_PACKAGE_TABLE"
               DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-              DTS:ThreadHint="0">
+              DTS:ThreadHint="2">
               <DTS:Variables />
               <DTS:ObjectData>
                 <SQLTask:SqlTaskData
@@ -1983,7 +1983,7 @@
               DTS:LocaleID="-1"
               DTS:ObjectName="MAX TABLE ID"
               DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-              DTS:ThreadHint="0">
+              DTS:ThreadHint="3">
               <DTS:Variables />
               <DTS:ObjectData>
                 <SQLTask:SqlTaskData
@@ -3611,7 +3611,7 @@
               DTS:LocaleID="-1"
               DTS:ObjectName="Truncate STG TRG TABLE"
               DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-              DTS:ThreadHint="1">
+              DTS:ThreadHint="2">
               <DTS:Variables />
               <DTS:PropertyExpression
                 DTS:Name="SqlStatementSource">"truncate table " + @[User::out_TABLE_TARGET_CD]</DTS:PropertyExpression>
@@ -3737,7 +3737,7 @@
               DTS:LocaleID="-1"
               DTS:ObjectName="Assign TABLE_TARGET_CD"
               DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-              DTS:ThreadHint="2">
+              DTS:ThreadHint="4">
               <DTS:Variables />
               <DTS:ObjectData>
                 <SQLTask:SqlTaskData
@@ -3759,7 +3759,7 @@
               DTS:LocaleID="-1"
               DTS:ObjectName="Ins_Upd TBLOG_PACKAGE_TABLE"
               DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-              DTS:ThreadHint="2">
+              DTS:ThreadHint="4">
               <DTS:Variables />
               <DTS:ObjectData>
                 <SQLTask:SqlTaskData
@@ -3831,7 +3831,7 @@
               DTS:LocaleID="-1"
               DTS:ObjectName="Last Upd TBLOG_PACKAGE_TABLE"
               DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-              DTS:ThreadHint="2">
+              DTS:ThreadHint="4">
               <DTS:Variables />
               <DTS:ObjectData>
                 <SQLTask:SqlTaskData
@@ -3867,7 +3867,7 @@
               DTS:LocaleID="-1"
               DTS:ObjectName="MAX TABLE ID"
               DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-              DTS:ThreadHint="2">
+              DTS:ThreadHint="4">
               <DTS:Variables />
               <DTS:ObjectData>
                 <SQLTask:SqlTaskData
@@ -11020,7 +11020,7 @@
               DTS:LocaleID="-1"
               DTS:ObjectName="Truncate STG TRG TABLE"
               DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-              DTS:ThreadHint="3">
+              DTS:ThreadHint="5">
               <DTS:Variables />
               <DTS:PropertyExpression
                 DTS:Name="SqlStatementSource">"truncate table " + @[User::out_TABLE_TARGET_CD]</DTS:PropertyExpression>
@@ -11291,6 +11291,243 @@
           Size="222,42"
           Id="Package\Last Upd TBLOG_PACKAGE"
           TopLeft="630.333333333333,629.111111111111" />
+        <NodeLayout
+          Size="222,42"
+          Id="Package\STAGING LOAD\TBST_PRC_ANAGRAFICA_FAMIGLIE\Assign TABLE_TARGET_CD"
+          TopLeft="244.5,5.5" />
+        <NodeLayout
+          Size="260,42"
+          Id="Package\STAGING LOAD\TBST_PRC_ANAGRAFICA_FAMIGLIE\Ins_Upd TBLOG_PACKAGE_TABLE"
+          TopLeft="225.5,107.5" />
+        <NodeLayout
+          Size="263,43"
+          Id="Package\STAGING LOAD\TBST_PRC_ANAGRAFICA_FAMIGLIE\Last Upd TBLOG_PACKAGE_TABLE"
+          TopLeft="224,413.5" />
+        <NodeLayout
+          Size="155,42"
+          Id="Package\STAGING LOAD\TBST_PRC_ANAGRAFICA_FAMIGLIE\MAX TABLE ID"
+          TopLeft="278,209.5" />
+        <NodeLayout
+          Size="271,42"
+          Id="Package\STAGING LOAD\TBST_PRC_ANAGRAFICA_FAMIGLIE\TBST_PRC_ANAGRAFICA_FAMIGLIE"
+          TopLeft="228,311.5" />
+        <NodeLayout
+          Size="212,42"
+          Id="Package\STAGING LOAD\TBST_PRC_ANAGRAFICA_FAMIGLIE\Truncate STG TRG TABLE"
+          TopLeft="5.50000000000003,209.5" />
+        <EdgeLayout
+          Id="Package\STAGING LOAD\TBST_PRC_ANAGRAFICA_FAMIGLIE.PrecedenceConstraints[Constraint]"
+          TopLeft="363.5,353.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-8,60"
+              Start="0,0"
+              End="-8,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,26" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,26"
+                    Point2="0,30"
+                    Point3="-4,30" />
+                  <mssgle:LineSegment
+                    End="-4,30" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-4,30"
+                    Point2="-8,30"
+                    Point3="-8,34" />
+                  <mssgle:LineSegment
+                    End="-8,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\STAGING LOAD\TBST_PRC_ANAGRAFICA_FAMIGLIE.PrecedenceConstraints[Constraint 1]"
+          TopLeft="313.5,149.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-202,60"
+              Start="0,0"
+              End="-202,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,20.2201834862385" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,20.2201834862385"
+                    Point2="0,24.2201834862385"
+                    Point3="-4,24.2201834862385" />
+                  <mssgle:LineSegment
+                    End="-198,24.2201834862385" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-198,24.2201834862385"
+                    Point2="-202,24.2201834862385"
+                    Point3="-202,28.2201834862385" />
+                  <mssgle:LineSegment
+                    End="-202,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\STAGING LOAD\TBST_PRC_ANAGRAFICA_FAMIGLIE.PrecedenceConstraints[Constraint 2]"
+          TopLeft="355.5,47.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\STAGING LOAD\TBST_PRC_ANAGRAFICA_FAMIGLIE.PrecedenceConstraints[Constraint 3]"
+          TopLeft="397.5,149.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-42,60"
+              Start="0,0"
+              End="-42,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,20.2201834862385" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,20.2201834862385"
+                    Point2="0,24.2201834862385"
+                    Point3="-4,24.2201834862385" />
+                  <mssgle:LineSegment
+                    End="-38,24.2201834862385" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-38,24.2201834862385"
+                    Point2="-42,24.2201834862385"
+                    Point3="-42,28.2201834862385" />
+                  <mssgle:LineSegment
+                    End="-42,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\STAGING LOAD\TBST_PRC_ANAGRAFICA_FAMIGLIE.PrecedenceConstraints[Constraint 4]"
+          TopLeft="111.5,251.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="208.166666666667,60"
+              Start="0,0"
+              End="208.166666666667,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,31.7887013939839" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,31.7887013939839"
+                    Point2="0,35.7887013939839"
+                    Point3="4,35.7887013939839" />
+                  <mssgle:LineSegment
+                    End="204.166666666667,35.7887013939839" />
+                  <mssgle:CubicBezierSegment
+                    Point1="204.166666666667,35.7887013939839"
+                    Point2="208.166666666667,35.7887013939839"
+                    Point3="208.166666666667,39.7887013939839" />
+                  <mssgle:LineSegment
+                    End="208.166666666667,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\STAGING LOAD\TBST_PRC_ANAGRAFICA_FAMIGLIE.PrecedenceConstraints[Constraint 5]"
+          TopLeft="355.5,251.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="51.8333333333333,60"
+              Start="0,0"
+              End="51.8333333333333,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,31.7887013939839" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,31.7887013939839"
+                    Point2="0,35.7887013939839"
+                    Point3="4,35.7887013939839" />
+                  <mssgle:LineSegment
+                    End="47.8333333333333,35.7887013939839" />
+                  <mssgle:CubicBezierSegment
+                    Point1="47.8333333333333,35.7887013939839"
+                    Point2="51.8333333333333,35.7887013939839"
+                    Point3="51.8333333333333,39.7887013939839" />
+                  <mssgle:LineSegment
+                    End="51.8333333333333,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <AnnotationLayout
+          Text="To be modified according table"
+          ParentId="Package\STAGING LOAD\TBST_PRC_ANAGRAFICA_FAMIGLIE"
+          FontInfo="{assembly:Null}"
+          Size="194,40"
+          Id="6d3f57de-7b74-44ec-91ee-bc87a4f7eafc"
+          TopLeft="35.5,310.5" />
+        <AnnotationLayout
+          Text="To be specify target table name"
+          ParentId="Package\STAGING LOAD\TBST_PRC_ANAGRAFICA_FAMIGLIE"
+          FontInfo="{assembly:Null}"
+          Size="195,40"
+          Id="d4fcd34d-8d27-4a1d-bb6b-9f7c52a51de3"
+          TopLeft="29.5,10.5" />
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="535,608"
+          Size="535,651"
+          Id="Package\STAGING LOAD\TBST_PRC_ANAGRAFICA_FAMIGLIE"
+          TopLeft="1123.5,5.5" />
         <NodeLayout
           Size="222,42"
           Id="Package\STAGING LOAD\TBST_PRC_ANAGRAFICA_LOTTI\Assign TABLE_TARGET_CD"
@@ -11753,243 +11990,6 @@
           Size="504,651"
           Id="Package\STAGING LOAD\TBST_PRC_ARTICOLO"
           TopLeft="559.5,5.5" />
-        <NodeLayout
-          Size="222,42"
-          Id="Package\STAGING LOAD\TBST_PRC_ANAGRAFICA_FAMIGLIE\Assign TABLE_TARGET_CD"
-          TopLeft="244.5,5.5" />
-        <NodeLayout
-          Size="260,42"
-          Id="Package\STAGING LOAD\TBST_PRC_ANAGRAFICA_FAMIGLIE\Ins_Upd TBLOG_PACKAGE_TABLE"
-          TopLeft="225.5,107.5" />
-        <NodeLayout
-          Size="263,43"
-          Id="Package\STAGING LOAD\TBST_PRC_ANAGRAFICA_FAMIGLIE\Last Upd TBLOG_PACKAGE_TABLE"
-          TopLeft="224,413.5" />
-        <NodeLayout
-          Size="155,42"
-          Id="Package\STAGING LOAD\TBST_PRC_ANAGRAFICA_FAMIGLIE\MAX TABLE ID"
-          TopLeft="278,209.5" />
-        <NodeLayout
-          Size="271,42"
-          Id="Package\STAGING LOAD\TBST_PRC_ANAGRAFICA_FAMIGLIE\TBST_PRC_ANAGRAFICA_FAMIGLIE"
-          TopLeft="228,311.5" />
-        <NodeLayout
-          Size="212,42"
-          Id="Package\STAGING LOAD\TBST_PRC_ANAGRAFICA_FAMIGLIE\Truncate STG TRG TABLE"
-          TopLeft="5.50000000000003,209.5" />
-        <EdgeLayout
-          Id="Package\STAGING LOAD\TBST_PRC_ANAGRAFICA_FAMIGLIE.PrecedenceConstraints[Constraint]"
-          TopLeft="363.5,353.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-8,60"
-              Start="0,0"
-              End="-8,52.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,26" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,26"
-                    Point2="0,30"
-                    Point3="-4,30" />
-                  <mssgle:LineSegment
-                    End="-4,30" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-4,30"
-                    Point2="-8,30"
-                    Point3="-8,34" />
-                  <mssgle:LineSegment
-                    End="-8,52.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\STAGING LOAD\TBST_PRC_ANAGRAFICA_FAMIGLIE.PrecedenceConstraints[Constraint 1]"
-          TopLeft="313.5,149.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-202,60"
-              Start="0,0"
-              End="-202,52.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,20.2201834862385" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,20.2201834862385"
-                    Point2="0,24.2201834862385"
-                    Point3="-4,24.2201834862385" />
-                  <mssgle:LineSegment
-                    End="-198,24.2201834862385" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-198,24.2201834862385"
-                    Point2="-202,24.2201834862385"
-                    Point3="-202,28.2201834862385" />
-                  <mssgle:LineSegment
-                    End="-202,52.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\STAGING LOAD\TBST_PRC_ANAGRAFICA_FAMIGLIE.PrecedenceConstraints[Constraint 2]"
-          TopLeft="355.5,47.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,60"
-              Start="0,0"
-              End="0,52.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,52.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\STAGING LOAD\TBST_PRC_ANAGRAFICA_FAMIGLIE.PrecedenceConstraints[Constraint 3]"
-          TopLeft="397.5,149.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-42,60"
-              Start="0,0"
-              End="-42,52.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,20.2201834862385" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,20.2201834862385"
-                    Point2="0,24.2201834862385"
-                    Point3="-4,24.2201834862385" />
-                  <mssgle:LineSegment
-                    End="-38,24.2201834862385" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-38,24.2201834862385"
-                    Point2="-42,24.2201834862385"
-                    Point3="-42,28.2201834862385" />
-                  <mssgle:LineSegment
-                    End="-42,52.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\STAGING LOAD\TBST_PRC_ANAGRAFICA_FAMIGLIE.PrecedenceConstraints[Constraint 4]"
-          TopLeft="111.5,251.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="208.166666666667,60"
-              Start="0,0"
-              End="208.166666666667,52.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,31.7887013939839" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,31.7887013939839"
-                    Point2="0,35.7887013939839"
-                    Point3="4,35.7887013939839" />
-                  <mssgle:LineSegment
-                    End="204.166666666667,35.7887013939839" />
-                  <mssgle:CubicBezierSegment
-                    Point1="204.166666666667,35.7887013939839"
-                    Point2="208.166666666667,35.7887013939839"
-                    Point3="208.166666666667,39.7887013939839" />
-                  <mssgle:LineSegment
-                    End="208.166666666667,52.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\STAGING LOAD\TBST_PRC_ANAGRAFICA_FAMIGLIE.PrecedenceConstraints[Constraint 5]"
-          TopLeft="355.5,251.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="51.8333333333333,60"
-              Start="0,0"
-              End="51.8333333333333,52.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,31.7887013939839" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,31.7887013939839"
-                    Point2="0,35.7887013939839"
-                    Point3="4,35.7887013939839" />
-                  <mssgle:LineSegment
-                    End="47.8333333333333,35.7887013939839" />
-                  <mssgle:CubicBezierSegment
-                    Point1="47.8333333333333,35.7887013939839"
-                    Point2="51.8333333333333,35.7887013939839"
-                    Point3="51.8333333333333,39.7887013939839" />
-                  <mssgle:LineSegment
-                    End="51.8333333333333,52.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <AnnotationLayout
-          Text="To be modified according table"
-          ParentId="Package\STAGING LOAD\TBST_PRC_ANAGRAFICA_FAMIGLIE"
-          FontInfo="{assembly:Null}"
-          Size="194,40"
-          Id="6d3f57de-7b74-44ec-91ee-bc87a4f7eafc"
-          TopLeft="35.5,310.5" />
-        <AnnotationLayout
-          Text="To be specify target table name"
-          ParentId="Package\STAGING LOAD\TBST_PRC_ANAGRAFICA_FAMIGLIE"
-          FontInfo="{assembly:Null}"
-          Size="195,40"
-          Id="d4fcd34d-8d27-4a1d-bb6b-9f7c52a51de3"
-          TopLeft="29.5,10.5" />
-        <ContainerLayout
-          HeaderHeight="43"
-          IsExpanded="True"
-          PanelSize="535,608"
-          Size="535,651"
-          Id="Package\STAGING LOAD\TBST_PRC_ANAGRAFICA_FAMIGLIE"
-          TopLeft="1123.5,5.5" />
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
@@ -12208,6 +12208,170 @@
       </GraphLayout>
     </LayoutInfo>
   </DtsEventHandler>
+  <DtsEventHandler
+    design-time-name="Package\STAGING LOAD\TBST_PRC_ANAGRAFICA_FAMIGLIE.EventHandlers[OnPreExecute]">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="134,42"
+          Id="{CA0A6374-42C9-44B3-B808-C3C7F7A463CC}"
+          TopLeft="265,85" />
+      </GraphLayout>
+    </LayoutInfo>
+  </DtsEventHandler>
+  <TaskHost
+    design-time-name="Package\STAGING LOAD\TBST_PRC_ANAGRAFICA_FAMIGLIE\TBST_PRC_ANAGRAFICA_FAMIGLIE">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="181,42"
+          Id="Package\STAGING LOAD\TBST_PRC_ANAGRAFICA_FAMIGLIE\TBST_PRC_ANAGRAFICA_FAMIGLIE\Add Technical Fields"
+          TopLeft="281,273" />
+        <NodeLayout
+          Size="157,42"
+          Id="Package\STAGING LOAD\TBST_PRC_ANAGRAFICA_FAMIGLIE\TBST_PRC_ANAGRAFICA_FAMIGLIE\OLE DB Source"
+          TopLeft="288,56" />
+        <NodeLayout
+          Size="161,42"
+          Id="Package\STAGING LOAD\TBST_PRC_ANAGRAFICA_FAMIGLIE\TBST_PRC_ANAGRAFICA_FAMIGLIE\Data Conversion"
+          TopLeft="302,174" />
+        <EdgeLayout
+          Id="Package\STAGING LOAD\TBST_PRC_ANAGRAFICA_FAMIGLIE\TBST_PRC_ANAGRAFICA_FAMIGLIE.Paths[OLE DB Source Output]"
+          TopLeft="366.5,98">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="16,76"
+              Start="0,0"
+              End="16,68.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,34" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,34"
+                    Point2="0,38"
+                    Point3="4,38" />
+                  <mssgle:LineSegment
+                    End="12,38" />
+                  <mssgle:CubicBezierSegment
+                    Point1="12,38"
+                    Point2="16,38"
+                    Point3="16,42" />
+                  <mssgle:LineSegment
+                    End="16,68.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\STAGING LOAD\TBST_PRC_ANAGRAFICA_FAMIGLIE\TBST_PRC_ANAGRAFICA_FAMIGLIE.Paths[Data Conversion Output]"
+          TopLeft="382.5,216">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-11,57"
+              Start="0,0"
+              End="-11,49.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,24.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,24.5"
+                    Point2="0,28.5"
+                    Point3="-4,28.5" />
+                  <mssgle:LineSegment
+                    End="-7,28.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-7,28.5"
+                    Point2="-11,28.5"
+                    Point3="-11,32.5" />
+                  <mssgle:LineSegment
+                    End="-11,49.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="177,42"
+          Id="Package\STAGING LOAD\TBST_PRC_ANAGRAFICA_FAMIGLIE\TBST_PRC_ANAGRAFICA_FAMIGLIE\OLE DB Destination"
+          TopLeft="332,432" />
+        <EdgeLayout
+          Id="Package\STAGING LOAD\TBST_PRC_ANAGRAFICA_FAMIGLIE\TBST_PRC_ANAGRAFICA_FAMIGLIE.Paths[Derived Column Output]"
+          TopLeft="371.5,315">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="49,117"
+              Start="0,0"
+              End="49,109.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,54.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,54.5"
+                    Point2="0,58.5"
+                    Point3="4,58.5" />
+                  <mssgle:LineSegment
+                    End="45,58.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="45,58.5"
+                    Point2="49,58.5"
+                    Point3="49,62.5" />
+                  <mssgle:LineSegment
+                    End="49,109.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\STAGING LOAD\TBST_PRC_ANAGRAFICA_FAMIGLIE\TBST_PRC_ANAGRAFICA_FAMIGLIE\OLE DB Source">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\STAGING LOAD\TBST_PRC_ANAGRAFICA_FAMIGLIE\TBST_PRC_ANAGRAFICA_FAMIGLIE\OLE DB Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
   <DtsEventHandler
     design-time-name="Package\STAGING LOAD\TBST_PRC_ANAGRAFICA_LOTTI.EventHandlers[OnPreExecute]">
     <LayoutInfo>
@@ -12495,170 +12659,6 @@
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
     design-time-name="Package\STAGING LOAD\TBST_PRC_ARTICOLO\TBST_PRC_ARTICOLO\OLE DB Source">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <DtsEventHandler
-    design-time-name="Package\STAGING LOAD\TBST_PRC_ANAGRAFICA_FAMIGLIE.EventHandlers[OnPreExecute]">
-    <LayoutInfo>
-      <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
-        <NodeLayout
-          Size="134,42"
-          Id="{CA0A6374-42C9-44B3-B808-C3C7F7A463CC}"
-          TopLeft="265,85" />
-      </GraphLayout>
-    </LayoutInfo>
-  </DtsEventHandler>
-  <TaskHost
-    design-time-name="Package\STAGING LOAD\TBST_PRC_ANAGRAFICA_FAMIGLIE\TBST_PRC_ANAGRAFICA_FAMIGLIE">
-    <LayoutInfo>
-      <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
-        <NodeLayout
-          Size="181,42"
-          Id="Package\STAGING LOAD\TBST_PRC_ANAGRAFICA_FAMIGLIE\TBST_PRC_ANAGRAFICA_FAMIGLIE\Add Technical Fields"
-          TopLeft="281,273" />
-        <NodeLayout
-          Size="157,42"
-          Id="Package\STAGING LOAD\TBST_PRC_ANAGRAFICA_FAMIGLIE\TBST_PRC_ANAGRAFICA_FAMIGLIE\OLE DB Source"
-          TopLeft="288,56" />
-        <NodeLayout
-          Size="161,42"
-          Id="Package\STAGING LOAD\TBST_PRC_ANAGRAFICA_FAMIGLIE\TBST_PRC_ANAGRAFICA_FAMIGLIE\Data Conversion"
-          TopLeft="302,174" />
-        <EdgeLayout
-          Id="Package\STAGING LOAD\TBST_PRC_ANAGRAFICA_FAMIGLIE\TBST_PRC_ANAGRAFICA_FAMIGLIE.Paths[OLE DB Source Output]"
-          TopLeft="366.5,98">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="16,76"
-              Start="0,0"
-              End="16,68.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,34" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,34"
-                    Point2="0,38"
-                    Point3="4,38" />
-                  <mssgle:LineSegment
-                    End="12,38" />
-                  <mssgle:CubicBezierSegment
-                    Point1="12,38"
-                    Point2="16,38"
-                    Point3="16,42" />
-                  <mssgle:LineSegment
-                    End="16,68.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\STAGING LOAD\TBST_PRC_ANAGRAFICA_FAMIGLIE\TBST_PRC_ANAGRAFICA_FAMIGLIE.Paths[Data Conversion Output]"
-          TopLeft="382.5,216">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-11,57"
-              Start="0,0"
-              End="-11,49.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,24.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,24.5"
-                    Point2="0,28.5"
-                    Point3="-4,28.5" />
-                  <mssgle:LineSegment
-                    End="-7,28.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-7,28.5"
-                    Point2="-11,28.5"
-                    Point3="-11,32.5" />
-                  <mssgle:LineSegment
-                    End="-11,49.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="177,42"
-          Id="Package\STAGING LOAD\TBST_PRC_ANAGRAFICA_FAMIGLIE\TBST_PRC_ANAGRAFICA_FAMIGLIE\OLE DB Destination"
-          TopLeft="332,432" />
-        <EdgeLayout
-          Id="Package\STAGING LOAD\TBST_PRC_ANAGRAFICA_FAMIGLIE\TBST_PRC_ANAGRAFICA_FAMIGLIE.Paths[Derived Column Output]"
-          TopLeft="371.5,315">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="49,117"
-              Start="0,0"
-              End="49,109.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,54.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,54.5"
-                    Point2="0,58.5"
-                    Point3="4,58.5" />
-                  <mssgle:LineSegment
-                    End="45,58.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="45,58.5"
-                    Point2="49,58.5"
-                    Point3="49,62.5" />
-                  <mssgle:LineSegment
-                    End="49,109.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-      </GraphLayout>
-    </LayoutInfo>
-  </TaskHost>
-  <PipelineComponentMetadata
-    design-time-name="Package\STAGING LOAD\TBST_PRC_ANAGRAFICA_FAMIGLIE\TBST_PRC_ANAGRAFICA_FAMIGLIE\OLE DB Source">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\STAGING LOAD\TBST_PRC_ANAGRAFICA_FAMIGLIE\TBST_PRC_ANAGRAFICA_FAMIGLIE\OLE DB Destination">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
