@@ -12,8 +12,8 @@
   DTS:ObjectName="DIR_DWH_LOAD"
   DTS:PackageType="5"
   DTS:ProtectionLevel="2"
-  DTS:VersionBuild="95"
-  DTS:VersionGUID="{5C40EAC4-7E37-4505-9D97-4FDE8457ACFB}">
+  DTS:VersionBuild="101"
+  DTS:VersionGUID="{81ACB749-1F40-4611-B444-2C9D05F066DA}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables>
@@ -134,12 +134,12 @@
               <PackageName>AUDIT_TRAIL_DW.dtsx</PackageName>
               <EncryptedData
                 Type="http://www.w3.org/2001/04/xmlenc#Element"
-                Salt="CPfJ6CXPWLU="
-                IV="/NaYlNKt61ivAr9Fg4PMCw==" xmlns="http://www.w3.org/2001/04/xmlenc#">
+                Salt="mbu+iN2AiXQ="
+                IV="rPUS9okxUFZVQb6QLNZ8yw==" xmlns="http://www.w3.org/2001/04/xmlenc#">
                 <EncryptionMethod
                   Algorithm="http://www.w3.org/2001/04/xmlenc#aes256-cbc" />
                 <CipherData>
-                  <CipherValue>/NaYlNKt61ivAr9Fg4PMC9G9aamuGJvbDPs5xT+45/v/NIotGbeO+txsZ8+3XjbI2FMQ5ZUsVraPkBbJT/WJw40nUjORMKec3aDvbjnQ+KE=</CipherValue>
+                  <CipherValue>rPUS9okxUFZVQb6QLNZ8ywBO5rLlYCol3JTZV7zPs3HnEVrGWToIAKbfeT1K5dp+PTqBSaFjQ19Gzpxxy34VRjyOEpovs/LU6H3l3RWlDUk=</CipherValue>
                 </CipherData>
               </EncryptedData>
             </ExecutePackageTask>
@@ -149,7 +149,6 @@
           DTS:refId="Package\DIR_DWH_LOAD\AUDIT_TRAIL_FLAT_FILES"
           DTS:CreationName="Microsoft.ExecutePackageTask"
           DTS:Description="Execute Package Task"
-          DTS:Disabled="True"
           DTS:DTSID="{EE0B42BB-341C-42E2-BD1F-7B2EE664188A}"
           DTS:ExecutableType="Microsoft.ExecutePackageTask"
           DTS:LocaleID="-1"
@@ -200,12 +199,12 @@
               <PackageName>PARCEL_MFG_DWAN.dtsx</PackageName>
               <EncryptedData
                 Type="http://www.w3.org/2001/04/xmlenc#Element"
-                Salt="MPTEtVLN9CY="
-                IV="TxGKVXSQvdRui3jc72SHvQ==" xmlns="http://www.w3.org/2001/04/xmlenc#">
+                Salt="OtOuPKJ7VTw="
+                IV="zO7uUEoFuKd1aKRy+McH/g==" xmlns="http://www.w3.org/2001/04/xmlenc#">
                 <EncryptionMethod
                   Algorithm="http://www.w3.org/2001/04/xmlenc#aes256-cbc" />
                 <CipherData>
-                  <CipherValue>TxGKVXSQvdRui3jc72SHve11CvSh53CUHrnKabDjxOBPGETdP0e3jgkuWFNggBy3EopCyWZTgRdzaWmdliQ3teao0rX6kxkQJsJuRl/O0LY=</CipherValue>
+                  <CipherValue>zO7uUEoFuKd1aKRy+McH/u81KaT+AIpxRF3+8SzXShSmbfagD6eO5yxHfpL7ssxwUrjSSLrvhVQTRkxCv8rG/X3dzzz/pggcnoqVQrF88nU=</CipherValue>
                 </CipherData>
               </EncryptedData>
             </ExecutePackageTask>
@@ -248,12 +247,12 @@
               <PackageName>SEA_VISION_DWFT.dtsx</PackageName>
               <EncryptedData
                 Type="http://www.w3.org/2001/04/xmlenc#Element"
-                Salt="p4wqQ64xI3A="
-                IV="PzXJMDWE1YbZ8ZaU8i8odg==" xmlns="http://www.w3.org/2001/04/xmlenc#">
+                Salt="7x6SDk64KOI="
+                IV="Y7plUw/VMLjHZpykBFozkg==" xmlns="http://www.w3.org/2001/04/xmlenc#">
                 <EncryptionMethod
                   Algorithm="http://www.w3.org/2001/04/xmlenc#aes256-cbc" />
                 <CipherData>
-                  <CipherValue>PzXJMDWE1YbZ8ZaU8i8odjuT+wRso1cJaBW5Qjpod2HrQMjAFgYj73YX/fVdczZrV6PMLGWXcWimyo9yg/j5WwlFMSXF5ntZYFCY87crciU=</CipherValue>
+                  <CipherValue>Y7plUw/VMLjHZpykBFozkihdMqNSkU4WpixuiYS7I2SxMdg9W0VlSE71XwrU9GzNupl+BTTzcl5SMk9uxzFQ3+HxVH7MXiEGiQntHHNaMV0=</CipherValue>
                 </CipherData>
               </EncryptedData>
             </ExecutePackageTask>
@@ -733,7 +732,7 @@
         <NodeLayout
           Size="219,42"
           Id="Package\DIR_DWH_LOAD\AUDIT_TRAIL_FLAT_FILES"
-          TopLeft="13,208" />
+          TopLeft="7,210" />
         <NodeLayout
           Size="178,42"
           Id="Package\DIR_DWH_LOAD\AUDIT_TRAIL_STG"
@@ -902,18 +901,18 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package\DIR_DWH_LOAD.PrecedenceConstraints[Constraint 5]"
-          TopLeft="232,230.5">
+          TopLeft="226,231.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="32.5,0"
+              EndConnector="38.5,0"
               Start="0,0"
-              End="25,0">
+              End="31,0">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="25,0" />
+                    End="31,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -926,7 +925,7 @@
           Text="Disabled due to issue on MatLab schedule"
           ParentId="Package\DIR_DWH_LOAD"
           FontInfo="{assembly:Null}"
-          Size="212,60"
+          Size="212,56"
           Id="bf9dda82-d6f6-4d97-a77a-98789c9f081d"
           TopLeft="11,262" />
         <ContainerLayout
