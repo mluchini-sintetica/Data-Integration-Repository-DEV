@@ -8,13 +8,13 @@
   DTS:DTSID="{E200E86F-A4C7-4DCA-B911-E796B3C87AD0}"
   DTS:EnableConfig="True"
   DTS:ExecutableType="Microsoft.Package"
-  DTS:LastModifiedProductVersion="15.0.2000.123"
+  DTS:LastModifiedProductVersion="15.0.2000.132"
   DTS:LocaleID="2064"
   DTS:ObjectName="PARCEL_MFG_DWAN"
   DTS:PackageType="5"
   DTS:ProtectionLevel="2"
-  DTS:VersionBuild="418"
-  DTS:VersionGUID="{C84FCCF0-DB31-4F48-BB7C-D090C15D17A1}">
+  DTS:VersionBuild="419"
+  DTS:VersionGUID="{00F74FF9-7D3D-4360-BD7B-B4823AEA4283}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -28,12 +28,12 @@
           DTS:ConnectionString="Data Source=192.168.200.19;User ID=PARCEL_DIR_R;Initial Catalog=Parcel2008_SINT;Provider=SQLNCLI11.1;Persist Security Info=True;Auto Translate=False;">
           <EncryptedData
             Type="http://www.w3.org/2001/04/xmlenc#Element"
-            Salt="df0BovC7oLA="
-            IV="7WhLEIjyUpQRQvFspmFqDQ==" xmlns="http://www.w3.org/2001/04/xmlenc#">
+            Salt="9gfmZs64A7k="
+            IV="FFnUJRDgRcyy0eO1twtU8Q==" xmlns="http://www.w3.org/2001/04/xmlenc#">
             <EncryptionMethod
               Algorithm="http://www.w3.org/2001/04/xmlenc#aes256-cbc" />
             <CipherData>
-              <CipherValue>7WhLEIjyUpQRQvFspmFqDVFWB9pKp0KayO3qczCub/YHJaCTto/b1bgL1sQOEYcGVDcor+G+86DrHdEFEtwr9TpzAuA66IiPMIURIiSfKKxKVrVF1yMfcWuoP3YicRNzFzHOwfKVPNFbSLjEdbjIovngtOMJOlmZ1jABjIwPl0w6NA8JuIWB/XT7SOdQenVE</CipherValue>
+              <CipherValue>FFnUJRDgRcyy0eO1twtU8be4yiQFdQnQlqeTOWn63FPzZWoMhMSEQ9MQ1278hhO2F6KwqfIR8kOtle4wUo31w7jFvrlpAPNgKEq8OMlBTdsv8/9lPx0aunFbNQg2f+2t5KkAfdhNa5Qg5Bd5Jg5t98JYfYebNx7SdLjCr6OX6Vp+ahBkkyFJ7XVKzZrfljsP</CipherValue>
             </CipherData>
           </EncryptedData>
         </DTS:ConnectionManager>
@@ -64,23 +64,23 @@
       DTS:CreationName=""
       DTS:DTSID="{C1D180FC-1350-4AD6-B3E9-0940C78CCB48}"
       DTS:EvaluateAsExpression="True"
-      DTS:Expression="&quot;SSIS package: &quot; + @[System::PackageName] + &quot; ERROR&quot;"
+      DTS:Expression="@[System::MachineName] + &quot; - SSIS package: &quot; + @[System::PackageName] + &quot; ERROR&quot;"
       DTS:IncludeInDebugDump="2345"
       DTS:Namespace="User"
       DTS:ObjectName="in_MAIL_OBJECT_ERROR">
       <DTS:VariableValue
-        DTS:DataType="8">SSIS package: PARCEL_MFG_DWAN ERROR</DTS:VariableValue>
+        DTS:DataType="8">SRV-DIR-DEV - SSIS package: PARCEL_MFG_DWAN ERROR</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
       DTS:DTSID="{3CD3648B-9818-4BEF-A446-82F82EE5F9E2}"
       DTS:EvaluateAsExpression="True"
-      DTS:Expression="&quot;SSIS package: &quot; + @[System::PackageName] + &quot; completed SUCCESSFULLY&quot;"
+      DTS:Expression="@[System::MachineName] + &quot; - SSIS package: &quot; + @[System::PackageName] + &quot; completed SUCCESSFULLY&quot;"
       DTS:IncludeInDebugDump="2345"
       DTS:Namespace="User"
       DTS:ObjectName="in_MAIL_OBJECT_SUCCESS">
       <DTS:VariableValue
-        DTS:DataType="8">SSIS package: PARCEL_MFG_DWAN completed SUCCESSFULLY</DTS:VariableValue>
+        DTS:DataType="8">SRV-DIR-DEV - SSIS package: PARCEL_MFG_DWAN completed SUCCESSFULLY</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""

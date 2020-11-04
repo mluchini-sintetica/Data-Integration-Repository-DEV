@@ -7,13 +7,13 @@
   DTS:CreatorName="SINTE00\mluchini"
   DTS:DTSID="{A2257612-AE91-408E-87C6-F9E921AC76A2}"
   DTS:ExecutableType="Microsoft.Package"
-  DTS:LastModifiedProductVersion="15.0.2000.123"
+  DTS:LastModifiedProductVersion="15.0.2000.132"
   DTS:LocaleID="2064"
   DTS:ObjectName="DIR_DWH_LOAD"
   DTS:PackageType="5"
   DTS:ProtectionLevel="2"
-  DTS:VersionBuild="104"
-  DTS:VersionGUID="{B6E700F9-9B00-42A0-AA4D-AA3F440F19B7}">
+  DTS:VersionBuild="107"
+  DTS:VersionGUID="{E1A10DC1-C4F1-4EDF-9BE0-E9CC4C735123}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables>
@@ -21,34 +21,34 @@
       DTS:CreationName=""
       DTS:DTSID="{0395DD26-2A6B-42E8-BB3B-D1D7B05FC9DB}"
       DTS:EvaluateAsExpression="True"
-      DTS:Expression="&quot;SSIS package: &quot; + @[System::PackageName] + &quot; ERROR&quot;"
+      DTS:Expression="@[System::MachineName] + &quot; - SSIS package: &quot; + @[System::PackageName] + &quot; ERROR&quot;"
       DTS:IncludeInDebugDump="2345"
       DTS:Namespace="User"
       DTS:ObjectName="in_MAIL_OBJECT_ERROR">
       <DTS:VariableValue
-        DTS:DataType="8">SSIS package: DIR_DWH_LOAD ERROR</DTS:VariableValue>
+        DTS:DataType="8">SRV-DIR-DEV - SSIS package: DIR_DWH_LOAD ERROR</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
       DTS:DTSID="{199D4456-D33C-4643-A452-AA7C8CF05656}"
       DTS:EvaluateAsExpression="True"
-      DTS:Expression="&quot;SSIS package: &quot; + @[System::PackageName] + &quot; STARTED&quot;"
+      DTS:Expression="@[System::MachineName] + &quot; - SSIS package: &quot; + @[System::PackageName] + &quot; STARTED&quot;"
       DTS:IncludeInDebugDump="2345"
       DTS:Namespace="User"
       DTS:ObjectName="in_MAIL_OBJECT_START">
       <DTS:VariableValue
-        DTS:DataType="8">SSIS package: DIR_DWH_LOAD STARTED</DTS:VariableValue>
+        DTS:DataType="8">SRV-DIR-DEV - SSIS package: DIR_DWH_LOAD STARTED</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
       DTS:DTSID="{22DD414F-740D-4C2B-96E5-224661EE8D86}"
       DTS:EvaluateAsExpression="True"
-      DTS:Expression="&quot;SSIS package: &quot; + @[System::PackageName] + &quot; completed SUCCESSFULLY&quot;"
+      DTS:Expression="@[System::MachineName] + &quot; - SSIS package: &quot; + @[System::PackageName] + &quot; completed SUCCESSFULLY&quot;"
       DTS:IncludeInDebugDump="2345"
       DTS:Namespace="User"
       DTS:ObjectName="in_MAIL_OBJECT_SUCCESS">
       <DTS:VariableValue
-        DTS:DataType="8">SSIS package: DIR_DWH_LOAD completed SUCCESSFULLY</DTS:VariableValue>
+        DTS:DataType="8">SRV-DIR-DEV - SSIS package: DIR_DWH_LOAD completed SUCCESSFULLY</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
@@ -134,12 +134,12 @@
               <PackageName>AUDIT_TRAIL_DW.dtsx</PackageName>
               <EncryptedData
                 Type="http://www.w3.org/2001/04/xmlenc#Element"
-                Salt="IGYZWEydEHI="
-                IV="cAr0OJgX+l9SZFRD/pYXMA==" xmlns="http://www.w3.org/2001/04/xmlenc#">
+                Salt="ae5xztNB2uQ="
+                IV="hwC+dWdB6Ow57SPCVmvoow==" xmlns="http://www.w3.org/2001/04/xmlenc#">
                 <EncryptionMethod
                   Algorithm="http://www.w3.org/2001/04/xmlenc#aes256-cbc" />
                 <CipherData>
-                  <CipherValue>cAr0OJgX+l9SZFRD/pYXMOzxPpxBB8AuLa5q4uVnc2+lKoxPw92eaNmS1xpKOdytj+mIVphxVmdOaO968lqOtwN5d3XDvJjoydd5rtIQfwU=</CipherValue>
+                  <CipherValue>hwC+dWdB6Ow57SPCVmvoo3UTFfVFY7jE9pIC2EsYhfSkrQth3rksU9Zz8ZBRddzK9UjxciAdslg+wcOjf4/sO1bBfV/dLwbQCld9X+Hm9gs=</CipherValue>
                 </CipherData>
               </EncryptedData>
             </ExecutePackageTask>
@@ -199,12 +199,12 @@
               <PackageName>PARCEL_MFG_DWAN.dtsx</PackageName>
               <EncryptedData
                 Type="http://www.w3.org/2001/04/xmlenc#Element"
-                Salt="8M53CnvH4fs="
-                IV="gMKAwGGmhZG8c/jooycHLw==" xmlns="http://www.w3.org/2001/04/xmlenc#">
+                Salt="9OcO+CeA0J0="
+                IV="F0Nm8c61qN4qmqrtlRVtvg==" xmlns="http://www.w3.org/2001/04/xmlenc#">
                 <EncryptionMethod
                   Algorithm="http://www.w3.org/2001/04/xmlenc#aes256-cbc" />
                 <CipherData>
-                  <CipherValue>gMKAwGGmhZG8c/jooycHL8IWSmvGvyC+1TRLpVJvz/Na8lEiWqtLtze4etjo8ZsuI/KVMAkdcJ4DZVGCHncEEkkXSL119y/vTyebdnoI90E=</CipherValue>
+                  <CipherValue>F0Nm8c61qN4qmqrtlRVtvmyZnquZ9fVGfA2HOChGDDBDYJg9bfGCSP9l1aecKqzNOHjaWLQHn13ybZba8mK5QxuTvgP+ZYVOs5Jnr3PnFEo=</CipherValue>
                 </CipherData>
               </EncryptedData>
             </ExecutePackageTask>
@@ -247,12 +247,12 @@
               <PackageName>SEA_VISION_DWFT.dtsx</PackageName>
               <EncryptedData
                 Type="http://www.w3.org/2001/04/xmlenc#Element"
-                Salt="DWvNfsN/G2g="
-                IV="qOvWjI8p911laLVt752LrA==" xmlns="http://www.w3.org/2001/04/xmlenc#">
+                Salt="dfQBXHCN0qU="
+                IV="ySi6xLcVB4KCklhiUh4fCg==" xmlns="http://www.w3.org/2001/04/xmlenc#">
                 <EncryptionMethod
                   Algorithm="http://www.w3.org/2001/04/xmlenc#aes256-cbc" />
                 <CipherData>
-                  <CipherValue>qOvWjI8p911laLVt752LrFR+CETytZPUJXWksomRAyQqmj5rBvoUKJSjBsJM1MuWEU52qxr3CGRqtP7S9XXqjsVW/0/IaFmex7otEMCMfrI=</CipherValue>
+                  <CipherValue>ySi6xLcVB4KCklhiUh4fCm7pdUhPr4jx80h3YpuKGkbvqyjltxA5utYRaJ9IONzxOvfAuljf5y1LG7PgSDVEVlWjOzgjHyZCqk9aRD9osGc=</CipherValue>
                 </CipherData>
               </EncryptedData>
             </ExecutePackageTask>
@@ -333,6 +333,7 @@
       DTS:refId="Package\Email START"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Execute SQL Task"
+      DTS:Disabled="True"
       DTS:DTSID="{269e04a0-5ad3-41e6-9671-5c9a66c66e8d}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
@@ -369,6 +370,7 @@
       DTS:refId="Package\Email SUCCESS"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Execute SQL Task"
+      DTS:Disabled="True"
       DTS:DTSID="{405eba78-7757-4bbf-a498-94ef499e0781}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
