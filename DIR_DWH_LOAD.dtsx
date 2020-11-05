@@ -12,8 +12,8 @@
   DTS:ObjectName="DIR_DWH_LOAD"
   DTS:PackageType="5"
   DTS:ProtectionLevel="2"
-  DTS:VersionBuild="107"
-  DTS:VersionGUID="{E1A10DC1-C4F1-4EDF-9BE0-E9CC4C735123}">
+  DTS:VersionBuild="130"
+  DTS:VersionGUID="{B1D70E1A-53D2-40DD-BD4C-1A991ED466C4}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables>
@@ -134,12 +134,12 @@
               <PackageName>AUDIT_TRAIL_DW.dtsx</PackageName>
               <EncryptedData
                 Type="http://www.w3.org/2001/04/xmlenc#Element"
-                Salt="ae5xztNB2uQ="
-                IV="hwC+dWdB6Ow57SPCVmvoow==" xmlns="http://www.w3.org/2001/04/xmlenc#">
+                Salt="6ibyRY7sVEo="
+                IV="l7i+A1LyWaSKlWFku+pc5Q==" xmlns="http://www.w3.org/2001/04/xmlenc#">
                 <EncryptionMethod
                   Algorithm="http://www.w3.org/2001/04/xmlenc#aes256-cbc" />
                 <CipherData>
-                  <CipherValue>hwC+dWdB6Ow57SPCVmvoo3UTFfVFY7jE9pIC2EsYhfSkrQth3rksU9Zz8ZBRddzK9UjxciAdslg+wcOjf4/sO1bBfV/dLwbQCld9X+Hm9gs=</CipherValue>
+                  <CipherValue>l7i+A1LyWaSKlWFku+pc5T0+uJpHVmB0TybIfxfH2m5vvkcNjlPA1rYGXs1mZOkFVTgTSdu+exoG6TCrLONQ8dRnKpBOkFlhZUYiI3Bbt8Y=</CipherValue>
                 </CipherData>
               </EncryptedData>
             </ExecutePackageTask>
@@ -199,12 +199,12 @@
               <PackageName>PARCEL_MFG_DWAN.dtsx</PackageName>
               <EncryptedData
                 Type="http://www.w3.org/2001/04/xmlenc#Element"
-                Salt="9OcO+CeA0J0="
-                IV="F0Nm8c61qN4qmqrtlRVtvg==" xmlns="http://www.w3.org/2001/04/xmlenc#">
+                Salt="eJbWS5Ercm8="
+                IV="YNnKJoyQifvdJw3HXDtVjw==" xmlns="http://www.w3.org/2001/04/xmlenc#">
                 <EncryptionMethod
                   Algorithm="http://www.w3.org/2001/04/xmlenc#aes256-cbc" />
                 <CipherData>
-                  <CipherValue>F0Nm8c61qN4qmqrtlRVtvmyZnquZ9fVGfA2HOChGDDBDYJg9bfGCSP9l1aecKqzNOHjaWLQHn13ybZba8mK5QxuTvgP+ZYVOs5Jnr3PnFEo=</CipherValue>
+                  <CipherValue>YNnKJoyQifvdJw3HXDtVjxihA0uG9gVWSifcZegN2FU87kzVoyrSFUx9NF7uYD5/G1PlvO+kD0ezxJHgGxoUsYWv9fhCZ4aejSZMkEdAi2M=</CipherValue>
                 </CipherData>
               </EncryptedData>
             </ExecutePackageTask>
@@ -247,12 +247,12 @@
               <PackageName>SEA_VISION_DWFT.dtsx</PackageName>
               <EncryptedData
                 Type="http://www.w3.org/2001/04/xmlenc#Element"
-                Salt="dfQBXHCN0qU="
-                IV="ySi6xLcVB4KCklhiUh4fCg==" xmlns="http://www.w3.org/2001/04/xmlenc#">
+                Salt="RL2Wus/NiFE="
+                IV="VV2H3Xb8DpfAa4BVdITVig==" xmlns="http://www.w3.org/2001/04/xmlenc#">
                 <EncryptionMethod
                   Algorithm="http://www.w3.org/2001/04/xmlenc#aes256-cbc" />
                 <CipherData>
-                  <CipherValue>ySi6xLcVB4KCklhiUh4fCm7pdUhPr4jx80h3YpuKGkbvqyjltxA5utYRaJ9IONzxOvfAuljf5y1LG7PgSDVEVlWjOzgjHyZCqk9aRD9osGc=</CipherValue>
+                  <CipherValue>VV2H3Xb8DpfAa4BVdITVipNmRFzdtDXGM+04zAaQPRHFzJjkygdAQnUzvE+IUbozOVfcAucqeefIEWCsyByMsuMLAOdTphzKrw3rMAfQBbg=</CipherValue>
                 </CipherData>
               </EncryptedData>
             </ExecutePackageTask>
@@ -270,6 +270,29 @@
           DTS:ObjectName="SEA_VISION_STG"
           DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
           <DTS:Variables />
+          <DTS:EventHandlers>
+            <DTS:EventHandler
+              DTS:refId="Package\DIR_DWH_LOAD\SEA_VISION_STG.EventHandlers[OnError]"
+              DTS:CreationName="OnError"
+              DTS:DTSID="{941D6D21-CCE4-4734-BB83-FCD6A770ED1A}"
+              DTS:EventID="-3"
+              DTS:EventName="OnError"
+              DTS:LocaleID="-1">
+              <DTS:Variables>
+                <DTS:Variable
+                  DTS:CreationName=""
+                  DTS:Description="The propagate property of the event"
+                  DTS:DTSID="{5AF04D0C-3E7F-4E4E-ACC9-7A7210AFBB23}"
+                  DTS:IncludeInDebugDump="6789"
+                  DTS:Namespace="System"
+                  DTS:ObjectName="Propagate">
+                  <DTS:VariableValue
+                    DTS:DataType="11">-1</DTS:VariableValue>
+                </DTS:Variable>
+              </DTS:Variables>
+              <DTS:Executables />
+            </DTS:EventHandler>
+          </DTS:EventHandlers>
           <DTS:ObjectData>
             <ExecutePackageTask>
               <UseProjectReference>True</UseProjectReference>
@@ -341,6 +364,71 @@
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
       DTS:ThreadHint="0">
       <DTS:Variables />
+      <DTS:EventHandlers>
+        <DTS:EventHandler
+          DTS:refId="Package\Email START.EventHandlers[OnError]"
+          DTS:CreationName="OnError"
+          DTS:DTSID="{AA8BE018-A99B-4BE7-AE15-3494D7BD7EEC}"
+          DTS:EventID="0"
+          DTS:EventName="OnError"
+          DTS:LocaleID="-1">
+          <DTS:Variables>
+            <DTS:Variable
+              DTS:CreationName=""
+              DTS:Description="The propagate property of the event"
+              DTS:DTSID="{13782351-A26C-4250-B928-F06FDB50AC89}"
+              DTS:IncludeInDebugDump="6789"
+              DTS:Namespace="System"
+              DTS:ObjectName="Propagate">
+              <DTS:VariableValue
+                DTS:DataType="11">-1</DTS:VariableValue>
+            </DTS:Variable>
+          </DTS:Variables>
+          <DTS:Executables>
+            <DTS:Executable
+              DTS:refId="Package\Email START.EventHandlers[OnError]\Email ERROR"
+              DTS:CreationName="Microsoft.ExecuteSQLTask"
+              DTS:Description="Execute SQL Task"
+              DTS:DTSID="{96a5650f-b537-4d16-8aa9-9f4fd81f435a}"
+              DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+              DTS:LocaleID="-1"
+              DTS:ObjectName="Email ERROR"
+              DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+              <DTS:Variables />
+              <DTS:ObjectData>
+                <SQLTask:SqlTaskData
+                  SQLTask:Connection="{62102490-454D-4B7E-9A09-120A46D18B10}"
+                  SQLTask:SqlStatementSource="EXEC msdb.dbo.sp_send_dbmail @profile_name = ?, @recipients = ?, @subject= ?, @body =  ?" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+                  <SQLTask:ParameterBinding
+                    SQLTask:ParameterName="0"
+                    SQLTask:DtsVariableName="$Project::in_MAIL_PROFILE"
+                    SQLTask:ParameterDirection="Input"
+                    SQLTask:DataType="130"
+                    SQLTask:ParameterSize="-1" />
+                  <SQLTask:ParameterBinding
+                    SQLTask:ParameterName="1"
+                    SQLTask:DtsVariableName="$Project::in_MAIL_RECIPIENTS_ERROR"
+                    SQLTask:ParameterDirection="Input"
+                    SQLTask:DataType="130"
+                    SQLTask:ParameterSize="-1" />
+                  <SQLTask:ParameterBinding
+                    SQLTask:ParameterName="2"
+                    SQLTask:DtsVariableName="User::in_MAIL_OBJECT_ERROR"
+                    SQLTask:ParameterDirection="Input"
+                    SQLTask:DataType="130"
+                    SQLTask:ParameterSize="-1" />
+                  <SQLTask:ParameterBinding
+                    SQLTask:ParameterName="3"
+                    SQLTask:DtsVariableName="System::ErrorDescription"
+                    SQLTask:ParameterDirection="Input"
+                    SQLTask:DataType="130"
+                    SQLTask:ParameterSize="-1" />
+                </SQLTask:SqlTaskData>
+              </DTS:ObjectData>
+            </DTS:Executable>
+          </DTS:Executables>
+        </DTS:EventHandler>
+      </DTS:EventHandlers>
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
           SQLTask:Connection="{62102490-454D-4B7E-9A09-120A46D18B10}"
@@ -378,6 +466,71 @@
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
       DTS:ThreadHint="0">
       <DTS:Variables />
+      <DTS:EventHandlers>
+        <DTS:EventHandler
+          DTS:refId="Package\Email SUCCESS.EventHandlers[OnError]"
+          DTS:CreationName="OnError"
+          DTS:DTSID="{F5A84A0D-CF02-4072-8327-BD5B0EC0A0EA}"
+          DTS:EventID="3014772"
+          DTS:EventName="OnError"
+          DTS:LocaleID="-1">
+          <DTS:Variables>
+            <DTS:Variable
+              DTS:CreationName=""
+              DTS:Description="The propagate property of the event"
+              DTS:DTSID="{32F0CA8D-F33E-4D6B-B1C1-45471001EEF7}"
+              DTS:IncludeInDebugDump="6789"
+              DTS:Namespace="System"
+              DTS:ObjectName="Propagate">
+              <DTS:VariableValue
+                DTS:DataType="11">-1</DTS:VariableValue>
+            </DTS:Variable>
+          </DTS:Variables>
+          <DTS:Executables>
+            <DTS:Executable
+              DTS:refId="Package\Email SUCCESS.EventHandlers[OnError]\Email ERROR"
+              DTS:CreationName="Microsoft.ExecuteSQLTask"
+              DTS:Description="Execute SQL Task"
+              DTS:DTSID="{d11b8501-ddaa-4a0d-8d6a-3ccfe1449af5}"
+              DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+              DTS:LocaleID="-1"
+              DTS:ObjectName="Email ERROR"
+              DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+              <DTS:Variables />
+              <DTS:ObjectData>
+                <SQLTask:SqlTaskData
+                  SQLTask:Connection="{62102490-454D-4B7E-9A09-120A46D18B10}"
+                  SQLTask:SqlStatementSource="EXEC msdb.dbo.sp_send_dbmail @profile_name = ?, @recipients = ?, @subject= ?, @body =  ?" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+                  <SQLTask:ParameterBinding
+                    SQLTask:ParameterName="0"
+                    SQLTask:DtsVariableName="$Project::in_MAIL_PROFILE"
+                    SQLTask:ParameterDirection="Input"
+                    SQLTask:DataType="130"
+                    SQLTask:ParameterSize="-1" />
+                  <SQLTask:ParameterBinding
+                    SQLTask:ParameterName="1"
+                    SQLTask:DtsVariableName="$Project::in_MAIL_RECIPIENTS_ERROR"
+                    SQLTask:ParameterDirection="Input"
+                    SQLTask:DataType="130"
+                    SQLTask:ParameterSize="-1" />
+                  <SQLTask:ParameterBinding
+                    SQLTask:ParameterName="2"
+                    SQLTask:DtsVariableName="User::in_MAIL_OBJECT_ERROR"
+                    SQLTask:ParameterDirection="Input"
+                    SQLTask:DataType="130"
+                    SQLTask:ParameterSize="-1" />
+                  <SQLTask:ParameterBinding
+                    SQLTask:ParameterName="3"
+                    SQLTask:DtsVariableName="System::ErrorDescription"
+                    SQLTask:ParameterDirection="Input"
+                    SQLTask:DataType="130"
+                    SQLTask:ParameterSize="-1" />
+                </SQLTask:SqlTaskData>
+              </DTS:ObjectData>
+            </DTS:Executable>
+          </DTS:Executables>
+        </DTS:EventHandler>
+      </DTS:EventHandlers>
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
           SQLTask:Connection="{62102490-454D-4B7E-9A09-120A46D18B10}"
@@ -414,6 +567,71 @@
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
       DTS:ThreadHint="0">
       <DTS:Variables />
+      <DTS:EventHandlers>
+        <DTS:EventHandler
+          DTS:refId="Package\Last Upd TBLOG_PACKAGE.EventHandlers[OnError]"
+          DTS:CreationName="OnError"
+          DTS:DTSID="{8AE5AF45-45BC-4E68-B7B0-42F710A15B84}"
+          DTS:EventID="0"
+          DTS:EventName="OnError"
+          DTS:LocaleID="-1">
+          <DTS:Variables>
+            <DTS:Variable
+              DTS:CreationName=""
+              DTS:Description="The propagate property of the event"
+              DTS:DTSID="{7359A3B3-FCC3-457F-812F-A1AC8B329F6A}"
+              DTS:IncludeInDebugDump="6789"
+              DTS:Namespace="System"
+              DTS:ObjectName="Propagate">
+              <DTS:VariableValue
+                DTS:DataType="11">-1</DTS:VariableValue>
+            </DTS:Variable>
+          </DTS:Variables>
+          <DTS:Executables>
+            <DTS:Executable
+              DTS:refId="Package\Last Upd TBLOG_PACKAGE.EventHandlers[OnError]\Email ERROR"
+              DTS:CreationName="Microsoft.ExecuteSQLTask"
+              DTS:Description="Execute SQL Task"
+              DTS:DTSID="{7d257fac-b2fd-48fe-b94f-65d7e4e05da3}"
+              DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+              DTS:LocaleID="-1"
+              DTS:ObjectName="Email ERROR"
+              DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+              <DTS:Variables />
+              <DTS:ObjectData>
+                <SQLTask:SqlTaskData
+                  SQLTask:Connection="{62102490-454D-4B7E-9A09-120A46D18B10}"
+                  SQLTask:SqlStatementSource="EXEC msdb.dbo.sp_send_dbmail @profile_name = ?, @recipients = ?, @subject= ?, @body =  ?" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+                  <SQLTask:ParameterBinding
+                    SQLTask:ParameterName="0"
+                    SQLTask:DtsVariableName="$Project::in_MAIL_PROFILE"
+                    SQLTask:ParameterDirection="Input"
+                    SQLTask:DataType="130"
+                    SQLTask:ParameterSize="-1" />
+                  <SQLTask:ParameterBinding
+                    SQLTask:ParameterName="1"
+                    SQLTask:DtsVariableName="$Project::in_MAIL_RECIPIENTS_ERROR"
+                    SQLTask:ParameterDirection="Input"
+                    SQLTask:DataType="130"
+                    SQLTask:ParameterSize="-1" />
+                  <SQLTask:ParameterBinding
+                    SQLTask:ParameterName="2"
+                    SQLTask:DtsVariableName="User::in_MAIL_OBJECT_ERROR"
+                    SQLTask:ParameterDirection="Input"
+                    SQLTask:DataType="130"
+                    SQLTask:ParameterSize="-1" />
+                  <SQLTask:ParameterBinding
+                    SQLTask:ParameterName="3"
+                    SQLTask:DtsVariableName="System::ErrorDescription"
+                    SQLTask:ParameterDirection="Input"
+                    SQLTask:DataType="130"
+                    SQLTask:ParameterSize="-1" />
+                </SQLTask:SqlTaskData>
+              </DTS:ObjectData>
+            </DTS:Executable>
+          </DTS:Executables>
+        </DTS:EventHandler>
+      </DTS:EventHandlers>
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
           SQLTask:Connection="{62102490-454D-4B7E-9A09-120A46D18B10}"
@@ -497,7 +715,7 @@
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
               SQLTask:Connection="{62102490-454D-4B7E-9A09-120A46D18B10}"
-              SQLTask:SqlStatementSource="--insert new row&#xA;INSERT INTO TBLOG_PACKAGE VALUES (0,?,?,?,?,?,?,getdate(),null,?,1,0);&#xA;&#xA;--retrieve last ID just inserted&#xA;SELECT max(id) as Max_ID&#xA;FROM TBLOG_PACKAGE&#xA;WHERE package_name_cd=?&#xA;and source_system_id= ?;"
+              SQLTask:SqlStatementSource="--insert new row&#xA; INSERT INTO TBLOG_PACKAGE VALUES (0,?,?,?,?,?,?,getdate(),null,?,1,0);&#xA;&#xA;--retrieve last ID just inserted&#xA;SELECT max(id) as Max_ID&#xA;FROM TBLOG_PACKAGE&#xA;WHERE package_name_cd=?&#xA;and source_system_id= ?;"
               SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
               <SQLTask:ResultBinding
                 SQLTask:ResultName="MAX_ID"
@@ -614,6 +832,71 @@
           DTS:ObjectName="Constraint 2"
           DTS:To="Package\TBLOG_PACKAGE\Upd TBLOG_PACKAGE" />
       </DTS:PrecedenceConstraints>
+      <DTS:EventHandlers>
+        <DTS:EventHandler
+          DTS:refId="Package\TBLOG_PACKAGE.EventHandlers[OnError]"
+          DTS:CreationName="OnError"
+          DTS:DTSID="{93EBA721-04C0-4899-8B5B-84621C68AF7B}"
+          DTS:EventID="0"
+          DTS:EventName="OnError"
+          DTS:LocaleID="-1">
+          <DTS:Variables>
+            <DTS:Variable
+              DTS:CreationName=""
+              DTS:Description="The propagate property of the event"
+              DTS:DTSID="{47452565-7674-4C90-B4D7-3D7CCD965408}"
+              DTS:IncludeInDebugDump="6789"
+              DTS:Namespace="System"
+              DTS:ObjectName="Propagate">
+              <DTS:VariableValue
+                DTS:DataType="11">-1</DTS:VariableValue>
+            </DTS:Variable>
+          </DTS:Variables>
+          <DTS:Executables>
+            <DTS:Executable
+              DTS:refId="Package\TBLOG_PACKAGE.EventHandlers[OnError]\Email ERROR"
+              DTS:CreationName="Microsoft.ExecuteSQLTask"
+              DTS:Description="Execute SQL Task"
+              DTS:DTSID="{a9210189-1d10-461b-aa71-ff8235319ee8}"
+              DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+              DTS:LocaleID="-1"
+              DTS:ObjectName="Email ERROR"
+              DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+              <DTS:Variables />
+              <DTS:ObjectData>
+                <SQLTask:SqlTaskData
+                  SQLTask:Connection="{62102490-454D-4B7E-9A09-120A46D18B10}"
+                  SQLTask:SqlStatementSource="EXEC msdb.dbo.sp_send_dbmail @profile_name = ?, @recipients = ?, @subject= ?, @body =  ?" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+                  <SQLTask:ParameterBinding
+                    SQLTask:ParameterName="0"
+                    SQLTask:DtsVariableName="$Project::in_MAIL_PROFILE"
+                    SQLTask:ParameterDirection="Input"
+                    SQLTask:DataType="130"
+                    SQLTask:ParameterSize="-1" />
+                  <SQLTask:ParameterBinding
+                    SQLTask:ParameterName="1"
+                    SQLTask:DtsVariableName="$Project::in_MAIL_RECIPIENTS_ERROR"
+                    SQLTask:ParameterDirection="Input"
+                    SQLTask:DataType="130"
+                    SQLTask:ParameterSize="-1" />
+                  <SQLTask:ParameterBinding
+                    SQLTask:ParameterName="2"
+                    SQLTask:DtsVariableName="User::in_MAIL_OBJECT_ERROR"
+                    SQLTask:ParameterDirection="Input"
+                    SQLTask:DataType="130"
+                    SQLTask:ParameterSize="-1" />
+                  <SQLTask:ParameterBinding
+                    SQLTask:ParameterName="3"
+                    SQLTask:DtsVariableName="System::ErrorDescription"
+                    SQLTask:ParameterDirection="Input"
+                    SQLTask:DataType="130"
+                    SQLTask:ParameterSize="-1" />
+                </SQLTask:SqlTaskData>
+              </DTS:ObjectData>
+            </DTS:Executable>
+          </DTS:Executables>
+        </DTS:EventHandler>
+      </DTS:EventHandlers>
     </DTS:Executable>
   </DTS:Executables>
   <DTS:PrecedenceConstraints>
@@ -670,49 +953,7 @@
             DTS:DataType="11">-1</DTS:VariableValue>
         </DTS:Variable>
       </DTS:Variables>
-      <DTS:Executables>
-        <DTS:Executable
-          DTS:refId="Package.EventHandlers[OnError]\Email ERROR"
-          DTS:CreationName="Microsoft.ExecuteSQLTask"
-          DTS:Description="Execute SQL Task"
-          DTS:DTSID="{8cb51dce-c26c-47fe-b8f2-e8b2d29c14a7}"
-          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
-          DTS:LocaleID="-1"
-          DTS:ObjectName="Email ERROR"
-          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
-          <DTS:Variables />
-          <DTS:ObjectData>
-            <SQLTask:SqlTaskData
-              SQLTask:Connection="{62102490-454D-4B7E-9A09-120A46D18B10}"
-              SQLTask:SqlStatementSource="EXEC msdb.dbo.sp_send_dbmail @profile_name = ?, @recipients = ?, @subject= ?, @body =  ?" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
-              <SQLTask:ParameterBinding
-                SQLTask:ParameterName="0"
-                SQLTask:DtsVariableName="$Project::in_MAIL_PROFILE"
-                SQLTask:ParameterDirection="Input"
-                SQLTask:DataType="130"
-                SQLTask:ParameterSize="-1" />
-              <SQLTask:ParameterBinding
-                SQLTask:ParameterName="1"
-                SQLTask:DtsVariableName="$Project::in_MAIL_RECIPIENTS_ERROR"
-                SQLTask:ParameterDirection="Input"
-                SQLTask:DataType="130"
-                SQLTask:ParameterSize="-1" />
-              <SQLTask:ParameterBinding
-                SQLTask:ParameterName="2"
-                SQLTask:DtsVariableName="User::in_MAIL_OBJECT_ERROR"
-                SQLTask:ParameterDirection="Input"
-                SQLTask:DataType="130"
-                SQLTask:ParameterSize="-1" />
-              <SQLTask:ParameterBinding
-                SQLTask:ParameterName="3"
-                SQLTask:DtsVariableName="System::ErrorDescription"
-                SQLTask:ParameterDirection="Input"
-                SQLTask:DataType="130"
-                SQLTask:ParameterSize="-1" />
-            </SQLTask:SqlTaskData>
-          </DTS:ObjectData>
-        </DTS:Executable>
-      </DTS:Executables>
+      <DTS:Executables />
     </DTS:EventHandler>
   </DTS:EventHandlers>
   <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
@@ -1169,7 +1410,55 @@
         Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
         <NodeLayout
           Size="149,42"
-          Id="Package.EventHandlers[OnError]\Email ERROR"
+          Id="{8cb51dce-c26c-47fe-b8f2-e8b2d29c14a7}"
+          TopLeft="60,60" />
+      </GraphLayout>
+    </LayoutInfo>
+  </DtsEventHandler>
+  <DtsEventHandler
+    design-time-name="Package\TBLOG_PACKAGE.EventHandlers[OnError]">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="149,42"
+          Id="Package\TBLOG_PACKAGE.EventHandlers[OnError]\Email ERROR"
+          TopLeft="60,60" />
+      </GraphLayout>
+    </LayoutInfo>
+  </DtsEventHandler>
+  <DtsEventHandler
+    design-time-name="Package\Last Upd TBLOG_PACKAGE.EventHandlers[OnError]">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="149,42"
+          Id="Package\Last Upd TBLOG_PACKAGE.EventHandlers[OnError]\Email ERROR"
+          TopLeft="60,60" />
+      </GraphLayout>
+    </LayoutInfo>
+  </DtsEventHandler>
+  <DtsEventHandler
+    design-time-name="Package\Email START.EventHandlers[OnError]">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="149,42"
+          Id="Package\Email START.EventHandlers[OnError]\Email ERROR"
+          TopLeft="60,60" />
+      </GraphLayout>
+    </LayoutInfo>
+  </DtsEventHandler>
+  <DtsEventHandler
+    design-time-name="Package\Email SUCCESS.EventHandlers[OnError]">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="149,42"
+          Id="Package\Email SUCCESS.EventHandlers[OnError]\Email ERROR"
           TopLeft="60,60" />
       </GraphLayout>
     </LayoutInfo>

@@ -13,8 +13,8 @@
   DTS:ObjectName="SEA_VISION_STG"
   DTS:PackageType="5"
   DTS:ProtectionLevel="2"
-  DTS:VersionBuild="290"
-  DTS:VersionGUID="{21F688FE-423A-40A7-9BB4-A629DE5057B9}">
+  DTS:VersionBuild="300"
+  DTS:VersionGUID="{6C9F7A0E-57F6-4FC6-BBCE-74D3A563659C}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Configurations>
@@ -260,7 +260,7 @@
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
           SQLTask:Connection="{62102490-454D-4B7E-9A09-120A46D18B10}"
-          SQLTask:SqlStatementSource="--insert new row&#xA;INSERT INTO TBLOG_PACKAGE VALUES (?,?,?,?,?,?,?,getdate(),null,?,1,0);&#xA;&#xA;--retrieve last ID just inserted&#xA;SELECT max(id) as Max_ID&#xA;FROM TBLOG_PACKAGE&#xA;WHERE package_name_cd=?&#xA;and source_system_id= ?;"
+          SQLTask:SqlStatementSource="--insert new row&#xA; INSERT INTO TBLOG_PACKAGE VALUES (?,?,?,?,?,?,?,getdate(),null,?,1,0);&#xA;&#xA;--retrieve last ID just inserted&#xA;SELECT max(id) as Max_ID&#xA;FROM TBLOG_PACKAGE&#xA;WHERE package_name_cd=?&#xA;and source_system_id= ?;"
           SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
           <SQLTask:ResultBinding
             SQLTask:ResultName="MAX_ID"
