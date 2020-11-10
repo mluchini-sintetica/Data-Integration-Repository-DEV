@@ -12,8 +12,8 @@
   DTS:ObjectName="DIR_DWH_LOAD"
   DTS:PackageType="5"
   DTS:ProtectionLevel="2"
-  DTS:VersionBuild="130"
-  DTS:VersionGUID="{B1D70E1A-53D2-40DD-BD4C-1A991ED466C4}">
+  DTS:VersionBuild="132"
+  DTS:VersionGUID="{D6475FA0-8FCE-49E9-9480-55061296D174}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables>
@@ -134,12 +134,12 @@
               <PackageName>AUDIT_TRAIL_DW.dtsx</PackageName>
               <EncryptedData
                 Type="http://www.w3.org/2001/04/xmlenc#Element"
-                Salt="6ibyRY7sVEo="
-                IV="l7i+A1LyWaSKlWFku+pc5Q==" xmlns="http://www.w3.org/2001/04/xmlenc#">
+                Salt="aAs7kyk+wgE="
+                IV="w4+9nLUyrGybFcQ9Jl7ROg==" xmlns="http://www.w3.org/2001/04/xmlenc#">
                 <EncryptionMethod
                   Algorithm="http://www.w3.org/2001/04/xmlenc#aes256-cbc" />
                 <CipherData>
-                  <CipherValue>l7i+A1LyWaSKlWFku+pc5T0+uJpHVmB0TybIfxfH2m5vvkcNjlPA1rYGXs1mZOkFVTgTSdu+exoG6TCrLONQ8dRnKpBOkFlhZUYiI3Bbt8Y=</CipherValue>
+                  <CipherValue>w4+9nLUyrGybFcQ9Jl7ROh5nj0abbqzRh8K4/pxKHqAE/7KuStRBH1q3e/iwuB/LJLFCh3DnhQPBIKEoh1glekD1yfkNdrbxm1TbaCwroqE=</CipherValue>
                 </CipherData>
               </EncryptedData>
             </ExecutePackageTask>
@@ -199,12 +199,12 @@
               <PackageName>PARCEL_MFG_DWAN.dtsx</PackageName>
               <EncryptedData
                 Type="http://www.w3.org/2001/04/xmlenc#Element"
-                Salt="eJbWS5Ercm8="
-                IV="YNnKJoyQifvdJw3HXDtVjw==" xmlns="http://www.w3.org/2001/04/xmlenc#">
+                Salt="087D1zC7sN8="
+                IV="cHv/uk4Sy8jtuPcV37zwXg==" xmlns="http://www.w3.org/2001/04/xmlenc#">
                 <EncryptionMethod
                   Algorithm="http://www.w3.org/2001/04/xmlenc#aes256-cbc" />
                 <CipherData>
-                  <CipherValue>YNnKJoyQifvdJw3HXDtVjxihA0uG9gVWSifcZegN2FU87kzVoyrSFUx9NF7uYD5/G1PlvO+kD0ezxJHgGxoUsYWv9fhCZ4aejSZMkEdAi2M=</CipherValue>
+                  <CipherValue>cHv/uk4Sy8jtuPcV37zwXvLXARGQZnBoknvydJzJwRuYOVMtnk2N8+r7IDiNLBPWe4ZxfsmfYKk+OPa+nPOM9MHoC3Jywe7TxJwZ+NwCiUw=</CipherValue>
                 </CipherData>
               </EncryptedData>
             </ExecutePackageTask>
@@ -247,12 +247,12 @@
               <PackageName>SEA_VISION_DWFT.dtsx</PackageName>
               <EncryptedData
                 Type="http://www.w3.org/2001/04/xmlenc#Element"
-                Salt="RL2Wus/NiFE="
-                IV="VV2H3Xb8DpfAa4BVdITVig==" xmlns="http://www.w3.org/2001/04/xmlenc#">
+                Salt="eYGiTJaAHDo="
+                IV="XAl82qHLyKyWOnhbPF7trQ==" xmlns="http://www.w3.org/2001/04/xmlenc#">
                 <EncryptionMethod
                   Algorithm="http://www.w3.org/2001/04/xmlenc#aes256-cbc" />
                 <CipherData>
-                  <CipherValue>VV2H3Xb8DpfAa4BVdITVipNmRFzdtDXGM+04zAaQPRHFzJjkygdAQnUzvE+IUbozOVfcAucqeefIEWCsyByMsuMLAOdTphzKrw3rMAfQBbg=</CipherValue>
+                  <CipherValue>XAl82qHLyKyWOnhbPF7trfO2L/iSxi1yB4fi56lyXRqTqgUoF4gjY8bfqmBInMSsuqAg5hCTJOXUwM9PhfML6U8ghC41kmxDwFMwBDjXd8Q=</CipherValue>
                 </CipherData>
               </EncryptedData>
             </ExecutePackageTask>
@@ -1416,30 +1416,6 @@
     </LayoutInfo>
   </DtsEventHandler>
   <DtsEventHandler
-    design-time-name="Package\TBLOG_PACKAGE.EventHandlers[OnError]">
-    <LayoutInfo>
-      <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
-        <NodeLayout
-          Size="149,42"
-          Id="Package\TBLOG_PACKAGE.EventHandlers[OnError]\Email ERROR"
-          TopLeft="60,60" />
-      </GraphLayout>
-    </LayoutInfo>
-  </DtsEventHandler>
-  <DtsEventHandler
-    design-time-name="Package\Last Upd TBLOG_PACKAGE.EventHandlers[OnError]">
-    <LayoutInfo>
-      <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
-        <NodeLayout
-          Size="149,42"
-          Id="Package\Last Upd TBLOG_PACKAGE.EventHandlers[OnError]\Email ERROR"
-          TopLeft="60,60" />
-      </GraphLayout>
-    </LayoutInfo>
-  </DtsEventHandler>
-  <DtsEventHandler
     design-time-name="Package\Email START.EventHandlers[OnError]">
     <LayoutInfo>
       <GraphLayout
@@ -1459,6 +1435,30 @@
         <NodeLayout
           Size="149,42"
           Id="Package\Email SUCCESS.EventHandlers[OnError]\Email ERROR"
+          TopLeft="60,60" />
+      </GraphLayout>
+    </LayoutInfo>
+  </DtsEventHandler>
+  <DtsEventHandler
+    design-time-name="Package\Last Upd TBLOG_PACKAGE.EventHandlers[OnError]">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="149,42"
+          Id="Package\Last Upd TBLOG_PACKAGE.EventHandlers[OnError]\Email ERROR"
+          TopLeft="60,60" />
+      </GraphLayout>
+    </LayoutInfo>
+  </DtsEventHandler>
+  <DtsEventHandler
+    design-time-name="Package\TBLOG_PACKAGE.EventHandlers[OnError]">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="149,42"
+          Id="Package\TBLOG_PACKAGE.EventHandlers[OnError]\Email ERROR"
           TopLeft="60,60" />
       </GraphLayout>
     </LayoutInfo>
