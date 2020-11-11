@@ -13,8 +13,8 @@
   DTS:ObjectName="PARCEL_MFG_DWAN"
   DTS:PackageType="5"
   DTS:ProtectionLevel="2"
-  DTS:VersionBuild="419"
-  DTS:VersionGUID="{00F74FF9-7D3D-4360-BD7B-B4823AEA4283}">
+  DTS:VersionBuild="422"
+  DTS:VersionGUID="{E4878159-7E79-461D-BCEF-42AA645106D4}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -28,12 +28,12 @@
           DTS:ConnectionString="Data Source=192.168.200.19;User ID=PARCEL_DIR_R;Initial Catalog=Parcel2008_SINT;Provider=SQLNCLI11.1;Persist Security Info=True;Auto Translate=False;">
           <EncryptedData
             Type="http://www.w3.org/2001/04/xmlenc#Element"
-            Salt="9gfmZs64A7k="
-            IV="FFnUJRDgRcyy0eO1twtU8Q==" xmlns="http://www.w3.org/2001/04/xmlenc#">
+            Salt="JXStWzm5cYM="
+            IV="oMF1045IH99mlmIZYlBWAg==" xmlns="http://www.w3.org/2001/04/xmlenc#">
             <EncryptionMethod
               Algorithm="http://www.w3.org/2001/04/xmlenc#aes256-cbc" />
             <CipherData>
-              <CipherValue>FFnUJRDgRcyy0eO1twtU8be4yiQFdQnQlqeTOWn63FPzZWoMhMSEQ9MQ1278hhO2F6KwqfIR8kOtle4wUo31w7jFvrlpAPNgKEq8OMlBTdsv8/9lPx0aunFbNQg2f+2t5KkAfdhNa5Qg5Bd5Jg5t98JYfYebNx7SdLjCr6OX6Vp+ahBkkyFJ7XVKzZrfljsP</CipherValue>
+              <CipherValue>oMF1045IH99mlmIZYlBWAtezBEOJfRn+AeKYayBWDR+kkOGqoe2/jQiY5QEAvOvwKDNgZMonC80ZgIbx8Ax38911JJsMOQP2sWaj1a8qQWSqXGN08cCL/OHj3csPRaigE81RLVvyXoCia91Dkb9aOuR1zVE0wHxDVGkl1Pm3k5SP3J5A1zuhDUC1v4t+tz/c</CipherValue>
             </CipherData>
           </EncryptedData>
         </DTS:ConnectionManager>
@@ -184,7 +184,7 @@
       DTS:LocaleID="-1"
       DTS:ObjectName="Assign SITE_ID"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="1">
+      DTS:ThreadHint="0">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -212,7 +212,7 @@
       DTS:LocaleID="-1"
       DTS:ObjectName="Assign SOURCE_SYSTEM_ID"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="0">
+      DTS:ThreadHint="1">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -1088,7 +1088,7 @@ ID=?</property>
                         <connection
                           refId="Package\DWH LOAD\TBDWAN_ARTICLE\TBDWAN_ARTICLE ins\DEL TRG table.Connections[OleDbConnection]"
                           connectionManagerID="{62102490-454D-4B7E-9A09-120A46D18B10}:external"
-                          connectionManagerRefId="Project.ConnectionManagers[SRV-DIR-DEV_SRVDIRDEV.DIR_DWH.DIR_DWH_ETL]"
+                          connectionManagerRefId="Project.ConnectionManagers[SRV-DIR_SRVDIR DIR_DWH DIR_DWH_ETL]"
                           description="The OLE DB runtime connection used to access the database."
                           name="OleDbConnection" />
                       </connections>
@@ -1285,7 +1285,7 @@ ID=?</property>
                         <connection
                           refId="Package\DWH LOAD\TBDWAN_ARTICLE\TBDWAN_ARTICLE ins\INS TRG table.Connections[OleDbConnection]"
                           connectionManagerID="{62102490-454D-4B7E-9A09-120A46D18B10}:external"
-                          connectionManagerRefId="Project.ConnectionManagers[SRV-DIR-DEV_SRVDIRDEV.DIR_DWH.DIR_DWH_ETL]"
+                          connectionManagerRefId="Project.ConnectionManagers[SRV-DIR_SRVDIR DIR_DWH DIR_DWH_ETL]"
                           description="The OLE DB runtime connection used to access the database."
                           name="OleDbConnection" />
                       </connections>
@@ -1626,7 +1626,7 @@ from
                         <connection
                           refId="Package\DWH LOAD\TBDWAN_ARTICLE\TBDWAN_ARTICLE ins\Load SRC tables.Connections[OleDbConnection]"
                           connectionManagerID="{62102490-454D-4B7E-9A09-120A46D18B10}:external"
-                          connectionManagerRefId="Project.ConnectionManagers[SRV-DIR-DEV_SRVDIRDEV.DIR_DWH.DIR_DWH_ETL]"
+                          connectionManagerRefId="Project.ConnectionManagers[SRV-DIR_SRVDIR DIR_DWH DIR_DWH_ETL]"
                           description="The OLE DB runtime connection used to access the database."
                           name="OleDbConnection" />
                       </connections>
@@ -2193,7 +2193,7 @@ from
                         <connection
                           refId="Package\DWH LOAD\TBDWAN_ARTICLE\TBDWAN_ARTICLE ins\TBDWTMP_ARTICLE.Connections[OleDbConnection]"
                           connectionManagerID="{62102490-454D-4B7E-9A09-120A46D18B10}:external"
-                          connectionManagerRefId="Project.ConnectionManagers[SRV-DIR-DEV_SRVDIRDEV.DIR_DWH.DIR_DWH_ETL]"
+                          connectionManagerRefId="Project.ConnectionManagers[SRV-DIR_SRVDIR DIR_DWH DIR_DWH_ETL]"
                           description="The OLE DB runtime connection used to access the database."
                           name="OleDbConnection" />
                       </connections>
@@ -3541,7 +3541,7 @@ ID = ?</property>
                         <connection
                           refId="Package\DWH LOAD\TBDWAN_BATCH\TBDWAN_BATCH ins\DEL TRG table.Connections[OleDbConnection]"
                           connectionManagerID="{62102490-454D-4B7E-9A09-120A46D18B10}:external"
-                          connectionManagerRefId="Project.ConnectionManagers[SRV-DIR-DEV_SRVDIRDEV.DIR_DWH.DIR_DWH_ETL]"
+                          connectionManagerRefId="Project.ConnectionManagers[SRV-DIR_SRVDIR DIR_DWH DIR_DWH_ETL]"
                           description="The OLE DB runtime connection used to access the database."
                           name="OleDbConnection" />
                       </connections>
@@ -3738,7 +3738,7 @@ ID = ?</property>
                         <connection
                           refId="Package\DWH LOAD\TBDWAN_BATCH\TBDWAN_BATCH ins\ERR TRG table.Connections[OleDbConnection]"
                           connectionManagerID="{62102490-454D-4B7E-9A09-120A46D18B10}:external"
-                          connectionManagerRefId="Project.ConnectionManagers[SRV-DIR-DEV_SRVDIRDEV.DIR_DWH.DIR_DWH_ETL]"
+                          connectionManagerRefId="Project.ConnectionManagers[SRV-DIR_SRVDIR DIR_DWH DIR_DWH_ETL]"
                           description="The OLE DB runtime connection used to access the database."
                           name="OleDbConnection" />
                       </connections>
@@ -4095,7 +4095,7 @@ ID = ?</property>
                         <connection
                           refId="Package\DWH LOAD\TBDWAN_BATCH\TBDWAN_BATCH ins\INS TRG table.Connections[OleDbConnection]"
                           connectionManagerID="{62102490-454D-4B7E-9A09-120A46D18B10}:external"
-                          connectionManagerRefId="Project.ConnectionManagers[SRV-DIR-DEV_SRVDIRDEV.DIR_DWH.DIR_DWH_ETL]"
+                          connectionManagerRefId="Project.ConnectionManagers[SRV-DIR_SRVDIR DIR_DWH DIR_DWH_ETL]"
                           description="The OLE DB runtime connection used to access the database."
                           name="OleDbConnection" />
                       </connections>
@@ -4472,7 +4472,7 @@ FROM
                         <connection
                           refId="Package\DWH LOAD\TBDWAN_BATCH\TBDWAN_BATCH ins\Load SRC tables.Connections[OleDbConnection]"
                           connectionManagerID="{62102490-454D-4B7E-9A09-120A46D18B10}:external"
-                          connectionManagerRefId="Project.ConnectionManagers[SRV-DIR-DEV_SRVDIRDEV.DIR_DWH.DIR_DWH_ETL]"
+                          connectionManagerRefId="Project.ConnectionManagers[SRV-DIR_SRVDIR DIR_DWH DIR_DWH_ETL]"
                           description="The OLE DB runtime connection used to access the database."
                           name="OleDbConnection" />
                       </connections>
@@ -5136,7 +5136,7 @@ FROM
                         <connection
                           refId="Package\DWH LOAD\TBDWAN_BATCH\TBDWAN_BATCH ins\TBDWTMP_BATCH.Connections[OleDbConnection]"
                           connectionManagerID="{62102490-454D-4B7E-9A09-120A46D18B10}:external"
-                          connectionManagerRefId="Project.ConnectionManagers[SRV-DIR-DEV_SRVDIRDEV.DIR_DWH.DIR_DWH_ETL]"
+                          connectionManagerRefId="Project.ConnectionManagers[SRV-DIR_SRVDIR DIR_DWH DIR_DWH_ETL]"
                           description="The OLE DB runtime connection used to access the database."
                           name="OleDbConnection" />
                       </connections>
