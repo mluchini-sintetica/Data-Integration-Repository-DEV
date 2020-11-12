@@ -13,8 +13,8 @@
   DTS:ObjectName="AUDIT_TRAIL_DW"
   DTS:PackageType="5"
   DTS:ProtectionLevel="2"
-  DTS:VersionBuild="636"
-  DTS:VersionGUID="{1E7A4DC9-5A5C-4736-AE16-00A5996F230D}">
+  DTS:VersionBuild="638"
+  DTS:VersionGUID="{6D50E999-964B-4FC3-A1D3-85D09FA56D48}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -28,12 +28,12 @@
           DTS:ConnectionString="Data Source=192.168.200.19;User ID=PARCEL_DIR_R;Initial Catalog=Parcel2008_SINT;Provider=SQLNCLI11.1;Persist Security Info=True;Auto Translate=False;">
           <EncryptedData
             Type="http://www.w3.org/2001/04/xmlenc#Element"
-            Salt="PwT1MlKO/YU="
-            IV="4/YGm+EtXS6GMXFuecmoTg==" xmlns="http://www.w3.org/2001/04/xmlenc#">
+            Salt="WPTwUuZo1ik="
+            IV="2SFNQFPkn3z4AxjOtjU5NQ==" xmlns="http://www.w3.org/2001/04/xmlenc#">
             <EncryptionMethod
               Algorithm="http://www.w3.org/2001/04/xmlenc#aes256-cbc" />
             <CipherData>
-              <CipherValue>4/YGm+EtXS6GMXFuecmoTsIoAEVxw6fKksvvX32jC3oAW1tZxz//RoDqoykXmmXS1WVm+g+3F0jL1twQI0+AByJbt08nvfFNEx7qL2yLZamWWuRdtsyEgXU4STV5FbcqpMNM3toPdgDBrR50E5sQKTK+W4Hg9dLxFBxaH8SguCF9WzzPzBfr/sH5URvHZVhf</CipherValue>
+              <CipherValue>2SFNQFPkn3z4AxjOtjU5NQDIStoli8jcM6KoTKgbjmo7l5rFgS2IIMEaA9SY4YFPNh8//P+SPGXEFT4+QKI8qD+JNlMc1kh6f1+479ajBsdERj5zLu/wzxqmGfqnbdr/HIeIM3YgIe54MXzREhHM2bzviCTrMqXPaZsqL86yCIiljfKIX7I87O5piWWUA+tw</CipherValue>
             </CipherData>
           </EncryptedData>
         </DTS:ConnectionManager>
@@ -4332,7 +4332,7 @@ FROM
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
           SQLTask:Connection="{62102490-454D-4B7E-9A09-120A46D18B10}"
-          SQLTask:SqlStatementSource="--insert new row&#xA;INSERT INTO TBLOG_PACKAGE VALUES (?,?,?,?,?,?,?,getdate(),null,?,1,0);&#xA;&#xA;--retrieve last ID just inserted&#xA;SELECT max(id) as Max_ID&#xA;FROM TBLOG_PACKAGE&#xA;WHERE package_name_cd=?&#xA;and source_system_id= ?;"
+          SQLTask:SqlStatementSource="--insert new rowINSERT INTO TBLOG_PACKAGE VALUES (?,?,?,?,?,?,?,getdate(),null,?,1,0);&#xA;&#xA;--retrieve last ID just inserted&#xA;SELECT max(id) as Max_ID&#xA;FROM TBLOG_PACKAGE&#xA;WHERE package_name_cd=?&#xA;and source_system_id= ?;"
           SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
           <SQLTask:ResultBinding
             SQLTask:ResultName="MAX_ID"
