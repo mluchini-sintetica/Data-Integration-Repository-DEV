@@ -18,15 +18,13 @@
           <SSIS:Property SSIS:Name="Name">Data Integration Repository</SSIS:Property>
           <SSIS:Property SSIS:Name="VersionMajor">0</SSIS:Property>
           <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
-          <SSIS:Property SSIS:Name="VersionBuild">0</SSIS:Property>
-          <SSIS:Property SSIS:Name="VersionComments">
-          </SSIS:Property>
+          <SSIS:Property SSIS:Name="VersionBuild">1</SSIS:Property>
+          <SSIS:Property SSIS:Name="VersionComments">First version</SSIS:Property>
           <SSIS:Property SSIS:Name="CreationDate">2020-05-27T14:32:19.5958621+02:00</SSIS:Property>
           <SSIS:Property SSIS:Name="CreatorName">SINTE00\mluchini</SSIS:Property>
           <SSIS:Property SSIS:Name="CreatorComputerName">SRV-DIR-DEV</SSIS:Property>
-          <SSIS:Property SSIS:Name="Description">
-          </SSIS:Property>
-          <SSIS:Property SSIS:Name="PasswordVerifier" SSIS:Sensitive="1" SSIS:Salt="91lWLC9v2tk=" SSIS:IV="YCJFFlZcYLmSxh0o0ciuVg==" SSIS:Algorithm="http://www.w3.org/2001/04/xmlenc#aes256-cbc">OrfJpfWYdyLMreDJC/WLw/vbKyRi0fg5MKDhX94i4P0xOa0UJ4PtAcS9F41Wd7JrccAMFX1EUmldVbbGL7eYJADY4UE4UJuqHhJJZ2x+D6Lj6iIA3i3Rz4mbqBjyJgKLLbqfFxc05F6QbwNIFI77dw7QX6U4als4IVxj5lbw5s469a7Q6RLH1XlBjPIDQ8lX</SSIS:Property>
+          <SSIS:Property SSIS:Name="Description">Data Integration Repository</SSIS:Property>
+          <SSIS:Property SSIS:Name="PasswordVerifier" SSIS:Sensitive="1" SSIS:Salt="yLcA7DOO5Js=" SSIS:IV="FNC9Kiy/X+jQLLFfYU97jA==" SSIS:Algorithm="http://www.w3.org/2001/04/xmlenc#aes256-cbc">hUNSmgDmy4KJ0MxF0dxc0MuO2V9tBGs4LxvqGqGJtQPTNzfFYAOzRbMLc+mQrVPMJRLYWzo5WYufwFaEfjXB30NTjt1C+ys+jNE+lqXAk9+wYjggIC6Rs8+PX8XbGBGW2UXt58sB+L4fuKZtEdj+9MKk4wnzfLDoUpIQyVwT5MtylDt8Im0DZtg4GVS3D+vl</SSIS:Property>
           <SSIS:Property SSIS:Name="FormatVersion">1</SSIS:Property>
         </SSIS:Properties>
         <SSIS:Packages>
@@ -4405,10 +4403,10 @@
                 <SSIS:Property SSIS:Name="Name">AUDIT_TRAIL_DW</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionBuild">628</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">638</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionComments">
                 </SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionGUID">{44C92630-FD03-4ACA-B314-33BBA97075A3}</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{6D50E999-964B-4FC3-A1D3-85D09FA56D48}</SSIS:Property>
                 <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
                 <SSIS:Property SSIS:Name="Description">
                 </SSIS:Property>
