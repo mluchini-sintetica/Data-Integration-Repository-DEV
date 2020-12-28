@@ -13,8 +13,8 @@
   DTS:ObjectName="PARCEL_MFG_STG"
   DTS:PackageType="5"
   DTS:ProtectionLevel="2"
-  DTS:VersionBuild="308"
-  DTS:VersionGUID="{6CA07976-1C71-4EE8-9F8F-1DE9CE1BAB87}">
+  DTS:VersionBuild="318"
+  DTS:VersionGUID="{D9510743-5788-48D6-9F05-76E917763B81}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Configurations>
@@ -28,12 +28,23 @@
   <DTS:PackageParameters>
     <DTS:PackageParameter
       DTS:CreationName=""
-      DTS:DataType="3"
-      DTS:DTSID="{8A5BC685-6D9C-45D3-A1F6-811C65E8298A}"
-      DTS:ObjectName="Parameter">
+      DTS:DataType="8"
+      DTS:DTSID="{76CD7299-468A-42D6-AD0D-BEAEFCE09ACE}"
+      DTS:ObjectName="in_SITE_CD">
       <DTS:Property
-        DTS:DataType="3"
-        DTS:Name="ParameterValue">0</DTS:Property>
+        DTS:DataType="8"
+        DTS:Name="ParameterValue"
+        xml:space="preserve"></DTS:Property>
+    </DTS:PackageParameter>
+    <DTS:PackageParameter
+      DTS:CreationName=""
+      DTS:DataType="8"
+      DTS:DTSID="{8A5BC685-6D9C-45D3-A1F6-811C65E8298A}"
+      DTS:ObjectName="in_SOURCE_SYSTEM_CD">
+      <DTS:Property
+        DTS:DataType="8"
+        DTS:Name="ParameterValue"
+        xml:space="preserve"></DTS:Property>
     </DTS:PackageParameter>
   </DTS:PackageParameters>
   <DTS:Variables>
@@ -100,16 +111,6 @@
       DTS:ObjectName="in_SITE_CD">
       <DTS:VariableValue
         DTS:DataType="8">Mendrisio</DTS:VariableValue>
-    </DTS:Variable>
-    <DTS:Variable
-      DTS:CreationName=""
-      DTS:Description="Mendrisio source system code, refer to TBDWMN_SOURCE_SYSTEM"
-      DTS:DTSID="{EF0EDBF3-69E8-4133-B9C2-05FB032C0509}"
-      DTS:IncludeInDebugDump="2345"
-      DTS:Namespace="User"
-      DTS:ObjectName="in_SOURCE_SYSTEM_CD">
-      <DTS:VariableValue
-        DTS:DataType="8">Parcel2008_SINT</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
@@ -194,7 +195,7 @@
             SQLTask:DtsVariableName="User::out_SITE_ID" />
           <SQLTask:ParameterBinding
             SQLTask:ParameterName="0"
-            SQLTask:DtsVariableName="$Project::in_SITE_CD"
+            SQLTask:DtsVariableName="$Package::in_SITE_CD"
             SQLTask:ParameterDirection="Input"
             SQLTask:DataType="130"
             SQLTask:ParameterSize="-1" />
@@ -222,9 +223,9 @@
             SQLTask:DtsVariableName="User::out_SOURCE_SYSTEM_ID" />
           <SQLTask:ParameterBinding
             SQLTask:ParameterName="0"
-            SQLTask:DtsVariableName="User::in_SOURCE_SYSTEM_CD"
+            SQLTask:DtsVariableName="$Package::in_SOURCE_SYSTEM_CD"
             SQLTask:ParameterDirection="Input"
-            SQLTask:DataType="131"
+            SQLTask:DataType="130"
             SQLTask:ParameterSize="-1" />
         </SQLTask:SqlTaskData>
       </DTS:ObjectData>
@@ -280,7 +281,7 @@
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
           SQLTask:Connection="{62102490-454D-4B7E-9A09-120A46D18B10}"
-          SQLTask:SqlStatementSource="--insert new row&#xA;INSERT INTO TBLOG_PACKAGE VALUES (?,?,?,?,?,?,?,getdate(),null,?,1,0);&#xA;&#xA;--retrieve last ID just inserted&#xA;SELECT max(id) as Max_ID&#xA;FROM TBLOG_PACKAGE&#xA;WHERE package_name_cd=?&#xA;and source_system_id= ?;"
+          SQLTask:SqlStatementSource="--insert new row&#xA;INSERT INTO TBLOG_PACKAGE VALUES (?,?,?,?,?,?,?,getdate(),null,?,1,0);&#xA;&#xA;--retrieve last ID just inserted&#xA;SELECT max(id) as Max_ID&#xA;FROM TBLOG_PACKAGE&#xA;WHERE package_name_cd=?&#xA;and source_system_id= ?&#xA;and site_id = ?"
           SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
           <SQLTask:ResultBinding
             SQLTask:ResultName="MAX_ID"
@@ -345,6 +346,12 @@
             SQLTask:ParameterDirection="Input"
             SQLTask:DataType="131"
             SQLTask:ParameterSize="-1" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="10"
+            SQLTask:DtsVariableName="User::out_SITE_ID"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="131"
+            SQLTask:ParameterSize="-1" />
         </SQLTask:SqlTaskData>
       </DTS:ObjectData>
     </DTS:Executable>
@@ -362,7 +369,7 @@
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
           SQLTask:Connection="{62102490-454D-4B7E-9A09-120A46D18B10}"
-          SQLTask:SqlStatementSource="--set the last successful flag to 0 &#xA;UPDATE TBLOG_PACKAGE&#xA;SET LAST_SUCCESS_PACKAGE_RUN_FLG = 0&#xA;WHERE ID &lt;&gt; ? and PACKAGE_NAME_CD = ? and SOURCE_SYSTEM_ID = ? and LAST_SUCCESS_PACKAGE_RUN_FLG = 1;&#xA;&#xA;--set the last successful flag to 1&#xA;UPDATE TBLOG_PACKAGE&#xA;SET END_DT = getdate(), LAST_SUCCESS_PACKAGE_RUN_FLG=1&#xA;WHERE ID=?;&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          SQLTask:SqlStatementSource="--set the last successful flag to 0 &#xA;UPDATE TBLOG_PACKAGE&#xA;SET LAST_SUCCESS_PACKAGE_RUN_FLG = 0&#xA;WHERE ID &lt;&gt; ? and PACKAGE_NAME_CD = ? and SOURCE_SYSTEM_ID = ? and LAST_SUCCESS_PACKAGE_RUN_FLG = 1&#xA;and SITE_ID = ?;&#xA;&#xA;--set the last successful flag to 1&#xA;UPDATE TBLOG_PACKAGE&#xA;SET END_DT = getdate(), LAST_SUCCESS_PACKAGE_RUN_FLG=1&#xA;WHERE ID=?;&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
           <SQLTask:ParameterBinding
             SQLTask:ParameterName="0"
             SQLTask:DtsVariableName="User::out_MAX_ID"
@@ -382,8 +389,14 @@
             SQLTask:DataType="131"
             SQLTask:ParameterSize="-1" />
           <SQLTask:ParameterBinding
-            SQLTask:ParameterName="3"
+            SQLTask:ParameterName="4"
             SQLTask:DtsVariableName="User::out_MAX_ID"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="131"
+            SQLTask:ParameterSize="-1" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="3"
+            SQLTask:DtsVariableName="User::out_SITE_ID"
             SQLTask:ParameterDirection="Input"
             SQLTask:DataType="131"
             SQLTask:ParameterSize="-1" />
@@ -441,7 +454,7 @@
               DTS:LocaleID="-1"
               DTS:ObjectName="Assign TABLE_TARGET_CD"
               DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-              DTS:ThreadHint="2">
+              DTS:ThreadHint="0">
               <DTS:Variables />
               <DTS:ObjectData>
                 <SQLTask:SqlTaskData
@@ -455,6 +468,25 @@
               </DTS:ObjectData>
             </DTS:Executable>
             <DTS:Executable
+              DTS:refId="Package\STAGING LOAD\TBST_PRC_ANAGRAFICA_FAMIGLIE\Delete STG TRG TABLE"
+              DTS:CreationName="Microsoft.ExecuteSQLTask"
+              DTS:Description="Execute SQL Task"
+              DTS:DTSID="{f8b6d811-70e6-40d3-abab-12ed655fd882}"
+              DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+              DTS:LocaleID="-1"
+              DTS:ObjectName="Delete STG TRG TABLE"
+              DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+              DTS:ThreadHint="1">
+              <DTS:Variables />
+              <DTS:PropertyExpression
+                DTS:Name="SqlStatementSource">"delete from " + @[User::out_TABLE_TARGET_CD] + " where site_id = " + (DT_WSTR,2) @[User::out_SITE_ID]</DTS:PropertyExpression>
+              <DTS:ObjectData>
+                <SQLTask:SqlTaskData
+                  SQLTask:Connection="{62102490-454D-4B7E-9A09-120A46D18B10}"
+                  SQLTask:SqlStatementSource="delete from  where site_id = 0" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+              </DTS:ObjectData>
+            </DTS:Executable>
+            <DTS:Executable
               DTS:refId="Package\STAGING LOAD\TBST_PRC_ANAGRAFICA_FAMIGLIE\Ins_Upd TBLOG_PACKAGE_TABLE"
               DTS:CreationName="Microsoft.ExecuteSQLTask"
               DTS:Description="Execute SQL Task"
@@ -463,12 +495,12 @@
               DTS:LocaleID="-1"
               DTS:ObjectName="Ins_Upd TBLOG_PACKAGE_TABLE"
               DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-              DTS:ThreadHint="2">
+              DTS:ThreadHint="0">
               <DTS:Variables />
               <DTS:ObjectData>
                 <SQLTask:SqlTaskData
                   SQLTask:Connection="{62102490-454D-4B7E-9A09-120A46D18B10}"
-                  SQLTask:SqlStatementSource="--insert new row&#xA;INSERT INTO TBLOG_PACKAGE_TABLE&#xA;VALUES (?,?,?,?,?, getdate(),null, ?, 1, 0);&#xA;&#xA;--update previous last table run to 0&#xA;UPDATE TBLOG_PACKAGE_TABLE&#xA;SET LAST_TABLE_RUN_FLG = 0&#xA;WHERE TBLOG_PACKAGE_ID &lt;&gt; ? and TABLE_TARGET_CD = ? and SOURCE_SYSTEM_ID = ? and LAST_TABLE_RUN_FLG = 1;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+                  SQLTask:SqlStatementSource="--insert new row&#xA;INSERT INTO TBLOG_PACKAGE_TABLE&#xA;VALUES (?,?,?,?,?, getdate(),null, ?, 1, 0);&#xA;&#xA;--update previous last table run to 0&#xA;UPDATE TBLOG_PACKAGE_TABLE&#xA;SET LAST_TABLE_RUN_FLG = 0&#xA;WHERE TBLOG_PACKAGE_ID &lt;&gt; ? and TABLE_TARGET_CD = ? and SOURCE_SYSTEM_ID = ? and LAST_TABLE_RUN_FLG = 1&#xA;and SITE_ID = ?;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
                   <SQLTask:ParameterBinding
                     SQLTask:ParameterName="0"
                     SQLTask:DtsVariableName="User::out_MAX_ID"
@@ -523,6 +555,12 @@
                     SQLTask:ParameterDirection="Input"
                     SQLTask:DataType="130"
                     SQLTask:ParameterSize="-1" />
+                  <SQLTask:ParameterBinding
+                    SQLTask:ParameterName="9"
+                    SQLTask:DtsVariableName="User::out_SITE_ID"
+                    SQLTask:ParameterDirection="Input"
+                    SQLTask:DataType="131"
+                    SQLTask:ParameterSize="-1" />
                 </SQLTask:SqlTaskData>
               </DTS:ObjectData>
             </DTS:Executable>
@@ -535,12 +573,12 @@
               DTS:LocaleID="-1"
               DTS:ObjectName="Last Upd TBLOG_PACKAGE_TABLE"
               DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-              DTS:ThreadHint="2">
+              DTS:ThreadHint="0">
               <DTS:Variables />
               <DTS:ObjectData>
                 <SQLTask:SqlTaskData
                   SQLTask:Connection="{62102490-454D-4B7E-9A09-120A46D18B10}"
-                  SQLTask:SqlStatementSource="--set the last successful flag to 0&#xA;UPDATE TBLOG_PACKAGE_TABLE&#xA;SET LAST_SUCCESS_TABLE_RUN_FLG = 0&#xA;WHERE &#xA;TABLE_TARGET_CD = ? and SOURCE_SYSTEM_ID = ? and LAST_SUCCESS_TABLE_RUN_FLG=1;&#xA;&#xA;--set the last successful flag to 1&#xA;UPDATE TBLOG_PACKAGE_TABLE&#xA;SET END_DT = getdate(), LAST_SUCCESS_TABLE_RUN_FLG=1&#xA;WHERE ID = ?&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+                  SQLTask:SqlStatementSource="--set the last successful flag to 0&#xA;UPDATE TBLOG_PACKAGE_TABLE&#xA;SET LAST_SUCCESS_TABLE_RUN_FLG = 0&#xA;WHERE &#xA;TABLE_TARGET_CD = ? and SOURCE_SYSTEM_ID = ? and LAST_SUCCESS_TABLE_RUN_FLG=1&#xA;and SITE_ID = ?;&#xA;&#xA;--set the last successful flag to 1&#xA;UPDATE TBLOG_PACKAGE_TABLE&#xA;SET END_DT = getdate(), LAST_SUCCESS_TABLE_RUN_FLG=1&#xA;WHERE ID = ?&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
                   <SQLTask:ParameterBinding
                     SQLTask:ParameterName="1"
                     SQLTask:DtsVariableName="User::out_SOURCE_SYSTEM_ID"
@@ -548,7 +586,7 @@
                     SQLTask:DataType="131"
                     SQLTask:ParameterSize="-1" />
                   <SQLTask:ParameterBinding
-                    SQLTask:ParameterName="2"
+                    SQLTask:ParameterName="3"
                     SQLTask:DtsVariableName="User::out_MAX_TABLE_ID"
                     SQLTask:ParameterDirection="Input"
                     SQLTask:DataType="131"
@@ -558,6 +596,12 @@
                     SQLTask:DtsVariableName="User::out_TABLE_TARGET_CD"
                     SQLTask:ParameterDirection="Input"
                     SQLTask:DataType="130"
+                    SQLTask:ParameterSize="-1" />
+                  <SQLTask:ParameterBinding
+                    SQLTask:ParameterName="2"
+                    SQLTask:DtsVariableName="User::out_SITE_ID"
+                    SQLTask:ParameterDirection="Input"
+                    SQLTask:DataType="131"
                     SQLTask:ParameterSize="-1" />
                 </SQLTask:SqlTaskData>
               </DTS:ObjectData>
@@ -571,12 +615,12 @@
               DTS:LocaleID="-1"
               DTS:ObjectName="MAX TABLE ID"
               DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-              DTS:ThreadHint="2">
+              DTS:ThreadHint="0">
               <DTS:Variables />
               <DTS:ObjectData>
                 <SQLTask:SqlTaskData
                   SQLTask:Connection="{62102490-454D-4B7E-9A09-120A46D18B10}"
-                  SQLTask:SqlStatementSource="--retrieve tha last ID&#xA;SELECT MAX(ID) as MAX_TABLE_ID&#xA;FROM TBLOG_PACKAGE_TABLE&#xA;WHERE TBLOG_PACKAGE_ID = ? and TABLE_TARGET_CD = ? "
+                  SQLTask:SqlStatementSource="--retrieve tha last ID&#xA;SELECT MAX(ID) as MAX_TABLE_ID&#xA;FROM TBLOG_PACKAGE_TABLE&#xA;WHERE TBLOG_PACKAGE_ID = ? and TABLE_TARGET_CD = ? &#xA;and SITE_ID = ?"
                   SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
                   <SQLTask:ResultBinding
                     SQLTask:ResultName="MAX_TABLE_ID"
@@ -592,6 +636,12 @@
                     SQLTask:DtsVariableName="User::out_TABLE_TARGET_CD"
                     SQLTask:ParameterDirection="Input"
                     SQLTask:DataType="130"
+                    SQLTask:ParameterSize="-1" />
+                  <SQLTask:ParameterBinding
+                    SQLTask:ParameterName="2"
+                    SQLTask:DtsVariableName="User::out_SITE_ID"
+                    SQLTask:ParameterDirection="Input"
+                    SQLTask:DataType="131"
                     SQLTask:ParameterSize="-1" />
                 </SQLTask:SqlTaskData>
               </DTS:ObjectData>
@@ -1718,25 +1768,6 @@
                 </pipeline>
               </DTS:ObjectData>
             </DTS:Executable>
-            <DTS:Executable
-              DTS:refId="Package\STAGING LOAD\TBST_PRC_ANAGRAFICA_FAMIGLIE\Truncate STG TRG TABLE"
-              DTS:CreationName="Microsoft.ExecuteSQLTask"
-              DTS:Description="Execute SQL Task"
-              DTS:DTSID="{f8b6d811-70e6-40d3-abab-12ed655fd882}"
-              DTS:ExecutableType="Microsoft.ExecuteSQLTask"
-              DTS:LocaleID="-1"
-              DTS:ObjectName="Truncate STG TRG TABLE"
-              DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-              DTS:ThreadHint="3">
-              <DTS:Variables />
-              <DTS:PropertyExpression
-                DTS:Name="SqlStatementSource">"truncate table " + @[User::out_TABLE_TARGET_CD]</DTS:PropertyExpression>
-              <DTS:ObjectData>
-                <SQLTask:SqlTaskData
-                  SQLTask:Connection="{62102490-454D-4B7E-9A09-120A46D18B10}"
-                  SQLTask:SqlStatementSource="truncate table " xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
-              </DTS:ObjectData>
-            </DTS:Executable>
           </DTS:Executables>
           <DTS:PrecedenceConstraints>
             <DTS:PrecedenceConstraint
@@ -1754,7 +1785,7 @@
               DTS:From="Package\STAGING LOAD\TBST_PRC_ANAGRAFICA_FAMIGLIE\Ins_Upd TBLOG_PACKAGE_TABLE"
               DTS:LogicalAnd="True"
               DTS:ObjectName="Constraint 1"
-              DTS:To="Package\STAGING LOAD\TBST_PRC_ANAGRAFICA_FAMIGLIE\Truncate STG TRG TABLE" />
+              DTS:To="Package\STAGING LOAD\TBST_PRC_ANAGRAFICA_FAMIGLIE\Delete STG TRG TABLE" />
             <DTS:PrecedenceConstraint
               DTS:refId="Package\STAGING LOAD\TBST_PRC_ANAGRAFICA_FAMIGLIE.PrecedenceConstraints[Constraint 2]"
               DTS:CreationName=""
@@ -1775,7 +1806,7 @@
               DTS:refId="Package\STAGING LOAD\TBST_PRC_ANAGRAFICA_FAMIGLIE.PrecedenceConstraints[Constraint 4]"
               DTS:CreationName=""
               DTS:DTSID="{7cae142b-9247-484e-8653-44e71210d03a}"
-              DTS:From="Package\STAGING LOAD\TBST_PRC_ANAGRAFICA_FAMIGLIE\Truncate STG TRG TABLE"
+              DTS:From="Package\STAGING LOAD\TBST_PRC_ANAGRAFICA_FAMIGLIE\Delete STG TRG TABLE"
               DTS:LogicalAnd="True"
               DTS:ObjectName="Constraint 4"
               DTS:To="Package\STAGING LOAD\TBST_PRC_ANAGRAFICA_FAMIGLIE\TBST_PRC_ANAGRAFICA_FAMIGLIE" />
@@ -1853,7 +1884,7 @@
               DTS:LocaleID="-1"
               DTS:ObjectName="Assign TABLE_TARGET_CD"
               DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-              DTS:ThreadHint="4">
+              DTS:ThreadHint="2">
               <DTS:Variables />
               <DTS:ObjectData>
                 <SQLTask:SqlTaskData
@@ -1867,6 +1898,25 @@
               </DTS:ObjectData>
             </DTS:Executable>
             <DTS:Executable
+              DTS:refId="Package\STAGING LOAD\TBST_PRC_ANAGRAFICA_LOTTI\Delete STG TRG TABLE"
+              DTS:CreationName="Microsoft.ExecuteSQLTask"
+              DTS:Description="Execute SQL Task"
+              DTS:DTSID="{BF36C666-F715-43F3-B3A4-3E924AEBA2BC}"
+              DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+              DTS:LocaleID="-1"
+              DTS:ObjectName="Delete STG TRG TABLE"
+              DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+              DTS:ThreadHint="2">
+              <DTS:Variables />
+              <DTS:PropertyExpression
+                DTS:Name="SqlStatementSource">"delete from " + @[User::out_TABLE_TARGET_CD] + " where site_id = " + (DT_WSTR,2) @[User::out_SITE_ID]</DTS:PropertyExpression>
+              <DTS:ObjectData>
+                <SQLTask:SqlTaskData
+                  SQLTask:Connection="{62102490-454D-4B7E-9A09-120A46D18B10}"
+                  SQLTask:SqlStatementSource="delete from  where site_id = 0" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+              </DTS:ObjectData>
+            </DTS:Executable>
+            <DTS:Executable
               DTS:refId="Package\STAGING LOAD\TBST_PRC_ANAGRAFICA_LOTTI\Ins_Upd TBLOG_PACKAGE_TABLE"
               DTS:CreationName="Microsoft.ExecuteSQLTask"
               DTS:Description="Execute SQL Task"
@@ -1875,12 +1925,12 @@
               DTS:LocaleID="-1"
               DTS:ObjectName="Ins_Upd TBLOG_PACKAGE_TABLE"
               DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-              DTS:ThreadHint="4">
+              DTS:ThreadHint="2">
               <DTS:Variables />
               <DTS:ObjectData>
                 <SQLTask:SqlTaskData
                   SQLTask:Connection="{62102490-454D-4B7E-9A09-120A46D18B10}"
-                  SQLTask:SqlStatementSource="--insert new row&#xA;INSERT INTO TBLOG_PACKAGE_TABLE&#xA;VALUES (?,?,?,?,?, getdate(),null, ?, 1, 0);&#xA;&#xA;--update previous last table run to 0&#xA;UPDATE TBLOG_PACKAGE_TABLE&#xA;SET LAST_TABLE_RUN_FLG = 0&#xA;WHERE TBLOG_PACKAGE_ID &lt;&gt; ? and TABLE_TARGET_CD = ? and SOURCE_SYSTEM_ID = ? and LAST_TABLE_RUN_FLG = 1;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+                  SQLTask:SqlStatementSource="--insert new row&#xA;INSERT INTO TBLOG_PACKAGE_TABLE&#xA;VALUES (?,?,?,?,?, getdate(),null, ?, 1, 0);&#xA;&#xA;--update previous last table run to 0&#xA;UPDATE TBLOG_PACKAGE_TABLE&#xA;SET LAST_TABLE_RUN_FLG = 0&#xA;WHERE TBLOG_PACKAGE_ID &lt;&gt; ? and TABLE_TARGET_CD = ? and SOURCE_SYSTEM_ID = ? and LAST_TABLE_RUN_FLG = 1&#xA;and SITE_ID = ?;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
                   <SQLTask:ParameterBinding
                     SQLTask:ParameterName="0"
                     SQLTask:DtsVariableName="User::out_MAX_ID"
@@ -1935,6 +1985,12 @@
                     SQLTask:ParameterDirection="Input"
                     SQLTask:DataType="130"
                     SQLTask:ParameterSize="-1" />
+                  <SQLTask:ParameterBinding
+                    SQLTask:ParameterName="9"
+                    SQLTask:DtsVariableName="User::out_SITE_ID"
+                    SQLTask:ParameterDirection="Input"
+                    SQLTask:DataType="131"
+                    SQLTask:ParameterSize="-1" />
                 </SQLTask:SqlTaskData>
               </DTS:ObjectData>
             </DTS:Executable>
@@ -1947,12 +2003,12 @@
               DTS:LocaleID="-1"
               DTS:ObjectName="Last Upd TBLOG_PACKAGE_TABLE"
               DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-              DTS:ThreadHint="4">
+              DTS:ThreadHint="2">
               <DTS:Variables />
               <DTS:ObjectData>
                 <SQLTask:SqlTaskData
                   SQLTask:Connection="{62102490-454D-4B7E-9A09-120A46D18B10}"
-                  SQLTask:SqlStatementSource="--set the last successful flag to 0&#xA;UPDATE TBLOG_PACKAGE_TABLE&#xA;SET LAST_SUCCESS_TABLE_RUN_FLG = 0&#xA;WHERE &#xA;TABLE_TARGET_CD = ? and SOURCE_SYSTEM_ID = ? and LAST_SUCCESS_TABLE_RUN_FLG=1;&#xA;&#xA;--set the last successful flag to 1&#xA;UPDATE TBLOG_PACKAGE_TABLE&#xA;SET END_DT = getdate(), LAST_SUCCESS_TABLE_RUN_FLG=1&#xA;WHERE ID = ?&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+                  SQLTask:SqlStatementSource="--set the last successful flag to 0&#xA;UPDATE TBLOG_PACKAGE_TABLE&#xA;SET LAST_SUCCESS_TABLE_RUN_FLG = 0&#xA;WHERE &#xA;TABLE_TARGET_CD = ? and SOURCE_SYSTEM_ID = ? and LAST_SUCCESS_TABLE_RUN_FLG=1&#xA;and SITE_ID = ?;&#xA;&#xA;--set the last successful flag to 1&#xA;UPDATE TBLOG_PACKAGE_TABLE&#xA;SET END_DT = getdate(), LAST_SUCCESS_TABLE_RUN_FLG=1&#xA;WHERE ID = ?&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
                   <SQLTask:ParameterBinding
                     SQLTask:ParameterName="1"
                     SQLTask:DtsVariableName="User::out_SOURCE_SYSTEM_ID"
@@ -1960,7 +2016,7 @@
                     SQLTask:DataType="131"
                     SQLTask:ParameterSize="-1" />
                   <SQLTask:ParameterBinding
-                    SQLTask:ParameterName="2"
+                    SQLTask:ParameterName="3"
                     SQLTask:DtsVariableName="User::out_MAX_TABLE_ID"
                     SQLTask:ParameterDirection="Input"
                     SQLTask:DataType="131"
@@ -1970,6 +2026,12 @@
                     SQLTask:DtsVariableName="User::out_TABLE_TARGET_CD"
                     SQLTask:ParameterDirection="Input"
                     SQLTask:DataType="130"
+                    SQLTask:ParameterSize="-1" />
+                  <SQLTask:ParameterBinding
+                    SQLTask:ParameterName="2"
+                    SQLTask:DtsVariableName="User::out_SITE_ID"
+                    SQLTask:ParameterDirection="Input"
+                    SQLTask:DataType="131"
                     SQLTask:ParameterSize="-1" />
                 </SQLTask:SqlTaskData>
               </DTS:ObjectData>
@@ -1983,12 +2045,12 @@
               DTS:LocaleID="-1"
               DTS:ObjectName="MAX TABLE ID"
               DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-              DTS:ThreadHint="5">
+              DTS:ThreadHint="3">
               <DTS:Variables />
               <DTS:ObjectData>
                 <SQLTask:SqlTaskData
                   SQLTask:Connection="{62102490-454D-4B7E-9A09-120A46D18B10}"
-                  SQLTask:SqlStatementSource="--retrieve tha last ID&#xA;SELECT MAX(ID) as MAX_TABLE_ID&#xA;FROM TBLOG_PACKAGE_TABLE&#xA;WHERE TBLOG_PACKAGE_ID = ? and TABLE_TARGET_CD = ? "
+                  SQLTask:SqlStatementSource="--retrieve tha last ID&#xA;SELECT MAX(ID) as MAX_TABLE_ID&#xA;FROM TBLOG_PACKAGE_TABLE&#xA;WHERE TBLOG_PACKAGE_ID = ? and TABLE_TARGET_CD = ? &#xA;and SITE_ID = ?"
                   SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
                   <SQLTask:ResultBinding
                     SQLTask:ResultName="MAX_TABLE_ID"
@@ -2004,6 +2066,12 @@
                     SQLTask:DtsVariableName="User::out_TABLE_TARGET_CD"
                     SQLTask:ParameterDirection="Input"
                     SQLTask:DataType="130"
+                    SQLTask:ParameterSize="-1" />
+                  <SQLTask:ParameterBinding
+                    SQLTask:ParameterName="2"
+                    SQLTask:DtsVariableName="User::out_SITE_ID"
+                    SQLTask:ParameterDirection="Input"
+                    SQLTask:DataType="131"
                     SQLTask:ParameterSize="-1" />
                 </SQLTask:SqlTaskData>
               </DTS:ObjectData>
@@ -3602,25 +3670,6 @@
                 </pipeline>
               </DTS:ObjectData>
             </DTS:Executable>
-            <DTS:Executable
-              DTS:refId="Package\STAGING LOAD\TBST_PRC_ANAGRAFICA_LOTTI\Truncate STG TRG TABLE"
-              DTS:CreationName="Microsoft.ExecuteSQLTask"
-              DTS:Description="Execute SQL Task"
-              DTS:DTSID="{BF36C666-F715-43F3-B3A4-3E924AEBA2BC}"
-              DTS:ExecutableType="Microsoft.ExecuteSQLTask"
-              DTS:LocaleID="-1"
-              DTS:ObjectName="Truncate STG TRG TABLE"
-              DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-              DTS:ThreadHint="4">
-              <DTS:Variables />
-              <DTS:PropertyExpression
-                DTS:Name="SqlStatementSource">"truncate table " + @[User::out_TABLE_TARGET_CD]</DTS:PropertyExpression>
-              <DTS:ObjectData>
-                <SQLTask:SqlTaskData
-                  SQLTask:Connection="{62102490-454D-4B7E-9A09-120A46D18B10}"
-                  SQLTask:SqlStatementSource="truncate table " xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
-              </DTS:ObjectData>
-            </DTS:Executable>
           </DTS:Executables>
           <DTS:PrecedenceConstraints>
             <DTS:PrecedenceConstraint
@@ -3638,7 +3687,7 @@
               DTS:From="Package\STAGING LOAD\TBST_PRC_ANAGRAFICA_LOTTI\Ins_Upd TBLOG_PACKAGE_TABLE"
               DTS:LogicalAnd="True"
               DTS:ObjectName="Constraint 1"
-              DTS:To="Package\STAGING LOAD\TBST_PRC_ANAGRAFICA_LOTTI\Truncate STG TRG TABLE" />
+              DTS:To="Package\STAGING LOAD\TBST_PRC_ANAGRAFICA_LOTTI\Delete STG TRG TABLE" />
             <DTS:PrecedenceConstraint
               DTS:refId="Package\STAGING LOAD\TBST_PRC_ANAGRAFICA_LOTTI.PrecedenceConstraints[Constraint 2]"
               DTS:CreationName=""
@@ -3659,7 +3708,7 @@
               DTS:refId="Package\STAGING LOAD\TBST_PRC_ANAGRAFICA_LOTTI.PrecedenceConstraints[Constraint 4]"
               DTS:CreationName=""
               DTS:DTSID="{03F84170-F3A5-4B3B-BB9E-79AD392DB4FE}"
-              DTS:From="Package\STAGING LOAD\TBST_PRC_ANAGRAFICA_LOTTI\Truncate STG TRG TABLE"
+              DTS:From="Package\STAGING LOAD\TBST_PRC_ANAGRAFICA_LOTTI\Delete STG TRG TABLE"
               DTS:LogicalAnd="True"
               DTS:ObjectName="Constraint 4"
               DTS:To="Package\STAGING LOAD\TBST_PRC_ANAGRAFICA_LOTTI\TBST_PRC_ANAGRAFICA_LOTTI" />
@@ -3737,7 +3786,7 @@
               DTS:LocaleID="-1"
               DTS:ObjectName="Assign TABLE_TARGET_CD"
               DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-              DTS:ThreadHint="0">
+              DTS:ThreadHint="4">
               <DTS:Variables />
               <DTS:ObjectData>
                 <SQLTask:SqlTaskData
@@ -3751,6 +3800,25 @@
               </DTS:ObjectData>
             </DTS:Executable>
             <DTS:Executable
+              DTS:refId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Delete STG TRG TABLE"
+              DTS:CreationName="Microsoft.ExecuteSQLTask"
+              DTS:Description="Execute SQL Task"
+              DTS:DTSID="{dbe827d5-f9c6-4933-9e1e-72093c07ac7f}"
+              DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+              DTS:LocaleID="-1"
+              DTS:ObjectName="Delete STG TRG TABLE"
+              DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+              DTS:ThreadHint="4">
+              <DTS:Variables />
+              <DTS:PropertyExpression
+                DTS:Name="SqlStatementSource">"delete from " + @[User::out_TABLE_TARGET_CD] + " where site_id = " + (DT_WSTR,2) @[User::out_SITE_ID]</DTS:PropertyExpression>
+              <DTS:ObjectData>
+                <SQLTask:SqlTaskData
+                  SQLTask:Connection="{62102490-454D-4B7E-9A09-120A46D18B10}"
+                  SQLTask:SqlStatementSource="delete from  where site_id = 0" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+              </DTS:ObjectData>
+            </DTS:Executable>
+            <DTS:Executable
               DTS:refId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Ins_Upd TBLOG_PACKAGE_TABLE"
               DTS:CreationName="Microsoft.ExecuteSQLTask"
               DTS:Description="Execute SQL Task"
@@ -3759,12 +3827,12 @@
               DTS:LocaleID="-1"
               DTS:ObjectName="Ins_Upd TBLOG_PACKAGE_TABLE"
               DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-              DTS:ThreadHint="0">
+              DTS:ThreadHint="4">
               <DTS:Variables />
               <DTS:ObjectData>
                 <SQLTask:SqlTaskData
                   SQLTask:Connection="{62102490-454D-4B7E-9A09-120A46D18B10}"
-                  SQLTask:SqlStatementSource="--insert new row&#xA;INSERT INTO TBLOG_PACKAGE_TABLE&#xA;VALUES (?,?,?,?,?, getdate(),null, ?, 1, 0);&#xA;&#xA;--update previous last table run to 0&#xA;UPDATE TBLOG_PACKAGE_TABLE&#xA;SET LAST_TABLE_RUN_FLG = 0&#xA;WHERE TBLOG_PACKAGE_ID &lt;&gt; ? and TABLE_TARGET_CD = ? and SOURCE_SYSTEM_ID = ? and LAST_TABLE_RUN_FLG = 1;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+                  SQLTask:SqlStatementSource="--insert new row&#xA;INSERT INTO TBLOG_PACKAGE_TABLE&#xA;VALUES (?,?,?,?,?, getdate(),null, ?, 1, 0);&#xA;&#xA;--update previous last table run to 0&#xA;UPDATE TBLOG_PACKAGE_TABLE&#xA;SET LAST_TABLE_RUN_FLG = 0&#xA;WHERE TBLOG_PACKAGE_ID &lt;&gt; ? and TABLE_TARGET_CD = ? and SOURCE_SYSTEM_ID = ? and LAST_TABLE_RUN_FLG = 1&#xA;and SITE_ID = ?;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
                   <SQLTask:ParameterBinding
                     SQLTask:ParameterName="0"
                     SQLTask:DtsVariableName="User::out_MAX_ID"
@@ -3819,6 +3887,12 @@
                     SQLTask:ParameterDirection="Input"
                     SQLTask:DataType="130"
                     SQLTask:ParameterSize="-1" />
+                  <SQLTask:ParameterBinding
+                    SQLTask:ParameterName="9"
+                    SQLTask:DtsVariableName="User::out_SITE_ID"
+                    SQLTask:ParameterDirection="Input"
+                    SQLTask:DataType="131"
+                    SQLTask:ParameterSize="-1" />
                 </SQLTask:SqlTaskData>
               </DTS:ObjectData>
             </DTS:Executable>
@@ -3831,12 +3905,12 @@
               DTS:LocaleID="-1"
               DTS:ObjectName="Last Upd TBLOG_PACKAGE_TABLE"
               DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-              DTS:ThreadHint="0">
+              DTS:ThreadHint="4">
               <DTS:Variables />
               <DTS:ObjectData>
                 <SQLTask:SqlTaskData
                   SQLTask:Connection="{62102490-454D-4B7E-9A09-120A46D18B10}"
-                  SQLTask:SqlStatementSource="--set the last successful flag to 0&#xA;UPDATE TBLOG_PACKAGE_TABLE&#xA;SET LAST_SUCCESS_TABLE_RUN_FLG = 0&#xA;WHERE &#xA;TABLE_TARGET_CD = ? and SOURCE_SYSTEM_ID = ? and LAST_SUCCESS_TABLE_RUN_FLG=1;&#xA;&#xA;--set the last successful flag to 1&#xA;UPDATE TBLOG_PACKAGE_TABLE&#xA;SET END_DT = getdate(), LAST_SUCCESS_TABLE_RUN_FLG=1&#xA;WHERE ID = ?&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+                  SQLTask:SqlStatementSource="--set the last successful flag to 0&#xA;UPDATE TBLOG_PACKAGE_TABLE&#xA;SET LAST_SUCCESS_TABLE_RUN_FLG = 0&#xA;WHERE &#xA;TABLE_TARGET_CD = ? and SOURCE_SYSTEM_ID = ? and LAST_SUCCESS_TABLE_RUN_FLG=1&#xA;and SITE_ID = ?;&#xA;&#xA;--set the last successful flag to 1&#xA;UPDATE TBLOG_PACKAGE_TABLE&#xA;SET END_DT = getdate(), LAST_SUCCESS_TABLE_RUN_FLG=1&#xA;WHERE ID = ?&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
                   <SQLTask:ParameterBinding
                     SQLTask:ParameterName="1"
                     SQLTask:DtsVariableName="User::out_SOURCE_SYSTEM_ID"
@@ -3844,7 +3918,7 @@
                     SQLTask:DataType="131"
                     SQLTask:ParameterSize="-1" />
                   <SQLTask:ParameterBinding
-                    SQLTask:ParameterName="2"
+                    SQLTask:ParameterName="3"
                     SQLTask:DtsVariableName="User::out_MAX_TABLE_ID"
                     SQLTask:ParameterDirection="Input"
                     SQLTask:DataType="131"
@@ -3854,6 +3928,12 @@
                     SQLTask:DtsVariableName="User::out_TABLE_TARGET_CD"
                     SQLTask:ParameterDirection="Input"
                     SQLTask:DataType="130"
+                    SQLTask:ParameterSize="-1" />
+                  <SQLTask:ParameterBinding
+                    SQLTask:ParameterName="2"
+                    SQLTask:DtsVariableName="User::out_SITE_ID"
+                    SQLTask:ParameterDirection="Input"
+                    SQLTask:DataType="131"
                     SQLTask:ParameterSize="-1" />
                 </SQLTask:SqlTaskData>
               </DTS:ObjectData>
@@ -3867,12 +3947,12 @@
               DTS:LocaleID="-1"
               DTS:ObjectName="MAX TABLE ID"
               DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-              DTS:ThreadHint="1">
+              DTS:ThreadHint="5">
               <DTS:Variables />
               <DTS:ObjectData>
                 <SQLTask:SqlTaskData
                   SQLTask:Connection="{62102490-454D-4B7E-9A09-120A46D18B10}"
-                  SQLTask:SqlStatementSource="--retrieve tha last ID&#xA;SELECT MAX(ID) as MAX_TABLE_ID&#xA;FROM TBLOG_PACKAGE_TABLE&#xA;WHERE TBLOG_PACKAGE_ID = ? and TABLE_TARGET_CD = ? "
+                  SQLTask:SqlStatementSource="--retrieve tha last ID&#xA;SELECT MAX(ID) as MAX_TABLE_ID&#xA;FROM TBLOG_PACKAGE_TABLE&#xA;WHERE TBLOG_PACKAGE_ID = ? and TABLE_TARGET_CD = ? &#xA;and SITE_ID = ?"
                   SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
                   <SQLTask:ResultBinding
                     SQLTask:ResultName="MAX_TABLE_ID"
@@ -3888,6 +3968,12 @@
                     SQLTask:DtsVariableName="User::out_TABLE_TARGET_CD"
                     SQLTask:ParameterDirection="Input"
                     SQLTask:DataType="130"
+                    SQLTask:ParameterSize="-1" />
+                  <SQLTask:ParameterBinding
+                    SQLTask:ParameterName="2"
+                    SQLTask:DtsVariableName="User::out_SITE_ID"
+                    SQLTask:ParameterDirection="Input"
+                    SQLTask:DataType="131"
                     SQLTask:ParameterSize="-1" />
                 </SQLTask:SqlTaskData>
               </DTS:ObjectData>
@@ -11011,25 +11097,6 @@
                 </pipeline>
               </DTS:ObjectData>
             </DTS:Executable>
-            <DTS:Executable
-              DTS:refId="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Truncate STG TRG TABLE"
-              DTS:CreationName="Microsoft.ExecuteSQLTask"
-              DTS:Description="Execute SQL Task"
-              DTS:DTSID="{dbe827d5-f9c6-4933-9e1e-72093c07ac7f}"
-              DTS:ExecutableType="Microsoft.ExecuteSQLTask"
-              DTS:LocaleID="-1"
-              DTS:ObjectName="Truncate STG TRG TABLE"
-              DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-              DTS:ThreadHint="0">
-              <DTS:Variables />
-              <DTS:PropertyExpression
-                DTS:Name="SqlStatementSource">"truncate table " + @[User::out_TABLE_TARGET_CD]</DTS:PropertyExpression>
-              <DTS:ObjectData>
-                <SQLTask:SqlTaskData
-                  SQLTask:Connection="{62102490-454D-4B7E-9A09-120A46D18B10}"
-                  SQLTask:SqlStatementSource="truncate table " xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
-              </DTS:ObjectData>
-            </DTS:Executable>
           </DTS:Executables>
           <DTS:PrecedenceConstraints>
             <DTS:PrecedenceConstraint
@@ -11047,7 +11114,7 @@
               DTS:From="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Ins_Upd TBLOG_PACKAGE_TABLE"
               DTS:LogicalAnd="True"
               DTS:ObjectName="Constraint 1"
-              DTS:To="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Truncate STG TRG TABLE" />
+              DTS:To="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Delete STG TRG TABLE" />
             <DTS:PrecedenceConstraint
               DTS:refId="Package\STAGING LOAD\TBST_PRC_ARTICOLO.PrecedenceConstraints[Constraint 2]"
               DTS:CreationName=""
@@ -11068,7 +11135,7 @@
               DTS:refId="Package\STAGING LOAD\TBST_PRC_ARTICOLO.PrecedenceConstraints[Constraint 4]"
               DTS:CreationName=""
               DTS:DTSID="{46f07817-176d-4a51-bfc5-5255b235fb43}"
-              DTS:From="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Truncate STG TRG TABLE"
+              DTS:From="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Delete STG TRG TABLE"
               DTS:LogicalAnd="True"
               DTS:ObjectName="Constraint 4"
               DTS:To="Package\STAGING LOAD\TBST_PRC_ARTICOLO\TBST_PRC_ARTICOLO" />
@@ -11121,7 +11188,7 @@
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
           SQLTask:Connection="{62102490-454D-4B7E-9A09-120A46D18B10}"
-          SQLTask:SqlStatementSource="--update previous last package run to 0&#xA;UPDATE TBLOG_PACKAGE&#xA;SET LAST_PACKAGE_RUN_FLG = 0&#xA;WHERE ID &lt;&gt; ? and PACKAGE_NAME_CD = ? and SOURCE_SYSTEM_ID = ? and  LAST_PACKAGE_RUN_FLG = 1;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          SQLTask:SqlStatementSource="--update previous last package run to 0&#xA;UPDATE TBLOG_PACKAGE&#xA;SET LAST_PACKAGE_RUN_FLG = 0&#xA;WHERE ID &lt;&gt; ? and PACKAGE_NAME_CD = ? and SOURCE_SYSTEM_ID = ? and  LAST_PACKAGE_RUN_FLG = 1&#xA;and SITE_ID = ?;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
           <SQLTask:ParameterBinding
             SQLTask:ParameterName="0"
             SQLTask:DtsVariableName="User::out_MAX_ID"
@@ -11137,6 +11204,12 @@
           <SQLTask:ParameterBinding
             SQLTask:ParameterName="2"
             SQLTask:DtsVariableName="User::out_SOURCE_SYSTEM_ID"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="131"
+            SQLTask:ParameterSize="-1" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="3"
+            SQLTask:DtsVariableName="User::out_SITE_ID"
             SQLTask:ParameterDirection="Input"
             SQLTask:DataType="131"
             SQLTask:ParameterSize="-1" />
@@ -11296,6 +11369,10 @@
           Id="Package\STAGING LOAD\TBST_PRC_ANAGRAFICA_FAMIGLIE\Assign TABLE_TARGET_CD"
           TopLeft="244.5,5.5" />
         <NodeLayout
+          Size="200,42"
+          Id="Package\STAGING LOAD\TBST_PRC_ANAGRAFICA_FAMIGLIE\Delete STG TRG TABLE"
+          TopLeft="5.50000000000003,209.5" />
+        <NodeLayout
           Size="260,42"
           Id="Package\STAGING LOAD\TBST_PRC_ANAGRAFICA_FAMIGLIE\Ins_Upd TBLOG_PACKAGE_TABLE"
           TopLeft="225.5,107.5" />
@@ -11311,10 +11388,6 @@
           Size="271,42"
           Id="Package\STAGING LOAD\TBST_PRC_ANAGRAFICA_FAMIGLIE\TBST_PRC_ANAGRAFICA_FAMIGLIE"
           TopLeft="228,311.5" />
-        <NodeLayout
-          Size="212,42"
-          Id="Package\STAGING LOAD\TBST_PRC_ANAGRAFICA_FAMIGLIE\Truncate STG TRG TABLE"
-          TopLeft="5.50000000000003,209.5" />
         <EdgeLayout
           Id="Package\STAGING LOAD\TBST_PRC_ANAGRAFICA_FAMIGLIE.PrecedenceConstraints[Constraint]"
           TopLeft="363.5,353.5">
@@ -11355,9 +11428,9 @@
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-202,60"
+              EndConnector="-208,60"
               Start="0,0"
-              End="-202,52.5">
+              End="-208,52.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
@@ -11368,13 +11441,13 @@
                     Point2="0,24.2201834862385"
                     Point3="-4,24.2201834862385" />
                   <mssgle:LineSegment
-                    End="-198,24.2201834862385" />
+                    End="-204,24.2201834862385" />
                   <mssgle:CubicBezierSegment
-                    Point1="-198,24.2201834862385"
-                    Point2="-202,24.2201834862385"
-                    Point3="-202,28.2201834862385" />
+                    Point1="-204,24.2201834862385"
+                    Point2="-208,24.2201834862385"
+                    Point3="-208,28.2201834862385" />
                   <mssgle:LineSegment
-                    End="-202,52.5" />
+                    End="-208,52.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -11441,13 +11514,13 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package\STAGING LOAD\TBST_PRC_ANAGRAFICA_FAMIGLIE.PrecedenceConstraints[Constraint 4]"
-          TopLeft="111.5,251.5">
+          TopLeft="105.5,251.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="208.166666666667,60"
+              EndConnector="214.166666666667,60"
               Start="0,0"
-              End="208.166666666667,52.5">
+              End="214.166666666667,52.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
@@ -11458,13 +11531,13 @@
                     Point2="0,35.7887013939839"
                     Point3="4,35.7887013939839" />
                   <mssgle:LineSegment
-                    End="204.166666666667,35.7887013939839" />
+                    End="210.166666666667,35.7887013939839" />
                   <mssgle:CubicBezierSegment
-                    Point1="204.166666666667,35.7887013939839"
-                    Point2="208.166666666667,35.7887013939839"
-                    Point3="208.166666666667,39.7887013939839" />
+                    Point1="210.166666666667,35.7887013939839"
+                    Point2="214.166666666667,35.7887013939839"
+                    Point3="214.166666666667,39.7887013939839" />
                   <mssgle:LineSegment
-                    End="208.166666666667,52.5" />
+                    End="214.166666666667,52.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -11533,6 +11606,10 @@
           Id="Package\STAGING LOAD\TBST_PRC_ANAGRAFICA_LOTTI\Assign TABLE_TARGET_CD"
           TopLeft="244.5,5.5" />
         <NodeLayout
+          Size="212,42"
+          Id="Package\STAGING LOAD\TBST_PRC_ANAGRAFICA_LOTTI\Delete STG TRG TABLE"
+          TopLeft="5.50000000000003,209.5" />
+        <NodeLayout
           Size="260,42"
           Id="Package\STAGING LOAD\TBST_PRC_ANAGRAFICA_LOTTI\Ins_Upd TBLOG_PACKAGE_TABLE"
           TopLeft="225.5,107.5" />
@@ -11548,10 +11625,6 @@
           Size="251,42"
           Id="Package\STAGING LOAD\TBST_PRC_ANAGRAFICA_LOTTI\TBST_PRC_ANAGRAFICA_LOTTI"
           TopLeft="259,311.5" />
-        <NodeLayout
-          Size="212,42"
-          Id="Package\STAGING LOAD\TBST_PRC_ANAGRAFICA_LOTTI\Truncate STG TRG TABLE"
-          TopLeft="5.50000000000003,209.5" />
         <EdgeLayout
           Id="Package\STAGING LOAD\TBST_PRC_ANAGRAFICA_LOTTI.PrecedenceConstraints[Constraint]"
           TopLeft="384.5,353.5">
@@ -11770,6 +11843,10 @@
           Id="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Assign TABLE_TARGET_CD"
           TopLeft="244.5,5.5" />
         <NodeLayout
+          Size="212,42"
+          Id="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Delete STG TRG TABLE"
+          TopLeft="5.50000000000003,209.5" />
+        <NodeLayout
           Size="260,42"
           Id="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Ins_Upd TBLOG_PACKAGE_TABLE"
           TopLeft="225.5,107.5" />
@@ -11785,10 +11862,6 @@
           Size="199,42"
           Id="Package\STAGING LOAD\TBST_PRC_ARTICOLO\TBST_PRC_ARTICOLO"
           TopLeft="259,311.5" />
-        <NodeLayout
-          Size="212,42"
-          Id="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Truncate STG TRG TABLE"
-          TopLeft="5.50000000000003,209.5" />
         <EdgeLayout
           Id="Package\STAGING LOAD\TBST_PRC_ARTICOLO.PrecedenceConstraints[Constraint]"
           TopLeft="357,353.5">
@@ -11992,9 +12065,9 @@
           TopLeft="559.5,5.5" />
         <ContainerLayout
           HeaderHeight="43"
-          IsExpanded="True"
+          IsExpanded="False"
           PanelSize="1761,996"
-          Size="1761,1039"
+          Size="1761,43"
           Id="Package\STAGING LOAD"
           TopLeft="206,271" />
         <NodeLayout
@@ -12025,30 +12098,30 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 1]"
-          TopLeft="1086.5,1310">
+          TopLeft="1086.5,314">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-345.166666666667,-680.888888888889"
+              EndConnector="-345.166666666667,315.111111111111"
               Start="0,0"
-              End="-345.166666666667,-673.388888888889">
+              End="-345.166666666667,307.611111111111">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,-336.444444444445" />
+                    End="0,153.555555555555" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,-336.444444444445"
-                    Point2="0,-340.444444444445"
-                    Point3="-4,-340.444444444445" />
+                    Point1="0,153.555555555555"
+                    Point2="0,157.555555555555"
+                    Point3="-4,157.555555555555" />
                   <mssgle:LineSegment
-                    End="-341.166666666667,-340.444444444445" />
+                    End="-341.166666666667,157.555555555555" />
                   <mssgle:CubicBezierSegment
-                    Point1="-341.166666666667,-340.444444444445"
-                    Point2="-345.166666666667,-340.444444444445"
-                    Point3="-345.166666666667,-344.444444444445" />
+                    Point1="-341.166666666667,157.555555555555"
+                    Point2="-345.166666666667,157.555555555555"
+                    Point3="-345.166666666667,161.555555555555" />
                   <mssgle:LineSegment
-                    End="-345.166666666667,-673.388888888889" />
+                    End="-345.166666666667,307.611111111111" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -12224,87 +12297,19 @@
     design-time-name="Package\STAGING LOAD\TBST_PRC_ANAGRAFICA_FAMIGLIE\TBST_PRC_ANAGRAFICA_FAMIGLIE">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
-        <NodeLayout
-          Size="181,42"
-          Id="Package\STAGING LOAD\TBST_PRC_ANAGRAFICA_FAMIGLIE\TBST_PRC_ANAGRAFICA_FAMIGLIE\Add Technical Fields"
-          TopLeft="281,273" />
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="157,42"
           Id="Package\STAGING LOAD\TBST_PRC_ANAGRAFICA_FAMIGLIE\TBST_PRC_ANAGRAFICA_FAMIGLIE\OLE DB Source"
           TopLeft="288,56" />
         <NodeLayout
+          Size="181,42"
+          Id="Package\STAGING LOAD\TBST_PRC_ANAGRAFICA_FAMIGLIE\TBST_PRC_ANAGRAFICA_FAMIGLIE\Add Technical Fields"
+          TopLeft="281,273" />
+        <NodeLayout
           Size="161,42"
           Id="Package\STAGING LOAD\TBST_PRC_ANAGRAFICA_FAMIGLIE\TBST_PRC_ANAGRAFICA_FAMIGLIE\Data Conversion"
           TopLeft="302,174" />
-        <EdgeLayout
-          Id="Package\STAGING LOAD\TBST_PRC_ANAGRAFICA_FAMIGLIE\TBST_PRC_ANAGRAFICA_FAMIGLIE.Paths[OLE DB Source Output]"
-          TopLeft="366.5,98">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="16,76"
-              Start="0,0"
-              End="16,68.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,34" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,34"
-                    Point2="0,38"
-                    Point3="4,38" />
-                  <mssgle:LineSegment
-                    End="12,38" />
-                  <mssgle:CubicBezierSegment
-                    Point1="12,38"
-                    Point2="16,38"
-                    Point3="16,42" />
-                  <mssgle:LineSegment
-                    End="16,68.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\STAGING LOAD\TBST_PRC_ANAGRAFICA_FAMIGLIE\TBST_PRC_ANAGRAFICA_FAMIGLIE.Paths[Data Conversion Output]"
-          TopLeft="382.5,216">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-11,57"
-              Start="0,0"
-              End="-11,49.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,24.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,24.5"
-                    Point2="0,28.5"
-                    Point3="-4,28.5" />
-                  <mssgle:LineSegment
-                    End="-7,28.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-7,28.5"
-                    Point2="-11,28.5"
-                    Point3="-11,32.5" />
-                  <mssgle:LineSegment
-                    End="-11,49.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
         <NodeLayout
           Size="177,42"
           Id="Package\STAGING LOAD\TBST_PRC_ANAGRAFICA_FAMIGLIE\TBST_PRC_ANAGRAFICA_FAMIGLIE\OLE DB Destination"
@@ -12340,7 +12345,81 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\STAGING LOAD\TBST_PRC_ANAGRAFICA_FAMIGLIE\TBST_PRC_ANAGRAFICA_FAMIGLIE.Paths[Data Conversion Output]"
+          TopLeft="382.5,216">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-11,57"
+              Start="0,0"
+              End="-11,49.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,24.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,24.5"
+                    Point2="0,28.5"
+                    Point3="-4,28.5" />
+                  <mssgle:LineSegment
+                    End="-7,28.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-7,28.5"
+                    Point2="-11,28.5"
+                    Point3="-11,32.5" />
+                  <mssgle:LineSegment
+                    End="-11,49.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\STAGING LOAD\TBST_PRC_ANAGRAFICA_FAMIGLIE\TBST_PRC_ANAGRAFICA_FAMIGLIE.Paths[OLE DB Source Output]"
+          TopLeft="366.5,98">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="16,76"
+              Start="0,0"
+              End="16,68.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,34" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,34"
+                    Point2="0,38"
+                    Point3="4,38" />
+                  <mssgle:LineSegment
+                    End="12,38" />
+                  <mssgle:CubicBezierSegment
+                    Point1="12,38"
+                    Point2="16,38"
+                    Point3="16,42" />
+                  <mssgle:LineSegment
+                    End="16,68.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -12388,7 +12467,7 @@
     design-time-name="Package\STAGING LOAD\TBST_PRC_ANAGRAFICA_LOTTI\TBST_PRC_ANAGRAFICA_LOTTI">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="157,42"
           Id="Package\STAGING LOAD\TBST_PRC_ANAGRAFICA_LOTTI\TBST_PRC_ANAGRAFICA_LOTTI\OLE DB Source"
@@ -12424,7 +12503,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -12458,7 +12539,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -12480,7 +12563,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
