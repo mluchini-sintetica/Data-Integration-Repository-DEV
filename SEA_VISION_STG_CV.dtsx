@@ -5,16 +5,16 @@
   DTS:CreationName="Microsoft.Package"
   DTS:CreatorComputerName="SRV-DIR-DEV"
   DTS:CreatorName="SINTE00\mluchini"
-  DTS:DTSID="{02B29FD4-B233-47DD-A585-8789CEF7BA96}"
+  DTS:DTSID="{25D979A8-DE3C-41FD-B5F3-F66A84D855E1}"
   DTS:EnableConfig="True"
   DTS:ExecutableType="Microsoft.Package"
   DTS:LastModifiedProductVersion="15.0.2000.132"
   DTS:LocaleID="2064"
-  DTS:ObjectName="SEA_VISION_STG_CV"
+  DTS:ObjectName="SEA_VISION_STG_cv"
   DTS:PackageType="5"
   DTS:ProtectionLevel="2"
-  DTS:VersionBuild="321"
-  DTS:VersionGUID="{457C26C0-2D25-4E51-9AFA-BD669EA1D215}">
+  DTS:VersionBuild="322"
+  DTS:VersionGUID="{C70B09CE-CCFE-461E-A7D4-F2D621F64836}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Configurations>
@@ -57,7 +57,7 @@
       DTS:Namespace="User"
       DTS:ObjectName="in_MAIL_OBJECT_ERROR">
       <DTS:VariableValue
-        DTS:DataType="8">SRV-DIR-DEV - SSIS package: SEA_VISION_STG_CV ERROR</DTS:VariableValue>
+        DTS:DataType="8">SRV-DIR-DEV - SSIS package: SEA_VISION_STG_cv ERROR</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
@@ -68,7 +68,7 @@
       DTS:Namespace="User"
       DTS:ObjectName="in_MAIL_OBJECT_SUCCESS">
       <DTS:VariableValue
-        DTS:DataType="8">SRV-DIR-DEV - SSIS package: SEA_VISION_STG_CV completed SUCCESSFULLY</DTS:VariableValue>
+        DTS:DataType="8">SRV-DIR-DEV - SSIS package: SEA_VISION_STG_cv completed SUCCESSFULLY</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
@@ -80,7 +80,7 @@
       DTS:Namespace="User"
       DTS:ObjectName="in_PACKAGE_NAME_CD">
       <DTS:VariableValue
-        DTS:DataType="8">SEA_VISION_STG_CV</DTS:VariableValue>
+        DTS:DataType="8">SEA_VISION_STG_cv</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
@@ -2051,7 +2051,7 @@
               DTS:LocaleID="-1"
               DTS:ObjectName="Delete STG TRG TABLE"
               DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-              DTS:ThreadHint="0">
+              DTS:ThreadHint="1">
               <DTS:Variables />
               <DTS:PropertyExpression
                 DTS:Name="SqlStatementSource">"delete from " + @[User::out_TABLE_TARGET_CD] + " where site_id = " + (DT_WSTR,2) @[User::out_SITE_ID]</DTS:PropertyExpression>
@@ -2190,7 +2190,7 @@
               DTS:LocaleID="-1"
               DTS:ObjectName="MAX TABLE ID"
               DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-              DTS:ThreadHint="1">
+              DTS:ThreadHint="0">
               <DTS:Variables />
               <DTS:ObjectData>
                 <SQLTask:SqlTaskData

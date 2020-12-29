@@ -5,16 +5,16 @@
   DTS:CreationName="Microsoft.Package"
   DTS:CreatorComputerName="SRV-DIR-DEV"
   DTS:CreatorName="SINTE00\mluchini"
-  DTS:DTSID="{EB14FC56-32A4-4439-BCB4-1C8BB67CEADF}"
+  DTS:DTSID="{712DB377-7415-4189-BC93-55563FD9B6B6}"
   DTS:EnableConfig="True"
   DTS:ExecutableType="Microsoft.Package"
   DTS:LastModifiedProductVersion="15.0.2000.132"
   DTS:LocaleID="2064"
-  DTS:ObjectName="SEA_VISION_STG_ME"
+  DTS:ObjectName="SEA_VISION_STG_me"
   DTS:PackageType="5"
   DTS:ProtectionLevel="2"
-  DTS:VersionBuild="319"
-  DTS:VersionGUID="{9C6554E7-532A-4E6C-9815-84AD38B4663E}">
+  DTS:VersionBuild="320"
+  DTS:VersionGUID="{6CE3F04C-76AE-40C5-86B5-2BA795BEF26E}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Configurations>
@@ -57,7 +57,7 @@
       DTS:Namespace="User"
       DTS:ObjectName="in_MAIL_OBJECT_ERROR">
       <DTS:VariableValue
-        DTS:DataType="8">SRV-DIR-DEV - SSIS package: SEA_VISION_STG_ME ERROR</DTS:VariableValue>
+        DTS:DataType="8">SRV-DIR-DEV - SSIS package: SEA_VISION_STG_me ERROR</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
@@ -68,7 +68,7 @@
       DTS:Namespace="User"
       DTS:ObjectName="in_MAIL_OBJECT_SUCCESS">
       <DTS:VariableValue
-        DTS:DataType="8">SRV-DIR-DEV - SSIS package: SEA_VISION_STG_ME completed SUCCESSFULLY</DTS:VariableValue>
+        DTS:DataType="8">SRV-DIR-DEV - SSIS package: SEA_VISION_STG_me completed SUCCESSFULLY</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
@@ -80,7 +80,7 @@
       DTS:Namespace="User"
       DTS:ObjectName="in_PACKAGE_NAME_CD">
       <DTS:VariableValue
-        DTS:DataType="8">SEA_VISION_STG_ME</DTS:VariableValue>
+        DTS:DataType="8">SEA_VISION_STG_me</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""

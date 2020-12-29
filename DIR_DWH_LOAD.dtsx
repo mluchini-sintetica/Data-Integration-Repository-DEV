@@ -12,8 +12,8 @@
   DTS:ObjectName="DIR_DWH_LOAD"
   DTS:PackageType="5"
   DTS:ProtectionLevel="2"
-  DTS:VersionBuild="176"
-  DTS:VersionGUID="{0DBAC601-B09A-4036-B4D2-E478375E07B9}">
+  DTS:VersionBuild="187"
+  DTS:VersionGUID="{16CA5155-D9EC-42C4-B565-142E188800C6}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:PackageParameters>
@@ -205,7 +205,7 @@
           </DTS:ObjectData>
         </DTS:Executable>
         <DTS:Executable
-          DTS:refId="Package\COUVET NO Audit Trail Data\PARCEL_MFG_STG_CV"
+          DTS:refId="Package\COUVET NO Audit Trail Data\PARCEL_MFG_STG_cv"
           DTS:CreationName="Microsoft.ExecutePackageTask"
           DTS:Description="Execute Package Task"
           DTS:DTSID="{c386aa62-57b1-499e-be67-416afe6fa962}"
@@ -213,7 +213,7 @@
           DTS:FailPackageOnFailure="True"
           DTS:FailParentOnFailure="True"
           DTS:LocaleID="-1"
-          DTS:ObjectName="PARCEL_MFG_STG_CV"
+          DTS:ObjectName="PARCEL_MFG_STG_cv"
           DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
           <DTS:Variables />
           <DTS:ObjectData>
@@ -260,7 +260,7 @@
           </DTS:ObjectData>
         </DTS:Executable>
         <DTS:Executable
-          DTS:refId="Package\COUVET NO Audit Trail Data\SEA_VISION_STG_CV"
+          DTS:refId="Package\COUVET NO Audit Trail Data\SEA_VISION_STG_cv"
           DTS:CreationName="Microsoft.ExecutePackageTask"
           DTS:Description="Execute Package Task"
           DTS:DTSID="{843ea7dc-15c4-4f81-997e-a59e8a75dcb2}"
@@ -268,12 +268,12 @@
           DTS:FailPackageOnFailure="True"
           DTS:FailParentOnFailure="True"
           DTS:LocaleID="-1"
-          DTS:ObjectName="SEA_VISION_STG_CV"
+          DTS:ObjectName="SEA_VISION_STG_cv"
           DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
           <DTS:Variables />
           <DTS:EventHandlers>
             <DTS:EventHandler
-              DTS:refId="Package\COUVET NO Audit Trail Data\SEA_VISION_STG_CV.EventHandlers[OnError]"
+              DTS:refId="Package\COUVET NO Audit Trail Data\SEA_VISION_STG_cv.EventHandlers[OnError]"
               DTS:CreationName="OnError"
               DTS:DTSID="{1bcfb563-4d65-407e-ad1d-aa9920bf10a1}"
               DTS:EventID="-3"
@@ -315,7 +315,7 @@
           DTS:refId="Package\COUVET NO Audit Trail Data.PrecedenceConstraints[Constraint]"
           DTS:CreationName=""
           DTS:DTSID="{10529E45-D913-4E68-8B86-0DCDC8EF2656}"
-          DTS:From="Package\COUVET NO Audit Trail Data\PARCEL_MFG_STG_CV"
+          DTS:From="Package\COUVET NO Audit Trail Data\PARCEL_MFG_STG_cv"
           DTS:LogicalAnd="True"
           DTS:ObjectName="Constraint"
           DTS:To="Package\COUVET NO Audit Trail Data\PARCEL_MFG_DWAN" />
@@ -331,7 +331,7 @@
           DTS:refId="Package\COUVET NO Audit Trail Data.PrecedenceConstraints[Constraint 2]"
           DTS:CreationName=""
           DTS:DTSID="{1a7dcae4-a7e2-4846-82a6-732c7aeada82}"
-          DTS:From="Package\COUVET NO Audit Trail Data\SEA_VISION_STG_CV"
+          DTS:From="Package\COUVET NO Audit Trail Data\SEA_VISION_STG_cv"
           DTS:LogicalAnd="True"
           DTS:ObjectName="Constraint 2"
           DTS:To="Package\COUVET NO Audit Trail Data\SEA_VISION_DWFT" />
@@ -652,18 +652,37 @@
       DTS:refId="Package\MENDRISIO Audit Trail Data"
       DTS:CreationName="STOCK:SEQUENCE"
       DTS:Description="Sequence Container"
-      DTS:Disabled="True"
       DTS:DTSID="{BE732827-BF4E-4759-8634-E05F08127621}"
       DTS:ExecutableType="STOCK:SEQUENCE"
       DTS:LocaleID="-1"
       DTS:ObjectName="MENDRISIO Audit Trail Data">
-      <DTS:Variables />
+      <DTS:Variables>
+        <DTS:Variable
+          DTS:CreationName=""
+          DTS:DTSID="{D45AAEC7-0C82-46C8-855A-032FFFAF1167}"
+          DTS:IncludeInDebugDump="2345"
+          DTS:Namespace="User"
+          DTS:ObjectName="in_AUDIT_TRAIL_SOURCE_SYSTEM_CD">
+          <DTS:VariableValue
+            DTS:DataType="8">Audit_Trail_Equipment_ME</DTS:VariableValue>
+        </DTS:Variable>
+        <DTS:Variable
+          DTS:CreationName=""
+          DTS:DTSID="{A96491F8-3E46-4191-B262-6DE119C66C45}"
+          DTS:IncludeInDebugDump="2345"
+          DTS:Namespace="User"
+          DTS:ObjectName="in_SITE_CD">
+          <DTS:VariableValue
+            DTS:DataType="8">Mendrisio</DTS:VariableValue>
+        </DTS:Variable>
+      </DTS:Variables>
       <DTS:Executables>
         <DTS:Executable
           DTS:refId="Package\MENDRISIO Audit Trail Data\AUDIT_TRAIL_DW"
           DTS:CreationName="Microsoft.ExecutePackageTask"
           DTS:Description="Execute Package Task"
-          DTS:DTSID="{ee4c09da-a712-4cd0-b394-17f2d25505f3}"
+          DTS:Disabled="True"
+          DTS:DTSID="{04f4cf6e-3054-46c4-8f4a-f3ce2b48a318}"
           DTS:ExecutableType="Microsoft.ExecutePackageTask"
           DTS:FailPackageOnFailure="True"
           DTS:FailParentOnFailure="True"
@@ -677,33 +696,41 @@
               <PackageName>AUDIT_TRAIL_DW.dtsx</PackageName>
               <EncryptedData
                 Type="http://www.w3.org/2001/04/xmlenc#Element"
-                Salt="LnPLBEpI6m0="
-                IV="ZNoCoqmXJJ23PqdQVNGqcA==" xmlns="http://www.w3.org/2001/04/xmlenc#">
+                Salt="5pK+ew4U2vg="
+                IV="QPjIaWlE+NubRcTzNiAkWA==" xmlns="http://www.w3.org/2001/04/xmlenc#">
                 <EncryptionMethod
                   Algorithm="http://www.w3.org/2001/04/xmlenc#aes256-cbc" />
                 <CipherData>
-                  <CipherValue>ZNoCoqmXJJ23PqdQVNGqcNfDiClZtm0p4qegrq3vHuXGAa0UfuJJNzJbkLeLspMNFzUnu1RkzZdc+C31Qby1L6kLtwarjE2gfovkW5e6Wik=</CipherValue>
+                  <CipherValue>QPjIaWlE+NubRcTzNiAkWOFQsmeqotHpgAfcqhBuVhTfYJuvu4DAjIpNi0gkBKiTm9Gmrr/dHWBD8utqZiyu9WFrAgQamR5Qp7iBKd9Sik4=</CipherValue>
                 </CipherData>
               </EncryptedData>
             </ExecutePackageTask>
           </DTS:ObjectData>
         </DTS:Executable>
         <DTS:Executable
-          DTS:refId="Package\MENDRISIO Audit Trail Data\AUDIT_TRAIL_STG"
+          DTS:refId="Package\MENDRISIO Audit Trail Data\AUDIT_TRAIL_STG_me_Amp_Pkg_A"
           DTS:CreationName="Microsoft.ExecutePackageTask"
           DTS:Description="Execute Package Task"
-          DTS:DTSID="{7aa3e20b-4898-4f2c-b013-3430b8b33d7a}"
+          DTS:DTSID="{a6555fed-c6a3-48c0-a2ef-3203fd66557f}"
           DTS:ExecutableType="Microsoft.ExecutePackageTask"
           DTS:FailPackageOnFailure="True"
           DTS:FailParentOnFailure="True"
           DTS:LocaleID="-1"
-          DTS:ObjectName="AUDIT_TRAIL_STG"
+          DTS:ObjectName="AUDIT_TRAIL_STG_me_Amp_Pkg_A"
           DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
           <DTS:Variables />
           <DTS:ObjectData>
             <ExecutePackageTask>
               <UseProjectReference>True</UseProjectReference>
-              <PackageName>AUDIT_TRAIL_STG.dtsx</PackageName>
+              <PackageName>AUDIT_TRAIL_STG_me_Amp_Pkg_A.dtsx</PackageName>
+              <ParameterAssignment>
+                <ParameterName>in_SITE_CD</ParameterName>
+                <BindedVariableOrParameterName>User::in_SITE_CD</BindedVariableOrParameterName>
+              </ParameterAssignment>
+              <ParameterAssignment>
+                <ParameterName>in_SOURCE_SYSTEM_CD</ParameterName>
+                <BindedVariableOrParameterName>User::in_AUDIT_TRAIL_SOURCE_SYSTEM_CD</BindedVariableOrParameterName>
+              </ParameterAssignment>
             </ExecutePackageTask>
           </DTS:ObjectData>
         </DTS:Executable>
@@ -712,8 +739,8 @@
         <DTS:PrecedenceConstraint
           DTS:refId="Package\MENDRISIO Audit Trail Data.PrecedenceConstraints[Constraint]"
           DTS:CreationName=""
-          DTS:DTSID="{865CF90C-6671-4743-A29C-62707A41FE68}"
-          DTS:From="Package\MENDRISIO Audit Trail Data\AUDIT_TRAIL_STG"
+          DTS:DTSID="{0CFFBE77-3F18-4B5C-9453-2192A353E6DF}"
+          DTS:From="Package\MENDRISIO Audit Trail Data\AUDIT_TRAIL_STG_me_Amp_Pkg_A"
           DTS:LogicalAnd="True"
           DTS:ObjectName="Constraint"
           DTS:To="Package\MENDRISIO Audit Trail Data\AUDIT_TRAIL_DW" />
@@ -789,7 +816,7 @@
           </DTS:ObjectData>
         </DTS:Executable>
         <DTS:Executable
-          DTS:refId="Package\MENDRISIO NO Audit Trail Data\PARCEL_MFG_STG_ME"
+          DTS:refId="Package\MENDRISIO NO Audit Trail Data\PARCEL_MFG_STG_me"
           DTS:CreationName="Microsoft.ExecutePackageTask"
           DTS:Description="Execute Package Task"
           DTS:DTSID="{B1DFB4EA-0676-4742-9B13-C8E741C1ABB1}"
@@ -797,7 +824,7 @@
           DTS:FailPackageOnFailure="True"
           DTS:FailParentOnFailure="True"
           DTS:LocaleID="-1"
-          DTS:ObjectName="PARCEL_MFG_STG_ME"
+          DTS:ObjectName="PARCEL_MFG_STG_me"
           DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
           <DTS:Variables />
           <DTS:ObjectData>
@@ -844,7 +871,7 @@
           </DTS:ObjectData>
         </DTS:Executable>
         <DTS:Executable
-          DTS:refId="Package\MENDRISIO NO Audit Trail Data\SEA_VISION_STG_ME"
+          DTS:refId="Package\MENDRISIO NO Audit Trail Data\SEA_VISION_STG_me"
           DTS:CreationName="Microsoft.ExecutePackageTask"
           DTS:Description="Execute Package Task"
           DTS:DTSID="{218A238B-658B-4E0F-8C1E-08D766D93BCB}"
@@ -852,12 +879,12 @@
           DTS:FailPackageOnFailure="True"
           DTS:FailParentOnFailure="True"
           DTS:LocaleID="-1"
-          DTS:ObjectName="SEA_VISION_STG_ME"
+          DTS:ObjectName="SEA_VISION_STG_me"
           DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
           <DTS:Variables />
           <DTS:EventHandlers>
             <DTS:EventHandler
-              DTS:refId="Package\MENDRISIO NO Audit Trail Data\SEA_VISION_STG_ME.EventHandlers[OnError]"
+              DTS:refId="Package\MENDRISIO NO Audit Trail Data\SEA_VISION_STG_me.EventHandlers[OnError]"
               DTS:CreationName="OnError"
               DTS:DTSID="{941D6D21-CCE4-4734-BB83-FCD6A770ED1A}"
               DTS:EventID="-3"
@@ -899,7 +926,7 @@
           DTS:refId="Package\MENDRISIO NO Audit Trail Data.PrecedenceConstraints[Constraint]"
           DTS:CreationName=""
           DTS:DTSID="{374AADBD-C9AA-433B-8CA0-FAB4B661CD09}"
-          DTS:From="Package\MENDRISIO NO Audit Trail Data\PARCEL_MFG_STG_ME"
+          DTS:From="Package\MENDRISIO NO Audit Trail Data\PARCEL_MFG_STG_me"
           DTS:LogicalAnd="True"
           DTS:ObjectName="Constraint"
           DTS:To="Package\MENDRISIO NO Audit Trail Data\PARCEL_MFG_DWAN" />
@@ -915,7 +942,7 @@
           DTS:refId="Package\MENDRISIO NO Audit Trail Data.PrecedenceConstraints[Constraint 2]"
           DTS:CreationName=""
           DTS:DTSID="{FE175E83-0CB8-480C-A25C-4F458B5DBB27}"
-          DTS:From="Package\MENDRISIO NO Audit Trail Data\SEA_VISION_STG_ME"
+          DTS:From="Package\MENDRISIO NO Audit Trail Data\SEA_VISION_STG_me"
           DTS:LogicalAnd="True"
           DTS:ObjectName="Constraint 2"
           DTS:To="Package\MENDRISIO NO Audit Trail Data\SEA_VISION_DWFT" />
@@ -1265,7 +1292,7 @@
     design-time-name="Package">
     <LayoutInfo>
       <GraphLayout
-        Capacity="64" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="64" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="219,42"
           Id="Package\AUDIT_TRAIL_FLAT_FILES"
@@ -1275,13 +1302,39 @@
           Id="Package\COUVET NO Audit Trail Data\PARCEL_MFG_DWAN"
           TopLeft="255.5,31" />
         <NodeLayout
+          Size="199,42"
+          Id="Package\COUVET NO Audit Trail Data\PARCEL_MFG_STG_cv"
+          TopLeft="7.5,25" />
+        <NodeLayout
           Size="182,42"
           Id="Package\COUVET NO Audit Trail Data\SEA_VISION_DWFT"
           TopLeft="478.5,109" />
         <NodeLayout
-          Size="199,42"
-          Id="Package\COUVET NO Audit Trail Data\SEA_VISION_STG_CV"
+          Size="190,42"
+          Id="Package\COUVET NO Audit Trail Data\SEA_VISION_STG_cv"
           TopLeft="6.5,108" />
+        <EdgeLayout
+          Id="Package\COUVET NO Audit Trail Data.PrecedenceConstraints[Constraint]"
+          TopLeft="206.5,49">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="49,0"
+              Start="0,0"
+              End="41.5,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="41.5,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
         <EdgeLayout
           Id="Package\COUVET NO Audit Trail Data.PrecedenceConstraints[Constraint 1]"
           TopLeft="352,73">
@@ -1318,44 +1371,18 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package\COUVET NO Audit Trail Data.PrecedenceConstraints[Constraint 2]"
-          TopLeft="205.5,129.5">
+          TopLeft="196.5,129.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="273,0"
+              EndConnector="282,0"
               Start="0,0"
-              End="265.5,0">
+              End="274.5,0">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="265.5,0" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="204,42"
-          Id="Package\COUVET NO Audit Trail Data\PARCEL_MFG_STG_CV"
-          TopLeft="7.5,25" />
-        <EdgeLayout
-          Id="Package\COUVET NO Audit Trail Data.PrecedenceConstraints[Constraint]"
-          TopLeft="211.5,49">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="44,0"
-              Start="0,0"
-              End="36.5,0">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="36.5,0" />
+                    End="274.5,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -1367,7 +1394,7 @@
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="False"
-          PanelSize="749,189"
+          PanelSize="749,206"
           Size="749,43"
           Id="Package\COUVET NO Audit Trail Data"
           TopLeft="324.000000198682,356" />
@@ -1386,37 +1413,25 @@
         <NodeLayout
           Size="191,42"
           Id="Package\MENDRISIO Audit Trail Data\AUDIT_TRAIL_DW"
-          TopLeft="237,22" />
+          TopLeft="239,26" />
         <NodeLayout
           Size="178,42"
-          Id="Package\MENDRISIO Audit Trail Data\AUDIT_TRAIL_STG"
-          TopLeft="37,25" />
+          Id="Package\MENDRISIO Audit Trail Data\AUDIT_TRAIL_STG_me_Amp_Pkg_A"
+          TopLeft="22,21" />
         <EdgeLayout
           Id="Package\MENDRISIO Audit Trail Data.PrecedenceConstraints[Constraint]"
-          TopLeft="126,67">
+          TopLeft="200,44.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="206.5,-3"
+              EndConnector="39,0"
               Start="0,0"
-              End="206.5,4.5">
+              End="31.5,0">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,18.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,18.5"
-                    Point2="0,22.5"
-                    Point3="4,22.5" />
-                  <mssgle:LineSegment
-                    End="202.5,22.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="202.5,22.5"
-                    Point2="206.5,22.5"
-                    Point3="206.5,18.5" />
-                  <mssgle:LineSegment
-                    End="206.5,4.5" />
+                    End="31.5,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -1428,40 +1443,40 @@
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="465,108"
-          Size="465,151"
+          PanelSize="498,86"
+          Size="498,129"
           Id="Package\MENDRISIO Audit Trail Data"
-          TopLeft="787,448" />
+          TopLeft="667,458" />
         <NodeLayout
           Size="193,42"
           Id="Package\MENDRISIO NO Audit Trail Data\PARCEL_MFG_DWAN"
           TopLeft="255.5,31" />
         <NodeLayout
-          Size="205,42"
-          Id="Package\MENDRISIO NO Audit Trail Data\PARCEL_MFG_STG_ME"
+          Size="204,42"
+          Id="Package\MENDRISIO NO Audit Trail Data\PARCEL_MFG_STG_me"
           TopLeft="5.5,30" />
         <NodeLayout
           Size="182,42"
           Id="Package\MENDRISIO NO Audit Trail Data\SEA_VISION_DWFT"
           TopLeft="478.5,109" />
         <NodeLayout
-          Size="196,42"
-          Id="Package\MENDRISIO NO Audit Trail Data\SEA_VISION_STG_ME"
+          Size="194,42"
+          Id="Package\MENDRISIO NO Audit Trail Data\SEA_VISION_STG_me"
           TopLeft="6.5,108" />
         <EdgeLayout
           Id="Package\MENDRISIO NO Audit Trail Data.PrecedenceConstraints[Constraint]"
-          TopLeft="210.5,51.5">
+          TopLeft="209.5,51.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="45,0"
+              EndConnector="46,0"
               Start="0,0"
-              End="37.5,0">
+              End="38.5,0">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="37.5,0" />
+                    End="38.5,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -1506,18 +1521,18 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package\MENDRISIO NO Audit Trail Data.PrecedenceConstraints[Constraint 2]"
-          TopLeft="202.5,129.5">
+          TopLeft="200.5,129.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="276,0"
+              EndConnector="278,0"
               Start="0,0"
-              End="268.5,0">
+              End="270.5,0">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="268.5,0" />
+                    End="270.5,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -1576,7 +1591,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -1610,7 +1627,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <ContainerLayout
@@ -1728,26 +1747,26 @@
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="196.5,126"
+              EndConnector="93,136"
               Start="0,0"
-              End="196.5,118.5">
+              End="93,128.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,46.5611510791367" />
+                    End="0,50.5739408473221" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,46.5611510791367"
-                    Point2="0,50.5611510791367"
-                    Point3="4,50.5611510791367" />
+                    Point1="0,50.5739408473221"
+                    Point2="0,54.5739408473221"
+                    Point3="4,54.5739408473221" />
                   <mssgle:LineSegment
-                    End="192.5,50.5611510791367" />
+                    End="89,54.5739408473221" />
                   <mssgle:CubicBezierSegment
-                    Point1="192.5,50.5611510791367"
-                    Point2="196.5,50.5611510791367"
-                    Point3="196.5,54.5611510791367" />
+                    Point1="89,54.5739408473221"
+                    Point2="93,54.5739408473221"
+                    Point3="93,58.5739408473221" />
                   <mssgle:LineSegment
-                    End="196.5,118.5" />
+                    End="93,128.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -1758,24 +1777,30 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 4]"
-          TopLeft="1252,523.5">
+          TopLeft="1165,522.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="78,-39.5"
+              EndConnector="54,-59.5"
               Start="0,0"
-              End="78,-32">
+              End="46.5,-59.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="74,0" />
+                    End="23,0" />
                   <mssgle:CubicBezierSegment
-                    Point1="74,0"
-                    Point2="78,0"
-                    Point3="78,-4" />
+                    Point1="23,0"
+                    Point2="27,0"
+                    Point3="27,-4" />
                   <mssgle:LineSegment
-                    End="78,-32" />
+                    End="27,-55.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="27,-55.5"
+                    Point2="27,-59.5"
+                    Point3="31,-59.5" />
+                  <mssgle:LineSegment
+                    End="46.5,-59.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -1824,26 +1849,26 @@
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="259.25,210"
+              EndConnector="164,220"
               Start="0,0"
-              End="259.25,202.5">
+              End="164,212.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,135.2017106201" />
+                    End="0,141.885486018642" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,135.2017106201"
-                    Point2="0,139.2017106201"
-                    Point3="4,139.2017106201" />
+                    Point1="0,141.885486018642"
+                    Point2="0,145.885486018642"
+                    Point3="4,145.885486018642" />
                   <mssgle:LineSegment
-                    End="255.25,139.2017106201" />
+                    End="160,145.885486018642" />
                   <mssgle:CubicBezierSegment
-                    Point1="255.25,139.2017106201"
-                    Point2="259.25,139.2017106201"
-                    Point3="259.25,143.2017106201" />
+                    Point1="160,145.885486018642"
+                    Point2="164,145.885486018642"
+                    Point3="164,149.885486018642" />
                   <mssgle:LineSegment
-                    End="259.25,202.5" />
+                    End="164,212.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -1854,30 +1879,30 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 7]"
-          TopLeft="699.5,322">
+          TopLeft="576,322">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-124.499999801318,34"
+              EndConnector="122.500000198682,34"
               Start="0,0"
-              End="-124.499999801318,26.5">
+              End="122.500000198682,26.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,16.3565147881695" />
+                    End="0,9.64348521183054" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,16.3565147881695"
-                    Point2="0,20.3565147881695"
-                    Point3="-4,20.3565147881695" />
+                    Point1="0,9.64348521183054"
+                    Point2="0,13.6434852118305"
+                    Point3="4,13.6434852118305" />
                   <mssgle:LineSegment
-                    End="-120.499999801318,20.3565147881695" />
+                    End="118.500000198682,13.6434852118305" />
                   <mssgle:CubicBezierSegment
-                    Point1="-120.499999801318,20.3565147881695"
-                    Point2="-124.499999801318,20.3565147881695"
-                    Point3="-124.499999801318,24.3565147881695" />
+                    Point1="118.500000198682,13.6434852118305"
+                    Point2="122.500000198682,13.6434852118305"
+                    Point3="122.500000198682,17.6434852118305" />
                   <mssgle:LineSegment
-                    End="-124.499999801318,26.5" />
+                    End="122.500000198682,26.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -1892,26 +1917,26 @@
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="206.749999801318,49"
+              EndConnector="94.9999998013179,59"
               Start="0,0"
-              End="206.749999801318,41.5">
+              End="94.9999998013179,51.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,28.48039914469" />
+                    End="0,35.1238348868176" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,28.48039914469"
-                    Point2="0,32.48039914469"
-                    Point3="4,32.48039914469" />
+                    Point1="0,35.1238348868176"
+                    Point2="0,39.1238348868176"
+                    Point3="4,39.1238348868176" />
                   <mssgle:LineSegment
-                    End="202.749999801318,32.48039914469" />
+                    End="90.9999998013179,39.1238348868176" />
                   <mssgle:CubicBezierSegment
-                    Point1="202.749999801318,32.48039914469"
-                    Point2="206.749999801318,32.48039914469"
-                    Point3="206.749999801318,36.48039914469" />
+                    Point1="90.9999998013179,39.1238348868176"
+                    Point2="94.9999998013179,39.1238348868176"
+                    Point3="94.9999998013179,43.1238348868176" />
                   <mssgle:LineSegment
-                    End="206.749999801318,41.5" />
+                    End="94.9999998013179,51.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
