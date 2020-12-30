@@ -13,8 +13,8 @@
   DTS:ObjectName="AUDIT_TRAIL_STG_me_Amp_Pkg_A"
   DTS:PackageType="5"
   DTS:ProtectionLevel="2"
-  DTS:VersionBuild="551"
-  DTS:VersionGUID="{11A71C84-665A-4FF4-9116-274C4668DE4B}">
+  DTS:VersionBuild="554"
+  DTS:VersionGUID="{9C49D1BF-E7B3-49E3-8F96-83D12CA16FB3}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Configurations>
@@ -208,7 +208,7 @@
       DTS:LocaleID="-1"
       DTS:ObjectName="Assign PRODUCTION_LINE_ID"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="2">
+      DTS:ThreadHint="1">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -260,7 +260,7 @@
       DTS:LocaleID="-1"
       DTS:ObjectName="Assign SITE_ID"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="1">
+      DTS:ThreadHint="0">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -288,7 +288,7 @@
       DTS:LocaleID="-1"
       DTS:ObjectName="Assign SOURCE_SYSTEM_ID"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="0">
+      DTS:ThreadHint="2">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -2434,7 +2434,7 @@ FROM
                       DTS:LocaleID="-1"
                       DTS:ObjectName="Assign PRODUCTION_MODEL_ID"
                       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-                      DTS:ThreadHint="18">
+                      DTS:ThreadHint="9">
                       <DTS:Variables />
                       <DTS:ObjectData>
                         <SQLTask:SqlTaskData
@@ -2468,7 +2468,7 @@ FROM
                       DTS:LocaleID="-1"
                       DTS:ObjectName="Delete STG TRG TABLE"
                       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-                      DTS:ThreadHint="18">
+                      DTS:ThreadHint="8">
                       <DTS:Variables />
                       <DTS:PropertyExpression
                         DTS:Name="SqlStatementSource">"IF	(select isnull(one_shot_full_load_flg + always_full_load_flg,1) as calc
@@ -2489,7 +2489,7 @@ FROM
                       DTS:LocaleID="-1"
                       DTS:ObjectName="Max DATE Loaded"
                       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-                      DTS:ThreadHint="19">
+                      DTS:ThreadHint="8">
                       <DTS:Variables />
                       <DTS:ObjectData>
                         <SQLTask:SqlTaskData
@@ -2529,7 +2529,7 @@ FROM
                       DTS:LocaleID="-1"
                       DTS:ObjectName="New Max DATE Loaded"
                       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-                      DTS:ThreadHint="18">
+                      DTS:ThreadHint="8">
                       <DTS:Variables />
                       <DTS:ObjectData>
                         <SQLTask:SqlTaskData
@@ -2569,7 +2569,7 @@ FROM
                       DTS:LocaleID="-1"
                       DTS:ObjectName="Upd DATE Loaded"
                       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-                      DTS:ThreadHint="18">
+                      DTS:ThreadHint="8">
                       <DTS:Variables />
                       <DTS:ObjectData>
                         <SQLTask:SqlTaskData
@@ -2771,7 +2771,7 @@ FROM
                       DTS:LocaleID="-1"
                       DTS:ObjectName="Assign PRODUCTION_MODEL_ID"
                       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-                      DTS:ThreadHint="7">
+                      DTS:ThreadHint="17">
                       <DTS:Variables />
                       <DTS:ObjectData>
                         <SQLTask:SqlTaskData
@@ -4638,7 +4638,7 @@ FROM
                       DTS:LocaleID="-1"
                       DTS:ObjectName="Delete STG TRG TABLE"
                       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-                      DTS:ThreadHint="6">
+                      DTS:ThreadHint="16">
                       <DTS:Variables />
                       <DTS:PropertyExpression
                         DTS:Name="SqlStatementSource">"IF	(select isnull(one_shot_full_load_flg + always_full_load_flg,1) as calc
@@ -4659,7 +4659,7 @@ FROM
                       DTS:LocaleID="-1"
                       DTS:ObjectName="Max DATE Loaded"
                       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-                      DTS:ThreadHint="6">
+                      DTS:ThreadHint="16">
                       <DTS:Variables />
                       <DTS:ObjectData>
                         <SQLTask:SqlTaskData
@@ -4699,7 +4699,7 @@ FROM
                       DTS:LocaleID="-1"
                       DTS:ObjectName="New Max DATE Loaded"
                       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-                      DTS:ThreadHint="6">
+                      DTS:ThreadHint="16">
                       <DTS:Variables />
                       <DTS:ObjectData>
                         <SQLTask:SqlTaskData
@@ -4739,7 +4739,7 @@ FROM
                       DTS:LocaleID="-1"
                       DTS:ObjectName="Upd DATE Loaded"
                       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-                      DTS:ThreadHint="6">
+                      DTS:ThreadHint="16">
                       <DTS:Variables />
                       <DTS:ObjectData>
                         <SQLTask:SqlTaskData
@@ -4941,7 +4941,7 @@ FROM
                       DTS:LocaleID="-1"
                       DTS:ObjectName="Assign PRODUCTION_MODEL_ID"
                       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-                      DTS:ThreadHint="4">
+                      DTS:ThreadHint="12">
                       <DTS:Variables />
                       <DTS:ObjectData>
                         <SQLTask:SqlTaskData
@@ -6884,7 +6884,7 @@ FROM
                       DTS:LocaleID="-1"
                       DTS:ObjectName="Delete STG TRG TABLE"
                       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-                      DTS:ThreadHint="4">
+                      DTS:ThreadHint="12">
                       <DTS:Variables />
                       <DTS:PropertyExpression
                         DTS:Name="SqlStatementSource">"IF	(select isnull(one_shot_full_load_flg + always_full_load_flg,1) as calc
@@ -6905,7 +6905,7 @@ FROM
                       DTS:LocaleID="-1"
                       DTS:ObjectName="Max DATE Loaded"
                       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-                      DTS:ThreadHint="5">
+                      DTS:ThreadHint="13">
                       <DTS:Variables />
                       <DTS:ObjectData>
                         <SQLTask:SqlTaskData
@@ -6945,7 +6945,7 @@ FROM
                       DTS:LocaleID="-1"
                       DTS:ObjectName="New Max DATE Loaded"
                       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-                      DTS:ThreadHint="4">
+                      DTS:ThreadHint="12">
                       <DTS:Variables />
                       <DTS:ObjectData>
                         <SQLTask:SqlTaskData
@@ -6985,7 +6985,7 @@ FROM
                       DTS:LocaleID="-1"
                       DTS:ObjectName="Upd DATE Loaded"
                       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-                      DTS:ThreadHint="4">
+                      DTS:ThreadHint="12">
                       <DTS:Variables />
                       <DTS:ObjectData>
                         <SQLTask:SqlTaskData
@@ -7187,7 +7187,7 @@ FROM
                       DTS:LocaleID="-1"
                       DTS:ObjectName="Assign PRODUCTION_MODEL_ID"
                       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-                      DTS:ThreadHint="9">
+                      DTS:ThreadHint="3">
                       <DTS:Variables />
                       <DTS:ObjectData>
                         <SQLTask:SqlTaskData
@@ -9130,7 +9130,7 @@ FROM
                       DTS:LocaleID="-1"
                       DTS:ObjectName="Delete STG TRG TABLE"
                       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-                      DTS:ThreadHint="8">
+                      DTS:ThreadHint="2">
                       <DTS:Variables />
                       <DTS:PropertyExpression
                         DTS:Name="SqlStatementSource">"IF	(select isnull(one_shot_full_load_flg + always_full_load_flg,1) as calc
@@ -9151,7 +9151,7 @@ FROM
                       DTS:LocaleID="-1"
                       DTS:ObjectName="Max DATE Loaded"
                       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-                      DTS:ThreadHint="8">
+                      DTS:ThreadHint="2">
                       <DTS:Variables />
                       <DTS:ObjectData>
                         <SQLTask:SqlTaskData
@@ -9191,7 +9191,7 @@ FROM
                       DTS:LocaleID="-1"
                       DTS:ObjectName="New Max DATE Loaded"
                       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-                      DTS:ThreadHint="8">
+                      DTS:ThreadHint="2">
                       <DTS:Variables />
                       <DTS:ObjectData>
                         <SQLTask:SqlTaskData
@@ -9231,7 +9231,7 @@ FROM
                       DTS:LocaleID="-1"
                       DTS:ObjectName="Upd DATE Loaded"
                       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-                      DTS:ThreadHint="8">
+                      DTS:ThreadHint="2">
                       <DTS:Variables />
                       <DTS:ObjectData>
                         <SQLTask:SqlTaskData
@@ -9433,7 +9433,7 @@ FROM
                       DTS:LocaleID="-1"
                       DTS:ObjectName="Assign PRODUCTION_MODEL_ID"
                       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-                      DTS:ThreadHint="3">
+                      DTS:ThreadHint="18">
                       <DTS:Variables />
                       <DTS:ObjectData>
                         <SQLTask:SqlTaskData
@@ -11376,7 +11376,7 @@ FROM
                       DTS:LocaleID="-1"
                       DTS:ObjectName="Delete STG TRG TABLE"
                       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-                      DTS:ThreadHint="2">
+                      DTS:ThreadHint="18">
                       <DTS:Variables />
                       <DTS:PropertyExpression
                         DTS:Name="SqlStatementSource">"IF	(select isnull(one_shot_full_load_flg + always_full_load_flg,1) as calc
@@ -11397,7 +11397,7 @@ FROM
                       DTS:LocaleID="-1"
                       DTS:ObjectName="Max DATE Loaded"
                       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-                      DTS:ThreadHint="2">
+                      DTS:ThreadHint="19">
                       <DTS:Variables />
                       <DTS:ObjectData>
                         <SQLTask:SqlTaskData
@@ -11437,7 +11437,7 @@ FROM
                       DTS:LocaleID="-1"
                       DTS:ObjectName="New Max DATE Loaded"
                       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-                      DTS:ThreadHint="2">
+                      DTS:ThreadHint="18">
                       <DTS:Variables />
                       <DTS:ObjectData>
                         <SQLTask:SqlTaskData
@@ -11477,7 +11477,7 @@ FROM
                       DTS:LocaleID="-1"
                       DTS:ObjectName="Upd DATE Loaded"
                       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-                      DTS:ThreadHint="2">
+                      DTS:ThreadHint="18">
                       <DTS:Variables />
                       <DTS:ObjectData>
                         <SQLTask:SqlTaskData
@@ -11679,7 +11679,7 @@ FROM
                       DTS:LocaleID="-1"
                       DTS:ObjectName="Assign PRODUCTION_MODEL_ID"
                       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-                      DTS:ThreadHint="11">
+                      DTS:ThreadHint="0">
                       <DTS:Variables />
                       <DTS:ObjectData>
                         <SQLTask:SqlTaskData
@@ -13622,7 +13622,7 @@ FROM
                       DTS:LocaleID="-1"
                       DTS:ObjectName="Delete STG TRG TABLE"
                       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-                      DTS:ThreadHint="10">
+                      DTS:ThreadHint="0">
                       <DTS:Variables />
                       <DTS:PropertyExpression
                         DTS:Name="SqlStatementSource">"IF	(select isnull(one_shot_full_load_flg + always_full_load_flg,1) as calc
@@ -13643,7 +13643,7 @@ FROM
                       DTS:LocaleID="-1"
                       DTS:ObjectName="Max DATE Loaded"
                       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-                      DTS:ThreadHint="10">
+                      DTS:ThreadHint="1">
                       <DTS:Variables />
                       <DTS:ObjectData>
                         <SQLTask:SqlTaskData
@@ -13683,7 +13683,7 @@ FROM
                       DTS:LocaleID="-1"
                       DTS:ObjectName="New Max DATE Loaded"
                       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-                      DTS:ThreadHint="10">
+                      DTS:ThreadHint="0">
                       <DTS:Variables />
                       <DTS:ObjectData>
                         <SQLTask:SqlTaskData
@@ -13723,7 +13723,7 @@ FROM
                       DTS:LocaleID="-1"
                       DTS:ObjectName="Upd DATE Loaded"
                       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-                      DTS:ThreadHint="10">
+                      DTS:ThreadHint="0">
                       <DTS:Variables />
                       <DTS:ObjectData>
                         <SQLTask:SqlTaskData
@@ -13926,7 +13926,7 @@ FROM
                       DTS:LocaleID="-1"
                       DTS:ObjectName="Assign PRODUCTION_MODEL_ID"
                       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-                      DTS:ThreadHint="1">
+                      DTS:ThreadHint="14">
                       <DTS:Variables />
                       <DTS:ObjectData>
                         <SQLTask:SqlTaskData
@@ -15869,7 +15869,7 @@ FROM
                       DTS:LocaleID="-1"
                       DTS:ObjectName="Delete STG TRG TABLE"
                       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-                      DTS:ThreadHint="0">
+                      DTS:ThreadHint="14">
                       <DTS:Variables />
                       <DTS:PropertyExpression
                         DTS:Name="SqlStatementSource">"IF	(select isnull(one_shot_full_load_flg + always_full_load_flg,1) as calc
@@ -15890,7 +15890,7 @@ FROM
                       DTS:LocaleID="-1"
                       DTS:ObjectName="Max DATE Loaded"
                       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-                      DTS:ThreadHint="0">
+                      DTS:ThreadHint="15">
                       <DTS:Variables />
                       <DTS:ObjectData>
                         <SQLTask:SqlTaskData
@@ -15930,7 +15930,7 @@ FROM
                       DTS:LocaleID="-1"
                       DTS:ObjectName="New Max DATE Loaded"
                       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-                      DTS:ThreadHint="0">
+                      DTS:ThreadHint="14">
                       <DTS:Variables />
                       <DTS:ObjectData>
                         <SQLTask:SqlTaskData
@@ -15970,7 +15970,7 @@ FROM
                       DTS:LocaleID="-1"
                       DTS:ObjectName="Upd DATE Loaded"
                       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-                      DTS:ThreadHint="0">
+                      DTS:ThreadHint="14">
                       <DTS:Variables />
                       <DTS:ObjectData>
                         <SQLTask:SqlTaskData
@@ -16172,7 +16172,7 @@ FROM
                       DTS:LocaleID="-1"
                       DTS:ObjectName="Assign PRODUCTION_MODEL_ID"
                       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-                      DTS:ThreadHint="16">
+                      DTS:ThreadHint="5">
                       <DTS:Variables />
                       <DTS:ObjectData>
                         <SQLTask:SqlTaskData
@@ -16206,7 +16206,7 @@ FROM
                       DTS:LocaleID="-1"
                       DTS:ObjectName="Delete STG TRG TABLE"
                       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-                      DTS:ThreadHint="16">
+                      DTS:ThreadHint="4">
                       <DTS:Variables />
                       <DTS:PropertyExpression
                         DTS:Name="SqlStatementSource">"IF	(select isnull(one_shot_full_load_flg + always_full_load_flg,1) as calc
@@ -18060,7 +18060,7 @@ FROM
                       DTS:LocaleID="-1"
                       DTS:ObjectName="Max DATE Loaded"
                       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-                      DTS:ThreadHint="17">
+                      DTS:ThreadHint="4">
                       <DTS:Variables />
                       <DTS:ObjectData>
                         <SQLTask:SqlTaskData
@@ -18100,7 +18100,7 @@ FROM
                       DTS:LocaleID="-1"
                       DTS:ObjectName="New Max DATE Loaded"
                       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-                      DTS:ThreadHint="16">
+                      DTS:ThreadHint="4">
                       <DTS:Variables />
                       <DTS:ObjectData>
                         <SQLTask:SqlTaskData
@@ -18140,7 +18140,7 @@ FROM
                       DTS:LocaleID="-1"
                       DTS:ObjectName="Upd DATE Loaded"
                       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-                      DTS:ThreadHint="16">
+                      DTS:ThreadHint="4">
                       <DTS:Variables />
                       <DTS:ObjectData>
                         <SQLTask:SqlTaskData
@@ -18342,7 +18342,7 @@ FROM
                       DTS:LocaleID="-1"
                       DTS:ObjectName="Assign PRODUCTION_MODEL_ID"
                       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-                      DTS:ThreadHint="13">
+                      DTS:ThreadHint="6">
                       <DTS:Variables />
                       <DTS:ObjectData>
                         <SQLTask:SqlTaskData
@@ -18376,7 +18376,7 @@ FROM
                       DTS:LocaleID="-1"
                       DTS:ObjectName="Delete STG TRG TABLE"
                       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-                      DTS:ThreadHint="12">
+                      DTS:ThreadHint="6">
                       <DTS:Variables />
                       <DTS:PropertyExpression
                         DTS:Name="SqlStatementSource">"IF	(select isnull(one_shot_full_load_flg + always_full_load_flg,1) as calc
@@ -20230,7 +20230,7 @@ FROM
                       DTS:LocaleID="-1"
                       DTS:ObjectName="Max DATE Loaded"
                       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-                      DTS:ThreadHint="12">
+                      DTS:ThreadHint="7">
                       <DTS:Variables />
                       <DTS:ObjectData>
                         <SQLTask:SqlTaskData
@@ -20270,7 +20270,7 @@ FROM
                       DTS:LocaleID="-1"
                       DTS:ObjectName="New Max DATE Loaded"
                       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-                      DTS:ThreadHint="12">
+                      DTS:ThreadHint="6">
                       <DTS:Variables />
                       <DTS:ObjectData>
                         <SQLTask:SqlTaskData
@@ -20310,7 +20310,7 @@ FROM
                       DTS:LocaleID="-1"
                       DTS:ObjectName="Upd DATE Loaded"
                       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-                      DTS:ThreadHint="12">
+                      DTS:ThreadHint="6">
                       <DTS:Variables />
                       <DTS:ObjectData>
                         <SQLTask:SqlTaskData
@@ -20512,7 +20512,7 @@ FROM
                       DTS:LocaleID="-1"
                       DTS:ObjectName="Assign PRODUCTION_MODEL_ID"
                       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-                      DTS:ThreadHint="14">
+                      DTS:ThreadHint="10">
                       <DTS:Variables />
                       <DTS:ObjectData>
                         <SQLTask:SqlTaskData
@@ -20546,7 +20546,7 @@ FROM
                       DTS:LocaleID="-1"
                       DTS:ObjectName="Delete STG TRG TABLE"
                       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-                      DTS:ThreadHint="14">
+                      DTS:ThreadHint="10">
                       <DTS:Variables />
                       <DTS:PropertyExpression
                         DTS:Name="SqlStatementSource">"IF	(select isnull(one_shot_full_load_flg + always_full_load_flg,1) as calc
@@ -20567,7 +20567,7 @@ FROM
                       DTS:LocaleID="-1"
                       DTS:ObjectName="Max DATE Loaded"
                       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-                      DTS:ThreadHint="15">
+                      DTS:ThreadHint="11">
                       <DTS:Variables />
                       <DTS:ObjectData>
                         <SQLTask:SqlTaskData
@@ -22440,7 +22440,7 @@ FROM
                       DTS:LocaleID="-1"
                       DTS:ObjectName="New Max DATE Loaded"
                       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-                      DTS:ThreadHint="14">
+                      DTS:ThreadHint="10">
                       <DTS:Variables />
                       <DTS:ObjectData>
                         <SQLTask:SqlTaskData
@@ -22480,7 +22480,7 @@ FROM
                       DTS:LocaleID="-1"
                       DTS:ObjectName="Upd DATE Loaded"
                       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-                      DTS:ThreadHint="14">
+                      DTS:ThreadHint="10">
                       <DTS:Variables />
                       <DTS:ObjectData>
                         <SQLTask:SqlTaskData
@@ -44803,7 +44803,11 @@ FROM
     design-time-name="Package">
     <LayoutInfo>
       <GraphLayout
-        Capacity="256" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="256" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="203,42"
+          Id="Package\Assign PRODUCTION_LINE_ID"
+          TopLeft="1543.11111111111,92" />
         <NodeLayout
           Size="157,42"
           Id="Package\Assign SITE_ID"
@@ -44828,6 +44832,211 @@ FROM
           Size="222,42"
           Id="Package\STAGING LOAD\TBST_FLAT_EQUIP_AUDIT_TRAIL\Assign TABLE_TARGET_CD"
           TopLeft="244.5,5.5" />
+        <NodeLayout
+          Size="116,42"
+          Id="Package\STAGING LOAD\TBST_FLAT_EQUIP_AUDIT_TRAIL\DATA LOADING\068062 group\068062"
+          TopLeft="63.5,148" />
+        <NodeLayout
+          Size="149,52"
+          Id="Package\STAGING LOAD\TBST_FLAT_EQUIP_AUDIT_TRAIL\DATA LOADING\068062 group\Assign PRODUCTION_MODEL_ID"
+          TopLeft="260,20" />
+        <NodeLayout
+          Size="200,42"
+          Id="Package\STAGING LOAD\TBST_FLAT_EQUIP_AUDIT_TRAIL\DATA LOADING\068062 group\Delete STG TRG TABLE"
+          TopLeft="41,78" />
+        <NodeLayout
+          Size="172,42"
+          Id="Package\STAGING LOAD\TBST_FLAT_EQUIP_AUDIT_TRAIL\DATA LOADING\068062 group\Max DATE Loaded"
+          TopLeft="32.5,7" />
+        <NodeLayout
+          Size="197,42"
+          Id="Package\STAGING LOAD\TBST_FLAT_EQUIP_AUDIT_TRAIL\DATA LOADING\068062 group\New Max DATE Loaded"
+          TopLeft="43,218" />
+        <NodeLayout
+          Size="171,42"
+          Id="Package\STAGING LOAD\TBST_FLAT_EQUIP_AUDIT_TRAIL\DATA LOADING\068062 group\Upd DATE Loaded"
+          TopLeft="22.5,285" />
+        <EdgeLayout
+          Id="Package\STAGING LOAD\TBST_FLAT_EQUIP_AUDIT_TRAIL\DATA LOADING\068062 group.PrecedenceConstraints[Constraint]"
+          TopLeft="141,120">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-19.5,28"
+              Start="0,0"
+              End="-19.5,20.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,10" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,10"
+                    Point2="0,14"
+                    Point3="-4,14" />
+                  <mssgle:LineSegment
+                    End="-15.5,14" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-15.5,14"
+                    Point2="-19.5,14"
+                    Point3="-19.5,18" />
+                  <mssgle:LineSegment
+                    End="-19.5,20.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\STAGING LOAD\TBST_FLAT_EQUIP_AUDIT_TRAIL\DATA LOADING\068062 group.PrecedenceConstraints[Constraint 1]"
+          TopLeft="121.5,190">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="20,28"
+              Start="0,0"
+              End="20,20.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,10" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,10"
+                    Point2="0,14"
+                    Point3="4,14" />
+                  <mssgle:LineSegment
+                    End="16,14" />
+                  <mssgle:CubicBezierSegment
+                    Point1="16,14"
+                    Point2="20,14"
+                    Point3="20,18" />
+                  <mssgle:LineSegment
+                    End="20,20.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\STAGING LOAD\TBST_FLAT_EQUIP_AUDIT_TRAIL\DATA LOADING\068062 group.PrecedenceConstraints[Constraint 2]"
+          TopLeft="141.5,260">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-33.5,25"
+              Start="0,0"
+              End="-33.5,17.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,8.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,8.5"
+                    Point2="0,12.5"
+                    Point3="-4,12.5" />
+                  <mssgle:LineSegment
+                    End="-29.5,12.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-29.5,12.5"
+                    Point2="-33.5,12.5"
+                    Point3="-33.5,16.5" />
+                  <mssgle:LineSegment
+                    End="-33.5,17.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\STAGING LOAD\TBST_FLAT_EQUIP_AUDIT_TRAIL\DATA LOADING\068062 group.PrecedenceConstraints[Constraint 3]"
+          TopLeft="260,46">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-87,32"
+              Start="0,0"
+              End="-87,24.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="-83,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-83,0"
+                    Point2="-87,0"
+                    Point3="-87,4" />
+                  <mssgle:LineSegment
+                    End="-87,24.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\STAGING LOAD\TBST_FLAT_EQUIP_AUDIT_TRAIL\DATA LOADING\068062 group.PrecedenceConstraints[Constraint 4]"
+          TopLeft="118.5,49">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="22.5,29"
+              Start="0,0"
+              End="22.5,21.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,10.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,10.5"
+                    Point2="0,14.5"
+                    Point3="4,14.5" />
+                  <mssgle:LineSegment
+                    End="18.5,14.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="18.5,14.5"
+                    Point2="22.5,14.5"
+                    Point3="22.5,18.5" />
+                  <mssgle:LineSegment
+                    End="22.5,21.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="False"
+          PanelSize="421,494"
+          Size="421,43"
+          Id="Package\STAGING LOAD\TBST_FLAT_EQUIP_AUDIT_TRAIL\DATA LOADING\068062 group"
+          TopLeft="8,110" />
         <NodeLayout
           Size="149,52"
           Id="Package\STAGING LOAD\TBST_FLAT_EQUIP_AUDIT_TRAIL\DATA LOADING\BM398 group\Assign PRODUCTION_MODEL_ID"
@@ -44994,35 +45203,35 @@ FROM
         </EdgeLayout>
         <ContainerLayout
           HeaderHeight="43"
-          IsExpanded="False"
+          IsExpanded="True"
           PanelSize="392,484"
-          Size="392,43"
+          Size="392,527"
           Id="Package\STAGING LOAD\TBST_FLAT_EQUIP_AUDIT_TRAIL\DATA LOADING\BM398 group"
           TopLeft="8,50" />
-        <NodeLayout
-          Size="195,42"
-          Id="Package\STAGING LOAD\TBST_FLAT_EQUIP_AUDIT_TRAIL\DATA LOADING\BVOCV1TVC55200218 group\BVOCV1TVC55200218"
-          TopLeft="21.5,149" />
-        <NodeLayout
-          Size="172,42"
-          Id="Package\STAGING LOAD\TBST_FLAT_EQUIP_AUDIT_TRAIL\DATA LOADING\BVOCV1TVC55200218 group\Max DATE Loaded"
-          TopLeft="32.5,7" />
-        <NodeLayout
-          Size="171,42"
-          Id="Package\STAGING LOAD\TBST_FLAT_EQUIP_AUDIT_TRAIL\DATA LOADING\BVOCV1TVC55200218 group\Upd DATE Loaded"
-          TopLeft="22.5,285" />
         <NodeLayout
           Size="149,47"
           Id="Package\STAGING LOAD\TBST_FLAT_EQUIP_AUDIT_TRAIL\DATA LOADING\BVOCV1TVC55200218 group\Assign PRODUCTION_MODEL_ID"
           TopLeft="243.611111111112,46.9999999999999" />
         <NodeLayout
+          Size="195,42"
+          Id="Package\STAGING LOAD\TBST_FLAT_EQUIP_AUDIT_TRAIL\DATA LOADING\BVOCV1TVC55200218 group\BVOCV1TVC55200218"
+          TopLeft="21.5,149" />
+        <NodeLayout
           Size="200,42"
           Id="Package\STAGING LOAD\TBST_FLAT_EQUIP_AUDIT_TRAIL\DATA LOADING\BVOCV1TVC55200218 group\Delete STG TRG TABLE"
           TopLeft="17.0555555555554,78.9999999999995" />
         <NodeLayout
+          Size="172,42"
+          Id="Package\STAGING LOAD\TBST_FLAT_EQUIP_AUDIT_TRAIL\DATA LOADING\BVOCV1TVC55200218 group\Max DATE Loaded"
+          TopLeft="32.5,7" />
+        <NodeLayout
           Size="197,42"
           Id="Package\STAGING LOAD\TBST_FLAT_EQUIP_AUDIT_TRAIL\DATA LOADING\BVOCV1TVC55200218 group\New Max DATE Loaded"
           TopLeft="29.5555555555554,220" />
+        <NodeLayout
+          Size="171,42"
+          Id="Package\STAGING LOAD\TBST_FLAT_EQUIP_AUDIT_TRAIL\DATA LOADING\BVOCV1TVC55200218 group\Upd DATE Loaded"
+          TopLeft="22.5,285" />
         <EdgeLayout
           Id="Package\STAGING LOAD\TBST_FLAT_EQUIP_AUDIT_TRAIL\DATA LOADING\BVOCV1TVC55200218 group.PrecedenceConstraints[Constraint]"
           TopLeft="117.777777777778,49">
@@ -45042,7 +45251,9 @@ FROM
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -45076,7 +45287,9 @@ FROM
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -45098,7 +45311,9 @@ FROM
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -45132,7 +45347,9 @@ FROM
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -45166,7 +45383,9 @@ FROM
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <ContainerLayout
@@ -45177,29 +45396,29 @@ FROM
           Id="Package\STAGING LOAD\TBST_FLAT_EQUIP_AUDIT_TRAIL\DATA LOADING\BVOCV1TVC55200218 group"
           TopLeft="426,180" />
         <NodeLayout
-          Size="195,42"
-          Id="Package\STAGING LOAD\TBST_FLAT_EQUIP_AUDIT_TRAIL\DATA LOADING\BVOCV1TVC55200318 group\BVOCV1TVC55200318"
-          TopLeft="16.5,150" />
-        <NodeLayout
-          Size="172,42"
-          Id="Package\STAGING LOAD\TBST_FLAT_EQUIP_AUDIT_TRAIL\DATA LOADING\BVOCV1TVC55200318 group\Max DATE Loaded"
-          TopLeft="32.5,7" />
-        <NodeLayout
-          Size="171,42"
-          Id="Package\STAGING LOAD\TBST_FLAT_EQUIP_AUDIT_TRAIL\DATA LOADING\BVOCV1TVC55200318 group\Upd DATE Loaded"
-          TopLeft="22.5,285" />
-        <NodeLayout
           Size="149,47"
           Id="Package\STAGING LOAD\TBST_FLAT_EQUIP_AUDIT_TRAIL\DATA LOADING\BVOCV1TVC55200318 group\Assign PRODUCTION_MODEL_ID"
           TopLeft="243.777777777778,43.7777777777781" />
+        <NodeLayout
+          Size="195,42"
+          Id="Package\STAGING LOAD\TBST_FLAT_EQUIP_AUDIT_TRAIL\DATA LOADING\BVOCV1TVC55200318 group\BVOCV1TVC55200318"
+          TopLeft="16.5,150" />
         <NodeLayout
           Size="200,42"
           Id="Package\STAGING LOAD\TBST_FLAT_EQUIP_AUDIT_TRAIL\DATA LOADING\BVOCV1TVC55200318 group\Delete STG TRG TABLE"
           TopLeft="17.2222222222223,75.7777777777781" />
         <NodeLayout
+          Size="172,42"
+          Id="Package\STAGING LOAD\TBST_FLAT_EQUIP_AUDIT_TRAIL\DATA LOADING\BVOCV1TVC55200318 group\Max DATE Loaded"
+          TopLeft="32.5,7" />
+        <NodeLayout
           Size="197,42"
           Id="Package\STAGING LOAD\TBST_FLAT_EQUIP_AUDIT_TRAIL\DATA LOADING\BVOCV1TVC55200318 group\New Max DATE Loaded"
           TopLeft="29.7222222222223,216.777777777778" />
+        <NodeLayout
+          Size="171,42"
+          Id="Package\STAGING LOAD\TBST_FLAT_EQUIP_AUDIT_TRAIL\DATA LOADING\BVOCV1TVC55200318 group\Upd DATE Loaded"
+          TopLeft="22.5,285" />
         <EdgeLayout
           Id="Package\STAGING LOAD\TBST_FLAT_EQUIP_AUDIT_TRAIL\DATA LOADING\BVOCV1TVC55200318 group.PrecedenceConstraints[Constraint]"
           TopLeft="117.861111111111,49">
@@ -45219,7 +45438,9 @@ FROM
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -45253,7 +45474,9 @@ FROM
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -45275,7 +45498,9 @@ FROM
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -45309,7 +45534,9 @@ FROM
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -45343,40 +45570,42 @@ FROM
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <ContainerLayout
           HeaderHeight="43"
-          IsExpanded="True"
+          IsExpanded="False"
           PanelSize="442,484"
-          Size="442,527"
+          Size="442,43"
           Id="Package\STAGING LOAD\TBST_FLAT_EQUIP_AUDIT_TRAIL\DATA LOADING\BVOCV1TVC55200318 group"
           TopLeft="11,243.5" />
-        <NodeLayout
-          Size="195,42"
-          Id="Package\STAGING LOAD\TBST_FLAT_EQUIP_AUDIT_TRAIL\DATA LOADING\BVOCV1TVC55200718 group\BVOCV1TVC55200718"
-          TopLeft="17.5,150" />
-        <NodeLayout
-          Size="172,42"
-          Id="Package\STAGING LOAD\TBST_FLAT_EQUIP_AUDIT_TRAIL\DATA LOADING\BVOCV1TVC55200718 group\Max DATE Loaded"
-          TopLeft="32.5,7" />
-        <NodeLayout
-          Size="171,42"
-          Id="Package\STAGING LOAD\TBST_FLAT_EQUIP_AUDIT_TRAIL\DATA LOADING\BVOCV1TVC55200718 group\Upd DATE Loaded"
-          TopLeft="22.5,285" />
         <NodeLayout
           Size="149,47"
           Id="Package\STAGING LOAD\TBST_FLAT_EQUIP_AUDIT_TRAIL\DATA LOADING\BVOCV1TVC55200718 group\Assign PRODUCTION_MODEL_ID"
           TopLeft="249.000000000001,48" />
         <NodeLayout
+          Size="195,42"
+          Id="Package\STAGING LOAD\TBST_FLAT_EQUIP_AUDIT_TRAIL\DATA LOADING\BVOCV1TVC55200718 group\BVOCV1TVC55200718"
+          TopLeft="17.5,150" />
+        <NodeLayout
           Size="200,42"
           Id="Package\STAGING LOAD\TBST_FLAT_EQUIP_AUDIT_TRAIL\DATA LOADING\BVOCV1TVC55200718 group\Delete STG TRG TABLE"
           TopLeft="22.4444444444446,80" />
         <NodeLayout
+          Size="172,42"
+          Id="Package\STAGING LOAD\TBST_FLAT_EQUIP_AUDIT_TRAIL\DATA LOADING\BVOCV1TVC55200718 group\Max DATE Loaded"
+          TopLeft="32.5,7" />
+        <NodeLayout
           Size="197,42"
           Id="Package\STAGING LOAD\TBST_FLAT_EQUIP_AUDIT_TRAIL\DATA LOADING\BVOCV1TVC55200718 group\New Max DATE Loaded"
           TopLeft="34.9444444444446,221" />
+        <NodeLayout
+          Size="171,42"
+          Id="Package\STAGING LOAD\TBST_FLAT_EQUIP_AUDIT_TRAIL\DATA LOADING\BVOCV1TVC55200718 group\Upd DATE Loaded"
+          TopLeft="22.5,285" />
         <EdgeLayout
           Id="Package\STAGING LOAD\TBST_FLAT_EQUIP_AUDIT_TRAIL\DATA LOADING\BVOCV1TVC55200718 group.PrecedenceConstraints[Constraint]"
           TopLeft="120.472222222222,49">
@@ -45396,7 +45625,9 @@ FROM
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -45418,7 +45649,9 @@ FROM
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -45452,7 +45685,9 @@ FROM
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -45486,7 +45721,9 @@ FROM
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -45514,7 +45751,9 @@ FROM
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <ContainerLayout
@@ -45525,29 +45764,29 @@ FROM
           Id="Package\STAGING LOAD\TBST_FLAT_EQUIP_AUDIT_TRAIL\DATA LOADING\BVOCV1TVC55200718 group"
           TopLeft="12,312" />
         <NodeLayout
-          Size="195,42"
-          Id="Package\STAGING LOAD\TBST_FLAT_EQUIP_AUDIT_TRAIL\DATA LOADING\BVOCV2TVC55200418 group\BVOCV2TVC55200418"
-          TopLeft="17.5,144" />
-        <NodeLayout
-          Size="172,42"
-          Id="Package\STAGING LOAD\TBST_FLAT_EQUIP_AUDIT_TRAIL\DATA LOADING\BVOCV2TVC55200418 group\Max DATE Loaded"
-          TopLeft="32.5,7" />
-        <NodeLayout
-          Size="171,42"
-          Id="Package\STAGING LOAD\TBST_FLAT_EQUIP_AUDIT_TRAIL\DATA LOADING\BVOCV2TVC55200418 group\Upd DATE Loaded"
-          TopLeft="22.5,285" />
-        <NodeLayout
           Size="149,47"
           Id="Package\STAGING LOAD\TBST_FLAT_EQUIP_AUDIT_TRAIL\DATA LOADING\BVOCV2TVC55200418 group\Assign PRODUCTION_MODEL_ID"
           TopLeft="241.833333333334,41.4444444444446" />
+        <NodeLayout
+          Size="195,42"
+          Id="Package\STAGING LOAD\TBST_FLAT_EQUIP_AUDIT_TRAIL\DATA LOADING\BVOCV2TVC55200418 group\BVOCV2TVC55200418"
+          TopLeft="17.5,144" />
         <NodeLayout
           Size="200,42"
           Id="Package\STAGING LOAD\TBST_FLAT_EQUIP_AUDIT_TRAIL\DATA LOADING\BVOCV2TVC55200418 group\Delete STG TRG TABLE"
           TopLeft="15.2777777777778,73.4444444444446" />
         <NodeLayout
+          Size="172,42"
+          Id="Package\STAGING LOAD\TBST_FLAT_EQUIP_AUDIT_TRAIL\DATA LOADING\BVOCV2TVC55200418 group\Max DATE Loaded"
+          TopLeft="32.5,7" />
+        <NodeLayout
           Size="197,42"
           Id="Package\STAGING LOAD\TBST_FLAT_EQUIP_AUDIT_TRAIL\DATA LOADING\BVOCV2TVC55200418 group\New Max DATE Loaded"
           TopLeft="27.7777777777778,214.444444444445" />
+        <NodeLayout
+          Size="171,42"
+          Id="Package\STAGING LOAD\TBST_FLAT_EQUIP_AUDIT_TRAIL\DATA LOADING\BVOCV2TVC55200418 group\Upd DATE Loaded"
+          TopLeft="22.5,285" />
         <EdgeLayout
           Id="Package\STAGING LOAD\TBST_FLAT_EQUIP_AUDIT_TRAIL\DATA LOADING\BVOCV2TVC55200418 group.PrecedenceConstraints[Constraint]"
           TopLeft="116.888888888889,49">
@@ -45567,7 +45806,9 @@ FROM
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -45601,7 +45842,9 @@ FROM
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -45623,7 +45866,9 @@ FROM
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -45657,7 +45902,9 @@ FROM
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -45691,7 +45938,9 @@ FROM
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <ContainerLayout
@@ -45702,29 +45951,29 @@ FROM
           Id="Package\STAGING LOAD\TBST_FLAT_EQUIP_AUDIT_TRAIL\DATA LOADING\BVOCV2TVC55200418 group"
           TopLeft="434,246" />
         <NodeLayout
-          Size="173,42"
-          Id="Package\STAGING LOAD\TBST_FLAT_EQUIP_AUDIT_TRAIL\DATA LOADING\BVSVCC55200518 group\BVSVCC55200518"
-          TopLeft="56.5,153" />
-        <NodeLayout
-          Size="172,42"
-          Id="Package\STAGING LOAD\TBST_FLAT_EQUIP_AUDIT_TRAIL\DATA LOADING\BVSVCC55200518 group\Max DATE Loaded"
-          TopLeft="26,19" />
-        <NodeLayout
-          Size="171,42"
-          Id="Package\STAGING LOAD\TBST_FLAT_EQUIP_AUDIT_TRAIL\DATA LOADING\BVSVCC55200518 group\Upd DATE Loaded"
-          TopLeft="60,279" />
-        <NodeLayout
           Size="155,51"
           Id="Package\STAGING LOAD\TBST_FLAT_EQUIP_AUDIT_TRAIL\DATA LOADING\BVSVCC55200518 group\Assign PRODUCTION_MODEL_ID"
           TopLeft="253.666666666667,42.1111111111109" />
+        <NodeLayout
+          Size="173,42"
+          Id="Package\STAGING LOAD\TBST_FLAT_EQUIP_AUDIT_TRAIL\DATA LOADING\BVSVCC55200518 group\BVSVCC55200518"
+          TopLeft="56.5,153" />
         <NodeLayout
           Size="200,42"
           Id="Package\STAGING LOAD\TBST_FLAT_EQUIP_AUDIT_TRAIL\DATA LOADING\BVSVCC55200518 group\Delete STG TRG TABLE"
           TopLeft="24.8888888888889,86.333333333333" />
         <NodeLayout
+          Size="172,42"
+          Id="Package\STAGING LOAD\TBST_FLAT_EQUIP_AUDIT_TRAIL\DATA LOADING\BVSVCC55200518 group\Max DATE Loaded"
+          TopLeft="26,19" />
+        <NodeLayout
           Size="197,42"
           Id="Package\STAGING LOAD\TBST_FLAT_EQUIP_AUDIT_TRAIL\DATA LOADING\BVSVCC55200518 group\New Max DATE Loaded"
           TopLeft="39.6111111111111,215.111111111111" />
+        <NodeLayout
+          Size="171,42"
+          Id="Package\STAGING LOAD\TBST_FLAT_EQUIP_AUDIT_TRAIL\DATA LOADING\BVSVCC55200518 group\Upd DATE Loaded"
+          TopLeft="60,279" />
         <EdgeLayout
           Id="Package\STAGING LOAD\TBST_FLAT_EQUIP_AUDIT_TRAIL\DATA LOADING\BVSVCC55200518 group.PrecedenceConstraints[Constraint]"
           TopLeft="253.666666666667,67.6111111111109">
@@ -45756,7 +46005,9 @@ FROM
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -45790,7 +46041,9 @@ FROM
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -45824,7 +46077,9 @@ FROM
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -45858,7 +46113,9 @@ FROM
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -45892,7 +46149,9 @@ FROM
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <ContainerLayout
@@ -45902,568 +46161,6 @@ FROM
           Size="440,43"
           Id="Package\STAGING LOAD\TBST_FLAT_EQUIP_AUDIT_TRAIL\DATA LOADING\BVSVCC55200518 group"
           TopLeft="436,322" />
-        <NodeLayout
-          Size="131,42"
-          Id="Package\STAGING LOAD\TBST_FLAT_EQUIP_AUDIT_TRAIL\DATA LOADING\M8180031 group\M8180031"
-          TopLeft="51.5,144" />
-        <NodeLayout
-          Size="172,42"
-          Id="Package\STAGING LOAD\TBST_FLAT_EQUIP_AUDIT_TRAIL\DATA LOADING\M8180031 group\Max DATE Loaded"
-          TopLeft="32.5,7" />
-        <NodeLayout
-          Size="171,42"
-          Id="Package\STAGING LOAD\TBST_FLAT_EQUIP_AUDIT_TRAIL\DATA LOADING\M8180031 group\Upd DATE Loaded"
-          TopLeft="22.5,285" />
-        <NodeLayout
-          Size="149,47"
-          Id="Package\STAGING LOAD\TBST_FLAT_EQUIP_AUDIT_TRAIL\DATA LOADING\M8180031 group\Assign PRODUCTION_MODEL_ID"
-          TopLeft="242.388888888889,41.4444444444443" />
-        <NodeLayout
-          Size="200,42"
-          Id="Package\STAGING LOAD\TBST_FLAT_EQUIP_AUDIT_TRAIL\DATA LOADING\M8180031 group\Delete STG TRG TABLE"
-          TopLeft="15.8333333333333,73.4444444444445" />
-        <NodeLayout
-          Size="197,42"
-          Id="Package\STAGING LOAD\TBST_FLAT_EQUIP_AUDIT_TRAIL\DATA LOADING\M8180031 group\New Max DATE Loaded"
-          TopLeft="28.3333333333333,214.444444444444" />
-        <EdgeLayout
-          Id="Package\STAGING LOAD\TBST_FLAT_EQUIP_AUDIT_TRAIL\DATA LOADING\M8180031 group.PrecedenceConstraints[Constraint]"
-          TopLeft="242.388888888889,64.9444444444443">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-26.5555555555555,29.5000000000001"
-              Start="0,0"
-              End="-19.0555555555555,29.5000000000001">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="-9.27777777777777,0" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-9.27777777777777,0"
-                    Point2="-13.2777777777778,0"
-                    Point3="-13.2777777777778,4" />
-                  <mssgle:LineSegment
-                    End="-13.2777777777778,25.5000000000001" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-13.2777777777778,25.5000000000001"
-                    Point2="-13.2777777777778,29.5000000000001"
-                    Point3="-17.2777777777778,29.5000000000001" />
-                  <mssgle:LineSegment
-                    End="-19.0555555555555,29.5000000000001" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\STAGING LOAD\TBST_FLAT_EQUIP_AUDIT_TRAIL\DATA LOADING\M8180031 group.PrecedenceConstraints[Constraint 1]"
-          TopLeft="118.5,49">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-34.6666666666667,24.4444444444445"
-              Start="0,0"
-              End="-34.6666666666667,16.9444444444445">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,10.5502645502646" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,10.5502645502646"
-                    Point2="0,14.5502645502646"
-                    Point3="-4,14.5502645502646" />
-                  <mssgle:LineSegment
-                    End="-30.6666666666667,14.5502645502646" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-30.6666666666667,14.5502645502646"
-                    Point2="-34.6666666666667,14.5502645502646"
-                    Point3="-34.6666666666667,18.5502645502646" />
-                  <mssgle:LineSegment
-                    End="-34.6666666666667,16.9444444444445" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\STAGING LOAD\TBST_FLAT_EQUIP_AUDIT_TRAIL\DATA LOADING\M8180031 group.PrecedenceConstraints[Constraint 2]"
-          TopLeft="116.416666666667,115.444444444444">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,28.5555555555555"
-              Start="0,0"
-              End="0,21.0555555555555">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,21.0555555555555" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\STAGING LOAD\TBST_FLAT_EQUIP_AUDIT_TRAIL\DATA LOADING\M8180031 group.PrecedenceConstraints[Constraint 3]"
-          TopLeft="117,186">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="9.83333333333326,28.4444444444443"
-              Start="0,0"
-              End="9.83333333333326,20.9444444444443">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,10.2222222222222" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,10.2222222222222"
-                    Point2="0,14.2222222222222"
-                    Point3="4,14.2222222222222" />
-                  <mssgle:LineSegment
-                    End="5.83333333333326,14.2222222222222" />
-                  <mssgle:CubicBezierSegment
-                    Point1="5.83333333333326,14.2222222222222"
-                    Point2="9.83333333333326,14.2222222222222"
-                    Point3="9.83333333333326,18.2222222222222" />
-                  <mssgle:LineSegment
-                    End="9.83333333333326,20.9444444444443" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\STAGING LOAD\TBST_FLAT_EQUIP_AUDIT_TRAIL\DATA LOADING\M8180031 group.PrecedenceConstraints[Constraint 4]"
-          TopLeft="126.833333333333,256.444444444444">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-18.8333333333333,28.5555555555557"
-              Start="0,0"
-              End="-18.8333333333333,21.0555555555557">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,10.2777777777778" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,10.2777777777778"
-                    Point2="0,14.2777777777778"
-                    Point3="-4,14.2777777777778" />
-                  <mssgle:LineSegment
-                    End="-14.8333333333333,14.2777777777778" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-14.8333333333333,14.2777777777778"
-                    Point2="-18.8333333333333,14.2777777777778"
-                    Point3="-18.8333333333333,18.2777777777778" />
-                  <mssgle:LineSegment
-                    End="-18.8333333333333,21.0555555555557" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <ContainerLayout
-          HeaderHeight="43"
-          IsExpanded="False"
-          PanelSize="398,677"
-          Size="398,43"
-          Id="Package\STAGING LOAD\TBST_FLAT_EQUIP_AUDIT_TRAIL\DATA LOADING\M8180031 group"
-          TopLeft="11.5,178" />
-        <NodeLayout
-          Size="149,47"
-          Id="Package\STAGING LOAD\TBST_FLAT_EQUIP_AUDIT_TRAIL\DATA LOADING\N6180027 group\Assign PRODUCTION_MODEL_ID"
-          TopLeft="238.5,26" />
-        <NodeLayout
-          Size="200,42"
-          Id="Package\STAGING LOAD\TBST_FLAT_EQUIP_AUDIT_TRAIL\DATA LOADING\N6180027 group\Delete STG TRG TABLE"
-          TopLeft="17.5,78" />
-        <NodeLayout
-          Size="172,42"
-          Id="Package\STAGING LOAD\TBST_FLAT_EQUIP_AUDIT_TRAIL\DATA LOADING\N6180027 group\Max DATE Loaded"
-          TopLeft="32.5,7" />
-        <NodeLayout
-          Size="130,42"
-          Id="Package\STAGING LOAD\TBST_FLAT_EQUIP_AUDIT_TRAIL\DATA LOADING\N6180027 group\N6180027"
-          TopLeft="50.5,148" />
-        <NodeLayout
-          Size="171,42"
-          Id="Package\STAGING LOAD\TBST_FLAT_EQUIP_AUDIT_TRAIL\DATA LOADING\N6180027 group\Upd DATE Loaded"
-          TopLeft="22.5,285" />
-        <EdgeLayout
-          Id="Package\STAGING LOAD\TBST_FLAT_EQUIP_AUDIT_TRAIL\DATA LOADING\N6180027 group.PrecedenceConstraints[Constraint]"
-          TopLeft="118,49">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,29"
-              Start="0,0"
-              End="0,21.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,21.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\STAGING LOAD\TBST_FLAT_EQUIP_AUDIT_TRAIL\DATA LOADING\N6180027 group.PrecedenceConstraints[Constraint 1]"
-          TopLeft="116.5,120">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,28"
-              Start="0,0"
-              End="0,20.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,20.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\STAGING LOAD\TBST_FLAT_EQUIP_AUDIT_TRAIL\DATA LOADING\N6180027 group.PrecedenceConstraints[Constraint 4]"
-          TopLeft="238.5,49.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-89,28.5"
-              Start="0,0"
-              End="-89,21">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="-85,0" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-85,0"
-                    Point2="-89,0"
-                    Point3="-89,4" />
-                  <mssgle:LineSegment
-                    End="-89,21" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="197,42"
-          Id="Package\STAGING LOAD\TBST_FLAT_EQUIP_AUDIT_TRAIL\DATA LOADING\N6180027 group\New Max DATE Loaded"
-          TopLeft="30,219" />
-        <EdgeLayout
-          Id="Package\STAGING LOAD\TBST_FLAT_EQUIP_AUDIT_TRAIL\DATA LOADING\N6180027 group.PrecedenceConstraints[Constraint 2]"
-          TopLeft="115.5,190">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="13,29"
-              Start="0,0"
-              End="13,21.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,10.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,10.5"
-                    Point2="0,14.5"
-                    Point3="4,14.5" />
-                  <mssgle:LineSegment
-                    End="9,14.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="9,14.5"
-                    Point2="13,14.5"
-                    Point3="13,18.5" />
-                  <mssgle:LineSegment
-                    End="13,21.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\STAGING LOAD\TBST_FLAT_EQUIP_AUDIT_TRAIL\DATA LOADING\N6180027 group.PrecedenceConstraints[Constraint 3]"
-          TopLeft="128.5,261">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-20.5,24"
-              Start="0,0"
-              End="-20.5,16.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,8" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,8"
-                    Point2="0,12"
-                    Point3="-4,12" />
-                  <mssgle:LineSegment
-                    End="-16.5,12" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-16.5,12"
-                    Point2="-20.5,12"
-                    Point3="-20.5,16" />
-                  <mssgle:LineSegment
-                    End="-20.5,16.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <ContainerLayout
-          HeaderHeight="43"
-          IsExpanded="False"
-          PanelSize="392,484"
-          Size="392,43"
-          Id="Package\STAGING LOAD\TBST_FLAT_EQUIP_AUDIT_TRAIL\DATA LOADING\N6180027 group"
-          TopLeft="421,53" />
-        <AnnotationLayout
-          Text="To be modified according table"
-          ParentId="Package\STAGING LOAD\TBST_FLAT_EQUIP_AUDIT_TRAIL\DATA LOADING"
-          FontInfo="{assembly:Null}"
-          Size="194,40"
-          Id="ea915e51-5f91-460e-a4d6-ad6b422cb1c1"
-          TopLeft="14.5,6.5" />
-        <NodeLayout
-          Size="116,42"
-          Id="Package\STAGING LOAD\TBST_FLAT_EQUIP_AUDIT_TRAIL\DATA LOADING\068062 group\068062"
-          TopLeft="63.5,148" />
-        <NodeLayout
-          Size="149,52"
-          Id="Package\STAGING LOAD\TBST_FLAT_EQUIP_AUDIT_TRAIL\DATA LOADING\068062 group\Assign PRODUCTION_MODEL_ID"
-          TopLeft="260,20" />
-        <NodeLayout
-          Size="200,42"
-          Id="Package\STAGING LOAD\TBST_FLAT_EQUIP_AUDIT_TRAIL\DATA LOADING\068062 group\Delete STG TRG TABLE"
-          TopLeft="41,78" />
-        <NodeLayout
-          Size="172,42"
-          Id="Package\STAGING LOAD\TBST_FLAT_EQUIP_AUDIT_TRAIL\DATA LOADING\068062 group\Max DATE Loaded"
-          TopLeft="32.5,7" />
-        <NodeLayout
-          Size="197,42"
-          Id="Package\STAGING LOAD\TBST_FLAT_EQUIP_AUDIT_TRAIL\DATA LOADING\068062 group\New Max DATE Loaded"
-          TopLeft="43,218" />
-        <NodeLayout
-          Size="171,42"
-          Id="Package\STAGING LOAD\TBST_FLAT_EQUIP_AUDIT_TRAIL\DATA LOADING\068062 group\Upd DATE Loaded"
-          TopLeft="22.5,285" />
-        <EdgeLayout
-          Id="Package\STAGING LOAD\TBST_FLAT_EQUIP_AUDIT_TRAIL\DATA LOADING\068062 group.PrecedenceConstraints[Constraint 1]"
-          TopLeft="121.5,190">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="20,28"
-              Start="0,0"
-              End="20,20.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,10" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,10"
-                    Point2="0,14"
-                    Point3="4,14" />
-                  <mssgle:LineSegment
-                    End="16,14" />
-                  <mssgle:CubicBezierSegment
-                    Point1="16,14"
-                    Point2="20,14"
-                    Point3="20,18" />
-                  <mssgle:LineSegment
-                    End="20,20.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\STAGING LOAD\TBST_FLAT_EQUIP_AUDIT_TRAIL\DATA LOADING\068062 group.PrecedenceConstraints[Constraint 2]"
-          TopLeft="141.5,260">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-33.5,25"
-              Start="0,0"
-              End="-33.5,17.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,8.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,8.5"
-                    Point2="0,12.5"
-                    Point3="-4,12.5" />
-                  <mssgle:LineSegment
-                    End="-29.5,12.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-29.5,12.5"
-                    Point2="-33.5,12.5"
-                    Point3="-33.5,16.5" />
-                  <mssgle:LineSegment
-                    End="-33.5,17.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\STAGING LOAD\TBST_FLAT_EQUIP_AUDIT_TRAIL\DATA LOADING\068062 group.PrecedenceConstraints[Constraint]"
-          TopLeft="141,120">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-19.5,28"
-              Start="0,0"
-              End="-19.5,20.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,10" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,10"
-                    Point2="0,14"
-                    Point3="-4,14" />
-                  <mssgle:LineSegment
-                    End="-15.5,14" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-15.5,14"
-                    Point2="-19.5,14"
-                    Point3="-19.5,18" />
-                  <mssgle:LineSegment
-                    End="-19.5,20.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\STAGING LOAD\TBST_FLAT_EQUIP_AUDIT_TRAIL\DATA LOADING\068062 group.PrecedenceConstraints[Constraint 3]"
-          TopLeft="260,46">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-87,32"
-              Start="0,0"
-              End="-87,24.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="-83,0" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-83,0"
-                    Point2="-87,0"
-                    Point3="-87,4" />
-                  <mssgle:LineSegment
-                    End="-87,24.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\STAGING LOAD\TBST_FLAT_EQUIP_AUDIT_TRAIL\DATA LOADING\068062 group.PrecedenceConstraints[Constraint 4]"
-          TopLeft="118.5,49">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="22.5,29"
-              Start="0,0"
-              End="22.5,21.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,10.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,10.5"
-                    Point2="0,14.5"
-                    Point3="4,14.5" />
-                  <mssgle:LineSegment
-                    End="18.5,14.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="18.5,14.5"
-                    Point2="22.5,14.5"
-                    Point3="22.5,18.5" />
-                  <mssgle:LineSegment
-                    End="22.5,21.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <ContainerLayout
-          HeaderHeight="43"
-          IsExpanded="False"
-          PanelSize="421,494"
-          Size="421,43"
-          Id="Package\STAGING LOAD\TBST_FLAT_EQUIP_AUDIT_TRAIL\DATA LOADING\068062 group"
-          TopLeft="8,110" />
         <NodeLayout
           Size="149,47"
           Id="Package\STAGING LOAD\TBST_FLAT_EQUIP_AUDIT_TRAIL\DATA LOADING\M8180003 group\Assign PRODUCTION_MODEL_ID"
@@ -46519,7 +46216,9 @@ FROM
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -46553,7 +46252,9 @@ FROM
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -46575,7 +46276,9 @@ FROM
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -46609,7 +46312,9 @@ FROM
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -46643,7 +46348,9 @@ FROM
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <ContainerLayout
@@ -46653,13 +46360,404 @@ FROM
           Size="398,43"
           Id="Package\STAGING LOAD\TBST_FLAT_EQUIP_AUDIT_TRAIL\DATA LOADING\M8180003 group"
           TopLeft="426.888888888889,112.777777777778" />
+        <NodeLayout
+          Size="149,47"
+          Id="Package\STAGING LOAD\TBST_FLAT_EQUIP_AUDIT_TRAIL\DATA LOADING\M8180031 group\Assign PRODUCTION_MODEL_ID"
+          TopLeft="242.388888888889,41.4444444444443" />
+        <NodeLayout
+          Size="200,42"
+          Id="Package\STAGING LOAD\TBST_FLAT_EQUIP_AUDIT_TRAIL\DATA LOADING\M8180031 group\Delete STG TRG TABLE"
+          TopLeft="15.8333333333333,73.4444444444445" />
+        <NodeLayout
+          Size="131,42"
+          Id="Package\STAGING LOAD\TBST_FLAT_EQUIP_AUDIT_TRAIL\DATA LOADING\M8180031 group\M8180031"
+          TopLeft="51.5,144" />
+        <NodeLayout
+          Size="172,42"
+          Id="Package\STAGING LOAD\TBST_FLAT_EQUIP_AUDIT_TRAIL\DATA LOADING\M8180031 group\Max DATE Loaded"
+          TopLeft="32.5,7" />
+        <NodeLayout
+          Size="197,42"
+          Id="Package\STAGING LOAD\TBST_FLAT_EQUIP_AUDIT_TRAIL\DATA LOADING\M8180031 group\New Max DATE Loaded"
+          TopLeft="28.3333333333333,214.444444444444" />
+        <NodeLayout
+          Size="171,42"
+          Id="Package\STAGING LOAD\TBST_FLAT_EQUIP_AUDIT_TRAIL\DATA LOADING\M8180031 group\Upd DATE Loaded"
+          TopLeft="22.5,285" />
+        <EdgeLayout
+          Id="Package\STAGING LOAD\TBST_FLAT_EQUIP_AUDIT_TRAIL\DATA LOADING\M8180031 group.PrecedenceConstraints[Constraint]"
+          TopLeft="242.388888888889,64.9444444444443">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-26.5555555555555,29.5000000000001"
+              Start="0,0"
+              End="-19.0555555555555,29.5000000000001">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="-9.27777777777777,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-9.27777777777777,0"
+                    Point2="-13.2777777777778,0"
+                    Point3="-13.2777777777778,4" />
+                  <mssgle:LineSegment
+                    End="-13.2777777777778,25.5000000000001" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-13.2777777777778,25.5000000000001"
+                    Point2="-13.2777777777778,29.5000000000001"
+                    Point3="-17.2777777777778,29.5000000000001" />
+                  <mssgle:LineSegment
+                    End="-19.0555555555555,29.5000000000001" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\STAGING LOAD\TBST_FLAT_EQUIP_AUDIT_TRAIL\DATA LOADING\M8180031 group.PrecedenceConstraints[Constraint 1]"
+          TopLeft="118.5,49">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-34.6666666666667,24.4444444444445"
+              Start="0,0"
+              End="-34.6666666666667,16.9444444444445">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,10.5502645502646" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,10.5502645502646"
+                    Point2="0,14.5502645502646"
+                    Point3="-4,14.5502645502646" />
+                  <mssgle:LineSegment
+                    End="-30.6666666666667,14.5502645502646" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-30.6666666666667,14.5502645502646"
+                    Point2="-34.6666666666667,14.5502645502646"
+                    Point3="-34.6666666666667,18.5502645502646" />
+                  <mssgle:LineSegment
+                    End="-34.6666666666667,16.9444444444445" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\STAGING LOAD\TBST_FLAT_EQUIP_AUDIT_TRAIL\DATA LOADING\M8180031 group.PrecedenceConstraints[Constraint 2]"
+          TopLeft="116.416666666667,115.444444444444">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,28.5555555555555"
+              Start="0,0"
+              End="0,21.0555555555555">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,21.0555555555555" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\STAGING LOAD\TBST_FLAT_EQUIP_AUDIT_TRAIL\DATA LOADING\M8180031 group.PrecedenceConstraints[Constraint 3]"
+          TopLeft="117,186">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="9.83333333333326,28.4444444444443"
+              Start="0,0"
+              End="9.83333333333326,20.9444444444443">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,10.2222222222222" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,10.2222222222222"
+                    Point2="0,14.2222222222222"
+                    Point3="4,14.2222222222222" />
+                  <mssgle:LineSegment
+                    End="5.83333333333326,14.2222222222222" />
+                  <mssgle:CubicBezierSegment
+                    Point1="5.83333333333326,14.2222222222222"
+                    Point2="9.83333333333326,14.2222222222222"
+                    Point3="9.83333333333326,18.2222222222222" />
+                  <mssgle:LineSegment
+                    End="9.83333333333326,20.9444444444443" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\STAGING LOAD\TBST_FLAT_EQUIP_AUDIT_TRAIL\DATA LOADING\M8180031 group.PrecedenceConstraints[Constraint 4]"
+          TopLeft="126.833333333333,256.444444444444">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-18.8333333333333,28.5555555555557"
+              Start="0,0"
+              End="-18.8333333333333,21.0555555555557">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,10.2777777777778" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,10.2777777777778"
+                    Point2="0,14.2777777777778"
+                    Point3="-4,14.2777777777778" />
+                  <mssgle:LineSegment
+                    End="-14.8333333333333,14.2777777777778" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-14.8333333333333,14.2777777777778"
+                    Point2="-18.8333333333333,14.2777777777778"
+                    Point3="-18.8333333333333,18.2777777777778" />
+                  <mssgle:LineSegment
+                    End="-18.8333333333333,21.0555555555557" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
         <ContainerLayout
           HeaderHeight="43"
-          IsExpanded="True"
+          IsExpanded="False"
+          PanelSize="398,677"
+          Size="398,43"
+          Id="Package\STAGING LOAD\TBST_FLAT_EQUIP_AUDIT_TRAIL\DATA LOADING\M8180031 group"
+          TopLeft="11.5,178" />
+        <NodeLayout
+          Size="149,47"
+          Id="Package\STAGING LOAD\TBST_FLAT_EQUIP_AUDIT_TRAIL\DATA LOADING\N6180027 group\Assign PRODUCTION_MODEL_ID"
+          TopLeft="238.5,26" />
+        <NodeLayout
+          Size="200,42"
+          Id="Package\STAGING LOAD\TBST_FLAT_EQUIP_AUDIT_TRAIL\DATA LOADING\N6180027 group\Delete STG TRG TABLE"
+          TopLeft="17.5,78" />
+        <NodeLayout
+          Size="172,42"
+          Id="Package\STAGING LOAD\TBST_FLAT_EQUIP_AUDIT_TRAIL\DATA LOADING\N6180027 group\Max DATE Loaded"
+          TopLeft="32.5,7" />
+        <NodeLayout
+          Size="130,42"
+          Id="Package\STAGING LOAD\TBST_FLAT_EQUIP_AUDIT_TRAIL\DATA LOADING\N6180027 group\N6180027"
+          TopLeft="50.5,148" />
+        <NodeLayout
+          Size="197,42"
+          Id="Package\STAGING LOAD\TBST_FLAT_EQUIP_AUDIT_TRAIL\DATA LOADING\N6180027 group\New Max DATE Loaded"
+          TopLeft="30,219" />
+        <NodeLayout
+          Size="171,42"
+          Id="Package\STAGING LOAD\TBST_FLAT_EQUIP_AUDIT_TRAIL\DATA LOADING\N6180027 group\Upd DATE Loaded"
+          TopLeft="22.5,285" />
+        <EdgeLayout
+          Id="Package\STAGING LOAD\TBST_FLAT_EQUIP_AUDIT_TRAIL\DATA LOADING\N6180027 group.PrecedenceConstraints[Constraint]"
+          TopLeft="118,49">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,29"
+              Start="0,0"
+              End="0,21.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,21.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\STAGING LOAD\TBST_FLAT_EQUIP_AUDIT_TRAIL\DATA LOADING\N6180027 group.PrecedenceConstraints[Constraint 1]"
+          TopLeft="116.5,120">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,28"
+              Start="0,0"
+              End="0,20.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,20.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\STAGING LOAD\TBST_FLAT_EQUIP_AUDIT_TRAIL\DATA LOADING\N6180027 group.PrecedenceConstraints[Constraint 2]"
+          TopLeft="115.5,190">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="13,29"
+              Start="0,0"
+              End="13,21.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,10.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,10.5"
+                    Point2="0,14.5"
+                    Point3="4,14.5" />
+                  <mssgle:LineSegment
+                    End="9,14.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="9,14.5"
+                    Point2="13,14.5"
+                    Point3="13,18.5" />
+                  <mssgle:LineSegment
+                    End="13,21.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\STAGING LOAD\TBST_FLAT_EQUIP_AUDIT_TRAIL\DATA LOADING\N6180027 group.PrecedenceConstraints[Constraint 3]"
+          TopLeft="128.5,261">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-20.5,24"
+              Start="0,0"
+              End="-20.5,16.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,8" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,8"
+                    Point2="0,12"
+                    Point3="-4,12" />
+                  <mssgle:LineSegment
+                    End="-16.5,12" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-16.5,12"
+                    Point2="-20.5,12"
+                    Point3="-20.5,16" />
+                  <mssgle:LineSegment
+                    End="-20.5,16.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\STAGING LOAD\TBST_FLAT_EQUIP_AUDIT_TRAIL\DATA LOADING\N6180027 group.PrecedenceConstraints[Constraint 4]"
+          TopLeft="238.5,49.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-89,28.5"
+              Start="0,0"
+              End="-89,21">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="-85,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-85,0"
+                    Point2="-89,0"
+                    Point3="-89,4" />
+                  <mssgle:LineSegment
+                    End="-89,21" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="False"
+          PanelSize="392,484"
+          Size="392,43"
+          Id="Package\STAGING LOAD\TBST_FLAT_EQUIP_AUDIT_TRAIL\DATA LOADING\N6180027 group"
+          TopLeft="421,53" />
+        <AnnotationLayout
+          Text="To be modified according table"
+          ParentId="Package\STAGING LOAD\TBST_FLAT_EQUIP_AUDIT_TRAIL\DATA LOADING"
+          FontInfo="{assembly:Null}"
+          Size="194,40"
+          Id="ea915e51-5f91-460e-a4d6-ad6b422cb1c1"
+          TopLeft="14.5,6.5" />
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="False"
           PanelSize="913,1071"
-          Size="913,1114"
+          Size="913,43"
           Id="Package\STAGING LOAD\TBST_FLAT_EQUIP_AUDIT_TRAIL\DATA LOADING"
           TopLeft="5.5,331.161562829989" />
+        <NodeLayout
+          Size="200,42"
+          Id="Package\STAGING LOAD\TBST_FLAT_EQUIP_AUDIT_TRAIL\Delete STG TRG TABLE"
+          TopLeft="5.50000000000003,209.5" />
         <NodeLayout
           Size="260,42"
           Id="Package\STAGING LOAD\TBST_FLAT_EQUIP_AUDIT_TRAIL\Ins_Upd TBLOG_PACKAGE_TABLE"
@@ -46672,10 +46770,6 @@ FROM
           Size="155,42"
           Id="Package\STAGING LOAD\TBST_FLAT_EQUIP_AUDIT_TRAIL\MAX TABLE ID"
           TopLeft="278,209.5" />
-        <NodeLayout
-          Size="200,42"
-          Id="Package\STAGING LOAD\TBST_FLAT_EQUIP_AUDIT_TRAIL\Delete STG TRG TABLE"
-          TopLeft="5.50000000000003,209.5" />
         <EdgeLayout
           Id="Package\STAGING LOAD\TBST_FLAT_EQUIP_AUDIT_TRAIL.PrecedenceConstraints[Constraint]"
           TopLeft="105.5,251.5">
@@ -46836,30 +46930,30 @@ FROM
         </EdgeLayout>
         <EdgeLayout
           Id="Package\STAGING LOAD\TBST_FLAT_EQUIP_AUDIT_TRAIL.PrecedenceConstraints[Constraint 5]"
-          TopLeft="462,1445.16156282999">
+          TopLeft="462,374.161562829989">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-198.5,-585.661562829989"
+              EndConnector="-198.5,485.338437170011"
               Start="0,0"
-              End="-198.5,-578.161562829989">
+              End="-198.5,477.838437170011">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,-288.830781414994" />
+                    End="0,238.669218585006" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,-288.830781414994"
-                    Point2="0,-292.830781414994"
-                    Point3="-4,-292.830781414994" />
+                    Point1="0,238.669218585006"
+                    Point2="0,242.669218585006"
+                    Point3="-4,242.669218585006" />
                   <mssgle:LineSegment
-                    End="-194.5,-292.830781414994" />
+                    End="-194.5,242.669218585006" />
                   <mssgle:CubicBezierSegment
-                    Point1="-194.5,-292.830781414994"
-                    Point2="-198.5,-292.830781414994"
-                    Point3="-198.5,-296.830781414994" />
+                    Point1="-194.5,242.669218585006"
+                    Point2="-198.5,242.669218585006"
+                    Point3="-198.5,246.669218585006" />
                   <mssgle:LineSegment
-                    End="-198.5,-578.161562829989" />
+                    End="-198.5,477.838437170011" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -46930,7 +47024,7 @@ FROM
           Text="To be modified according table"
           ParentId="Package\STAGING LOAD\TBST_FLAT_EQUIP_PARAMETER\DATA LOADING"
           FontInfo="{assembly:Null}"
-          Size="194,40"
+          Size="194,NaN"
           Id="410d97be-7f80-4653-a9c4-b9bff58c368b"
           TopLeft="14.5,6.5" />
         <ContainerLayout
@@ -46940,6 +47034,10 @@ FROM
           Size="477,43"
           Id="Package\STAGING LOAD\TBST_FLAT_EQUIP_PARAMETER\DATA LOADING"
           TopLeft="5.5,332.161562829989" />
+        <NodeLayout
+          Size="200,42"
+          Id="Package\STAGING LOAD\TBST_FLAT_EQUIP_PARAMETER\Delete STG TRG TABLE"
+          TopLeft="5.50000000000003,209.5" />
         <NodeLayout
           Size="260,42"
           Id="Package\STAGING LOAD\TBST_FLAT_EQUIP_PARAMETER\Ins_Upd TBLOG_PACKAGE_TABLE"
@@ -46952,10 +47050,6 @@ FROM
           Size="155,42"
           Id="Package\STAGING LOAD\TBST_FLAT_EQUIP_PARAMETER\MAX TABLE ID"
           TopLeft="278,209.5" />
-        <NodeLayout
-          Size="200,42"
-          Id="Package\STAGING LOAD\TBST_FLAT_EQUIP_PARAMETER\Delete STG TRG TABLE"
-          TopLeft="5.50000000000003,209.5" />
         <EdgeLayout
           Id="Package\STAGING LOAD\TBST_FLAT_EQUIP_PARAMETER.PrecedenceConstraints[Constraint]"
           TopLeft="105.5,251.5">
@@ -46987,7 +47081,9 @@ FROM
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -47021,7 +47117,9 @@ FROM
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -47043,7 +47141,9 @@ FROM
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -47077,7 +47177,9 @@ FROM
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -47111,7 +47213,9 @@ FROM
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -47145,14 +47249,16 @@ FROM
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <AnnotationLayout
           Text="To be specify target table name"
           ParentId="Package\STAGING LOAD\TBST_FLAT_EQUIP_PARAMETER"
           FontInfo="{assembly:Null}"
-          Size="195,40"
+          Size="195,NaN"
           Id="2e1411b3-7695-4b23-aab8-27f055547a97"
           TopLeft="31,8" />
         <ContainerLayout
@@ -47164,9 +47270,9 @@ FROM
           TopLeft="998,19" />
         <ContainerLayout
           HeaderHeight="43"
-          IsExpanded="True"
+          IsExpanded="False"
           PanelSize="1731,1602"
-          Size="1731,1644"
+          Size="1731,43"
           Id="Package\STAGING LOAD"
           TopLeft="651.11111111111,263" />
         <NodeLayout
@@ -47209,30 +47315,30 @@ FROM
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 1]"
-          TopLeft="1516.61111111111,1907">
+          TopLeft="1516.61111111111,306">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-192.166666666667,-1284.88888888889"
+              EndConnector="-192.16666666667,316.111111111111"
               Start="0,0"
-              End="-192.166666666667,-1277.38888888889">
+              End="-192.16666666667,308.611111111111">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,-638.444444444445" />
+                    End="0,154.055555555555" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,-638.444444444445"
-                    Point2="0,-642.444444444445"
-                    Point3="-4,-642.444444444445" />
+                    Point1="0,154.055555555555"
+                    Point2="0,158.055555555555"
+                    Point3="-4,158.055555555555" />
                   <mssgle:LineSegment
-                    End="-188.166666666667,-642.444444444445" />
+                    End="-188.16666666667,158.055555555555" />
                   <mssgle:CubicBezierSegment
-                    Point1="-188.166666666667,-642.444444444445"
-                    Point2="-192.166666666667,-642.444444444445"
-                    Point3="-192.166666666667,-646.444444444445" />
+                    Point1="-188.16666666667,158.055555555555"
+                    Point2="-192.16666666667,158.055555555555"
+                    Point3="-192.16666666667,162.055555555555" />
                   <mssgle:LineSegment
-                    End="-192.166666666667,-1277.38888888889" />
+                    End="-192.16666666667,308.611111111111" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -47247,9 +47353,9 @@ FROM
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-102.611111111111,85.666666666667"
+              EndConnector="-102.611111111107,85.666666666667"
               Start="0,0"
-              End="-102.611111111111,78.166666666667">
+              End="-102.611111111107,78.166666666667">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
@@ -47260,13 +47366,13 @@ FROM
                     Point2="0,51.3525337642851"
                     Point3="-4,51.3525337642851" />
                   <mssgle:LineSegment
-                    End="-98.6111111111106,51.3525337642851" />
+                    End="-98.6111111111068,51.3525337642851" />
                   <mssgle:CubicBezierSegment
-                    Point1="-98.6111111111106,51.3525337642851"
-                    Point2="-102.611111111111,51.3525337642851"
-                    Point3="-102.611111111111,55.3525337642851" />
+                    Point1="-98.6111111111068,51.3525337642851"
+                    Point2="-102.611111111107,51.3525337642851"
+                    Point3="-102.611111111107,55.3525337642851" />
                   <mssgle:LineSegment
-                    End="-102.611111111111,78.166666666667" />
+                    End="-102.611111111107,78.166666666667" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -47344,44 +47450,6 @@ FROM
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package.PrecedenceConstraints[Constraint 7]"
-          TopLeft="1324.44444444444,664.111111111111">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-20.833333333333,65.888888888889"
-              Start="0,0"
-              End="-20.833333333333,58.388888888889">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,28.9444444444445" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,28.9444444444445"
-                    Point2="0,32.9444444444445"
-                    Point3="-4,32.9444444444445" />
-                  <mssgle:LineSegment
-                    End="-16.833333333333,32.9444444444445" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-16.833333333333,32.9444444444445"
-                    Point2="-20.833333333333,32.9444444444445"
-                    Point3="-20.833333333333,36.9444444444445" />
-                  <mssgle:LineSegment
-                    End="-20.833333333333,58.388888888889" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="203,42"
-          Id="Package\Assign PRODUCTION_LINE_ID"
-          TopLeft="1543.11111111111,92" />
-        <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 5]"
           TopLeft="1644.61111111111,134">
           <EdgeLayout.Curve>
@@ -47407,6 +47475,40 @@ FROM
                     Point3="159.166666666667,81.328523606141" />
                   <mssgle:LineSegment
                     End="159.166666666667,121.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 7]"
+          TopLeft="1324.44444444444,664.111111111111">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-20.833333333333,65.888888888889"
+              Start="0,0"
+              End="-20.833333333333,58.388888888889">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,28.9444444444445" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,28.9444444444445"
+                    Point2="0,32.9444444444445"
+                    Point3="-4,32.9444444444445" />
+                  <mssgle:LineSegment
+                    End="-16.833333333333,32.9444444444445" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-16.833333333333,32.9444444444445"
+                    Point2="-20.833333333333,32.9444444444445"
+                    Point3="-20.833333333333,36.9444444444445" />
+                  <mssgle:LineSegment
+                    End="-20.833333333333,58.388888888889" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -47442,6 +47544,288 @@ FROM
       </GraphLayout>
     </LayoutInfo>
   </DtsEventHandler>
+  <TaskHost
+    design-time-name="Package\STAGING LOAD\TBST_FLAT_EQUIP_AUDIT_TRAIL\DATA LOADING\068062 group\068062">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="181,42"
+          Id="Package\STAGING LOAD\TBST_FLAT_EQUIP_AUDIT_TRAIL\DATA LOADING\068062 group\068062\Add Technical Fields"
+          TopLeft="290,235" />
+        <NodeLayout
+          Size="177,42"
+          Id="Package\STAGING LOAD\TBST_FLAT_EQUIP_AUDIT_TRAIL\DATA LOADING\068062 group\068062\OLE DB Destination"
+          TopLeft="443,541" />
+        <NodeLayout
+          Size="133,42"
+          Id="Package\STAGING LOAD\TBST_FLAT_EQUIP_AUDIT_TRAIL\DATA LOADING\068062 group\068062\Merge Join"
+          TopLeft="452,429" />
+        <NodeLayout
+          Size="158,42"
+          Id="Package\STAGING LOAD\TBST_FLAT_EQUIP_AUDIT_TRAIL\DATA LOADING\068062 group\068062\Sort Join Field 2"
+          TopLeft="533,336" />
+        <NodeLayout
+          Size="174,42"
+          Id="Package\STAGING LOAD\TBST_FLAT_EQUIP_AUDIT_TRAIL\DATA LOADING\068062 group\068062\Delta Loading Filter"
+          TopLeft="147,180" />
+        <NodeLayout
+          Size="158,42"
+          Id="Package\STAGING LOAD\TBST_FLAT_EQUIP_AUDIT_TRAIL\DATA LOADING\068062 group\068062\Sort Join Field 1"
+          TopLeft="225,326" />
+        <NodeLayout
+          Size="162,42"
+          Id="Package\STAGING LOAD\TBST_FLAT_EQUIP_AUDIT_TRAIL\DATA LOADING\068062 group\068062\Load TBMN data"
+          TopLeft="376,117" />
+        <NodeLayout
+          Size="116,42"
+          Id="Package\STAGING LOAD\TBST_FLAT_EQUIP_AUDIT_TRAIL\DATA LOADING\068062 group\068062\068062"
+          TopLeft="171,112" />
+        <EdgeLayout
+          Id="Package\STAGING LOAD\TBST_FLAT_EQUIP_AUDIT_TRAIL\DATA LOADING\068062 group\068062.Paths[Flat File Source Output]"
+          TopLeft="231.5,154">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,26"
+              Start="0,0"
+              End="0,18.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,18.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-25.0951171875,3.62841796875,50.190234375,11.2431640625"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\STAGING LOAD\TBST_FLAT_EQUIP_AUDIT_TRAIL\DATA LOADING\068062 group\068062.Paths[Derived Column Output]"
+          TopLeft="380.5,277">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-76.5,49"
+              Start="0,0"
+              End="-76.5,41.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,20.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,20.5"
+                    Point2="0,24.5"
+                    Point3="-4,24.5" />
+                  <mssgle:LineSegment
+                    End="-72.5,24.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-72.5,24.5"
+                    Point2="-76.5,24.5"
+                    Point3="-76.5,28.5" />
+                  <mssgle:LineSegment
+                    End="-76.5,41.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\STAGING LOAD\TBST_FLAT_EQUIP_AUDIT_TRAIL\DATA LOADING\068062 group\068062.Paths[Delta]"
+          TopLeft="321,201">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="59.5,34"
+              Start="0,0"
+              End="59.5,26.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="55.5,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="55.5,0"
+                    Point2="59.5,0"
+                    Point3="59.5,4" />
+                  <mssgle:LineSegment
+                    End="59.5,26.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="47.721640625,-15.7490234375,23.55671875,9.7490234375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\STAGING LOAD\TBST_FLAT_EQUIP_AUDIT_TRAIL\DATA LOADING\068062 group\068062.Paths[Sort Output1]"
+          TopLeft="612,378">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-72.6666666666667,51"
+              Start="0,0"
+              End="-72.6666666666667,43.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,26.2362555720654" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,26.2362555720654"
+                    Point2="0,30.2362555720654"
+                    Point3="-4,30.2362555720654" />
+                  <mssgle:LineSegment
+                    End="-68.6666666666667,30.2362555720654" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-68.6666666666667,30.2362555720654"
+                    Point2="-72.6666666666667,30.2362555720654"
+                    Point3="-72.6666666666667,34.2362555720654" />
+                  <mssgle:LineSegment
+                    End="-72.6666666666667,43.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-51.4378059895834,35.2362555720654,30.2089453125,9.4462890625"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\STAGING LOAD\TBST_FLAT_EQUIP_AUDIT_TRAIL\DATA LOADING\068062 group\068062.Paths[Sort Output]"
+          TopLeft="304,368">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="193.666666666667,61"
+              Start="0,0"
+              End="193.666666666667,53.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,32.1649331352154" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,32.1649331352154"
+                    Point2="0,36.1649331352154"
+                    Point3="4,36.1649331352154" />
+                  <mssgle:LineSegment
+                    End="189.666666666667,36.1649331352154" />
+                  <mssgle:CubicBezierSegment
+                    Point1="189.666666666667,36.1649331352154"
+                    Point2="193.666666666667,36.1649331352154"
+                    Point3="193.666666666667,40.1649331352154" />
+                  <mssgle:LineSegment
+                    End="193.666666666667,53.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\STAGING LOAD\TBST_FLAT_EQUIP_AUDIT_TRAIL\DATA LOADING\068062 group\068062.Paths[OLE DB Source Output]"
+          TopLeft="457,159">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="155,177"
+              Start="0,0"
+              End="155,169.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,84.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,84.5"
+                    Point2="0,88.5"
+                    Point3="4,88.5" />
+                  <mssgle:LineSegment
+                    End="151,88.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="151,88.5"
+                    Point2="155,88.5"
+                    Point3="155,92.5" />
+                  <mssgle:LineSegment
+                    End="155,169.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="62.39552734375,93.5,30.2089453125,9.4462890625"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\STAGING LOAD\TBST_FLAT_EQUIP_AUDIT_TRAIL\DATA LOADING\068062 group\068062.Paths[Merge Join Output]"
+          TopLeft="518.5,471">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="13,70"
+              Start="0,0"
+              End="13,62.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,31" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,31"
+                    Point2="0,35"
+                    Point3="4,35" />
+                  <mssgle:LineSegment
+                    End="9,35" />
+                  <mssgle:CubicBezierSegment
+                    Point1="9,35"
+                    Point2="13,35"
+                    Point3="13,39" />
+                  <mssgle:LineSegment
+                    End="13,62.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\STAGING LOAD\TBST_FLAT_EQUIP_AUDIT_TRAIL\DATA LOADING\068062 group\068062\Load TBMN data">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
   <TaskHost
     design-time-name="Package\STAGING LOAD\TBST_FLAT_EQUIP_AUDIT_TRAIL\DATA LOADING\BM398 group\BM398">
     <LayoutInfo>
@@ -47511,7 +47895,7 @@ FROM
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-1.76947265625001,22,60.5389453125,11.2236328125"
+              BoundingBox="0,0,0,0"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -47546,7 +47930,9 @@ FROM
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -47617,7 +48003,7 @@ FROM
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-66.4378059895834,47.6864784546805,30.2089453125,9.4462890625"
+              BoundingBox="0,0,0,0"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -47652,7 +48038,9 @@ FROM
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -47687,7 +48075,7 @@ FROM
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-19.10447265625,99.5,30.2089453125,9.4462890625"
+              BoundingBox="0,0,0,0"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -47722,7 +48110,9 @@ FROM
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -49403,6 +49793,306 @@ FROM
     </Properties>
   </PipelineComponentMetadata>
   <TaskHost
+    design-time-name="Package\STAGING LOAD\TBST_FLAT_EQUIP_AUDIT_TRAIL\DATA LOADING\M8180003 group\M8180003">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="174,42"
+          Id="Package\STAGING LOAD\TBST_FLAT_EQUIP_AUDIT_TRAIL\DATA LOADING\M8180003 group\M8180003\Delta Loading Filter"
+          TopLeft="103,130" />
+        <NodeLayout
+          Size="177,42"
+          Id="Package\STAGING LOAD\TBST_FLAT_EQUIP_AUDIT_TRAIL\DATA LOADING\M8180003 group\M8180003\OLE DB Destination"
+          TopLeft="317,510" />
+        <NodeLayout
+          Size="133,42"
+          Id="Package\STAGING LOAD\TBST_FLAT_EQUIP_AUDIT_TRAIL\DATA LOADING\M8180003 group\M8180003\Merge Join"
+          TopLeft="326,398" />
+        <NodeLayout
+          Size="158,42"
+          Id="Package\STAGING LOAD\TBST_FLAT_EQUIP_AUDIT_TRAIL\DATA LOADING\M8180003 group\M8180003\Sort Join Field 2"
+          TopLeft="407,305" />
+        <NodeLayout
+          Size="162,42"
+          Id="Package\STAGING LOAD\TBST_FLAT_EQUIP_AUDIT_TRAIL\DATA LOADING\M8180003 group\M8180003\Load TBMN data"
+          TopLeft="376,117" />
+        <NodeLayout
+          Size="158,42"
+          Id="Package\STAGING LOAD\TBST_FLAT_EQUIP_AUDIT_TRAIL\DATA LOADING\M8180003 group\M8180003\Sort Join Field 1"
+          TopLeft="117,306" />
+        <NodeLayout
+          Size="181,42"
+          Id="Package\STAGING LOAD\TBST_FLAT_EQUIP_AUDIT_TRAIL\DATA LOADING\M8180003 group\M8180003\Add Technical Fields"
+          TopLeft="164,204" />
+        <NodeLayout
+          Size="131,42"
+          Id="Package\STAGING LOAD\TBST_FLAT_EQUIP_AUDIT_TRAIL\DATA LOADING\M8180003 group\M8180003\M8180003"
+          TopLeft="67,50" />
+        <EdgeLayout
+          Id="Package\STAGING LOAD\TBST_FLAT_EQUIP_AUDIT_TRAIL\DATA LOADING\M8180003 group\M8180003.Paths[Flat File Source Output]"
+          TopLeft="132.5,92">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="57.5,38"
+              Start="0,0"
+              End="57.5,30.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,15" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,15"
+                    Point2="0,19"
+                    Point3="4,19" />
+                  <mssgle:LineSegment
+                    End="53.5,19" />
+                  <mssgle:CubicBezierSegment
+                    Point1="53.5,19"
+                    Point2="57.5,19"
+                    Point3="57.5,23" />
+                  <mssgle:LineSegment
+                    End="57.5,30.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="3.55234375,24,50.3953125,11.2431640625"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\STAGING LOAD\TBST_FLAT_EQUIP_AUDIT_TRAIL\DATA LOADING\M8180003 group\M8180003.Paths[Derived Column Output]"
+          TopLeft="254.5,246">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-58.5,60"
+              Start="0,0"
+              End="-58.5,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,26" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,26"
+                    Point2="0,30"
+                    Point3="-4,30" />
+                  <mssgle:LineSegment
+                    End="-54.5,30" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-54.5,30"
+                    Point2="-58.5,30"
+                    Point3="-58.5,34" />
+                  <mssgle:LineSegment
+                    End="-58.5,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\STAGING LOAD\TBST_FLAT_EQUIP_AUDIT_TRAIL\DATA LOADING\M8180003 group\M8180003.Paths[Delta]"
+          TopLeft="190,172">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="64.5,32"
+              Start="0,0"
+              End="64.5,24.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,12" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,12"
+                    Point2="0,16"
+                    Point3="4,16" />
+                  <mssgle:LineSegment
+                    End="60.5,16" />
+                  <mssgle:CubicBezierSegment
+                    Point1="60.5,16"
+                    Point2="64.5,16"
+                    Point3="64.5,20" />
+                  <mssgle:LineSegment
+                    End="64.5,24.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="20.471640625,21,23.55671875,9.7490234375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\STAGING LOAD\TBST_FLAT_EQUIP_AUDIT_TRAIL\DATA LOADING\M8180003 group\M8180003.Paths[Sort Output1]"
+          TopLeft="486,347">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-72.6666666666667,51"
+              Start="0,0"
+              End="-72.6666666666667,43.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,26.2362555720654" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,26.2362555720654"
+                    Point2="0,30.2362555720654"
+                    Point3="-4,30.2362555720654" />
+                  <mssgle:LineSegment
+                    End="-68.6666666666667,30.2362555720654" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-68.6666666666667,30.2362555720654"
+                    Point2="-72.6666666666667,30.2362555720654"
+                    Point3="-72.6666666666667,34.2362555720654" />
+                  <mssgle:LineSegment
+                    End="-72.6666666666667,43.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-51.4378059895834,35.2362555720654,30.2089453125,9.4462890625"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\STAGING LOAD\TBST_FLAT_EQUIP_AUDIT_TRAIL\DATA LOADING\M8180003 group\M8180003.Paths[Sort Output]"
+          TopLeft="196,348">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="175.666666666667,50"
+              Start="0,0"
+              End="175.666666666667,42.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,25.6433878157504" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,25.6433878157504"
+                    Point2="0,29.6433878157504"
+                    Point3="4,29.6433878157504" />
+                  <mssgle:LineSegment
+                    End="171.666666666667,29.6433878157504" />
+                  <mssgle:CubicBezierSegment
+                    Point1="171.666666666667,29.6433878157504"
+                    Point2="175.666666666667,29.6433878157504"
+                    Point3="175.666666666667,33.6433878157504" />
+                  <mssgle:LineSegment
+                    End="175.666666666667,42.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\STAGING LOAD\TBST_FLAT_EQUIP_AUDIT_TRAIL\DATA LOADING\M8180003 group\M8180003.Paths[OLE DB Source Output]"
+          TopLeft="457,159">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="29,146"
+              Start="0,0"
+              End="29,138.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,69" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,69"
+                    Point2="0,73"
+                    Point3="4,73" />
+                  <mssgle:LineSegment
+                    End="25,73" />
+                  <mssgle:CubicBezierSegment
+                    Point1="25,73"
+                    Point2="29,73"
+                    Point3="29,77" />
+                  <mssgle:LineSegment
+                    End="29,138.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-0.60447265625,78,30.2089453125,9.4462890625"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\STAGING LOAD\TBST_FLAT_EQUIP_AUDIT_TRAIL\DATA LOADING\M8180003 group\M8180003.Paths[Merge Join Output]"
+          TopLeft="392.5,440">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="13,70"
+              Start="0,0"
+              End="13,62.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,31" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,31"
+                    Point2="0,35"
+                    Point3="4,35" />
+                  <mssgle:LineSegment
+                    End="9,35" />
+                  <mssgle:CubicBezierSegment
+                    Point1="9,35"
+                    Point2="13,35"
+                    Point3="13,39" />
+                  <mssgle:LineSegment
+                    End="13,62.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\STAGING LOAD\TBST_FLAT_EQUIP_AUDIT_TRAIL\DATA LOADING\M8180003 group\M8180003\Load TBMN data">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
     design-time-name="Package\STAGING LOAD\TBST_FLAT_EQUIP_AUDIT_TRAIL\DATA LOADING\M8180031 group\M8180031">
     <LayoutInfo>
       <GraphLayout
@@ -49806,7 +50496,9 @@ FROM
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -49912,7 +50604,9 @@ FROM
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -49982,7 +50676,9 @@ FROM
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -52711,576 +53407,6 @@ FROM
         <Name>TableInfoObjectType</Name>
         <Value
           type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <TaskHost
-    design-time-name="Package\STAGING LOAD\TBST_FLAT_EQUIP_AUDIT_TRAIL\DATA LOADING\068062 group\068062">
-    <LayoutInfo>
-      <GraphLayout
-        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
-        <NodeLayout
-          Size="181,42"
-          Id="Package\STAGING LOAD\TBST_FLAT_EQUIP_AUDIT_TRAIL\DATA LOADING\068062 group\068062\Add Technical Fields"
-          TopLeft="290,235" />
-        <NodeLayout
-          Size="177,42"
-          Id="Package\STAGING LOAD\TBST_FLAT_EQUIP_AUDIT_TRAIL\DATA LOADING\068062 group\068062\OLE DB Destination"
-          TopLeft="443,541" />
-        <NodeLayout
-          Size="133,42"
-          Id="Package\STAGING LOAD\TBST_FLAT_EQUIP_AUDIT_TRAIL\DATA LOADING\068062 group\068062\Merge Join"
-          TopLeft="452,429" />
-        <NodeLayout
-          Size="158,42"
-          Id="Package\STAGING LOAD\TBST_FLAT_EQUIP_AUDIT_TRAIL\DATA LOADING\068062 group\068062\Sort Join Field 2"
-          TopLeft="533,336" />
-        <NodeLayout
-          Size="174,42"
-          Id="Package\STAGING LOAD\TBST_FLAT_EQUIP_AUDIT_TRAIL\DATA LOADING\068062 group\068062\Delta Loading Filter"
-          TopLeft="147,180" />
-        <NodeLayout
-          Size="158,42"
-          Id="Package\STAGING LOAD\TBST_FLAT_EQUIP_AUDIT_TRAIL\DATA LOADING\068062 group\068062\Sort Join Field 1"
-          TopLeft="225,326" />
-        <NodeLayout
-          Size="162,42"
-          Id="Package\STAGING LOAD\TBST_FLAT_EQUIP_AUDIT_TRAIL\DATA LOADING\068062 group\068062\Load TBMN data"
-          TopLeft="376,117" />
-        <NodeLayout
-          Size="116,42"
-          Id="Package\STAGING LOAD\TBST_FLAT_EQUIP_AUDIT_TRAIL\DATA LOADING\068062 group\068062\068062"
-          TopLeft="171,112" />
-        <EdgeLayout
-          Id="Package\STAGING LOAD\TBST_FLAT_EQUIP_AUDIT_TRAIL\DATA LOADING\068062 group\068062.Paths[Flat File Source Output]"
-          TopLeft="231.5,154">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,26"
-              Start="0,0"
-              End="0,18.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,18.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-25.0951171875,3.62841796875,50.190234375,11.2431640625"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\STAGING LOAD\TBST_FLAT_EQUIP_AUDIT_TRAIL\DATA LOADING\068062 group\068062.Paths[Derived Column Output]"
-          TopLeft="380.5,277">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-76.5,49"
-              Start="0,0"
-              End="-76.5,41.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,20.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,20.5"
-                    Point2="0,24.5"
-                    Point3="-4,24.5" />
-                  <mssgle:LineSegment
-                    End="-72.5,24.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-72.5,24.5"
-                    Point2="-76.5,24.5"
-                    Point3="-76.5,28.5" />
-                  <mssgle:LineSegment
-                    End="-76.5,41.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\STAGING LOAD\TBST_FLAT_EQUIP_AUDIT_TRAIL\DATA LOADING\068062 group\068062.Paths[Delta]"
-          TopLeft="321,201">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="59.5,34"
-              Start="0,0"
-              End="59.5,26.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="55.5,0" />
-                  <mssgle:CubicBezierSegment
-                    Point1="55.5,0"
-                    Point2="59.5,0"
-                    Point3="59.5,4" />
-                  <mssgle:LineSegment
-                    End="59.5,26.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="47.721640625,-15.7490234375,23.55671875,9.7490234375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\STAGING LOAD\TBST_FLAT_EQUIP_AUDIT_TRAIL\DATA LOADING\068062 group\068062.Paths[Sort Output1]"
-          TopLeft="612,378">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-72.6666666666667,51"
-              Start="0,0"
-              End="-72.6666666666667,43.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,26.2362555720654" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,26.2362555720654"
-                    Point2="0,30.2362555720654"
-                    Point3="-4,30.2362555720654" />
-                  <mssgle:LineSegment
-                    End="-68.6666666666667,30.2362555720654" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-68.6666666666667,30.2362555720654"
-                    Point2="-72.6666666666667,30.2362555720654"
-                    Point3="-72.6666666666667,34.2362555720654" />
-                  <mssgle:LineSegment
-                    End="-72.6666666666667,43.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-51.4378059895834,35.2362555720654,30.2089453125,9.4462890625"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\STAGING LOAD\TBST_FLAT_EQUIP_AUDIT_TRAIL\DATA LOADING\068062 group\068062.Paths[Sort Output]"
-          TopLeft="304,368">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="193.666666666667,61"
-              Start="0,0"
-              End="193.666666666667,53.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,32.1649331352154" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,32.1649331352154"
-                    Point2="0,36.1649331352154"
-                    Point3="4,36.1649331352154" />
-                  <mssgle:LineSegment
-                    End="189.666666666667,36.1649331352154" />
-                  <mssgle:CubicBezierSegment
-                    Point1="189.666666666667,36.1649331352154"
-                    Point2="193.666666666667,36.1649331352154"
-                    Point3="193.666666666667,40.1649331352154" />
-                  <mssgle:LineSegment
-                    End="193.666666666667,53.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\STAGING LOAD\TBST_FLAT_EQUIP_AUDIT_TRAIL\DATA LOADING\068062 group\068062.Paths[OLE DB Source Output]"
-          TopLeft="457,159">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="155,177"
-              Start="0,0"
-              End="155,169.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,84.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,84.5"
-                    Point2="0,88.5"
-                    Point3="4,88.5" />
-                  <mssgle:LineSegment
-                    End="151,88.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="151,88.5"
-                    Point2="155,88.5"
-                    Point3="155,92.5" />
-                  <mssgle:LineSegment
-                    End="155,169.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="62.39552734375,93.5,30.2089453125,9.4462890625"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\STAGING LOAD\TBST_FLAT_EQUIP_AUDIT_TRAIL\DATA LOADING\068062 group\068062.Paths[Merge Join Output]"
-          TopLeft="518.5,471">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="13,70"
-              Start="0,0"
-              End="13,62.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,31" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,31"
-                    Point2="0,35"
-                    Point3="4,35" />
-                  <mssgle:LineSegment
-                    End="9,35" />
-                  <mssgle:CubicBezierSegment
-                    Point1="9,35"
-                    Point2="13,35"
-                    Point3="13,39" />
-                  <mssgle:LineSegment
-                    End="13,62.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-      </GraphLayout>
-    </LayoutInfo>
-  </TaskHost>
-  <PipelineComponentMetadata
-    design-time-name="Package\STAGING LOAD\TBST_FLAT_EQUIP_AUDIT_TRAIL\DATA LOADING\068062 group\068062\Load TBMN data">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <TaskHost
-    design-time-name="Package\STAGING LOAD\TBST_FLAT_EQUIP_AUDIT_TRAIL\DATA LOADING\M8180003 group\M8180003">
-    <LayoutInfo>
-      <GraphLayout
-        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
-        <NodeLayout
-          Size="174,42"
-          Id="Package\STAGING LOAD\TBST_FLAT_EQUIP_AUDIT_TRAIL\DATA LOADING\M8180003 group\M8180003\Delta Loading Filter"
-          TopLeft="103,130" />
-        <NodeLayout
-          Size="177,42"
-          Id="Package\STAGING LOAD\TBST_FLAT_EQUIP_AUDIT_TRAIL\DATA LOADING\M8180003 group\M8180003\OLE DB Destination"
-          TopLeft="317,510" />
-        <NodeLayout
-          Size="133,42"
-          Id="Package\STAGING LOAD\TBST_FLAT_EQUIP_AUDIT_TRAIL\DATA LOADING\M8180003 group\M8180003\Merge Join"
-          TopLeft="326,398" />
-        <NodeLayout
-          Size="158,42"
-          Id="Package\STAGING LOAD\TBST_FLAT_EQUIP_AUDIT_TRAIL\DATA LOADING\M8180003 group\M8180003\Sort Join Field 2"
-          TopLeft="407,305" />
-        <NodeLayout
-          Size="162,42"
-          Id="Package\STAGING LOAD\TBST_FLAT_EQUIP_AUDIT_TRAIL\DATA LOADING\M8180003 group\M8180003\Load TBMN data"
-          TopLeft="376,117" />
-        <NodeLayout
-          Size="158,42"
-          Id="Package\STAGING LOAD\TBST_FLAT_EQUIP_AUDIT_TRAIL\DATA LOADING\M8180003 group\M8180003\Sort Join Field 1"
-          TopLeft="117,306" />
-        <NodeLayout
-          Size="181,42"
-          Id="Package\STAGING LOAD\TBST_FLAT_EQUIP_AUDIT_TRAIL\DATA LOADING\M8180003 group\M8180003\Add Technical Fields"
-          TopLeft="164,204" />
-        <NodeLayout
-          Size="131,42"
-          Id="Package\STAGING LOAD\TBST_FLAT_EQUIP_AUDIT_TRAIL\DATA LOADING\M8180003 group\M8180003\M8180003"
-          TopLeft="67,50" />
-        <EdgeLayout
-          Id="Package\STAGING LOAD\TBST_FLAT_EQUIP_AUDIT_TRAIL\DATA LOADING\M8180003 group\M8180003.Paths[Flat File Source Output]"
-          TopLeft="132.5,92">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="57.5,38"
-              Start="0,0"
-              End="57.5,30.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,15" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,15"
-                    Point2="0,19"
-                    Point3="4,19" />
-                  <mssgle:LineSegment
-                    End="53.5,19" />
-                  <mssgle:CubicBezierSegment
-                    Point1="53.5,19"
-                    Point2="57.5,19"
-                    Point3="57.5,23" />
-                  <mssgle:LineSegment
-                    End="57.5,30.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="3.55234375,24,50.3953125,11.2431640625"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\STAGING LOAD\TBST_FLAT_EQUIP_AUDIT_TRAIL\DATA LOADING\M8180003 group\M8180003.Paths[Derived Column Output]"
-          TopLeft="254.5,246">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-58.5,60"
-              Start="0,0"
-              End="-58.5,52.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,26" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,26"
-                    Point2="0,30"
-                    Point3="-4,30" />
-                  <mssgle:LineSegment
-                    End="-54.5,30" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-54.5,30"
-                    Point2="-58.5,30"
-                    Point3="-58.5,34" />
-                  <mssgle:LineSegment
-                    End="-58.5,52.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\STAGING LOAD\TBST_FLAT_EQUIP_AUDIT_TRAIL\DATA LOADING\M8180003 group\M8180003.Paths[Delta]"
-          TopLeft="190,172">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="64.5,32"
-              Start="0,0"
-              End="64.5,24.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,12" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,12"
-                    Point2="0,16"
-                    Point3="4,16" />
-                  <mssgle:LineSegment
-                    End="60.5,16" />
-                  <mssgle:CubicBezierSegment
-                    Point1="60.5,16"
-                    Point2="64.5,16"
-                    Point3="64.5,20" />
-                  <mssgle:LineSegment
-                    End="64.5,24.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="20.471640625,21,23.55671875,9.7490234375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\STAGING LOAD\TBST_FLAT_EQUIP_AUDIT_TRAIL\DATA LOADING\M8180003 group\M8180003.Paths[Sort Output1]"
-          TopLeft="486,347">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-72.6666666666667,51"
-              Start="0,0"
-              End="-72.6666666666667,43.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,26.2362555720654" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,26.2362555720654"
-                    Point2="0,30.2362555720654"
-                    Point3="-4,30.2362555720654" />
-                  <mssgle:LineSegment
-                    End="-68.6666666666667,30.2362555720654" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-68.6666666666667,30.2362555720654"
-                    Point2="-72.6666666666667,30.2362555720654"
-                    Point3="-72.6666666666667,34.2362555720654" />
-                  <mssgle:LineSegment
-                    End="-72.6666666666667,43.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-51.4378059895834,35.2362555720654,30.2089453125,9.4462890625"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\STAGING LOAD\TBST_FLAT_EQUIP_AUDIT_TRAIL\DATA LOADING\M8180003 group\M8180003.Paths[Sort Output]"
-          TopLeft="196,348">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="175.666666666667,50"
-              Start="0,0"
-              End="175.666666666667,42.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,25.6433878157504" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,25.6433878157504"
-                    Point2="0,29.6433878157504"
-                    Point3="4,29.6433878157504" />
-                  <mssgle:LineSegment
-                    End="171.666666666667,29.6433878157504" />
-                  <mssgle:CubicBezierSegment
-                    Point1="171.666666666667,29.6433878157504"
-                    Point2="175.666666666667,29.6433878157504"
-                    Point3="175.666666666667,33.6433878157504" />
-                  <mssgle:LineSegment
-                    End="175.666666666667,42.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\STAGING LOAD\TBST_FLAT_EQUIP_AUDIT_TRAIL\DATA LOADING\M8180003 group\M8180003.Paths[OLE DB Source Output]"
-          TopLeft="457,159">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="29,146"
-              Start="0,0"
-              End="29,138.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,69" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,69"
-                    Point2="0,73"
-                    Point3="4,73" />
-                  <mssgle:LineSegment
-                    End="25,73" />
-                  <mssgle:CubicBezierSegment
-                    Point1="25,73"
-                    Point2="29,73"
-                    Point3="29,77" />
-                  <mssgle:LineSegment
-                    End="29,138.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-0.60447265625,78,30.2089453125,9.4462890625"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\STAGING LOAD\TBST_FLAT_EQUIP_AUDIT_TRAIL\DATA LOADING\M8180003 group\M8180003.Paths[Merge Join Output]"
-          TopLeft="392.5,440">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="13,70"
-              Start="0,0"
-              End="13,62.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,31" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,31"
-                    Point2="0,35"
-                    Point3="4,35" />
-                  <mssgle:LineSegment
-                    End="9,35" />
-                  <mssgle:CubicBezierSegment
-                    Point1="9,35"
-                    Point2="13,35"
-                    Point3="13,39" />
-                  <mssgle:LineSegment
-                    End="13,62.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-      </GraphLayout>
-    </LayoutInfo>
-  </TaskHost>
-  <PipelineComponentMetadata
-    design-time-name="Package\STAGING LOAD\TBST_FLAT_EQUIP_AUDIT_TRAIL\DATA LOADING\M8180003 group\M8180003\Load TBMN data">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
       </Property>
     </Properties>
   </PipelineComponentMetadata>
