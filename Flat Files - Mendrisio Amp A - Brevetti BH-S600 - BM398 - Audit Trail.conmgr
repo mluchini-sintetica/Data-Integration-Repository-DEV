@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0"?>
 <DTS:ConnectionManager xmlns:DTS="www.microsoft.com/SqlServer/Dts"
-  DTS:ObjectName="Flat Files - Mendrisio Brevetti BH-S600 - BM398 - Audit Trail"
+  DTS:ObjectName="Flat Files - Mendrisio Amp A - Brevetti BH-S600 - BM398 - Audit Trail"
   DTS:DTSID="{43DFF279-3C7E-41AC-8C5A-562469932760}"
   DTS:Description="Brevetti BH-S600"
   DTS:CreationName="FLATFILE">
