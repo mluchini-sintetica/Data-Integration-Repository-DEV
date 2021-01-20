@@ -12,8 +12,8 @@
   DTS:ObjectName="DIR_DWH_LOAD"
   DTS:PackageType="5"
   DTS:ProtectionLevel="2"
-  DTS:VersionBuild="207"
-  DTS:VersionGUID="{E7FB4FDF-48FE-4992-9550-BD4384CB64C3}">
+  DTS:VersionBuild="208"
+  DTS:VersionGUID="{57C1C6D8-613C-4E01-BCB8-F7110DF24F5C}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:PackageParameters>
@@ -169,7 +169,6 @@
           DTS:refId="Package\COUVET Audit Trail Data\AUDIT_TRAIL_DW"
           DTS:CreationName="Microsoft.ExecutePackageTask"
           DTS:Description="Execute Package Task"
-          DTS:Disabled="True"
           DTS:DTSID="{8438b559-ed51-4e6e-96ba-ec02da556c8a}"
           DTS:ExecutableType="Microsoft.ExecutePackageTask"
           DTS:FailPackageOnFailure="True"
@@ -272,7 +271,6 @@
       DTS:refId="Package\COUVET NO Audit Trail Data"
       DTS:CreationName="STOCK:SEQUENCE"
       DTS:Description="Sequence Container"
-      DTS:Disabled="True"
       DTS:DTSID="{d9c7c571-d449-4517-a775-d1aac6cf18c7}"
       DTS:ExecutableType="STOCK:SEQUENCE"
       DTS:LocaleID="-1"
@@ -786,7 +784,6 @@
       DTS:refId="Package\MENDRISIO Audit Trail Data"
       DTS:CreationName="STOCK:SEQUENCE"
       DTS:Description="Sequence Container"
-      DTS:Disabled="True"
       DTS:DTSID="{BE732827-BF4E-4759-8634-E05F08127621}"
       DTS:ExecutableType="STOCK:SEQUENCE"
       DTS:LocaleID="-1"
@@ -884,7 +881,6 @@
       DTS:refId="Package\MENDRISIO NO Audit Trail Data"
       DTS:CreationName="STOCK:SEQUENCE"
       DTS:Description="Sequence Container"
-      DTS:Disabled="True"
       DTS:DTSID="{C666FC27-F69C-4D1A-9CFA-D11346867830}"
       DTS:ExecutableType="STOCK:SEQUENCE"
       DTS:LocaleID="-1"
@@ -1556,7 +1552,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -1590,7 +1588,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -1612,7 +1612,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <ContainerLayout
