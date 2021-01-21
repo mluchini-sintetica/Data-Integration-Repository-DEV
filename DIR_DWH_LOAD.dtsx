@@ -12,8 +12,8 @@
   DTS:ObjectName="DIR_DWH_LOAD"
   DTS:PackageType="5"
   DTS:ProtectionLevel="2"
-  DTS:VersionBuild="208"
-  DTS:VersionGUID="{57C1C6D8-613C-4E01-BCB8-F7110DF24F5C}">
+  DTS:VersionBuild="213"
+  DTS:VersionGUID="{07F3186F-CBB8-4795-BCAD-CEDEB6867B49}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:PackageParameters>
