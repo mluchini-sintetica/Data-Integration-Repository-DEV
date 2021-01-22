@@ -12,8 +12,8 @@
   DTS:ObjectName="DIR_DWH_LOAD"
   DTS:PackageType="5"
   DTS:ProtectionLevel="2"
-  DTS:VersionBuild="213"
-  DTS:VersionGUID="{07F3186F-CBB8-4795-BCAD-CEDEB6867B49}">
+  DTS:VersionBuild="214"
+  DTS:VersionGUID="{75EF61C0-DCB1-434D-BD7B-5AF6F4BBEA3D}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:PackageParameters>
@@ -121,7 +121,6 @@
       DTS:refId="Package\AUDIT_TRAIL_FLAT_FILES"
       DTS:CreationName="Microsoft.ExecutePackageTask"
       DTS:Description="Execute Package Task"
-      DTS:Disabled="True"
       DTS:DTSID="{3670ed1a-c9ad-4b3b-960b-cdb0a4e570ef}"
       DTS:ExecutableType="Microsoft.ExecutePackageTask"
       DTS:LocaleID="-1"

@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0"?>
 <DTS:ConnectionManager xmlns:DTS="www.microsoft.com/SqlServer/Dts"
-  DTS:ObjectName="TBLOG_TRAFFICLIGHT"
+  DTS:ObjectName="TBLOG_TRAFFICLIGHT_main"
   DTS:DTSID="{CB6E9267-0E74-4558-BFD4-E9FA27DBA29E}"
   DTS:CreationName="FLATFILE">
   <DTS:ObjectData>
@@ -12,7 +12,7 @@
       DTS:RowDelimiter=""
       DTS:TextQualifier="_x003C_none_x003E_"
       DTS:CodePage="65001"
-      DTS:ConnectionString="D:\Files_output\Mendrisio\Trafficlight\TBLOG_TRAFFICLIGHT.csv">
+      DTS:ConnectionString="D:\Files_output\Trafficlight\TBLOG_TRAFFICLIGHT_main.csv">
       <DTS:FlatFileColumns>
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"
@@ -20,7 +20,7 @@
           DTS:DataType="3"
           DTS:TextQualified="True"
           DTS:ObjectName="ID"
-          DTS:DTSID="{D350065F-3E80-4214-B22A-721EA4FF3212}"
+          DTS:DTSID="{A6D46A82-1784-4F1E-94F3-296B5D6BD827}"
           DTS:CreationName="" />
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"
@@ -29,7 +29,7 @@
           DTS:DataType="130"
           DTS:TextQualified="True"
           DTS:ObjectName="SYSTEM_CD"
-          DTS:DTSID="{F8CB51CF-F704-45F7-83D3-2C0D86EE1F75}"
+          DTS:DTSID="{0B9ECE10-0315-4CA4-A7C2-66D0E6418E3E}"
           DTS:CreationName="" />
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"
@@ -38,7 +38,7 @@
           DTS:DataType="130"
           DTS:TextQualified="True"
           DTS:ObjectName="FLOW_NAME_CD"
-          DTS:DTSID="{581DDA1B-F40A-4B0E-B140-9B008D3C333E}"
+          DTS:DTSID="{772375B6-7EB9-4324-A39A-1735A091B7E3}"
           DTS:CreationName="" />
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"
@@ -46,7 +46,7 @@
           DTS:DataType="3"
           DTS:TextQualified="True"
           DTS:ObjectName="RUN_FLG"
-          DTS:DTSID="{A1DEF2FE-30BF-4255-B6EA-60DCCFFBFFC7}"
+          DTS:DTSID="{B9BAE6EA-77BE-4EA3-B82E-9F30E1C76A70}"
           DTS:CreationName="" />
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"
@@ -54,7 +54,7 @@
           DTS:DataType="7"
           DTS:TextQualified="True"
           DTS:ObjectName="START_DT"
-          DTS:DTSID="{9AD2A143-3A42-404D-90DD-4C698EB8CC8A}"
+          DTS:DTSID="{0D70B32C-37D2-47BE-8ADD-19E4FC8857EE}"
           DTS:CreationName="" />
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"
@@ -62,7 +62,7 @@
           DTS:DataType="7"
           DTS:TextQualified="True"
           DTS:ObjectName="END_DT"
-          DTS:DTSID="{1AFA4533-B033-405E-A298-E6799F24BAD9}"
+          DTS:DTSID="{FDDE6617-383A-4F36-A683-283F0B54E966}"
           DTS:CreationName="" />
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"
@@ -71,7 +71,7 @@
           DTS:DataType="130"
           DTS:TextQualified="True"
           DTS:ObjectName="START_USER_CD"
-          DTS:DTSID="{627C20F7-2EE5-41AF-B89D-140E8180D54B}"
+          DTS:DTSID="{C3117D64-8830-44E1-8108-42109CB0CA1E}"
           DTS:CreationName="" />
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"
@@ -80,7 +80,7 @@
           DTS:DataType="130"
           DTS:TextQualified="True"
           DTS:ObjectName="END_USER_CD"
-          DTS:DTSID="{1323BA2E-142D-4861-8157-1EBBA2AF60F6}"
+          DTS:DTSID="{3CC0DCDC-206C-4DA1-9FD7-871182D4B520}"
           DTS:CreationName="" />
       </DTS:FlatFileColumns>
     </DTS:ConnectionManager>
