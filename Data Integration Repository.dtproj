@@ -18,13 +18,14 @@
           <SSIS:Property SSIS:Name="Name">Data Integration Repository</SSIS:Property>
           <SSIS:Property SSIS:Name="VersionMajor">0</SSIS:Property>
           <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
-          <SSIS:Property SSIS:Name="VersionBuild">1</SSIS:Property>
-          <SSIS:Property SSIS:Name="VersionComments">First version</SSIS:Property>
+          <SSIS:Property SSIS:Name="VersionBuild">2</SSIS:Property>
+          <SSIS:Property SSIS:Name="VersionComments">
+          </SSIS:Property>
           <SSIS:Property SSIS:Name="CreationDate">2020-05-27T14:32:19.5958621+02:00</SSIS:Property>
           <SSIS:Property SSIS:Name="CreatorName">SINTE00\mluchini</SSIS:Property>
           <SSIS:Property SSIS:Name="CreatorComputerName">SRV-DIR-DEV</SSIS:Property>
           <SSIS:Property SSIS:Name="Description">Data Integration Repository</SSIS:Property>
-          <SSIS:Property SSIS:Name="PasswordVerifier" SSIS:Sensitive="1" SSIS:Salt="Cjj58sCMAnA=" SSIS:IV="947Cn7wjDBmC2HOlO6q2cg==" SSIS:Algorithm="http://www.w3.org/2001/04/xmlenc#aes256-cbc">7MDzAvdEbILIkZB5O4A+Am1KLRK69GVuVSxxa76+ZogzGtMAxJHHbd7T++zH62zzkdaOinc3TESRkKTU4kTwZWG45JODewUM0NusoKRaYIQZEDfU9rQExtBT8zXXhyv115GjKMDH75jTNiZCrUyuPsFtiHB8lJnjdfb/yTTqPwr+ELz/LM8OeHdZHytbJaT7</SSIS:Property>
+          <SSIS:Property SSIS:Name="PasswordVerifier" SSIS:Sensitive="1" SSIS:Salt="h3bzwkjYyV4=" SSIS:IV="lx1sMUzLyp6J24wJ3+x6rg==" SSIS:Algorithm="http://www.w3.org/2001/04/xmlenc#aes256-cbc">4w+P0q0gRDdsGZuCNWmnSFwDRjau5KBhWb5oBj5PFsCclxknviM7VzPuX+gLsrAlARhxzl6/PqcjwJUs9Ozxh/rkXLSD48xzCwKcuQXSyql91jIBxqly1Pvyi+rhM9NGKApgGthSZooxYMDaKwQNypt88ZipuHZD2ca2Ckxd+F+RT/X/8bMF/EJtvyLVxzSh</SSIS:Property>
           <SSIS:Property SSIS:Name="FormatVersion">1</SSIS:Property>
         </SSIS:Properties>
         <SSIS:Packages>

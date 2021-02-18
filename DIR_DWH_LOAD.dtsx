@@ -12,8 +12,8 @@
   DTS:ObjectName="DIR_DWH_LOAD"
   DTS:PackageType="5"
   DTS:ProtectionLevel="2"
-  DTS:VersionBuild="214"
-  DTS:VersionGUID="{75EF61C0-DCB1-434D-BD7B-5AF6F4BBEA3D}">
+  DTS:VersionBuild="220"
+  DTS:VersionGUID="{CE1F4B2D-A8F4-461F-ADF3-D908ADCBCB5D}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:PackageParameters>
@@ -1472,7 +1472,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -1506,14 +1508,16 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <ContainerLayout
           HeaderHeight="43"
-          IsExpanded="True"
+          IsExpanded="False"
           PanelSize="502,171"
-          Size="502,214"
+          Size="502,43"
           Id="Package\COUVET Audit Trail Data"
           TopLeft="756,591" />
         <NodeLayout
@@ -1662,14 +1666,16 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <ContainerLayout
           HeaderHeight="43"
-          IsExpanded="True"
+          IsExpanded="False"
           PanelSize="498,86"
-          Size="498,129"
+          Size="498,43"
           Id="Package\MENDRISIO Audit Trail Data"
           TopLeft="757,343" />
         <NodeLayout
@@ -1876,9 +1882,9 @@
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="77.999999801318,-56.966666280958"
+              EndConnector="77.9999998013179,-56.966666280958"
               Start="0,0"
-              End="70.499999801318,-56.966666280958">
+              End="70.4999998013179,-56.966666280958">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
@@ -1895,7 +1901,7 @@
                     Point2="38.999999900659,-56.966666280958"
                     Point3="42.999999900659,-56.966666280958" />
                   <mssgle:LineSegment
-                    End="70.499999801318,-56.966666280958" />
+                    End="70.4999998013179,-56.966666280958" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -2178,18 +2184,18 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 9]"
-          TopLeft="1006.5,472">
+          TopLeft="1006.5,386">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,119"
+              EndConnector="0,205"
               Start="0,0"
-              End="0,111.5">
+              End="0,197.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,111.5" />
+                    End="0,197.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
