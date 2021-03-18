@@ -13,8 +13,8 @@
   DTS:ObjectName="SEA_VISION_DWFT"
   DTS:PackageType="5"
   DTS:ProtectionLevel="2"
-  DTS:VersionBuild="477"
-  DTS:VersionGUID="{4A77C938-2EC0-4260-8003-583D5DE928FB}">
+  DTS:VersionBuild="478"
+  DTS:VersionGUID="{CD4E1358-ABA7-4EF0-926D-1A27CDDEDC68}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -28,12 +28,12 @@
           DTS:ConnectionString="Data Source=192.168.200.19;User ID=PARCEL_DIR_R;Initial Catalog=Parcel2008_SINT;Provider=SQLNCLI11.1;Persist Security Info=True;Auto Translate=False;">
           <EncryptedData
             Type="http://www.w3.org/2001/04/xmlenc#Element"
-            Salt="UuDZcQn/hTQ="
-            IV="kc9wig2Tv27aIIAWx6fRNg==" xmlns="http://www.w3.org/2001/04/xmlenc#">
+            Salt="s9zD8hyAz8c="
+            IV="relUatWthdAa+5zkGJCavg==" xmlns="http://www.w3.org/2001/04/xmlenc#">
             <EncryptionMethod
               Algorithm="http://www.w3.org/2001/04/xmlenc#aes256-cbc" />
             <CipherData>
-              <CipherValue>kc9wig2Tv27aIIAWx6fRNmceVj+ob/fYEN4g6ehJq7r5kSHg+v8RtbHoYMsfEtk1084IAgKO4+nUYv1l1G0FF9D1hBL404PwKbaVDLWZU0kRt7coC72/JR7pNGpHWqaMt0jXFb1HofZOYe3PMorIYvPYWxl86vRpS5DznyPhcm8BiacgFn4sp0nhbn3wchS9</CipherValue>
+              <CipherValue>relUatWthdAa+5zkGJCavvknTwiNNi7Rx/R/8qRdaxFPEni89yT5TI45Eap8b9LOYkXyzHWGi6fia5EVjiPY6NLSxcUNRtdE3DzRlHcS7OTFvkWFOD/GP2hdY9u4t1QzlMOJbF5CZ5Qh7bQQ23FMcNAR4qYIx8UCTfbIQkJFgX7CVy9RJvjx4PoE+K5LhjKa</CipherValue>
             </CipherData>
           </EncryptedData>
         </DTS:ConnectionManager>
@@ -3962,10 +3962,6 @@ FROM
           Id="Package\DWH LOAD\TBDWFT_PROCESS_ORDER\TBDWFT_PROCESS_ORDER ins\DEL TRG table"
           TopLeft="641,523" />
         <NodeLayout
-          Size="240,42"
-          Id="Package\DWH LOAD\TBDWFT_PROCESS_ORDER\TBDWFT_PROCESS_ORDER ins\TBDWTMP_PROCESS_ORDER"
-          TopLeft="330,522" />
-        <NodeLayout
           Size="174,42"
           Id="Package\DWH LOAD\TBDWFT_PROCESS_ORDER\TBDWFT_PROCESS_ORDER ins\Split INS-UPD-DEL"
           TopLeft="226,266" />
@@ -3981,6 +3977,82 @@ FROM
           Size="251,42"
           Id="Package\DWH LOAD\TBDWFT_PROCESS_ORDER\TBDWFT_PROCESS_ORDER ins\Add Technical Fields and renaming"
           TopLeft="205,142" />
+        <NodeLayout
+          Size="240,42"
+          Id="Package\DWH LOAD\TBDWFT_PROCESS_ORDER\TBDWFT_PROCESS_ORDER ins\TBDWTMP_PROCESS_ORDER"
+          TopLeft="330,522" />
+        <EdgeLayout
+          Id="Package\DWH LOAD\TBDWFT_PROCESS_ORDER\TBDWFT_PROCESS_ORDER ins.Paths[DEL]"
+          TopLeft="354.5,308">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="363,215"
+              Start="0,0"
+              End="363,207.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,69.8301886792453" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,69.8301886792453"
+                    Point2="0,73.8301886792453"
+                    Point3="4,73.8301886792453" />
+                  <mssgle:LineSegment
+                    End="359,73.8301886792453" />
+                  <mssgle:CubicBezierSegment
+                    Point1="359,73.8301886792453"
+                    Point2="363,73.8301886792453"
+                    Point3="363,77.8301886792453" />
+                  <mssgle:LineSegment
+                    End="363,207.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="172.19806640625,78.8301886792453,18.6038671875,9.2705078125"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DWH LOAD\TBDWFT_PROCESS_ORDER\TBDWFT_PROCESS_ORDER ins.Paths[UPD]"
+          TopLeft="313,308">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="137,214"
+              Start="0,0"
+              End="137,206.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,103" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,103"
+                    Point2="0,107"
+                    Point3="4,107" />
+                  <mssgle:LineSegment
+                    End="133,107" />
+                  <mssgle:CubicBezierSegment
+                    Point1="133,107"
+                    Point2="137,107"
+                    Point3="137,111" />
+                  <mssgle:LineSegment
+                    End="137,206.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="58.55484375,112,19.8903125,9.421875"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
         <EdgeLayout
           Id="Package\DWH LOAD\TBDWFT_PROCESS_ORDER\TBDWFT_PROCESS_ORDER ins.Paths[OLE DB Source Output]"
           TopLeft="206,69">
@@ -4085,94 +4157,9 @@ FROM
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <EdgeLayout
-          Id="Package\DWH LOAD\TBDWFT_PROCESS_ORDER\TBDWFT_PROCESS_ORDER ins.Paths[DEL]"
-          TopLeft="354.5,308">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="363,215"
-              Start="0,0"
-              End="363,207.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,69.8301886792453" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,69.8301886792453"
-                    Point2="0,73.8301886792453"
-                    Point3="4,73.8301886792453" />
-                  <mssgle:LineSegment
-                    End="359,73.8301886792453" />
-                  <mssgle:CubicBezierSegment
-                    Point1="359,73.8301886792453"
-                    Point2="363,73.8301886792453"
-                    Point3="363,77.8301886792453" />
-                  <mssgle:LineSegment
-                    End="363,207.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="172.19806640625,78.8301886792453,18.6038671875,9.2705078125"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\DWH LOAD\TBDWFT_PROCESS_ORDER\TBDWFT_PROCESS_ORDER ins.Paths[UPD]"
-          TopLeft="313,308">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="137,214"
-              Start="0,0"
-              End="137,206.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,103" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,103"
-                    Point2="0,107"
-                    Point3="4,107" />
-                  <mssgle:LineSegment
-                    End="133,107" />
-                  <mssgle:CubicBezierSegment
-                    Point1="133,107"
-                    Point2="137,107"
-                    Point3="137,111" />
-                  <mssgle:LineSegment
-                    End="137,206.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="58.55484375,112,19.8903125,9.421875"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
-  <PipelineComponentMetadata
-    design-time-name="Package\DWH LOAD\TBDWFT_PROCESS_ORDER\TBDWFT_PROCESS_ORDER ins\TBDWTMP_PROCESS_ORDER">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
   <PipelineComponentMetadata
     design-time-name="Package\DWH LOAD\TBDWFT_PROCESS_ORDER\TBDWFT_PROCESS_ORDER ins\INS TRG table">
     <Properties>
@@ -4191,6 +4178,19 @@ FROM
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\DWH LOAD\TBDWFT_PROCESS_ORDER\TBDWFT_PROCESS_ORDER ins\TBDWTMP_PROCESS_ORDER">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
       </Property>
     </Properties>
   </PipelineComponentMetadata>

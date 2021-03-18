@@ -13,8 +13,8 @@
   DTS:ObjectName="PARCEL_MFG_STG_me"
   DTS:PackageType="5"
   DTS:ProtectionLevel="2"
-  DTS:VersionBuild="347"
-  DTS:VersionGUID="{30A7DDCD-AF1D-458A-8858-018051D275C3}">
+  DTS:VersionBuild="350"
+  DTS:VersionGUID="{23CA4AB8-FEDC-4D07-88EA-70C48FDB84B2}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Configurations>
@@ -454,7 +454,7 @@
               DTS:LocaleID="-1"
               DTS:ObjectName="Assign TABLE_TARGET_CD"
               DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-              DTS:ThreadHint="0">
+              DTS:ThreadHint="2">
               <DTS:Variables />
               <DTS:ObjectData>
                 <SQLTask:SqlTaskData
@@ -476,7 +476,7 @@
               DTS:LocaleID="-1"
               DTS:ObjectName="Delete STG TRG TABLE"
               DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-              DTS:ThreadHint="0">
+              DTS:ThreadHint="3">
               <DTS:Variables />
               <DTS:PropertyExpression
                 DTS:Name="SqlStatementSource">"delete from " + @[User::out_TABLE_TARGET_CD] + " where site_id = " + (DT_WSTR,2) @[User::out_SITE_ID]</DTS:PropertyExpression>
@@ -495,7 +495,7 @@
               DTS:LocaleID="-1"
               DTS:ObjectName="Ins_Upd TBLOG_PACKAGE_TABLE"
               DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-              DTS:ThreadHint="0">
+              DTS:ThreadHint="2">
               <DTS:Variables />
               <DTS:ObjectData>
                 <SQLTask:SqlTaskData
@@ -573,7 +573,7 @@
               DTS:LocaleID="-1"
               DTS:ObjectName="Last Upd TBLOG_PACKAGE_TABLE"
               DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-              DTS:ThreadHint="0">
+              DTS:ThreadHint="2">
               <DTS:Variables />
               <DTS:ObjectData>
                 <SQLTask:SqlTaskData
@@ -615,7 +615,7 @@
               DTS:LocaleID="-1"
               DTS:ObjectName="MAX TABLE ID"
               DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-              DTS:ThreadHint="1">
+              DTS:ThreadHint="2">
               <DTS:Variables />
               <DTS:ObjectData>
                 <SQLTask:SqlTaskData
@@ -1884,7 +1884,7 @@
               DTS:LocaleID="-1"
               DTS:ObjectName="Assign TABLE_TARGET_CD"
               DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-              DTS:ThreadHint="2">
+              DTS:ThreadHint="0">
               <DTS:Variables />
               <DTS:ObjectData>
                 <SQLTask:SqlTaskData
@@ -1906,7 +1906,7 @@
               DTS:LocaleID="-1"
               DTS:ObjectName="Delete STG TRG TABLE"
               DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-              DTS:ThreadHint="2">
+              DTS:ThreadHint="1">
               <DTS:Variables />
               <DTS:PropertyExpression
                 DTS:Name="SqlStatementSource">"delete from " + @[User::out_TABLE_TARGET_CD] + " where site_id = " + (DT_WSTR,2) @[User::out_SITE_ID]</DTS:PropertyExpression>
@@ -1925,7 +1925,7 @@
               DTS:LocaleID="-1"
               DTS:ObjectName="Ins_Upd TBLOG_PACKAGE_TABLE"
               DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-              DTS:ThreadHint="2">
+              DTS:ThreadHint="0">
               <DTS:Variables />
               <DTS:ObjectData>
                 <SQLTask:SqlTaskData
@@ -2003,7 +2003,7 @@
               DTS:LocaleID="-1"
               DTS:ObjectName="Last Upd TBLOG_PACKAGE_TABLE"
               DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-              DTS:ThreadHint="2">
+              DTS:ThreadHint="0">
               <DTS:Variables />
               <DTS:ObjectData>
                 <SQLTask:SqlTaskData
@@ -2045,7 +2045,7 @@
               DTS:LocaleID="-1"
               DTS:ObjectName="MAX TABLE ID"
               DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-              DTS:ThreadHint="3">
+              DTS:ThreadHint="0">
               <DTS:Variables />
               <DTS:ObjectData>
                 <SQLTask:SqlTaskData
@@ -11213,7 +11213,7 @@
               DTS:LocaleID="-1"
               DTS:ObjectName="Assign TABLE_TARGET_CD"
               DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-              DTS:ThreadHint="14">
+              DTS:ThreadHint="6">
               <DTS:Variables />
               <DTS:ObjectData>
                 <SQLTask:SqlTaskData
@@ -11235,7 +11235,7 @@
               DTS:LocaleID="-1"
               DTS:ObjectName="Delete STG TRG TABLE"
               DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-              DTS:ThreadHint="14">
+              DTS:ThreadHint="6">
               <DTS:Variables />
               <DTS:PropertyExpression
                 DTS:Name="SqlStatementSource">"delete from " + @[User::out_TABLE_TARGET_CD] + " where site_id = " + (DT_WSTR,2) @[User::out_SITE_ID]</DTS:PropertyExpression>
@@ -11254,7 +11254,7 @@
               DTS:LocaleID="-1"
               DTS:ObjectName="Ins_Upd TBLOG_PACKAGE_TABLE"
               DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-              DTS:ThreadHint="14">
+              DTS:ThreadHint="6">
               <DTS:Variables />
               <DTS:ObjectData>
                 <SQLTask:SqlTaskData
@@ -11332,7 +11332,7 @@
               DTS:LocaleID="-1"
               DTS:ObjectName="Last Upd TBLOG_PACKAGE_TABLE"
               DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-              DTS:ThreadHint="14">
+              DTS:ThreadHint="6">
               <DTS:Variables />
               <DTS:ObjectData>
                 <SQLTask:SqlTaskData
@@ -11374,7 +11374,7 @@
               DTS:LocaleID="-1"
               DTS:ObjectName="MAX TABLE ID"
               DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-              DTS:ThreadHint="15">
+              DTS:ThreadHint="7">
               <DTS:Variables />
               <DTS:ObjectData>
                 <SQLTask:SqlTaskData
@@ -11634,7 +11634,7 @@
                               dataType="wstr"
                               errorOrTruncationOperation="Computation"
                               errorRowDisposition="FailComponent"
-                              length="1000"
+                              length="250"
                               lineageId="Package\STAGING LOAD\TBST_PRC_SYS_VALORI_AGGIUNTIVI\TBST_PRC_SYS_VALORI_AGGIUNTIVI\Add Technical Fields.Outputs[Derived Column Output].Columns[PKEY1_WSTR]"
                               name="PKEY1_WSTR"
                               truncationRowDisposition="FailComponent">
@@ -11643,13 +11643,13 @@
                                   containsID="true"
                                   dataType="System.String"
                                   description="Derived Column Expression"
-                                  name="Expression">(DT_WSTR,1000)(DT_STR,1000,1252)#{Package\STAGING LOAD\TBST_PRC_SYS_VALORI_AGGIUNTIVI\TBST_PRC_SYS_VALORI_AGGIUNTIVI\OLE DB Source.Outputs[OLE DB Source Output].Columns[PKEY1]}</property>
+                                  name="Expression">(DT_WSTR,250)(DT_STR,1000,1252)#{Package\STAGING LOAD\TBST_PRC_SYS_VALORI_AGGIUNTIVI\TBST_PRC_SYS_VALORI_AGGIUNTIVI\OLE DB Source.Outputs[OLE DB Source Output].Columns[PKEY1]}</property>
                                 <property
                                   containsID="true"
                                   dataType="System.String"
                                   description="Derived Column Friendly Expression"
                                   expressionType="Notify"
-                                  name="FriendlyExpression">(DT_WSTR,1000)(DT_STR,1000,1252)PKEY1</property>
+                                  name="FriendlyExpression">(DT_WSTR,250)(DT_STR,1000,1252)PKEY1</property>
                               </properties>
                             </outputColumn>
                             <outputColumn
@@ -11657,7 +11657,7 @@
                               dataType="wstr"
                               errorOrTruncationOperation="Computation"
                               errorRowDisposition="FailComponent"
-                              length="1000"
+                              length="250"
                               lineageId="Package\STAGING LOAD\TBST_PRC_SYS_VALORI_AGGIUNTIVI\TBST_PRC_SYS_VALORI_AGGIUNTIVI\Add Technical Fields.Outputs[Derived Column Output].Columns[PKEY2_WSTR]"
                               name="PKEY2_WSTR"
                               truncationRowDisposition="FailComponent">
@@ -11666,13 +11666,13 @@
                                   containsID="true"
                                   dataType="System.String"
                                   description="Derived Column Expression"
-                                  name="Expression">(DT_WSTR,1000)(DT_STR,1000,1252)#{Package\STAGING LOAD\TBST_PRC_SYS_VALORI_AGGIUNTIVI\TBST_PRC_SYS_VALORI_AGGIUNTIVI\OLE DB Source.Outputs[OLE DB Source Output].Columns[PKEY2]}</property>
+                                  name="Expression">(DT_WSTR,250)(DT_STR,1000,1252)#{Package\STAGING LOAD\TBST_PRC_SYS_VALORI_AGGIUNTIVI\TBST_PRC_SYS_VALORI_AGGIUNTIVI\OLE DB Source.Outputs[OLE DB Source Output].Columns[PKEY2]}</property>
                                 <property
                                   containsID="true"
                                   dataType="System.String"
                                   description="Derived Column Friendly Expression"
                                   expressionType="Notify"
-                                  name="FriendlyExpression">(DT_WSTR,1000)(DT_STR,1000,1252)PKEY2</property>
+                                  name="FriendlyExpression">(DT_WSTR,250)(DT_STR,1000,1252)PKEY2</property>
                               </properties>
                             </outputColumn>
                             <outputColumn
@@ -11680,7 +11680,7 @@
                               dataType="wstr"
                               errorOrTruncationOperation="Computation"
                               errorRowDisposition="FailComponent"
-                              length="1000"
+                              length="250"
                               lineageId="Package\STAGING LOAD\TBST_PRC_SYS_VALORI_AGGIUNTIVI\TBST_PRC_SYS_VALORI_AGGIUNTIVI\Add Technical Fields.Outputs[Derived Column Output].Columns[PKEY3_WSTR]"
                               name="PKEY3_WSTR"
                               truncationRowDisposition="FailComponent">
@@ -11689,13 +11689,13 @@
                                   containsID="true"
                                   dataType="System.String"
                                   description="Derived Column Expression"
-                                  name="Expression">(DT_WSTR,1000)(DT_STR,1000,1252)#{Package\STAGING LOAD\TBST_PRC_SYS_VALORI_AGGIUNTIVI\TBST_PRC_SYS_VALORI_AGGIUNTIVI\OLE DB Source.Outputs[OLE DB Source Output].Columns[PKEY3]}</property>
+                                  name="Expression">(DT_WSTR,250)(DT_STR,1000,1252)#{Package\STAGING LOAD\TBST_PRC_SYS_VALORI_AGGIUNTIVI\TBST_PRC_SYS_VALORI_AGGIUNTIVI\OLE DB Source.Outputs[OLE DB Source Output].Columns[PKEY3]}</property>
                                 <property
                                   containsID="true"
                                   dataType="System.String"
                                   description="Derived Column Friendly Expression"
                                   expressionType="Notify"
-                                  name="FriendlyExpression">(DT_WSTR,1000)(DT_STR,1000,1252)PKEY3</property>
+                                  name="FriendlyExpression">(DT_WSTR,250)(DT_STR,1000,1252)PKEY3</property>
                               </properties>
                             </outputColumn>
                             <outputColumn
@@ -11703,7 +11703,7 @@
                               dataType="wstr"
                               errorOrTruncationOperation="Computation"
                               errorRowDisposition="FailComponent"
-                              length="1000"
+                              length="250"
                               lineageId="Package\STAGING LOAD\TBST_PRC_SYS_VALORI_AGGIUNTIVI\TBST_PRC_SYS_VALORI_AGGIUNTIVI\Add Technical Fields.Outputs[Derived Column Output].Columns[PKEY4_WSTR]"
                               name="PKEY4_WSTR"
                               truncationRowDisposition="FailComponent">
@@ -11712,13 +11712,13 @@
                                   containsID="true"
                                   dataType="System.String"
                                   description="Derived Column Expression"
-                                  name="Expression">(DT_WSTR,1000)(DT_STR,1000,1252)#{Package\STAGING LOAD\TBST_PRC_SYS_VALORI_AGGIUNTIVI\TBST_PRC_SYS_VALORI_AGGIUNTIVI\OLE DB Source.Outputs[OLE DB Source Output].Columns[PKEY4]}</property>
+                                  name="Expression">(DT_WSTR,250)(DT_STR,1000,1252)#{Package\STAGING LOAD\TBST_PRC_SYS_VALORI_AGGIUNTIVI\TBST_PRC_SYS_VALORI_AGGIUNTIVI\OLE DB Source.Outputs[OLE DB Source Output].Columns[PKEY4]}</property>
                                 <property
                                   containsID="true"
                                   dataType="System.String"
                                   description="Derived Column Friendly Expression"
                                   expressionType="Notify"
-                                  name="FriendlyExpression">(DT_WSTR,1000)(DT_STR,1000,1252)PKEY4</property>
+                                  name="FriendlyExpression">(DT_WSTR,250)(DT_STR,1000,1252)PKEY4</property>
                               </properties>
                             </outputColumn>
                             <outputColumn
@@ -11726,7 +11726,7 @@
                               dataType="wstr"
                               errorOrTruncationOperation="Computation"
                               errorRowDisposition="FailComponent"
-                              length="1000"
+                              length="250"
                               lineageId="Package\STAGING LOAD\TBST_PRC_SYS_VALORI_AGGIUNTIVI\TBST_PRC_SYS_VALORI_AGGIUNTIVI\Add Technical Fields.Outputs[Derived Column Output].Columns[PKEY5_WSTR]"
                               name="PKEY5_WSTR"
                               truncationRowDisposition="FailComponent">
@@ -11735,13 +11735,13 @@
                                   containsID="true"
                                   dataType="System.String"
                                   description="Derived Column Expression"
-                                  name="Expression">(DT_WSTR,1000)(DT_STR,1000,1252)#{Package\STAGING LOAD\TBST_PRC_SYS_VALORI_AGGIUNTIVI\TBST_PRC_SYS_VALORI_AGGIUNTIVI\OLE DB Source.Outputs[OLE DB Source Output].Columns[PKEY5]}</property>
+                                  name="Expression">(DT_WSTR,250)(DT_STR,1000,1252)#{Package\STAGING LOAD\TBST_PRC_SYS_VALORI_AGGIUNTIVI\TBST_PRC_SYS_VALORI_AGGIUNTIVI\OLE DB Source.Outputs[OLE DB Source Output].Columns[PKEY5]}</property>
                                 <property
                                   containsID="true"
                                   dataType="System.String"
                                   description="Derived Column Friendly Expression"
                                   expressionType="Notify"
-                                  name="FriendlyExpression">(DT_WSTR,1000)(DT_STR,1000,1252)PKEY5</property>
+                                  name="FriendlyExpression">(DT_WSTR,250)(DT_STR,1000,1252)PKEY5</property>
                               </properties>
                             </outputColumn>
                           </outputColumns>
@@ -12091,35 +12091,35 @@
                             <inputColumn
                               refId="Package\STAGING LOAD\TBST_PRC_SYS_VALORI_AGGIUNTIVI\TBST_PRC_SYS_VALORI_AGGIUNTIVI\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[PKEY5_WSTR]"
                               cachedDataType="wstr"
-                              cachedLength="1000"
+                              cachedLength="250"
                               cachedName="PKEY5_WSTR"
                               externalMetadataColumnId="Package\STAGING LOAD\TBST_PRC_SYS_VALORI_AGGIUNTIVI\TBST_PRC_SYS_VALORI_AGGIUNTIVI\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[PKEY5]"
                               lineageId="Package\STAGING LOAD\TBST_PRC_SYS_VALORI_AGGIUNTIVI\TBST_PRC_SYS_VALORI_AGGIUNTIVI\Add Technical Fields.Outputs[Derived Column Output].Columns[PKEY5_WSTR]" />
                             <inputColumn
                               refId="Package\STAGING LOAD\TBST_PRC_SYS_VALORI_AGGIUNTIVI\TBST_PRC_SYS_VALORI_AGGIUNTIVI\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[PKEY4_WSTR]"
                               cachedDataType="wstr"
-                              cachedLength="1000"
+                              cachedLength="250"
                               cachedName="PKEY4_WSTR"
                               externalMetadataColumnId="Package\STAGING LOAD\TBST_PRC_SYS_VALORI_AGGIUNTIVI\TBST_PRC_SYS_VALORI_AGGIUNTIVI\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[PKEY4]"
                               lineageId="Package\STAGING LOAD\TBST_PRC_SYS_VALORI_AGGIUNTIVI\TBST_PRC_SYS_VALORI_AGGIUNTIVI\Add Technical Fields.Outputs[Derived Column Output].Columns[PKEY4_WSTR]" />
                             <inputColumn
                               refId="Package\STAGING LOAD\TBST_PRC_SYS_VALORI_AGGIUNTIVI\TBST_PRC_SYS_VALORI_AGGIUNTIVI\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[PKEY3_WSTR]"
                               cachedDataType="wstr"
-                              cachedLength="1000"
+                              cachedLength="250"
                               cachedName="PKEY3_WSTR"
                               externalMetadataColumnId="Package\STAGING LOAD\TBST_PRC_SYS_VALORI_AGGIUNTIVI\TBST_PRC_SYS_VALORI_AGGIUNTIVI\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[PKEY3]"
                               lineageId="Package\STAGING LOAD\TBST_PRC_SYS_VALORI_AGGIUNTIVI\TBST_PRC_SYS_VALORI_AGGIUNTIVI\Add Technical Fields.Outputs[Derived Column Output].Columns[PKEY3_WSTR]" />
                             <inputColumn
                               refId="Package\STAGING LOAD\TBST_PRC_SYS_VALORI_AGGIUNTIVI\TBST_PRC_SYS_VALORI_AGGIUNTIVI\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[PKEY2_WSTR]"
                               cachedDataType="wstr"
-                              cachedLength="1000"
+                              cachedLength="250"
                               cachedName="PKEY2_WSTR"
                               externalMetadataColumnId="Package\STAGING LOAD\TBST_PRC_SYS_VALORI_AGGIUNTIVI\TBST_PRC_SYS_VALORI_AGGIUNTIVI\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[PKEY2]"
                               lineageId="Package\STAGING LOAD\TBST_PRC_SYS_VALORI_AGGIUNTIVI\TBST_PRC_SYS_VALORI_AGGIUNTIVI\Add Technical Fields.Outputs[Derived Column Output].Columns[PKEY2_WSTR]" />
                             <inputColumn
                               refId="Package\STAGING LOAD\TBST_PRC_SYS_VALORI_AGGIUNTIVI\TBST_PRC_SYS_VALORI_AGGIUNTIVI\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[PKEY1_WSTR]"
                               cachedDataType="wstr"
-                              cachedLength="1000"
+                              cachedLength="250"
                               cachedName="PKEY1_WSTR"
                               externalMetadataColumnId="Package\STAGING LOAD\TBST_PRC_SYS_VALORI_AGGIUNTIVI\TBST_PRC_SYS_VALORI_AGGIUNTIVI\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[PKEY1]"
                               lineageId="Package\STAGING LOAD\TBST_PRC_SYS_VALORI_AGGIUNTIVI\TBST_PRC_SYS_VALORI_AGGIUNTIVI\Add Technical Fields.Outputs[Derived Column Output].Columns[PKEY1_WSTR]" />
@@ -12182,27 +12182,27 @@
                             <externalMetadataColumn
                               refId="Package\STAGING LOAD\TBST_PRC_SYS_VALORI_AGGIUNTIVI\TBST_PRC_SYS_VALORI_AGGIUNTIVI\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[PKEY1]"
                               dataType="wstr"
-                              length="1000"
+                              length="250"
                               name="PKEY1" />
                             <externalMetadataColumn
                               refId="Package\STAGING LOAD\TBST_PRC_SYS_VALORI_AGGIUNTIVI\TBST_PRC_SYS_VALORI_AGGIUNTIVI\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[PKEY2]"
                               dataType="wstr"
-                              length="1000"
+                              length="2500"
                               name="PKEY2" />
                             <externalMetadataColumn
                               refId="Package\STAGING LOAD\TBST_PRC_SYS_VALORI_AGGIUNTIVI\TBST_PRC_SYS_VALORI_AGGIUNTIVI\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[PKEY3]"
                               dataType="wstr"
-                              length="1000"
+                              length="250"
                               name="PKEY3" />
                             <externalMetadataColumn
                               refId="Package\STAGING LOAD\TBST_PRC_SYS_VALORI_AGGIUNTIVI\TBST_PRC_SYS_VALORI_AGGIUNTIVI\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[PKEY4]"
                               dataType="wstr"
-                              length="1000"
+                              length="250"
                               name="PKEY4" />
                             <externalMetadataColumn
                               refId="Package\STAGING LOAD\TBST_PRC_SYS_VALORI_AGGIUNTIVI\TBST_PRC_SYS_VALORI_AGGIUNTIVI\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[PKEY5]"
                               dataType="wstr"
-                              length="1000"
+                              length="250"
                               name="PKEY5" />
                             <externalMetadataColumn
                               refId="Package\STAGING LOAD\TBST_PRC_SYS_VALORI_AGGIUNTIVI\TBST_PRC_SYS_VALORI_AGGIUNTIVI\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[I_User]"
@@ -12741,7 +12741,7 @@
               DTS:LocaleID="-1"
               DTS:ObjectName="Assign TABLE_TARGET_CD"
               DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-              DTS:ThreadHint="10">
+              DTS:ThreadHint="8">
               <DTS:Variables />
               <DTS:ObjectData>
                 <SQLTask:SqlTaskData
@@ -12763,7 +12763,7 @@
               DTS:LocaleID="-1"
               DTS:ObjectName="Delete STG TRG TABLE"
               DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-              DTS:ThreadHint="10">
+              DTS:ThreadHint="8">
               <DTS:Variables />
               <DTS:PropertyExpression
                 DTS:Name="SqlStatementSource">"delete from " + @[User::out_TABLE_TARGET_CD] + " where site_id = " + (DT_WSTR,2) @[User::out_SITE_ID]</DTS:PropertyExpression>
@@ -12782,7 +12782,7 @@
               DTS:LocaleID="-1"
               DTS:ObjectName="Ins_Upd TBLOG_PACKAGE_TABLE"
               DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-              DTS:ThreadHint="10">
+              DTS:ThreadHint="8">
               <DTS:Variables />
               <DTS:ObjectData>
                 <SQLTask:SqlTaskData
@@ -12860,7 +12860,7 @@
               DTS:LocaleID="-1"
               DTS:ObjectName="Last Upd TBLOG_PACKAGE_TABLE"
               DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-              DTS:ThreadHint="10">
+              DTS:ThreadHint="8">
               <DTS:Variables />
               <DTS:ObjectData>
                 <SQLTask:SqlTaskData
@@ -12902,7 +12902,7 @@
               DTS:LocaleID="-1"
               DTS:ObjectName="MAX TABLE ID"
               DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-              DTS:ThreadHint="11">
+              DTS:ThreadHint="9">
               <DTS:Variables />
               <DTS:ObjectData>
                 <SQLTask:SqlTaskData
@@ -14063,7 +14063,7 @@
               DTS:LocaleID="-1"
               DTS:ObjectName="Assign TABLE_TARGET_CD"
               DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-              DTS:ThreadHint="12">
+              DTS:ThreadHint="10">
               <DTS:Variables />
               <DTS:ObjectData>
                 <SQLTask:SqlTaskData
@@ -14085,7 +14085,7 @@
               DTS:LocaleID="-1"
               DTS:ObjectName="Delete STG TRG TABLE"
               DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-              DTS:ThreadHint="12">
+              DTS:ThreadHint="10">
               <DTS:Variables />
               <DTS:PropertyExpression
                 DTS:Name="SqlStatementSource">"delete from " + @[User::out_TABLE_TARGET_CD] + " where site_id = " + (DT_WSTR,2) @[User::out_SITE_ID]</DTS:PropertyExpression>
@@ -14104,7 +14104,7 @@
               DTS:LocaleID="-1"
               DTS:ObjectName="Ins_Upd TBLOG_PACKAGE_TABLE"
               DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-              DTS:ThreadHint="12">
+              DTS:ThreadHint="10">
               <DTS:Variables />
               <DTS:ObjectData>
                 <SQLTask:SqlTaskData
@@ -14182,7 +14182,7 @@
               DTS:LocaleID="-1"
               DTS:ObjectName="Last Upd TBLOG_PACKAGE_TABLE"
               DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-              DTS:ThreadHint="12">
+              DTS:ThreadHint="10">
               <DTS:Variables />
               <DTS:ObjectData>
                 <SQLTask:SqlTaskData
@@ -14224,7 +14224,7 @@
               DTS:LocaleID="-1"
               DTS:ObjectName="MAX TABLE ID"
               DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-              DTS:ThreadHint="13">
+              DTS:ThreadHint="11">
               <DTS:Variables />
               <DTS:ObjectData>
                 <SQLTask:SqlTaskData
@@ -15307,7 +15307,7 @@
               DTS:LocaleID="-1"
               DTS:ObjectName="Assign TABLE_TARGET_CD"
               DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-              DTS:ThreadHint="8">
+              DTS:ThreadHint="12">
               <DTS:Variables />
               <DTS:ObjectData>
                 <SQLTask:SqlTaskData
@@ -15329,7 +15329,7 @@
               DTS:LocaleID="-1"
               DTS:ObjectName="Delete STG TRG TABLE"
               DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-              DTS:ThreadHint="8">
+              DTS:ThreadHint="12">
               <DTS:Variables />
               <DTS:PropertyExpression
                 DTS:Name="SqlStatementSource">"delete from " + @[User::out_TABLE_TARGET_CD] + " where site_id = " + (DT_WSTR,2) @[User::out_SITE_ID]</DTS:PropertyExpression>
@@ -15348,7 +15348,7 @@
               DTS:LocaleID="-1"
               DTS:ObjectName="Ins_Upd TBLOG_PACKAGE_TABLE"
               DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-              DTS:ThreadHint="8">
+              DTS:ThreadHint="12">
               <DTS:Variables />
               <DTS:ObjectData>
                 <SQLTask:SqlTaskData
@@ -15426,7 +15426,7 @@
               DTS:LocaleID="-1"
               DTS:ObjectName="Last Upd TBLOG_PACKAGE_TABLE"
               DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-              DTS:ThreadHint="8">
+              DTS:ThreadHint="12">
               <DTS:Variables />
               <DTS:ObjectData>
                 <SQLTask:SqlTaskData
@@ -15468,7 +15468,7 @@
               DTS:LocaleID="-1"
               DTS:ObjectName="MAX TABLE ID"
               DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-              DTS:ThreadHint="9">
+              DTS:ThreadHint="13">
               <DTS:Variables />
               <DTS:ObjectData>
                 <SQLTask:SqlTaskData
@@ -16727,7 +16727,7 @@
               DTS:LocaleID="-1"
               DTS:ObjectName="Assign TABLE_TARGET_CD"
               DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-              DTS:ThreadHint="6">
+              DTS:ThreadHint="14">
               <DTS:Variables />
               <DTS:ObjectData>
                 <SQLTask:SqlTaskData
@@ -16749,7 +16749,7 @@
               DTS:LocaleID="-1"
               DTS:ObjectName="Delete STG TRG TABLE"
               DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-              DTS:ThreadHint="6">
+              DTS:ThreadHint="14">
               <DTS:Variables />
               <DTS:PropertyExpression
                 DTS:Name="SqlStatementSource">"delete from " + @[User::out_TABLE_TARGET_CD] + " where site_id = " + (DT_WSTR,2) @[User::out_SITE_ID]</DTS:PropertyExpression>
@@ -16768,7 +16768,7 @@
               DTS:LocaleID="-1"
               DTS:ObjectName="Ins_Upd TBLOG_PACKAGE_TABLE"
               DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-              DTS:ThreadHint="6">
+              DTS:ThreadHint="14">
               <DTS:Variables />
               <DTS:ObjectData>
                 <SQLTask:SqlTaskData
@@ -16846,7 +16846,7 @@
               DTS:LocaleID="-1"
               DTS:ObjectName="Last Upd TBLOG_PACKAGE_TABLE"
               DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-              DTS:ThreadHint="6">
+              DTS:ThreadHint="14">
               <DTS:Variables />
               <DTS:ObjectData>
                 <SQLTask:SqlTaskData
@@ -16888,7 +16888,7 @@
               DTS:LocaleID="-1"
               DTS:ObjectName="MAX TABLE ID"
               DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-              DTS:ThreadHint="7">
+              DTS:ThreadHint="15">
               <DTS:Variables />
               <DTS:ObjectData>
                 <SQLTask:SqlTaskData
@@ -16928,7 +16928,7 @@
               DTS:LocaleID="-1"
               DTS:ObjectName="sp_TBST_PRC_SYS_VALORI_AGGIUNTIVI_TABELLE_me"
               DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-              DTS:ThreadHint="6">
+              DTS:ThreadHint="14">
               <DTS:Variables />
               <DTS:ObjectData>
                 <SQLTask:SqlTaskData
@@ -17213,7 +17213,7 @@
     design-time-name="Package">
     <LayoutInfo>
       <GraphLayout
-        Capacity="256" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="256" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="157,42"
           Id="Package\Assign SITE_ID"
@@ -17289,7 +17289,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -17323,7 +17325,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -17345,7 +17349,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -17379,7 +17385,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -17413,7 +17421,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -17447,21 +17457,23 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <AnnotationLayout
           Text="To be modified according table"
           ParentId="Package\STAGING LOAD\TBST_PRC_ANAGRAFICA_FAMIGLIE"
           FontInfo="{assembly:Null}"
-          Size="194,40"
+          Size="194,NaN"
           Id="6d3f57de-7b74-44ec-91ee-bc87a4f7eafc"
           TopLeft="35.5,310.5" />
         <AnnotationLayout
           Text="To be specify target table name"
           ParentId="Package\STAGING LOAD\TBST_PRC_ANAGRAFICA_FAMIGLIE"
           FontInfo="{assembly:Null}"
-          Size="195,40"
+          Size="195,NaN"
           Id="d4fcd34d-8d27-4a1d-bb6b-9f7c52a51de3"
           TopLeft="29.5,10.5" />
         <ContainerLayout
@@ -17703,11 +17715,11 @@
           TopLeft="37.5,314.5" />
         <ContainerLayout
           HeaderHeight="43"
-          IsExpanded="False"
+          IsExpanded="True"
           PanelSize="515,612"
-          Size="515,43"
+          Size="515,655"
           Id="Package\STAGING LOAD\TBST_PRC_ANAGRAFICA_LOTTI"
-          TopLeft="5.5,5.50000000000011" />
+          TopLeft="6.5,5.50000000000011" />
         <NodeLayout
           Size="222,42"
           Id="Package\STAGING LOAD\TBST_PRC_ARTICOLO\Assign TABLE_TARGET_CD"
@@ -17751,7 +17763,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -17785,7 +17799,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -17807,7 +17823,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -17841,7 +17859,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -17875,7 +17895,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -17909,21 +17931,23 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <AnnotationLayout
           Text="To be modified according table"
           ParentId="Package\STAGING LOAD\TBST_PRC_ARTICOLO"
           FontInfo="{assembly:Null}"
-          Size="194,40"
+          Size="194,NaN"
           Id="3a32ec32-6ec9-4287-8f3a-b58ed7f11262"
           TopLeft="35.5,310.5" />
         <AnnotationLayout
           Text="To be specify target table name"
           ParentId="Package\STAGING LOAD\TBST_PRC_ARTICOLO"
           FontInfo="{assembly:Null}"
-          Size="195,40"
+          Size="195,NaN"
           Id="c6f553ec-c823-4c2c-9643-8a8ddd9f60c6"
           TopLeft="29.5,10.5" />
         <ContainerLayout
@@ -17933,954 +17957,6 @@
           Size="222,43"
           Id="Package\STAGING LOAD\TBST_PRC_ARTICOLO"
           TopLeft="559.5,5.5" />
-        <NodeLayout
-          Size="222,42"
-          Id="Package\STAGING LOAD\TBST_PRC_SYS_VALORI_AGGIUNTIVI_TABELLE\Assign TABLE_TARGET_CD"
-          TopLeft="244.5,5.5" />
-        <NodeLayout
-          Size="200,42"
-          Id="Package\STAGING LOAD\TBST_PRC_SYS_VALORI_AGGIUNTIVI_TABELLE\Delete STG TRG TABLE"
-          TopLeft="5.50000000000003,209.5" />
-        <NodeLayout
-          Size="260,42"
-          Id="Package\STAGING LOAD\TBST_PRC_SYS_VALORI_AGGIUNTIVI_TABELLE\Ins_Upd TBLOG_PACKAGE_TABLE"
-          TopLeft="225.5,107.5" />
-        <NodeLayout
-          Size="263,43"
-          Id="Package\STAGING LOAD\TBST_PRC_SYS_VALORI_AGGIUNTIVI_TABELLE\Last Upd TBLOG_PACKAGE_TABLE"
-          TopLeft="224,413.5" />
-        <NodeLayout
-          Size="155,42"
-          Id="Package\STAGING LOAD\TBST_PRC_SYS_VALORI_AGGIUNTIVI_TABELLE\MAX TABLE ID"
-          TopLeft="278,209.5" />
-        <EdgeLayout
-          Id="Package\STAGING LOAD\TBST_PRC_SYS_VALORI_AGGIUNTIVI_TABELLE.PrecedenceConstraints[Constraint 1]"
-          TopLeft="313.5,149.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-208,60"
-              Start="0,0"
-              End="-208,52.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,20.2201834862385" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,20.2201834862385"
-                    Point2="0,24.2201834862385"
-                    Point3="-4,24.2201834862385" />
-                  <mssgle:LineSegment
-                    End="-204,24.2201834862385" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-204,24.2201834862385"
-                    Point2="-208,24.2201834862385"
-                    Point3="-208,28.2201834862385" />
-                  <mssgle:LineSegment
-                    End="-208,52.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\STAGING LOAD\TBST_PRC_SYS_VALORI_AGGIUNTIVI_TABELLE.PrecedenceConstraints[Constraint 2]"
-          TopLeft="355.5,47.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,60"
-              Start="0,0"
-              End="0,52.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,52.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\STAGING LOAD\TBST_PRC_SYS_VALORI_AGGIUNTIVI_TABELLE.PrecedenceConstraints[Constraint 3]"
-          TopLeft="397.5,149.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-42,60"
-              Start="0,0"
-              End="-42,52.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,20.2201834862385" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,20.2201834862385"
-                    Point2="0,24.2201834862385"
-                    Point3="-4,24.2201834862385" />
-                  <mssgle:LineSegment
-                    End="-38,24.2201834862385" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-38,24.2201834862385"
-                    Point2="-42,24.2201834862385"
-                    Point3="-42,28.2201834862385" />
-                  <mssgle:LineSegment
-                    End="-42,52.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <AnnotationLayout
-          Text="Call to DB stored procedure&#xD;&#xA;to load target STG table"
-          ParentId="Package\STAGING LOAD\TBST_PRC_SYS_VALORI_AGGIUNTIVI_TABELLE"
-          FontInfo="{assembly:Null}"
-          Size="176,56"
-          Id="3b8d2bfb-ed33-497b-a6df-76907915bc47"
-          TopLeft="11.5,328.5" />
-        <AnnotationLayout
-          Text="To be specify target table name"
-          ParentId="Package\STAGING LOAD\TBST_PRC_SYS_VALORI_AGGIUNTIVI_TABELLE"
-          FontInfo="{assembly:Null}"
-          Size="195,40"
-          Id="987df472-34e5-4d60-b76a-5240a8d3c843"
-          TopLeft="29.5,10.5" />
-        <NodeLayout
-          Size="374,42"
-          Id="Package\STAGING LOAD\TBST_PRC_SYS_VALORI_AGGIUNTIVI_TABELLE\sp_TBST_PRC_SYS_VALORI_AGGIUNTIVI_TABELLE_me"
-          TopLeft="189,325" />
-        <EdgeLayout
-          Id="Package\STAGING LOAD\TBST_PRC_SYS_VALORI_AGGIUNTIVI_TABELLE.PrecedenceConstraints[Constraint]"
-          TopLeft="105.5,251.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="209.5,73.5"
-              Start="0,0"
-              End="209.5,66">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,39.9121405750799" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,39.9121405750799"
-                    Point2="0,43.9121405750799"
-                    Point3="4,43.9121405750799" />
-                  <mssgle:LineSegment
-                    End="205.5,43.9121405750799" />
-                  <mssgle:CubicBezierSegment
-                    Point1="205.5,43.9121405750799"
-                    Point2="209.5,43.9121405750799"
-                    Point3="209.5,47.9121405750799" />
-                  <mssgle:LineSegment
-                    End="209.5,66" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\STAGING LOAD\TBST_PRC_SYS_VALORI_AGGIUNTIVI_TABELLE.PrecedenceConstraints[Constraint 4]"
-          TopLeft="355.5,251.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="81.5,73.5"
-              Start="0,0"
-              End="81.5,66">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,39.9121405750799" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,39.9121405750799"
-                    Point2="0,43.9121405750799"
-                    Point3="4,43.9121405750799" />
-                  <mssgle:LineSegment
-                    End="77.5,43.9121405750799" />
-                  <mssgle:CubicBezierSegment
-                    Point1="77.5,43.9121405750799"
-                    Point2="81.5,43.9121405750799"
-                    Point3="81.5,47.9121405750799" />
-                  <mssgle:LineSegment
-                    End="81.5,66" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\STAGING LOAD\TBST_PRC_SYS_VALORI_AGGIUNTIVI_TABELLE.PrecedenceConstraints[Constraint 5]"
-          TopLeft="376,367">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-20.5,46.5"
-              Start="0,0"
-              End="-20.5,39">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,19.25" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,19.25"
-                    Point2="0,23.25"
-                    Point3="-4,23.25" />
-                  <mssgle:LineSegment
-                    End="-16.5,23.25" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-16.5,23.25"
-                    Point2="-20.5,23.25"
-                    Point3="-20.5,27.25" />
-                  <mssgle:LineSegment
-                    End="-20.5,39" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <ContainerLayout
-          HeaderHeight="43"
-          IsExpanded="False"
-          PanelSize="610,608"
-          Size="358,43"
-          Id="Package\STAGING LOAD\TBST_PRC_SYS_VALORI_AGGIUNTIVI_TABELLE"
-          TopLeft="1124,90" />
-        <NodeLayout
-          Size="222,42"
-          Id="Package\STAGING LOAD\TBST_PRC_SYS_VALORI_AGGIUNTIVI_CONTESTO\Assign TABLE_TARGET_CD"
-          TopLeft="244.5,5.5" />
-        <NodeLayout
-          Size="212,42"
-          Id="Package\STAGING LOAD\TBST_PRC_SYS_VALORI_AGGIUNTIVI_CONTESTO\Delete STG TRG TABLE"
-          TopLeft="5.50000000000003,209.5" />
-        <NodeLayout
-          Size="260,42"
-          Id="Package\STAGING LOAD\TBST_PRC_SYS_VALORI_AGGIUNTIVI_CONTESTO\Ins_Upd TBLOG_PACKAGE_TABLE"
-          TopLeft="225.5,107.5" />
-        <NodeLayout
-          Size="263,43"
-          Id="Package\STAGING LOAD\TBST_PRC_SYS_VALORI_AGGIUNTIVI_CONTESTO\Last Upd TBLOG_PACKAGE_TABLE"
-          TopLeft="224,413.5" />
-        <NodeLayout
-          Size="155,42"
-          Id="Package\STAGING LOAD\TBST_PRC_SYS_VALORI_AGGIUNTIVI_CONTESTO\MAX TABLE ID"
-          TopLeft="278,209.5" />
-        <NodeLayout
-          Size="348,42"
-          Id="Package\STAGING LOAD\TBST_PRC_SYS_VALORI_AGGIUNTIVI_CONTESTO\TBST_PRC_SYS_VALORI_AGGIUNTIVI_CONTESTO"
-          TopLeft="171,345.5" />
-        <EdgeLayout
-          Id="Package\STAGING LOAD\TBST_PRC_SYS_VALORI_AGGIUNTIVI_CONTESTO.PrecedenceConstraints[Constraint]"
-          TopLeft="345,387.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="10.5,26"
-              Start="0,0"
-              End="10.5,18.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,9" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,9"
-                    Point2="0,13"
-                    Point3="4,13" />
-                  <mssgle:LineSegment
-                    End="6.5,13" />
-                  <mssgle:CubicBezierSegment
-                    Point1="6.5,13"
-                    Point2="10.5,13"
-                    Point3="10.5,17" />
-                  <mssgle:LineSegment
-                    End="10.5,18.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\STAGING LOAD\TBST_PRC_SYS_VALORI_AGGIUNTIVI_CONTESTO.PrecedenceConstraints[Constraint 1]"
-          TopLeft="313.5,149.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-202,60"
-              Start="0,0"
-              End="-202,52.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,20.2201834862385" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,20.2201834862385"
-                    Point2="0,24.2201834862385"
-                    Point3="-4,24.2201834862385" />
-                  <mssgle:LineSegment
-                    End="-198,24.2201834862385" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-198,24.2201834862385"
-                    Point2="-202,24.2201834862385"
-                    Point3="-202,28.2201834862385" />
-                  <mssgle:LineSegment
-                    End="-202,52.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\STAGING LOAD\TBST_PRC_SYS_VALORI_AGGIUNTIVI_CONTESTO.PrecedenceConstraints[Constraint 2]"
-          TopLeft="355.5,47.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,60"
-              Start="0,0"
-              End="0,52.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,52.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\STAGING LOAD\TBST_PRC_SYS_VALORI_AGGIUNTIVI_CONTESTO.PrecedenceConstraints[Constraint 3]"
-          TopLeft="397.5,149.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-42,60"
-              Start="0,0"
-              End="-42,52.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,20.2201834862385" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,20.2201834862385"
-                    Point2="0,24.2201834862385"
-                    Point3="-4,24.2201834862385" />
-                  <mssgle:LineSegment
-                    End="-38,24.2201834862385" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-38,24.2201834862385"
-                    Point2="-42,24.2201834862385"
-                    Point3="-42,28.2201834862385" />
-                  <mssgle:LineSegment
-                    End="-42,52.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\STAGING LOAD\TBST_PRC_SYS_VALORI_AGGIUNTIVI_CONTESTO.PrecedenceConstraints[Constraint 4]"
-          TopLeft="111.5,251.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="176.833333333333,94"
-              Start="0,0"
-              End="176.833333333333,86.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,52.141876430206" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,52.141876430206"
-                    Point2="0,56.141876430206"
-                    Point3="4,56.141876430206" />
-                  <mssgle:LineSegment
-                    End="172.833333333333,56.141876430206" />
-                  <mssgle:CubicBezierSegment
-                    Point1="172.833333333333,56.141876430206"
-                    Point2="176.833333333333,56.141876430206"
-                    Point3="176.833333333333,60.141876430206" />
-                  <mssgle:LineSegment
-                    End="176.833333333333,86.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\STAGING LOAD\TBST_PRC_SYS_VALORI_AGGIUNTIVI_CONTESTO.PrecedenceConstraints[Constraint 5]"
-          TopLeft="355.5,251.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="46.1666666666666,94"
-              Start="0,0"
-              End="46.1666666666666,86.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,52.1418764302059" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,52.1418764302059"
-                    Point2="0,56.1418764302059"
-                    Point3="4,56.1418764302059" />
-                  <mssgle:LineSegment
-                    End="42.1666666666666,56.1418764302059" />
-                  <mssgle:CubicBezierSegment
-                    Point1="42.1666666666666,56.1418764302059"
-                    Point2="46.1666666666666,56.1418764302059"
-                    Point3="46.1666666666666,60.1418764302059" />
-                  <mssgle:LineSegment
-                    End="46.1666666666666,86.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <AnnotationLayout
-          Text="To be modified according table"
-          ParentId="Package\STAGING LOAD\TBST_PRC_SYS_VALORI_AGGIUNTIVI_CONTESTO"
-          FontInfo="{assembly:Null}"
-          Size="194,40"
-          Id="fbd01e34-d660-4485-9f83-670adaf8a535"
-          TopLeft="35.5,310.5" />
-        <AnnotationLayout
-          Text="To be specify target table name"
-          ParentId="Package\STAGING LOAD\TBST_PRC_SYS_VALORI_AGGIUNTIVI_CONTESTO"
-          FontInfo="{assembly:Null}"
-          Size="195,40"
-          Id="92c0fb08-6474-4920-bbf3-f83909275aa4"
-          TopLeft="29.5,10.5" />
-        <ContainerLayout
-          HeaderHeight="43"
-          IsExpanded="False"
-          PanelSize="539,608"
-          Size="539,43"
-          Id="Package\STAGING LOAD\TBST_PRC_SYS_VALORI_AGGIUNTIVI_CONTESTO"
-          TopLeft="561,84" />
-        <NodeLayout
-          Size="222,42"
-          Id="Package\STAGING LOAD\TBST_PRC_SYS_VALORI_AGGIUNTIVI_CONFIG\Assign TABLE_TARGET_CD"
-          TopLeft="244.5,5.5" />
-        <NodeLayout
-          Size="212,42"
-          Id="Package\STAGING LOAD\TBST_PRC_SYS_VALORI_AGGIUNTIVI_CONFIG\Delete STG TRG TABLE"
-          TopLeft="5.50000000000003,209.5" />
-        <NodeLayout
-          Size="260,42"
-          Id="Package\STAGING LOAD\TBST_PRC_SYS_VALORI_AGGIUNTIVI_CONFIG\Ins_Upd TBLOG_PACKAGE_TABLE"
-          TopLeft="225.5,107.5" />
-        <NodeLayout
-          Size="263,43"
-          Id="Package\STAGING LOAD\TBST_PRC_SYS_VALORI_AGGIUNTIVI_CONFIG\Last Upd TBLOG_PACKAGE_TABLE"
-          TopLeft="224,413.5" />
-        <NodeLayout
-          Size="155,42"
-          Id="Package\STAGING LOAD\TBST_PRC_SYS_VALORI_AGGIUNTIVI_CONFIG\MAX TABLE ID"
-          TopLeft="278,209.5" />
-        <NodeLayout
-          Size="329,42"
-          Id="Package\STAGING LOAD\TBST_PRC_SYS_VALORI_AGGIUNTIVI_CONFIG\TBST_PRC_SYS_VALORI_AGGIUNTIVI_CONFIG"
-          TopLeft="171,345.5" />
-        <EdgeLayout
-          Id="Package\STAGING LOAD\TBST_PRC_SYS_VALORI_AGGIUNTIVI_CONFIG.PrecedenceConstraints[Constraint]"
-          TopLeft="335.5,387.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="20,26"
-              Start="0,0"
-              End="20,18.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,9" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,9"
-                    Point2="0,13"
-                    Point3="4,13" />
-                  <mssgle:LineSegment
-                    End="16,13" />
-                  <mssgle:CubicBezierSegment
-                    Point1="16,13"
-                    Point2="20,13"
-                    Point3="20,17" />
-                  <mssgle:LineSegment
-                    End="20,18.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\STAGING LOAD\TBST_PRC_SYS_VALORI_AGGIUNTIVI_CONFIG.PrecedenceConstraints[Constraint 1]"
-          TopLeft="313.5,149.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-202,60"
-              Start="0,0"
-              End="-202,52.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,20.2201834862385" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,20.2201834862385"
-                    Point2="0,24.2201834862385"
-                    Point3="-4,24.2201834862385" />
-                  <mssgle:LineSegment
-                    End="-198,24.2201834862385" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-198,24.2201834862385"
-                    Point2="-202,24.2201834862385"
-                    Point3="-202,28.2201834862385" />
-                  <mssgle:LineSegment
-                    End="-202,52.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\STAGING LOAD\TBST_PRC_SYS_VALORI_AGGIUNTIVI_CONFIG.PrecedenceConstraints[Constraint 2]"
-          TopLeft="355.5,47.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,60"
-              Start="0,0"
-              End="0,52.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,52.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\STAGING LOAD\TBST_PRC_SYS_VALORI_AGGIUNTIVI_CONFIG.PrecedenceConstraints[Constraint 3]"
-          TopLeft="397.5,149.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-42,60"
-              Start="0,0"
-              End="-42,52.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,20.2201834862385" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,20.2201834862385"
-                    Point2="0,24.2201834862385"
-                    Point3="-4,24.2201834862385" />
-                  <mssgle:LineSegment
-                    End="-38,24.2201834862385" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-38,24.2201834862385"
-                    Point2="-42,24.2201834862385"
-                    Point3="-42,28.2201834862385" />
-                  <mssgle:LineSegment
-                    End="-42,52.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\STAGING LOAD\TBST_PRC_SYS_VALORI_AGGIUNTIVI_CONFIG.PrecedenceConstraints[Constraint 4]"
-          TopLeft="111.5,251.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="170.5,94"
-              Start="0,0"
-              End="170.5,86.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,52.1270417422868" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,52.1270417422868"
-                    Point2="0,56.1270417422868"
-                    Point3="4,56.1270417422868" />
-                  <mssgle:LineSegment
-                    End="166.5,56.1270417422868" />
-                  <mssgle:CubicBezierSegment
-                    Point1="166.5,56.1270417422868"
-                    Point2="170.5,56.1270417422868"
-                    Point3="170.5,60.1270417422868" />
-                  <mssgle:LineSegment
-                    End="170.5,86.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\STAGING LOAD\TBST_PRC_SYS_VALORI_AGGIUNTIVI_CONFIG.PrecedenceConstraints[Constraint 5]"
-          TopLeft="355.5,251.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="33.5,94"
-              Start="0,0"
-              End="33.5,86.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,52.1270417422868" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,52.1270417422868"
-                    Point2="0,56.1270417422868"
-                    Point3="4,56.1270417422868" />
-                  <mssgle:LineSegment
-                    End="29.5,56.1270417422868" />
-                  <mssgle:CubicBezierSegment
-                    Point1="29.5,56.1270417422868"
-                    Point2="33.5,56.1270417422868"
-                    Point3="33.5,60.1270417422868" />
-                  <mssgle:LineSegment
-                    End="33.5,86.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <AnnotationLayout
-          Text="To be modified according table"
-          ParentId="Package\STAGING LOAD\TBST_PRC_SYS_VALORI_AGGIUNTIVI_CONFIG"
-          FontInfo="{assembly:Null}"
-          Size="194,40"
-          Id="df940e84-37e8-4030-bb20-8d41e995f897"
-          TopLeft="35.5,310.5" />
-        <AnnotationLayout
-          Text="To be specify target table name"
-          ParentId="Package\STAGING LOAD\TBST_PRC_SYS_VALORI_AGGIUNTIVI_CONFIG"
-          FontInfo="{assembly:Null}"
-          Size="195,40"
-          Id="492cbdfc-bcb1-4187-b174-ffbaa4eb11e8"
-          TopLeft="29.5,10.5" />
-        <ContainerLayout
-          HeaderHeight="43"
-          IsExpanded="False"
-          PanelSize="539,608"
-          Size="539,43"
-          Id="Package\STAGING LOAD\TBST_PRC_SYS_VALORI_AGGIUNTIVI_CONFIG"
-          TopLeft="3,88" />
-        <NodeLayout
-          Size="222,42"
-          Id="Package\STAGING LOAD\TBST_PRC_SYS_VALORI_AGGIUNTIVI_ALL\Assign TABLE_TARGET_CD"
-          TopLeft="244.5,5.5" />
-        <NodeLayout
-          Size="212,42"
-          Id="Package\STAGING LOAD\TBST_PRC_SYS_VALORI_AGGIUNTIVI_ALL\Delete STG TRG TABLE"
-          TopLeft="5.50000000000003,209.5" />
-        <NodeLayout
-          Size="260,42"
-          Id="Package\STAGING LOAD\TBST_PRC_SYS_VALORI_AGGIUNTIVI_ALL\Ins_Upd TBLOG_PACKAGE_TABLE"
-          TopLeft="225.5,107.5" />
-        <NodeLayout
-          Size="263,43"
-          Id="Package\STAGING LOAD\TBST_PRC_SYS_VALORI_AGGIUNTIVI_ALL\Last Upd TBLOG_PACKAGE_TABLE"
-          TopLeft="224,413.5" />
-        <NodeLayout
-          Size="155,42"
-          Id="Package\STAGING LOAD\TBST_PRC_SYS_VALORI_AGGIUNTIVI_ALL\MAX TABLE ID"
-          TopLeft="278,209.5" />
-        <NodeLayout
-          Size="306,42"
-          Id="Package\STAGING LOAD\TBST_PRC_SYS_VALORI_AGGIUNTIVI_ALL\TBST_PRC_SYS_VALORI_AGGIUNTIVI_ALL"
-          TopLeft="171,345.5" />
-        <EdgeLayout
-          Id="Package\STAGING LOAD\TBST_PRC_SYS_VALORI_AGGIUNTIVI_ALL.PrecedenceConstraints[Constraint]"
-          TopLeft="324,387.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="31.5,26"
-              Start="0,0"
-              End="31.5,18.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,9" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,9"
-                    Point2="0,13"
-                    Point3="4,13" />
-                  <mssgle:LineSegment
-                    End="27.5,13" />
-                  <mssgle:CubicBezierSegment
-                    Point1="27.5,13"
-                    Point2="31.5,13"
-                    Point3="31.5,17" />
-                  <mssgle:LineSegment
-                    End="31.5,18.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\STAGING LOAD\TBST_PRC_SYS_VALORI_AGGIUNTIVI_ALL.PrecedenceConstraints[Constraint 1]"
-          TopLeft="313.5,149.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-202,60"
-              Start="0,0"
-              End="-202,52.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,20.2201834862385" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,20.2201834862385"
-                    Point2="0,24.2201834862385"
-                    Point3="-4,24.2201834862385" />
-                  <mssgle:LineSegment
-                    End="-198,24.2201834862385" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-198,24.2201834862385"
-                    Point2="-202,24.2201834862385"
-                    Point3="-202,28.2201834862385" />
-                  <mssgle:LineSegment
-                    End="-202,52.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\STAGING LOAD\TBST_PRC_SYS_VALORI_AGGIUNTIVI_ALL.PrecedenceConstraints[Constraint 2]"
-          TopLeft="355.5,47.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,60"
-              Start="0,0"
-              End="0,52.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,52.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\STAGING LOAD\TBST_PRC_SYS_VALORI_AGGIUNTIVI_ALL.PrecedenceConstraints[Constraint 3]"
-          TopLeft="397.5,149.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-42,60"
-              Start="0,0"
-              End="-42,52.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,20.2201834862385" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,20.2201834862385"
-                    Point2="0,24.2201834862385"
-                    Point3="-4,24.2201834862385" />
-                  <mssgle:LineSegment
-                    End="-38,24.2201834862385" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-38,24.2201834862385"
-                    Point2="-42,24.2201834862385"
-                    Point3="-42,28.2201834862385" />
-                  <mssgle:LineSegment
-                    End="-42,52.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\STAGING LOAD\TBST_PRC_SYS_VALORI_AGGIUNTIVI_ALL.PrecedenceConstraints[Constraint 4]"
-          TopLeft="111.5,251.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="162.833333333333,94"
-              Start="0,0"
-              End="162.833333333333,86.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,52.1066319895969" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,52.1066319895969"
-                    Point2="0,56.1066319895969"
-                    Point3="4,56.1066319895969" />
-                  <mssgle:LineSegment
-                    End="158.833333333333,56.1066319895969" />
-                  <mssgle:CubicBezierSegment
-                    Point1="158.833333333333,56.1066319895969"
-                    Point2="162.833333333333,56.1066319895969"
-                    Point3="162.833333333333,60.1066319895969" />
-                  <mssgle:LineSegment
-                    End="162.833333333333,86.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\STAGING LOAD\TBST_PRC_SYS_VALORI_AGGIUNTIVI_ALL.PrecedenceConstraints[Constraint 5]"
-          TopLeft="355.5,251.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="18.1666666666666,94"
-              Start="0,0"
-              End="18.1666666666666,86.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,52.1066319895969" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,52.1066319895969"
-                    Point2="0,56.1066319895969"
-                    Point3="4,56.1066319895969" />
-                  <mssgle:LineSegment
-                    End="14.1666666666666,56.1066319895969" />
-                  <mssgle:CubicBezierSegment
-                    Point1="14.1666666666666,56.1066319895969"
-                    Point2="18.1666666666666,56.1066319895969"
-                    Point3="18.1666666666666,60.1066319895969" />
-                  <mssgle:LineSegment
-                    End="18.1666666666666,86.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <AnnotationLayout
-          Text="To be modified according table"
-          ParentId="Package\STAGING LOAD\TBST_PRC_SYS_VALORI_AGGIUNTIVI_ALL"
-          FontInfo="{assembly:Null}"
-          Size="194,40"
-          Id="473d824b-c786-4ca9-ba45-5ef9d012488c"
-          TopLeft="35.5,310.5" />
-        <AnnotationLayout
-          Text="To be specify target table name"
-          ParentId="Package\STAGING LOAD\TBST_PRC_SYS_VALORI_AGGIUNTIVI_ALL"
-          FontInfo="{assembly:Null}"
-          Size="195,40"
-          Id="afdef81c-c8b5-4a26-b97f-ef752f577c0d"
-          TopLeft="29.5,10.5" />
-        <ContainerLayout
-          HeaderHeight="43"
-          IsExpanded="False"
-          PanelSize="539,608"
-          Size="539,43"
-          Id="Package\STAGING LOAD\TBST_PRC_SYS_VALORI_AGGIUNTIVI_ALL"
-          TopLeft="4,168" />
         <NodeLayout
           Size="222,42"
           Id="Package\STAGING LOAD\TBST_PRC_SYS_VALORI_AGGIUNTIVI\Assign TABLE_TARGET_CD"
@@ -19101,11 +18177,1007 @@
           TopLeft="29.5,10.5" />
         <ContainerLayout
           HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="539,608"
+          Size="539,651"
+          Id="Package\STAGING LOAD\TBST_PRC_SYS_VALORI_AGGIUNTIVI"
+          TopLeft="582,158" />
+        <NodeLayout
+          Size="222,42"
+          Id="Package\STAGING LOAD\TBST_PRC_SYS_VALORI_AGGIUNTIVI_ALL\Assign TABLE_TARGET_CD"
+          TopLeft="244.5,5.5" />
+        <NodeLayout
+          Size="212,42"
+          Id="Package\STAGING LOAD\TBST_PRC_SYS_VALORI_AGGIUNTIVI_ALL\Delete STG TRG TABLE"
+          TopLeft="5.50000000000003,209.5" />
+        <NodeLayout
+          Size="260,42"
+          Id="Package\STAGING LOAD\TBST_PRC_SYS_VALORI_AGGIUNTIVI_ALL\Ins_Upd TBLOG_PACKAGE_TABLE"
+          TopLeft="225.5,107.5" />
+        <NodeLayout
+          Size="263,43"
+          Id="Package\STAGING LOAD\TBST_PRC_SYS_VALORI_AGGIUNTIVI_ALL\Last Upd TBLOG_PACKAGE_TABLE"
+          TopLeft="224,413.5" />
+        <NodeLayout
+          Size="155,42"
+          Id="Package\STAGING LOAD\TBST_PRC_SYS_VALORI_AGGIUNTIVI_ALL\MAX TABLE ID"
+          TopLeft="278,209.5" />
+        <NodeLayout
+          Size="306,42"
+          Id="Package\STAGING LOAD\TBST_PRC_SYS_VALORI_AGGIUNTIVI_ALL\TBST_PRC_SYS_VALORI_AGGIUNTIVI_ALL"
+          TopLeft="171,345.5" />
+        <EdgeLayout
+          Id="Package\STAGING LOAD\TBST_PRC_SYS_VALORI_AGGIUNTIVI_ALL.PrecedenceConstraints[Constraint]"
+          TopLeft="324,387.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="31.5,26"
+              Start="0,0"
+              End="31.5,18.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,9" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,9"
+                    Point2="0,13"
+                    Point3="4,13" />
+                  <mssgle:LineSegment
+                    End="27.5,13" />
+                  <mssgle:CubicBezierSegment
+                    Point1="27.5,13"
+                    Point2="31.5,13"
+                    Point3="31.5,17" />
+                  <mssgle:LineSegment
+                    End="31.5,18.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\STAGING LOAD\TBST_PRC_SYS_VALORI_AGGIUNTIVI_ALL.PrecedenceConstraints[Constraint 1]"
+          TopLeft="313.5,149.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-202,60"
+              Start="0,0"
+              End="-202,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,20.2201834862385" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,20.2201834862385"
+                    Point2="0,24.2201834862385"
+                    Point3="-4,24.2201834862385" />
+                  <mssgle:LineSegment
+                    End="-198,24.2201834862385" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-198,24.2201834862385"
+                    Point2="-202,24.2201834862385"
+                    Point3="-202,28.2201834862385" />
+                  <mssgle:LineSegment
+                    End="-202,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\STAGING LOAD\TBST_PRC_SYS_VALORI_AGGIUNTIVI_ALL.PrecedenceConstraints[Constraint 2]"
+          TopLeft="355.5,47.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\STAGING LOAD\TBST_PRC_SYS_VALORI_AGGIUNTIVI_ALL.PrecedenceConstraints[Constraint 3]"
+          TopLeft="397.5,149.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-42,60"
+              Start="0,0"
+              End="-42,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,20.2201834862385" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,20.2201834862385"
+                    Point2="0,24.2201834862385"
+                    Point3="-4,24.2201834862385" />
+                  <mssgle:LineSegment
+                    End="-38,24.2201834862385" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-38,24.2201834862385"
+                    Point2="-42,24.2201834862385"
+                    Point3="-42,28.2201834862385" />
+                  <mssgle:LineSegment
+                    End="-42,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\STAGING LOAD\TBST_PRC_SYS_VALORI_AGGIUNTIVI_ALL.PrecedenceConstraints[Constraint 4]"
+          TopLeft="111.5,251.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="162.833333333333,94"
+              Start="0,0"
+              End="162.833333333333,86.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.1066319895969" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,52.1066319895969"
+                    Point2="0,56.1066319895969"
+                    Point3="4,56.1066319895969" />
+                  <mssgle:LineSegment
+                    End="158.833333333333,56.1066319895969" />
+                  <mssgle:CubicBezierSegment
+                    Point1="158.833333333333,56.1066319895969"
+                    Point2="162.833333333333,56.1066319895969"
+                    Point3="162.833333333333,60.1066319895969" />
+                  <mssgle:LineSegment
+                    End="162.833333333333,86.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\STAGING LOAD\TBST_PRC_SYS_VALORI_AGGIUNTIVI_ALL.PrecedenceConstraints[Constraint 5]"
+          TopLeft="355.5,251.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="18.1666666666666,94"
+              Start="0,0"
+              End="18.1666666666666,86.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.1066319895969" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,52.1066319895969"
+                    Point2="0,56.1066319895969"
+                    Point3="4,56.1066319895969" />
+                  <mssgle:LineSegment
+                    End="14.1666666666666,56.1066319895969" />
+                  <mssgle:CubicBezierSegment
+                    Point1="14.1666666666666,56.1066319895969"
+                    Point2="18.1666666666666,56.1066319895969"
+                    Point3="18.1666666666666,60.1066319895969" />
+                  <mssgle:LineSegment
+                    End="18.1666666666666,86.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <AnnotationLayout
+          Text="To be modified according table"
+          ParentId="Package\STAGING LOAD\TBST_PRC_SYS_VALORI_AGGIUNTIVI_ALL"
+          FontInfo="{assembly:Null}"
+          Size="194,NaN"
+          Id="473d824b-c786-4ca9-ba45-5ef9d012488c"
+          TopLeft="35.5,310.5" />
+        <AnnotationLayout
+          Text="To be specify target table name"
+          ParentId="Package\STAGING LOAD\TBST_PRC_SYS_VALORI_AGGIUNTIVI_ALL"
+          FontInfo="{assembly:Null}"
+          Size="195,NaN"
+          Id="afdef81c-c8b5-4a26-b97f-ef752f577c0d"
+          TopLeft="29.5,10.5" />
+        <ContainerLayout
+          HeaderHeight="43"
           IsExpanded="False"
           PanelSize="539,608"
           Size="539,43"
-          Id="Package\STAGING LOAD\TBST_PRC_SYS_VALORI_AGGIUNTIVI"
-          TopLeft="716,204" />
+          Id="Package\STAGING LOAD\TBST_PRC_SYS_VALORI_AGGIUNTIVI_ALL"
+          TopLeft="4,168" />
+        <NodeLayout
+          Size="222,42"
+          Id="Package\STAGING LOAD\TBST_PRC_SYS_VALORI_AGGIUNTIVI_CONFIG\Assign TABLE_TARGET_CD"
+          TopLeft="244.5,5.5" />
+        <NodeLayout
+          Size="212,42"
+          Id="Package\STAGING LOAD\TBST_PRC_SYS_VALORI_AGGIUNTIVI_CONFIG\Delete STG TRG TABLE"
+          TopLeft="5.50000000000003,209.5" />
+        <NodeLayout
+          Size="260,42"
+          Id="Package\STAGING LOAD\TBST_PRC_SYS_VALORI_AGGIUNTIVI_CONFIG\Ins_Upd TBLOG_PACKAGE_TABLE"
+          TopLeft="225.5,107.5" />
+        <NodeLayout
+          Size="263,43"
+          Id="Package\STAGING LOAD\TBST_PRC_SYS_VALORI_AGGIUNTIVI_CONFIG\Last Upd TBLOG_PACKAGE_TABLE"
+          TopLeft="224,413.5" />
+        <NodeLayout
+          Size="155,42"
+          Id="Package\STAGING LOAD\TBST_PRC_SYS_VALORI_AGGIUNTIVI_CONFIG\MAX TABLE ID"
+          TopLeft="278,209.5" />
+        <NodeLayout
+          Size="329,42"
+          Id="Package\STAGING LOAD\TBST_PRC_SYS_VALORI_AGGIUNTIVI_CONFIG\TBST_PRC_SYS_VALORI_AGGIUNTIVI_CONFIG"
+          TopLeft="171,345.5" />
+        <EdgeLayout
+          Id="Package\STAGING LOAD\TBST_PRC_SYS_VALORI_AGGIUNTIVI_CONFIG.PrecedenceConstraints[Constraint]"
+          TopLeft="335.5,387.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="20,26"
+              Start="0,0"
+              End="20,18.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,9" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,9"
+                    Point2="0,13"
+                    Point3="4,13" />
+                  <mssgle:LineSegment
+                    End="16,13" />
+                  <mssgle:CubicBezierSegment
+                    Point1="16,13"
+                    Point2="20,13"
+                    Point3="20,17" />
+                  <mssgle:LineSegment
+                    End="20,18.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\STAGING LOAD\TBST_PRC_SYS_VALORI_AGGIUNTIVI_CONFIG.PrecedenceConstraints[Constraint 1]"
+          TopLeft="313.5,149.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-202,60"
+              Start="0,0"
+              End="-202,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,20.2201834862385" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,20.2201834862385"
+                    Point2="0,24.2201834862385"
+                    Point3="-4,24.2201834862385" />
+                  <mssgle:LineSegment
+                    End="-198,24.2201834862385" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-198,24.2201834862385"
+                    Point2="-202,24.2201834862385"
+                    Point3="-202,28.2201834862385" />
+                  <mssgle:LineSegment
+                    End="-202,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\STAGING LOAD\TBST_PRC_SYS_VALORI_AGGIUNTIVI_CONFIG.PrecedenceConstraints[Constraint 2]"
+          TopLeft="355.5,47.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\STAGING LOAD\TBST_PRC_SYS_VALORI_AGGIUNTIVI_CONFIG.PrecedenceConstraints[Constraint 3]"
+          TopLeft="397.5,149.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-42,60"
+              Start="0,0"
+              End="-42,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,20.2201834862385" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,20.2201834862385"
+                    Point2="0,24.2201834862385"
+                    Point3="-4,24.2201834862385" />
+                  <mssgle:LineSegment
+                    End="-38,24.2201834862385" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-38,24.2201834862385"
+                    Point2="-42,24.2201834862385"
+                    Point3="-42,28.2201834862385" />
+                  <mssgle:LineSegment
+                    End="-42,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\STAGING LOAD\TBST_PRC_SYS_VALORI_AGGIUNTIVI_CONFIG.PrecedenceConstraints[Constraint 4]"
+          TopLeft="111.5,251.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="170.5,94"
+              Start="0,0"
+              End="170.5,86.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.1270417422868" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,52.1270417422868"
+                    Point2="0,56.1270417422868"
+                    Point3="4,56.1270417422868" />
+                  <mssgle:LineSegment
+                    End="166.5,56.1270417422868" />
+                  <mssgle:CubicBezierSegment
+                    Point1="166.5,56.1270417422868"
+                    Point2="170.5,56.1270417422868"
+                    Point3="170.5,60.1270417422868" />
+                  <mssgle:LineSegment
+                    End="170.5,86.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\STAGING LOAD\TBST_PRC_SYS_VALORI_AGGIUNTIVI_CONFIG.PrecedenceConstraints[Constraint 5]"
+          TopLeft="355.5,251.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="33.5,94"
+              Start="0,0"
+              End="33.5,86.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.1270417422868" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,52.1270417422868"
+                    Point2="0,56.1270417422868"
+                    Point3="4,56.1270417422868" />
+                  <mssgle:LineSegment
+                    End="29.5,56.1270417422868" />
+                  <mssgle:CubicBezierSegment
+                    Point1="29.5,56.1270417422868"
+                    Point2="33.5,56.1270417422868"
+                    Point3="33.5,60.1270417422868" />
+                  <mssgle:LineSegment
+                    End="33.5,86.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <AnnotationLayout
+          Text="To be modified according table"
+          ParentId="Package\STAGING LOAD\TBST_PRC_SYS_VALORI_AGGIUNTIVI_CONFIG"
+          FontInfo="{assembly:Null}"
+          Size="194,NaN"
+          Id="df940e84-37e8-4030-bb20-8d41e995f897"
+          TopLeft="35.5,310.5" />
+        <AnnotationLayout
+          Text="To be specify target table name"
+          ParentId="Package\STAGING LOAD\TBST_PRC_SYS_VALORI_AGGIUNTIVI_CONFIG"
+          FontInfo="{assembly:Null}"
+          Size="195,NaN"
+          Id="492cbdfc-bcb1-4187-b174-ffbaa4eb11e8"
+          TopLeft="29.5,10.5" />
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="False"
+          PanelSize="539,608"
+          Size="539,43"
+          Id="Package\STAGING LOAD\TBST_PRC_SYS_VALORI_AGGIUNTIVI_CONFIG"
+          TopLeft="3,88" />
+        <NodeLayout
+          Size="222,42"
+          Id="Package\STAGING LOAD\TBST_PRC_SYS_VALORI_AGGIUNTIVI_CONTESTO\Assign TABLE_TARGET_CD"
+          TopLeft="244.5,5.5" />
+        <NodeLayout
+          Size="212,42"
+          Id="Package\STAGING LOAD\TBST_PRC_SYS_VALORI_AGGIUNTIVI_CONTESTO\Delete STG TRG TABLE"
+          TopLeft="5.50000000000003,209.5" />
+        <NodeLayout
+          Size="260,42"
+          Id="Package\STAGING LOAD\TBST_PRC_SYS_VALORI_AGGIUNTIVI_CONTESTO\Ins_Upd TBLOG_PACKAGE_TABLE"
+          TopLeft="225.5,107.5" />
+        <NodeLayout
+          Size="263,43"
+          Id="Package\STAGING LOAD\TBST_PRC_SYS_VALORI_AGGIUNTIVI_CONTESTO\Last Upd TBLOG_PACKAGE_TABLE"
+          TopLeft="224,413.5" />
+        <NodeLayout
+          Size="155,42"
+          Id="Package\STAGING LOAD\TBST_PRC_SYS_VALORI_AGGIUNTIVI_CONTESTO\MAX TABLE ID"
+          TopLeft="278,209.5" />
+        <NodeLayout
+          Size="348,42"
+          Id="Package\STAGING LOAD\TBST_PRC_SYS_VALORI_AGGIUNTIVI_CONTESTO\TBST_PRC_SYS_VALORI_AGGIUNTIVI_CONTESTO"
+          TopLeft="171,345.5" />
+        <EdgeLayout
+          Id="Package\STAGING LOAD\TBST_PRC_SYS_VALORI_AGGIUNTIVI_CONTESTO.PrecedenceConstraints[Constraint]"
+          TopLeft="345,387.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="10.5,26"
+              Start="0,0"
+              End="10.5,18.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,9" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,9"
+                    Point2="0,13"
+                    Point3="4,13" />
+                  <mssgle:LineSegment
+                    End="6.5,13" />
+                  <mssgle:CubicBezierSegment
+                    Point1="6.5,13"
+                    Point2="10.5,13"
+                    Point3="10.5,17" />
+                  <mssgle:LineSegment
+                    End="10.5,18.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\STAGING LOAD\TBST_PRC_SYS_VALORI_AGGIUNTIVI_CONTESTO.PrecedenceConstraints[Constraint 1]"
+          TopLeft="313.5,149.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-202,60"
+              Start="0,0"
+              End="-202,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,20.2201834862385" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,20.2201834862385"
+                    Point2="0,24.2201834862385"
+                    Point3="-4,24.2201834862385" />
+                  <mssgle:LineSegment
+                    End="-198,24.2201834862385" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-198,24.2201834862385"
+                    Point2="-202,24.2201834862385"
+                    Point3="-202,28.2201834862385" />
+                  <mssgle:LineSegment
+                    End="-202,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\STAGING LOAD\TBST_PRC_SYS_VALORI_AGGIUNTIVI_CONTESTO.PrecedenceConstraints[Constraint 2]"
+          TopLeft="355.5,47.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\STAGING LOAD\TBST_PRC_SYS_VALORI_AGGIUNTIVI_CONTESTO.PrecedenceConstraints[Constraint 3]"
+          TopLeft="397.5,149.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-42,60"
+              Start="0,0"
+              End="-42,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,20.2201834862385" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,20.2201834862385"
+                    Point2="0,24.2201834862385"
+                    Point3="-4,24.2201834862385" />
+                  <mssgle:LineSegment
+                    End="-38,24.2201834862385" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-38,24.2201834862385"
+                    Point2="-42,24.2201834862385"
+                    Point3="-42,28.2201834862385" />
+                  <mssgle:LineSegment
+                    End="-42,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\STAGING LOAD\TBST_PRC_SYS_VALORI_AGGIUNTIVI_CONTESTO.PrecedenceConstraints[Constraint 4]"
+          TopLeft="111.5,251.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="176.833333333333,94"
+              Start="0,0"
+              End="176.833333333333,86.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.141876430206" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,52.141876430206"
+                    Point2="0,56.141876430206"
+                    Point3="4,56.141876430206" />
+                  <mssgle:LineSegment
+                    End="172.833333333333,56.141876430206" />
+                  <mssgle:CubicBezierSegment
+                    Point1="172.833333333333,56.141876430206"
+                    Point2="176.833333333333,56.141876430206"
+                    Point3="176.833333333333,60.141876430206" />
+                  <mssgle:LineSegment
+                    End="176.833333333333,86.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\STAGING LOAD\TBST_PRC_SYS_VALORI_AGGIUNTIVI_CONTESTO.PrecedenceConstraints[Constraint 5]"
+          TopLeft="355.5,251.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="46.1666666666666,94"
+              Start="0,0"
+              End="46.1666666666666,86.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.1418764302059" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,52.1418764302059"
+                    Point2="0,56.1418764302059"
+                    Point3="4,56.1418764302059" />
+                  <mssgle:LineSegment
+                    End="42.1666666666666,56.1418764302059" />
+                  <mssgle:CubicBezierSegment
+                    Point1="42.1666666666666,56.1418764302059"
+                    Point2="46.1666666666666,56.1418764302059"
+                    Point3="46.1666666666666,60.1418764302059" />
+                  <mssgle:LineSegment
+                    End="46.1666666666666,86.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <AnnotationLayout
+          Text="To be modified according table"
+          ParentId="Package\STAGING LOAD\TBST_PRC_SYS_VALORI_AGGIUNTIVI_CONTESTO"
+          FontInfo="{assembly:Null}"
+          Size="194,NaN"
+          Id="fbd01e34-d660-4485-9f83-670adaf8a535"
+          TopLeft="35.5,310.5" />
+        <AnnotationLayout
+          Text="To be specify target table name"
+          ParentId="Package\STAGING LOAD\TBST_PRC_SYS_VALORI_AGGIUNTIVI_CONTESTO"
+          FontInfo="{assembly:Null}"
+          Size="195,NaN"
+          Id="92c0fb08-6474-4920-bbf3-f83909275aa4"
+          TopLeft="29.5,10.5" />
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="False"
+          PanelSize="539,608"
+          Size="539,43"
+          Id="Package\STAGING LOAD\TBST_PRC_SYS_VALORI_AGGIUNTIVI_CONTESTO"
+          TopLeft="561,84" />
+        <NodeLayout
+          Size="222,42"
+          Id="Package\STAGING LOAD\TBST_PRC_SYS_VALORI_AGGIUNTIVI_TABELLE\Assign TABLE_TARGET_CD"
+          TopLeft="244.5,5.5" />
+        <NodeLayout
+          Size="200,42"
+          Id="Package\STAGING LOAD\TBST_PRC_SYS_VALORI_AGGIUNTIVI_TABELLE\Delete STG TRG TABLE"
+          TopLeft="5.50000000000003,209.5" />
+        <NodeLayout
+          Size="260,42"
+          Id="Package\STAGING LOAD\TBST_PRC_SYS_VALORI_AGGIUNTIVI_TABELLE\Ins_Upd TBLOG_PACKAGE_TABLE"
+          TopLeft="225.5,107.5" />
+        <NodeLayout
+          Size="263,43"
+          Id="Package\STAGING LOAD\TBST_PRC_SYS_VALORI_AGGIUNTIVI_TABELLE\Last Upd TBLOG_PACKAGE_TABLE"
+          TopLeft="224,413.5" />
+        <NodeLayout
+          Size="155,42"
+          Id="Package\STAGING LOAD\TBST_PRC_SYS_VALORI_AGGIUNTIVI_TABELLE\MAX TABLE ID"
+          TopLeft="278,209.5" />
+        <NodeLayout
+          Size="374,42"
+          Id="Package\STAGING LOAD\TBST_PRC_SYS_VALORI_AGGIUNTIVI_TABELLE\sp_TBST_PRC_SYS_VALORI_AGGIUNTIVI_TABELLE_me"
+          TopLeft="189,325" />
+        <EdgeLayout
+          Id="Package\STAGING LOAD\TBST_PRC_SYS_VALORI_AGGIUNTIVI_TABELLE.PrecedenceConstraints[Constraint]"
+          TopLeft="105.5,251.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="209.5,73.5"
+              Start="0,0"
+              End="209.5,66">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,39.9121405750799" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,39.9121405750799"
+                    Point2="0,43.9121405750799"
+                    Point3="4,43.9121405750799" />
+                  <mssgle:LineSegment
+                    End="205.5,43.9121405750799" />
+                  <mssgle:CubicBezierSegment
+                    Point1="205.5,43.9121405750799"
+                    Point2="209.5,43.9121405750799"
+                    Point3="209.5,47.9121405750799" />
+                  <mssgle:LineSegment
+                    End="209.5,66" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\STAGING LOAD\TBST_PRC_SYS_VALORI_AGGIUNTIVI_TABELLE.PrecedenceConstraints[Constraint 1]"
+          TopLeft="313.5,149.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-208,60"
+              Start="0,0"
+              End="-208,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,20.2201834862385" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,20.2201834862385"
+                    Point2="0,24.2201834862385"
+                    Point3="-4,24.2201834862385" />
+                  <mssgle:LineSegment
+                    End="-204,24.2201834862385" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-204,24.2201834862385"
+                    Point2="-208,24.2201834862385"
+                    Point3="-208,28.2201834862385" />
+                  <mssgle:LineSegment
+                    End="-208,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\STAGING LOAD\TBST_PRC_SYS_VALORI_AGGIUNTIVI_TABELLE.PrecedenceConstraints[Constraint 2]"
+          TopLeft="355.5,47.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\STAGING LOAD\TBST_PRC_SYS_VALORI_AGGIUNTIVI_TABELLE.PrecedenceConstraints[Constraint 3]"
+          TopLeft="397.5,149.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-42,60"
+              Start="0,0"
+              End="-42,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,20.2201834862385" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,20.2201834862385"
+                    Point2="0,24.2201834862385"
+                    Point3="-4,24.2201834862385" />
+                  <mssgle:LineSegment
+                    End="-38,24.2201834862385" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-38,24.2201834862385"
+                    Point2="-42,24.2201834862385"
+                    Point3="-42,28.2201834862385" />
+                  <mssgle:LineSegment
+                    End="-42,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\STAGING LOAD\TBST_PRC_SYS_VALORI_AGGIUNTIVI_TABELLE.PrecedenceConstraints[Constraint 4]"
+          TopLeft="355.5,251.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="81.5,73.5"
+              Start="0,0"
+              End="81.5,66">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,39.9121405750799" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,39.9121405750799"
+                    Point2="0,43.9121405750799"
+                    Point3="4,43.9121405750799" />
+                  <mssgle:LineSegment
+                    End="77.5,43.9121405750799" />
+                  <mssgle:CubicBezierSegment
+                    Point1="77.5,43.9121405750799"
+                    Point2="81.5,43.9121405750799"
+                    Point3="81.5,47.9121405750799" />
+                  <mssgle:LineSegment
+                    End="81.5,66" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\STAGING LOAD\TBST_PRC_SYS_VALORI_AGGIUNTIVI_TABELLE.PrecedenceConstraints[Constraint 5]"
+          TopLeft="376,367">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-20.5,46.5"
+              Start="0,0"
+              End="-20.5,39">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,19.25" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,19.25"
+                    Point2="0,23.25"
+                    Point3="-4,23.25" />
+                  <mssgle:LineSegment
+                    End="-16.5,23.25" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-16.5,23.25"
+                    Point2="-20.5,23.25"
+                    Point3="-20.5,27.25" />
+                  <mssgle:LineSegment
+                    End="-20.5,39" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <AnnotationLayout
+          Text="Call to DB stored procedure&#xA;to load target STG table"
+          ParentId="Package\STAGING LOAD\TBST_PRC_SYS_VALORI_AGGIUNTIVI_TABELLE"
+          FontInfo="{assembly:Null}"
+          Size="176,NaN"
+          Id="3b8d2bfb-ed33-497b-a6df-76907915bc47"
+          TopLeft="11.5,328.5" />
+        <AnnotationLayout
+          Text="To be specify target table name"
+          ParentId="Package\STAGING LOAD\TBST_PRC_SYS_VALORI_AGGIUNTIVI_TABELLE"
+          FontInfo="{assembly:Null}"
+          Size="195,NaN"
+          Id="987df472-34e5-4d60-b76a-5240a8d3c843"
+          TopLeft="29.5,10.5" />
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="False"
+          PanelSize="610,608"
+          Size="358,43"
+          Id="Package\STAGING LOAD\TBST_PRC_SYS_VALORI_AGGIUNTIVI_TABELLE"
+          TopLeft="1124,90" />
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
@@ -19510,7 +19582,7 @@
     design-time-name="Package\STAGING LOAD\TBST_PRC_ANAGRAFICA_LOTTI\TBST_PRC_ANAGRAFICA_LOTTI">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="157,42"
           Id="Package\STAGING LOAD\TBST_PRC_ANAGRAFICA_LOTTI\TBST_PRC_ANAGRAFICA_LOTTI\OLE DB Source"
@@ -19546,9 +19618,7 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -19582,9 +19652,7 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -19606,9 +19674,7 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -19656,7 +19722,7 @@
     design-time-name="Package\STAGING LOAD\TBST_PRC_ARTICOLO\TBST_PRC_ARTICOLO">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="161,42"
           Id="Package\STAGING LOAD\TBST_PRC_ARTICOLO\TBST_PRC_ARTICOLO\Data Conversion"
@@ -19692,9 +19758,7 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-25.11953125,19.6357421875,50.2390625,11.228515625"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -19728,9 +19792,7 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-29.11953125,44.5,50.2390625,11.228515625"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -19764,9 +19826,7 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-21.11953125,41.5,50.2390625,11.228515625"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -19799,19 +19859,7 @@
     </Properties>
   </PipelineComponentMetadata>
   <DtsEventHandler
-    design-time-name="Package\STAGING LOAD\TBST_PRC_SYS_VALORI_AGGIUNTIVI_TABELLE.EventHandlers[OnPreExecute]">
-    <LayoutInfo>
-      <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
-        <NodeLayout
-          Size="134,42"
-          Id="{CA0A6374-42C9-44B3-B808-C3C7F7A463CC}"
-          TopLeft="265,85" />
-      </GraphLayout>
-    </LayoutInfo>
-  </DtsEventHandler>
-  <DtsEventHandler
-    design-time-name="Package\STAGING LOAD\TBST_PRC_SYS_VALORI_AGGIUNTIVI_CONTESTO.EventHandlers[OnPreExecute]">
+    design-time-name="Package\STAGING LOAD\TBST_PRC_SYS_VALORI_AGGIUNTIVI.EventHandlers[OnPreExecute]">
     <LayoutInfo>
       <GraphLayout
         Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
@@ -19823,139 +19871,133 @@
     </LayoutInfo>
   </DtsEventHandler>
   <TaskHost
-    design-time-name="Package\STAGING LOAD\TBST_PRC_SYS_VALORI_AGGIUNTIVI_CONTESTO\TBST_PRC_SYS_VALORI_AGGIUNTIVI_CONTESTO">
+    design-time-name="Package\STAGING LOAD\TBST_PRC_SYS_VALORI_AGGIUNTIVI\TBST_PRC_SYS_VALORI_AGGIUNTIVI">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
-        <NodeLayout
-          Size="181,42"
-          Id="Package\STAGING LOAD\TBST_PRC_SYS_VALORI_AGGIUNTIVI_CONTESTO\TBST_PRC_SYS_VALORI_AGGIUNTIVI_CONTESTO\Add Technical Fields"
-          TopLeft="282,271" />
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="157,42"
-          Id="Package\STAGING LOAD\TBST_PRC_SYS_VALORI_AGGIUNTIVI_CONTESTO\TBST_PRC_SYS_VALORI_AGGIUNTIVI_CONTESTO\OLE DB Source"
-          TopLeft="327,55" />
+          Id="Package\STAGING LOAD\TBST_PRC_SYS_VALORI_AGGIUNTIVI\TBST_PRC_SYS_VALORI_AGGIUNTIVI\OLE DB Source"
+          TopLeft="71,34" />
         <NodeLayout
-          Size="161,42"
-          Id="Package\STAGING LOAD\TBST_PRC_SYS_VALORI_AGGIUNTIVI_CONTESTO\TBST_PRC_SYS_VALORI_AGGIUNTIVI_CONTESTO\Data Conversion"
-          TopLeft="495,174" />
-        <EdgeLayout
-          Id="Package\STAGING LOAD\TBST_PRC_SYS_VALORI_AGGIUNTIVI_CONTESTO\TBST_PRC_SYS_VALORI_AGGIUNTIVI_CONTESTO.Paths[OLE DB Source Output]"
-          TopLeft="405.5,97">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="170,77"
-              Start="0,0"
-              End="170,69.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,34.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,34.5"
-                    Point2="0,38.5"
-                    Point3="4,38.5" />
-                  <mssgle:LineSegment
-                    End="166,38.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="166,38.5"
-                    Point2="170,38.5"
-                    Point3="170,42.5" />
-                  <mssgle:LineSegment
-                    End="170,69.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="69.44142578125,43.5,31.1171484375,9.421875"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\STAGING LOAD\TBST_PRC_SYS_VALORI_AGGIUNTIVI_CONTESTO\TBST_PRC_SYS_VALORI_AGGIUNTIVI_CONTESTO.Paths[Data Conversion Output]"
-          TopLeft="575.5,216">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-203,55"
-              Start="0,0"
-              End="-203,47.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,23.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,23.5"
-                    Point2="0,27.5"
-                    Point3="-4,27.5" />
-                  <mssgle:LineSegment
-                    End="-199,27.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-199,27.5"
-                    Point2="-203,27.5"
-                    Point3="-203,31.5" />
-                  <mssgle:LineSegment
-                    End="-203,47.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-117.05857421875,32.5,31.1171484375,9.421875"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
+          Size="181,42"
+          Id="Package\STAGING LOAD\TBST_PRC_SYS_VALORI_AGGIUNTIVI\TBST_PRC_SYS_VALORI_AGGIUNTIVI\Add Technical Fields"
+          TopLeft="283,271" />
         <NodeLayout
           Size="177,42"
-          Id="Package\STAGING LOAD\TBST_PRC_SYS_VALORI_AGGIUNTIVI_CONTESTO\TBST_PRC_SYS_VALORI_AGGIUNTIVI_CONTESTO\OLE DB Destination"
-          TopLeft="347,380" />
+          Id="Package\STAGING LOAD\TBST_PRC_SYS_VALORI_AGGIUNTIVI\TBST_PRC_SYS_VALORI_AGGIUNTIVI\OLE DB Destination"
+          TopLeft="391,376" />
+        <NodeLayout
+          Size="161,42"
+          Id="Package\STAGING LOAD\TBST_PRC_SYS_VALORI_AGGIUNTIVI\TBST_PRC_SYS_VALORI_AGGIUNTIVI\Data Conversion"
+          TopLeft="168,141" />
         <EdgeLayout
-          Id="Package\STAGING LOAD\TBST_PRC_SYS_VALORI_AGGIUNTIVI_CONTESTO\TBST_PRC_SYS_VALORI_AGGIUNTIVI_CONTESTO.Paths[Derived Column Output]"
-          TopLeft="372.5,313">
+          Id="Package\STAGING LOAD\TBST_PRC_SYS_VALORI_AGGIUNTIVI\TBST_PRC_SYS_VALORI_AGGIUNTIVI.Paths[Derived Column Output]"
+          TopLeft="373.5,313">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="63,67"
+              EndConnector="106,63"
               Start="0,0"
-              End="63,59.5">
+              End="106,55.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,29.5" />
+                    End="0,27.5" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,29.5"
-                    Point2="0,33.5"
-                    Point3="4,33.5" />
+                    Point1="0,27.5"
+                    Point2="0,31.5"
+                    Point3="4,31.5" />
                   <mssgle:LineSegment
-                    End="59,33.5" />
+                    End="102,31.5" />
                   <mssgle:CubicBezierSegment
-                    Point1="59,33.5"
-                    Point2="63,33.5"
-                    Point3="63,37.5" />
+                    Point1="102,31.5"
+                    Point2="106,31.5"
+                    Point3="106,35.5" />
                   <mssgle:LineSegment
-                    End="63,59.5" />
+                    End="106,55.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="15.94142578125,38.5,31.1171484375,9.421875"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\STAGING LOAD\TBST_PRC_SYS_VALORI_AGGIUNTIVI\TBST_PRC_SYS_VALORI_AGGIUNTIVI.Paths[Data Conversion Output]"
+          TopLeft="248.5,183">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="125,88"
+              Start="0,0"
+              End="125,80.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,40" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,40"
+                    Point2="0,44"
+                    Point3="4,44" />
+                  <mssgle:LineSegment
+                    End="121,44" />
+                  <mssgle:CubicBezierSegment
+                    Point1="121,44"
+                    Point2="125,44"
+                    Point3="125,48" />
+                  <mssgle:LineSegment
+                    End="125,80.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\STAGING LOAD\TBST_PRC_SYS_VALORI_AGGIUNTIVI\TBST_PRC_SYS_VALORI_AGGIUNTIVI.Paths[OLE DB Source Output]"
+          TopLeft="149.5,76">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="99,65"
+              Start="0,0"
+              End="99,57.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,28.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,28.5"
+                    Point2="0,32.5"
+                    Point3="4,32.5" />
+                  <mssgle:LineSegment
+                    End="95,32.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="95,32.5"
+                    Point2="99,32.5"
+                    Point3="99,36.5" />
+                  <mssgle:LineSegment
+                    End="99,57.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\STAGING LOAD\TBST_PRC_SYS_VALORI_AGGIUNTIVI_CONTESTO\TBST_PRC_SYS_VALORI_AGGIUNTIVI_CONTESTO\OLE DB Source">
+    design-time-name="Package\STAGING LOAD\TBST_PRC_SYS_VALORI_AGGIUNTIVI\TBST_PRC_SYS_VALORI_AGGIUNTIVI\OLE DB Source">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -19968,177 +20010,7 @@
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\STAGING LOAD\TBST_PRC_SYS_VALORI_AGGIUNTIVI_CONTESTO\TBST_PRC_SYS_VALORI_AGGIUNTIVI_CONTESTO\OLE DB Destination">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <DtsEventHandler
-    design-time-name="Package\STAGING LOAD\TBST_PRC_SYS_VALORI_AGGIUNTIVI_CONFIG.EventHandlers[OnPreExecute]">
-    <LayoutInfo>
-      <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
-        <NodeLayout
-          Size="134,42"
-          Id="{CA0A6374-42C9-44B3-B808-C3C7F7A463CC}"
-          TopLeft="265,85" />
-      </GraphLayout>
-    </LayoutInfo>
-  </DtsEventHandler>
-  <TaskHost
-    design-time-name="Package\STAGING LOAD\TBST_PRC_SYS_VALORI_AGGIUNTIVI_CONFIG\TBST_PRC_SYS_VALORI_AGGIUNTIVI_CONFIG">
-    <LayoutInfo>
-      <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
-        <NodeLayout
-          Size="181,42"
-          Id="Package\STAGING LOAD\TBST_PRC_SYS_VALORI_AGGIUNTIVI_CONFIG\TBST_PRC_SYS_VALORI_AGGIUNTIVI_CONFIG\Add Technical Fields"
-          TopLeft="282,271" />
-        <NodeLayout
-          Size="157,42"
-          Id="Package\STAGING LOAD\TBST_PRC_SYS_VALORI_AGGIUNTIVI_CONFIG\TBST_PRC_SYS_VALORI_AGGIUNTIVI_CONFIG\OLE DB Source"
-          TopLeft="537,68" />
-        <NodeLayout
-          Size="161,42"
-          Id="Package\STAGING LOAD\TBST_PRC_SYS_VALORI_AGGIUNTIVI_CONFIG\TBST_PRC_SYS_VALORI_AGGIUNTIVI_CONFIG\Data Conversion"
-          TopLeft="456,151" />
-        <EdgeLayout
-          Id="Package\STAGING LOAD\TBST_PRC_SYS_VALORI_AGGIUNTIVI_CONFIG\TBST_PRC_SYS_VALORI_AGGIUNTIVI_CONFIG.Paths[OLE DB Source Output]"
-          TopLeft="615.5,110">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-79,41"
-              Start="0,0"
-              End="-79,33.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,16.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,16.5"
-                    Point2="0,20.5"
-                    Point3="-4,20.5" />
-                  <mssgle:LineSegment
-                    End="-75,20.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-75,20.5"
-                    Point2="-79,20.5"
-                    Point3="-79,24.5" />
-                  <mssgle:LineSegment
-                    End="-79,33.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-60.06447265625,25.5,41.1289453125,9.5732421875"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\STAGING LOAD\TBST_PRC_SYS_VALORI_AGGIUNTIVI_CONFIG\TBST_PRC_SYS_VALORI_AGGIUNTIVI_CONFIG.Paths[Data Conversion Output]"
-          TopLeft="536.5,193">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-164,78"
-              Start="0,0"
-              End="-164,70.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,35" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,35"
-                    Point2="0,39"
-                    Point3="-4,39" />
-                  <mssgle:LineSegment
-                    End="-160,39" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-160,39"
-                    Point2="-164,39"
-                    Point3="-164,43" />
-                  <mssgle:LineSegment
-                    End="-164,70.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-102.56447265625,44,41.1289453125,9.5732421875"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="177,42"
-          Id="Package\STAGING LOAD\TBST_PRC_SYS_VALORI_AGGIUNTIVI_CONFIG\TBST_PRC_SYS_VALORI_AGGIUNTIVI_CONFIG\OLE DB Destination"
-          TopLeft="173,364" />
-        <EdgeLayout
-          Id="Package\STAGING LOAD\TBST_PRC_SYS_VALORI_AGGIUNTIVI_CONFIG\TBST_PRC_SYS_VALORI_AGGIUNTIVI_CONFIG.Paths[Derived Column Output]"
-          TopLeft="372.5,313">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-111,51"
-              Start="0,0"
-              End="-111,43.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,21.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,21.5"
-                    Point2="0,25.5"
-                    Point3="-4,25.5" />
-                  <mssgle:LineSegment
-                    End="-107,25.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-107,25.5"
-                    Point2="-111,25.5"
-                    Point3="-111,29.5" />
-                  <mssgle:LineSegment
-                    End="-111,43.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-76.06447265625,30.5,41.1289453125,9.5732421875"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-      </GraphLayout>
-    </LayoutInfo>
-  </TaskHost>
-  <PipelineComponentMetadata
-    design-time-name="Package\STAGING LOAD\TBST_PRC_SYS_VALORI_AGGIUNTIVI_CONFIG\TBST_PRC_SYS_VALORI_AGGIUNTIVI_CONFIG\OLE DB Source">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\STAGING LOAD\TBST_PRC_SYS_VALORI_AGGIUNTIVI_CONFIG\TBST_PRC_SYS_VALORI_AGGIUNTIVI_CONFIG\OLE DB Destination">
+    design-time-name="Package\STAGING LOAD\TBST_PRC_SYS_VALORI_AGGIUNTIVI\TBST_PRC_SYS_VALORI_AGGIUNTIVI\OLE DB Destination">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -20321,7 +20193,7 @@
     </Properties>
   </PipelineComponentMetadata>
   <DtsEventHandler
-    design-time-name="Package\STAGING LOAD\TBST_PRC_SYS_VALORI_AGGIUNTIVI.EventHandlers[OnPreExecute]">
+    design-time-name="Package\STAGING LOAD\TBST_PRC_SYS_VALORI_AGGIUNTIVI_CONFIG.EventHandlers[OnPreExecute]">
     <LayoutInfo>
       <GraphLayout
         Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
@@ -20333,131 +20205,131 @@
     </LayoutInfo>
   </DtsEventHandler>
   <TaskHost
-    design-time-name="Package\STAGING LOAD\TBST_PRC_SYS_VALORI_AGGIUNTIVI\TBST_PRC_SYS_VALORI_AGGIUNTIVI">
+    design-time-name="Package\STAGING LOAD\TBST_PRC_SYS_VALORI_AGGIUNTIVI_CONFIG\TBST_PRC_SYS_VALORI_AGGIUNTIVI_CONFIG">
     <LayoutInfo>
       <GraphLayout
         Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="181,42"
-          Id="Package\STAGING LOAD\TBST_PRC_SYS_VALORI_AGGIUNTIVI\TBST_PRC_SYS_VALORI_AGGIUNTIVI\Add Technical Fields"
-          TopLeft="283,271" />
+          Id="Package\STAGING LOAD\TBST_PRC_SYS_VALORI_AGGIUNTIVI_CONFIG\TBST_PRC_SYS_VALORI_AGGIUNTIVI_CONFIG\Add Technical Fields"
+          TopLeft="282,271" />
         <NodeLayout
           Size="157,42"
-          Id="Package\STAGING LOAD\TBST_PRC_SYS_VALORI_AGGIUNTIVI\TBST_PRC_SYS_VALORI_AGGIUNTIVI\OLE DB Source"
-          TopLeft="71,34" />
+          Id="Package\STAGING LOAD\TBST_PRC_SYS_VALORI_AGGIUNTIVI_CONFIG\TBST_PRC_SYS_VALORI_AGGIUNTIVI_CONFIG\OLE DB Source"
+          TopLeft="537,68" />
         <NodeLayout
           Size="161,42"
-          Id="Package\STAGING LOAD\TBST_PRC_SYS_VALORI_AGGIUNTIVI\TBST_PRC_SYS_VALORI_AGGIUNTIVI\Data Conversion"
-          TopLeft="168,141" />
+          Id="Package\STAGING LOAD\TBST_PRC_SYS_VALORI_AGGIUNTIVI_CONFIG\TBST_PRC_SYS_VALORI_AGGIUNTIVI_CONFIG\Data Conversion"
+          TopLeft="456,151" />
         <EdgeLayout
-          Id="Package\STAGING LOAD\TBST_PRC_SYS_VALORI_AGGIUNTIVI\TBST_PRC_SYS_VALORI_AGGIUNTIVI.Paths[OLE DB Source Output]"
-          TopLeft="149.5,76">
+          Id="Package\STAGING LOAD\TBST_PRC_SYS_VALORI_AGGIUNTIVI_CONFIG\TBST_PRC_SYS_VALORI_AGGIUNTIVI_CONFIG.Paths[OLE DB Source Output]"
+          TopLeft="615.5,110">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="99,65"
+              EndConnector="-79,41"
               Start="0,0"
-              End="99,57.5">
+              End="-79,33.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,28.5" />
+                    End="0,16.5" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,28.5"
-                    Point2="0,32.5"
-                    Point3="4,32.5" />
+                    Point1="0,16.5"
+                    Point2="0,20.5"
+                    Point3="-4,20.5" />
                   <mssgle:LineSegment
-                    End="95,32.5" />
+                    End="-75,20.5" />
                   <mssgle:CubicBezierSegment
-                    Point1="95,32.5"
-                    Point2="99,32.5"
-                    Point3="99,36.5" />
+                    Point1="-75,20.5"
+                    Point2="-79,20.5"
+                    Point3="-79,24.5" />
                   <mssgle:LineSegment
-                    End="99,57.5" />
+                    End="-79,33.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="28.54734375,37.5,41.9053125,9.5732421875"
+              BoundingBox="-60.06447265625,25.5,41.1289453125,9.5732421875"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\STAGING LOAD\TBST_PRC_SYS_VALORI_AGGIUNTIVI\TBST_PRC_SYS_VALORI_AGGIUNTIVI.Paths[Data Conversion Output]"
-          TopLeft="248.5,183">
+          Id="Package\STAGING LOAD\TBST_PRC_SYS_VALORI_AGGIUNTIVI_CONFIG\TBST_PRC_SYS_VALORI_AGGIUNTIVI_CONFIG.Paths[Data Conversion Output]"
+          TopLeft="536.5,193">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="125,88"
+              EndConnector="-164,78"
               Start="0,0"
-              End="125,80.5">
+              End="-164,70.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,40" />
+                    End="0,35" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,40"
-                    Point2="0,44"
-                    Point3="4,44" />
+                    Point1="0,35"
+                    Point2="0,39"
+                    Point3="-4,39" />
                   <mssgle:LineSegment
-                    End="121,44" />
+                    End="-160,39" />
                   <mssgle:CubicBezierSegment
-                    Point1="121,44"
-                    Point2="125,44"
-                    Point3="125,48" />
+                    Point1="-160,39"
+                    Point2="-164,39"
+                    Point3="-164,43" />
                   <mssgle:LineSegment
-                    End="125,80.5" />
+                    End="-164,70.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="41.54734375,49,41.9053125,9.5732421875"
+              BoundingBox="-102.56447265625,44,41.1289453125,9.5732421875"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <NodeLayout
           Size="177,42"
-          Id="Package\STAGING LOAD\TBST_PRC_SYS_VALORI_AGGIUNTIVI\TBST_PRC_SYS_VALORI_AGGIUNTIVI\OLE DB Destination"
-          TopLeft="391,376" />
+          Id="Package\STAGING LOAD\TBST_PRC_SYS_VALORI_AGGIUNTIVI_CONFIG\TBST_PRC_SYS_VALORI_AGGIUNTIVI_CONFIG\OLE DB Destination"
+          TopLeft="173,364" />
         <EdgeLayout
-          Id="Package\STAGING LOAD\TBST_PRC_SYS_VALORI_AGGIUNTIVI\TBST_PRC_SYS_VALORI_AGGIUNTIVI.Paths[Derived Column Output]"
-          TopLeft="373.5,313">
+          Id="Package\STAGING LOAD\TBST_PRC_SYS_VALORI_AGGIUNTIVI_CONFIG\TBST_PRC_SYS_VALORI_AGGIUNTIVI_CONFIG.Paths[Derived Column Output]"
+          TopLeft="372.5,313">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="106,63"
+              EndConnector="-111,51"
               Start="0,0"
-              End="106,55.5">
+              End="-111,43.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,27.5" />
+                    End="0,21.5" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,27.5"
-                    Point2="0,31.5"
-                    Point3="4,31.5" />
+                    Point1="0,21.5"
+                    Point2="0,25.5"
+                    Point3="-4,25.5" />
                   <mssgle:LineSegment
-                    End="102,31.5" />
+                    End="-107,25.5" />
                   <mssgle:CubicBezierSegment
-                    Point1="102,31.5"
-                    Point2="106,31.5"
-                    Point3="106,35.5" />
+                    Point1="-107,25.5"
+                    Point2="-111,25.5"
+                    Point3="-111,29.5" />
                   <mssgle:LineSegment
-                    End="106,55.5" />
+                    End="-111,43.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="32.04734375,36.5,41.9053125,9.5732421875"
+              BoundingBox="-76.06447265625,30.5,41.1289453125,9.5732421875"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -20465,7 +20337,7 @@
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\STAGING LOAD\TBST_PRC_SYS_VALORI_AGGIUNTIVI\TBST_PRC_SYS_VALORI_AGGIUNTIVI\OLE DB Source">
+    design-time-name="Package\STAGING LOAD\TBST_PRC_SYS_VALORI_AGGIUNTIVI_CONFIG\TBST_PRC_SYS_VALORI_AGGIUNTIVI_CONFIG\OLE DB Destination">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -20478,7 +20350,7 @@
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\STAGING LOAD\TBST_PRC_SYS_VALORI_AGGIUNTIVI\TBST_PRC_SYS_VALORI_AGGIUNTIVI\OLE DB Destination">
+    design-time-name="Package\STAGING LOAD\TBST_PRC_SYS_VALORI_AGGIUNTIVI_CONFIG\TBST_PRC_SYS_VALORI_AGGIUNTIVI_CONFIG\OLE DB Source">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -20490,5 +20362,187 @@
       </Property>
     </Properties>
   </PipelineComponentMetadata>
+  <DtsEventHandler
+    design-time-name="Package\STAGING LOAD\TBST_PRC_SYS_VALORI_AGGIUNTIVI_CONTESTO.EventHandlers[OnPreExecute]">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="134,42"
+          Id="{CA0A6374-42C9-44B3-B808-C3C7F7A463CC}"
+          TopLeft="265,85" />
+      </GraphLayout>
+    </LayoutInfo>
+  </DtsEventHandler>
+  <TaskHost
+    design-time-name="Package\STAGING LOAD\TBST_PRC_SYS_VALORI_AGGIUNTIVI_CONTESTO\TBST_PRC_SYS_VALORI_AGGIUNTIVI_CONTESTO">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="181,42"
+          Id="Package\STAGING LOAD\TBST_PRC_SYS_VALORI_AGGIUNTIVI_CONTESTO\TBST_PRC_SYS_VALORI_AGGIUNTIVI_CONTESTO\Add Technical Fields"
+          TopLeft="282,271" />
+        <NodeLayout
+          Size="157,42"
+          Id="Package\STAGING LOAD\TBST_PRC_SYS_VALORI_AGGIUNTIVI_CONTESTO\TBST_PRC_SYS_VALORI_AGGIUNTIVI_CONTESTO\OLE DB Source"
+          TopLeft="327,55" />
+        <NodeLayout
+          Size="161,42"
+          Id="Package\STAGING LOAD\TBST_PRC_SYS_VALORI_AGGIUNTIVI_CONTESTO\TBST_PRC_SYS_VALORI_AGGIUNTIVI_CONTESTO\Data Conversion"
+          TopLeft="495,174" />
+        <EdgeLayout
+          Id="Package\STAGING LOAD\TBST_PRC_SYS_VALORI_AGGIUNTIVI_CONTESTO\TBST_PRC_SYS_VALORI_AGGIUNTIVI_CONTESTO.Paths[OLE DB Source Output]"
+          TopLeft="405.5,97">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="170,77"
+              Start="0,0"
+              End="170,69.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,34.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,34.5"
+                    Point2="0,38.5"
+                    Point3="4,38.5" />
+                  <mssgle:LineSegment
+                    End="166,38.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="166,38.5"
+                    Point2="170,38.5"
+                    Point3="170,42.5" />
+                  <mssgle:LineSegment
+                    End="170,69.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="69.44142578125,43.5,31.1171484375,9.421875"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\STAGING LOAD\TBST_PRC_SYS_VALORI_AGGIUNTIVI_CONTESTO\TBST_PRC_SYS_VALORI_AGGIUNTIVI_CONTESTO.Paths[Data Conversion Output]"
+          TopLeft="575.5,216">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-203,55"
+              Start="0,0"
+              End="-203,47.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,23.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,23.5"
+                    Point2="0,27.5"
+                    Point3="-4,27.5" />
+                  <mssgle:LineSegment
+                    End="-199,27.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-199,27.5"
+                    Point2="-203,27.5"
+                    Point3="-203,31.5" />
+                  <mssgle:LineSegment
+                    End="-203,47.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-117.05857421875,32.5,31.1171484375,9.421875"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="177,42"
+          Id="Package\STAGING LOAD\TBST_PRC_SYS_VALORI_AGGIUNTIVI_CONTESTO\TBST_PRC_SYS_VALORI_AGGIUNTIVI_CONTESTO\OLE DB Destination"
+          TopLeft="347,380" />
+        <EdgeLayout
+          Id="Package\STAGING LOAD\TBST_PRC_SYS_VALORI_AGGIUNTIVI_CONTESTO\TBST_PRC_SYS_VALORI_AGGIUNTIVI_CONTESTO.Paths[Derived Column Output]"
+          TopLeft="372.5,313">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="63,67"
+              Start="0,0"
+              End="63,59.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,29.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,29.5"
+                    Point2="0,33.5"
+                    Point3="4,33.5" />
+                  <mssgle:LineSegment
+                    End="59,33.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="59,33.5"
+                    Point2="63,33.5"
+                    Point3="63,37.5" />
+                  <mssgle:LineSegment
+                    End="63,59.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="15.94142578125,38.5,31.1171484375,9.421875"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\STAGING LOAD\TBST_PRC_SYS_VALORI_AGGIUNTIVI_CONTESTO\TBST_PRC_SYS_VALORI_AGGIUNTIVI_CONTESTO\OLE DB Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\STAGING LOAD\TBST_PRC_SYS_VALORI_AGGIUNTIVI_CONTESTO\TBST_PRC_SYS_VALORI_AGGIUNTIVI_CONTESTO\OLE DB Source">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <DtsEventHandler
+    design-time-name="Package\STAGING LOAD\TBST_PRC_SYS_VALORI_AGGIUNTIVI_TABELLE.EventHandlers[OnPreExecute]">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="134,42"
+          Id="{CA0A6374-42C9-44B3-B808-C3C7F7A463CC}"
+          TopLeft="265,85" />
+      </GraphLayout>
+    </LayoutInfo>
+  </DtsEventHandler>
 </Objects>]]></DTS:DesignTimeProperties>
 </DTS:Executable>
