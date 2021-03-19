@@ -13,8 +13,8 @@
   DTS:ObjectName="PARCEL_MFG_STG_cv"
   DTS:PackageType="5"
   DTS:ProtectionLevel="2"
-  DTS:VersionBuild="335"
-  DTS:VersionGUID="{AAA3CD4F-93D8-4A65-9E59-75979C72C939}">
+  DTS:VersionBuild="336"
+  DTS:VersionGUID="{1E43576C-C836-460C-9E6F-F2AE71E4BB1B}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Configurations>
@@ -1884,7 +1884,7 @@
               DTS:LocaleID="-1"
               DTS:ObjectName="Assign TABLE_TARGET_CD"
               DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-              DTS:ThreadHint="8">
+              DTS:ThreadHint="2">
               <DTS:Variables />
               <DTS:ObjectData>
                 <SQLTask:SqlTaskData
@@ -1906,7 +1906,7 @@
               DTS:LocaleID="-1"
               DTS:ObjectName="Delete STG TRG TABLE"
               DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-              DTS:ThreadHint="8">
+              DTS:ThreadHint="2">
               <DTS:Variables />
               <DTS:PropertyExpression
                 DTS:Name="SqlStatementSource">"delete from " + @[User::out_TABLE_TARGET_CD] + " where site_id = " + (DT_WSTR,2) @[User::out_SITE_ID]</DTS:PropertyExpression>
@@ -1925,7 +1925,7 @@
               DTS:LocaleID="-1"
               DTS:ObjectName="Ins_Upd TBLOG_PACKAGE_TABLE"
               DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-              DTS:ThreadHint="8">
+              DTS:ThreadHint="2">
               <DTS:Variables />
               <DTS:ObjectData>
                 <SQLTask:SqlTaskData
@@ -2003,7 +2003,7 @@
               DTS:LocaleID="-1"
               DTS:ObjectName="Last Upd TBLOG_PACKAGE_TABLE"
               DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-              DTS:ThreadHint="8">
+              DTS:ThreadHint="2">
               <DTS:Variables />
               <DTS:ObjectData>
                 <SQLTask:SqlTaskData
@@ -2045,7 +2045,7 @@
               DTS:LocaleID="-1"
               DTS:ObjectName="MAX TABLE ID"
               DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-              DTS:ThreadHint="9">
+              DTS:ThreadHint="3">
               <DTS:Variables />
               <DTS:ObjectData>
                 <SQLTask:SqlTaskData
@@ -3804,7 +3804,7 @@
               DTS:LocaleID="-1"
               DTS:ObjectName="Assign TABLE_TARGET_CD"
               DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-              DTS:ThreadHint="10">
+              DTS:ThreadHint="4">
               <DTS:Variables />
               <DTS:ObjectData>
                 <SQLTask:SqlTaskData
@@ -3826,7 +3826,7 @@
               DTS:LocaleID="-1"
               DTS:ObjectName="Delete STG TRG TABLE"
               DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-              DTS:ThreadHint="10">
+              DTS:ThreadHint="4">
               <DTS:Variables />
               <DTS:PropertyExpression
                 DTS:Name="SqlStatementSource">"delete from " + @[User::out_TABLE_TARGET_CD] + " where site_id = " + (DT_WSTR,2) @[User::out_SITE_ID]</DTS:PropertyExpression>
@@ -3845,7 +3845,7 @@
               DTS:LocaleID="-1"
               DTS:ObjectName="Ins_Upd TBLOG_PACKAGE_TABLE"
               DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-              DTS:ThreadHint="10">
+              DTS:ThreadHint="4">
               <DTS:Variables />
               <DTS:ObjectData>
                 <SQLTask:SqlTaskData
@@ -3923,7 +3923,7 @@
               DTS:LocaleID="-1"
               DTS:ObjectName="Last Upd TBLOG_PACKAGE_TABLE"
               DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-              DTS:ThreadHint="10">
+              DTS:ThreadHint="4">
               <DTS:Variables />
               <DTS:ObjectData>
                 <SQLTask:SqlTaskData
@@ -3965,7 +3965,7 @@
               DTS:LocaleID="-1"
               DTS:ObjectName="MAX TABLE ID"
               DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-              DTS:ThreadHint="11">
+              DTS:ThreadHint="5">
               <DTS:Variables />
               <DTS:ObjectData>
                 <SQLTask:SqlTaskData
@@ -11767,7 +11767,7 @@
               DTS:LocaleID="-1"
               DTS:ObjectName="Delete STG TRG TABLE"
               DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-              DTS:ThreadHint="7">
+              DTS:ThreadHint="6">
               <DTS:Variables />
               <DTS:PropertyExpression
                 DTS:Name="SqlStatementSource">"delete from " + @[User::out_TABLE_TARGET_CD] + " where site_id = " + (DT_WSTR,2) @[User::out_SITE_ID]</DTS:PropertyExpression>
@@ -11906,7 +11906,7 @@
               DTS:LocaleID="-1"
               DTS:ObjectName="MAX TABLE ID"
               DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-              DTS:ThreadHint="6">
+              DTS:ThreadHint="7">
               <DTS:Variables />
               <DTS:ObjectData>
                 <SQLTask:SqlTaskData
@@ -12166,7 +12166,7 @@
                               dataType="wstr"
                               errorOrTruncationOperation="Computation"
                               errorRowDisposition="FailComponent"
-                              length="250"
+                              length="200"
                               lineageId="Package\STAGING LOAD\TBST_PRC_SYS_VALORI_AGGIUNTIVI\TBST_PRC_SYS_VALORI_AGGIUNTIVI\Add Technical Fields.Outputs[Derived Column Output].Columns[PKEY1_WSTR]"
                               name="PKEY1_WSTR"
                               truncationRowDisposition="FailComponent">
@@ -12175,13 +12175,13 @@
                                   containsID="true"
                                   dataType="System.String"
                                   description="Derived Column Expression"
-                                  name="Expression">(DT_WSTR,250)(DT_STR,1000,1252)#{Package\STAGING LOAD\TBST_PRC_SYS_VALORI_AGGIUNTIVI\TBST_PRC_SYS_VALORI_AGGIUNTIVI\OLE DB Source.Outputs[OLE DB Source Output].Columns[PKEY1]}</property>
+                                  name="Expression">(DT_WSTR,200)(DT_STR,1000,1252)#{Package\STAGING LOAD\TBST_PRC_SYS_VALORI_AGGIUNTIVI\TBST_PRC_SYS_VALORI_AGGIUNTIVI\OLE DB Source.Outputs[OLE DB Source Output].Columns[PKEY1]}</property>
                                 <property
                                   containsID="true"
                                   dataType="System.String"
                                   description="Derived Column Friendly Expression"
                                   expressionType="Notify"
-                                  name="FriendlyExpression">(DT_WSTR,250)(DT_STR,1000,1252)PKEY1</property>
+                                  name="FriendlyExpression">(DT_WSTR,200)(DT_STR,1000,1252)PKEY1</property>
                               </properties>
                             </outputColumn>
                             <outputColumn
@@ -12189,7 +12189,7 @@
                               dataType="wstr"
                               errorOrTruncationOperation="Computation"
                               errorRowDisposition="FailComponent"
-                              length="250"
+                              length="200"
                               lineageId="Package\STAGING LOAD\TBST_PRC_SYS_VALORI_AGGIUNTIVI\TBST_PRC_SYS_VALORI_AGGIUNTIVI\Add Technical Fields.Outputs[Derived Column Output].Columns[PKEY2_WSTR]"
                               name="PKEY2_WSTR"
                               truncationRowDisposition="FailComponent">
@@ -12198,13 +12198,13 @@
                                   containsID="true"
                                   dataType="System.String"
                                   description="Derived Column Expression"
-                                  name="Expression">(DT_WSTR,250)(DT_STR,1000,1252)#{Package\STAGING LOAD\TBST_PRC_SYS_VALORI_AGGIUNTIVI\TBST_PRC_SYS_VALORI_AGGIUNTIVI\OLE DB Source.Outputs[OLE DB Source Output].Columns[PKEY2]}</property>
+                                  name="Expression">(DT_WSTR,200)(DT_STR,1000,1252)#{Package\STAGING LOAD\TBST_PRC_SYS_VALORI_AGGIUNTIVI\TBST_PRC_SYS_VALORI_AGGIUNTIVI\OLE DB Source.Outputs[OLE DB Source Output].Columns[PKEY2]}</property>
                                 <property
                                   containsID="true"
                                   dataType="System.String"
                                   description="Derived Column Friendly Expression"
                                   expressionType="Notify"
-                                  name="FriendlyExpression">(DT_WSTR,250)(DT_STR,1000,1252)PKEY2</property>
+                                  name="FriendlyExpression">(DT_WSTR,200)(DT_STR,1000,1252)PKEY2</property>
                               </properties>
                             </outputColumn>
                             <outputColumn
@@ -12212,7 +12212,7 @@
                               dataType="wstr"
                               errorOrTruncationOperation="Computation"
                               errorRowDisposition="FailComponent"
-                              length="250"
+                              length="200"
                               lineageId="Package\STAGING LOAD\TBST_PRC_SYS_VALORI_AGGIUNTIVI\TBST_PRC_SYS_VALORI_AGGIUNTIVI\Add Technical Fields.Outputs[Derived Column Output].Columns[PKEY3_WSTR]"
                               name="PKEY3_WSTR"
                               truncationRowDisposition="FailComponent">
@@ -12221,13 +12221,13 @@
                                   containsID="true"
                                   dataType="System.String"
                                   description="Derived Column Expression"
-                                  name="Expression">(DT_WSTR,250)(DT_STR,1000,1252)#{Package\STAGING LOAD\TBST_PRC_SYS_VALORI_AGGIUNTIVI\TBST_PRC_SYS_VALORI_AGGIUNTIVI\OLE DB Source.Outputs[OLE DB Source Output].Columns[PKEY3]}</property>
+                                  name="Expression">(DT_WSTR,200)(DT_STR,1000,1252)#{Package\STAGING LOAD\TBST_PRC_SYS_VALORI_AGGIUNTIVI\TBST_PRC_SYS_VALORI_AGGIUNTIVI\OLE DB Source.Outputs[OLE DB Source Output].Columns[PKEY3]}</property>
                                 <property
                                   containsID="true"
                                   dataType="System.String"
                                   description="Derived Column Friendly Expression"
                                   expressionType="Notify"
-                                  name="FriendlyExpression">(DT_WSTR,250)(DT_STR,1000,1252)PKEY3</property>
+                                  name="FriendlyExpression">(DT_WSTR,200)(DT_STR,1000,1252)PKEY3</property>
                               </properties>
                             </outputColumn>
                             <outputColumn
@@ -12235,7 +12235,7 @@
                               dataType="wstr"
                               errorOrTruncationOperation="Computation"
                               errorRowDisposition="FailComponent"
-                              length="250"
+                              length="200"
                               lineageId="Package\STAGING LOAD\TBST_PRC_SYS_VALORI_AGGIUNTIVI\TBST_PRC_SYS_VALORI_AGGIUNTIVI\Add Technical Fields.Outputs[Derived Column Output].Columns[PKEY4_WSTR]"
                               name="PKEY4_WSTR"
                               truncationRowDisposition="FailComponent">
@@ -12244,13 +12244,13 @@
                                   containsID="true"
                                   dataType="System.String"
                                   description="Derived Column Expression"
-                                  name="Expression">(DT_WSTR,250)(DT_STR,1000,1252)#{Package\STAGING LOAD\TBST_PRC_SYS_VALORI_AGGIUNTIVI\TBST_PRC_SYS_VALORI_AGGIUNTIVI\OLE DB Source.Outputs[OLE DB Source Output].Columns[PKEY4]}</property>
+                                  name="Expression">(DT_WSTR,200)(DT_STR,1000,1252)#{Package\STAGING LOAD\TBST_PRC_SYS_VALORI_AGGIUNTIVI\TBST_PRC_SYS_VALORI_AGGIUNTIVI\OLE DB Source.Outputs[OLE DB Source Output].Columns[PKEY4]}</property>
                                 <property
                                   containsID="true"
                                   dataType="System.String"
                                   description="Derived Column Friendly Expression"
                                   expressionType="Notify"
-                                  name="FriendlyExpression">(DT_WSTR,250)(DT_STR,1000,1252)PKEY4</property>
+                                  name="FriendlyExpression">(DT_WSTR,200)(DT_STR,1000,1252)PKEY4</property>
                               </properties>
                             </outputColumn>
                             <outputColumn
@@ -12258,7 +12258,7 @@
                               dataType="wstr"
                               errorOrTruncationOperation="Computation"
                               errorRowDisposition="FailComponent"
-                              length="250"
+                              length="200"
                               lineageId="Package\STAGING LOAD\TBST_PRC_SYS_VALORI_AGGIUNTIVI\TBST_PRC_SYS_VALORI_AGGIUNTIVI\Add Technical Fields.Outputs[Derived Column Output].Columns[PKEY5_WSTR]"
                               name="PKEY5_WSTR"
                               truncationRowDisposition="FailComponent">
@@ -12267,13 +12267,13 @@
                                   containsID="true"
                                   dataType="System.String"
                                   description="Derived Column Expression"
-                                  name="Expression">(DT_WSTR,250)(DT_STR,1000,1252)#{Package\STAGING LOAD\TBST_PRC_SYS_VALORI_AGGIUNTIVI\TBST_PRC_SYS_VALORI_AGGIUNTIVI\OLE DB Source.Outputs[OLE DB Source Output].Columns[PKEY5]}</property>
+                                  name="Expression">(DT_WSTR,200)(DT_STR,1000,1252)#{Package\STAGING LOAD\TBST_PRC_SYS_VALORI_AGGIUNTIVI\TBST_PRC_SYS_VALORI_AGGIUNTIVI\OLE DB Source.Outputs[OLE DB Source Output].Columns[PKEY5]}</property>
                                 <property
                                   containsID="true"
                                   dataType="System.String"
                                   description="Derived Column Friendly Expression"
                                   expressionType="Notify"
-                                  name="FriendlyExpression">(DT_WSTR,250)(DT_STR,1000,1252)PKEY5</property>
+                                  name="FriendlyExpression">(DT_WSTR,200)(DT_STR,1000,1252)PKEY5</property>
                               </properties>
                             </outputColumn>
                           </outputColumns>
@@ -12623,35 +12623,35 @@
                             <inputColumn
                               refId="Package\STAGING LOAD\TBST_PRC_SYS_VALORI_AGGIUNTIVI\TBST_PRC_SYS_VALORI_AGGIUNTIVI\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[PKEY5_WSTR]"
                               cachedDataType="wstr"
-                              cachedLength="250"
+                              cachedLength="200"
                               cachedName="PKEY5_WSTR"
                               externalMetadataColumnId="Package\STAGING LOAD\TBST_PRC_SYS_VALORI_AGGIUNTIVI\TBST_PRC_SYS_VALORI_AGGIUNTIVI\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[PKEY5]"
                               lineageId="Package\STAGING LOAD\TBST_PRC_SYS_VALORI_AGGIUNTIVI\TBST_PRC_SYS_VALORI_AGGIUNTIVI\Add Technical Fields.Outputs[Derived Column Output].Columns[PKEY5_WSTR]" />
                             <inputColumn
                               refId="Package\STAGING LOAD\TBST_PRC_SYS_VALORI_AGGIUNTIVI\TBST_PRC_SYS_VALORI_AGGIUNTIVI\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[PKEY4_WSTR]"
                               cachedDataType="wstr"
-                              cachedLength="250"
+                              cachedLength="200"
                               cachedName="PKEY4_WSTR"
                               externalMetadataColumnId="Package\STAGING LOAD\TBST_PRC_SYS_VALORI_AGGIUNTIVI\TBST_PRC_SYS_VALORI_AGGIUNTIVI\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[PKEY4]"
                               lineageId="Package\STAGING LOAD\TBST_PRC_SYS_VALORI_AGGIUNTIVI\TBST_PRC_SYS_VALORI_AGGIUNTIVI\Add Technical Fields.Outputs[Derived Column Output].Columns[PKEY4_WSTR]" />
                             <inputColumn
                               refId="Package\STAGING LOAD\TBST_PRC_SYS_VALORI_AGGIUNTIVI\TBST_PRC_SYS_VALORI_AGGIUNTIVI\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[PKEY3_WSTR]"
                               cachedDataType="wstr"
-                              cachedLength="250"
+                              cachedLength="200"
                               cachedName="PKEY3_WSTR"
                               externalMetadataColumnId="Package\STAGING LOAD\TBST_PRC_SYS_VALORI_AGGIUNTIVI\TBST_PRC_SYS_VALORI_AGGIUNTIVI\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[PKEY3]"
                               lineageId="Package\STAGING LOAD\TBST_PRC_SYS_VALORI_AGGIUNTIVI\TBST_PRC_SYS_VALORI_AGGIUNTIVI\Add Technical Fields.Outputs[Derived Column Output].Columns[PKEY3_WSTR]" />
                             <inputColumn
                               refId="Package\STAGING LOAD\TBST_PRC_SYS_VALORI_AGGIUNTIVI\TBST_PRC_SYS_VALORI_AGGIUNTIVI\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[PKEY2_WSTR]"
                               cachedDataType="wstr"
-                              cachedLength="250"
+                              cachedLength="200"
                               cachedName="PKEY2_WSTR"
                               externalMetadataColumnId="Package\STAGING LOAD\TBST_PRC_SYS_VALORI_AGGIUNTIVI\TBST_PRC_SYS_VALORI_AGGIUNTIVI\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[PKEY2]"
                               lineageId="Package\STAGING LOAD\TBST_PRC_SYS_VALORI_AGGIUNTIVI\TBST_PRC_SYS_VALORI_AGGIUNTIVI\Add Technical Fields.Outputs[Derived Column Output].Columns[PKEY2_WSTR]" />
                             <inputColumn
                               refId="Package\STAGING LOAD\TBST_PRC_SYS_VALORI_AGGIUNTIVI\TBST_PRC_SYS_VALORI_AGGIUNTIVI\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[PKEY1_WSTR]"
                               cachedDataType="wstr"
-                              cachedLength="250"
+                              cachedLength="200"
                               cachedName="PKEY1_WSTR"
                               externalMetadataColumnId="Package\STAGING LOAD\TBST_PRC_SYS_VALORI_AGGIUNTIVI\TBST_PRC_SYS_VALORI_AGGIUNTIVI\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[PKEY1]"
                               lineageId="Package\STAGING LOAD\TBST_PRC_SYS_VALORI_AGGIUNTIVI\TBST_PRC_SYS_VALORI_AGGIUNTIVI\Add Technical Fields.Outputs[Derived Column Output].Columns[PKEY1_WSTR]" />
@@ -12714,27 +12714,27 @@
                             <externalMetadataColumn
                               refId="Package\STAGING LOAD\TBST_PRC_SYS_VALORI_AGGIUNTIVI\TBST_PRC_SYS_VALORI_AGGIUNTIVI\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[PKEY1]"
                               dataType="wstr"
-                              length="250"
+                              length="200"
                               name="PKEY1" />
                             <externalMetadataColumn
                               refId="Package\STAGING LOAD\TBST_PRC_SYS_VALORI_AGGIUNTIVI\TBST_PRC_SYS_VALORI_AGGIUNTIVI\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[PKEY2]"
                               dataType="wstr"
-                              length="2500"
+                              length="200"
                               name="PKEY2" />
                             <externalMetadataColumn
                               refId="Package\STAGING LOAD\TBST_PRC_SYS_VALORI_AGGIUNTIVI\TBST_PRC_SYS_VALORI_AGGIUNTIVI\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[PKEY3]"
                               dataType="wstr"
-                              length="250"
+                              length="200"
                               name="PKEY3" />
                             <externalMetadataColumn
                               refId="Package\STAGING LOAD\TBST_PRC_SYS_VALORI_AGGIUNTIVI\TBST_PRC_SYS_VALORI_AGGIUNTIVI\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[PKEY4]"
                               dataType="wstr"
-                              length="250"
+                              length="200"
                               name="PKEY4" />
                             <externalMetadataColumn
                               refId="Package\STAGING LOAD\TBST_PRC_SYS_VALORI_AGGIUNTIVI\TBST_PRC_SYS_VALORI_AGGIUNTIVI\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[PKEY5]"
                               dataType="wstr"
-                              length="250"
+                              length="200"
                               name="PKEY5" />
                             <externalMetadataColumn
                               refId="Package\STAGING LOAD\TBST_PRC_SYS_VALORI_AGGIUNTIVI\TBST_PRC_SYS_VALORI_AGGIUNTIVI\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[I_User]"
@@ -13273,7 +13273,7 @@
               DTS:LocaleID="-1"
               DTS:ObjectName="Assign TABLE_TARGET_CD"
               DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-              DTS:ThreadHint="12">
+              DTS:ThreadHint="8">
               <DTS:Variables />
               <DTS:ObjectData>
                 <SQLTask:SqlTaskData
@@ -13295,7 +13295,7 @@
               DTS:LocaleID="-1"
               DTS:ObjectName="Delete STG TRG TABLE"
               DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-              DTS:ThreadHint="12">
+              DTS:ThreadHint="8">
               <DTS:Variables />
               <DTS:PropertyExpression
                 DTS:Name="SqlStatementSource">"delete from " + @[User::out_TABLE_TARGET_CD] + " where site_id = " + (DT_WSTR,2) @[User::out_SITE_ID]</DTS:PropertyExpression>
@@ -13314,7 +13314,7 @@
               DTS:LocaleID="-1"
               DTS:ObjectName="Ins_Upd TBLOG_PACKAGE_TABLE"
               DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-              DTS:ThreadHint="12">
+              DTS:ThreadHint="8">
               <DTS:Variables />
               <DTS:ObjectData>
                 <SQLTask:SqlTaskData
@@ -13392,7 +13392,7 @@
               DTS:LocaleID="-1"
               DTS:ObjectName="Last Upd TBLOG_PACKAGE_TABLE"
               DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-              DTS:ThreadHint="12">
+              DTS:ThreadHint="8">
               <DTS:Variables />
               <DTS:ObjectData>
                 <SQLTask:SqlTaskData
@@ -13434,7 +13434,7 @@
               DTS:LocaleID="-1"
               DTS:ObjectName="MAX TABLE ID"
               DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-              DTS:ThreadHint="13">
+              DTS:ThreadHint="9">
               <DTS:Variables />
               <DTS:ObjectData>
                 <SQLTask:SqlTaskData
@@ -14595,7 +14595,7 @@
               DTS:LocaleID="-1"
               DTS:ObjectName="Assign TABLE_TARGET_CD"
               DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-              DTS:ThreadHint="14">
+              DTS:ThreadHint="10">
               <DTS:Variables />
               <DTS:ObjectData>
                 <SQLTask:SqlTaskData
@@ -14617,7 +14617,7 @@
               DTS:LocaleID="-1"
               DTS:ObjectName="Delete STG TRG TABLE"
               DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-              DTS:ThreadHint="14">
+              DTS:ThreadHint="10">
               <DTS:Variables />
               <DTS:PropertyExpression
                 DTS:Name="SqlStatementSource">"delete from " + @[User::out_TABLE_TARGET_CD] + " where site_id = " + (DT_WSTR,2) @[User::out_SITE_ID]</DTS:PropertyExpression>
@@ -14636,7 +14636,7 @@
               DTS:LocaleID="-1"
               DTS:ObjectName="Ins_Upd TBLOG_PACKAGE_TABLE"
               DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-              DTS:ThreadHint="14">
+              DTS:ThreadHint="10">
               <DTS:Variables />
               <DTS:ObjectData>
                 <SQLTask:SqlTaskData
@@ -14714,7 +14714,7 @@
               DTS:LocaleID="-1"
               DTS:ObjectName="Last Upd TBLOG_PACKAGE_TABLE"
               DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-              DTS:ThreadHint="14">
+              DTS:ThreadHint="10">
               <DTS:Variables />
               <DTS:ObjectData>
                 <SQLTask:SqlTaskData
@@ -14756,7 +14756,7 @@
               DTS:LocaleID="-1"
               DTS:ObjectName="MAX TABLE ID"
               DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-              DTS:ThreadHint="15">
+              DTS:ThreadHint="11">
               <DTS:Variables />
               <DTS:ObjectData>
                 <SQLTask:SqlTaskData
@@ -15839,7 +15839,7 @@
               DTS:LocaleID="-1"
               DTS:ObjectName="Assign TABLE_TARGET_CD"
               DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-              DTS:ThreadHint="4">
+              DTS:ThreadHint="12">
               <DTS:Variables />
               <DTS:ObjectData>
                 <SQLTask:SqlTaskData
@@ -15861,7 +15861,7 @@
               DTS:LocaleID="-1"
               DTS:ObjectName="Delete STG TRG TABLE"
               DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-              DTS:ThreadHint="4">
+              DTS:ThreadHint="12">
               <DTS:Variables />
               <DTS:PropertyExpression
                 DTS:Name="SqlStatementSource">"delete from " + @[User::out_TABLE_TARGET_CD] + " where site_id = " + (DT_WSTR,2) @[User::out_SITE_ID]</DTS:PropertyExpression>
@@ -15880,7 +15880,7 @@
               DTS:LocaleID="-1"
               DTS:ObjectName="Ins_Upd TBLOG_PACKAGE_TABLE"
               DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-              DTS:ThreadHint="4">
+              DTS:ThreadHint="12">
               <DTS:Variables />
               <DTS:ObjectData>
                 <SQLTask:SqlTaskData
@@ -15958,7 +15958,7 @@
               DTS:LocaleID="-1"
               DTS:ObjectName="Last Upd TBLOG_PACKAGE_TABLE"
               DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-              DTS:ThreadHint="4">
+              DTS:ThreadHint="12">
               <DTS:Variables />
               <DTS:ObjectData>
                 <SQLTask:SqlTaskData
@@ -16000,7 +16000,7 @@
               DTS:LocaleID="-1"
               DTS:ObjectName="MAX TABLE ID"
               DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-              DTS:ThreadHint="5">
+              DTS:ThreadHint="13">
               <DTS:Variables />
               <DTS:ObjectData>
                 <SQLTask:SqlTaskData
@@ -17259,7 +17259,7 @@
               DTS:LocaleID="-1"
               DTS:ObjectName="Assign TABLE_TARGET_CD"
               DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-              DTS:ThreadHint="2">
+              DTS:ThreadHint="14">
               <DTS:Variables />
               <DTS:ObjectData>
                 <SQLTask:SqlTaskData
@@ -17281,7 +17281,7 @@
               DTS:LocaleID="-1"
               DTS:ObjectName="Delete STG TRG TABLE"
               DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-              DTS:ThreadHint="2">
+              DTS:ThreadHint="14">
               <DTS:Variables />
               <DTS:PropertyExpression
                 DTS:Name="SqlStatementSource">"delete from " + @[User::out_TABLE_TARGET_CD] + " where site_id = " + (DT_WSTR,2) @[User::out_SITE_ID]</DTS:PropertyExpression>
@@ -17300,7 +17300,7 @@
               DTS:LocaleID="-1"
               DTS:ObjectName="Ins_Upd TBLOG_PACKAGE_TABLE"
               DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-              DTS:ThreadHint="2">
+              DTS:ThreadHint="14">
               <DTS:Variables />
               <DTS:ObjectData>
                 <SQLTask:SqlTaskData
@@ -17378,7 +17378,7 @@
               DTS:LocaleID="-1"
               DTS:ObjectName="Last Upd TBLOG_PACKAGE_TABLE"
               DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-              DTS:ThreadHint="2">
+              DTS:ThreadHint="14">
               <DTS:Variables />
               <DTS:ObjectData>
                 <SQLTask:SqlTaskData
@@ -17420,7 +17420,7 @@
               DTS:LocaleID="-1"
               DTS:ObjectName="MAX TABLE ID"
               DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-              DTS:ThreadHint="3">
+              DTS:ThreadHint="15">
               <DTS:Variables />
               <DTS:ObjectData>
                 <SQLTask:SqlTaskData
@@ -17460,7 +17460,7 @@
               DTS:LocaleID="-1"
               DTS:ObjectName="sp_TBST_PRC_SYS_VALORI_AGGIUNTIVI_TABELLE_cv"
               DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-              DTS:ThreadHint="2">
+              DTS:ThreadHint="14">
               <DTS:Variables />
               <DTS:ObjectData>
                 <SQLTask:SqlTaskData
