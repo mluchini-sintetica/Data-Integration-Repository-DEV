@@ -12,8 +12,8 @@
   DTS:ObjectName="NEMOSPED_INVOICE"
   DTS:PackageType="5"
   DTS:ProtectionLevel="2"
-  DTS:VersionBuild="155"
-  DTS:VersionGUID="{11B17E71-80DE-4DCA-AFC5-FCBACB64E3D6}">
+  DTS:VersionBuild="157"
+  DTS:VersionGUID="{C97EB89F-E069-404B-9C12-03E3AE8CE11C}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -449,8 +449,7 @@
           ConnectionName="{EA5751E9-0428-490D-A6F8-71655A7F5186}"
           TaskIsLocalPathVar="True"
           TaskLocalPath="User::out_FILENAME"
-          TaskRemotePath="/"
-          TaskTransferAscii="True" />
+          TaskRemotePath="/" />
       </DTS:ObjectData>
     </DTS:Executable>
     <DTS:Executable
@@ -4920,9 +4919,9 @@ from
         </EdgeLayout>
         <ContainerLayout
           HeaderHeight="43"
-          IsExpanded="True"
+          IsExpanded="False"
           PanelSize="837,711"
-          Size="837,754"
+          Size="837,43"
           Id="Package\TBDWFT_INVOICE_TO_NEMOSPED"
           TopLeft="116,266" />
         <EdgeLayout
@@ -4961,37 +4960,37 @@ from
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 2]"
-          TopLeft="953,643">
+          TopLeft="396.333333333333,309">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="150,-253"
+              EndConnector="770.166666666667,60"
               Start="0,0"
-              End="142.5,-253">
+              End="770.166666666667,52.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="71,0" />
+                    End="0,20.0686859050799" />
                   <mssgle:CubicBezierSegment
-                    Point1="71,0"
-                    Point2="75,0"
-                    Point3="75,-4" />
+                    Point1="0,20.0686859050799"
+                    Point2="0,24.0686859050799"
+                    Point3="4,24.0686859050799" />
                   <mssgle:LineSegment
-                    End="75,-249" />
+                    End="766.166666666667,24.0686859050799" />
                   <mssgle:CubicBezierSegment
-                    Point1="75,-249"
-                    Point2="75,-253"
-                    Point3="79,-253" />
+                    Point1="766.166666666667,24.0686859050799"
+                    Point2="770.166666666667,24.0686859050799"
+                    Point3="770.166666666667,28.0686859050799" />
                   <mssgle:LineSegment
-                    End="142.5,-253" />
+                    End="770.166666666667,52.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="67,1,16,16"
+              BoundingBox="377.083333333333,29.0686859050799,16,16"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -5001,37 +5000,37 @@ from
           TopLeft="1044,711" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 3]"
-          TopLeft="953,767.333333333333">
+          TopLeft="672.666666666667,309">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="91,-35.3333333333333"
+              EndConnector="497.333333333333,402"
               Start="0,0"
-              End="83.5,-35.3333333333333">
+              End="497.333333333333,394.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="32.5156167284277,0" />
+                    End="0,157.260195564035" />
                   <mssgle:CubicBezierSegment
-                    Point1="32.5156167284277,0"
-                    Point2="36.5156167284277,0"
-                    Point3="36.5156167284277,-4" />
+                    Point1="0,157.260195564035"
+                    Point2="0,161.260195564035"
+                    Point3="4,161.260195564035" />
                   <mssgle:LineSegment
-                    End="36.5156167284277,-31.3333333333333" />
+                    End="493.333333333333,161.260195564035" />
                   <mssgle:CubicBezierSegment
-                    Point1="36.5156167284277,-31.3333333333333"
-                    Point2="36.5156167284277,-35.3333333333333"
-                    Point3="40.5156167284277,-35.3333333333333" />
+                    Point1="493.333333333333,161.260195564035"
+                    Point2="497.333333333333,161.260195564035"
+                    Point3="497.333333333333,165.260195564035" />
                   <mssgle:LineSegment
-                    End="83.5,-35.3333333333333" />
+                    End="497.333333333333,394.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="28.5156167284277,1,16,16"
+              BoundingBox="240.666666666667,166.260195564035,16,16"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -5090,7 +5089,7 @@ from
     design-time-name="Package\TBDWFT_INVOICE_TO_NEMOSPED\TBDWFT_INVOICE_TO_NEMOSPED">
     <LayoutInfo>
       <GraphLayout
-        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="161,42"
           Id="Package\TBDWFT_INVOICE_TO_NEMOSPED\TBDWFT_INVOICE_TO_NEMOSPED\Data Conversion"
@@ -5146,9 +5145,7 @@ from
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -5176,9 +5173,7 @@ from
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -5212,9 +5207,7 @@ from
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -5248,9 +5241,7 @@ from
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -5284,9 +5275,7 @@ from
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
