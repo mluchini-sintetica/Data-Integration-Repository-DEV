@@ -13,8 +13,8 @@
   DTS:ObjectName="AUDIT_TRAIL_DW"
   DTS:PackageType="5"
   DTS:ProtectionLevel="2"
-  DTS:VersionBuild="651"
-  DTS:VersionGUID="{597E3B8D-C4C2-49F3-836F-D02A0F4D7387}">
+  DTS:VersionBuild="653"
+  DTS:VersionGUID="{CBF0FB0C-9CDA-4FD1-B4FE-150FCCBB6D0B}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -28,12 +28,12 @@
           DTS:ConnectionString="Data Source=192.168.200.19;User ID=PARCEL_DIR_R;Initial Catalog=Parcel2008_SINT;Provider=SQLNCLI11.1;Persist Security Info=True;Auto Translate=False;">
           <EncryptedData
             Type="http://www.w3.org/2001/04/xmlenc#Element"
-            Salt="ndCt/GK6VGE="
-            IV="LNn5IjkU3H9qLYtSWgSDKA==" xmlns="http://www.w3.org/2001/04/xmlenc#">
+            Salt="LT4nOSzFYtE="
+            IV="WoW7XnL8Dqplxgkd93073w==" xmlns="http://www.w3.org/2001/04/xmlenc#">
             <EncryptionMethod
               Algorithm="http://www.w3.org/2001/04/xmlenc#aes256-cbc" />
             <CipherData>
-              <CipherValue>LNn5IjkU3H9qLYtSWgSDKBCXDq0xT2y4e+US4i2Njc9wQFuHkROvJrpix7w8uOIRX5bGSqzhnUGhLOftlBdz/nW3+qJoAFjuHO0W7rhxpz8xsw2CF44OUK5m0O6X3qRP68vpGtDQ5q0tjcGxoVdZ0ZrQ7zGIMsmxRTTn4GNN8TQb+F1VvUzr/UO1r7xcTdlt</CipherValue>
+              <CipherValue>WoW7XnL8Dqplxgkd930732b/WaPWGdwfWDb1+OcpZogQbDRRv1gazAguBDLku4nKCTGfPJ3BaUYBaKBcLVSn5IqOz2U35Tuy8a5MktGRjx7189fOT90haTsXgE4kosb7otbmZzR15VogJi0qJpi3eAPrwQIr+wygX95yBOpA4d9yTeKf1ExMnuI+2UOpqGkq</CipherValue>
             </CipherData>
           </EncryptedData>
         </DTS:ConnectionManager>
@@ -195,7 +195,7 @@
       DTS:LocaleID="-1"
       DTS:ObjectName="Assign SITE_ID"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="1">
+      DTS:ThreadHint="0">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -223,7 +223,7 @@
       DTS:LocaleID="-1"
       DTS:ObjectName="Assign SOURCE_SYSTEM_ID"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="0">
+      DTS:ThreadHint="1">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -3709,7 +3709,7 @@ FROM
               DTS:LocaleID="-1"
               DTS:ObjectName="Last Max DATE Loaded and DWH_DELTA_DT"
               DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-              DTS:ThreadHint="0">
+              DTS:ThreadHint="1">
               <DTS:Variables />
               <DTS:ObjectData>
                 <SQLTask:SqlTaskData
@@ -3834,7 +3834,7 @@ FROM
               DTS:LocaleID="-1"
               DTS:ObjectName="New Max DATE Loaded"
               DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-              DTS:ThreadHint="1">
+              DTS:ThreadHint="0">
               <DTS:Variables />
               <DTS:ObjectData>
                 <SQLTask:SqlTaskData
