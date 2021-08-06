@@ -12,8 +12,8 @@
   DTS:ObjectName="NEMOSPED_INVOICE"
   DTS:PackageType="5"
   DTS:ProtectionLevel="2"
-  DTS:VersionBuild="157"
-  DTS:VersionGUID="{C97EB89F-E069-404B-9C12-03E3AE8CE11C}">
+  DTS:VersionBuild="167"
+  DTS:VersionGUID="{F5C93991-AAF3-44FF-B34F-7A26FB516983}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -36,227 +36,227 @@
           <DTS:FlatFileColumns>
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
-              DTS:ColumnDelimiter="_x007C_"
+              DTS:ColumnDelimiter="_x003B_"
               DTS:DataType="3"
               DTS:TextQualified="True"
               DTS:ObjectName="Numero_documento_fattura"
-              DTS:DTSID="{DFDAE9A1-C148-4A6A-93B0-ECA904002602}"
+              DTS:DTSID="{FF3F9980-1521-4535-9D79-C526AD6561C4}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
-              DTS:ColumnDelimiter="_x007C_"
+              DTS:ColumnDelimiter="_x003B_"
               DTS:DataType="135"
               DTS:TextQualified="True"
               DTS:ObjectName="Data_documento_fattura"
-              DTS:DTSID="{75B943F8-8F6D-4073-9FE6-4FE082549EAC}"
+              DTS:DTSID="{5D10FC3F-25C1-438D-ADD8-5C5BCEC58BA8}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
-              DTS:ColumnDelimiter="_x007C_"
+              DTS:ColumnDelimiter="_x003B_"
               DTS:MaximumWidth="4000"
               DTS:DataType="130"
               DTS:TextQualified="True"
               DTS:ObjectName="descrizione_articolo_aggiuntiva"
-              DTS:DTSID="{AD121C0F-1047-4C14-9912-9E0C8699453F}"
+              DTS:DTSID="{5FE25163-41DD-455D-A113-500C39F4070B}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
-              DTS:ColumnDelimiter="_x007C_"
+              DTS:ColumnDelimiter="_x003B_"
               DTS:MaximumWidth="20"
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="Codice_cliente_fatturazione"
-              DTS:DTSID="{478AC6C8-CE53-482E-B32F-1D665CFFF8FD}"
+              DTS:DTSID="{0C82CE48-7FE2-41CE-AAED-24D6254EF35C}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
-              DTS:ColumnDelimiter="_x007C_"
+              DTS:ColumnDelimiter="_x003B_"
               DTS:MaximumWidth="40"
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="Descrizione_cliente_fatturazione"
-              DTS:DTSID="{8817A479-F4B3-457F-9D4F-C8EDADC90DA7}"
+              DTS:DTSID="{BBD9F6E1-BF78-480A-A2FD-E845D90013AB}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
-              DTS:ColumnDelimiter="_x007C_"
+              DTS:ColumnDelimiter="_x003B_"
               DTS:MaximumWidth="150"
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="Sede_consegna_fatturazione"
-              DTS:DTSID="{8B5BDB2B-B5E3-48CD-821C-422C74BCD78F}"
+              DTS:DTSID="{D7510A69-51CC-4C1A-AB0D-D54AD4136838}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
-              DTS:ColumnDelimiter="_x007C_"
+              DTS:ColumnDelimiter="_x003B_"
               DTS:MaximumWidth="30"
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="sede_localita_fatturazione"
-              DTS:DTSID="{63A68808-0779-407D-B27D-249DC7CC5623}"
+              DTS:DTSID="{D13752EF-2EE0-4ACF-8AD2-915D693FD098}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
-              DTS:ColumnDelimiter="_x007C_"
+              DTS:ColumnDelimiter="_x003B_"
               DTS:MaximumWidth="8"
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="sede_cap_fatturazione"
-              DTS:DTSID="{CDEF90A7-C472-4DBD-9EBE-3ABE744ADAE3}"
+              DTS:DTSID="{913F404C-A330-4830-9B5A-2A2790A9DA00}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
-              DTS:ColumnDelimiter="_x007C_"
+              DTS:ColumnDelimiter="_x003B_"
               DTS:MaximumWidth="10"
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="sede_nazione_fatturazione"
-              DTS:DTSID="{4F9A74EB-FB75-4768-AC98-5D18092C8E0B}"
+              DTS:DTSID="{31A8F407-EE70-485A-A510-DDDB4FB83AE9}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
-              DTS:ColumnDelimiter="_x007C_"
+              DTS:ColumnDelimiter="_x003B_"
               DTS:MaximumWidth="1"
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="empty1"
-              DTS:DTSID="{ED8DEDAD-212E-4FD6-994F-3BE90626B9BE}"
+              DTS:DTSID="{FD79583A-5A8E-49E7-8FFF-A76F95777CA4}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
-              DTS:ColumnDelimiter="_x007C_"
+              DTS:ColumnDelimiter="_x003B_"
               DTS:MaximumWidth="20"
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="Codice_cliente_consegna"
-              DTS:DTSID="{A67D9957-31C1-4C7A-9D6A-37A37FBDD72D}"
+              DTS:DTSID="{7657DC4C-7ED8-43AB-8FE2-5E8111347507}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
-              DTS:ColumnDelimiter="_x007C_"
+              DTS:ColumnDelimiter="_x003B_"
               DTS:MaximumWidth="40"
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="Descrizione_cliente_consegna"
-              DTS:DTSID="{6485227E-CD5F-4F6E-AEB2-CBD49DE46A1D}"
+              DTS:DTSID="{F18C4786-F2B0-4E02-BD68-2CA8E98031B8}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
-              DTS:ColumnDelimiter="_x007C_"
+              DTS:ColumnDelimiter="_x003B_"
               DTS:MaximumWidth="150"
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="Sede_consegna"
-              DTS:DTSID="{74F17156-4476-4BDB-9CCB-64228B1817B9}"
+              DTS:DTSID="{8FE71DB4-C5E4-41E0-A98E-39A632DD5719}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
-              DTS:ColumnDelimiter="_x007C_"
+              DTS:ColumnDelimiter="_x003B_"
               DTS:MaximumWidth="30"
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="sede_localita_consegna"
-              DTS:DTSID="{67DE6404-821C-4291-B464-BECBCFB7F7EA}"
+              DTS:DTSID="{E495F964-C3E3-4120-BD1E-DB10169FC914}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
-              DTS:ColumnDelimiter="_x007C_"
+              DTS:ColumnDelimiter="_x003B_"
               DTS:MaximumWidth="8"
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="sede_cap_consegna"
-              DTS:DTSID="{1CDAFEA0-C91C-41D5-892D-4F47800CCC9F}"
+              DTS:DTSID="{90FA67D6-D2E3-4B20-B171-AC823F319ED7}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
-              DTS:ColumnDelimiter="_x007C_"
+              DTS:ColumnDelimiter="_x003B_"
               DTS:MaximumWidth="10"
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="sede_nazione_consegna"
-              DTS:DTSID="{28E7E287-F281-4946-BA28-19A7B51F1F30}"
+              DTS:DTSID="{4DE433DE-E6CB-458A-87E2-C4911A719275}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
-              DTS:ColumnDelimiter="_x007C_"
+              DTS:ColumnDelimiter="_x003B_"
               DTS:MaximumWidth="18"
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="telefono_consegna"
-              DTS:DTSID="{8889D16F-F161-44A4-88B1-EA8C20CCD0E3}"
+              DTS:DTSID="{883039B5-3E81-48C4-972C-E1600D6326BC}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
-              DTS:ColumnDelimiter="_x007C_"
+              DTS:ColumnDelimiter="_x003B_"
               DTS:MaximumWidth="1"
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="empty2"
-              DTS:DTSID="{5F5FD616-20C9-4A13-9129-B4F444500AD7}"
+              DTS:DTSID="{7C6F3A05-C4D8-400A-B05D-8D73D51FFFC2}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
-              DTS:ColumnDelimiter="_x007C_"
+              DTS:ColumnDelimiter="_x003B_"
               DTS:MaximumWidth="1"
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="empty3"
-              DTS:DTSID="{A6D9035F-0CA5-43C3-B584-744F7D912910}"
+              DTS:DTSID="{CD47FB89-71FF-4C20-9ABE-6B18F23AAD90}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
-              DTS:ColumnDelimiter="_x007C_"
+              DTS:ColumnDelimiter="_x003B_"
               DTS:MaximumWidth="250"
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="email_consegna"
-              DTS:DTSID="{195BF774-F90D-4784-90E3-13F6016C78DC}"
+              DTS:DTSID="{B2307BBD-C379-4B26-8E4A-1D96A5EF0152}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
-              DTS:ColumnDelimiter="_x007C_"
+              DTS:ColumnDelimiter="_x003B_"
               DTS:MaximumWidth="20"
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="articolo"
-              DTS:DTSID="{EB5DA94C-1D46-4B4E-8835-538158B1C563}"
+              DTS:DTSID="{439B53AD-4AEC-4359-87BC-A8C762834186}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
-              DTS:ColumnDelimiter="_x007C_"
+              DTS:ColumnDelimiter="_x003B_"
               DTS:MaximumWidth="4000"
               DTS:DataType="130"
               DTS:TextQualified="True"
               DTS:ObjectName="descrizione_articolo"
-              DTS:DTSID="{C7D92F1E-FEB0-4C30-8518-588ABF9756CB}"
+              DTS:DTSID="{17CB3C08-D97A-415D-9347-AE87469EFF95}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
-              DTS:ColumnDelimiter="_x007C_"
+              DTS:ColumnDelimiter="_x003B_"
               DTS:DataType="131"
               DTS:DataPrecision="19"
               DTS:DataScale="5"
               DTS:TextQualified="True"
               DTS:ObjectName="quantita"
-              DTS:DTSID="{9D81C2EA-3460-4EDA-8360-9DA5DD8084CD}"
+              DTS:DTSID="{AF94E1E8-43F6-4431-8175-9AF42A270051}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
-              DTS:ColumnDelimiter="_x007C_"
+              DTS:ColumnDelimiter="_x003B_"
               DTS:MaximumWidth="10"
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="unita_misura"
-              DTS:DTSID="{F9A85332-24AE-4780-925C-77B89EBDCD8A}"
+              DTS:DTSID="{DFBDC626-9A5A-46A9-96C2-250791ED41CB}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
-              DTS:ColumnDelimiter="_x007C_"
+              DTS:ColumnDelimiter="_x003B_"
               DTS:MaximumWidth="20"
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="lotto"
-              DTS:DTSID="{2ECBAFB8-5EE2-44A4-8107-B20C7E9C51F2}"
+              DTS:DTSID="{D485DC93-FCA8-433E-8E2A-C7F6B51C14B9}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -264,7 +264,7 @@
               DTS:DataType="3"
               DTS:TextQualified="True"
               DTS:ObjectName="reinvio_flg"
-              DTS:DTSID="{8EE0589C-95A8-4EB5-A984-0E0276795F98}"
+              DTS:DTSID="{B1F790BF-3DAB-4A46-A706-8FBAC2302E85}"
               DTS:CreationName="" />
           </DTS:FlatFileColumns>
         </DTS:ConnectionManager>
@@ -449,7 +449,8 @@
           ConnectionName="{EA5751E9-0428-490D-A6F8-71655A7F5186}"
           TaskIsLocalPathVar="True"
           TaskLocalPath="User::out_FILENAME"
-          TaskRemotePath="/" />
+          TaskRemotePath="/"
+          TaskTransferAscii="True" />
       </DTS:ObjectData>
     </DTS:Executable>
     <DTS:Executable
@@ -727,7 +728,7 @@
           DTS:LocaleID="-1"
           DTS:ObjectName="Assign out_FILENAME"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="0">
+          DTS:ThreadHint="2">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
@@ -749,7 +750,7 @@
           DTS:LocaleID="-1"
           DTS:ObjectName="Assign TABLE_TARGET_CD"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="1">
+          DTS:ThreadHint="0">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
@@ -771,12 +772,12 @@
           DTS:LocaleID="-1"
           DTS:ObjectName="COUNT_ROWS_test"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="1">
+          DTS:ThreadHint="0">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
               SQLTask:Connection="{62102490-454D-4B7E-9A09-120A46D18B10}"
-              SQLTask:SqlStatementSource=" select count(*) as out_COUNT_ROWS&#xA;       from [PARCEL_PRD].[PARCEL2008_SINT].[dbo].Documento_Testata &#xA;       where C_Tipo_Documento in ('FVACC', 'FVEXP') and  isnull(U_data,I_DATA) &gt; ?"
+              SQLTask:SqlStatementSource=" select count(*) as out_COUNT_ROWS&#xA;       from [PARCEL_PRD].[PARCEL2008_SINT].[dbo].Documento_Testata &#xA;       where C_Tipo_Documento in ('FVACC', 'FVEXP') and c_stato_documento = 'CONF' and  isnull(U_data,I_DATA) &gt; ?"
               SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
               <SQLTask:ResultBinding
                 SQLTask:ResultName="out_COUNT_ROWS"
@@ -799,7 +800,7 @@
           DTS:LocaleID="-1"
           DTS:ObjectName="Ins_Upd TBLOG_PACKAGE_TABLE"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="1">
+          DTS:ThreadHint="0">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
@@ -877,7 +878,7 @@
           DTS:LocaleID="-1"
           DTS:ObjectName="Last Max DATE Loaded and DWH_DELTA_DT"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="2">
+          DTS:ThreadHint="0">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
@@ -962,7 +963,7 @@
           DTS:LocaleID="-1"
           DTS:ObjectName="Last Upd TBLOG_PACKAGE_TABLE_row0"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="1">
+          DTS:ThreadHint="0">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
@@ -1004,7 +1005,7 @@
           DTS:LocaleID="-1"
           DTS:ObjectName="MAX TABLE ID"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="1">
+          DTS:ThreadHint="0">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
@@ -1049,7 +1050,7 @@
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
               SQLTask:Connection="{FBAB268E-906B-45AE-AC8B-D69BCF8CA701}"
-              SQLTask:SqlStatementSource="SELECT max(isnull(U_data,I_DATA)) as NEW_LAST_SUCCESS_LOAD_DT &#xA;FROM [dbo].Documento_Testata"
+              SQLTask:SqlStatementSource="SELECT max(isnull(U_data,I_DATA)) as NEW_LAST_SUCCESS_LOAD_DT &#xA;FROM [dbo].Documento_Testata&#xA;WHERE C_Tipo_Documento in ('FVACC', 'FVEXP') and c_stato_documento = 'CONF'"
               SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
               <SQLTask:ResultBinding
                 SQLTask:ResultName="NEW_LAST_SUCCESS_LOAD_DT"
@@ -2914,7 +2915,7 @@ from
        [D_Anagrafica_Controparte_2],[C_Pagamento],[C_Sede],[C_Sede_Tipo],[D_Sede],[D_Sede2],[Sede_Indirizzo],[Sede_Indirizzo2],[Sede_Cap],[Sede_Localita],[Sede_Provincia],
               [Sede_Nazione], dataprevistaeva,[I_Data], [U_Data], Note_intro, Note_Fine,C_Spedizione,c_sedefattura
        from [PARCEL_PRD].[PARCEL2008_SINT].[dbo].Documento_Testata 
-       where C_Tipo_Documento in ('FVACC', 'FVEXP') and  isnull(U_data,I_DATA) &gt; ?
+       where C_Tipo_Documento in ('FVACC', 'FVEXP') and c_stato_documento = 'CONF' and  isnull(U_data,I_DATA) &gt; ?
        )a  join
 
        (
@@ -2945,7 +2946,8 @@ from
 	   (
 	    select distinct num_doc_fattura, data_doc_fattura
 		from [db_owner].[TBDWFT_INVOICE_TO_NEMOSPED]
-	   ) x on a.Numero_Doc = x.num_doc_fattura and a.Data_Doc = x.data_doc_fattura</property>
+	   ) x on a.Numero_Doc = x.num_doc_fattura and a.Data_Doc = x.data_doc_fattura
+order by 2,1</property>
                     <property
                       dataType="System.String"
                       description="The variable that contains the SQL command to be executed."
@@ -3768,7 +3770,7 @@ from
           DTS:LocaleID="-1"
           DTS:ObjectName="Upd DATE Loaded_row0"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="1">
+          DTS:ThreadHint="0">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
@@ -4362,118 +4364,13 @@ from
           Id="Package\FTP Task"
           TopLeft="1103,369" />
         <NodeLayout
-          Size="157,42"
-          Id="Package\TBLOG_PACKAGE\Assign SITE_ID"
-          TopLeft="27,29.4722222222222" />
-        <NodeLayout
-          Size="240,42"
-          Id="Package\TBLOG_PACKAGE\Ins TBLOG_PACKAGE + Max ID"
-          TopLeft="323.166666666667,47" />
-        <NodeLayout
-          Size="199,42"
-          Id="Package\TBLOG_PACKAGE\Upd TBLOG_PACKAGE"
-          TopLeft="343.944444444444,123.555555555555" />
-        <EdgeLayout
-          Id="Package\TBLOG_PACKAGE.PrecedenceConstraints[Constraint 1]"
-          TopLeft="184,50.4722222222222">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="139.166666666667,17.5277777777778"
-              Start="0,0"
-              End="131.666666666667,17.5277777777778">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="65.5833333333335,0" />
-                  <mssgle:CubicBezierSegment
-                    Point1="65.5833333333335,0"
-                    Point2="69.5833333333335,0"
-                    Point3="69.5833333333335,4" />
-                  <mssgle:LineSegment
-                    End="69.5833333333335,13.5277777777778" />
-                  <mssgle:CubicBezierSegment
-                    Point1="69.5833333333335,13.5277777777778"
-                    Point2="69.5833333333335,17.5277777777778"
-                    Point3="73.5833333333335,17.5277777777778" />
-                  <mssgle:LineSegment
-                    End="131.666666666667,17.5277777777778" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\TBLOG_PACKAGE.PrecedenceConstraints[Constraint 2]"
-          TopLeft="481.833333333334,89">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-38.3888888888896,34.5555555555552"
-              Start="0,0"
-              End="-38.3888888888896,27.0555555555552">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,9.95952906548916" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,9.95952906548916"
-                    Point2="0,13.9595290654892"
-                    Point3="-4,13.9595290654892" />
-                  <mssgle:LineSegment
-                    End="-34.3888888888896,13.9595290654892" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-34.3888888888896,13.9595290654892"
-                    Point2="-38.3888888888896,13.9595290654892"
-                    Point3="-38.3888888888896,17.9595290654892" />
-                  <mssgle:LineSegment
-                    End="-38.3888888888896,27.0555555555552" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <ContainerLayout
-          HeaderHeight="43"
-          IsExpanded="False"
-          PanelSize="568,283"
-          Size="199,43"
-          Id="Package\TBLOG_PACKAGE"
-          TopLeft="221,159" />
-        <NodeLayout
           Size="222,42"
           Id="Package\Last Upd TBLOG_PACKAGE"
           TopLeft="1063,478" />
-        <EdgeLayout
-          Id="Package.PrecedenceConstraints[Constraint]"
-          TopLeft="1170.25,411">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,67"
-              Start="0,0"
-              End="0,59.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,59.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
+        <NodeLayout
+          Size="252,42"
+          Id="Package\Last Upd TBLOG_PACKAGE_row0"
+          TopLeft="1044,711" />
         <NodeLayout
           Size="222,42"
           Id="Package\TBDWFT_INVOICE_TO_NEMOSPED\Assign out_FILENAME"
@@ -4493,11 +4390,15 @@ from
         <NodeLayout
           Size="308,42"
           Id="Package\TBDWFT_INVOICE_TO_NEMOSPED\Last Max DATE Loaded and DWH_DELTA_DT"
-          TopLeft="18.5,251.5" />
+          TopLeft="18.5,252.5" />
         <NodeLayout
           Size="263,42"
           Id="Package\TBDWFT_INVOICE_TO_NEMOSPED\Last Upd TBLOG_PACKAGE_TABLE"
           TopLeft="449,601.5" />
+        <NodeLayout
+          Size="293,42"
+          Id="Package\TBDWFT_INVOICE_TO_NEMOSPED\Last Upd TBLOG_PACKAGE_TABLE_row0"
+          TopLeft="70,610" />
         <NodeLayout
           Size="155,42"
           Id="Package\TBDWFT_INVOICE_TO_NEMOSPED\MAX TABLE ID"
@@ -4509,11 +4410,155 @@ from
         <NodeLayout
           Size="266,42"
           Id="Package\TBDWFT_INVOICE_TO_NEMOSPED\TBDWFT_INVOICE_TO_NEMOSPED"
-          TopLeft="431,435" />
+          TopLeft="431,436" />
         <NodeLayout
           Size="171,42"
           Id="Package\TBDWFT_INVOICE_TO_NEMOSPED\Upd DATE Loaded"
           TopLeft="469.5,513.5" />
+        <NodeLayout
+          Size="201,42"
+          Id="Package\TBDWFT_INVOICE_TO_NEMOSPED\Upd DATE Loaded_row0"
+          TopLeft="93,516" />
+        <EdgeLayout
+          Id="Package\TBDWFT_INVOICE_TO_NEMOSPED.PrecedenceConstraints[Constraint]"
+          TopLeft="349,389">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="172,47"
+              Start="0,0"
+              End="172,39.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,19.5800681431005" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,19.5800681431005"
+                    Point2="0,23.5800681431005"
+                    Point3="4,23.5800681431005" />
+                  <mssgle:LineSegment
+                    End="168,23.5800681431005" />
+                  <mssgle:CubicBezierSegment
+                    Point1="168,23.5800681431005"
+                    Point2="172,23.5800681431005"
+                    Point3="172,27.5800681431005" />
+                  <mssgle:LineSegment
+                    End="172,39.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="78,28.5800681431005,16,16"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\TBDWFT_INVOICE_TO_NEMOSPED.PrecedenceConstraints[Constraint 1]"
+          TopLeft="487,297.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-138,49.5"
+              Start="0,0"
+              End="-138,42">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,25.4411764705882" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,25.4411764705882"
+                    Point2="0,29.4411764705882"
+                    Point3="-4,29.4411764705882" />
+                  <mssgle:LineSegment
+                    End="-134,29.4411764705882" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-134,29.4411764705882"
+                    Point2="-138,29.4411764705882"
+                    Point3="-138,33.4411764705882" />
+                  <mssgle:LineSegment
+                    End="-138,42" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\TBDWFT_INVOICE_TO_NEMOSPED.PrecedenceConstraints[Constraint 10]"
+          TopLeft="291,389">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-97.5,127"
+              Start="0,0"
+              End="-97.5,119.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,47.4640522875817" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,47.4640522875817"
+                    Point2="0,51.4640522875817"
+                    Point3="-4,51.4640522875817" />
+                  <mssgle:LineSegment
+                    End="-93.5,51.4640522875817" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-93.5,51.4640522875817"
+                    Point2="-97.5,51.4640522875817"
+                    Point3="-97.5,55.4640522875817" />
+                  <mssgle:LineSegment
+                    End="-97.5,119.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-56.75,56.4640522875817,16,16"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\TBDWFT_INVOICE_TO_NEMOSPED.PrecedenceConstraints[Constraint 11]"
+          TopLeft="193.5,558">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="23,52"
+              Start="0,0"
+              End="23,44.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,22" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,22"
+                    Point2="0,26"
+                    Point3="4,26" />
+                  <mssgle:LineSegment
+                    End="19,26" />
+                  <mssgle:CubicBezierSegment
+                    Point1="19,26"
+                    Point2="23,26"
+                    Point3="23,30" />
+                  <mssgle:LineSegment
+                    End="23,44.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
         <EdgeLayout
           Id="Package\TBDWFT_INVOICE_TO_NEMOSPED.PrecedenceConstraints[Constraint 2]"
           TopLeft="353,47.5">
@@ -4593,31 +4638,133 @@ from
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
+          Id="Package\TBDWFT_INVOICE_TO_NEMOSPED.PrecedenceConstraints[Constraint 5]"
+          TopLeft="658,384">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-51,52"
+              Start="0,0"
+              End="-51,44.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,27.0134529147982" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,27.0134529147982"
+                    Point2="0,31.0134529147982"
+                    Point3="-4,31.0134529147982" />
+                  <mssgle:LineSegment
+                    End="-47,31.0134529147982" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-47,31.0134529147982"
+                    Point2="-51,31.0134529147982"
+                    Point3="-51,35.0134529147982" />
+                  <mssgle:LineSegment
+                    End="-51,44.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\TBDWFT_INVOICE_TO_NEMOSPED.PrecedenceConstraints[Constraint 6]"
+          TopLeft="564,478">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-9,35.5"
+              Start="0,0"
+              End="-9,28">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,13.75" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,13.75"
+                    Point2="0,17.75"
+                    Point3="-4,17.75" />
+                  <mssgle:LineSegment
+                    End="-5,17.75" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-5,17.75"
+                    Point2="-9,17.75"
+                    Point3="-9,21.75" />
+                  <mssgle:LineSegment
+                    End="-9,28" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
           Id="Package\TBDWFT_INVOICE_TO_NEMOSPED.PrecedenceConstraints[Constraint 7]"
           TopLeft="330,218.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-157.5,33"
+              EndConnector="-157.5,34"
               Start="0,0"
-              End="-157.5,25.5">
+              End="-157.5,26.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,9.40229885057471" />
+                    End="0,9.80842911877395" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,9.40229885057471"
-                    Point2="0,13.4022988505747"
-                    Point3="-4,13.4022988505747" />
+                    Point1="0,9.80842911877395"
+                    Point2="0,13.8084291187739"
+                    Point3="-4,13.8084291187739" />
                   <mssgle:LineSegment
-                    End="-153.5,13.4022988505747" />
+                    End="-153.5,13.8084291187739" />
                   <mssgle:CubicBezierSegment
-                    Point1="-153.5,13.4022988505747"
-                    Point2="-157.5,13.4022988505747"
-                    Point3="-157.5,17.4022988505747" />
+                    Point1="-153.5,13.8084291187739"
+                    Point2="-157.5,13.8084291187739"
+                    Point3="-157.5,17.8084291187739" />
                   <mssgle:LineSegment
-                    End="-157.5,25.5" />
+                    End="-157.5,26.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\TBDWFT_INVOICE_TO_NEMOSPED.PrecedenceConstraints[Constraint 8]"
+          TopLeft="172.5,294.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="118.5,52.5"
+              Start="0,0"
+              End="118.5,45">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,27.2254901960784" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,27.2254901960784"
+                    Point2="0,31.2254901960784"
+                    Point3="4,31.2254901960784" />
+                  <mssgle:LineSegment
+                    End="114.5,31.2254901960784" />
+                  <mssgle:CubicBezierSegment
+                    Point1="114.5,31.2254901960784"
+                    Point2="118.5,31.2254901960784"
+                    Point3="118.5,35.2254901960784" />
+                  <mssgle:LineSegment
+                    End="118.5,45" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -4660,144 +4807,6 @@ from
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <EdgeLayout
-          Id="Package\TBDWFT_INVOICE_TO_NEMOSPED.PrecedenceConstraints[Constraint]"
-          TopLeft="349,389">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="172,46"
-              Start="0,0"
-              End="172,38.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,19.0783645655877" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,19.0783645655877"
-                    Point2="0,23.0783645655877"
-                    Point3="4,23.0783645655877" />
-                  <mssgle:LineSegment
-                    End="168,23.0783645655877" />
-                  <mssgle:CubicBezierSegment
-                    Point1="168,23.0783645655877"
-                    Point2="172,23.0783645655877"
-                    Point3="172,27.0783645655877" />
-                  <mssgle:LineSegment
-                    End="172,38.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="78,28.0783645655877,16,16"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\TBDWFT_INVOICE_TO_NEMOSPED.PrecedenceConstraints[Constraint 1]"
-          TopLeft="487,297.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-138,49.5"
-              Start="0,0"
-              End="-138,42">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,25.4411764705882" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,25.4411764705882"
-                    Point2="0,29.4411764705882"
-                    Point3="-4,29.4411764705882" />
-                  <mssgle:LineSegment
-                    End="-134,29.4411764705882" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-134,29.4411764705882"
-                    Point2="-138,29.4411764705882"
-                    Point3="-138,33.4411764705882" />
-                  <mssgle:LineSegment
-                    End="-138,42" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\TBDWFT_INVOICE_TO_NEMOSPED.PrecedenceConstraints[Constraint 8]"
-          TopLeft="172.5,293.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="118.5,53.5"
-              Start="0,0"
-              End="118.5,46">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,27.8202614379085" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,27.8202614379085"
-                    Point2="0,31.8202614379085"
-                    Point3="4,31.8202614379085" />
-                  <mssgle:LineSegment
-                    End="114.5,31.8202614379085" />
-                  <mssgle:CubicBezierSegment
-                    Point1="114.5,31.8202614379085"
-                    Point2="118.5,31.8202614379085"
-                    Point3="118.5,35.8202614379085" />
-                  <mssgle:LineSegment
-                    End="118.5,46" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\TBDWFT_INVOICE_TO_NEMOSPED.PrecedenceConstraints[Constraint 6]"
-          TopLeft="564,477">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-9,36.5"
-              Start="0,0"
-              End="-9,29">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,14.25" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,14.25"
-                    Point2="0,18.25"
-                    Point3="-4,18.25" />
-                  <mssgle:LineSegment
-                    End="-5,18.25" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-5,18.25"
-                    Point2="-9,18.25"
-                    Point3="-9,22.25" />
-                  <mssgle:LineSegment
-                    End="-9,29" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
         <AnnotationLayout
           Text="To be specify target table name"
           ParentId="Package\TBDWFT_INVOICE_TO_NEMOSPED"
@@ -4805,110 +4814,118 @@ from
           Size="195,40"
           Id="770e5d1f-9727-4e0f-9d45-cb2863de88dd"
           TopLeft="29.5,10.5" />
-        <EdgeLayout
-          Id="Package\TBDWFT_INVOICE_TO_NEMOSPED.PrecedenceConstraints[Constraint 5]"
-          TopLeft="658,384">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-51,51"
-              Start="0,0"
-              End="-51,43.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,26.4170403587444" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,26.4170403587444"
-                    Point2="0,30.4170403587444"
-                    Point3="-4,30.4170403587444" />
-                  <mssgle:LineSegment
-                    End="-47,30.4170403587444" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-47,30.4170403587444"
-                    Point2="-51,30.4170403587444"
-                    Point3="-51,34.4170403587444" />
-                  <mssgle:LineSegment
-                    End="-51,43.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="837,711"
+          Size="837,754"
+          Id="Package\TBDWFT_INVOICE_TO_NEMOSPED"
+          TopLeft="116,267" />
         <NodeLayout
-          Size="201,42"
-          Id="Package\TBDWFT_INVOICE_TO_NEMOSPED\Upd DATE Loaded_row0"
-          TopLeft="93,516" />
+          Size="157,42"
+          Id="Package\TBLOG_PACKAGE\Assign SITE_ID"
+          TopLeft="27,29.4722222222222" />
+        <NodeLayout
+          Size="240,42"
+          Id="Package\TBLOG_PACKAGE\Ins TBLOG_PACKAGE + Max ID"
+          TopLeft="323.166666666667,47" />
+        <NodeLayout
+          Size="199,42"
+          Id="Package\TBLOG_PACKAGE\Upd TBLOG_PACKAGE"
+          TopLeft="343.944444444444,123.555555555555" />
         <EdgeLayout
-          Id="Package\TBDWFT_INVOICE_TO_NEMOSPED.PrecedenceConstraints[Constraint 10]"
-          TopLeft="291,389">
+          Id="Package\TBLOG_PACKAGE.PrecedenceConstraints[Constraint 1]"
+          TopLeft="184,50.4722222222222">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-97.5,127"
+              EndConnector="139.166666666667,17.5277777777778"
               Start="0,0"
-              End="-97.5,119.5">
+              End="131.666666666667,17.5277777777778">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,47.4640522875817" />
+                    End="65.5833333333335,0" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,47.4640522875817"
-                    Point2="0,51.4640522875817"
-                    Point3="-4,51.4640522875817" />
+                    Point1="65.5833333333335,0"
+                    Point2="69.5833333333335,0"
+                    Point3="69.5833333333335,4" />
                   <mssgle:LineSegment
-                    End="-93.5,51.4640522875817" />
+                    End="69.5833333333335,13.5277777777778" />
                   <mssgle:CubicBezierSegment
-                    Point1="-93.5,51.4640522875817"
-                    Point2="-97.5,51.4640522875817"
-                    Point3="-97.5,55.4640522875817" />
+                    Point1="69.5833333333335,13.5277777777778"
+                    Point2="69.5833333333335,17.5277777777778"
+                    Point3="73.5833333333335,17.5277777777778" />
                   <mssgle:LineSegment
-                    End="-97.5,119.5" />
+                    End="131.666666666667,17.5277777777778" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-56.75,56.4640522875817,16,16"
+              BoundingBox="0,0,0,0"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="293,42"
-          Id="Package\TBDWFT_INVOICE_TO_NEMOSPED\Last Upd TBLOG_PACKAGE_TABLE_row0"
-          TopLeft="70,610" />
         <EdgeLayout
-          Id="Package\TBDWFT_INVOICE_TO_NEMOSPED.PrecedenceConstraints[Constraint 11]"
-          TopLeft="193.5,558">
+          Id="Package\TBLOG_PACKAGE.PrecedenceConstraints[Constraint 2]"
+          TopLeft="481.833333333334,89">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="23,52"
+              EndConnector="-38.3888888888896,34.5555555555552"
               Start="0,0"
-              End="23,44.5">
+              End="-38.3888888888896,27.0555555555552">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,22" />
+                    End="0,9.95952906548916" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,22"
-                    Point2="0,26"
-                    Point3="4,26" />
+                    Point1="0,9.95952906548916"
+                    Point2="0,13.9595290654892"
+                    Point3="-4,13.9595290654892" />
                   <mssgle:LineSegment
-                    End="19,26" />
+                    End="-34.3888888888896,13.9595290654892" />
                   <mssgle:CubicBezierSegment
-                    Point1="19,26"
-                    Point2="23,26"
-                    Point3="23,30" />
+                    Point1="-34.3888888888896,13.9595290654892"
+                    Point2="-38.3888888888896,13.9595290654892"
+                    Point3="-38.3888888888896,17.9595290654892" />
                   <mssgle:LineSegment
-                    End="23,44.5" />
+                    End="-38.3888888888896,27.0555555555552" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="False"
+          PanelSize="568,283"
+          Size="199,43"
+          Id="Package\TBLOG_PACKAGE"
+          TopLeft="221,159" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="1170.25,411">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,67"
+              Start="0,0"
+              End="0,59.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,59.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -4917,39 +4934,32 @@ from
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <ContainerLayout
-          HeaderHeight="43"
-          IsExpanded="False"
-          PanelSize="837,711"
-          Size="837,43"
-          Id="Package\TBDWFT_INVOICE_TO_NEMOSPED"
-          TopLeft="116,266" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 1]"
           TopLeft="320.5,202">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="214,64"
+              EndConnector="214,65"
               Start="0,0"
-              End="214,56.5">
+              End="214,57.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,28" />
+                    End="0,28.5" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,28"
-                    Point2="0,32"
-                    Point3="4,32" />
+                    Point1="0,28.5"
+                    Point2="0,32.5"
+                    Point3="4,32.5" />
                   <mssgle:LineSegment
-                    End="210,32" />
+                    End="210,32.5" />
                   <mssgle:CubicBezierSegment
-                    Point1="210,32"
-                    Point2="214,32"
-                    Point3="214,36" />
+                    Point1="210,32.5"
+                    Point2="214,32.5"
+                    Point3="214,36.5" />
                   <mssgle:LineSegment
-                    End="214,56.5" />
+                    End="214,57.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -4960,95 +4970,79 @@ from
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 2]"
-          TopLeft="396.333333333333,309">
+          TopLeft="953,519.666666666667">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="770.166666666667,60"
+              EndConnector="150,-129.666666666667"
               Start="0,0"
-              End="770.166666666667,52.5">
+              End="142.5,-129.666666666667">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,20.0686859050799" />
+                    End="56.1905770248809,0" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,20.0686859050799"
-                    Point2="0,24.0686859050799"
-                    Point3="4,24.0686859050799" />
+                    Point1="56.1905770248809,0"
+                    Point2="60.1905770248809,0"
+                    Point3="60.1905770248809,-4" />
                   <mssgle:LineSegment
-                    End="766.166666666667,24.0686859050799" />
+                    End="60.1905770248809,-125.666666666667" />
                   <mssgle:CubicBezierSegment
-                    Point1="766.166666666667,24.0686859050799"
-                    Point2="770.166666666667,24.0686859050799"
-                    Point3="770.166666666667,28.0686859050799" />
+                    Point1="60.1905770248809,-125.666666666667"
+                    Point2="60.1905770248809,-129.666666666667"
+                    Point3="64.1905770248809,-129.666666666667" />
                   <mssgle:LineSegment
-                    End="770.166666666667,52.5" />
+                    End="142.5,-129.666666666667" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="377.083333333333,29.0686859050799,16,16"
+              BoundingBox="52.1905770248809,1,16,16"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="252,42"
-          Id="Package\Last Upd TBLOG_PACKAGE_row0"
-          TopLeft="1044,711" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 3]"
-          TopLeft="672.666666666667,309">
+          TopLeft="953,768.333333333333">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="497.333333333333,402"
+              EndConnector="91,-36.3333333333333"
               Start="0,0"
-              End="497.333333333333,394.5">
+              End="83.5,-36.3333333333333">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,157.260195564035" />
+                    End="32.5156167284277,0" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,157.260195564035"
-                    Point2="0,161.260195564035"
-                    Point3="4,161.260195564035" />
+                    Point1="32.5156167284277,0"
+                    Point2="36.5156167284277,0"
+                    Point3="36.5156167284277,-4" />
                   <mssgle:LineSegment
-                    End="493.333333333333,161.260195564035" />
+                    End="36.5156167284277,-32.3333333333333" />
                   <mssgle:CubicBezierSegment
-                    Point1="493.333333333333,161.260195564035"
-                    Point2="497.333333333333,161.260195564035"
-                    Point3="497.333333333333,165.260195564035" />
+                    Point1="36.5156167284277,-32.3333333333333"
+                    Point2="36.5156167284277,-36.3333333333333"
+                    Point3="40.5156167284277,-36.3333333333333" />
                   <mssgle:LineSegment
-                    End="497.333333333333,394.5" />
+                    End="83.5,-36.3333333333333" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="240.666666666667,166.260195564035,16,16"
+              BoundingBox="28.5156167284277,1,16,16"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </Package>
-  <DtsEventHandler
-    design-time-name="Package\TBLOG_PACKAGE.EventHandlers[OnError]">
-    <LayoutInfo>
-      <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
-        <NodeLayout
-          Size="149,42"
-          Id="Package\TBLOG_PACKAGE.EventHandlers[OnError]\Email ERROR"
-          TopLeft="60,60" />
-      </GraphLayout>
-    </LayoutInfo>
-  </DtsEventHandler>
   <DtsEventHandler
     design-time-name="Package.EventHandlers[OnError]">
     <LayoutInfo>
@@ -5069,6 +5063,18 @@ from
         <NodeLayout
           Size="149,42"
           Id="Package\Last Upd TBLOG_PACKAGE.EventHandlers[OnError]\Email ERROR"
+          TopLeft="60,60" />
+      </GraphLayout>
+    </LayoutInfo>
+  </DtsEventHandler>
+  <DtsEventHandler
+    design-time-name="Package\Last Upd TBLOG_PACKAGE_row0.EventHandlers[OnError]">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="149,42"
+          Id="Package\Last Upd TBLOG_PACKAGE_row0.EventHandlers[OnError]\Email ERROR"
           TopLeft="60,60" />
       </GraphLayout>
     </LayoutInfo>
@@ -5095,79 +5101,51 @@ from
           Id="Package\TBDWFT_INVOICE_TO_NEMOSPED\TBDWFT_INVOICE_TO_NEMOSPED\Data Conversion"
           TopLeft="194,123" />
         <NodeLayout
-          Size="176,42"
-          Id="Package\TBDWFT_INVOICE_TO_NEMOSPED\TBDWFT_INVOICE_TO_NEMOSPED\Flat File Destination"
-          TopLeft="720,355" />
-        <NodeLayout
-          Size="157,42"
-          Id="Package\TBDWFT_INVOICE_TO_NEMOSPED\TBDWFT_INVOICE_TO_NEMOSPED\OLE DB Source"
-          TopLeft="86,36" />
+          Size="177,42"
+          Id="Package\TBDWFT_INVOICE_TO_NEMOSPED\TBDWFT_INVOICE_TO_NEMOSPED\OLE DB Destination"
+          TopLeft="205,354" />
         <NodeLayout
           Size="123,42"
           Id="Package\TBDWFT_INVOICE_TO_NEMOSPED\TBDWFT_INVOICE_TO_NEMOSPED\Multicast"
           TopLeft="464,270" />
         <NodeLayout
-          Size="177,42"
-          Id="Package\TBDWFT_INVOICE_TO_NEMOSPED\TBDWFT_INVOICE_TO_NEMOSPED\OLE DB Destination"
-          TopLeft="205,354" />
+          Size="176,42"
+          Id="Package\TBDWFT_INVOICE_TO_NEMOSPED\TBDWFT_INVOICE_TO_NEMOSPED\Flat File Destination"
+          TopLeft="720,355" />
         <NodeLayout
           Size="181,42"
           Id="Package\TBDWFT_INVOICE_TO_NEMOSPED\TBDWFT_INVOICE_TO_NEMOSPED\Add Technical Fields"
           TopLeft="282,216" />
+        <NodeLayout
+          Size="157,42"
+          Id="Package\TBDWFT_INVOICE_TO_NEMOSPED\TBDWFT_INVOICE_TO_NEMOSPED\OLE DB Source"
+          TopLeft="86,37" />
         <EdgeLayout
-          Id="Package\TBDWFT_INVOICE_TO_NEMOSPED\TBDWFT_INVOICE_TO_NEMOSPED.Paths[Data Conversion Output]"
-          TopLeft="274.5,165">
+          Id="Package\TBDWFT_INVOICE_TO_NEMOSPED\TBDWFT_INVOICE_TO_NEMOSPED.Paths[OLE DB Source Output]"
+          TopLeft="164.5,79">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="98,51"
+              EndConnector="110,44"
               Start="0,0"
-              End="98,43.5">
+              End="110,36.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,21.5" />
+                    End="0,18" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,21.5"
-                    Point2="0,25.5"
-                    Point3="4,25.5" />
+                    Point1="0,18"
+                    Point2="0,22"
+                    Point3="4,22" />
                   <mssgle:LineSegment
-                    End="94,25.5" />
+                    End="106,22" />
                   <mssgle:CubicBezierSegment
-                    Point1="94,25.5"
-                    Point2="98,25.5"
-                    Point3="98,29.5" />
+                    Point1="106,22"
+                    Point2="110,22"
+                    Point3="110,26" />
                   <mssgle:LineSegment
-                    End="98,43.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\TBDWFT_INVOICE_TO_NEMOSPED\TBDWFT_INVOICE_TO_NEMOSPED.Paths[Derived Column Output]"
-          TopLeft="463,237">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="62.5,33"
-              Start="0,0"
-              End="62.5,25.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="58.5,0" />
-                  <mssgle:CubicBezierSegment
-                    Point1="58.5,0"
-                    Point2="62.5,0"
-                    Point3="62.5,4" />
-                  <mssgle:LineSegment
-                    End="62.5,25.5" />
+                    End="110,36.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -5211,40 +5189,6 @@ from
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\TBDWFT_INVOICE_TO_NEMOSPED\TBDWFT_INVOICE_TO_NEMOSPED.Paths[OLE DB Source Output]"
-          TopLeft="164.5,78">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="110,45"
-              Start="0,0"
-              End="110,37.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,18.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,18.5"
-                    Point2="0,22.5"
-                    Point3="4,22.5" />
-                  <mssgle:LineSegment
-                    End="106,22.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="106,22.5"
-                    Point2="110,22.5"
-                    Point3="110,26.5" />
-                  <mssgle:LineSegment
-                    End="110,37.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
           Id="Package\TBDWFT_INVOICE_TO_NEMOSPED\TBDWFT_INVOICE_TO_NEMOSPED.Paths[Multicast Output 1]"
           TopLeft="506.333333333333,312">
           <EdgeLayout.Curve>
@@ -5278,17 +5222,87 @@ from
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
+        <EdgeLayout
+          Id="Package\TBDWFT_INVOICE_TO_NEMOSPED\TBDWFT_INVOICE_TO_NEMOSPED.Paths[Derived Column Output]"
+          TopLeft="463,237">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="62.5,33"
+              Start="0,0"
+              End="62.5,25.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="58.5,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="58.5,0"
+                    Point2="62.5,0"
+                    Point3="62.5,4" />
+                  <mssgle:LineSegment
+                    End="62.5,25.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\TBDWFT_INVOICE_TO_NEMOSPED\TBDWFT_INVOICE_TO_NEMOSPED.Paths[Data Conversion Output]"
+          TopLeft="274.5,165">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="98,51"
+              Start="0,0"
+              End="98,43.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,21.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,21.5"
+                    Point2="0,25.5"
+                    Point3="4,25.5" />
+                  <mssgle:LineSegment
+                    End="94,25.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="94,25.5"
+                    Point2="98,25.5"
+                    Point3="98,29.5" />
+                  <mssgle:LineSegment
+                    End="98,43.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\TBDWFT_INVOICE_TO_NEMOSPED\TBDWFT_INVOICE_TO_NEMOSPED\OLE DB Source">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
   <DtsEventHandler
-    design-time-name="Package\Last Upd TBLOG_PACKAGE_row0.EventHandlers[OnError]">
+    design-time-name="Package\TBLOG_PACKAGE.EventHandlers[OnError]">
     <LayoutInfo>
       <GraphLayout
         Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
         <NodeLayout
           Size="149,42"
-          Id="Package\Last Upd TBLOG_PACKAGE_row0.EventHandlers[OnError]\Email ERROR"
+          Id="Package\TBLOG_PACKAGE.EventHandlers[OnError]\Email ERROR"
           TopLeft="60,60" />
       </GraphLayout>
     </LayoutInfo>

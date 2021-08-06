@@ -25,7 +25,7 @@
           <SSIS:Property SSIS:Name="CreatorName">SINTE00\mluchini</SSIS:Property>
           <SSIS:Property SSIS:Name="CreatorComputerName">SRV-DIR-DEV</SSIS:Property>
           <SSIS:Property SSIS:Name="Description">Data Integration Repository</SSIS:Property>
-          <SSIS:Property SSIS:Name="PasswordVerifier" SSIS:Sensitive="1" SSIS:Salt="YnQFaaPfXD8=" SSIS:IV="+8u/QKtBwzAZavmL630q4A==" SSIS:Algorithm="http://www.w3.org/2001/04/xmlenc#aes256-cbc">XbKCbb9UudQ+A3kejEoi8oBYZG7gejl2jGVQ2CJQRvOhSeaPthZgrMb6u1W1ajRuGt90eVHv/qkmko5ueQnjRDlYfSr9gB+qkKnk4q30g5J0wA6cOWZZWEMpgLCJopukeU0lPCuN8WpxpnSNe6xqu4QjPIcOpro1VGlZgLkz4t/48cbltiJCNmaRFYFOhiuK</SSIS:Property>
+          <SSIS:Property SSIS:Name="PasswordVerifier" SSIS:Sensitive="1" SSIS:Salt="H7VtBuvQcRo=" SSIS:IV="/Djuji46XDsYFBc+e/ebXA==" SSIS:Algorithm="http://www.w3.org/2001/04/xmlenc#aes256-cbc">RZwoX0ShVf0I0fcFKSvnJs06yBsRBmx7vE5IBgPm7tBW2qrqAR2C/iFD1+uVZ82HC5gsXIoRnxAQSoAdgblj0oqWCJ9gbZrNWrvAaLzCsdH2UWe7saLy382xEZkp651NmedK3K1A2bdE2XfTxAW63RdgCl+ciGM4hQG9TxrDwWarHLz9hZDePMRhjehh4sWf</SSIS:Property>
           <SSIS:Property SSIS:Name="FormatVersion">1</SSIS:Property>
         </SSIS:Properties>
         <SSIS:Packages>
@@ -9542,8 +9542,6 @@
                     <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
                     <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
                     <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
-                    <SSIS:Property SSIS:Name="Value">
-                    </SSIS:Property>
                     <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
                   </SSIS:Properties>
                 </SSIS:Parameter>
@@ -9557,8 +9555,6 @@
                     <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
                     <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
                     <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
-                    <SSIS:Property SSIS:Name="Value">
-                    </SSIS:Property>
                     <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
                   </SSIS:Properties>
                 </SSIS:Parameter>
@@ -10360,10 +10356,10 @@
                 <SSIS:Property SSIS:Name="Name">NEMOSPED_INVOICE</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionBuild">124</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">166</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionComments">
                 </SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionGUID">{C0D5744B-DB6B-4511-95A4-99C52BFA8747}</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{07922940-0D57-49F7-843C-0CD43C5D03D1}</SSIS:Property>
                 <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
                 <SSIS:Property SSIS:Name="Description">
                 </SSIS:Property>
