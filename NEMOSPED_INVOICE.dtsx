@@ -12,8 +12,8 @@
   DTS:ObjectName="NEMOSPED_INVOICE"
   DTS:PackageType="5"
   DTS:ProtectionLevel="2"
-  DTS:VersionBuild="214"
-  DTS:VersionGUID="{BA06979E-CD44-415C-8B0E-C55F2F816BD8}">
+  DTS:VersionBuild="220"
+  DTS:VersionGUID="{33BB1EF3-728D-490D-9F95-39434B5801D6}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -2790,11 +2790,12 @@ from
        (select [C_Anagrafica_Controparti_Sede],C_Anagrafica_Controparti, [d_Anagrafica_Controparti_Sede],d_Anagrafica_Controparti_Sede_2,indirizzo,indirizzo_2,cap,località, provincia, C_Anagrafica_Nazioni
        from [PARCEL_PRD].[PARCEL2008_SINT].[dbo].Anagrafica_Controparti_Sede
        ) f on a.c_sedefattura =f.C_Anagrafica_Controparti_Sede and a.C_ClienteFattura=f.C_Anagrafica_Controparti left join
-	   (
-	    select distinct num_doc_fattura, data_doc_fattura
-		from [db_owner].[TBDWFT_INVOICE_TO_NEMOSPED]
-		where row_sts_flg=1 and site_id = ?
-	   ) x on a.Numero_Doc = x.num_doc_fattura and a.Data_Doc = x.data_doc_fattura
+       
+       (
+       select distinct num_doc_fattura, data_doc_fattura
+       from [db_owner].[TBDWFT_INVOICE_TO_NEMOSPED]
+       where row_sts_flg=1 and site_id = ?
+        ) x on a.Numero_Doc = x.num_doc_fattura and a.Data_Doc = x.data_doc_fattura
 order by 2,1</property>
                     <property
                       dataType="System.String"
@@ -5007,7 +5008,9 @@ from
 	select distinct x.num_doc_fattura, x.data_doc_fattura --distinct needed to avoid duplicates during the join with Y, in case more than one row of an invoice has been updated or deleted
 	from
 	(	 
-		--Invoices with some rows changed or row added
+select *
+from (		
+--Invoices with some rows changed or row added
 		select num_doc_fattura, data_doc_fattura, desc_articolo_agg, cod_cliente_fattura, desc_cliente_fattura, sede_consegna_fattura, sede_localita_fattura, sede_cap_fattura, sede_nazione_fattura, 
 		cod_cliente_consegna, desc_cliente_consegna, sede_consegna, sede_localita_consegna, sede_cap_consegna, sede_nazione_consegna, telefono_consegna, email_consegna, 
 		articolo, desc_articolo, quantita, unita_misura, lotto
@@ -5026,11 +5029,13 @@ from
 			where row_sts_flg=1 and site_id = ?
 			group by num_doc_fattura, data_doc_fattura
 			) b on a.num_doc_fattura = b.num_doc_fattura and a.data_doc_fattura = b.data_doc_fattura and a.tblog_package_table_id = b.max_table_id
-		where a.row_sts_flg=1 and a.site_id = ?
+		where a.row_sts_flg=1 and a.site_id = ? ) U1
 
 		
 		UNION
 		
+select *
+from (
 		--Invoices with some rows deleted
 		select a.num_doc_fattura, a.data_doc_fattura, a.desc_articolo_agg, a.cod_cliente_fattura, a.desc_cliente_fattura, a.sede_consegna_fattura, a.sede_localita_fattura, a.sede_cap_fattura, a.sede_nazione_fattura, 
 		a.cod_cliente_consegna, a.desc_cliente_consegna, a.sede_consegna, a.sede_localita_consegna, a.sede_cap_consegna, a.sede_nazione_consegna, a.telefono_consegna, a.email_consegna, 
@@ -5050,7 +5055,7 @@ from
 		cod_cliente_consegna, desc_cliente_consegna, sede_consegna, sede_localita_consegna, sede_cap_consegna, sede_nazione_consegna, telefono_consegna, email_consegna, 
 		articolo, desc_articolo, quantita, unita_misura, lotto
 		from [db_owner].[TBDWTMP_INVOICE_TO_NEMOSPED]
-		where row_sts_flg=1 and site_id = ?
+		where row_sts_flg=1 and site_id = ? ) U2
 	) x
 ) x join
 
