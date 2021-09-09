@@ -12,8 +12,8 @@
   DTS:ObjectName="NEMOSPED_ARTICLE"
   DTS:PackageType="5"
   DTS:ProtectionLevel="2"
-  DTS:VersionBuild="189"
-  DTS:VersionGUID="{4749D8D6-EDE4-446B-B63A-3ED030F3A90F}">
+  DTS:VersionBuild="190"
+  DTS:VersionGUID="{7EFAD1FB-2CC3-42D5-88C2-4AA626E2A73D}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -1704,7 +1704,7 @@ Select
  a.um_cd as Codice_UM,
  a.expiry_days_nbr as Scadenza_GG,
  cast (a.N_SKU_per_conf as int) as N_SKU_per_conf,
- cast (a.N_BOX_per_pallet as int) * cast (a.N_SKU_per_conf as int) as N_SKU_per_pallet,
+ case when a.N_SKU_per_conf = 0 then cast (a.N_BOX_per_pallet as int) else cast (a.N_BOX_per_pallet as int) * cast (a.N_SKU_per_conf as int) end  as N_SKU_per_pallet,
  case when len(a.GTIN_L1)=14 then substring(a.GTIN_L1,2,len(a.GTIN_L1))else a.GTIN_L1 end EAN13,
  a.GTIN_L1 as GTIN
 from
@@ -2588,7 +2588,7 @@ from
         <NodeLayout
           Size="268,42"
           Id="Package\TBDWFT_ARTICLE_TO_NEMOSPED\TBDWFT_ARTICLE_TO_NEMOSPED"
-          TopLeft="325,298" />
+          TopLeft="325,299" />
         <NodeLayout
           Size="171,42"
           Id="Package\TBDWFT_ARTICLE_TO_NEMOSPED\Upd DATE Loaded"
@@ -2599,26 +2599,26 @@ from
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="61.1666666666666,79.5"
+              EndConnector="61.1666666666666,80.5"
               Start="0,0"
-              End="61.1666666666666,72">
+              End="61.1666666666666,73">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,43.4169139465875" />
+                    End="0,44.013353115727" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,43.4169139465875"
-                    Point2="0,47.4169139465875"
-                    Point3="4,47.4169139465875" />
+                    Point1="0,44.013353115727"
+                    Point2="0,48.013353115727"
+                    Point3="4,48.013353115727" />
                   <mssgle:LineSegment
-                    End="57.1666666666666,47.4169139465875" />
+                    End="57.1666666666666,48.013353115727" />
                   <mssgle:CubicBezierSegment
-                    Point1="57.1666666666666,47.4169139465875"
-                    Point2="61.1666666666666,47.4169139465875"
-                    Point3="61.1666666666666,51.4169139465875" />
+                    Point1="57.1666666666666,48.013353115727"
+                    Point2="61.1666666666666,48.013353115727"
+                    Point3="61.1666666666666,52.013353115727" />
                   <mssgle:LineSegment
-                    End="61.1666666666666,72" />
+                    End="61.1666666666666,73" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -2677,26 +2677,26 @@ from
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-125.666666666667,71"
+              EndConnector="-125.666666666667,72"
               Start="0,0"
-              End="-125.666666666667,63.5">
+              End="-125.666666666667,64.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,38.3471810089021" />
+                    End="0,38.9436201780415" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,38.3471810089021"
-                    Point2="0,42.3471810089021"
-                    Point3="-4,42.3471810089021" />
+                    Point1="0,38.9436201780415"
+                    Point2="0,42.9436201780415"
+                    Point3="-4,42.9436201780415" />
                   <mssgle:LineSegment
-                    End="-121.666666666667,42.3471810089021" />
+                    End="-121.666666666667,42.9436201780415" />
                   <mssgle:CubicBezierSegment
-                    Point1="-121.666666666667,42.3471810089021"
-                    Point2="-125.666666666667,42.3471810089021"
-                    Point3="-125.666666666667,46.3471810089021" />
+                    Point1="-121.666666666667,42.9436201780415"
+                    Point2="-125.666666666667,42.9436201780415"
+                    Point3="-125.666666666667,46.9436201780415" />
                   <mssgle:LineSegment
-                    End="-125.666666666667,63.5" />
+                    End="-125.666666666667,64.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -2707,30 +2707,30 @@ from
         </EdgeLayout>
         <EdgeLayout
           Id="Package\TBDWFT_ARTICLE_TO_NEMOSPED.PrecedenceConstraints[Constraint 6]"
-          TopLeft="459,340">
+          TopLeft="459,341">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="12,55.5"
+              EndConnector="12,54.5"
               Start="0,0"
-              End="12,48">
+              End="12,47">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,23.75" />
+                    End="0,23.25" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,23.75"
-                    Point2="0,27.75"
-                    Point3="4,27.75" />
+                    Point1="0,23.25"
+                    Point2="0,27.25"
+                    Point3="4,27.25" />
                   <mssgle:LineSegment
-                    End="8,27.75" />
+                    End="8,27.25" />
                   <mssgle:CubicBezierSegment
-                    Point1="8,27.75"
-                    Point2="12,27.75"
-                    Point3="12,31.75" />
+                    Point1="8,27.25"
+                    Point2="12,27.25"
+                    Point3="12,31.25" />
                   <mssgle:LineSegment
-                    End="12,48" />
+                    End="12,47" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -3013,21 +3013,29 @@ from
       <GraphLayout
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="181,42"
-          Id="Package\TBDWFT_ARTICLE_TO_NEMOSPED\TBDWFT_ARTICLE_TO_NEMOSPED\Add Technical Fields"
-          TopLeft="316,203" />
+          Size="161,42"
+          Id="Package\TBDWFT_ARTICLE_TO_NEMOSPED\TBDWFT_ARTICLE_TO_NEMOSPED\Data Conversion"
+          TopLeft="188,115" />
         <NodeLayout
           Size="229,42"
           Id="Package\TBDWFT_ARTICLE_TO_NEMOSPED\TBDWFT_ARTICLE_TO_NEMOSPED\TRUNCATE + OLE DB Source"
           TopLeft="80,27" />
         <NodeLayout
+          Size="176,42"
+          Id="Package\TBDWFT_ARTICLE_TO_NEMOSPED\TBDWFT_ARTICLE_TO_NEMOSPED\Flat File Destination"
+          TopLeft="700,375" />
+        <NodeLayout
           Size="177,42"
           Id="Package\TBDWFT_ARTICLE_TO_NEMOSPED\TBDWFT_ARTICLE_TO_NEMOSPED\OLE DB Destination"
           TopLeft="174,373" />
         <NodeLayout
-          Size="161,42"
-          Id="Package\TBDWFT_ARTICLE_TO_NEMOSPED\TBDWFT_ARTICLE_TO_NEMOSPED\Data Conversion"
-          TopLeft="188,115" />
+          Size="123,42"
+          Id="Package\TBDWFT_ARTICLE_TO_NEMOSPED\TBDWFT_ARTICLE_TO_NEMOSPED\Multicast"
+          TopLeft="509,283" />
+        <NodeLayout
+          Size="181,42"
+          Id="Package\TBDWFT_ARTICLE_TO_NEMOSPED\TBDWFT_ARTICLE_TO_NEMOSPED\Add Technical Fields"
+          TopLeft="316,203" />
         <EdgeLayout
           Id="Package\TBDWFT_ARTICLE_TO_NEMOSPED\TBDWFT_ARTICLE_TO_NEMOSPED.Paths[OLE DB Source Output]"
           TopLeft="194.5,69">
@@ -3062,82 +3070,6 @@ from
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <EdgeLayout
-          Id="Package\TBDWFT_ARTICLE_TO_NEMOSPED\TBDWFT_ARTICLE_TO_NEMOSPED.Paths[Data Conversion Output]"
-          TopLeft="268.5,157">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="138,46"
-              Start="0,0"
-              End="138,38.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,19" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,19"
-                    Point2="0,23"
-                    Point3="4,23" />
-                  <mssgle:LineSegment
-                    End="134,23" />
-                  <mssgle:CubicBezierSegment
-                    Point1="134,23"
-                    Point2="138,23"
-                    Point3="138,27" />
-                  <mssgle:LineSegment
-                    End="138,38.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="123,42"
-          Id="Package\TBDWFT_ARTICLE_TO_NEMOSPED\TBDWFT_ARTICLE_TO_NEMOSPED\Multicast"
-          TopLeft="509,283" />
-        <EdgeLayout
-          Id="Package\TBDWFT_ARTICLE_TO_NEMOSPED\TBDWFT_ARTICLE_TO_NEMOSPED.Paths[Derived Column Output]"
-          TopLeft="406.5,245">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="164,38"
-              Start="0,0"
-              End="164,30.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,15" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,15"
-                    Point2="0,19"
-                    Point3="4,19" />
-                  <mssgle:LineSegment
-                    End="160,19" />
-                  <mssgle:CubicBezierSegment
-                    Point1="160,19"
-                    Point2="164,19"
-                    Point3="164,23" />
-                  <mssgle:LineSegment
-                    End="164,30.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="176,42"
-          Id="Package\TBDWFT_ARTICLE_TO_NEMOSPED\TBDWFT_ARTICLE_TO_NEMOSPED\Flat File Destination"
-          TopLeft="700,375" />
         <EdgeLayout
           Id="Package\TBDWFT_ARTICLE_TO_NEMOSPED\TBDWFT_ARTICLE_TO_NEMOSPED.Paths[Multicast Output 3]"
           TopLeft="589.666666666667,325">
@@ -3206,21 +3138,77 @@ from
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
+        <EdgeLayout
+          Id="Package\TBDWFT_ARTICLE_TO_NEMOSPED\TBDWFT_ARTICLE_TO_NEMOSPED.Paths[Derived Column Output]"
+          TopLeft="406.5,245">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="164,38"
+              Start="0,0"
+              End="164,30.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,15" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,15"
+                    Point2="0,19"
+                    Point3="4,19" />
+                  <mssgle:LineSegment
+                    End="160,19" />
+                  <mssgle:CubicBezierSegment
+                    Point1="160,19"
+                    Point2="164,19"
+                    Point3="164,23" />
+                  <mssgle:LineSegment
+                    End="164,30.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\TBDWFT_ARTICLE_TO_NEMOSPED\TBDWFT_ARTICLE_TO_NEMOSPED.Paths[Data Conversion Output]"
+          TopLeft="268.5,157">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="138,46"
+              Start="0,0"
+              End="138,38.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,19" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,19"
+                    Point2="0,23"
+                    Point3="4,23" />
+                  <mssgle:LineSegment
+                    End="134,23" />
+                  <mssgle:CubicBezierSegment
+                    Point1="134,23"
+                    Point2="138,23"
+                    Point3="138,27" />
+                  <mssgle:LineSegment
+                    End="138,38.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
-  <DtsEventHandler
-    design-time-name="Package\TBLOG_PACKAGE.EventHandlers[OnError]">
-    <LayoutInfo>
-      <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
-        <NodeLayout
-          Size="149,42"
-          Id="Package\TBLOG_PACKAGE.EventHandlers[OnError]\Email ERROR"
-          TopLeft="60,60" />
-      </GraphLayout>
-    </LayoutInfo>
-  </DtsEventHandler>
   <PipelineComponentMetadata
     design-time-name="Package\TBDWFT_ARTICLE_TO_NEMOSPED\TBDWFT_ARTICLE_TO_NEMOSPED\TRUNCATE + OLE DB Source">
     <Properties>
@@ -3242,5 +3230,17 @@ from
       </Property>
     </Properties>
   </PipelineComponentMetadata>
+  <DtsEventHandler
+    design-time-name="Package\TBLOG_PACKAGE.EventHandlers[OnError]">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="149,42"
+          Id="Package\TBLOG_PACKAGE.EventHandlers[OnError]\Email ERROR"
+          TopLeft="60,60" />
+      </GraphLayout>
+    </LayoutInfo>
+  </DtsEventHandler>
 </Objects>]]></DTS:DesignTimeProperties>
 </DTS:Executable>
