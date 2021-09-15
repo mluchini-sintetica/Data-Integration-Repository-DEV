@@ -12,8 +12,8 @@
   DTS:ObjectName="NEMOSPED_INVOICE"
   DTS:PackageType="5"
   DTS:ProtectionLevel="2"
-  DTS:VersionBuild="220"
-  DTS:VersionGUID="{33BB1EF3-728D-490D-9F95-39434B5801D6}">
+  DTS:VersionBuild="236"
+  DTS:VersionGUID="{74418474-09AF-443B-9E77-90966DEF30F8}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -1131,7 +1131,7 @@
           DTS:LocaleID="-1"
           DTS:ObjectName="Last Max DATE Loaded and DWH_DELTA_DT"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="1">
+          DTS:ThreadHint="2">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
@@ -1298,7 +1298,7 @@
           DTS:LocaleID="-1"
           DTS:ObjectName="New Max DATE Loaded"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="2">
+          DTS:ThreadHint="1">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
@@ -1694,14 +1694,14 @@
                           refId="Package\TBDWFT_INVOICE_TO_NEMOSPED\TBDWFT_INVOICE_TO_NEMOSPED_ins\Data Conversion.Inputs[Data Conversion Input].Columns[Descrizione_cliente_fatturazione]"
                           cachedCodepage="1252"
                           cachedDataType="str"
-                          cachedLength="40"
+                          cachedLength="81"
                           cachedName="Descrizione_cliente_fatturazione"
                           lineageId="Package\TBDWFT_INVOICE_TO_NEMOSPED\TBDWFT_INVOICE_TO_NEMOSPED_ins\OLE DB Source + TRUNCATE tmp.Outputs[OLE DB Source Output].Columns[Descrizione_cliente_fatturazione]" />
                         <inputColumn
                           refId="Package\TBDWFT_INVOICE_TO_NEMOSPED\TBDWFT_INVOICE_TO_NEMOSPED_ins\Data Conversion.Inputs[Data Conversion Input].Columns[Sede_consegna_fatturazione]"
                           cachedCodepage="1252"
                           cachedDataType="str"
-                          cachedLength="150"
+                          cachedLength="301"
                           cachedName="Sede_consegna_fatturazione"
                           lineageId="Package\TBDWFT_INVOICE_TO_NEMOSPED\TBDWFT_INVOICE_TO_NEMOSPED_ins\OLE DB Source + TRUNCATE tmp.Outputs[OLE DB Source Output].Columns[Sede_consegna_fatturazione]" />
                         <inputColumn
@@ -1715,14 +1715,14 @@
                           refId="Package\TBDWFT_INVOICE_TO_NEMOSPED\TBDWFT_INVOICE_TO_NEMOSPED_ins\Data Conversion.Inputs[Data Conversion Input].Columns[sede_cap_fatturazione]"
                           cachedCodepage="1252"
                           cachedDataType="str"
-                          cachedLength="8"
+                          cachedLength="9"
                           cachedName="sede_cap_fatturazione"
                           lineageId="Package\TBDWFT_INVOICE_TO_NEMOSPED\TBDWFT_INVOICE_TO_NEMOSPED_ins\OLE DB Source + TRUNCATE tmp.Outputs[OLE DB Source Output].Columns[sede_cap_fatturazione]" />
                         <inputColumn
                           refId="Package\TBDWFT_INVOICE_TO_NEMOSPED\TBDWFT_INVOICE_TO_NEMOSPED_ins\Data Conversion.Inputs[Data Conversion Input].Columns[sede_nazione_fatturazione]"
                           cachedCodepage="1252"
                           cachedDataType="str"
-                          cachedLength="10"
+                          cachedLength="14"
                           cachedName="sede_nazione_fatturazione"
                           lineageId="Package\TBDWFT_INVOICE_TO_NEMOSPED\TBDWFT_INVOICE_TO_NEMOSPED_ins\OLE DB Source + TRUNCATE tmp.Outputs[OLE DB Source Output].Columns[sede_nazione_fatturazione]" />
                         <inputColumn
@@ -1743,14 +1743,14 @@
                           refId="Package\TBDWFT_INVOICE_TO_NEMOSPED\TBDWFT_INVOICE_TO_NEMOSPED_ins\Data Conversion.Inputs[Data Conversion Input].Columns[Descrizione_cliente_consegna]"
                           cachedCodepage="1252"
                           cachedDataType="str"
-                          cachedLength="40"
+                          cachedLength="81"
                           cachedName="Descrizione_cliente_consegna"
                           lineageId="Package\TBDWFT_INVOICE_TO_NEMOSPED\TBDWFT_INVOICE_TO_NEMOSPED_ins\OLE DB Source + TRUNCATE tmp.Outputs[OLE DB Source Output].Columns[Descrizione_cliente_consegna]" />
                         <inputColumn
                           refId="Package\TBDWFT_INVOICE_TO_NEMOSPED\TBDWFT_INVOICE_TO_NEMOSPED_ins\Data Conversion.Inputs[Data Conversion Input].Columns[Sede_consegna]"
                           cachedCodepage="1252"
                           cachedDataType="str"
-                          cachedLength="150"
+                          cachedLength="301"
                           cachedName="Sede_consegna"
                           lineageId="Package\TBDWFT_INVOICE_TO_NEMOSPED\TBDWFT_INVOICE_TO_NEMOSPED_ins\OLE DB Source + TRUNCATE tmp.Outputs[OLE DB Source Output].Columns[Sede_consegna]" />
                         <inputColumn
@@ -1771,7 +1771,7 @@
                           refId="Package\TBDWFT_INVOICE_TO_NEMOSPED\TBDWFT_INVOICE_TO_NEMOSPED_ins\Data Conversion.Inputs[Data Conversion Input].Columns[sede_nazione_consegna]"
                           cachedCodepage="1252"
                           cachedDataType="str"
-                          cachedLength="10"
+                          cachedLength="13"
                           cachedName="sede_nazione_consegna"
                           lineageId="Package\TBDWFT_INVOICE_TO_NEMOSPED\TBDWFT_INVOICE_TO_NEMOSPED_ins\OLE DB Source + TRUNCATE tmp.Outputs[OLE DB Source Output].Columns[sede_nazione_consegna]" />
                         <inputColumn
@@ -1866,7 +1866,7 @@
                           dataType="wstr"
                           errorOrTruncationOperation="Conversion"
                           errorRowDisposition="FailComponent"
-                          length="40"
+                          length="100"
                           lineageId="Package\TBDWFT_INVOICE_TO_NEMOSPED\TBDWFT_INVOICE_TO_NEMOSPED_ins\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Descrizione_cliente_fatturazione]"
                           name="Copy of Descrizione_cliente_fatturazione"
                           truncationRowDisposition="FailComponent">
@@ -2013,7 +2013,7 @@
                           dataType="wstr"
                           errorOrTruncationOperation="Conversion"
                           errorRowDisposition="FailComponent"
-                          length="40"
+                          length="100"
                           lineageId="Package\TBDWFT_INVOICE_TO_NEMOSPED\TBDWFT_INVOICE_TO_NEMOSPED_ins\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Descrizione_cliente_consegna]"
                           name="Copy of Descrizione_cliente_consegna"
                           truncationRowDisposition="FailComponent">
@@ -2445,7 +2445,7 @@
                         <inputColumn
                           refId="Package\TBDWFT_INVOICE_TO_NEMOSPED\TBDWFT_INVOICE_TO_NEMOSPED_ins\Flat File Destination.Inputs[Flat File Destination Input].Columns[Copy of Descrizione_cliente_consegna]"
                           cachedDataType="wstr"
-                          cachedLength="40"
+                          cachedLength="100"
                           cachedName="Copy of Descrizione_cliente_consegna"
                           externalMetadataColumnId="Package\TBDWFT_INVOICE_TO_NEMOSPED\TBDWFT_INVOICE_TO_NEMOSPED_ins\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[DESC_CLIENTE_CONSEGNA]"
                           lineageId="Package\TBDWFT_INVOICE_TO_NEMOSPED\TBDWFT_INVOICE_TO_NEMOSPED_ins\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Descrizione_cliente_consegna]" />
@@ -2494,7 +2494,7 @@
                         <inputColumn
                           refId="Package\TBDWFT_INVOICE_TO_NEMOSPED\TBDWFT_INVOICE_TO_NEMOSPED_ins\Flat File Destination.Inputs[Flat File Destination Input].Columns[Copy of Descrizione_cliente_fatturazione]"
                           cachedDataType="wstr"
-                          cachedLength="40"
+                          cachedLength="100"
                           cachedName="Copy of Descrizione_cliente_fatturazione"
                           externalMetadataColumnId="Package\TBDWFT_INVOICE_TO_NEMOSPED\TBDWFT_INVOICE_TO_NEMOSPED_ins\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[DESC_CLIENTE_FATTURA]"
                           lineageId="Package\TBDWFT_INVOICE_TO_NEMOSPED\TBDWFT_INVOICE_TO_NEMOSPED_ins\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Descrizione_cliente_fatturazione]" />
@@ -2728,21 +2728,21 @@
 select  
 	a.Numero_Doc as Numero_documento_fattura, 
 	format(a.Data_Doc,'yyyyMMdd') as Data_documento_fattura_trunc,
-a.Data_Doc as Data_documento_fattura,
+	a.Data_Doc as Data_documento_fattura,
 	 replace(replace(cast (c.D2_Anagrafica_Articolo as nvarchar(4000)),char(13),''), char(10),'') as descrizione_articolo_aggiuntiva,
-	case when a.C_Anagrafica_Controparte = a.C_ClienteFattura then a.C_Anagrafica_Controparte else a.C_ClienteFattura end as Codice_cliente_fatturazione,
-	case when a.C_Anagrafica_Controparte = a.C_ClienteFattura then a.D_Anagrafica_Controparte else f.d_Anagrafica_Controparti_Sede end as Descrizione_cliente_fatturazione,
-	case when a.C_Anagrafica_Controparte = a.C_ClienteFattura then a.sede_indirizzo else f.indirizzo end as Sede_consegna_fatturazione,
-	case when a.C_Anagrafica_Controparte = a.C_ClienteFattura then a.Sede_Localita else f.località end as sede_localita_fatturazione,
-	case when a.C_Anagrafica_Controparte = a.C_ClienteFattura then a.Sede_Cap else f.cap end as sede_cap_fatturazione,
-	case when a.C_Anagrafica_Controparte = a.C_ClienteFattura then a.Sede_Nazione else f.C_Anagrafica_Nazioni end as sede_nazione_fatturazione,
+	case when a.c_sedefattura = '' then b.c_anagrafica_controparti else g.c_anagrafica_controparti end Codice_cliente_fatturazione,
+	case when a.c_sedefattura = '' then b.d_anagrafica_controparti_1 + ' ' + isnull(d_anagrafica_controparti_2,'') else  g.D_Anagrafica_Controparti_Sede + ' ' + isnull(g.D_Anagrafica_Controparti_Sede_2,'') end Descrizione_cliente_fatturazione, 
+	case when a.c_sedefattura = '' then b.indirizzo + ' ' + isnull(b.indirizzo_2,'') else g.indirizzo + ' ' + isnull(g.indirizzo_2,'') end Sede_consegna_fatturazione,
+	case when a.c_sedefattura = '' then b.località else g.località  end sede_localita_fatturazione, 
+	case when a.c_sedefattura = '' then b.cap else g.cap end sede_cap_fatturazione,
+	case when a.c_sedefattura = '' then b.provincia + ' ' + b.c_anagrafica_nazioni else g.provincia + '  ' + g.c_anagrafica_nazioni end sede_nazione_fatturazione,
 	'' as empty1,
 	a.C_Anagrafica_Controparte as Codice_cliente_consegna, 
-	a.D_Anagrafica_Controparte as Descrizione_cliente_consegna, 
-	a.sede_indirizzo as Sede_consegna,
-	a.Sede_Localita as sede_localita_consegna,
-	a.Sede_Cap as sede_cap_consegna,
-	a.Sede_Nazione as sede_nazione_consegna, 
+	case when a.c_sede = '' then a.D_Anagrafica_Controparte + ' ' + isnull(a.D_Anagrafica_Controparte_2,'') else f.D_Anagrafica_Controparti_Sede + ' ' + isnull(f.D_Anagrafica_Controparti_Sede_2,'') end Descrizione_cliente_consegna,
+	case when a.c_sede = '' then a.sede_indirizzo + ' ' + isnull(a.sede_indirizzo2,'') else f.indirizzo + ' ' + isnull(f.indirizzo_2,'') end Sede_consegna,
+	case when a.c_sede = '' then a.sede_localita else f.località  end sede_localita_consegna, 
+	case when a.c_sede = '' then a.sede_cap else f.cap end sede_cap_consegna,
+	case when a.c_sede = '' then a.sede_provincia + ' ' + a.sede_nazione else f.provincia +' ' + f.c_anagrafica_nazioni end sede_nazione_consegna,
 	b.telefono as telefono_consegna,
 	'' as empty2,
 	'' as empty3, 
@@ -2757,16 +2757,17 @@ a.Data_Doc as Data_documento_fattura,
 from 
        (
        select 
-              id_documento, numero_registrazione, serie_registrazione, numero_doc, serie_doc, c_esercizio, data_doc, data_registrazione, c_tipo_documento, c_stato_documento,
-         [C_Anagrafica_Controparte],[C_ClienteFattura],[C_ClienteMerce], [D_Anagrafica_Controparte],
-       [D_Anagrafica_Controparte_2],[C_Pagamento],[C_Sede],[C_Sede_Tipo],[D_Sede],[D_Sede2],[Sede_Indirizzo],[Sede_Indirizzo2],[Sede_Cap],[Sede_Localita],[Sede_Provincia],
-              [Sede_Nazione], dataprevistaeva,[I_Data], [U_Data], Note_intro, Note_Fine,C_Spedizione,c_sedefattura
+		id_documento, numero_registrazione, serie_registrazione, numero_doc, serie_doc, c_esercizio, data_doc, data_registrazione, c_tipo_documento, c_stato_documento,
+        C_Anagrafica_Controparte,C_ClienteFattura,C_ClienteMerce, D_Anagrafica_Controparte,
+        D_Anagrafica_Controparte_2,C_Pagamento,C_Sede,C_Sede_Tipo,D_Sede,D_Sede2,Sede_Indirizzo,Sede_Indirizzo2,Sede_Cap,Sede_Localita, Sede_Provincia,
+        Sede_Nazione, dataprevistaeva,I_Data, U_Data, Note_intro, Note_Fine,C_Spedizione,c_sedefattura
        from [PARCEL_PRD].[PARCEL2008_SINT].[dbo].Documento_Testata 
-       where C_Tipo_Documento in ('FVACC', 'FVEXP') and convert(datetime2(0),isnull(U_data,I_DATA)) &gt; ?
+       where C_Tipo_Documento in ('FVACC', 'FVEXP') and convert(datetime2(0),isnull(U_data,I_DATA)) &gt; ? 
+	   and DATEADD(DD,8,data_doc) &gt;= ?  --retrieve only invoices in the last X days (i.e. 7) compare to the last_successfull_data_load
        )a  join
 
        (
-       select C_Anagrafica_Controparti, D_Anagrafica_Controparti_1, D_Anagrafica_Controparti_2, Indirizzo, Indirizzo_2,Località,C_Anagrafica_Nazioni, Telefono, Cellulare, Email,Email_Amministrazione,Email_Commerciale
+        select C_Anagrafica_Controparti, D_Anagrafica_Controparti_1, D_Anagrafica_Controparti_2, Indirizzo, Indirizzo_2,Località, cap, provincia, C_Anagrafica_Nazioni, Telefono, Cellulare, Email,Email_Amministrazione,Email_Commerciale
        from [PARCEL_PRD].[PARCEL2008_SINT].[dbo].Anagrafica_Controparti 
        where C_Anagrafica_Controparti_Tipo ='C'
        ) b on a.c_anagrafica_controparte =b.c_anagrafica_controparti join
@@ -2774,7 +2775,7 @@ from
        (
        select id_documento, C_Anagrafica_Articolo, D_Anagrafica_Articolo, D2_Anagrafica_Articolo, Quantità, Qtaevasa, C_UM, Coefficiente, Lotto_Principale
        from [PARCEL_PRD].[PARCEL2008_SINT].[dbo].Documento_Dettaglio 
-       ) c on a.id_documento =c.id_documento join
+       ) c on a.id_documento =c.id_documento /*join
 
        (
        select Codice_Articolo, 
@@ -2785,12 +2786,20 @@ from
 
        (select [C_Anagrafica_Spedizioni], [D_Anagrafica_Spedizioni]
        from [PARCEL_PRD].[PARCEL2008_SINT].[dbo].Anagrafica_Spedizioni
-       ) e on a.C_Spedizione= e.c_Anagrafica_Spedizioni left join
+       ) e on a.C_Spedizione= e.c_Anagrafica_Spedizioni */ left join
 
-       (select [C_Anagrafica_Controparti_Sede],C_Anagrafica_Controparti, [d_Anagrafica_Controparti_Sede],d_Anagrafica_Controparti_Sede_2,indirizzo,indirizzo_2,cap,località, provincia, C_Anagrafica_Nazioni
+       (
+	   select C_Anagrafica_Controparti_Sede,C_Anagrafica_Controparti, d_Anagrafica_Controparti_Sede,d_Anagrafica_Controparti_Sede_2,indirizzo,indirizzo_2,cap,località, provincia, C_Anagrafica_Nazioni
        from [PARCEL_PRD].[PARCEL2008_SINT].[dbo].Anagrafica_Controparti_Sede
-       ) f on a.c_sedefattura =f.C_Anagrafica_Controparti_Sede and a.C_ClienteFattura=f.C_Anagrafica_Controparti left join
+	   where c_anagrafica_controparti_sede_tipo='C'
+       ) f on a.C_Anagrafica_Controparte = f.c_anagrafica_controparti and a.c_Sede = f.c_anagrafica_controparti_sede left join
        
+	   (
+	   select c_anagrafica_controparti, c_anagrafica_controparti_sede, D_Anagrafica_Controparti_Sede, D_Anagrafica_Controparti_Sede_2,indirizzo, indirizzo_2, cap, località, provincia, c_anagrafica_nazioni
+       from [PARCEL_PRD].[PARCEL2008_SINT].[dbo].Anagrafica_Controparti_Sede
+	   where c_anagrafica_controparti_sede_tipo='F'
+	   ) g on a.c_clientefattura = g.c_anagrafica_controparti and a.c_Sedefattura = g.c_anagrafica_controparti_sede left join
+
        (
        select distinct num_doc_fattura, data_doc_fattura
        from [db_owner].[TBDWFT_INVOICE_TO_NEMOSPED]
@@ -2817,7 +2826,7 @@ order by 2,1</property>
                     <property
                       dataType="System.String"
                       description="The mappings between the parameters in the SQL command and variables."
-                      name="ParameterMapping">"Parameter0:Input",{cb4da88a-658f-4fc2-b87b-7a39b1694bd6};"Parameter1:Input",{914D52E5-25B9-4CDE-AED8-A8632A671857};</property>
+                      name="ParameterMapping">"Parameter0:Input",{cb4da88a-658f-4fc2-b87b-7a39b1694bd6};"Parameter1:Input",{cb4da88a-658f-4fc2-b87b-7a39b1694bd6};"Parameter2:Input",{914D52E5-25B9-4CDE-AED8-A8632A671857};</property>
                   </properties>
                   <connections>
                     <connection
@@ -2842,12 +2851,21 @@ order by 2,1</property>
                           name="Numero_documento_fattura"
                           truncationRowDisposition="FailComponent" />
                         <outputColumn
-                          refId="Package\TBDWFT_INVOICE_TO_NEMOSPED\TBDWFT_INVOICE_TO_NEMOSPED_ins\OLE DB Source + TRUNCATE tmp.Outputs[OLE DB Source Output].Columns[Data_documento_fattura]"
+                          refId="Package\TBDWFT_INVOICE_TO_NEMOSPED\TBDWFT_INVOICE_TO_NEMOSPED_ins\OLE DB Source + TRUNCATE tmp.Outputs[OLE DB Source Output].Columns[Data_documento_fattura_trunc]"
                           dataType="wstr"
                           errorOrTruncationOperation="Conversion"
                           errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\TBDWFT_INVOICE_TO_NEMOSPED\TBDWFT_INVOICE_TO_NEMOSPED_ins\OLE DB Source + TRUNCATE tmp.Outputs[OLE DB Source Output].ExternalColumns[Data_documento_fattura]"
+                          externalMetadataColumnId="Package\TBDWFT_INVOICE_TO_NEMOSPED\TBDWFT_INVOICE_TO_NEMOSPED_ins\OLE DB Source + TRUNCATE tmp.Outputs[OLE DB Source Output].ExternalColumns[Data_documento_fattura_trunc]"
                           length="4000"
+                          lineageId="Package\TBDWFT_INVOICE_TO_NEMOSPED\TBDWFT_INVOICE_TO_NEMOSPED_ins\OLE DB Source + TRUNCATE tmp.Outputs[OLE DB Source Output].Columns[Data_documento_fattura_trunc]"
+                          name="Data_documento_fattura_trunc"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\TBDWFT_INVOICE_TO_NEMOSPED\TBDWFT_INVOICE_TO_NEMOSPED_ins\OLE DB Source + TRUNCATE tmp.Outputs[OLE DB Source Output].Columns[Data_documento_fattura]"
+                          dataType="dbTimeStamp"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\TBDWFT_INVOICE_TO_NEMOSPED\TBDWFT_INVOICE_TO_NEMOSPED_ins\OLE DB Source + TRUNCATE tmp.Outputs[OLE DB Source Output].ExternalColumns[Data_documento_fattura]"
                           lineageId="Package\TBDWFT_INVOICE_TO_NEMOSPED\TBDWFT_INVOICE_TO_NEMOSPED_ins\OLE DB Source + TRUNCATE tmp.Outputs[OLE DB Source Output].Columns[Data_documento_fattura]"
                           name="Data_documento_fattura"
                           truncationRowDisposition="FailComponent" />
@@ -2879,7 +2897,7 @@ order by 2,1</property>
                           errorOrTruncationOperation="Conversion"
                           errorRowDisposition="FailComponent"
                           externalMetadataColumnId="Package\TBDWFT_INVOICE_TO_NEMOSPED\TBDWFT_INVOICE_TO_NEMOSPED_ins\OLE DB Source + TRUNCATE tmp.Outputs[OLE DB Source Output].ExternalColumns[Descrizione_cliente_fatturazione]"
-                          length="40"
+                          length="81"
                           lineageId="Package\TBDWFT_INVOICE_TO_NEMOSPED\TBDWFT_INVOICE_TO_NEMOSPED_ins\OLE DB Source + TRUNCATE tmp.Outputs[OLE DB Source Output].Columns[Descrizione_cliente_fatturazione]"
                           name="Descrizione_cliente_fatturazione"
                           truncationRowDisposition="FailComponent" />
@@ -2890,7 +2908,7 @@ order by 2,1</property>
                           errorOrTruncationOperation="Conversion"
                           errorRowDisposition="FailComponent"
                           externalMetadataColumnId="Package\TBDWFT_INVOICE_TO_NEMOSPED\TBDWFT_INVOICE_TO_NEMOSPED_ins\OLE DB Source + TRUNCATE tmp.Outputs[OLE DB Source Output].ExternalColumns[Sede_consegna_fatturazione]"
-                          length="150"
+                          length="301"
                           lineageId="Package\TBDWFT_INVOICE_TO_NEMOSPED\TBDWFT_INVOICE_TO_NEMOSPED_ins\OLE DB Source + TRUNCATE tmp.Outputs[OLE DB Source Output].Columns[Sede_consegna_fatturazione]"
                           name="Sede_consegna_fatturazione"
                           truncationRowDisposition="FailComponent" />
@@ -2912,7 +2930,7 @@ order by 2,1</property>
                           errorOrTruncationOperation="Conversion"
                           errorRowDisposition="FailComponent"
                           externalMetadataColumnId="Package\TBDWFT_INVOICE_TO_NEMOSPED\TBDWFT_INVOICE_TO_NEMOSPED_ins\OLE DB Source + TRUNCATE tmp.Outputs[OLE DB Source Output].ExternalColumns[sede_cap_fatturazione]"
-                          length="8"
+                          length="9"
                           lineageId="Package\TBDWFT_INVOICE_TO_NEMOSPED\TBDWFT_INVOICE_TO_NEMOSPED_ins\OLE DB Source + TRUNCATE tmp.Outputs[OLE DB Source Output].Columns[sede_cap_fatturazione]"
                           name="sede_cap_fatturazione"
                           truncationRowDisposition="FailComponent" />
@@ -2923,7 +2941,7 @@ order by 2,1</property>
                           errorOrTruncationOperation="Conversion"
                           errorRowDisposition="FailComponent"
                           externalMetadataColumnId="Package\TBDWFT_INVOICE_TO_NEMOSPED\TBDWFT_INVOICE_TO_NEMOSPED_ins\OLE DB Source + TRUNCATE tmp.Outputs[OLE DB Source Output].ExternalColumns[sede_nazione_fatturazione]"
-                          length="10"
+                          length="14"
                           lineageId="Package\TBDWFT_INVOICE_TO_NEMOSPED\TBDWFT_INVOICE_TO_NEMOSPED_ins\OLE DB Source + TRUNCATE tmp.Outputs[OLE DB Source Output].Columns[sede_nazione_fatturazione]"
                           name="sede_nazione_fatturazione"
                           truncationRowDisposition="FailComponent" />
@@ -2956,7 +2974,7 @@ order by 2,1</property>
                           errorOrTruncationOperation="Conversion"
                           errorRowDisposition="FailComponent"
                           externalMetadataColumnId="Package\TBDWFT_INVOICE_TO_NEMOSPED\TBDWFT_INVOICE_TO_NEMOSPED_ins\OLE DB Source + TRUNCATE tmp.Outputs[OLE DB Source Output].ExternalColumns[Descrizione_cliente_consegna]"
-                          length="40"
+                          length="81"
                           lineageId="Package\TBDWFT_INVOICE_TO_NEMOSPED\TBDWFT_INVOICE_TO_NEMOSPED_ins\OLE DB Source + TRUNCATE tmp.Outputs[OLE DB Source Output].Columns[Descrizione_cliente_consegna]"
                           name="Descrizione_cliente_consegna"
                           truncationRowDisposition="FailComponent" />
@@ -2967,7 +2985,7 @@ order by 2,1</property>
                           errorOrTruncationOperation="Conversion"
                           errorRowDisposition="FailComponent"
                           externalMetadataColumnId="Package\TBDWFT_INVOICE_TO_NEMOSPED\TBDWFT_INVOICE_TO_NEMOSPED_ins\OLE DB Source + TRUNCATE tmp.Outputs[OLE DB Source Output].ExternalColumns[Sede_consegna]"
-                          length="150"
+                          length="301"
                           lineageId="Package\TBDWFT_INVOICE_TO_NEMOSPED\TBDWFT_INVOICE_TO_NEMOSPED_ins\OLE DB Source + TRUNCATE tmp.Outputs[OLE DB Source Output].Columns[Sede_consegna]"
                           name="Sede_consegna"
                           truncationRowDisposition="FailComponent" />
@@ -3000,7 +3018,7 @@ order by 2,1</property>
                           errorOrTruncationOperation="Conversion"
                           errorRowDisposition="FailComponent"
                           externalMetadataColumnId="Package\TBDWFT_INVOICE_TO_NEMOSPED\TBDWFT_INVOICE_TO_NEMOSPED_ins\OLE DB Source + TRUNCATE tmp.Outputs[OLE DB Source Output].ExternalColumns[sede_nazione_consegna]"
-                          length="10"
+                          length="13"
                           lineageId="Package\TBDWFT_INVOICE_TO_NEMOSPED\TBDWFT_INVOICE_TO_NEMOSPED_ins\OLE DB Source + TRUNCATE tmp.Outputs[OLE DB Source Output].Columns[sede_nazione_consegna]"
                           name="sede_nazione_consegna"
                           truncationRowDisposition="FailComponent" />
@@ -3111,16 +3129,6 @@ order by 2,1</property>
                           lineageId="Package\TBDWFT_INVOICE_TO_NEMOSPED\TBDWFT_INVOICE_TO_NEMOSPED_ins\OLE DB Source + TRUNCATE tmp.Outputs[OLE DB Source Output].Columns[reinvio_flg]"
                           name="reinvio_flg"
                           truncationRowDisposition="FailComponent" />
-                        <outputColumn
-                          refId="Package\TBDWFT_INVOICE_TO_NEMOSPED\TBDWFT_INVOICE_TO_NEMOSPED_ins\OLE DB Source + TRUNCATE tmp.Outputs[OLE DB Source Output].Columns[Data_documento_fattura_trunc]"
-                          dataType="wstr"
-                          errorOrTruncationOperation="Conversion"
-                          errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\TBDWFT_INVOICE_TO_NEMOSPED\TBDWFT_INVOICE_TO_NEMOSPED_ins\OLE DB Source + TRUNCATE tmp.Outputs[OLE DB Source Output].ExternalColumns[Data_documento_fattura_trunc]"
-                          length="4000"
-                          lineageId="Package\TBDWFT_INVOICE_TO_NEMOSPED\TBDWFT_INVOICE_TO_NEMOSPED_ins\OLE DB Source + TRUNCATE tmp.Outputs[OLE DB Source Output].Columns[Data_documento_fattura_trunc]"
-                          name="Data_documento_fattura_trunc"
-                          truncationRowDisposition="FailComponent" />
                       </outputColumns>
                       <externalMetadataColumns
                         isUsed="True">
@@ -3128,6 +3136,11 @@ order by 2,1</property>
                           refId="Package\TBDWFT_INVOICE_TO_NEMOSPED\TBDWFT_INVOICE_TO_NEMOSPED_ins\OLE DB Source + TRUNCATE tmp.Outputs[OLE DB Source Output].ExternalColumns[Numero_documento_fattura]"
                           dataType="i4"
                           name="Numero_documento_fattura" />
+                        <externalMetadataColumn
+                          refId="Package\TBDWFT_INVOICE_TO_NEMOSPED\TBDWFT_INVOICE_TO_NEMOSPED_ins\OLE DB Source + TRUNCATE tmp.Outputs[OLE DB Source Output].ExternalColumns[Data_documento_fattura_trunc]"
+                          dataType="wstr"
+                          length="4000"
+                          name="Data_documento_fattura_trunc" />
                         <externalMetadataColumn
                           refId="Package\TBDWFT_INVOICE_TO_NEMOSPED\TBDWFT_INVOICE_TO_NEMOSPED_ins\OLE DB Source + TRUNCATE tmp.Outputs[OLE DB Source Output].ExternalColumns[Data_documento_fattura]"
                           dataType="dbTimeStamp"
@@ -3147,13 +3160,13 @@ order by 2,1</property>
                           refId="Package\TBDWFT_INVOICE_TO_NEMOSPED\TBDWFT_INVOICE_TO_NEMOSPED_ins\OLE DB Source + TRUNCATE tmp.Outputs[OLE DB Source Output].ExternalColumns[Descrizione_cliente_fatturazione]"
                           codePage="1252"
                           dataType="str"
-                          length="40"
+                          length="81"
                           name="Descrizione_cliente_fatturazione" />
                         <externalMetadataColumn
                           refId="Package\TBDWFT_INVOICE_TO_NEMOSPED\TBDWFT_INVOICE_TO_NEMOSPED_ins\OLE DB Source + TRUNCATE tmp.Outputs[OLE DB Source Output].ExternalColumns[Sede_consegna_fatturazione]"
                           codePage="1252"
                           dataType="str"
-                          length="150"
+                          length="301"
                           name="Sede_consegna_fatturazione" />
                         <externalMetadataColumn
                           refId="Package\TBDWFT_INVOICE_TO_NEMOSPED\TBDWFT_INVOICE_TO_NEMOSPED_ins\OLE DB Source + TRUNCATE tmp.Outputs[OLE DB Source Output].ExternalColumns[sede_localita_fatturazione]"
@@ -3165,13 +3178,13 @@ order by 2,1</property>
                           refId="Package\TBDWFT_INVOICE_TO_NEMOSPED\TBDWFT_INVOICE_TO_NEMOSPED_ins\OLE DB Source + TRUNCATE tmp.Outputs[OLE DB Source Output].ExternalColumns[sede_cap_fatturazione]"
                           codePage="1252"
                           dataType="str"
-                          length="8"
+                          length="9"
                           name="sede_cap_fatturazione" />
                         <externalMetadataColumn
                           refId="Package\TBDWFT_INVOICE_TO_NEMOSPED\TBDWFT_INVOICE_TO_NEMOSPED_ins\OLE DB Source + TRUNCATE tmp.Outputs[OLE DB Source Output].ExternalColumns[sede_nazione_fatturazione]"
                           codePage="1252"
                           dataType="str"
-                          length="10"
+                          length="14"
                           name="sede_nazione_fatturazione" />
                         <externalMetadataColumn
                           refId="Package\TBDWFT_INVOICE_TO_NEMOSPED\TBDWFT_INVOICE_TO_NEMOSPED_ins\OLE DB Source + TRUNCATE tmp.Outputs[OLE DB Source Output].ExternalColumns[empty1]"
@@ -3189,13 +3202,13 @@ order by 2,1</property>
                           refId="Package\TBDWFT_INVOICE_TO_NEMOSPED\TBDWFT_INVOICE_TO_NEMOSPED_ins\OLE DB Source + TRUNCATE tmp.Outputs[OLE DB Source Output].ExternalColumns[Descrizione_cliente_consegna]"
                           codePage="1252"
                           dataType="str"
-                          length="40"
+                          length="81"
                           name="Descrizione_cliente_consegna" />
                         <externalMetadataColumn
                           refId="Package\TBDWFT_INVOICE_TO_NEMOSPED\TBDWFT_INVOICE_TO_NEMOSPED_ins\OLE DB Source + TRUNCATE tmp.Outputs[OLE DB Source Output].ExternalColumns[Sede_consegna]"
                           codePage="1252"
                           dataType="str"
-                          length="150"
+                          length="301"
                           name="Sede_consegna" />
                         <externalMetadataColumn
                           refId="Package\TBDWFT_INVOICE_TO_NEMOSPED\TBDWFT_INVOICE_TO_NEMOSPED_ins\OLE DB Source + TRUNCATE tmp.Outputs[OLE DB Source Output].ExternalColumns[sede_localita_consegna]"
@@ -3213,7 +3226,7 @@ order by 2,1</property>
                           refId="Package\TBDWFT_INVOICE_TO_NEMOSPED\TBDWFT_INVOICE_TO_NEMOSPED_ins\OLE DB Source + TRUNCATE tmp.Outputs[OLE DB Source Output].ExternalColumns[sede_nazione_consegna]"
                           codePage="1252"
                           dataType="str"
-                          length="10"
+                          length="13"
                           name="sede_nazione_consegna" />
                         <externalMetadataColumn
                           refId="Package\TBDWFT_INVOICE_TO_NEMOSPED\TBDWFT_INVOICE_TO_NEMOSPED_ins\OLE DB Source + TRUNCATE tmp.Outputs[OLE DB Source Output].ExternalColumns[telefono_consegna]"
@@ -3272,11 +3285,6 @@ order by 2,1</property>
                           refId="Package\TBDWFT_INVOICE_TO_NEMOSPED\TBDWFT_INVOICE_TO_NEMOSPED_ins\OLE DB Source + TRUNCATE tmp.Outputs[OLE DB Source Output].ExternalColumns[reinvio_flg]"
                           dataType="i4"
                           name="reinvio_flg" />
-                        <externalMetadataColumn
-                          refId="Package\TBDWFT_INVOICE_TO_NEMOSPED\TBDWFT_INVOICE_TO_NEMOSPED_ins\OLE DB Source + TRUNCATE tmp.Outputs[OLE DB Source Output].ExternalColumns[Data_documento_fattura_trunc]"
-                          dataType="wstr"
-                          length="4000"
-                          name="Data_documento_fattura_trunc" />
                       </externalMetadataColumns>
                     </output>
                     <output
@@ -3317,14 +3325,14 @@ order by 2,1</property>
                           refId="Package\TBDWFT_INVOICE_TO_NEMOSPED\TBDWFT_INVOICE_TO_NEMOSPED_ins\OLE DB Source + TRUNCATE tmp.Outputs[OLE DB Source Error Output].Columns[Descrizione_cliente_fatturazione]"
                           codePage="1252"
                           dataType="str"
-                          length="40"
+                          length="81"
                           lineageId="Package\TBDWFT_INVOICE_TO_NEMOSPED\TBDWFT_INVOICE_TO_NEMOSPED_ins\OLE DB Source + TRUNCATE tmp.Outputs[OLE DB Source Error Output].Columns[Descrizione_cliente_fatturazione]"
                           name="Descrizione_cliente_fatturazione" />
                         <outputColumn
                           refId="Package\TBDWFT_INVOICE_TO_NEMOSPED\TBDWFT_INVOICE_TO_NEMOSPED_ins\OLE DB Source + TRUNCATE tmp.Outputs[OLE DB Source Error Output].Columns[Sede_consegna_fatturazione]"
                           codePage="1252"
                           dataType="str"
-                          length="150"
+                          length="301"
                           lineageId="Package\TBDWFT_INVOICE_TO_NEMOSPED\TBDWFT_INVOICE_TO_NEMOSPED_ins\OLE DB Source + TRUNCATE tmp.Outputs[OLE DB Source Error Output].Columns[Sede_consegna_fatturazione]"
                           name="Sede_consegna_fatturazione" />
                         <outputColumn
@@ -3338,14 +3346,14 @@ order by 2,1</property>
                           refId="Package\TBDWFT_INVOICE_TO_NEMOSPED\TBDWFT_INVOICE_TO_NEMOSPED_ins\OLE DB Source + TRUNCATE tmp.Outputs[OLE DB Source Error Output].Columns[sede_cap_fatturazione]"
                           codePage="1252"
                           dataType="str"
-                          length="8"
+                          length="9"
                           lineageId="Package\TBDWFT_INVOICE_TO_NEMOSPED\TBDWFT_INVOICE_TO_NEMOSPED_ins\OLE DB Source + TRUNCATE tmp.Outputs[OLE DB Source Error Output].Columns[sede_cap_fatturazione]"
                           name="sede_cap_fatturazione" />
                         <outputColumn
                           refId="Package\TBDWFT_INVOICE_TO_NEMOSPED\TBDWFT_INVOICE_TO_NEMOSPED_ins\OLE DB Source + TRUNCATE tmp.Outputs[OLE DB Source Error Output].Columns[sede_nazione_fatturazione]"
                           codePage="1252"
                           dataType="str"
-                          length="10"
+                          length="14"
                           lineageId="Package\TBDWFT_INVOICE_TO_NEMOSPED\TBDWFT_INVOICE_TO_NEMOSPED_ins\OLE DB Source + TRUNCATE tmp.Outputs[OLE DB Source Error Output].Columns[sede_nazione_fatturazione]"
                           name="sede_nazione_fatturazione" />
                         <outputColumn
@@ -3366,14 +3374,14 @@ order by 2,1</property>
                           refId="Package\TBDWFT_INVOICE_TO_NEMOSPED\TBDWFT_INVOICE_TO_NEMOSPED_ins\OLE DB Source + TRUNCATE tmp.Outputs[OLE DB Source Error Output].Columns[Descrizione_cliente_consegna]"
                           codePage="1252"
                           dataType="str"
-                          length="40"
+                          length="81"
                           lineageId="Package\TBDWFT_INVOICE_TO_NEMOSPED\TBDWFT_INVOICE_TO_NEMOSPED_ins\OLE DB Source + TRUNCATE tmp.Outputs[OLE DB Source Error Output].Columns[Descrizione_cliente_consegna]"
                           name="Descrizione_cliente_consegna" />
                         <outputColumn
                           refId="Package\TBDWFT_INVOICE_TO_NEMOSPED\TBDWFT_INVOICE_TO_NEMOSPED_ins\OLE DB Source + TRUNCATE tmp.Outputs[OLE DB Source Error Output].Columns[Sede_consegna]"
                           codePage="1252"
                           dataType="str"
-                          length="150"
+                          length="301"
                           lineageId="Package\TBDWFT_INVOICE_TO_NEMOSPED\TBDWFT_INVOICE_TO_NEMOSPED_ins\OLE DB Source + TRUNCATE tmp.Outputs[OLE DB Source Error Output].Columns[Sede_consegna]"
                           name="Sede_consegna" />
                         <outputColumn
@@ -3394,7 +3402,7 @@ order by 2,1</property>
                           refId="Package\TBDWFT_INVOICE_TO_NEMOSPED\TBDWFT_INVOICE_TO_NEMOSPED_ins\OLE DB Source + TRUNCATE tmp.Outputs[OLE DB Source Error Output].Columns[sede_nazione_consegna]"
                           codePage="1252"
                           dataType="str"
-                          length="10"
+                          length="13"
                           lineageId="Package\TBDWFT_INVOICE_TO_NEMOSPED\TBDWFT_INVOICE_TO_NEMOSPED_ins\OLE DB Source + TRUNCATE tmp.Outputs[OLE DB Source Error Output].Columns[sede_nazione_consegna]"
                           name="sede_nazione_consegna" />
                         <outputColumn
@@ -3612,8 +3620,7 @@ order by 2,1</property>
                           lineageId="Package\TBDWFT_INVOICE_TO_NEMOSPED\TBDWFT_INVOICE_TO_NEMOSPED_ins\OLE DB Source + TRUNCATE tmp.Outputs[OLE DB Source Output].Columns[Numero_documento_fattura]" />
                         <inputColumn
                           refId="Package\TBDWFT_INVOICE_TO_NEMOSPED\TBDWFT_INVOICE_TO_NEMOSPED_ins\TBDWFT_INVOICE_TO_NEMOSPED_ins.Inputs[OLE DB Destination Input].Columns[Data_documento_fattura]"
-                          cachedDataType="wstr"
-                          cachedLength="4000"
+                          cachedDataType="dbTimeStamp"
                           cachedName="Data_documento_fattura"
                           externalMetadataColumnId="Package\TBDWFT_INVOICE_TO_NEMOSPED\TBDWFT_INVOICE_TO_NEMOSPED_ins\TBDWFT_INVOICE_TO_NEMOSPED_ins.Inputs[OLE DB Destination Input].ExternalColumns[DATA_DOC_FATTURA]"
                           lineageId="Package\TBDWFT_INVOICE_TO_NEMOSPED\TBDWFT_INVOICE_TO_NEMOSPED_ins\OLE DB Source + TRUNCATE tmp.Outputs[OLE DB Source Output].Columns[Data_documento_fattura]" />
@@ -3634,7 +3641,7 @@ order by 2,1</property>
                         <inputColumn
                           refId="Package\TBDWFT_INVOICE_TO_NEMOSPED\TBDWFT_INVOICE_TO_NEMOSPED_ins\TBDWFT_INVOICE_TO_NEMOSPED_ins.Inputs[OLE DB Destination Input].Columns[Copy of Descrizione_cliente_fatturazione]"
                           cachedDataType="wstr"
-                          cachedLength="40"
+                          cachedLength="100"
                           cachedName="Copy of Descrizione_cliente_fatturazione"
                           externalMetadataColumnId="Package\TBDWFT_INVOICE_TO_NEMOSPED\TBDWFT_INVOICE_TO_NEMOSPED_ins\TBDWFT_INVOICE_TO_NEMOSPED_ins.Inputs[OLE DB Destination Input].ExternalColumns[DESC_CLIENTE_FATTURA]"
                           lineageId="Package\TBDWFT_INVOICE_TO_NEMOSPED\TBDWFT_INVOICE_TO_NEMOSPED_ins\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Descrizione_cliente_fatturazione]" />
@@ -3690,7 +3697,7 @@ order by 2,1</property>
                         <inputColumn
                           refId="Package\TBDWFT_INVOICE_TO_NEMOSPED\TBDWFT_INVOICE_TO_NEMOSPED_ins\TBDWFT_INVOICE_TO_NEMOSPED_ins.Inputs[OLE DB Destination Input].Columns[Copy of Descrizione_cliente_consegna]"
                           cachedDataType="wstr"
-                          cachedLength="40"
+                          cachedLength="100"
                           cachedName="Copy of Descrizione_cliente_consegna"
                           externalMetadataColumnId="Package\TBDWFT_INVOICE_TO_NEMOSPED\TBDWFT_INVOICE_TO_NEMOSPED_ins\TBDWFT_INVOICE_TO_NEMOSPED_ins.Inputs[OLE DB Destination Input].ExternalColumns[DESC_CLIENTE_CONSEGNA]"
                           lineageId="Package\TBDWFT_INVOICE_TO_NEMOSPED\TBDWFT_INVOICE_TO_NEMOSPED_ins\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Descrizione_cliente_consegna]" />
@@ -4133,8 +4140,7 @@ order by 2,1</property>
                           lineageId="Package\TBDWFT_INVOICE_TO_NEMOSPED\TBDWFT_INVOICE_TO_NEMOSPED_ins\OLE DB Source + TRUNCATE tmp.Outputs[OLE DB Source Output].Columns[Numero_documento_fattura]" />
                         <inputColumn
                           refId="Package\TBDWFT_INVOICE_TO_NEMOSPED\TBDWFT_INVOICE_TO_NEMOSPED_ins\TBDWTMP_INVOICE_TO_NEMPOSED_ins.Inputs[OLE DB Destination Input].Columns[Data_documento_fattura]"
-                          cachedDataType="wstr"
-                          cachedLength="4000"
+                          cachedDataType="dbTimeStamp"
                           cachedName="Data_documento_fattura"
                           externalMetadataColumnId="Package\TBDWFT_INVOICE_TO_NEMOSPED\TBDWFT_INVOICE_TO_NEMOSPED_ins\TBDWTMP_INVOICE_TO_NEMPOSED_ins.Inputs[OLE DB Destination Input].ExternalColumns[DATA_DOC_FATTURA]"
                           lineageId="Package\TBDWFT_INVOICE_TO_NEMOSPED\TBDWFT_INVOICE_TO_NEMOSPED_ins\OLE DB Source + TRUNCATE tmp.Outputs[OLE DB Source Output].Columns[Data_documento_fattura]" />
@@ -4155,7 +4161,7 @@ order by 2,1</property>
                         <inputColumn
                           refId="Package\TBDWFT_INVOICE_TO_NEMOSPED\TBDWFT_INVOICE_TO_NEMOSPED_ins\TBDWTMP_INVOICE_TO_NEMPOSED_ins.Inputs[OLE DB Destination Input].Columns[Copy of Descrizione_cliente_fatturazione]"
                           cachedDataType="wstr"
-                          cachedLength="40"
+                          cachedLength="100"
                           cachedName="Copy of Descrizione_cliente_fatturazione"
                           externalMetadataColumnId="Package\TBDWFT_INVOICE_TO_NEMOSPED\TBDWFT_INVOICE_TO_NEMOSPED_ins\TBDWTMP_INVOICE_TO_NEMPOSED_ins.Inputs[OLE DB Destination Input].ExternalColumns[DESC_CLIENTE_FATTURA]"
                           lineageId="Package\TBDWFT_INVOICE_TO_NEMOSPED\TBDWFT_INVOICE_TO_NEMOSPED_ins\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Descrizione_cliente_fatturazione]" />
@@ -4204,7 +4210,7 @@ order by 2,1</property>
                         <inputColumn
                           refId="Package\TBDWFT_INVOICE_TO_NEMOSPED\TBDWFT_INVOICE_TO_NEMOSPED_ins\TBDWTMP_INVOICE_TO_NEMPOSED_ins.Inputs[OLE DB Destination Input].Columns[Copy of Descrizione_cliente_consegna]"
                           cachedDataType="wstr"
-                          cachedLength="40"
+                          cachedLength="100"
                           cachedName="Copy of Descrizione_cliente_consegna"
                           externalMetadataColumnId="Package\TBDWFT_INVOICE_TO_NEMOSPED\TBDWFT_INVOICE_TO_NEMOSPED_ins\TBDWTMP_INVOICE_TO_NEMPOSED_ins.Inputs[OLE DB Destination Input].ExternalColumns[DESC_CLIENTE_CONSEGNA]"
                           lineageId="Package\TBDWFT_INVOICE_TO_NEMOSPED\TBDWFT_INVOICE_TO_NEMOSPED_ins\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Descrizione_cliente_consegna]" />
@@ -7144,6 +7150,10 @@ from (
           Id="Package\TBDWFT_INVOICE_TO_NEMOSPED\TBDWFT_INVOICE_TO_NEMOSPED_ins"
           TopLeft="431,436" />
         <NodeLayout
+          Size="291,42"
+          Id="Package\TBDWFT_INVOICE_TO_NEMOSPED\TBDWFT_INVOICE_TO_NEMOSPED_upd"
+          TopLeft="427.5,506.5" />
+        <NodeLayout
           Size="171,42"
           Id="Package\TBDWFT_INVOICE_TO_NEMOSPED\Upd DATE Loaded"
           TopLeft="474.5,592.5" />
@@ -7292,6 +7302,40 @@ from (
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
+          Id="Package\TBDWFT_INVOICE_TO_NEMOSPED.PrecedenceConstraints[Constraint 12]"
+          TopLeft="573,548.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-13,44"
+              Start="0,0"
+              End="-13,36.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,18" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,18"
+                    Point2="0,22"
+                    Point3="-4,22" />
+                  <mssgle:LineSegment
+                    End="-9,22" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-9,22"
+                    Point2="-13,22"
+                    Point3="-13,26" />
+                  <mssgle:LineSegment
+                    End="-13,36.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
           Id="Package\TBDWFT_INVOICE_TO_NEMOSPED.PrecedenceConstraints[Constraint 2]"
           TopLeft="353,47.5">
           <EdgeLayout.Curve>
@@ -7395,6 +7439,28 @@ from (
                     Point3="-37,35.027027027027" />
                   <mssgle:LineSegment
                     End="-37,44.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\TBDWFT_INVOICE_TO_NEMOSPED.PrecedenceConstraints[Constraint 6]"
+          TopLeft="573.75,478">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,28.5"
+              Start="0,0"
+              End="0,21">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,21" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -7512,66 +7578,6 @@ from (
           Size="195,40"
           Id="770e5d1f-9727-4e0f-9d45-cb2863de88dd"
           TopLeft="29.5,10.5" />
-        <NodeLayout
-          Size="291,42"
-          Id="Package\TBDWFT_INVOICE_TO_NEMOSPED\TBDWFT_INVOICE_TO_NEMOSPED_upd"
-          TopLeft="427.5,506.5" />
-        <EdgeLayout
-          Id="Package\TBDWFT_INVOICE_TO_NEMOSPED.PrecedenceConstraints[Constraint 6]"
-          TopLeft="573.75,478">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,28.5"
-              Start="0,0"
-              End="0,21">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,21" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\TBDWFT_INVOICE_TO_NEMOSPED.PrecedenceConstraints[Constraint 12]"
-          TopLeft="573,548.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-13,44"
-              Start="0,0"
-              End="-13,36.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,18" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,18"
-                    Point2="0,22"
-                    Point3="-4,22" />
-                  <mssgle:LineSegment
-                    End="-9,22" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-9,22"
-                    Point2="-13,22"
-                    Point3="-13,26" />
-                  <mssgle:LineSegment
-                    End="-13,36.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
@@ -7863,49 +7869,59 @@ from (
           Id="Package\TBDWFT_INVOICE_TO_NEMOSPED\TBDWFT_INVOICE_TO_NEMOSPED_ins\Data Conversion"
           TopLeft="194,123" />
         <NodeLayout
+          Size="123,42"
+          Id="Package\TBDWFT_INVOICE_TO_NEMOSPED\TBDWFT_INVOICE_TO_NEMOSPED_ins\Multicast"
+          TopLeft="183,325" />
+        <NodeLayout
           Size="287,42"
           Id="Package\TBDWFT_INVOICE_TO_NEMOSPED\TBDWFT_INVOICE_TO_NEMOSPED_ins\TBDWFT_INVOICE_TO_NEMOSPED_ins"
           TopLeft="42,432" />
         <NodeLayout
-          Size="250,42"
-          Id="Package\TBDWFT_INVOICE_TO_NEMOSPED\TBDWFT_INVOICE_TO_NEMOSPED_ins\OLE DB Source + TRUNCATE tmp"
-          TopLeft="117,14" />
+          Size="176,42"
+          Id="Package\TBDWFT_INVOICE_TO_NEMOSPED\TBDWFT_INVOICE_TO_NEMOSPED_ins\Flat File Destination"
+          TopLeft="408,429" />
         <NodeLayout
           Size="181,42"
           Id="Package\TBDWFT_INVOICE_TO_NEMOSPED\TBDWFT_INVOICE_TO_NEMOSPED_ins\Add Technical Fields"
           TopLeft="282,216" />
+        <NodeLayout
+          Size="296,42"
+          Id="Package\TBDWFT_INVOICE_TO_NEMOSPED\TBDWFT_INVOICE_TO_NEMOSPED_ins\TBDWTMP_INVOICE_TO_NEMPOSED_ins"
+          TopLeft="665,380" />
         <EdgeLayout
-          Id="Package\TBDWFT_INVOICE_TO_NEMOSPED\TBDWFT_INVOICE_TO_NEMOSPED_ins.Paths[OLE DB Source Output]"
-          TopLeft="242,56">
+          Id="Package\TBDWFT_INVOICE_TO_NEMOSPED\TBDWFT_INVOICE_TO_NEMOSPED_ins.Paths[INS]"
+          TopLeft="475,294">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="32.5,67"
+              EndConnector="-169,52"
               Start="0,0"
-              End="32.5,59.5">
+              End="-161.5,52">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,29.5" />
+                    End="-80.5,0" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,29.5"
-                    Point2="0,33.5"
-                    Point3="4,33.5" />
+                    Point1="-80.5,0"
+                    Point2="-84.5,0"
+                    Point3="-84.5,4" />
                   <mssgle:LineSegment
-                    End="28.5,33.5" />
+                    End="-84.5,48" />
                   <mssgle:CubicBezierSegment
-                    Point1="28.5,33.5"
-                    Point2="32.5,33.5"
-                    Point3="32.5,37.5" />
+                    Point1="-84.5,48"
+                    Point2="-84.5,52"
+                    Point3="-88.5,52" />
                   <mssgle:LineSegment
-                    End="32.5,59.5" />
+                    End="-161.5,52" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="-93.13408203125,-15.5341796875,17.2681640625,9.5341796875"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -7970,10 +7986,6 @@ from (
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="296,42"
-          Id="Package\TBDWFT_INVOICE_TO_NEMOSPED\TBDWFT_INVOICE_TO_NEMOSPED_ins\TBDWTMP_INVOICE_TO_NEMPOSED_ins"
-          TopLeft="665,380" />
         <EdgeLayout
           Id="Package\TBDWFT_INVOICE_TO_NEMOSPED\TBDWFT_INVOICE_TO_NEMOSPED_ins.Paths[UPD]"
           TopLeft="579.666666666667,315">
@@ -8010,48 +8022,38 @@ from (
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="176,42"
-          Id="Package\TBDWFT_INVOICE_TO_NEMOSPED\TBDWFT_INVOICE_TO_NEMOSPED_ins\Flat File Destination"
-          TopLeft="408,429" />
-        <NodeLayout
-          Size="123,42"
-          Id="Package\TBDWFT_INVOICE_TO_NEMOSPED\TBDWFT_INVOICE_TO_NEMOSPED_ins\Multicast"
-          TopLeft="183,325" />
         <EdgeLayout
-          Id="Package\TBDWFT_INVOICE_TO_NEMOSPED\TBDWFT_INVOICE_TO_NEMOSPED_ins.Paths[INS]"
-          TopLeft="475,294">
+          Id="Package\TBDWFT_INVOICE_TO_NEMOSPED\TBDWFT_INVOICE_TO_NEMOSPED_ins.Paths[Multicast Output 2]"
+          TopLeft="263.666666666667,367">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-169,52"
+              EndConnector="232.333333333333,62"
               Start="0,0"
-              End="-161.5,52">
+              End="232.333333333333,54.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="-80.5,0" />
+                    End="0,21.2776886035313" />
                   <mssgle:CubicBezierSegment
-                    Point1="-80.5,0"
-                    Point2="-84.5,0"
-                    Point3="-84.5,4" />
+                    Point1="0,21.2776886035313"
+                    Point2="0,25.2776886035313"
+                    Point3="4,25.2776886035313" />
                   <mssgle:LineSegment
-                    End="-84.5,48" />
+                    End="228.333333333333,25.2776886035313" />
                   <mssgle:CubicBezierSegment
-                    Point1="-84.5,48"
-                    Point2="-84.5,52"
-                    Point3="-88.5,52" />
+                    Point1="228.333333333333,25.2776886035313"
+                    Point2="232.333333333333,25.2776886035313"
+                    Point3="232.333333333333,29.2776886035313" />
                   <mssgle:LineSegment
-                    End="-161.5,52" />
+                    End="232.333333333333,54.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-93.13408203125,-15.5341796875,17.2681640625,9.5341796875"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -8088,32 +8090,24 @@ from (
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
+        <NodeLayout
+          Size="250,42"
+          Id="Package\TBDWFT_INVOICE_TO_NEMOSPED\TBDWFT_INVOICE_TO_NEMOSPED_ins\OLE DB Source + TRUNCATE tmp"
+          TopLeft="142,32" />
         <EdgeLayout
-          Id="Package\TBDWFT_INVOICE_TO_NEMOSPED\TBDWFT_INVOICE_TO_NEMOSPED_ins.Paths[Multicast Output 2]"
-          TopLeft="263.666666666667,367">
+          Id="Package\TBDWFT_INVOICE_TO_NEMOSPED\TBDWFT_INVOICE_TO_NEMOSPED_ins.Paths[OLE DB Source Output]"
+          TopLeft="270.75,74">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="232.333333333333,62"
+              EndConnector="0,49"
               Start="0,0"
-              End="232.333333333333,54.5">
+              End="0,41.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,21.2776886035313" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,21.2776886035313"
-                    Point2="0,25.2776886035313"
-                    Point3="4,25.2776886035313" />
-                  <mssgle:LineSegment
-                    End="228.333333333333,25.2776886035313" />
-                  <mssgle:CubicBezierSegment
-                    Point1="228.333333333333,25.2776886035313"
-                    Point2="232.333333333333,25.2776886035313"
-                    Point3="232.333333333333,29.2776886035313" />
-                  <mssgle:LineSegment
-                    End="232.333333333333,54.5" />
+                    End="0,41.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -8125,14 +8119,6 @@ from (
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
-  <PipelineComponentMetadata
-    design-time-name="Package\TBDWFT_INVOICE_TO_NEMOSPED\TBDWFT_INVOICE_TO_NEMOSPED_ins\OLE DB Source + TRUNCATE tmp">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
   <PipelineComponentMetadata
     design-time-name="Package\TBDWFT_INVOICE_TO_NEMOSPED\TBDWFT_INVOICE_TO_NEMOSPED_ins\TBDWFT_INVOICE_TO_NEMOSPED_ins">
     <Properties>
@@ -8146,18 +8132,6 @@ from (
       </Property>
     </Properties>
   </PipelineComponentMetadata>
-  <DtsEventHandler
-    design-time-name="Package\TBLOG_PACKAGE.EventHandlers[OnError]">
-    <LayoutInfo>
-      <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
-        <NodeLayout
-          Size="149,42"
-          Id="Package\TBLOG_PACKAGE.EventHandlers[OnError]\Email ERROR"
-          TopLeft="60,60" />
-      </GraphLayout>
-    </LayoutInfo>
-  </DtsEventHandler>
   <PipelineComponentMetadata
     design-time-name="Package\TBDWFT_INVOICE_TO_NEMOSPED\TBDWFT_INVOICE_TO_NEMOSPED_ins\TBDWTMP_INVOICE_TO_NEMPOSED_ins">
     <Properties>
@@ -8184,6 +8158,14 @@ from (
           Size="123,42"
           Id="Package\TBDWFT_INVOICE_TO_NEMOSPED\TBDWFT_INVOICE_TO_NEMOSPED_upd\Multicast"
           TopLeft="273,145" />
+        <NodeLayout
+          Size="287,42"
+          Id="Package\TBDWFT_INVOICE_TO_NEMOSPED\TBDWFT_INVOICE_TO_NEMOSPED_upd\TBDWFT_INVOICE_TO_NEMOSPED_ins"
+          TopLeft="155,314" />
+        <NodeLayout
+          Size="176,42"
+          Id="Package\TBDWFT_INVOICE_TO_NEMOSPED\TBDWFT_INVOICE_TO_NEMOSPED_upd\Flat File Destination"
+          TopLeft="582,318" />
         <EdgeLayout
           Id="Package\TBDWFT_INVOICE_TO_NEMOSPED\TBDWFT_INVOICE_TO_NEMOSPED_upd.Paths[OLE DB Source Output]"
           TopLeft="189.5,66">
@@ -8218,14 +8200,6 @@ from (
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="287,42"
-          Id="Package\TBDWFT_INVOICE_TO_NEMOSPED\TBDWFT_INVOICE_TO_NEMOSPED_upd\TBDWFT_INVOICE_TO_NEMOSPED_ins"
-          TopLeft="155,314" />
-        <NodeLayout
-          Size="176,42"
-          Id="Package\TBDWFT_INVOICE_TO_NEMOSPED\TBDWFT_INVOICE_TO_NEMOSPED_upd\Flat File Destination"
-          TopLeft="582,318" />
         <EdgeLayout
           Id="Package\TBDWFT_INVOICE_TO_NEMOSPED\TBDWFT_INVOICE_TO_NEMOSPED_upd.Paths[Multicast Output 2]"
           TopLeft="334.5,187">
@@ -8315,6 +8289,26 @@ from (
         <Name>TableInfoObjectType</Name>
         <Value
           type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <DtsEventHandler
+    design-time-name="Package\TBLOG_PACKAGE.EventHandlers[OnError]">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="149,42"
+          Id="Package\TBLOG_PACKAGE.EventHandlers[OnError]\Email ERROR"
+          TopLeft="60,60" />
+      </GraphLayout>
+    </LayoutInfo>
+  </DtsEventHandler>
+  <PipelineComponentMetadata
+    design-time-name="Package\TBDWFT_INVOICE_TO_NEMOSPED\TBDWFT_INVOICE_TO_NEMOSPED_ins\OLE DB Source + TRUNCATE tmp">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
       </Property>
     </Properties>
   </PipelineComponentMetadata>
