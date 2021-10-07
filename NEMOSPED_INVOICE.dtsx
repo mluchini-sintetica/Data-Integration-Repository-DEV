@@ -12,8 +12,8 @@
   DTS:ObjectName="NEMOSPED_INVOICE"
   DTS:PackageType="5"
   DTS:ProtectionLevel="2"
-  DTS:VersionBuild="236"
-  DTS:VersionGUID="{74418474-09AF-443B-9E77-90966DEF30F8}">
+  DTS:VersionBuild="248"
+  DTS:VersionGUID="{C84448BC-A1C1-4A94-B58D-45CE21593F96}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -523,16 +523,6 @@
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
-    <DTS:ConnectionManager
-      DTS:refId="Package.ConnectionManagers[testMarco_via_FTSSIS.csv]"
-      DTS:CreationName="FILE"
-      DTS:DTSID="{8B2693B1-4E4D-497E-87FF-5B3FDEC3E84B}"
-      DTS:ObjectName="testMarco_via_FTSSIS.csv">
-      <DTS:ObjectData>
-        <DTS:ConnectionManager
-          DTS:ConnectionString="C:\Users\mluchini\Desktop\testMarco_via_FTSSIS.csv" />
-      </DTS:ObjectData>
-    </DTS:ConnectionManager>
   </DTS:ConnectionManagers>
   <DTS:PackageParameters>
     <DTS:PackageParameter
@@ -981,7 +971,7 @@
           DTS:LocaleID="-1"
           DTS:ObjectName="Assign out_FILENAME"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="0">
+          DTS:ThreadHint="2">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
@@ -1003,7 +993,7 @@
           DTS:LocaleID="-1"
           DTS:ObjectName="Assign TABLE_TARGET_CD"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="1">
+          DTS:ThreadHint="0">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
@@ -1025,7 +1015,7 @@
           DTS:LocaleID="-1"
           DTS:ObjectName="COUNT_ROWS_test"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="1">
+          DTS:ThreadHint="0">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
@@ -1053,7 +1043,7 @@
           DTS:LocaleID="-1"
           DTS:ObjectName="Ins_Upd TBLOG_PACKAGE_TABLE"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="1">
+          DTS:ThreadHint="0">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
@@ -1131,7 +1121,7 @@
           DTS:LocaleID="-1"
           DTS:ObjectName="Last Max DATE Loaded and DWH_DELTA_DT"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="2">
+          DTS:ThreadHint="1">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
@@ -1216,7 +1206,7 @@
           DTS:LocaleID="-1"
           DTS:ObjectName="Last Upd TBLOG_PACKAGE_TABLE_row0"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="1">
+          DTS:ThreadHint="0">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
@@ -1258,7 +1248,7 @@
           DTS:LocaleID="-1"
           DTS:ObjectName="MAX TABLE ID"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="1">
+          DTS:ThreadHint="0">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
@@ -1298,7 +1288,7 @@
           DTS:LocaleID="-1"
           DTS:ObjectName="New Max DATE Loaded"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="1">
+          DTS:ThreadHint="0">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
@@ -1687,7 +1677,7 @@
                           refId="Package\TBDWFT_INVOICE_TO_NEMOSPED\TBDWFT_INVOICE_TO_NEMOSPED_ins\Data Conversion.Inputs[Data Conversion Input].Columns[Codice_cliente_fatturazione]"
                           cachedCodepage="1252"
                           cachedDataType="str"
-                          cachedLength="20"
+                          cachedLength="31"
                           cachedName="Codice_cliente_fatturazione"
                           lineageId="Package\TBDWFT_INVOICE_TO_NEMOSPED\TBDWFT_INVOICE_TO_NEMOSPED_ins\OLE DB Source + TRUNCATE tmp.Outputs[OLE DB Source Output].Columns[Codice_cliente_fatturazione]" />
                         <inputColumn
@@ -1722,7 +1712,7 @@
                           refId="Package\TBDWFT_INVOICE_TO_NEMOSPED\TBDWFT_INVOICE_TO_NEMOSPED_ins\Data Conversion.Inputs[Data Conversion Input].Columns[sede_nazione_fatturazione]"
                           cachedCodepage="1252"
                           cachedDataType="str"
-                          cachedLength="14"
+                          cachedLength="10"
                           cachedName="sede_nazione_fatturazione"
                           lineageId="Package\TBDWFT_INVOICE_TO_NEMOSPED\TBDWFT_INVOICE_TO_NEMOSPED_ins\OLE DB Source + TRUNCATE tmp.Outputs[OLE DB Source Output].Columns[sede_nazione_fatturazione]" />
                         <inputColumn
@@ -1736,7 +1726,7 @@
                           refId="Package\TBDWFT_INVOICE_TO_NEMOSPED\TBDWFT_INVOICE_TO_NEMOSPED_ins\Data Conversion.Inputs[Data Conversion Input].Columns[Codice_cliente_consegna]"
                           cachedCodepage="1252"
                           cachedDataType="str"
-                          cachedLength="20"
+                          cachedLength="31"
                           cachedName="Codice_cliente_consegna"
                           lineageId="Package\TBDWFT_INVOICE_TO_NEMOSPED\TBDWFT_INVOICE_TO_NEMOSPED_ins\OLE DB Source + TRUNCATE tmp.Outputs[OLE DB Source Output].Columns[Codice_cliente_consegna]" />
                         <inputColumn
@@ -1771,7 +1761,7 @@
                           refId="Package\TBDWFT_INVOICE_TO_NEMOSPED\TBDWFT_INVOICE_TO_NEMOSPED_ins\Data Conversion.Inputs[Data Conversion Input].Columns[sede_nazione_consegna]"
                           cachedCodepage="1252"
                           cachedDataType="str"
-                          cachedLength="13"
+                          cachedLength="10"
                           cachedName="sede_nazione_consegna"
                           lineageId="Package\TBDWFT_INVOICE_TO_NEMOSPED\TBDWFT_INVOICE_TO_NEMOSPED_ins\OLE DB Source + TRUNCATE tmp.Outputs[OLE DB Source Output].Columns[sede_nazione_consegna]" />
                         <inputColumn
@@ -2730,19 +2720,19 @@ select
 	format(a.Data_Doc,'yyyyMMdd') as Data_documento_fattura_trunc,
 	a.Data_Doc as Data_documento_fattura,
 	 replace(replace(cast (c.D2_Anagrafica_Articolo as nvarchar(4000)),char(13),''), char(10),'') as descrizione_articolo_aggiuntiva,
-	case when a.c_sedefattura = '' then b.c_anagrafica_controparti else g.c_anagrafica_controparti end Codice_cliente_fatturazione,
+	case when a.c_sedefattura = '' then b.c_anagrafica_controparti else g.c_anagrafica_controparti + '_' + a.c_Sedefattura end Codice_cliente_fatturazione,
 	case when a.c_sedefattura = '' then b.d_anagrafica_controparti_1 + ' ' + isnull(d_anagrafica_controparti_2,'') else  g.D_Anagrafica_Controparti_Sede + ' ' + isnull(g.D_Anagrafica_Controparti_Sede_2,'') end Descrizione_cliente_fatturazione, 
 	case when a.c_sedefattura = '' then b.indirizzo + ' ' + isnull(b.indirizzo_2,'') else g.indirizzo + ' ' + isnull(g.indirizzo_2,'') end Sede_consegna_fatturazione,
 	case when a.c_sedefattura = '' then b.località else g.località  end sede_localita_fatturazione, 
 	case when a.c_sedefattura = '' then b.cap else g.cap end sede_cap_fatturazione,
-	case when a.c_sedefattura = '' then b.provincia + ' ' + b.c_anagrafica_nazioni else g.provincia + '  ' + g.c_anagrafica_nazioni end sede_nazione_fatturazione,
+	case when a.c_sedefattura = '' then b.c_anagrafica_nazioni else g.c_anagrafica_nazioni end sede_nazione_fatturazione,
 	'' as empty1,
-	a.C_Anagrafica_Controparte as Codice_cliente_consegna, 
+	case when a.c_sede = '' then a.C_Anagrafica_Controparte else a.C_Anagrafica_Controparte + '_' + a.c_sede end Codice_cliente_consegna, 
 	case when a.c_sede = '' then a.D_Anagrafica_Controparte + ' ' + isnull(a.D_Anagrafica_Controparte_2,'') else f.D_Anagrafica_Controparti_Sede + ' ' + isnull(f.D_Anagrafica_Controparti_Sede_2,'') end Descrizione_cliente_consegna,
 	case when a.c_sede = '' then a.sede_indirizzo + ' ' + isnull(a.sede_indirizzo2,'') else f.indirizzo + ' ' + isnull(f.indirizzo_2,'') end Sede_consegna,
 	case when a.c_sede = '' then a.sede_localita else f.località  end sede_localita_consegna, 
 	case when a.c_sede = '' then a.sede_cap else f.cap end sede_cap_consegna,
-	case when a.c_sede = '' then a.sede_provincia + ' ' + a.sede_nazione else f.provincia +' ' + f.c_anagrafica_nazioni end sede_nazione_consegna,
+	case when a.c_sede = '' then a.sede_nazione else f.c_anagrafica_nazioni end sede_nazione_consegna,
 	b.telefono as telefono_consegna,
 	'' as empty2,
 	'' as empty3, 
@@ -2775,7 +2765,13 @@ from
        (
        select id_documento, C_Anagrafica_Articolo, D_Anagrafica_Articolo, D2_Anagrafica_Articolo, Quantità, Qtaevasa, C_UM, Coefficiente, Lotto_Principale
        from [PARCEL_PRD].[PARCEL2008_SINT].[dbo].Documento_Dettaglio 
-       ) c on a.id_documento =c.id_documento /*join
+       ) c on a.id_documento =c.id_documento join
+	   
+	   (
+	   select codice_articolo
+	   from [PARCEL_PRD].[PARCEL2008_SINT].[dbo].articolo
+	   where tipo_articolo not in (7,8,9) or codice_articolo ='D'
+	   ) h on c.C_Anagrafica_Articolo = h.codice_articolo /*join
 
        (
        select Codice_Articolo, 
@@ -2805,7 +2801,7 @@ from
        from [db_owner].[TBDWFT_INVOICE_TO_NEMOSPED]
        where row_sts_flg=1 and site_id = ?
         ) x on a.Numero_Doc = x.num_doc_fattura and a.Data_Doc = x.data_doc_fattura
-order by 2,1</property>
+order by 2,1, articolo desc</property>
                     <property
                       dataType="System.String"
                       description="The variable that contains the SQL command to be executed."
@@ -2886,7 +2882,7 @@ order by 2,1</property>
                           errorOrTruncationOperation="Conversion"
                           errorRowDisposition="FailComponent"
                           externalMetadataColumnId="Package\TBDWFT_INVOICE_TO_NEMOSPED\TBDWFT_INVOICE_TO_NEMOSPED_ins\OLE DB Source + TRUNCATE tmp.Outputs[OLE DB Source Output].ExternalColumns[Codice_cliente_fatturazione]"
-                          length="20"
+                          length="31"
                           lineageId="Package\TBDWFT_INVOICE_TO_NEMOSPED\TBDWFT_INVOICE_TO_NEMOSPED_ins\OLE DB Source + TRUNCATE tmp.Outputs[OLE DB Source Output].Columns[Codice_cliente_fatturazione]"
                           name="Codice_cliente_fatturazione"
                           truncationRowDisposition="FailComponent" />
@@ -2941,7 +2937,7 @@ order by 2,1</property>
                           errorOrTruncationOperation="Conversion"
                           errorRowDisposition="FailComponent"
                           externalMetadataColumnId="Package\TBDWFT_INVOICE_TO_NEMOSPED\TBDWFT_INVOICE_TO_NEMOSPED_ins\OLE DB Source + TRUNCATE tmp.Outputs[OLE DB Source Output].ExternalColumns[sede_nazione_fatturazione]"
-                          length="14"
+                          length="10"
                           lineageId="Package\TBDWFT_INVOICE_TO_NEMOSPED\TBDWFT_INVOICE_TO_NEMOSPED_ins\OLE DB Source + TRUNCATE tmp.Outputs[OLE DB Source Output].Columns[sede_nazione_fatturazione]"
                           name="sede_nazione_fatturazione"
                           truncationRowDisposition="FailComponent" />
@@ -2963,7 +2959,7 @@ order by 2,1</property>
                           errorOrTruncationOperation="Conversion"
                           errorRowDisposition="FailComponent"
                           externalMetadataColumnId="Package\TBDWFT_INVOICE_TO_NEMOSPED\TBDWFT_INVOICE_TO_NEMOSPED_ins\OLE DB Source + TRUNCATE tmp.Outputs[OLE DB Source Output].ExternalColumns[Codice_cliente_consegna]"
-                          length="20"
+                          length="31"
                           lineageId="Package\TBDWFT_INVOICE_TO_NEMOSPED\TBDWFT_INVOICE_TO_NEMOSPED_ins\OLE DB Source + TRUNCATE tmp.Outputs[OLE DB Source Output].Columns[Codice_cliente_consegna]"
                           name="Codice_cliente_consegna"
                           truncationRowDisposition="FailComponent" />
@@ -3018,7 +3014,7 @@ order by 2,1</property>
                           errorOrTruncationOperation="Conversion"
                           errorRowDisposition="FailComponent"
                           externalMetadataColumnId="Package\TBDWFT_INVOICE_TO_NEMOSPED\TBDWFT_INVOICE_TO_NEMOSPED_ins\OLE DB Source + TRUNCATE tmp.Outputs[OLE DB Source Output].ExternalColumns[sede_nazione_consegna]"
-                          length="13"
+                          length="10"
                           lineageId="Package\TBDWFT_INVOICE_TO_NEMOSPED\TBDWFT_INVOICE_TO_NEMOSPED_ins\OLE DB Source + TRUNCATE tmp.Outputs[OLE DB Source Output].Columns[sede_nazione_consegna]"
                           name="sede_nazione_consegna"
                           truncationRowDisposition="FailComponent" />
@@ -3154,7 +3150,7 @@ order by 2,1</property>
                           refId="Package\TBDWFT_INVOICE_TO_NEMOSPED\TBDWFT_INVOICE_TO_NEMOSPED_ins\OLE DB Source + TRUNCATE tmp.Outputs[OLE DB Source Output].ExternalColumns[Codice_cliente_fatturazione]"
                           codePage="1252"
                           dataType="str"
-                          length="20"
+                          length="31"
                           name="Codice_cliente_fatturazione" />
                         <externalMetadataColumn
                           refId="Package\TBDWFT_INVOICE_TO_NEMOSPED\TBDWFT_INVOICE_TO_NEMOSPED_ins\OLE DB Source + TRUNCATE tmp.Outputs[OLE DB Source Output].ExternalColumns[Descrizione_cliente_fatturazione]"
@@ -3184,7 +3180,7 @@ order by 2,1</property>
                           refId="Package\TBDWFT_INVOICE_TO_NEMOSPED\TBDWFT_INVOICE_TO_NEMOSPED_ins\OLE DB Source + TRUNCATE tmp.Outputs[OLE DB Source Output].ExternalColumns[sede_nazione_fatturazione]"
                           codePage="1252"
                           dataType="str"
-                          length="14"
+                          length="10"
                           name="sede_nazione_fatturazione" />
                         <externalMetadataColumn
                           refId="Package\TBDWFT_INVOICE_TO_NEMOSPED\TBDWFT_INVOICE_TO_NEMOSPED_ins\OLE DB Source + TRUNCATE tmp.Outputs[OLE DB Source Output].ExternalColumns[empty1]"
@@ -3196,7 +3192,7 @@ order by 2,1</property>
                           refId="Package\TBDWFT_INVOICE_TO_NEMOSPED\TBDWFT_INVOICE_TO_NEMOSPED_ins\OLE DB Source + TRUNCATE tmp.Outputs[OLE DB Source Output].ExternalColumns[Codice_cliente_consegna]"
                           codePage="1252"
                           dataType="str"
-                          length="20"
+                          length="31"
                           name="Codice_cliente_consegna" />
                         <externalMetadataColumn
                           refId="Package\TBDWFT_INVOICE_TO_NEMOSPED\TBDWFT_INVOICE_TO_NEMOSPED_ins\OLE DB Source + TRUNCATE tmp.Outputs[OLE DB Source Output].ExternalColumns[Descrizione_cliente_consegna]"
@@ -3226,7 +3222,7 @@ order by 2,1</property>
                           refId="Package\TBDWFT_INVOICE_TO_NEMOSPED\TBDWFT_INVOICE_TO_NEMOSPED_ins\OLE DB Source + TRUNCATE tmp.Outputs[OLE DB Source Output].ExternalColumns[sede_nazione_consegna]"
                           codePage="1252"
                           dataType="str"
-                          length="13"
+                          length="10"
                           name="sede_nazione_consegna" />
                         <externalMetadataColumn
                           refId="Package\TBDWFT_INVOICE_TO_NEMOSPED\TBDWFT_INVOICE_TO_NEMOSPED_ins\OLE DB Source + TRUNCATE tmp.Outputs[OLE DB Source Output].ExternalColumns[telefono_consegna]"
@@ -3318,7 +3314,7 @@ order by 2,1</property>
                           refId="Package\TBDWFT_INVOICE_TO_NEMOSPED\TBDWFT_INVOICE_TO_NEMOSPED_ins\OLE DB Source + TRUNCATE tmp.Outputs[OLE DB Source Error Output].Columns[Codice_cliente_fatturazione]"
                           codePage="1252"
                           dataType="str"
-                          length="20"
+                          length="31"
                           lineageId="Package\TBDWFT_INVOICE_TO_NEMOSPED\TBDWFT_INVOICE_TO_NEMOSPED_ins\OLE DB Source + TRUNCATE tmp.Outputs[OLE DB Source Error Output].Columns[Codice_cliente_fatturazione]"
                           name="Codice_cliente_fatturazione" />
                         <outputColumn
@@ -3353,7 +3349,7 @@ order by 2,1</property>
                           refId="Package\TBDWFT_INVOICE_TO_NEMOSPED\TBDWFT_INVOICE_TO_NEMOSPED_ins\OLE DB Source + TRUNCATE tmp.Outputs[OLE DB Source Error Output].Columns[sede_nazione_fatturazione]"
                           codePage="1252"
                           dataType="str"
-                          length="14"
+                          length="10"
                           lineageId="Package\TBDWFT_INVOICE_TO_NEMOSPED\TBDWFT_INVOICE_TO_NEMOSPED_ins\OLE DB Source + TRUNCATE tmp.Outputs[OLE DB Source Error Output].Columns[sede_nazione_fatturazione]"
                           name="sede_nazione_fatturazione" />
                         <outputColumn
@@ -3367,7 +3363,7 @@ order by 2,1</property>
                           refId="Package\TBDWFT_INVOICE_TO_NEMOSPED\TBDWFT_INVOICE_TO_NEMOSPED_ins\OLE DB Source + TRUNCATE tmp.Outputs[OLE DB Source Error Output].Columns[Codice_cliente_consegna]"
                           codePage="1252"
                           dataType="str"
-                          length="20"
+                          length="31"
                           lineageId="Package\TBDWFT_INVOICE_TO_NEMOSPED\TBDWFT_INVOICE_TO_NEMOSPED_ins\OLE DB Source + TRUNCATE tmp.Outputs[OLE DB Source Error Output].Columns[Codice_cliente_consegna]"
                           name="Codice_cliente_consegna" />
                         <outputColumn
@@ -3402,7 +3398,7 @@ order by 2,1</property>
                           refId="Package\TBDWFT_INVOICE_TO_NEMOSPED\TBDWFT_INVOICE_TO_NEMOSPED_ins\OLE DB Source + TRUNCATE tmp.Outputs[OLE DB Source Error Output].Columns[sede_nazione_consegna]"
                           codePage="1252"
                           dataType="str"
-                          length="13"
+                          length="10"
                           lineageId="Package\TBDWFT_INVOICE_TO_NEMOSPED\TBDWFT_INVOICE_TO_NEMOSPED_ins\OLE DB Source + TRUNCATE tmp.Outputs[OLE DB Source Error Output].Columns[sede_nazione_consegna]"
                           name="sede_nazione_consegna" />
                         <outputColumn
@@ -6500,7 +6496,7 @@ from (
           DTS:LocaleID="-1"
           DTS:ObjectName="Upd DATE Loaded_row0"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="1">
+          DTS:ThreadHint="0">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
@@ -8093,21 +8089,33 @@ from (
         <NodeLayout
           Size="250,42"
           Id="Package\TBDWFT_INVOICE_TO_NEMOSPED\TBDWFT_INVOICE_TO_NEMOSPED_ins\OLE DB Source + TRUNCATE tmp"
-          TopLeft="142,32" />
+          TopLeft="60,40" />
         <EdgeLayout
           Id="Package\TBDWFT_INVOICE_TO_NEMOSPED\TBDWFT_INVOICE_TO_NEMOSPED_ins.Paths[OLE DB Source Output]"
-          TopLeft="270.75,74">
+          TopLeft="185,82">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,49"
+              EndConnector="89.5,41"
               Start="0,0"
-              End="0,41.5">
+              End="89.5,33.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,41.5" />
+                    End="0,16.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,16.5"
+                    Point2="0,20.5"
+                    Point3="4,20.5" />
+                  <mssgle:LineSegment
+                    End="85.5,20.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="85.5,20.5"
+                    Point2="89.5,20.5"
+                    Point3="89.5,24.5" />
+                  <mssgle:LineSegment
+                    End="89.5,33.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -8149,7 +8157,7 @@ from (
     design-time-name="Package\TBDWFT_INVOICE_TO_NEMOSPED\TBDWFT_INVOICE_TO_NEMOSPED_upd">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="157,42"
           Id="Package\TBDWFT_INVOICE_TO_NEMOSPED\TBDWFT_INVOICE_TO_NEMOSPED_upd\OLE DB Source"
@@ -8197,7 +8205,9 @@ from (
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -8231,7 +8241,9 @@ from (
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -8265,7 +8277,9 @@ from (
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>

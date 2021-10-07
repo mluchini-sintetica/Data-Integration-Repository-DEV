@@ -13,8 +13,8 @@
   DTS:ObjectName="SEA_VISION_DWFT"
   DTS:PackageType="5"
   DTS:ProtectionLevel="2"
-  DTS:VersionBuild="478"
-  DTS:VersionGUID="{CD4E1358-ABA7-4EF0-926D-1A27CDDEDC68}">
+  DTS:VersionBuild="479"
+  DTS:VersionGUID="{915DEAEE-5A30-436B-83FF-26C93675294D}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -28,12 +28,12 @@
           DTS:ConnectionString="Data Source=192.168.200.19;User ID=PARCEL_DIR_R;Initial Catalog=Parcel2008_SINT;Provider=SQLNCLI11.1;Persist Security Info=True;Auto Translate=False;">
           <EncryptedData
             Type="http://www.w3.org/2001/04/xmlenc#Element"
-            Salt="s9zD8hyAz8c="
-            IV="relUatWthdAa+5zkGJCavg==" xmlns="http://www.w3.org/2001/04/xmlenc#">
+            Salt="GpCWQkqBGFQ="
+            IV="WW/nLrEJ1D1aqP6k4OuiNQ==" xmlns="http://www.w3.org/2001/04/xmlenc#">
             <EncryptionMethod
               Algorithm="http://www.w3.org/2001/04/xmlenc#aes256-cbc" />
             <CipherData>
-              <CipherValue>relUatWthdAa+5zkGJCavvknTwiNNi7Rx/R/8qRdaxFPEni89yT5TI45Eap8b9LOYkXyzHWGi6fia5EVjiPY6NLSxcUNRtdE3DzRlHcS7OTFvkWFOD/GP2hdY9u4t1QzlMOJbF5CZ5Qh7bQQ23FMcNAR4qYIx8UCTfbIQkJFgX7CVy9RJvjx4PoE+K5LhjKa</CipherValue>
+              <CipherValue>WW/nLrEJ1D1aqP6k4OuiNbVFjXPOcuRUmvqDoeFqYAjEwdAM1FiO+LDQcb8ccRwUe+sczGMclOV8ISEKq6dx5UUNNnQ9OZoyk16maLGWonlE5IUsIAl2d3eZ1XRlgtuEA/JeJ8lBGfMNacr73E+OHG8moNfE2DKbe3on2UH3JiX4Rbppm+Q9KWG3K3/Rx72V</CipherValue>
             </CipherData>
           </EncryptedData>
         </DTS:ConnectionManager>
@@ -1901,7 +1901,7 @@ b.operatorID2, b.OperatorID3, b.RecipeVersion, b.SerializationFlag, b.QARelease,
 b.Status, b.ReportPrintCounter, c.tbdwan_batch_id, d.tbdwan_article_id, trg.trg_ID, trg.trg_row_sts_flg, x.id as PRODUCTION_LINE_ID
 FROM
 (SELECT * FROM TBST_SEA_REG_PROCESSORDER WHERE site_id = ? and row_sts_flg=1) a join
-(SELECT * FROM TBST_SEA_REG_BATCHES WHERE site_id = ? and row_sts_flg=1) b on a.batchID = b.batchID join
+(SELECT * FROM TBST_SEA_REG_BATCHES WHERE site_id = ? and row_sts_flg=1 and processorder&lt;&gt;'') b on a.batchID = b.batchID join
 (SELECT id, vision_system_line_id FROM TBDWMN_PRODUCTION_LINE WHERE site_cd = ? and phase_cd = 'Packaging' and getdate() between VALIDITY_START_DT and VALIDITY_END_DT) x on b.lineid = x.vision_system_line_id left join
 (SELECT id as tbdwan_batch_id, batch_cd, article_cd FROM TBDWAN_BATCH WHERE SITE_ID = ?) c on b.batchname = c.batch_cd and b.recipeid = c.ARTICLE_CD left join
 (SELECT id as tbdwan_article_id, article_cd FROM tbdwan_article WHERE site_id = ? and row_sts_flg=1) d on b.recipeid = d.ARTICLE_CD full join
