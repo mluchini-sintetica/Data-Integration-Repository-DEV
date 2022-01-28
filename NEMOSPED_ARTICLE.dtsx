@@ -12,8 +12,8 @@
   DTS:ObjectName="NEMOSPED_ARTICLE"
   DTS:PackageType="5"
   DTS:ProtectionLevel="2"
-  DTS:VersionBuild="190"
-  DTS:VersionGUID="{7EFAD1FB-2CC3-42D5-88C2-4AA626E2A73D}">
+  DTS:VersionBuild="191"
+  DTS:VersionGUID="{573608B1-13EB-4B53-9F75-9BB966243DCA}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -1394,7 +1394,7 @@
                     <property
                       dataType="System.String"
                       description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
-                      name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                      name="FastLoadOptions">CHECK_CONSTRAINTS</property>
                     <property
                       dataType="System.Int32"
                       description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."

@@ -12,8 +12,8 @@
   DTS:ObjectName="NEMOSPED_INVOICE"
   DTS:PackageType="5"
   DTS:ProtectionLevel="2"
-  DTS:VersionBuild="248"
-  DTS:VersionGUID="{C84448BC-A1C1-4A94-B58D-45CE21593F96}">
+  DTS:VersionBuild="249"
+  DTS:VersionGUID="{FC66B72F-29D6-4347-8D5E-E039A3D63EA2}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -1121,7 +1121,7 @@
           DTS:LocaleID="-1"
           DTS:ObjectName="Last Max DATE Loaded and DWH_DELTA_DT"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="1">
+          DTS:ThreadHint="0">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
@@ -1164,7 +1164,7 @@
           DTS:LocaleID="-1"
           DTS:ObjectName="Last Upd TBLOG_PACKAGE_TABLE"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="0">
+          DTS:ThreadHint="1">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
@@ -1288,7 +1288,7 @@
           DTS:LocaleID="-1"
           DTS:ObjectName="New Max DATE Loaded"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="0">
+          DTS:ThreadHint="1">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
@@ -3535,7 +3535,7 @@ order by 2,1, articolo desc</property>
                     <property
                       dataType="System.String"
                       description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
-                      name="FastLoadOptions">TABLOCK</property>
+                      name="FastLoadOptions"></property>
                     <property
                       dataType="System.Int32"
                       description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
@@ -4042,7 +4042,7 @@ order by 2,1, articolo desc</property>
                     <property
                       dataType="System.String"
                       description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
-                      name="FastLoadOptions">TABLOCK</property>
+                      name="FastLoadOptions"></property>
                     <property
                       dataType="System.Int32"
                       description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
@@ -6376,7 +6376,7 @@ from (
           DTS:LocaleID="-1"
           DTS:ObjectName="Upd DATE Loaded"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="0">
+          DTS:ThreadHint="1">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
@@ -7865,6 +7865,10 @@ from (
           Id="Package\TBDWFT_INVOICE_TO_NEMOSPED\TBDWFT_INVOICE_TO_NEMOSPED_ins\Data Conversion"
           TopLeft="194,123" />
         <NodeLayout
+          Size="250,42"
+          Id="Package\TBDWFT_INVOICE_TO_NEMOSPED\TBDWFT_INVOICE_TO_NEMOSPED_ins\OLE DB Source + TRUNCATE tmp"
+          TopLeft="60,40" />
+        <NodeLayout
           Size="123,42"
           Id="Package\TBDWFT_INVOICE_TO_NEMOSPED\TBDWFT_INVOICE_TO_NEMOSPED_ins\Multicast"
           TopLeft="183,325" />
@@ -8019,6 +8023,40 @@ from (
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
+          Id="Package\TBDWFT_INVOICE_TO_NEMOSPED\TBDWFT_INVOICE_TO_NEMOSPED_ins.Paths[OLE DB Source Output]"
+          TopLeft="185,82">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="89.5,41"
+              Start="0,0"
+              End="89.5,33.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,16.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,16.5"
+                    Point2="0,20.5"
+                    Point3="4,20.5" />
+                  <mssgle:LineSegment
+                    End="85.5,20.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="85.5,20.5"
+                    Point2="89.5,20.5"
+                    Point3="89.5,24.5" />
+                  <mssgle:LineSegment
+                    End="89.5,33.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
           Id="Package\TBDWFT_INVOICE_TO_NEMOSPED\TBDWFT_INVOICE_TO_NEMOSPED_ins.Paths[Multicast Output 2]"
           TopLeft="263.666666666667,367">
           <EdgeLayout.Curve>
@@ -8086,47 +8124,17 @@ from (
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="250,42"
-          Id="Package\TBDWFT_INVOICE_TO_NEMOSPED\TBDWFT_INVOICE_TO_NEMOSPED_ins\OLE DB Source + TRUNCATE tmp"
-          TopLeft="60,40" />
-        <EdgeLayout
-          Id="Package\TBDWFT_INVOICE_TO_NEMOSPED\TBDWFT_INVOICE_TO_NEMOSPED_ins.Paths[OLE DB Source Output]"
-          TopLeft="185,82">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="89.5,41"
-              Start="0,0"
-              End="89.5,33.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,16.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,16.5"
-                    Point2="0,20.5"
-                    Point3="4,20.5" />
-                  <mssgle:LineSegment
-                    End="85.5,20.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="85.5,20.5"
-                    Point2="89.5,20.5"
-                    Point3="89.5,24.5" />
-                  <mssgle:LineSegment
-                    End="89.5,33.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\TBDWFT_INVOICE_TO_NEMOSPED\TBDWFT_INVOICE_TO_NEMOSPED_ins\OLE DB Source + TRUNCATE tmp">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
   <PipelineComponentMetadata
     design-time-name="Package\TBDWFT_INVOICE_TO_NEMOSPED\TBDWFT_INVOICE_TO_NEMOSPED_ins\TBDWFT_INVOICE_TO_NEMOSPED_ins">
     <Properties>
@@ -8318,13 +8326,5 @@ from (
       </GraphLayout>
     </LayoutInfo>
   </DtsEventHandler>
-  <PipelineComponentMetadata
-    design-time-name="Package\TBDWFT_INVOICE_TO_NEMOSPED\TBDWFT_INVOICE_TO_NEMOSPED_ins\OLE DB Source + TRUNCATE tmp">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
 </Objects>]]></DTS:DesignTimeProperties>
 </DTS:Executable>
