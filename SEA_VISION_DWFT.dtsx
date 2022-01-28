@@ -13,8 +13,8 @@
   DTS:ObjectName="SEA_VISION_DWFT"
   DTS:PackageType="5"
   DTS:ProtectionLevel="2"
-  DTS:VersionBuild="479"
-  DTS:VersionGUID="{915DEAEE-5A30-436B-83FF-26C93675294D}">
+  DTS:VersionBuild="480"
+  DTS:VersionGUID="{38B8797D-03A4-4C32-AAEF-792FC4D50009}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -28,12 +28,12 @@
           DTS:ConnectionString="Data Source=192.168.200.19;User ID=PARCEL_DIR_R;Initial Catalog=Parcel2008_SINT;Provider=SQLNCLI11.1;Persist Security Info=True;Auto Translate=False;">
           <EncryptedData
             Type="http://www.w3.org/2001/04/xmlenc#Element"
-            Salt="GpCWQkqBGFQ="
-            IV="WW/nLrEJ1D1aqP6k4OuiNQ==" xmlns="http://www.w3.org/2001/04/xmlenc#">
+            Salt="lG1i8HnZsCU="
+            IV="P+cEeM5fxoXpiisAOBDAyw==" xmlns="http://www.w3.org/2001/04/xmlenc#">
             <EncryptionMethod
               Algorithm="http://www.w3.org/2001/04/xmlenc#aes256-cbc" />
             <CipherData>
-              <CipherValue>WW/nLrEJ1D1aqP6k4OuiNbVFjXPOcuRUmvqDoeFqYAjEwdAM1FiO+LDQcb8ccRwUe+sczGMclOV8ISEKq6dx5UUNNnQ9OZoyk16maLGWonlE5IUsIAl2d3eZ1XRlgtuEA/JeJ8lBGfMNacr73E+OHG8moNfE2DKbe3on2UH3JiX4Rbppm+Q9KWG3K3/Rx72V</CipherValue>
+              <CipherValue>P+cEeM5fxoXpiisAOBDAyyLgEGZ4x+vBsvCWGqugPx3SnyRNWkOocFeEXdFklDfGxEMpecJ4nVt16KJY0M0/ISzF+I41ZVUrh1E3EkpWKw9HcxTJWqmjZbKwtyBhdqfxKPnyZgFqOAaCuRx8eDp+MVH9fgB0Pi3S9nSn4okBQ5cUVJ4VTrzo8qoPkeD9Avyb</CipherValue>
             </CipherData>
           </EncryptedData>
         </DTS:ConnectionManager>
@@ -1482,7 +1482,7 @@ ID = ?</property>
                         <property
                           dataType="System.String"
                           description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
-                          name="FastLoadOptions">TABLOCK</property>
+                          name="FastLoadOptions"></property>
                         <property
                           dataType="System.Int32"
                           description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
@@ -2661,7 +2661,7 @@ FROM
                         <property
                           dataType="System.String"
                           description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
-                          name="FastLoadOptions">TABLOCK</property>
+                          name="FastLoadOptions"></property>
                         <property
                           dataType="System.Int32"
                           description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."

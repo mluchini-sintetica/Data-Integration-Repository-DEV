@@ -13,8 +13,8 @@
   DTS:ObjectName="PARCEL_MFG_STG_me"
   DTS:PackageType="5"
   DTS:ProtectionLevel="2"
-  DTS:VersionBuild="352"
-  DTS:VersionGUID="{3BFFADB0-C8BC-4A37-BC12-8FEB5F1DD2D1}">
+  DTS:VersionBuild="356"
+  DTS:VersionGUID="{8CC7942B-84E4-4A52-9026-153522484664}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Configurations>
@@ -183,7 +183,7 @@
       DTS:LocaleID="-1"
       DTS:ObjectName="Assign SITE_ID"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="0">
+      DTS:ThreadHint="1">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -211,7 +211,7 @@
       DTS:LocaleID="-1"
       DTS:ObjectName="Assign SOURCE_SYSTEM_ID"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="1">
+      DTS:ThreadHint="0">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -454,7 +454,7 @@
               DTS:LocaleID="-1"
               DTS:ObjectName="Assign TABLE_TARGET_CD"
               DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-              DTS:ThreadHint="0">
+              DTS:ThreadHint="6">
               <DTS:Variables />
               <DTS:ObjectData>
                 <SQLTask:SqlTaskData
@@ -476,7 +476,7 @@
               DTS:LocaleID="-1"
               DTS:ObjectName="Delete STG TRG TABLE"
               DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-              DTS:ThreadHint="0">
+              DTS:ThreadHint="6">
               <DTS:Variables />
               <DTS:PropertyExpression
                 DTS:Name="SqlStatementSource">"delete from " + @[User::out_TABLE_TARGET_CD] + " where site_id = " + (DT_WSTR,2) @[User::out_SITE_ID]</DTS:PropertyExpression>
@@ -495,7 +495,7 @@
               DTS:LocaleID="-1"
               DTS:ObjectName="Ins_Upd TBLOG_PACKAGE_TABLE"
               DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-              DTS:ThreadHint="0">
+              DTS:ThreadHint="6">
               <DTS:Variables />
               <DTS:ObjectData>
                 <SQLTask:SqlTaskData
@@ -573,7 +573,7 @@
               DTS:LocaleID="-1"
               DTS:ObjectName="Last Upd TBLOG_PACKAGE_TABLE"
               DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-              DTS:ThreadHint="0">
+              DTS:ThreadHint="6">
               <DTS:Variables />
               <DTS:ObjectData>
                 <SQLTask:SqlTaskData
@@ -615,7 +615,7 @@
               DTS:LocaleID="-1"
               DTS:ObjectName="MAX TABLE ID"
               DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-              DTS:ThreadHint="1">
+              DTS:ThreadHint="7">
               <DTS:Variables />
               <DTS:ObjectData>
                 <SQLTask:SqlTaskData
@@ -1162,7 +1162,7 @@
                         <property
                           dataType="System.String"
                           description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
-                          name="FastLoadOptions">TABLOCK</property>
+                          name="FastLoadOptions"></property>
                         <property
                           dataType="System.Int32"
                           description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
@@ -1884,7 +1884,7 @@
               DTS:LocaleID="-1"
               DTS:ObjectName="Assign TABLE_TARGET_CD"
               DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-              DTS:ThreadHint="2">
+              DTS:ThreadHint="8">
               <DTS:Variables />
               <DTS:ObjectData>
                 <SQLTask:SqlTaskData
@@ -1906,7 +1906,7 @@
               DTS:LocaleID="-1"
               DTS:ObjectName="Delete STG TRG TABLE"
               DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-              DTS:ThreadHint="2">
+              DTS:ThreadHint="8">
               <DTS:Variables />
               <DTS:PropertyExpression
                 DTS:Name="SqlStatementSource">"delete from " + @[User::out_TABLE_TARGET_CD] + " where site_id = " + (DT_WSTR,2) @[User::out_SITE_ID]</DTS:PropertyExpression>
@@ -1925,7 +1925,7 @@
               DTS:LocaleID="-1"
               DTS:ObjectName="Ins_Upd TBLOG_PACKAGE_TABLE"
               DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-              DTS:ThreadHint="2">
+              DTS:ThreadHint="8">
               <DTS:Variables />
               <DTS:ObjectData>
                 <SQLTask:SqlTaskData
@@ -2003,7 +2003,7 @@
               DTS:LocaleID="-1"
               DTS:ObjectName="Last Upd TBLOG_PACKAGE_TABLE"
               DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-              DTS:ThreadHint="2">
+              DTS:ThreadHint="8">
               <DTS:Variables />
               <DTS:ObjectData>
                 <SQLTask:SqlTaskData
@@ -2045,7 +2045,7 @@
               DTS:LocaleID="-1"
               DTS:ObjectName="MAX TABLE ID"
               DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-              DTS:ThreadHint="3">
+              DTS:ThreadHint="9">
               <DTS:Variables />
               <DTS:ObjectData>
                 <SQLTask:SqlTaskData
@@ -2702,7 +2702,7 @@
                         <property
                           dataType="System.String"
                           description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
-                          name="FastLoadOptions">TABLOCK</property>
+                          name="FastLoadOptions"></property>
                         <property
                           dataType="System.Int32"
                           description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
@@ -3786,7 +3786,7 @@
               DTS:LocaleID="-1"
               DTS:ObjectName="Assign TABLE_TARGET_CD"
               DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-              DTS:ThreadHint="4">
+              DTS:ThreadHint="10">
               <DTS:Variables />
               <DTS:ObjectData>
                 <SQLTask:SqlTaskData
@@ -3808,7 +3808,7 @@
               DTS:LocaleID="-1"
               DTS:ObjectName="Delete STG TRG TABLE"
               DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-              DTS:ThreadHint="4">
+              DTS:ThreadHint="11">
               <DTS:Variables />
               <DTS:PropertyExpression
                 DTS:Name="SqlStatementSource">"delete from " + @[User::out_TABLE_TARGET_CD] + " where site_id = " + (DT_WSTR,2) @[User::out_SITE_ID]</DTS:PropertyExpression>
@@ -3827,7 +3827,7 @@
               DTS:LocaleID="-1"
               DTS:ObjectName="Ins_Upd TBLOG_PACKAGE_TABLE"
               DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-              DTS:ThreadHint="4">
+              DTS:ThreadHint="10">
               <DTS:Variables />
               <DTS:ObjectData>
                 <SQLTask:SqlTaskData
@@ -3905,7 +3905,7 @@
               DTS:LocaleID="-1"
               DTS:ObjectName="Last Upd TBLOG_PACKAGE_TABLE"
               DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-              DTS:ThreadHint="4">
+              DTS:ThreadHint="10">
               <DTS:Variables />
               <DTS:ObjectData>
                 <SQLTask:SqlTaskData
@@ -3947,7 +3947,7 @@
               DTS:LocaleID="-1"
               DTS:ObjectName="MAX TABLE ID"
               DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-              DTS:ThreadHint="5">
+              DTS:ThreadHint="10">
               <DTS:Variables />
               <DTS:ObjectData>
                 <SQLTask:SqlTaskData
@@ -6036,7 +6036,7 @@
                         <property
                           dataType="System.String"
                           description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
-                          name="FastLoadOptions">TABLOCK</property>
+                          name="FastLoadOptions"></property>
                         <property
                           dataType="System.Int32"
                           description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
@@ -11333,7 +11333,7 @@
               DTS:LocaleID="-1"
               DTS:ObjectName="Assign TABLE_TARGET_CD"
               DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-              DTS:ThreadHint="6">
+              DTS:ThreadHint="12">
               <DTS:Variables />
               <DTS:ObjectData>
                 <SQLTask:SqlTaskData
@@ -11355,7 +11355,7 @@
               DTS:LocaleID="-1"
               DTS:ObjectName="Delete STG TRG TABLE"
               DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-              DTS:ThreadHint="6">
+              DTS:ThreadHint="12">
               <DTS:Variables />
               <DTS:PropertyExpression
                 DTS:Name="SqlStatementSource">"delete from " + @[User::out_TABLE_TARGET_CD] + " where site_id = " + (DT_WSTR,2) @[User::out_SITE_ID]</DTS:PropertyExpression>
@@ -11374,7 +11374,7 @@
               DTS:LocaleID="-1"
               DTS:ObjectName="Ins_Upd TBLOG_PACKAGE_TABLE"
               DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-              DTS:ThreadHint="6">
+              DTS:ThreadHint="12">
               <DTS:Variables />
               <DTS:ObjectData>
                 <SQLTask:SqlTaskData
@@ -11452,7 +11452,7 @@
               DTS:LocaleID="-1"
               DTS:ObjectName="Last Upd TBLOG_PACKAGE_TABLE"
               DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-              DTS:ThreadHint="6">
+              DTS:ThreadHint="12">
               <DTS:Variables />
               <DTS:ObjectData>
                 <SQLTask:SqlTaskData
@@ -11494,7 +11494,7 @@
               DTS:LocaleID="-1"
               DTS:ObjectName="MAX TABLE ID"
               DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-              DTS:ThreadHint="7">
+              DTS:ThreadHint="13">
               <DTS:Variables />
               <DTS:ObjectData>
                 <SQLTask:SqlTaskData
@@ -12104,7 +12104,7 @@
                         <property
                           dataType="System.String"
                           description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
-                          name="FastLoadOptions">CHECK_CONSTRAINTS</property>
+                          name="FastLoadOptions"></property>
                         <property
                           dataType="System.Int32"
                           description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
@@ -12861,7 +12861,7 @@
               DTS:LocaleID="-1"
               DTS:ObjectName="Assign TABLE_TARGET_CD"
               DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-              DTS:ThreadHint="8">
+              DTS:ThreadHint="0">
               <DTS:Variables />
               <DTS:ObjectData>
                 <SQLTask:SqlTaskData
@@ -12883,7 +12883,7 @@
               DTS:LocaleID="-1"
               DTS:ObjectName="Delete STG TRG TABLE"
               DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-              DTS:ThreadHint="9">
+              DTS:ThreadHint="1">
               <DTS:Variables />
               <DTS:PropertyExpression
                 DTS:Name="SqlStatementSource">"delete from " + @[User::out_TABLE_TARGET_CD] + " where site_id = " + (DT_WSTR,2) @[User::out_SITE_ID]</DTS:PropertyExpression>
@@ -12902,7 +12902,7 @@
               DTS:LocaleID="-1"
               DTS:ObjectName="Ins_Upd TBLOG_PACKAGE_TABLE"
               DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-              DTS:ThreadHint="8">
+              DTS:ThreadHint="0">
               <DTS:Variables />
               <DTS:ObjectData>
                 <SQLTask:SqlTaskData
@@ -12980,7 +12980,7 @@
               DTS:LocaleID="-1"
               DTS:ObjectName="Last Upd TBLOG_PACKAGE_TABLE"
               DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-              DTS:ThreadHint="8">
+              DTS:ThreadHint="0">
               <DTS:Variables />
               <DTS:ObjectData>
                 <SQLTask:SqlTaskData
@@ -13022,7 +13022,7 @@
               DTS:LocaleID="-1"
               DTS:ObjectName="MAX TABLE ID"
               DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-              DTS:ThreadHint="8">
+              DTS:ThreadHint="0">
               <DTS:Variables />
               <DTS:ObjectData>
                 <SQLTask:SqlTaskData
@@ -13301,7 +13301,8 @@
                               lineageId="Package\STAGING LOAD\TBST_PRC_SYS_VALORI_AGGIUNTIVI_ALL\TBST_PRC_SYS_VALORI_AGGIUNTIVI_ALL\OLE DB Source.Outputs[OLE DB Source Output].Columns[C_Tabella]" />
                             <inputColumn
                               refId="Package\STAGING LOAD\TBST_PRC_SYS_VALORI_AGGIUNTIVI_ALL\TBST_PRC_SYS_VALORI_AGGIUNTIVI_ALL\Data Conversion.Inputs[Data Conversion Input].Columns[Text]"
-                              cachedDataType="nText"
+                              cachedCodepage="1252"
+                              cachedDataType="text"
                               cachedName="Text"
                               lineageId="Package\STAGING LOAD\TBST_PRC_SYS_VALORI_AGGIUNTIVI_ALL\TBST_PRC_SYS_VALORI_AGGIUNTIVI_ALL\OLE DB Source.Outputs[OLE DB Source Output].Columns[Text]" />
                           </inputColumns>
@@ -13359,10 +13360,10 @@
                             </outputColumn>
                             <outputColumn
                               refId="Package\STAGING LOAD\TBST_PRC_SYS_VALORI_AGGIUNTIVI_ALL\TBST_PRC_SYS_VALORI_AGGIUNTIVI_ALL\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Text]"
-                              dataType="wstr"
+                              codePage="1252"
+                              dataType="text"
                               errorOrTruncationOperation="Conversion"
                               errorRowDisposition="FailComponent"
-                              length="4000"
                               lineageId="Package\STAGING LOAD\TBST_PRC_SYS_VALORI_AGGIUNTIVI_ALL\TBST_PRC_SYS_VALORI_AGGIUNTIVI_ALL\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Text]"
                               name="Copy of Text"
                               truncationRowDisposition="FailComponent">
@@ -13455,7 +13456,7 @@
                         <property
                           dataType="System.String"
                           description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
-                          name="FastLoadOptions">TABLOCK</property>
+                          name="FastLoadOptions"></property>
                         <property
                           dataType="System.Int32"
                           description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
@@ -13578,8 +13579,8 @@
                               lineageId="Package\STAGING LOAD\TBST_PRC_SYS_VALORI_AGGIUNTIVI_ALL\TBST_PRC_SYS_VALORI_AGGIUNTIVI_ALL\Add Technical Fields.Outputs[Derived Column Output].Columns[TBLOG_PACKAGE_TABLE_ID]" />
                             <inputColumn
                               refId="Package\STAGING LOAD\TBST_PRC_SYS_VALORI_AGGIUNTIVI_ALL\TBST_PRC_SYS_VALORI_AGGIUNTIVI_ALL\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of Text]"
-                              cachedDataType="wstr"
-                              cachedLength="4000"
+                              cachedCodepage="1252"
+                              cachedDataType="text"
                               cachedName="Copy of Text"
                               externalMetadataColumnId="Package\STAGING LOAD\TBST_PRC_SYS_VALORI_AGGIUNTIVI_ALL\TBST_PRC_SYS_VALORI_AGGIUNTIVI_ALL\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Text]"
                               lineageId="Package\STAGING LOAD\TBST_PRC_SYS_VALORI_AGGIUNTIVI_ALL\TBST_PRC_SYS_VALORI_AGGIUNTIVI_ALL\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Text]" />
@@ -13877,7 +13878,8 @@
                               truncationRowDisposition="FailComponent" />
                             <outputColumn
                               refId="Package\STAGING LOAD\TBST_PRC_SYS_VALORI_AGGIUNTIVI_ALL\TBST_PRC_SYS_VALORI_AGGIUNTIVI_ALL\OLE DB Source.Outputs[OLE DB Source Output].Columns[Text]"
-                              dataType="nText"
+                              codePage="1252"
+                              dataType="text"
                               errorOrTruncationOperation="Conversion"
                               errorRowDisposition="FailComponent"
                               externalMetadataColumnId="Package\STAGING LOAD\TBST_PRC_SYS_VALORI_AGGIUNTIVI_ALL\TBST_PRC_SYS_VALORI_AGGIUNTIVI_ALL\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Text]"
@@ -13944,7 +13946,8 @@
                               name="Data" />
                             <externalMetadataColumn
                               refId="Package\STAGING LOAD\TBST_PRC_SYS_VALORI_AGGIUNTIVI_ALL\TBST_PRC_SYS_VALORI_AGGIUNTIVI_ALL\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Text]"
-                              dataType="nText"
+                              codePage="1252"
+                              dataType="text"
                               name="Text" />
                             <externalMetadataColumn
                               refId="Package\STAGING LOAD\TBST_PRC_SYS_VALORI_AGGIUNTIVI_ALL\TBST_PRC_SYS_VALORI_AGGIUNTIVI_ALL\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Boolean]"
@@ -14021,7 +14024,8 @@
                               name="Data" />
                             <outputColumn
                               refId="Package\STAGING LOAD\TBST_PRC_SYS_VALORI_AGGIUNTIVI_ALL\TBST_PRC_SYS_VALORI_AGGIUNTIVI_ALL\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Text]"
-                              dataType="nText"
+                              codePage="1252"
+                              dataType="text"
                               lineageId="Package\STAGING LOAD\TBST_PRC_SYS_VALORI_AGGIUNTIVI_ALL\TBST_PRC_SYS_VALORI_AGGIUNTIVI_ALL\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Text]"
                               name="Text" />
                             <outputColumn
@@ -14183,7 +14187,7 @@
               DTS:LocaleID="-1"
               DTS:ObjectName="Assign TABLE_TARGET_CD"
               DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-              DTS:ThreadHint="10">
+              DTS:ThreadHint="4">
               <DTS:Variables />
               <DTS:ObjectData>
                 <SQLTask:SqlTaskData
@@ -14205,7 +14209,7 @@
               DTS:LocaleID="-1"
               DTS:ObjectName="Delete STG TRG TABLE"
               DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-              DTS:ThreadHint="10">
+              DTS:ThreadHint="5">
               <DTS:Variables />
               <DTS:PropertyExpression
                 DTS:Name="SqlStatementSource">"delete from " + @[User::out_TABLE_TARGET_CD] + " where site_id = " + (DT_WSTR,2) @[User::out_SITE_ID]</DTS:PropertyExpression>
@@ -14224,7 +14228,7 @@
               DTS:LocaleID="-1"
               DTS:ObjectName="Ins_Upd TBLOG_PACKAGE_TABLE"
               DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-              DTS:ThreadHint="10">
+              DTS:ThreadHint="4">
               <DTS:Variables />
               <DTS:ObjectData>
                 <SQLTask:SqlTaskData
@@ -14302,7 +14306,7 @@
               DTS:LocaleID="-1"
               DTS:ObjectName="Last Upd TBLOG_PACKAGE_TABLE"
               DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-              DTS:ThreadHint="10">
+              DTS:ThreadHint="4">
               <DTS:Variables />
               <DTS:ObjectData>
                 <SQLTask:SqlTaskData
@@ -14344,7 +14348,7 @@
               DTS:LocaleID="-1"
               DTS:ObjectName="MAX TABLE ID"
               DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-              DTS:ThreadHint="11">
+              DTS:ThreadHint="4">
               <DTS:Variables />
               <DTS:ObjectData>
                 <SQLTask:SqlTaskData
@@ -14807,7 +14811,7 @@
                         <property
                           dataType="System.String"
                           description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
-                          name="FastLoadOptions">TABLOCK</property>
+                          name="FastLoadOptions"></property>
                         <property
                           dataType="System.Int32"
                           description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
@@ -15427,7 +15431,7 @@
               DTS:LocaleID="-1"
               DTS:ObjectName="Assign TABLE_TARGET_CD"
               DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-              DTS:ThreadHint="12">
+              DTS:ThreadHint="2">
               <DTS:Variables />
               <DTS:ObjectData>
                 <SQLTask:SqlTaskData
@@ -15449,7 +15453,7 @@
               DTS:LocaleID="-1"
               DTS:ObjectName="Delete STG TRG TABLE"
               DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-              DTS:ThreadHint="12">
+              DTS:ThreadHint="2">
               <DTS:Variables />
               <DTS:PropertyExpression
                 DTS:Name="SqlStatementSource">"delete from " + @[User::out_TABLE_TARGET_CD] + " where site_id = " + (DT_WSTR,2) @[User::out_SITE_ID]</DTS:PropertyExpression>
@@ -15468,7 +15472,7 @@
               DTS:LocaleID="-1"
               DTS:ObjectName="Ins_Upd TBLOG_PACKAGE_TABLE"
               DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-              DTS:ThreadHint="12">
+              DTS:ThreadHint="2">
               <DTS:Variables />
               <DTS:ObjectData>
                 <SQLTask:SqlTaskData
@@ -15546,7 +15550,7 @@
               DTS:LocaleID="-1"
               DTS:ObjectName="Last Upd TBLOG_PACKAGE_TABLE"
               DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-              DTS:ThreadHint="12">
+              DTS:ThreadHint="2">
               <DTS:Variables />
               <DTS:ObjectData>
                 <SQLTask:SqlTaskData
@@ -15588,7 +15592,7 @@
               DTS:LocaleID="-1"
               DTS:ObjectName="MAX TABLE ID"
               DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-              DTS:ThreadHint="13">
+              DTS:ThreadHint="3">
               <DTS:Variables />
               <DTS:ObjectData>
                 <SQLTask:SqlTaskData
@@ -16079,7 +16083,7 @@
                         <property
                           dataType="System.String"
                           description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
-                          name="FastLoadOptions">TABLOCK</property>
+                          name="FastLoadOptions"></property>
                         <property
                           dataType="System.Int32"
                           description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
@@ -19520,7 +19524,7 @@
     design-time-name="Package\STAGING LOAD\TBST_PRC_ANAGRAFICA_FAMIGLIE\TBST_PRC_ANAGRAFICA_FAMIGLIE">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="157,42"
           Id="Package\STAGING LOAD\TBST_PRC_ANAGRAFICA_FAMIGLIE\TBST_PRC_ANAGRAFICA_FAMIGLIE\OLE DB Source"
@@ -19568,9 +19572,7 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -19604,9 +19606,7 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -19640,9 +19640,7 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -19832,6 +19830,10 @@
       <GraphLayout
         Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
+          Size="157,42"
+          Id="Package\STAGING LOAD\TBST_PRC_ARTICOLO\TBST_PRC_ARTICOLO\OLE DB Source"
+          TopLeft="288,56" />
+        <NodeLayout
           Size="161,42"
           Id="Package\STAGING LOAD\TBST_PRC_ARTICOLO\TBST_PRC_ARTICOLO\Data Conversion"
           TopLeft="284,156" />
@@ -19843,10 +19845,6 @@
           Size="181,42"
           Id="Package\STAGING LOAD\TBST_PRC_ARTICOLO\TBST_PRC_ARTICOLO\Add Technical Fields"
           TopLeft="282,271" />
-        <NodeLayout
-          Size="157,42"
-          Id="Package\STAGING LOAD\TBST_PRC_ARTICOLO\TBST_PRC_ARTICOLO\OLE DB Source"
-          TopLeft="288,56" />
         <EdgeLayout
           Id="Package\STAGING LOAD\TBST_PRC_ARTICOLO\TBST_PRC_ARTICOLO.Paths[OLE DB Source Output]"
           TopLeft="365.5,98">
@@ -19941,7 +19939,7 @@
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\STAGING LOAD\TBST_PRC_ARTICOLO\TBST_PRC_ARTICOLO\OLE DB Destination">
+    design-time-name="Package\STAGING LOAD\TBST_PRC_ARTICOLO\TBST_PRC_ARTICOLO\OLE DB Source">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -19954,7 +19952,7 @@
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\STAGING LOAD\TBST_PRC_ARTICOLO\TBST_PRC_ARTICOLO\OLE DB Source">
+    design-time-name="Package\STAGING LOAD\TBST_PRC_ARTICOLO\TBST_PRC_ARTICOLO\OLE DB Destination">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -20146,55 +20144,15 @@
     design-time-name="Package\STAGING LOAD\TBST_PRC_SYS_VALORI_AGGIUNTIVI_ALL\TBST_PRC_SYS_VALORI_AGGIUNTIVI_ALL">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="181,42"
           Id="Package\STAGING LOAD\TBST_PRC_SYS_VALORI_AGGIUNTIVI_ALL\TBST_PRC_SYS_VALORI_AGGIUNTIVI_ALL\Add Technical Fields"
           TopLeft="283,271" />
         <NodeLayout
-          Size="157,42"
-          Id="Package\STAGING LOAD\TBST_PRC_SYS_VALORI_AGGIUNTIVI_ALL\TBST_PRC_SYS_VALORI_AGGIUNTIVI_ALL\OLE DB Source"
-          TopLeft="151,57" />
-        <NodeLayout
           Size="161,42"
           Id="Package\STAGING LOAD\TBST_PRC_SYS_VALORI_AGGIUNTIVI_ALL\TBST_PRC_SYS_VALORI_AGGIUNTIVI_ALL\Data Conversion"
           TopLeft="232,140" />
-        <EdgeLayout
-          Id="Package\STAGING LOAD\TBST_PRC_SYS_VALORI_AGGIUNTIVI_ALL\TBST_PRC_SYS_VALORI_AGGIUNTIVI_ALL.Paths[OLE DB Source Output]"
-          TopLeft="229.5,99">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="83,41"
-              Start="0,0"
-              End="83,33.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,16.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,16.5"
-                    Point2="0,20.5"
-                    Point3="4,20.5" />
-                  <mssgle:LineSegment
-                    End="79,20.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="79,20.5"
-                    Point2="83,20.5"
-                    Point3="83,24.5" />
-                  <mssgle:LineSegment
-                    End="83,33.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="13.96052734375,25.5,55.0789453125,11.228515625"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
         <EdgeLayout
           Id="Package\STAGING LOAD\TBST_PRC_SYS_VALORI_AGGIUNTIVI_ALL\TBST_PRC_SYS_VALORI_AGGIUNTIVI_ALL.Paths[Data Conversion Output]"
           TopLeft="312.5,182">
@@ -20226,80 +20184,88 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="2.96052734374999,49.5,55.0789453125,11.228515625"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="157,42"
+          Id="Package\STAGING LOAD\TBST_PRC_SYS_VALORI_AGGIUNTIVI_ALL\TBST_PRC_SYS_VALORI_AGGIUNTIVI_ALL\OLE DB Source"
+          TopLeft="146,59" />
+        <EdgeLayout
+          Id="Package\STAGING LOAD\TBST_PRC_SYS_VALORI_AGGIUNTIVI_ALL\TBST_PRC_SYS_VALORI_AGGIUNTIVI_ALL.Paths[OLE DB Source Output]"
+          TopLeft="224.5,101">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="88,39"
+              Start="0,0"
+              End="88,31.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,15.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,15.5"
+                    Point2="0,19.5"
+                    Point3="4,19.5" />
+                  <mssgle:LineSegment
+                    End="84,19.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="84,19.5"
+                    Point2="88,19.5"
+                    Point3="88,23.5" />
+                  <mssgle:LineSegment
+                    End="88,31.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <NodeLayout
           Size="177,42"
           Id="Package\STAGING LOAD\TBST_PRC_SYS_VALORI_AGGIUNTIVI_ALL\TBST_PRC_SYS_VALORI_AGGIUNTIVI_ALL\OLE DB Destination"
-          TopLeft="398,402" />
+          TopLeft="482,363" />
         <EdgeLayout
           Id="Package\STAGING LOAD\TBST_PRC_SYS_VALORI_AGGIUNTIVI_ALL\TBST_PRC_SYS_VALORI_AGGIUNTIVI_ALL.Paths[Derived Column Output]"
           TopLeft="373.5,313">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="113,89"
+              EndConnector="197,50"
               Start="0,0"
-              End="113,81.5">
+              End="197,42.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,40.5" />
+                    End="0,21" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,40.5"
-                    Point2="0,44.5"
-                    Point3="4,44.5" />
+                    Point1="0,21"
+                    Point2="0,25"
+                    Point3="4,25" />
                   <mssgle:LineSegment
-                    End="109,44.5" />
+                    End="193,25" />
                   <mssgle:CubicBezierSegment
-                    Point1="109,44.5"
-                    Point2="113,44.5"
-                    Point3="113,48.5" />
+                    Point1="193,25"
+                    Point2="197,25"
+                    Point3="197,29" />
                   <mssgle:LineSegment
-                    End="113,81.5" />
+                    End="197,42.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="28.96052734375,49.5,55.0789453125,11.228515625"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
-  <PipelineComponentMetadata
-    design-time-name="Package\STAGING LOAD\TBST_PRC_SYS_VALORI_AGGIUNTIVI_ALL\TBST_PRC_SYS_VALORI_AGGIUNTIVI_ALL\OLE DB Source">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\STAGING LOAD\TBST_PRC_SYS_VALORI_AGGIUNTIVI_ALL\TBST_PRC_SYS_VALORI_AGGIUNTIVI_ALL\OLE DB Destination">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
   <DtsEventHandler
     design-time-name="Package\STAGING LOAD\TBST_PRC_SYS_VALORI_AGGIUNTIVI_CONFIG.EventHandlers[OnPreExecute]">
     <LayoutInfo>
@@ -20316,15 +20282,19 @@
     design-time-name="Package\STAGING LOAD\TBST_PRC_SYS_VALORI_AGGIUNTIVI_CONFIG\TBST_PRC_SYS_VALORI_AGGIUNTIVI_CONFIG">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="181,42"
-          Id="Package\STAGING LOAD\TBST_PRC_SYS_VALORI_AGGIUNTIVI_CONFIG\TBST_PRC_SYS_VALORI_AGGIUNTIVI_CONFIG\Add Technical Fields"
-          TopLeft="282,271" />
+          Size="177,42"
+          Id="Package\STAGING LOAD\TBST_PRC_SYS_VALORI_AGGIUNTIVI_CONFIG\TBST_PRC_SYS_VALORI_AGGIUNTIVI_CONFIG\OLE DB Destination"
+          TopLeft="173,364" />
         <NodeLayout
           Size="157,42"
           Id="Package\STAGING LOAD\TBST_PRC_SYS_VALORI_AGGIUNTIVI_CONFIG\TBST_PRC_SYS_VALORI_AGGIUNTIVI_CONFIG\OLE DB Source"
           TopLeft="537,68" />
+        <NodeLayout
+          Size="181,42"
+          Id="Package\STAGING LOAD\TBST_PRC_SYS_VALORI_AGGIUNTIVI_CONFIG\TBST_PRC_SYS_VALORI_AGGIUNTIVI_CONFIG\Add Technical Fields"
+          TopLeft="282,271" />
         <NodeLayout
           Size="161,42"
           Id="Package\STAGING LOAD\TBST_PRC_SYS_VALORI_AGGIUNTIVI_CONFIG\TBST_PRC_SYS_VALORI_AGGIUNTIVI_CONFIG\Data Conversion"
@@ -20360,9 +20330,41 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-60.06447265625,25.5,41.1289453125,9.5732421875"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\STAGING LOAD\TBST_PRC_SYS_VALORI_AGGIUNTIVI_CONFIG\TBST_PRC_SYS_VALORI_AGGIUNTIVI_CONFIG.Paths[Derived Column Output]"
+          TopLeft="372.5,313">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-111,51"
+              Start="0,0"
+              End="-111,43.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,21.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,21.5"
+                    Point2="0,25.5"
+                    Point3="-4,25.5" />
+                  <mssgle:LineSegment
+                    End="-107,25.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-107,25.5"
+                    Point2="-111,25.5"
+                    Point3="-111,29.5" />
+                  <mssgle:LineSegment
+                    End="-111,43.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -20396,49 +20398,7 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-102.56447265625,44,41.1289453125,9.5732421875"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="177,42"
-          Id="Package\STAGING LOAD\TBST_PRC_SYS_VALORI_AGGIUNTIVI_CONFIG\TBST_PRC_SYS_VALORI_AGGIUNTIVI_CONFIG\OLE DB Destination"
-          TopLeft="173,364" />
-        <EdgeLayout
-          Id="Package\STAGING LOAD\TBST_PRC_SYS_VALORI_AGGIUNTIVI_CONFIG\TBST_PRC_SYS_VALORI_AGGIUNTIVI_CONFIG.Paths[Derived Column Output]"
-          TopLeft="372.5,313">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-111,51"
-              Start="0,0"
-              End="-111,43.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,21.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,21.5"
-                    Point2="0,25.5"
-                    Point3="-4,25.5" />
-                  <mssgle:LineSegment
-                    End="-107,25.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-107,25.5"
-                    Point2="-111,25.5"
-                    Point3="-111,29.5" />
-                  <mssgle:LineSegment
-                    End="-111,43.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-76.06447265625,30.5,41.1289453125,9.5732421875"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -20486,15 +20446,19 @@
     design-time-name="Package\STAGING LOAD\TBST_PRC_SYS_VALORI_AGGIUNTIVI_CONTESTO\TBST_PRC_SYS_VALORI_AGGIUNTIVI_CONTESTO">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="181,42"
-          Id="Package\STAGING LOAD\TBST_PRC_SYS_VALORI_AGGIUNTIVI_CONTESTO\TBST_PRC_SYS_VALORI_AGGIUNTIVI_CONTESTO\Add Technical Fields"
-          TopLeft="282,271" />
+          Size="177,42"
+          Id="Package\STAGING LOAD\TBST_PRC_SYS_VALORI_AGGIUNTIVI_CONTESTO\TBST_PRC_SYS_VALORI_AGGIUNTIVI_CONTESTO\OLE DB Destination"
+          TopLeft="347,380" />
         <NodeLayout
           Size="157,42"
           Id="Package\STAGING LOAD\TBST_PRC_SYS_VALORI_AGGIUNTIVI_CONTESTO\TBST_PRC_SYS_VALORI_AGGIUNTIVI_CONTESTO\OLE DB Source"
           TopLeft="327,55" />
+        <NodeLayout
+          Size="181,42"
+          Id="Package\STAGING LOAD\TBST_PRC_SYS_VALORI_AGGIUNTIVI_CONTESTO\TBST_PRC_SYS_VALORI_AGGIUNTIVI_CONTESTO\Add Technical Fields"
+          TopLeft="282,271" />
         <NodeLayout
           Size="161,42"
           Id="Package\STAGING LOAD\TBST_PRC_SYS_VALORI_AGGIUNTIVI_CONTESTO\TBST_PRC_SYS_VALORI_AGGIUNTIVI_CONTESTO\Data Conversion"
@@ -20530,9 +20494,41 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="69.44142578125,43.5,31.1171484375,9.421875"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\STAGING LOAD\TBST_PRC_SYS_VALORI_AGGIUNTIVI_CONTESTO\TBST_PRC_SYS_VALORI_AGGIUNTIVI_CONTESTO.Paths[Derived Column Output]"
+          TopLeft="372.5,313">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="63,67"
+              Start="0,0"
+              End="63,59.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,29.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,29.5"
+                    Point2="0,33.5"
+                    Point3="4,33.5" />
+                  <mssgle:LineSegment
+                    End="59,33.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="59,33.5"
+                    Point2="63,33.5"
+                    Point3="63,37.5" />
+                  <mssgle:LineSegment
+                    End="63,59.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -20566,49 +20562,7 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-117.05857421875,32.5,31.1171484375,9.421875"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="177,42"
-          Id="Package\STAGING LOAD\TBST_PRC_SYS_VALORI_AGGIUNTIVI_CONTESTO\TBST_PRC_SYS_VALORI_AGGIUNTIVI_CONTESTO\OLE DB Destination"
-          TopLeft="347,380" />
-        <EdgeLayout
-          Id="Package\STAGING LOAD\TBST_PRC_SYS_VALORI_AGGIUNTIVI_CONTESTO\TBST_PRC_SYS_VALORI_AGGIUNTIVI_CONTESTO.Paths[Derived Column Output]"
-          TopLeft="372.5,313">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="63,67"
-              Start="0,0"
-              End="63,59.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,29.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,29.5"
-                    Point2="0,33.5"
-                    Point3="4,33.5" />
-                  <mssgle:LineSegment
-                    End="59,33.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="59,33.5"
-                    Point2="63,33.5"
-                    Point3="63,37.5" />
-                  <mssgle:LineSegment
-                    End="63,59.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="15.94142578125,38.5,31.1171484375,9.421875"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -20652,5 +20606,31 @@
       </GraphLayout>
     </LayoutInfo>
   </DtsEventHandler>
+  <PipelineComponentMetadata
+    design-time-name="Package\STAGING LOAD\TBST_PRC_SYS_VALORI_AGGIUNTIVI_ALL\TBST_PRC_SYS_VALORI_AGGIUNTIVI_ALL\OLE DB Source">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\STAGING LOAD\TBST_PRC_SYS_VALORI_AGGIUNTIVI_ALL\TBST_PRC_SYS_VALORI_AGGIUNTIVI_ALL\OLE DB Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
 </Objects>]]></DTS:DesignTimeProperties>
 </DTS:Executable>
