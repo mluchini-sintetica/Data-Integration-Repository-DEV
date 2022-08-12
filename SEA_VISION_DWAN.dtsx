@@ -13,8 +13,8 @@
   DTS:ObjectName="SEA_VISION_DWAN"
   DTS:PackageType="5"
   DTS:ProtectionLevel="2"
-  DTS:VersionBuild="533"
-  DTS:VersionGUID="{92155358-27E8-4923-89CB-A4877C26E8C1}">
+  DTS:VersionBuild="540"
+  DTS:VersionGUID="{A1540F50-E624-4C22-B7E9-5056ADA2C717}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -28,12 +28,12 @@
           DTS:ConnectionString="Data Source=192.168.200.19;User ID=PARCEL_DIR_R;Initial Catalog=Parcel2008_SINT;Provider=SQLNCLI11.1;Persist Security Info=True;Auto Translate=False;">
           <EncryptedData
             Type="http://www.w3.org/2001/04/xmlenc#Element"
-            Salt="pky5wkmwh04="
-            IV="vgl1NlCfVp97U2Ej75BvKw==" xmlns="http://www.w3.org/2001/04/xmlenc#">
+            Salt="/l9kkz6bQXM="
+            IV="ZKi+jDkJ1o8VwAe9Rhq9Rg==" xmlns="http://www.w3.org/2001/04/xmlenc#">
             <EncryptionMethod
               Algorithm="http://www.w3.org/2001/04/xmlenc#aes256-cbc" />
             <CipherData>
-              <CipherValue>vgl1NlCfVp97U2Ej75BvKxwuIKb29c3SkA7fUUN7xySzNPHdQ3Kg2uRQaZVOMRK86su/t96OpQBnZVTPps1J35T2UI1UFZQ4iE5w/mZ1AA6Y8GFXOHUtUJHCs6hmhTzBBs/AY6I67OEKdF6sLI5fhSfRJonLaOj6uWQ0PhMHQE/c1rHfTYqoPxcvy6/j/HCn</CipherValue>
+              <CipherValue>ZKi+jDkJ1o8VwAe9Rhq9RuV86ulE10HQylNsa2o7Nc9eNTYxj1gkDVBT3vuovUpWhIyZ3C1nsIYS8EofIcoyxFIt5K+ri2u/pVepvbPtNLTnSNoa37RpjElsM3bhQKKlzOPdwYlyuGHtMEj/egJO+FHU0saRHtR++etI1hSJqRhts5TvrohsVCxemSW96lAG</CipherValue>
             </CipherData>
           </EncryptedData>
         </DTS:ConnectionManager>
@@ -246,7 +246,6 @@
           DTS:refId="Package\DWH LOAD\TBDWAN_ARTICLE_SV"
           DTS:CreationName="STOCK:SEQUENCE"
           DTS:Description="Sequence Container"
-          DTS:Disabled="True"
           DTS:DTSID="{94bddb5a-732e-47b4-881b-a25d49866754}"
           DTS:ExecutableType="STOCK:SEQUENCE"
           DTS:LocaleID="-1"
@@ -2010,7 +2009,7 @@ FROM
               <DTS:ObjectData>
                 <SQLTask:SqlTaskData
                   SQLTask:Connection="{62102490-454D-4B7E-9A09-120A46D18B10}"
-                  SQLTask:SqlStatementSource="UPDATE TBDWAN_ARTICLE_SV&#xA;SET &#xA;TBLOG_PACKAGE_ID = b.TBLOG_PACKAGE_ID&#xA;      ,TBLOG_PACKAGE_TABLE_ID = b.TBLOG_PACKAGE_TABLE_ID&#xA;      ,UPDATE_DT = b.UPDATE_DT&#xA;      ,USER_CD = b.USER_CD&#xA;      ,SITE_ID = b.SITE_ID&#xA;      ,SOURCE_SYSTEM_ID = b.SOURCE_SYSTEM_ID&#xA;      ,ROW_STS_FLG = 1&#xA;&#x9;  ,ARTICLE_CD = b.ARTICLE_CD&#xA;&#x9;  ,ARTICLE_DESC = b.ARTICLE_DESC&#xA;&#x9;  ,PRODUCTION_LINE_ID = b.PRODUCTION_LINE_ID&#xA;&#x9;  ,ACTIVE_FLG = b.ACTIVE_FLG&#xA;&#x9;  ,SERIALIZATION_FLG = b.SERIALIZATION_FLG&#xA;&#x9;  ,LOCK_FLG = b.LOCK_FLG&#xA;&#x9;  ,VERSION_NBR = b.VERSION_NBR&#xA;&#x9;  ,VERSION_DT = b.VERSION_DT&#xA;&#x9;  ,VERSION_USER_DESC = b.VERSION_USER_DESC&#xA;&#x9;  ,VERSION_INFO_DESC = b.VERSION_INFO_DESC&#xA;&#x9;  ,EXPORT_SERVER_NBR = b.EXPORT_SERVER_NBR&#xA;&#xA;FROM .TBDWAN_ARTICLE_SV a join TBDWTMP_ARTICLE_SV b on a.id=b.id;&#xA;&#xA;--truncate support table &#xA;TRUNCATE TABLE TBDWTMP_ARTICLE_SV; " xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+                  SQLTask:SqlStatementSource="UPDATE TBDWAN_ARTICLE_SV&#xA;SET &#xA;TBLOG_PACKAGE_ID = b.TBLOG_PACKAGE_ID&#xA;      ,TBLOG_PACKAGE_TABLE_ID = b.TBLOG_PACKAGE_TABLE_ID&#xA;      ,UPDATE_DT = b.UPDATE_DT&#xA;      ,USER_CD = b.USER_CD&#xA;      ,SITE_ID = b.SITE_ID&#xA;      ,SOURCE_SYSTEM_ID = b.SOURCE_SYSTEM_ID&#xA;      ,ROW_STS_FLG = 1&#xA;&#x9;  ,ARTICLE_CD = b.ARTICLE_CD&#xA;&#x9;  ,ARTICLE_DESC = b.ARTICLE_DESC&#xA;&#x9;  ,PRODUCTION_LINE_ID = b.PRODUCTION_LINE_ID&#xA;&#x9;  ,ACTIVE_FLG = b.ACTIVE_FLG&#xA;&#x9;  ,SERIALIZATION_FLG = b.SERIALIZATION_FLG&#xA;&#x9;  ,LOCK_FLG = b.LOCK_FLG&#xA;&#x9;  ,VERSION_NBR = b.VERSION_NBR&#xA;&#x9;  ,VERSION_DT = b.VERSION_DT&#xA;&#x9;  ,VERSION_USER_DESC = b.VERSION_USER_DESC&#xA;&#x9;  ,VERSION_INFO_DESC = b.VERSION_INFO_DESC&#xA;&#x9;  ,EXPORT_SERVER_NBR = b.EXPORT_SERVER_NBR&#xA;&#xA;FROM TBDWAN_ARTICLE_SV a join TBDWTMP_ARTICLE_SV b on a.id=b.id;&#xA;&#xA;--truncate support table &#xA;TRUNCATE TABLE TBDWTMP_ARTICLE_SV; " xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
               </DTS:ObjectData>
             </DTS:Executable>
           </DTS:Executables>
@@ -3170,7 +3169,7 @@ FROM
                         <property
                           dataType="System.String"
                           description="The mappings between the parameters in the SQL command and variables."
-                          name="ParameterMapping">"Parameter0:Input",{FE481701-563C-460C-9553-A113393C9C1F};"Parameter1:Input",{FE481701-563C-460C-9553-A113393C9C1F};"Parameter2:Input",{A0CF4D22-115E-4821-902D-7ADA190211C8};"Parameter3:Input",{FE481701-563C-460C-9553-A113393C9C1F};"Parameter4:Input",{FE481701-563C-460C-9553-A113393C9C1F};"Parameter5:Input",{FE481701-563C-460C-9553-A113393C9C1F};</property>
+                          name="ParameterMapping">"Parameter0:Input",{13DA86E9-1C6C-4B89-9518-06183DE9F75F};"Parameter1:Input",{13DA86E9-1C6C-4B89-9518-06183DE9F75F};"Parameter2:Input",{13DA86E9-1C6C-4B89-9518-06183DE9F75F};</property>
                       </properties>
                       <connections>
                         <connection
@@ -4266,7 +4265,8 @@ FROM
               <DTS:Variables />
               <DTS:ObjectData>
                 <SQLTask:SqlTaskData
-                  SQLTask:Connection="{62102490-454D-4B7E-9A09-120A46D18B10}" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+                  SQLTask:Connection="{62102490-454D-4B7E-9A09-120A46D18B10}"
+                  SQLTask:SqlStatementSource="UPDATE TBDWAN_BATCH_SV&#xA;SET &#xA;TBLOG_PACKAGE_ID = b.TBLOG_PACKAGE_ID&#xA;      ,TBLOG_PACKAGE_TABLE_ID = b.TBLOG_PACKAGE_TABLE_ID&#xA;      ,UPDATE_DT = b.UPDATE_DT&#xA;      ,USER_CD = b.USER_CD&#xA;      ,SITE_ID = b.SITE_ID&#xA;      ,SOURCE_SYSTEM_ID = b.SOURCE_SYSTEM_ID&#xA;      ,ROW_STS_FLG = 1&#xA;&#x9;  ,BATCH_CD = B.BATCH_CD,ARTICLE_CD = B.ARTICLE_CD&#xA;,PROCESS_ORDER_CD = B.PROCESS_ORDER_CD&#xA;,TBDWAN_ARTICLE_SV_ID = B.TBDWAN_ARTICLE_SV_ID&#xA;,SOURCE_BATCH_ID = B.SOURCE_BATCH_ID&#xA;,START_DT = B.START_DT&#xA;,END_DT = B.END_DT&#xA;,EXPIRY_DT = B.EXPIRY_DT&#xA;,MANUFACTURING_DT = B.MANUFACTURING_DT&#xA;,OPERATOR1_DESC = B.OPERATOR1_DESC&#xA;,OPERATOR2_DESC = B.OPERATOR2_DESC&#xA;,OPERATOR3_DESC = B.OPERATOR3_DESC&#xA;,SERIALIZATION_FLG = B.SERIALIZATION_FLG&#xA;,QA_RELEASE_FLG = B.QA_RELEASE_FLG&#xA;,SOURCE_LINE_ID = B.SOURCE_LINE_ID&#xA;,RECIPE_VERSION_NBR = B.RECIPE_VERSION_NBR&#xA;,ACTIVE_FLG = B.ACTIVE_FLG&#xA;,DATA_COLLECTION_FLG = B.DATA_COLLECTION_FLG&#xA;,ONLINE_FLG = B.ONLINE_FLG&#xA;,STATUS_NBR = B.STATUS_NBR&#xA;&#xA;&#xA;FROM TBDWAN_BATCH_SV a join TBDWTMP_BATCH_SV b on a.id=b.id;&#xA;&#xA;--truncate support table &#xA;TRUNCATE TABLE TBDWTMP_BATCH_SV; " xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
               </DTS:ObjectData>
             </DTS:Executable>
           </DTS:Executables>
@@ -4898,21 +4898,33 @@ FROM
         <NodeLayout
           Size="215,42"
           Id="Package\DWH LOAD\TBDWAN_BATCH_SV\TBDWAN_BATCH_SV_upd"
-          TopLeft="238,402" />
+          TopLeft="367,391" />
         <EdgeLayout
           Id="Package\DWH LOAD\TBDWAN_BATCH_SV.PrecedenceConstraints[Constraint]"
-          TopLeft="343.5,353.5">
+          TopLeft="341.5,353.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,48.5"
+              EndConnector="133,37.5"
               Start="0,0"
-              End="0,41">
+              End="133,30">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,41" />
+                    End="0,14.75" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,14.75"
+                    Point2="0,18.75"
+                    Point3="4,18.75" />
+                  <mssgle:LineSegment
+                    End="129,18.75" />
+                  <mssgle:CubicBezierSegment
+                    Point1="129,18.75"
+                    Point2="133,18.75"
+                    Point3="133,22.75" />
+                  <mssgle:LineSegment
+                    End="133,30" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -4923,30 +4935,30 @@ FROM
         </EdgeLayout>
         <EdgeLayout
           Id="Package\DWH LOAD\TBDWAN_BATCH_SV.PrecedenceConstraints[Constraint 1]"
-          TopLeft="345.5,444">
+          TopLeft="474.5,433">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="9,70.5"
+              EndConnector="-120,81.5"
               Start="0,0"
-              End="9,63">
+              End="-120,74">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,31.25" />
+                    End="0,36.75" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,31.25"
-                    Point2="0,35.25"
-                    Point3="4,35.25" />
+                    Point1="0,36.75"
+                    Point2="0,40.75"
+                    Point3="-4,40.75" />
                   <mssgle:LineSegment
-                    End="5,35.25" />
+                    End="-116,40.75" />
                   <mssgle:CubicBezierSegment
-                    Point1="5,35.25"
-                    Point2="9,35.25"
-                    Point3="9,39.25" />
+                    Point1="-116,40.75"
+                    Point2="-120,40.75"
+                    Point3="-120,44.75" />
                   <mssgle:LineSegment
-                    End="9,63" />
+                    End="-120,74" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -5069,8 +5081,8 @@ FROM
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="512,712"
-          Size="512,755"
+          PanelSize="587,712"
+          Size="587,755"
           Id="Package\DWH LOAD\TBDWAN_BATCH_SV"
           TopLeft="71.5,426" />
         <ContainerLayout
@@ -5575,129 +5587,29 @@ FROM
       <GraphLayout
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="174,42"
-          Id="Package\DWH LOAD\TBDWAN_BATCH_SV\TBDWAN_BATCH_SV_ins\Split INS-UPD-DEL"
-          TopLeft="226,266" />
+          Size="199,42"
+          Id="Package\DWH LOAD\TBDWAN_BATCH_SV\TBDWAN_BATCH_SV_ins\TBDWTMP_BATCH_SV"
+          TopLeft="332,495" />
         <NodeLayout
-          Size="251,42"
-          Id="Package\DWH LOAD\TBDWAN_BATCH_SV\TBDWAN_BATCH_SV_ins\Add Technical Fields and renaming"
-          TopLeft="205,142" />
+          Size="153,42"
+          Id="Package\DWH LOAD\TBDWAN_BATCH_SV\TBDWAN_BATCH_SV_ins\DEL TRG table"
+          TopLeft="541,494" />
         <NodeLayout
           Size="162,42"
           Id="Package\DWH LOAD\TBDWAN_BATCH_SV\TBDWAN_BATCH_SV_ins\Load SRC tables"
           TopLeft="125,27" />
-        <EdgeLayout
-          Id="Package\DWH LOAD\TBDWAN_BATCH_SV\TBDWAN_BATCH_SV_ins.Paths[OLE DB Source Output]"
-          TopLeft="206,69">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="124.5,73"
-              Start="0,0"
-              End="124.5,65.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,32.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,32.5"
-                    Point2="0,36.5"
-                    Point3="4,36.5" />
-                  <mssgle:LineSegment
-                    End="120.5,36.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="120.5,36.5"
-                    Point2="124.5,36.5"
-                    Point3="124.5,40.5" />
-                  <mssgle:LineSegment
-                    End="124.5,65.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\DWH LOAD\TBDWAN_BATCH_SV\TBDWAN_BATCH_SV_ins.Paths[Derived Column Output]"
-          TopLeft="330.5,184">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-17.5,82"
-              Start="0,0"
-              End="-17.5,74.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,37" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,37"
-                    Point2="0,41"
-                    Point3="-4,41" />
-                  <mssgle:LineSegment
-                    End="-13.5,41" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-13.5,41"
-                    Point2="-17.5,41"
-                    Point3="-17.5,45" />
-                  <mssgle:LineSegment
-                    End="-17.5,74.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
+        <NodeLayout
+          Size="174,42"
+          Id="Package\DWH LOAD\TBDWAN_BATCH_SV\TBDWAN_BATCH_SV_ins\Split INS-UPD-DEL"
+          TopLeft="226,266" />
         <NodeLayout
           Size="150,42"
           Id="Package\DWH LOAD\TBDWAN_BATCH_SV\TBDWAN_BATCH_SV_ins\INS TRG table"
           TopLeft="59,493" />
-        <EdgeLayout
-          Id="Package\DWH LOAD\TBDWAN_BATCH_SV\TBDWAN_BATCH_SV_ins.Paths[INS]"
-          TopLeft="271.5,308">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-137.5,185"
-              Start="0,0"
-              End="-137.5,177.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,59.5283018867924" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,59.5283018867924"
-                    Point2="0,63.5283018867924"
-                    Point3="-4,63.5283018867924" />
-                  <mssgle:LineSegment
-                    End="-133.5,63.5283018867924" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-133.5,63.5283018867924"
-                    Point2="-137.5,63.5283018867924"
-                    Point3="-137.5,67.5283018867924" />
-                  <mssgle:LineSegment
-                    End="-137.5,177.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-77.38408203125,68.5283018867924,17.2681640625,9.5341796875"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
         <NodeLayout
-          Size="199,42"
-          Id="Package\DWH LOAD\TBDWAN_BATCH_SV\TBDWAN_BATCH_SV_ins\TBDWTMP_BATCH_SV"
-          TopLeft="332,495" />
+          Size="251,42"
+          Id="Package\DWH LOAD\TBDWAN_BATCH_SV\TBDWAN_BATCH_SV_ins\Add Technical Fields and renaming"
+          TopLeft="205,142" />
         <EdgeLayout
           Id="Package\DWH LOAD\TBDWAN_BATCH_SV\TBDWAN_BATCH_SV_ins.Paths[UPD]"
           TopLeft="313,308">
@@ -5734,10 +5646,110 @@ FROM
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="153,42"
-          Id="Package\DWH LOAD\TBDWAN_BATCH_SV\TBDWAN_BATCH_SV_ins\DEL TRG table"
-          TopLeft="541,494" />
+        <EdgeLayout
+          Id="Package\DWH LOAD\TBDWAN_BATCH_SV\TBDWAN_BATCH_SV_ins.Paths[OLE DB Source Output]"
+          TopLeft="206,69">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="124.5,73"
+              Start="0,0"
+              End="124.5,65.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,32.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,32.5"
+                    Point2="0,36.5"
+                    Point3="4,36.5" />
+                  <mssgle:LineSegment
+                    End="120.5,36.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="120.5,36.5"
+                    Point2="124.5,36.5"
+                    Point3="124.5,40.5" />
+                  <mssgle:LineSegment
+                    End="124.5,65.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DWH LOAD\TBDWAN_BATCH_SV\TBDWAN_BATCH_SV_ins.Paths[INS]"
+          TopLeft="271.5,308">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-137.5,185"
+              Start="0,0"
+              End="-137.5,177.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,59.5283018867924" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,59.5283018867924"
+                    Point2="0,63.5283018867924"
+                    Point3="-4,63.5283018867924" />
+                  <mssgle:LineSegment
+                    End="-133.5,63.5283018867924" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-133.5,63.5283018867924"
+                    Point2="-137.5,63.5283018867924"
+                    Point3="-137.5,67.5283018867924" />
+                  <mssgle:LineSegment
+                    End="-137.5,177.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-77.38408203125,68.5283018867924,17.2681640625,9.5341796875"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DWH LOAD\TBDWAN_BATCH_SV\TBDWAN_BATCH_SV_ins.Paths[Derived Column Output]"
+          TopLeft="330.5,184">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-17.5,82"
+              Start="0,0"
+              End="-17.5,74.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,37" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,37"
+                    Point2="0,41"
+                    Point3="-4,41" />
+                  <mssgle:LineSegment
+                    End="-13.5,41" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-13.5,41"
+                    Point2="-17.5,41"
+                    Point3="-17.5,45" />
+                  <mssgle:LineSegment
+                    End="-17.5,74.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
         <EdgeLayout
           Id="Package\DWH LOAD\TBDWAN_BATCH_SV\TBDWAN_BATCH_SV_ins.Paths[DEL]"
           TopLeft="354.5,308">
@@ -5778,15 +5790,7 @@ FROM
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\DWH LOAD\TBDWAN_BATCH_SV\TBDWAN_BATCH_SV_ins\Load SRC tables">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\DWH LOAD\TBDWAN_BATCH_SV\TBDWAN_BATCH_SV_ins\INS TRG table">
+    design-time-name="Package\DWH LOAD\TBDWAN_BATCH_SV\TBDWAN_BATCH_SV_ins\TBDWTMP_BATCH_SV">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -5799,7 +5803,15 @@ FROM
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\DWH LOAD\TBDWAN_BATCH_SV\TBDWAN_BATCH_SV_ins\TBDWTMP_BATCH_SV">
+    design-time-name="Package\DWH LOAD\TBDWAN_BATCH_SV\TBDWAN_BATCH_SV_ins\Load SRC tables">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\DWH LOAD\TBDWAN_BATCH_SV\TBDWAN_BATCH_SV_ins\INS TRG table">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
