@@ -13,8 +13,8 @@
   DTS:ObjectName="AUDIT_TRAIL_DW"
   DTS:PackageType="5"
   DTS:ProtectionLevel="2"
-  DTS:VersionBuild="655"
-  DTS:VersionGUID="{F7368F95-46B1-4396-8D07-4DEE14F9BEBD}">
+  DTS:VersionBuild="660"
+  DTS:VersionGUID="{629E8B7E-F26A-4062-B709-568158215B0A}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -28,12 +28,12 @@
           DTS:ConnectionString="Data Source=192.168.200.19;User ID=PARCEL_DIR_R;Initial Catalog=Parcel2008_SINT;Provider=SQLNCLI11.1;Persist Security Info=True;Auto Translate=False;">
           <EncryptedData
             Type="http://www.w3.org/2001/04/xmlenc#Element"
-            Salt="nziqP8yZrEQ="
-            IV="YiMu/Y7B0HTo8TdfiglKDA==" xmlns="http://www.w3.org/2001/04/xmlenc#">
+            Salt="ewzQYusF0IM="
+            IV="aTzriXkR8ym9n9qDz5rciQ==" xmlns="http://www.w3.org/2001/04/xmlenc#">
             <EncryptionMethod
               Algorithm="http://www.w3.org/2001/04/xmlenc#aes256-cbc" />
             <CipherData>
-              <CipherValue>YiMu/Y7B0HTo8TdfiglKDITyQ+LAc3qPXCpUJNK3NcQVvFEPQ7SnDVH0FvBlJgu5lgBWj3ZWYXZb1LvIvJ0Lk5WbrdJoD18b8y6wV51ULRnos9kHG0YcpGKophRyW75ML+fU0TNYEoEOl4gS5sOeGV6F3lK8Pgl4SuezCXB4ycmYZ4+foMdQpefY8X8o/oDT</CipherValue>
+              <CipherValue>aTzriXkR8ym9n9qDz5rcic3EXFqVLUuEo3Otz0Oi2NXXQ2gja80zvtxdRk5y8q+xAAdmML6m2qoDI+0h1lRFxF97pHZVO4ZRMQWXIXxkEsKn3m1BHmSAIx3aYs2y8pVrbEkPbA9QrNBDr9MBX41JC+yyu3X61p1L9KPppFkSDygqdrsjQNIh/Wc9+FUyQ8Jn</CipherValue>
             </CipherData>
           </EncryptedData>
         </DTS:ConnectionManager>
@@ -1371,9 +1371,9 @@ FROM
 	(SELECT  PRODUCTION_LINE_ID,PRODUCTION_MODEL_ID , PARAMETRO AS PARAMETER_CD, DESCRIZIONEPARAMETRO AS PARAMETER_DESC,
 	MINIMO as MIN_VAL, MASSIMO as MAX_VAL, VALORE as VALUE_VAL, SEVERITA as SEVERITY_ORIGINAL_NBR, CONTATORE as SOURCE_COUNTER_ID,
 	ID as SOURCE_PARAMETER_ID,
-	'%' + TAG + '%' as PARAMETER_TAG_SEARCH_DESC,
+	'%' + replace(TAG,'[','\[') + '%' as PARAMETER_TAG_SEARCH_DESC, --the replace is needed because '[' is used as wildcard in like sql function
 	PARAMETROINCHIARO as PARAMETER_ORIGINAL_TRANSLATION_DESC,
-	'%' + FILTRO + '%' as PARAMETER_FILTER_SEARCH_DESC
+	case when FILTRO is null then '%' else '%' + FILTRO + '%' end as PARAMETER_FILTER_SEARCH_DESC
 
 	FROM TBST_FLAT_EQUIP_PARAMETER 
 	WHERE site_id = ? and row_sts_flg=1) a join
@@ -4059,7 +4059,7 @@ FROM
               <DTS:ObjectData>
                 <SQLTask:SqlTaskData
                   SQLTask:Connection="{62102490-454D-4B7E-9A09-120A46D18B10}"
-                  SQLTask:SqlStatementSource="--insert in a temporary table the record to update with the TBDWAN_EQUIP_PARAMETER_ID&#xA;INSERT INTO TBDWTMP_EQUIP_AUDIT_TRAIL (TBLOG_PACKAGE_ID, TBLOG_PACKAGE_TABLE_ID, UPDATE_DT,USER_CD, ID, TBDWAN_EQUIP_PARAMETER_ID)&#xA; &#xA;SELECT ?, ?, getdate(), ?, a.ID, a.TBDWAN_EQUIP_PARAMETER_ID&#xA;FROM&#xA;(&#xA;&#x9;SELECT a.ID, b.id as TBDWAN_EQUIP_PARAMETER_ID, ROW_NUMBER () over (partition by a.ID order by len(b.PARAMETER_TAG_SEARCH_DESC) desc) as ord&#xA;&#x9;FROM&#xA;&#x9;&#x9;(SELECT * FROM tbdwft_equip_audit_trail WHERE SITE_ID = ? and ROW_STS_FLG = 1 and UPDATE_DT &gt;= ?) a join&#xA;&#x9;&#x9;(SELECT * FROM tbdwan_equip_parameter WHERE SITE_ID = ? and ROW_STS_FLG = 1) b on a.MESSAGE_TRUNC_DESC like b.PARAMETER_FILTER_SEARCH_DESC and a.MESSAGE_TRUNC_DESC like b.PARAMETER_TAG_SEARCH_DESC and a.TBDWMN_PRODUCTION_MODEL_ID=b.TBDWMN_PRODUCTION_MODEL_ID and a.TBDWMN_PRODUCTION_LINE_ID=b.TBDWMN_PRODUCTION_LINE_ID join&#xA;&#x9;&#x9;(SELECT * FROM tbdwmn_equip_parameter) c on a.date_dt between c.VALIDITY_START_DT and c.VALIDITY_END_DT and b.id = c.TBDWAN_EQUIP_PARAMETER_ID&#xA;) a&#xA;WHERE a.ord = 1 --in case for the same audit several parameters are satisfying the request, the correct is the parameter with greater length (means that match better)&#xA;&#xA;--update record on the target DWH table&#xA;UPDATE TBDWFT_EQUIP_AUDIT_TRAIL&#xA;SET &#xA;&#x9;  TBLOG_PACKAGE_ID = b.TBLOG_PACKAGE_ID&#xA;&#x9;  ,TBLOG_PACKAGE_TABLE_ID = b.TBLOG_PACKAGE_TABLE_ID&#xA;      ,UPDATE_DT = b.UPDATE_DT&#xA;      ,USER_CD = b.USER_CD&#xA;      ,TBDWAN_EQUIP_PARAMETER_ID = b.TBDWAN_EQUIP_PARAMETER_ID&#xA;FROM TBDWFT_EQUIP_AUDIT_TRAIL a join TBDWTMP_EQUIP_AUDIT_TRAIL b on a.id=b.id;&#xA;&#xA;--truncate support table &#xA;TRUNCATE TABLE TBDWTMP_EQUIP_AUDIT_TRAIL;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+                  SQLTask:SqlStatementSource="--insert in a temporary table the record to update with the TBDWAN_EQUIP_PARAMETER_ID&#xA;INSERT INTO TBDWTMP_EQUIP_AUDIT_TRAIL (TBLOG_PACKAGE_ID, TBLOG_PACKAGE_TABLE_ID, UPDATE_DT,USER_CD, ID, TBDWAN_EQUIP_PARAMETER_ID)&#xA; &#xA;SELECT ?, ?, getdate(), ?, a.ID, a.TBDWAN_EQUIP_PARAMETER_ID&#xA;FROM&#xA;(&#xA;&#x9;SELECT a.ID, b.id as TBDWAN_EQUIP_PARAMETER_ID, ROW_NUMBER () over (partition by a.ID order by len(b.PARAMETER_TAG_SEARCH_DESC) desc) as ord&#xA;&#x9;FROM&#xA;&#x9;&#x9;(SELECT * FROM tbdwft_equip_audit_trail WHERE SITE_ID = ? and ROW_STS_FLG = 1 and UPDATE_DT &gt;= ?) a join&#xA;&#x9;&#x9;(SELECT * FROM tbdwan_equip_parameter WHERE SITE_ID = ? and ROW_STS_FLG = 1) b on a.MESSAGE_TRUNC_DESC like b.PARAMETER_FILTER_SEARCH_DESC &#xA;&#x9;&#x9;and a.MESSAGE_TRUNC_DESC like b.PARAMETER_TAG_SEARCH_DESC ESCAPE '\' and a.TBDWMN_PRODUCTION_MODEL_ID=b.TBDWMN_PRODUCTION_MODEL_ID and a.TBDWMN_PRODUCTION_LINE_ID=b.TBDWMN_PRODUCTION_LINE_ID join&#xA;&#x9;&#x9;&#xA;&#x9;&#x9;(SELECT * FROM tbdwmn_equip_parameter) c on a.date_dt between c.VALIDITY_START_DT and c.VALIDITY_END_DT and b.id = c.TBDWAN_EQUIP_PARAMETER_ID&#xA;) a&#xA;WHERE a.ord = 1 --in case for the same audit several parameters are satisfying the request, the correct is the parameter with greater length (means that match better)&#xA;&#xA;--update record on the target DWH table&#xA;UPDATE TBDWFT_EQUIP_AUDIT_TRAIL&#xA;SET &#xA;&#x9;  TBLOG_PACKAGE_ID = b.TBLOG_PACKAGE_ID&#xA;&#x9;  ,TBLOG_PACKAGE_TABLE_ID = b.TBLOG_PACKAGE_TABLE_ID&#xA;      ,UPDATE_DT = b.UPDATE_DT&#xA;      ,USER_CD = b.USER_CD&#xA;      ,TBDWAN_EQUIP_PARAMETER_ID = b.TBDWAN_EQUIP_PARAMETER_ID&#xA;FROM TBDWFT_EQUIP_AUDIT_TRAIL a join TBDWTMP_EQUIP_AUDIT_TRAIL b on a.id=b.id;&#xA;&#xA;--truncate support table &#xA;TRUNCATE TABLE TBDWTMP_EQUIP_AUDIT_TRAIL;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
                   <SQLTask:ParameterBinding
                     SQLTask:ParameterName="0"
                     SQLTask:DtsVariableName="User::out_MAX_ID"
@@ -4686,7 +4686,7 @@ FROM
     design-time-name="Package">
     <LayoutInfo>
       <GraphLayout
-        Capacity="128" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="128" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="157,42"
           Id="Package\Assign SITE_ID"
@@ -4738,9 +4738,7 @@ FROM
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -4774,9 +4772,7 @@ FROM
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -4798,9 +4794,7 @@ FROM
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -4834,9 +4828,7 @@ FROM
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -4870,37 +4862,35 @@ FROM
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <AnnotationLayout
           Text="To be modified according table"
           ParentId="Package\DWH AN LOAD\TBDWAN_EQUIP_PARAMETER"
           FontInfo="{assembly:Null}"
-          Size="194,NaN"
+          Size="194,40"
           Id="bb83133a-472b-4887-9336-8712d47cb94d"
           TopLeft="35.5,310.5" />
         <AnnotationLayout
           Text="To be specify target table name"
           ParentId="Package\DWH AN LOAD\TBDWAN_EQUIP_PARAMETER"
           FontInfo="{assembly:Null}"
-          Size="195,NaN"
+          Size="195,40"
           Id="684b34f8-e38a-41f5-b322-4f0da67188f1"
           TopLeft="29.5,10.5" />
         <AnnotationLayout
           Text="To be modified according table"
           ParentId="Package\DWH AN LOAD\TBDWAN_EQUIP_PARAMETER"
           FontInfo="{assembly:Null}"
-          Size="194,NaN"
+          Size="194,40"
           Id="f03cdc76-5c83-4f48-a957-1b328cc50b11"
           TopLeft="41.5,402.5" />
         <ContainerLayout
           HeaderHeight="43"
-          IsExpanded="False"
+          IsExpanded="True"
           PanelSize="512,712"
-          Size="512,43"
+          Size="512,755"
           Id="Package\DWH AN LOAD\TBDWAN_EQUIP_PARAMETER"
           TopLeft="86.5,47" />
         <NodeLayout
@@ -4942,9 +4932,7 @@ FROM
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -4966,9 +4954,7 @@ FROM
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -5002,9 +4988,7 @@ FROM
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -5026,73 +5010,63 @@ FROM
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <AnnotationLayout
           Text="To be modified according table"
           ParentId="Package\DWH AN LOAD\TBDWMN_EQUIP_PARAMETER"
           FontInfo="{assembly:Null}"
-          Size="194,NaN"
+          Size="194,40"
           Id="0003983d-482f-40b0-b55f-323370e610c7"
           TopLeft="35.5,310.5" />
         <AnnotationLayout
           Text="To be specify target table name"
           ParentId="Package\DWH AN LOAD\TBDWMN_EQUIP_PARAMETER"
           FontInfo="{assembly:Null}"
-          Size="195,NaN"
+          Size="195,40"
           Id="6268d8c3-b274-424e-905a-187d99c9f82c"
           TopLeft="29.5,10.5" />
         <ContainerLayout
           HeaderHeight="43"
-          IsExpanded="False"
+          IsExpanded="True"
           PanelSize="512,712"
-          Size="266,43"
+          Size="512,755"
           Id="Package\DWH AN LOAD\TBDWMN_EQUIP_PARAMETER"
           TopLeft="143,180" />
         <EdgeLayout
           Id="Package\DWH AN LOAD.PrecedenceConstraints[Constraint]"
-          TopLeft="342.5,90">
+          TopLeft="598.5,424.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-66.5,90"
+              EndConnector="-199.5,-244.5"
               Start="0,0"
-              End="-66.5,82.5">
+              End="-199.5,-237">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,41" />
+                    End="-195.5,0" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,41"
-                    Point2="0,45"
-                    Point3="-4,45" />
+                    Point1="-195.5,0"
+                    Point2="-199.5,0"
+                    Point3="-199.5,-4" />
                   <mssgle:LineSegment
-                    End="-62.5,45" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-62.5,45"
-                    Point2="-66.5,45"
-                    Point3="-66.5,49" />
-                  <mssgle:LineSegment
-                    End="-66.5,82.5" />
+                    End="-199.5,-237" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <ContainerLayout
           HeaderHeight="45"
-          IsExpanded="False"
+          IsExpanded="True"
           PanelSize="1136,990"
-          Size="1136,45"
+          Size="1136,1035"
           Id="Package\DWH AN LOAD"
           TopLeft="626.888888888889,378" />
         <NodeLayout
@@ -5570,30 +5544,24 @@ FROM
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 2]"
-          TopLeft="1194.88888888889,423">
+          TopLeft="626.888888888889,895.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-670.119047619047,109.761904761904"
+              EndConnector="-102.119047619047,-362.738095238096"
               Start="0,0"
-              End="-670.119047619047,102.261904761904">
+              End="-102.119047619047,-355.238095238096">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,50.8809523809521" />
+                    End="-98.1190476190471,0" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,50.8809523809521"
-                    Point2="0,54.8809523809521"
-                    Point3="-4,54.8809523809521" />
+                    Point1="-98.1190476190471,0"
+                    Point2="-102.119047619047,0"
+                    Point3="-102.119047619047,-4" />
                   <mssgle:LineSegment
-                    End="-666.119047619047,54.8809523809521" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-666.119047619047,54.8809523809521"
-                    Point2="-670.119047619047,54.8809523809521"
-                    Point3="-670.119047619047,58.8809523809521" />
-                  <mssgle:LineSegment
-                    End="-670.119047619047,102.261904761904" />
+                    End="-102.119047619047,-355.238095238096" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
