@@ -13,8 +13,8 @@
   DTS:ObjectName="AUDIT_TRAIL_DW"
   DTS:PackageType="5"
   DTS:ProtectionLevel="2"
-  DTS:VersionBuild="660"
-  DTS:VersionGUID="{629E8B7E-F26A-4062-B709-568158215B0A}">
+  DTS:VersionBuild="661"
+  DTS:VersionGUID="{381860C1-F8AB-42DD-A3DE-B8F98EB0EA5E}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -28,12 +28,12 @@
           DTS:ConnectionString="Data Source=192.168.200.19;User ID=PARCEL_DIR_R;Initial Catalog=Parcel2008_SINT;Provider=SQLNCLI11.1;Persist Security Info=True;Auto Translate=False;">
           <EncryptedData
             Type="http://www.w3.org/2001/04/xmlenc#Element"
-            Salt="ewzQYusF0IM="
-            IV="aTzriXkR8ym9n9qDz5rciQ==" xmlns="http://www.w3.org/2001/04/xmlenc#">
+            Salt="rFG6U5OmrsU="
+            IV="SP+Y3J/IGI0qzkHMILPQBA==" xmlns="http://www.w3.org/2001/04/xmlenc#">
             <EncryptionMethod
               Algorithm="http://www.w3.org/2001/04/xmlenc#aes256-cbc" />
             <CipherData>
-              <CipherValue>aTzriXkR8ym9n9qDz5rcic3EXFqVLUuEo3Otz0Oi2NXXQ2gja80zvtxdRk5y8q+xAAdmML6m2qoDI+0h1lRFxF97pHZVO4ZRMQWXIXxkEsKn3m1BHmSAIx3aYs2y8pVrbEkPbA9QrNBDr9MBX41JC+yyu3X61p1L9KPppFkSDygqdrsjQNIh/Wc9+FUyQ8Jn</CipherValue>
+              <CipherValue>SP+Y3J/IGI0qzkHMILPQBPq4Nx/EBGju7uYqa/0lNDX5fpSTRujEFt1ZjyBgoiOKvp/Uub2iiibFKmWrUHeonsx4vqlwT6yHqLrhun5zpFJLRPVPDiGpmAszQIGOrMB5KyBksD3iJ4rtbKDsHLT1wohQnvZZj01ILvMPTQLGMP9Zww/IQ1Maib1BFEgJ8V6v</CipherValue>
             </CipherData>
           </EncryptedData>
         </DTS:ConnectionManager>
@@ -4694,7 +4694,7 @@ FROM
         <NodeLayout
           Size="230,42"
           Id="Package\Assign SOURCE_SYSTEM_ID"
-          TopLeft="463.888888888889,59" />
+          TopLeft="441.888888888889,50" />
         <NodeLayout
           Size="222,42"
           Id="Package\DWH AN LOAD\TBDWAN_EQUIP_PARAMETER\Assign TABLE_TARGET_CD"
@@ -5572,30 +5572,30 @@ FROM
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 3]"
-          TopLeft="578.888888888889,101">
+          TopLeft="556.888888888889,92">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="418.571428571435,32.587301587301"
+              EndConnector="440.571428571435,41.587301587301"
               Start="0,0"
-              End="418.571428571435,25.087301587301">
+              End="440.571428571435,34.087301587301">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,12.2936507936505" />
+                    End="0,16.7936507936505" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,12.2936507936505"
-                    Point2="0,16.2936507936505"
-                    Point3="4,16.2936507936505" />
+                    Point1="0,16.7936507936505"
+                    Point2="0,20.7936507936505"
+                    Point3="4,20.7936507936505" />
                   <mssgle:LineSegment
-                    End="414.571428571435,16.2936507936505" />
+                    End="436.571428571435,20.7936507936505" />
                   <mssgle:CubicBezierSegment
-                    Point1="414.571428571435,16.2936507936505"
-                    Point2="418.571428571435,16.2936507936505"
-                    Point3="418.571428571435,20.2936507936505" />
+                    Point1="436.571428571435,20.7936507936505"
+                    Point2="440.571428571435,20.7936507936505"
+                    Point3="440.571428571435,24.7936507936505" />
                   <mssgle:LineSegment
-                    End="418.571428571435,25.087301587301" />
+                    End="440.571428571435,34.087301587301" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
