@@ -12,8 +12,8 @@
   DTS:ObjectName="DIR_DWH_LOAD"
   DTS:PackageType="5"
   DTS:ProtectionLevel="2"
-  DTS:VersionBuild="322"
-  DTS:VersionGUID="{CB0E7A4B-8E61-4627-84B4-BE792C57CAAE}">
+  DTS:VersionBuild="327"
+  DTS:VersionGUID="{009FAB49-154A-4442-880A-A85E9308717C}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:PackageParameters>
@@ -118,6 +118,23 @@
   </DTS:Variables>
   <DTS:Executables>
     <DTS:Executable
+      DTS:refId="Package\ALARMS_FILES"
+      DTS:CreationName="Microsoft.ExecutePackageTask"
+      DTS:Description="Execute Package Task"
+      DTS:DTSID="{02397736-714A-494D-ACB5-01E2D4489D99}"
+      DTS:ExecutableType="Microsoft.ExecutePackageTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="ALARMS_FILES"
+      DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <ExecutePackageTask>
+          <UseProjectReference>True</UseProjectReference>
+          <PackageName>ALARMS_FILES.dtsx</PackageName>
+        </ExecutePackageTask>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
       DTS:refId="Package\AUDIT_TRAIL_FLAT_FILES"
       DTS:CreationName="Microsoft.ExecutePackageTask"
       DTS:Description="Execute Package Task"
@@ -139,6 +156,7 @@
       DTS:refId="Package\COUVET Audit Trail Data"
       DTS:CreationName="STOCK:SEQUENCE"
       DTS:Description="Sequence Container"
+      DTS:Disabled="True"
       DTS:DTSID="{247ca8f0-ba96-44f4-b7d8-5ee7d151b96c}"
       DTS:ExecutableType="STOCK:SEQUENCE"
       DTS:LocaleID="-1"
@@ -890,6 +908,62 @@
       </DTS:ObjectData>
     </DTS:Executable>
     <DTS:Executable
+      DTS:refId="Package\MENDRISIO Alarms Data"
+      DTS:CreationName="STOCK:SEQUENCE"
+      DTS:Description="Sequence Container"
+      DTS:DTSID="{D2C1113D-6D3F-40E7-A32B-A67DD2D897C1}"
+      DTS:ExecutableType="STOCK:SEQUENCE"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="MENDRISIO Alarms Data">
+      <DTS:Variables />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\MENDRISIO Alarms Data\ALARMS_DW"
+          DTS:CreationName="Microsoft.ExecutePackageTask"
+          DTS:Description="Execute Package Task"
+          DTS:DTSID="{2AA16B09-3DB0-426E-BF53-E4A88ECFF9E1}"
+          DTS:ExecutableType="Microsoft.ExecutePackageTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="ALARMS_DW"
+          DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <ExecutePackageTask>
+              <UseProjectReference>True</UseProjectReference>
+              <PackageName>ALARMS_DW.dtsx</PackageName>
+            </ExecutePackageTask>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\MENDRISIO Alarms Data\ALARMS_STG_me"
+          DTS:CreationName="Microsoft.ExecutePackageTask"
+          DTS:Description="Execute Package Task"
+          DTS:DTSID="{D0F409C5-237B-432F-8B11-B161A557639C}"
+          DTS:ExecutableType="Microsoft.ExecutePackageTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="ALARMS_STG_me"
+          DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <ExecutePackageTask>
+              <UseProjectReference>True</UseProjectReference>
+              <PackageName>ALARMS_STG_me.dtsx</PackageName>
+            </ExecutePackageTask>
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+      <DTS:PrecedenceConstraints>
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\MENDRISIO Alarms Data.PrecedenceConstraints[Constraint]"
+          DTS:CreationName=""
+          DTS:DTSID="{D7A4847A-C6C6-4CC0-8EED-47AB20B07A8B}"
+          DTS:From="Package\MENDRISIO Alarms Data\ALARMS_STG_me"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint"
+          DTS:To="Package\MENDRISIO Alarms Data\ALARMS_DW" />
+      </DTS:PrecedenceConstraints>
+    </DTS:Executable>
+    <DTS:Executable
       DTS:refId="Package\MENDRISIO Audit Trail Data"
       DTS:CreationName="STOCK:SEQUENCE"
       DTS:Description="Sequence Container"
@@ -1552,6 +1626,30 @@
       DTS:ObjectName="Constraint 1"
       DTS:To="Package\AUDIT_TRAIL_FLAT_FILES" />
     <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 10]"
+      DTS:CreationName=""
+      DTS:DTSID="{7CEF475B-DCF6-480F-87AC-86ADF02712E5}"
+      DTS:From="Package\TBLOG_PACKAGE"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 10"
+      DTS:To="Package\ALARMS_FILES" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 11]"
+      DTS:CreationName=""
+      DTS:DTSID="{69704486-4A82-448C-B84D-8F5DD8F0F41D}"
+      DTS:From="Package\ALARMS_FILES"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 11"
+      DTS:To="Package\MENDRISIO Alarms Data" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 12]"
+      DTS:CreationName=""
+      DTS:DTSID="{274AE759-E9F2-49DE-86B1-FE0A8B56077B}"
+      DTS:From="Package\MENDRISIO Alarms Data"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 12"
+      DTS:To="Package\Last Upd TBLOG_PACKAGE" />
+    <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 2]"
       DTS:CreationName=""
       DTS:DTSID="{EEBD0699-E856-4FBA-92DB-E106B566DA5E}"
@@ -1650,7 +1748,11 @@
     design-time-name="Package">
     <LayoutInfo>
       <GraphLayout
-        Capacity="64" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="128" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="159,43"
+          Id="Package\ALARMS_FILES"
+          TopLeft="1368.07290096224,53.7280710769382" />
         <NodeLayout
           Size="219,42"
           Id="Package\AUDIT_TRAIL_FLAT_FILES"
@@ -1959,7 +2061,7 @@
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="False"
-          PanelSize="749,345"
+          PanelSize="749.333333333334,345"
           Size="749,43"
           Id="Package\COUVET NO Audit Trail Data"
           TopLeft="115.000000198682,483" />
@@ -1975,6 +2077,43 @@
           Size="222,42"
           Id="Package\Last Upd TBLOG_PACKAGE"
           TopLeft="1625,442" />
+        <NodeLayout
+          Size="188,43"
+          Id="Package\MENDRISIO Alarms Data\ALARMS_DW"
+          TopLeft="21.7916532090558,92.7543909231603" />
+        <NodeLayout
+          Size="172,43"
+          Id="Package\MENDRISIO Alarms Data\ALARMS_STG_me"
+          TopLeft="27.3749996740373,13.8333363919928" />
+        <EdgeLayout
+          Id="Package\MENDRISIO Alarms Data.PrecedenceConstraints[Constraint]"
+          TopLeft="114.583326441547,56.5000030586595">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,36.2543878645008"
+              Start="0,0"
+              End="0,28.7543878645008">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,28.7543878645008" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="False"
+          PanelSize="286,191"
+          Size="286,43"
+          Id="Package\MENDRISIO Alarms Data"
+          TopLeft="1417.49998360872,127.675440560473" />
         <NodeLayout
           Size="191,42"
           Id="Package\MENDRISIO Audit Trail Data\AUDIT_TRAIL_DW"
@@ -2008,7 +2147,7 @@
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="498,86"
+          PanelSize="498,87"
           Size="498,129"
           Id="Package\MENDRISIO Audit Trail Data"
           TopLeft="1031,341" />
@@ -2235,12 +2374,12 @@
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="False"
-          PanelSize="749,304"
+          PanelSize="749.333333333334,304"
           Size="749,43"
           Id="Package\MENDRISIO NO Audit Trail Data"
           TopLeft="78,166" />
         <NodeLayout
-          Size="157,42"
+          Size="157.333333333334,42"
           Id="Package\TBLOG_PACKAGE\Assign SITE_ID"
           TopLeft="27,29.4722222222222" />
         <NodeLayout
@@ -2248,7 +2387,7 @@
           Id="Package\TBLOG_PACKAGE\Ins TBLOG_PACKAGE + Max ID"
           TopLeft="323.166666666667,47" />
         <NodeLayout
-          Size="199,42"
+          Size="198.666666666667,42"
           Id="Package\TBLOG_PACKAGE\Upd TBLOG_PACKAGE"
           TopLeft="343.944444444444,123.555555555555" />
         <EdgeLayout
@@ -2326,13 +2465,13 @@
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="False"
-          PanelSize="568,221"
-          Size="199,43"
+          PanelSize="568,221.333333333334"
+          Size="195,43"
           Id="Package\TBLOG_PACKAGE"
           TopLeft="951,57" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint]"
-          TopLeft="742.000000198682,74.983333140479">
+          TopLeft="742.000000198682,74.8999998071457">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -2354,30 +2493,120 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 1]"
-          TopLeft="1082.33333333333,100">
+          TopLeft="1079.88888888889,99.6666666666667">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="198.166666666667,96"
+              EndConnector="200.444444444444,96.3333333333333"
               Start="0,0"
-              End="198.166666666667,88.5">
+              End="200.444444444444,88.8333333333333">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,34.8594217347956" />
+                    End="0,35.0029338749718" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,34.8594217347956"
-                    Point2="0,38.8594217347956"
-                    Point3="4,38.8594217347956" />
+                    Point1="0,35.0029338749718"
+                    Point2="0,39.0029338749718"
+                    Point3="4,39.0029338749718" />
                   <mssgle:LineSegment
-                    End="194.166666666667,38.8594217347956" />
+                    End="196.444444444444,39.0029338749718" />
                   <mssgle:CubicBezierSegment
-                    Point1="194.166666666667,38.8594217347956"
-                    Point2="198.166666666667,38.8594217347956"
-                    Point3="198.166666666667,42.8594217347956" />
+                    Point1="196.444444444444,39.0029338749718"
+                    Point2="200.444444444444,39.0029338749718"
+                    Point3="200.444444444444,43.0029338749718" />
                   <mssgle:LineSegment
-                    End="198.166666666667,88.5" />
+                    End="200.444444444444,88.8333333333333" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 10]"
+          TopLeft="1146.33333333333,76.6973688718024">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="221.739567628907,0"
+              Start="0,0"
+              End="214.239567628907,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="214.239567628907,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 11]"
+          TopLeft="1447.57290096224,96.7280710769382">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="112.92708264648,30.9473694835348"
+              Start="0,0"
+              End="112.92708264648,23.4473694835348">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,11.4736847417674" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,11.4736847417674"
+                    Point2="0,15.4736847417674"
+                    Point3="4,15.4736847417674" />
+                  <mssgle:LineSegment
+                    End="108.92708264648,15.4736847417674" />
+                  <mssgle:CubicBezierSegment
+                    Point1="108.92708264648,15.4736847417674"
+                    Point2="112.92708264648,15.4736847417674"
+                    Point3="112.92708264648,19.4736847417674" />
+                  <mssgle:LineSegment
+                    End="112.92708264648,23.4473694835348" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 12]"
+          TopLeft="1560.49998360872,170.675440560473">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="139.833349724613,271.324559439527"
+              Start="0,0"
+              End="139.833349724613,263.824559439527">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,157.629835945192" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,157.629835945192"
+                    Point2="0,161.629835945192"
+                    Point3="4,161.629835945192" />
+                  <mssgle:LineSegment
+                    End="135.833349724613,161.629835945192" />
+                  <mssgle:CubicBezierSegment
+                    Point1="135.833349724613,161.629835945192"
+                    Point2="139.833349724613,161.629835945192"
+                    Point3="139.833349724613,165.629835945192" />
+                  <mssgle:LineSegment
+                    End="139.833349724613,263.824559439527" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -2388,30 +2617,30 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 2]"
-          TopLeft="1018.66666666667,100">
+          TopLeft="1017.44444444444,99.6666666666667">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-566.166666666667,66"
+              EndConnector="-564.777777777778,66.3333333333333"
               Start="0,0"
-              End="-566.166666666667,58.5">
+              End="-564.777777777778,58.8333333333333">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,22.715852442672" />
+                    End="0,22.8566914917626" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,22.715852442672"
-                    Point2="0,26.715852442672"
-                    Point3="-4,26.715852442672" />
+                    Point1="0,22.8566914917626"
+                    Point2="0,26.8566914917626"
+                    Point3="-4,26.8566914917626" />
                   <mssgle:LineSegment
-                    End="-562.166666666667,26.715852442672" />
+                    End="-560.777777777778,26.8566914917626" />
                   <mssgle:CubicBezierSegment
-                    Point1="-562.166666666667,26.715852442672"
-                    Point2="-566.166666666667,26.715852442672"
-                    Point3="-566.166666666667,30.715852442672" />
+                    Point1="-560.777777777778,26.8566914917626"
+                    Point2="-564.777777777778,26.8566914917626"
+                    Point3="-564.777777777778,30.8566914917626" />
                   <mssgle:LineSegment
-                    End="-566.166666666667,58.5" />
+                    End="-564.777777777778,58.8333333333333" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>

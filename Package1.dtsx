@@ -1,0 +1,2392 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="6/6/2023 3:43:01 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="SRV-DIR-DEV"
+  DTS:CreatorName="SINTE00\ext-gciaccio"
+  DTS:DTSID="{789D9375-72C9-4B86-B528-D38AC03514B9}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="15.0.2000.132"
+  DTS:LocaleID="2064"
+  DTS:ObjectName="Package1"
+  DTS:PackageType="5"
+  DTS:ProtectionLevel="2"
+  DTS:VersionBuild="3"
+  DTS:VersionGUID="{5075D9E1-5EB1-4AD6-B4B6-0F864A4B01FF}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[(project) Flat Files - NA3130BA - Alarms]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{B0DCCDB4-86AC-429D-AE10-E7CAC7A8ED6B}"
+      DTS:ObjectName="(project) Flat Files - NA3130BA - Alarms">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="2064"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="D:\Files_output\Alarms\Alarms_ME\NA3130BA\alarms.csv">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Riga"
+              DTS:DTSID="{38266692-28DF-4F13-85EE-7DDD8EB69144}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Stato"
+              DTS:DTSID="{7370A074-79F6-4F08-BCA8-A57C53BD939C}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Ack"
+              DTS:DTSID="{79F8C687-C754-4A99-8E7A-7BA804C9D5DF}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Id"
+              DTS:DTSID="{05709D48-54F9-44FA-9FCC-08494984D011}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Ora"
+              DTS:DTSID="{B5C38493-663A-4B8B-9D36-6D62649F434E}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Rep #"
+              DTS:DTSID="{B49A3678-CC16-4390-B62C-49B08B0BE62E}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Descrizione"
+              DTS:DTSID="{508B901D-86E5-48CB-9EDB-34B380D71C8B}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[NA3130BA_AN]"
+      DTS:CreationName="EXCEL"
+      DTS:DTSID="{301E3062-70AE-4C4D-9443-DD2840D587A7}"
+      DTS:ObjectName="NA3130BA_AN">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Provider=Microsoft.Jet.OLEDB.4.0;Data Source=D:\Files_input\Alarms\Machines\Fedegari Autoclave NA3130BA\Anagrafica allarmi\2023.05.03.xls;Extended Properties=&quot;EXCEL 8.0;HDR=YES&quot;;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\NA3130BA"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{1a3e77f4-986f-44b1-a7af-455f52f8f59e}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:FailPackageOnFailure="True"
+      DTS:FailParentOnFailure="True"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="NA3130BA"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:LoggingOptions
+        DTS:FilterKind="0" />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\NA3130BA\Add Technical Fields"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+              name="Add Technical Fields"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\NA3130BA\Add Technical Fields.Inputs[Derived Column Input]"
+                  description="Input to the Derived Column Transformation"
+                  name="Derived Column Input">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\NA3130BA\Add Technical Fields.Outputs[Derived Column Output]"
+                  description="Default Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  name="Derived Column Output"
+                  synchronousInputId="Package\NA3130BA\Add Technical Fields.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\NA3130BA\Add Technical Fields.Outputs[Derived Column Output].Columns[TBLOG_PACKAGE_ID]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\NA3130BA\Add Technical Fields.Outputs[Derived Column Output].Columns[TBLOG_PACKAGE_ID]"
+                      name="TBLOG_PACKAGE_ID"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">@[User::out_MAX_ID]</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">@[User::out_MAX_ID]</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\NA3130BA\Add Technical Fields.Outputs[Derived Column Output].Columns[INSERT_DT]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\NA3130BA\Add Technical Fields.Outputs[Derived Column Output].Columns[INSERT_DT]"
+                      name="INSERT_DT"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">[GETDATE]()</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">GETDATE()</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\NA3130BA\Add Technical Fields.Outputs[Derived Column Output].Columns[UPDATE_DT]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\NA3130BA\Add Technical Fields.Outputs[Derived Column Output].Columns[UPDATE_DT]"
+                      name="UPDATE_DT"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">[GETDATE]()</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">GETDATE()</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\NA3130BA\Add Technical Fields.Outputs[Derived Column Output].Columns[USER_CD]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      length="11"
+                      lineageId="Package\NA3130BA\Add Technical Fields.Outputs[Derived Column Output].Columns[USER_CD]"
+                      name="USER_CD"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">@[$Project::in_USER_CD]</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">@[$Project::in_USER_CD]</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\NA3130BA\Add Technical Fields.Outputs[Derived Column Output].Columns[SITE_ID]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\NA3130BA\Add Technical Fields.Outputs[Derived Column Output].Columns[SITE_ID]"
+                      name="SITE_ID"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">@[User::out_SITE_ID]</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">@[User::out_SITE_ID]</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\NA3130BA\Add Technical Fields.Outputs[Derived Column Output].Columns[SOURCE_SYSTEM_ID]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\NA3130BA\Add Technical Fields.Outputs[Derived Column Output].Columns[SOURCE_SYSTEM_ID]"
+                      name="SOURCE_SYSTEM_ID"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">@[User::out_SOURCE_SYSTEM_ID]</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">@[User::out_SOURCE_SYSTEM_ID]</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\NA3130BA\Add Technical Fields.Outputs[Derived Column Output].Columns[TBLOG_PACKAGE_TABLE_ID]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\NA3130BA\Add Technical Fields.Outputs[Derived Column Output].Columns[TBLOG_PACKAGE_TABLE_ID]"
+                      name="TBLOG_PACKAGE_TABLE_ID"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">@[User::out_MAX_TABLE_ID]</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">@[User::out_MAX_TABLE_ID]</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\NA3130BA\Add Technical Fields.Outputs[Derived Column Output].Columns[join_field]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\NA3130BA\Add Technical Fields.Outputs[Derived Column Output].Columns[join_field]"
+                      name="join_field"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">1</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">1</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\NA3130BA\Add Technical Fields.Outputs[Derived Column Error Output]"
+                  description="Error Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Derived Column Error Output"
+                  synchronousInputId="Package\NA3130BA\Add Technical Fields.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\NA3130BA\Add Technical Fields.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\NA3130BA\Add Technical Fields.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\NA3130BA\Add Technical Fields.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\NA3130BA\Add Technical Fields.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\NA3130BA\Delta Loading Filter"
+              componentClassID="Microsoft.ConditionalSplit"
+              contactInfo="Conditional Split;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Routes data rows to different outputs depending on the content of the data. Use conditions (SSIS expressions) to specify which rows are routed. For example, separate records that need to be cleaned from those that are ready to be loaded or route only a subset of records."
+              name="Delta Loading Filter"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\NA3130BA\Delta Loading Filter.Inputs[Conditional Split Input]"
+                  description="Input to the Conditional Split Transformation"
+                  name="Conditional Split Input">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\NA3130BA\Delta Loading Filter.Outputs[Delta]"
+                  description="Output 1 of the Conditional Split Transformation"
+                  errorOrTruncationOperation="Computation"
+                  errorRowDisposition="FailComponent"
+                  exclusionGroup="1"
+                  name="Delta"
+                  synchronousInputId="Package\NA3130BA\Delta Loading Filter.Inputs[Conditional Split Input]"
+                  truncationRowDisposition="FailComponent">
+                  <properties>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Specifies the expression. This expression version uses lineage identifiers instead of column names."
+                      name="Expression">1 == 1</property>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Specifies the friendly version of the expression. This expression version uses column names."
+                      expressionType="Notify"
+                      name="FriendlyExpression">1 == 1</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the position of the condition in the list of conditions that the transformation evaluates. The evaluation order is from the lowest to the highest value."
+                      name="EvaluationOrder">0</property>
+                  </properties>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\NA3130BA\Delta Loading Filter.Outputs[Conditional Split Default Output]"
+                  description="Default Output of the Conditional Split Transformation"
+                  exclusionGroup="1"
+                  name="Conditional Split Default Output"
+                  synchronousInputId="Package\NA3130BA\Delta Loading Filter.Inputs[Conditional Split Input]">
+                  <properties>
+                    <property
+                      dataType="System.Boolean"
+                      name="IsDefaultOut">true</property>
+                  </properties>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\NA3130BA\Delta Loading Filter.Outputs[Conditional Split Error Output]"
+                  description="Error Output of the Conditional Split Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Conditional Split Error Output"
+                  synchronousInputId="Package\NA3130BA\Delta Loading Filter.Inputs[Conditional Split Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\NA3130BA\Delta Loading Filter.Outputs[Conditional Split Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\NA3130BA\Delta Loading Filter.Outputs[Conditional Split Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\NA3130BA\Delta Loading Filter.Outputs[Conditional Split Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\NA3130BA\Delta Loading Filter.Outputs[Conditional Split Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\NA3130BA\Load TBMN Data"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="Load TBMN Data"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset"></property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT a.PRODUCTION_LINE_ID, a.ID as PRODUCTION_MODEL_ID, 1 as join_field
+FROM 
+(SELECT * FROM TBDWMN_PRODUCTION_MODEL WHERE ID = ?) a</property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">2</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping">"Parameter0:Input",{8885C27B-302F-4078-A977-8765B90A4996};</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\NA3130BA\Load TBMN Data.Connections[OleDbConnection]"
+                  connectionManagerID="{62102490-454D-4B7E-9A09-120A46D18B10}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[SRV-DIR_SRVDIR DIR_DWH DIR_DWH_ETL]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\NA3130BA\Load TBMN Data.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\NA3130BA\Load TBMN Data.Outputs[OLE DB Source Output].Columns[PRODUCTION_LINE_ID]"
+                      dataType="i2"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\NA3130BA\Load TBMN Data.Outputs[OLE DB Source Output].ExternalColumns[PRODUCTION_LINE_ID]"
+                      lineageId="Package\NA3130BA\Load TBMN Data.Outputs[OLE DB Source Output].Columns[PRODUCTION_LINE_ID]"
+                      name="PRODUCTION_LINE_ID"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\NA3130BA\Load TBMN Data.Outputs[OLE DB Source Output].Columns[PRODUCTION_MODEL_ID]"
+                      dataType="i2"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\NA3130BA\Load TBMN Data.Outputs[OLE DB Source Output].ExternalColumns[PRODUCTION_MODEL_ID]"
+                      lineageId="Package\NA3130BA\Load TBMN Data.Outputs[OLE DB Source Output].Columns[PRODUCTION_MODEL_ID]"
+                      name="PRODUCTION_MODEL_ID"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\NA3130BA\Load TBMN Data.Outputs[OLE DB Source Output].Columns[join_field]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\NA3130BA\Load TBMN Data.Outputs[OLE DB Source Output].ExternalColumns[join_field]"
+                      lineageId="Package\NA3130BA\Load TBMN Data.Outputs[OLE DB Source Output].Columns[join_field]"
+                      name="join_field"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\NA3130BA\Load TBMN Data.Outputs[OLE DB Source Output].ExternalColumns[PRODUCTION_LINE_ID]"
+                      dataType="i2"
+                      name="PRODUCTION_LINE_ID" />
+                    <externalMetadataColumn
+                      refId="Package\NA3130BA\Load TBMN Data.Outputs[OLE DB Source Output].ExternalColumns[PRODUCTION_MODEL_ID]"
+                      dataType="i2"
+                      name="PRODUCTION_MODEL_ID" />
+                    <externalMetadataColumn
+                      refId="Package\NA3130BA\Load TBMN Data.Outputs[OLE DB Source Output].ExternalColumns[join_field]"
+                      dataType="i4"
+                      name="join_field" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\NA3130BA\Load TBMN Data.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\NA3130BA\Load TBMN Data.Outputs[OLE DB Source Error Output].Columns[PRODUCTION_LINE_ID]"
+                      dataType="i2"
+                      lineageId="Package\NA3130BA\Load TBMN Data.Outputs[OLE DB Source Error Output].Columns[PRODUCTION_LINE_ID]"
+                      name="PRODUCTION_LINE_ID" />
+                    <outputColumn
+                      refId="Package\NA3130BA\Load TBMN Data.Outputs[OLE DB Source Error Output].Columns[PRODUCTION_MODEL_ID]"
+                      dataType="i2"
+                      lineageId="Package\NA3130BA\Load TBMN Data.Outputs[OLE DB Source Error Output].Columns[PRODUCTION_MODEL_ID]"
+                      name="PRODUCTION_MODEL_ID" />
+                    <outputColumn
+                      refId="Package\NA3130BA\Load TBMN Data.Outputs[OLE DB Source Error Output].Columns[join_field]"
+                      dataType="i4"
+                      lineageId="Package\NA3130BA\Load TBMN Data.Outputs[OLE DB Source Error Output].Columns[join_field]"
+                      name="join_field" />
+                    <outputColumn
+                      refId="Package\NA3130BA\Load TBMN Data.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\NA3130BA\Load TBMN Data.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\NA3130BA\Load TBMN Data.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\NA3130BA\Load TBMN Data.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\NA3130BA\Merge Join"
+              componentClassID="Microsoft.MergeJoin"
+              contactInfo="Merge Join;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Combine two sorted data flows into one using the FULL, LEFT, or INNER join. We recommend this transformation when data flows can be sorted at their sources."
+              name="Merge Join"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the type of join to perform."
+                  name="JoinType"
+                  typeConverter="JoinType">1</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the number of columns in the ordering key."
+                  name="NumKeyColumns">1</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the null values are treated as equal values."
+                  name="TreatNullsAsEqual">true</property>
+                <property
+                  dataType="System.Int32"
+                  description="Indicates the requested maximum buffers per input before blocking."
+                  name="MaxBuffersPerInput">5</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\NA3130BA\Merge Join.Inputs[Merge Join Left Input]"
+                  hasSideEffects="true"
+                  name="Merge Join Left Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\NA3130BA\Merge Join.Inputs[Merge Join Left Input].Columns[join_field]"
+                      cachedDataType="i4"
+                      cachedName="join_field"
+                      cachedSortKeyPosition="1"
+                      lineageId="Package\NA3130BA\Sort Join Field 1.Outputs[Sort Output].Columns[join_field]" />
+                    <inputColumn
+                      refId="Package\NA3130BA\Merge Join.Inputs[Merge Join Left Input].Columns[Riga]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Riga"
+                      lineageId="Package\NA3130BA\Sort Join Field 1.Outputs[Sort Output].Columns[Riga]" />
+                    <inputColumn
+                      refId="Package\NA3130BA\Merge Join.Inputs[Merge Join Left Input].Columns[Id]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Id"
+                      lineageId="Package\NA3130BA\Sort Join Field 1.Outputs[Sort Output].Columns[Id]" />
+                    <inputColumn
+                      refId="Package\NA3130BA\Merge Join.Inputs[Merge Join Left Input].Columns[Ora]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Ora"
+                      lineageId="Package\NA3130BA\Sort Join Field 1.Outputs[Sort Output].Columns[Ora]" />
+                    <inputColumn
+                      refId="Package\NA3130BA\Merge Join.Inputs[Merge Join Left Input].Columns[Rep #]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Rep #"
+                      lineageId="Package\NA3130BA\Sort Join Field 1.Outputs[Sort Output].Columns[Rep #]" />
+                    <inputColumn
+                      refId="Package\NA3130BA\Merge Join.Inputs[Merge Join Left Input].Columns[TBLOG_PACKAGE_ID]"
+                      cachedDataType="i4"
+                      cachedName="TBLOG_PACKAGE_ID"
+                      lineageId="Package\NA3130BA\Sort Join Field 1.Outputs[Sort Output].Columns[TBLOG_PACKAGE_ID]" />
+                    <inputColumn
+                      refId="Package\NA3130BA\Merge Join.Inputs[Merge Join Left Input].Columns[INSERT_DT]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="INSERT_DT"
+                      lineageId="Package\NA3130BA\Sort Join Field 1.Outputs[Sort Output].Columns[INSERT_DT]" />
+                    <inputColumn
+                      refId="Package\NA3130BA\Merge Join.Inputs[Merge Join Left Input].Columns[UPDATE_DT]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="UPDATE_DT"
+                      lineageId="Package\NA3130BA\Sort Join Field 1.Outputs[Sort Output].Columns[UPDATE_DT]" />
+                    <inputColumn
+                      refId="Package\NA3130BA\Merge Join.Inputs[Merge Join Left Input].Columns[USER_CD]"
+                      cachedDataType="wstr"
+                      cachedLength="11"
+                      cachedName="USER_CD"
+                      lineageId="Package\NA3130BA\Sort Join Field 1.Outputs[Sort Output].Columns[USER_CD]" />
+                    <inputColumn
+                      refId="Package\NA3130BA\Merge Join.Inputs[Merge Join Left Input].Columns[SITE_ID]"
+                      cachedDataType="i4"
+                      cachedName="SITE_ID"
+                      lineageId="Package\NA3130BA\Sort Join Field 1.Outputs[Sort Output].Columns[SITE_ID]" />
+                    <inputColumn
+                      refId="Package\NA3130BA\Merge Join.Inputs[Merge Join Left Input].Columns[SOURCE_SYSTEM_ID]"
+                      cachedDataType="i4"
+                      cachedName="SOURCE_SYSTEM_ID"
+                      lineageId="Package\NA3130BA\Sort Join Field 1.Outputs[Sort Output].Columns[SOURCE_SYSTEM_ID]" />
+                    <inputColumn
+                      refId="Package\NA3130BA\Merge Join.Inputs[Merge Join Left Input].Columns[TBLOG_PACKAGE_TABLE_ID]"
+                      cachedDataType="i4"
+                      cachedName="TBLOG_PACKAGE_TABLE_ID"
+                      lineageId="Package\NA3130BA\Sort Join Field 1.Outputs[Sort Output].Columns[TBLOG_PACKAGE_TABLE_ID]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+                <input
+                  refId="Package\NA3130BA\Merge Join.Inputs[Merge Join Right Input]"
+                  hasSideEffects="true"
+                  name="Merge Join Right Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\NA3130BA\Merge Join.Inputs[Merge Join Right Input].Columns[join_field]"
+                      cachedDataType="i4"
+                      cachedName="join_field"
+                      cachedSortKeyPosition="1"
+                      lineageId="Package\NA3130BA\Sort Join Field 2.Outputs[Sort Output].Columns[join_field]" />
+                    <inputColumn
+                      refId="Package\NA3130BA\Merge Join.Inputs[Merge Join Right Input].Columns[PRODUCTION_LINE_ID]"
+                      cachedDataType="i2"
+                      cachedName="PRODUCTION_LINE_ID"
+                      lineageId="Package\NA3130BA\Sort Join Field 2.Outputs[Sort Output].Columns[PRODUCTION_LINE_ID]" />
+                    <inputColumn
+                      refId="Package\NA3130BA\Merge Join.Inputs[Merge Join Right Input].Columns[PRODUCTION_MODEL_ID]"
+                      cachedDataType="i2"
+                      cachedName="PRODUCTION_MODEL_ID"
+                      lineageId="Package\NA3130BA\Sort Join Field 2.Outputs[Sort Output].Columns[PRODUCTION_MODEL_ID]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\NA3130BA\Merge Join.Outputs[Merge Join Output]"
+                  name="Merge Join Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\NA3130BA\Merge Join.Outputs[Merge Join Output].Columns[Riga]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\NA3130BA\Merge Join.Outputs[Merge Join Output].Columns[Riga]"
+                      name="Riga">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The input column associated with this output column"
+                          name="InputColumnID">#{Package\NA3130BA\Merge Join.Inputs[Merge Join Left Input].Columns[Riga]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\NA3130BA\Merge Join.Outputs[Merge Join Output].Columns[Id]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\NA3130BA\Merge Join.Outputs[Merge Join Output].Columns[Id]"
+                      name="Id">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The input column associated with this output column"
+                          name="InputColumnID">#{Package\NA3130BA\Merge Join.Inputs[Merge Join Left Input].Columns[Id]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\NA3130BA\Merge Join.Outputs[Merge Join Output].Columns[Ora]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\NA3130BA\Merge Join.Outputs[Merge Join Output].Columns[Ora]"
+                      name="Ora">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The input column associated with this output column"
+                          name="InputColumnID">#{Package\NA3130BA\Merge Join.Inputs[Merge Join Left Input].Columns[Ora]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\NA3130BA\Merge Join.Outputs[Merge Join Output].Columns[Rep #]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\NA3130BA\Merge Join.Outputs[Merge Join Output].Columns[Rep #]"
+                      name="Rep #">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The input column associated with this output column"
+                          name="InputColumnID">#{Package\NA3130BA\Merge Join.Inputs[Merge Join Left Input].Columns[Rep #]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\NA3130BA\Merge Join.Outputs[Merge Join Output].Columns[TBLOG_PACKAGE_ID]"
+                      dataType="i4"
+                      lineageId="Package\NA3130BA\Merge Join.Outputs[Merge Join Output].Columns[TBLOG_PACKAGE_ID]"
+                      name="TBLOG_PACKAGE_ID">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The input column associated with this output column"
+                          name="InputColumnID">#{Package\NA3130BA\Merge Join.Inputs[Merge Join Left Input].Columns[TBLOG_PACKAGE_ID]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\NA3130BA\Merge Join.Outputs[Merge Join Output].Columns[INSERT_DT]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\NA3130BA\Merge Join.Outputs[Merge Join Output].Columns[INSERT_DT]"
+                      name="INSERT_DT">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The input column associated with this output column"
+                          name="InputColumnID">#{Package\NA3130BA\Merge Join.Inputs[Merge Join Left Input].Columns[INSERT_DT]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\NA3130BA\Merge Join.Outputs[Merge Join Output].Columns[UPDATE_DT]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\NA3130BA\Merge Join.Outputs[Merge Join Output].Columns[UPDATE_DT]"
+                      name="UPDATE_DT">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The input column associated with this output column"
+                          name="InputColumnID">#{Package\NA3130BA\Merge Join.Inputs[Merge Join Left Input].Columns[UPDATE_DT]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\NA3130BA\Merge Join.Outputs[Merge Join Output].Columns[USER_CD]"
+                      dataType="wstr"
+                      length="11"
+                      lineageId="Package\NA3130BA\Merge Join.Outputs[Merge Join Output].Columns[USER_CD]"
+                      name="USER_CD">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The input column associated with this output column"
+                          name="InputColumnID">#{Package\NA3130BA\Merge Join.Inputs[Merge Join Left Input].Columns[USER_CD]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\NA3130BA\Merge Join.Outputs[Merge Join Output].Columns[SITE_ID]"
+                      dataType="i4"
+                      lineageId="Package\NA3130BA\Merge Join.Outputs[Merge Join Output].Columns[SITE_ID]"
+                      name="SITE_ID">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The input column associated with this output column"
+                          name="InputColumnID">#{Package\NA3130BA\Merge Join.Inputs[Merge Join Left Input].Columns[SITE_ID]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\NA3130BA\Merge Join.Outputs[Merge Join Output].Columns[SOURCE_SYSTEM_ID]"
+                      dataType="i4"
+                      lineageId="Package\NA3130BA\Merge Join.Outputs[Merge Join Output].Columns[SOURCE_SYSTEM_ID]"
+                      name="SOURCE_SYSTEM_ID">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The input column associated with this output column"
+                          name="InputColumnID">#{Package\NA3130BA\Merge Join.Inputs[Merge Join Left Input].Columns[SOURCE_SYSTEM_ID]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\NA3130BA\Merge Join.Outputs[Merge Join Output].Columns[TBLOG_PACKAGE_TABLE_ID]"
+                      dataType="i4"
+                      lineageId="Package\NA3130BA\Merge Join.Outputs[Merge Join Output].Columns[TBLOG_PACKAGE_TABLE_ID]"
+                      name="TBLOG_PACKAGE_TABLE_ID">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The input column associated with this output column"
+                          name="InputColumnID">#{Package\NA3130BA\Merge Join.Inputs[Merge Join Left Input].Columns[TBLOG_PACKAGE_TABLE_ID]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\NA3130BA\Merge Join.Outputs[Merge Join Output].Columns[PRODUCTION_LINE_ID]"
+                      dataType="i2"
+                      lineageId="Package\NA3130BA\Merge Join.Outputs[Merge Join Output].Columns[PRODUCTION_LINE_ID]"
+                      name="PRODUCTION_LINE_ID">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The input column associated with this output column"
+                          name="InputColumnID">#{Package\NA3130BA\Merge Join.Inputs[Merge Join Right Input].Columns[PRODUCTION_LINE_ID]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\NA3130BA\Merge Join.Outputs[Merge Join Output].Columns[PRODUCTION_MODEL_ID]"
+                      dataType="i2"
+                      lineageId="Package\NA3130BA\Merge Join.Outputs[Merge Join Output].Columns[PRODUCTION_MODEL_ID]"
+                      name="PRODUCTION_MODEL_ID">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The input column associated with this output column"
+                          name="InputColumnID">#{Package\NA3130BA\Merge Join.Inputs[Merge Join Right Input].Columns[PRODUCTION_MODEL_ID]}</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\NA3130BA\NA3130BA Flat File"
+              componentClassID="Microsoft.FlatFileSource"
+              contactInfo="Flat File Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Flat File Source"
+              localeId="2064"
+              name="NA3130BA Flat File"
+              usesDispositions="true"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Specifies whether zero-length columns are treated as null."
+                  name="RetainNulls">true</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of an output column containing the file name. If no name is specified, no output column containing the file name will be generated."
+                  name="FileNameColumnName"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\NA3130BA\NA3130BA Flat File.Connections[FlatFileConnection]"
+                  connectionManagerID="Package.ConnectionManagers[(project) Flat Files - NA3130BA - Alarms]"
+                  connectionManagerRefId="Package.ConnectionManagers[(project) Flat Files - NA3130BA - Alarms]"
+                  name="FlatFileConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\NA3130BA\NA3130BA Flat File.Outputs[Flat File Source Output]"
+                  name="Flat File Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\NA3130BA\NA3130BA Flat File.Outputs[Flat File Source Output].Columns[Riga]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\NA3130BA\NA3130BA Flat File.Outputs[Flat File Source Output].ExternalColumns[Riga]"
+                      length="50"
+                      lineageId="Package\NA3130BA\NA3130BA Flat File.Outputs[Flat File Source Output].Columns[Riga]"
+                      name="Riga"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\NA3130BA\NA3130BA Flat File.Outputs[Flat File Source Output].Columns[Stato]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\NA3130BA\NA3130BA Flat File.Outputs[Flat File Source Output].ExternalColumns[Stato]"
+                      length="50"
+                      lineageId="Package\NA3130BA\NA3130BA Flat File.Outputs[Flat File Source Output].Columns[Stato]"
+                      name="Stato"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\NA3130BA\NA3130BA Flat File.Outputs[Flat File Source Output].Columns[Ack]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\NA3130BA\NA3130BA Flat File.Outputs[Flat File Source Output].ExternalColumns[Ack]"
+                      length="50"
+                      lineageId="Package\NA3130BA\NA3130BA Flat File.Outputs[Flat File Source Output].Columns[Ack]"
+                      name="Ack"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\NA3130BA\NA3130BA Flat File.Outputs[Flat File Source Output].Columns[Id]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\NA3130BA\NA3130BA Flat File.Outputs[Flat File Source Output].ExternalColumns[Id]"
+                      length="50"
+                      lineageId="Package\NA3130BA\NA3130BA Flat File.Outputs[Flat File Source Output].Columns[Id]"
+                      name="Id"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\NA3130BA\NA3130BA Flat File.Outputs[Flat File Source Output].Columns[Ora]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\NA3130BA\NA3130BA Flat File.Outputs[Flat File Source Output].ExternalColumns[Ora]"
+                      length="50"
+                      lineageId="Package\NA3130BA\NA3130BA Flat File.Outputs[Flat File Source Output].Columns[Ora]"
+                      name="Ora"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\NA3130BA\NA3130BA Flat File.Outputs[Flat File Source Output].Columns[Rep #]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\NA3130BA\NA3130BA Flat File.Outputs[Flat File Source Output].ExternalColumns[Rep #]"
+                      length="50"
+                      lineageId="Package\NA3130BA\NA3130BA Flat File.Outputs[Flat File Source Output].Columns[Rep #]"
+                      name="Rep #"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\NA3130BA\NA3130BA Flat File.Outputs[Flat File Source Output].Columns[Descrizione]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\NA3130BA\NA3130BA Flat File.Outputs[Flat File Source Output].ExternalColumns[Descrizione]"
+                      length="50"
+                      lineageId="Package\NA3130BA\NA3130BA Flat File.Outputs[Flat File Source Output].Columns[Descrizione]"
+                      name="Descrizione"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\NA3130BA\NA3130BA Flat File.Outputs[Flat File Source Output].ExternalColumns[Riga]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Riga" />
+                    <externalMetadataColumn
+                      refId="Package\NA3130BA\NA3130BA Flat File.Outputs[Flat File Source Output].ExternalColumns[Stato]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Stato" />
+                    <externalMetadataColumn
+                      refId="Package\NA3130BA\NA3130BA Flat File.Outputs[Flat File Source Output].ExternalColumns[Ack]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Ack" />
+                    <externalMetadataColumn
+                      refId="Package\NA3130BA\NA3130BA Flat File.Outputs[Flat File Source Output].ExternalColumns[Id]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Id" />
+                    <externalMetadataColumn
+                      refId="Package\NA3130BA\NA3130BA Flat File.Outputs[Flat File Source Output].ExternalColumns[Ora]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Ora" />
+                    <externalMetadataColumn
+                      refId="Package\NA3130BA\NA3130BA Flat File.Outputs[Flat File Source Output].ExternalColumns[Rep #]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Rep #" />
+                    <externalMetadataColumn
+                      refId="Package\NA3130BA\NA3130BA Flat File.Outputs[Flat File Source Output].ExternalColumns[Descrizione]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Descrizione" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\NA3130BA\NA3130BA Flat File.Outputs[Flat File Source Error Output]"
+                  isErrorOut="true"
+                  name="Flat File Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\NA3130BA\NA3130BA Flat File.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      codePage="1252"
+                      dataType="text"
+                      description="Flat File Source Error Output Column"
+                      lineageId="Package\NA3130BA\NA3130BA Flat File.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      name="Flat File Source Error Output Column" />
+                    <outputColumn
+                      refId="Package\NA3130BA\NA3130BA Flat File.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\NA3130BA\NA3130BA Flat File.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\NA3130BA\NA3130BA Flat File.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\NA3130BA\NA3130BA Flat File.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\NA3130BA\OLE DB Destination"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="OLE DB Destination"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[db_owner].[TBST_ALARMS]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\NA3130BA\OLE DB Destination.Connections[OleDbConnection]"
+                  connectionManagerID="{62102490-454D-4B7E-9A09-120A46D18B10}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[SRV-DIR_SRVDIR DIR_DWH DIR_DWH_ETL]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\NA3130BA\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\NA3130BA\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Riga]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Riga"
+                      externalMetadataColumnId="Package\NA3130BA\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Riga]"
+                      lineageId="Package\NA3130BA\Merge Join.Outputs[Merge Join Output].Columns[Riga]" />
+                    <inputColumn
+                      refId="Package\NA3130BA\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Id]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Id"
+                      externalMetadataColumnId="Package\NA3130BA\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Id]"
+                      lineageId="Package\NA3130BA\Merge Join.Outputs[Merge Join Output].Columns[Id]" />
+                    <inputColumn
+                      refId="Package\NA3130BA\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Ora]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Ora"
+                      externalMetadataColumnId="Package\NA3130BA\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Ora]"
+                      lineageId="Package\NA3130BA\Merge Join.Outputs[Merge Join Output].Columns[Ora]" />
+                    <inputColumn
+                      refId="Package\NA3130BA\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Rep #]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Rep #"
+                      externalMetadataColumnId="Package\NA3130BA\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Rep #]"
+                      lineageId="Package\NA3130BA\Merge Join.Outputs[Merge Join Output].Columns[Rep #]" />
+                    <inputColumn
+                      refId="Package\NA3130BA\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[TBLOG_PACKAGE_ID]"
+                      cachedDataType="i4"
+                      cachedName="TBLOG_PACKAGE_ID"
+                      externalMetadataColumnId="Package\NA3130BA\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[TBLOG_PACKAGE_ID]"
+                      lineageId="Package\NA3130BA\Merge Join.Outputs[Merge Join Output].Columns[TBLOG_PACKAGE_ID]" />
+                    <inputColumn
+                      refId="Package\NA3130BA\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[INSERT_DT]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="INSERT_DT"
+                      externalMetadataColumnId="Package\NA3130BA\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[INSERT_DT]"
+                      lineageId="Package\NA3130BA\Merge Join.Outputs[Merge Join Output].Columns[INSERT_DT]" />
+                    <inputColumn
+                      refId="Package\NA3130BA\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[UPDATE_DT]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="UPDATE_DT"
+                      externalMetadataColumnId="Package\NA3130BA\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[UPDATE_DT]"
+                      lineageId="Package\NA3130BA\Merge Join.Outputs[Merge Join Output].Columns[UPDATE_DT]" />
+                    <inputColumn
+                      refId="Package\NA3130BA\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[USER_CD]"
+                      cachedDataType="wstr"
+                      cachedLength="11"
+                      cachedName="USER_CD"
+                      externalMetadataColumnId="Package\NA3130BA\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[USER_CD]"
+                      lineageId="Package\NA3130BA\Merge Join.Outputs[Merge Join Output].Columns[USER_CD]" />
+                    <inputColumn
+                      refId="Package\NA3130BA\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[SITE_ID]"
+                      cachedDataType="i4"
+                      cachedName="SITE_ID"
+                      externalMetadataColumnId="Package\NA3130BA\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[SITE_ID]"
+                      lineageId="Package\NA3130BA\Merge Join.Outputs[Merge Join Output].Columns[SITE_ID]" />
+                    <inputColumn
+                      refId="Package\NA3130BA\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[SOURCE_SYSTEM_ID]"
+                      cachedDataType="i4"
+                      cachedName="SOURCE_SYSTEM_ID"
+                      externalMetadataColumnId="Package\NA3130BA\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[SOURCE_SYSTEM_ID]"
+                      lineageId="Package\NA3130BA\Merge Join.Outputs[Merge Join Output].Columns[SOURCE_SYSTEM_ID]" />
+                    <inputColumn
+                      refId="Package\NA3130BA\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[TBLOG_PACKAGE_TABLE_ID]"
+                      cachedDataType="i4"
+                      cachedName="TBLOG_PACKAGE_TABLE_ID"
+                      externalMetadataColumnId="Package\NA3130BA\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[TBLOG_PACKAGE_TABLE_ID]"
+                      lineageId="Package\NA3130BA\Merge Join.Outputs[Merge Join Output].Columns[TBLOG_PACKAGE_TABLE_ID]" />
+                    <inputColumn
+                      refId="Package\NA3130BA\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[PRODUCTION_LINE_ID]"
+                      cachedDataType="i2"
+                      cachedName="PRODUCTION_LINE_ID"
+                      externalMetadataColumnId="Package\NA3130BA\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[PRODUCTION_LINE_ID]"
+                      lineageId="Package\NA3130BA\Merge Join.Outputs[Merge Join Output].Columns[PRODUCTION_LINE_ID]" />
+                    <inputColumn
+                      refId="Package\NA3130BA\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[PRODUCTION_MODEL_ID]"
+                      cachedDataType="i2"
+                      cachedName="PRODUCTION_MODEL_ID"
+                      externalMetadataColumnId="Package\NA3130BA\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[PRODUCTION_MODEL_ID]"
+                      lineageId="Package\NA3130BA\Merge Join.Outputs[Merge Join Output].Columns[PRODUCTION_MODEL_ID]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\NA3130BA\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[TBLOG_PACKAGE_ID]"
+                      dataType="i8"
+                      name="TBLOG_PACKAGE_ID" />
+                    <externalMetadataColumn
+                      refId="Package\NA3130BA\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[TBLOG_PACKAGE_TABLE_ID]"
+                      dataType="i8"
+                      name="TBLOG_PACKAGE_TABLE_ID" />
+                    <externalMetadataColumn
+                      refId="Package\NA3130BA\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[INSERT_DT]"
+                      dataType="dbTimeStamp"
+                      name="INSERT_DT" />
+                    <externalMetadataColumn
+                      refId="Package\NA3130BA\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[UPDATE_DT]"
+                      dataType="dbTimeStamp"
+                      name="UPDATE_DT" />
+                    <externalMetadataColumn
+                      refId="Package\NA3130BA\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[DELETE_DT]"
+                      dataType="dbTimeStamp"
+                      name="DELETE_DT" />
+                    <externalMetadataColumn
+                      refId="Package\NA3130BA\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[USER_CD]"
+                      dataType="wstr"
+                      length="100"
+                      name="USER_CD" />
+                    <externalMetadataColumn
+                      refId="Package\NA3130BA\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[SITE_ID]"
+                      dataType="i8"
+                      name="SITE_ID" />
+                    <externalMetadataColumn
+                      refId="Package\NA3130BA\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[SOURCE_SYSTEM_ID]"
+                      dataType="i8"
+                      name="SOURCE_SYSTEM_ID" />
+                    <externalMetadataColumn
+                      refId="Package\NA3130BA\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[PRODUCTION_LINE_ID]"
+                      dataType="i8"
+                      name="PRODUCTION_LINE_ID" />
+                    <externalMetadataColumn
+                      refId="Package\NA3130BA\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[PRODUCTION_MODEL_ID]"
+                      dataType="i8"
+                      name="PRODUCTION_MODEL_ID" />
+                    <externalMetadataColumn
+                      refId="Package\NA3130BA\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ROW_STS_FLG]"
+                      dataType="bool"
+                      name="ROW_STS_FLG" />
+                    <externalMetadataColumn
+                      refId="Package\NA3130BA\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Riga]"
+                      dataType="i8"
+                      name="Riga" />
+                    <externalMetadataColumn
+                      refId="Package\NA3130BA\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Stato]"
+                      dataType="wstr"
+                      length="100"
+                      name="Stato" />
+                    <externalMetadataColumn
+                      refId="Package\NA3130BA\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Ack]"
+                      dataType="wstr"
+                      length="100"
+                      name="Ack" />
+                    <externalMetadataColumn
+                      refId="Package\NA3130BA\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Id]"
+                      dataType="i8"
+                      name="Id" />
+                    <externalMetadataColumn
+                      refId="Package\NA3130BA\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Ora]"
+                      dataType="dbTimeStamp"
+                      name="Ora" />
+                    <externalMetadataColumn
+                      refId="Package\NA3130BA\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Rep #]"
+                      dataType="i8"
+                      name="Rep #" />
+                    <externalMetadataColumn
+                      refId="Package\NA3130BA\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Descrizione]"
+                      dataType="nText"
+                      name="Descrizione" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\NA3130BA\OLE DB Destination.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\NA3130BA\OLE DB Destination.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\NA3130BA\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\NA3130BA\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\NA3130BA\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\NA3130BA\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\NA3130BA\Sort Join Field 1"
+              componentClassID="Microsoft.Sort"
+              contactInfo="Sort;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Sorts input data in ascending or descending order when it cannot be sorted at its source. For example, sort sales data by 'customer id' before it is written to a flat file and delivered to another department. Note: We do not recommend this transformation for large data flows."
+              name="Sort Join Field 1"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the Sort transformation removes rows with duplicate sort values."
+                  name="EliminateDuplicates">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the maximum number of threads to use for sorting."
+                  expressionType="Notify"
+                  name="MaximumThreads">-1</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\NA3130BA\Sort Join Field 1.Inputs[Sort Input]"
+                  name="Sort Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\NA3130BA\Sort Join Field 1.Inputs[Sort Input].Columns[Riga]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Riga"
+                      lineageId="Package\NA3130BA\NA3130BA Flat File.Outputs[Flat File Source Output].Columns[Riga]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\NA3130BA\Sort Join Field 1.Inputs[Sort Input].Columns[Stato]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Stato"
+                      lineageId="Package\NA3130BA\NA3130BA Flat File.Outputs[Flat File Source Output].Columns[Stato]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\NA3130BA\Sort Join Field 1.Inputs[Sort Input].Columns[Ack]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Ack"
+                      lineageId="Package\NA3130BA\NA3130BA Flat File.Outputs[Flat File Source Output].Columns[Ack]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\NA3130BA\Sort Join Field 1.Inputs[Sort Input].Columns[Id]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Id"
+                      lineageId="Package\NA3130BA\NA3130BA Flat File.Outputs[Flat File Source Output].Columns[Id]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\NA3130BA\Sort Join Field 1.Inputs[Sort Input].Columns[Ora]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Ora"
+                      lineageId="Package\NA3130BA\NA3130BA Flat File.Outputs[Flat File Source Output].Columns[Ora]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\NA3130BA\Sort Join Field 1.Inputs[Sort Input].Columns[Rep #]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Rep #"
+                      lineageId="Package\NA3130BA\NA3130BA Flat File.Outputs[Flat File Source Output].Columns[Rep #]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\NA3130BA\Sort Join Field 1.Inputs[Sort Input].Columns[Descrizione]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Descrizione"
+                      lineageId="Package\NA3130BA\NA3130BA Flat File.Outputs[Flat File Source Output].Columns[Descrizione]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\NA3130BA\Sort Join Field 1.Inputs[Sort Input].Columns[TBLOG_PACKAGE_ID]"
+                      cachedDataType="i4"
+                      cachedName="TBLOG_PACKAGE_ID"
+                      lineageId="Package\NA3130BA\Add Technical Fields.Outputs[Derived Column Output].Columns[TBLOG_PACKAGE_ID]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\NA3130BA\Sort Join Field 1.Inputs[Sort Input].Columns[INSERT_DT]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="INSERT_DT"
+                      lineageId="Package\NA3130BA\Add Technical Fields.Outputs[Derived Column Output].Columns[INSERT_DT]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\NA3130BA\Sort Join Field 1.Inputs[Sort Input].Columns[UPDATE_DT]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="UPDATE_DT"
+                      lineageId="Package\NA3130BA\Add Technical Fields.Outputs[Derived Column Output].Columns[UPDATE_DT]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\NA3130BA\Sort Join Field 1.Inputs[Sort Input].Columns[USER_CD]"
+                      cachedDataType="wstr"
+                      cachedLength="11"
+                      cachedName="USER_CD"
+                      lineageId="Package\NA3130BA\Add Technical Fields.Outputs[Derived Column Output].Columns[USER_CD]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\NA3130BA\Sort Join Field 1.Inputs[Sort Input].Columns[SITE_ID]"
+                      cachedDataType="i4"
+                      cachedName="SITE_ID"
+                      lineageId="Package\NA3130BA\Add Technical Fields.Outputs[Derived Column Output].Columns[SITE_ID]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\NA3130BA\Sort Join Field 1.Inputs[Sort Input].Columns[SOURCE_SYSTEM_ID]"
+                      cachedDataType="i4"
+                      cachedName="SOURCE_SYSTEM_ID"
+                      lineageId="Package\NA3130BA\Add Technical Fields.Outputs[Derived Column Output].Columns[SOURCE_SYSTEM_ID]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\NA3130BA\Sort Join Field 1.Inputs[Sort Input].Columns[TBLOG_PACKAGE_TABLE_ID]"
+                      cachedDataType="i4"
+                      cachedName="TBLOG_PACKAGE_TABLE_ID"
+                      lineageId="Package\NA3130BA\Add Technical Fields.Outputs[Derived Column Output].Columns[TBLOG_PACKAGE_TABLE_ID]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\NA3130BA\Sort Join Field 1.Inputs[Sort Input].Columns[join_field]"
+                      cachedDataType="i4"
+                      cachedName="join_field"
+                      lineageId="Package\NA3130BA\Add Technical Fields.Outputs[Derived Column Output].Columns[join_field]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">1</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\NA3130BA\Sort Join Field 1.Outputs[Sort Output]"
+                  isSorted="true"
+                  name="Sort Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\NA3130BA\Sort Join Field 1.Outputs[Sort Output].Columns[Riga]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\NA3130BA\Sort Join Field 1.Outputs[Sort Output].Columns[Riga]"
+                      name="Riga">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\NA3130BA\NA3130BA Flat File.Outputs[Flat File Source Output].Columns[Riga]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\NA3130BA\Sort Join Field 1.Outputs[Sort Output].Columns[Stato]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\NA3130BA\Sort Join Field 1.Outputs[Sort Output].Columns[Stato]"
+                      name="Stato">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\NA3130BA\NA3130BA Flat File.Outputs[Flat File Source Output].Columns[Stato]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\NA3130BA\Sort Join Field 1.Outputs[Sort Output].Columns[Ack]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\NA3130BA\Sort Join Field 1.Outputs[Sort Output].Columns[Ack]"
+                      name="Ack">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\NA3130BA\NA3130BA Flat File.Outputs[Flat File Source Output].Columns[Ack]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\NA3130BA\Sort Join Field 1.Outputs[Sort Output].Columns[Id]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\NA3130BA\Sort Join Field 1.Outputs[Sort Output].Columns[Id]"
+                      name="Id">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\NA3130BA\NA3130BA Flat File.Outputs[Flat File Source Output].Columns[Id]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\NA3130BA\Sort Join Field 1.Outputs[Sort Output].Columns[Ora]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\NA3130BA\Sort Join Field 1.Outputs[Sort Output].Columns[Ora]"
+                      name="Ora">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\NA3130BA\NA3130BA Flat File.Outputs[Flat File Source Output].Columns[Ora]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\NA3130BA\Sort Join Field 1.Outputs[Sort Output].Columns[Rep #]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\NA3130BA\Sort Join Field 1.Outputs[Sort Output].Columns[Rep #]"
+                      name="Rep #">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\NA3130BA\NA3130BA Flat File.Outputs[Flat File Source Output].Columns[Rep #]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\NA3130BA\Sort Join Field 1.Outputs[Sort Output].Columns[Descrizione]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\NA3130BA\Sort Join Field 1.Outputs[Sort Output].Columns[Descrizione]"
+                      name="Descrizione">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\NA3130BA\NA3130BA Flat File.Outputs[Flat File Source Output].Columns[Descrizione]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\NA3130BA\Sort Join Field 1.Outputs[Sort Output].Columns[TBLOG_PACKAGE_ID]"
+                      dataType="i4"
+                      lineageId="Package\NA3130BA\Sort Join Field 1.Outputs[Sort Output].Columns[TBLOG_PACKAGE_ID]"
+                      name="TBLOG_PACKAGE_ID">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\NA3130BA\Add Technical Fields.Outputs[Derived Column Output].Columns[TBLOG_PACKAGE_ID]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\NA3130BA\Sort Join Field 1.Outputs[Sort Output].Columns[INSERT_DT]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\NA3130BA\Sort Join Field 1.Outputs[Sort Output].Columns[INSERT_DT]"
+                      name="INSERT_DT">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\NA3130BA\Add Technical Fields.Outputs[Derived Column Output].Columns[INSERT_DT]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\NA3130BA\Sort Join Field 1.Outputs[Sort Output].Columns[UPDATE_DT]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\NA3130BA\Sort Join Field 1.Outputs[Sort Output].Columns[UPDATE_DT]"
+                      name="UPDATE_DT">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\NA3130BA\Add Technical Fields.Outputs[Derived Column Output].Columns[UPDATE_DT]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\NA3130BA\Sort Join Field 1.Outputs[Sort Output].Columns[USER_CD]"
+                      dataType="wstr"
+                      length="11"
+                      lineageId="Package\NA3130BA\Sort Join Field 1.Outputs[Sort Output].Columns[USER_CD]"
+                      name="USER_CD">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\NA3130BA\Add Technical Fields.Outputs[Derived Column Output].Columns[USER_CD]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\NA3130BA\Sort Join Field 1.Outputs[Sort Output].Columns[SITE_ID]"
+                      dataType="i4"
+                      lineageId="Package\NA3130BA\Sort Join Field 1.Outputs[Sort Output].Columns[SITE_ID]"
+                      name="SITE_ID">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\NA3130BA\Add Technical Fields.Outputs[Derived Column Output].Columns[SITE_ID]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\NA3130BA\Sort Join Field 1.Outputs[Sort Output].Columns[SOURCE_SYSTEM_ID]"
+                      dataType="i4"
+                      lineageId="Package\NA3130BA\Sort Join Field 1.Outputs[Sort Output].Columns[SOURCE_SYSTEM_ID]"
+                      name="SOURCE_SYSTEM_ID">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\NA3130BA\Add Technical Fields.Outputs[Derived Column Output].Columns[SOURCE_SYSTEM_ID]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\NA3130BA\Sort Join Field 1.Outputs[Sort Output].Columns[TBLOG_PACKAGE_TABLE_ID]"
+                      dataType="i4"
+                      lineageId="Package\NA3130BA\Sort Join Field 1.Outputs[Sort Output].Columns[TBLOG_PACKAGE_TABLE_ID]"
+                      name="TBLOG_PACKAGE_TABLE_ID">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\NA3130BA\Add Technical Fields.Outputs[Derived Column Output].Columns[TBLOG_PACKAGE_TABLE_ID]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\NA3130BA\Sort Join Field 1.Outputs[Sort Output].Columns[join_field]"
+                      dataType="i4"
+                      lineageId="Package\NA3130BA\Sort Join Field 1.Outputs[Sort Output].Columns[join_field]"
+                      name="join_field"
+                      sortKeyPosition="1">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\NA3130BA\Add Technical Fields.Outputs[Derived Column Output].Columns[join_field]}</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\NA3130BA\Sort Join Field 2"
+              componentClassID="Microsoft.Sort"
+              contactInfo="Sort;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Sorts input data in ascending or descending order when it cannot be sorted at its source. For example, sort sales data by 'customer id' before it is written to a flat file and delivered to another department. Note: We do not recommend this transformation for large data flows."
+              name="Sort Join Field 2"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the Sort transformation removes rows with duplicate sort values."
+                  name="EliminateDuplicates">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the maximum number of threads to use for sorting."
+                  expressionType="Notify"
+                  name="MaximumThreads">-1</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\NA3130BA\Sort Join Field 2.Inputs[Sort Input]"
+                  name="Sort Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\NA3130BA\Sort Join Field 2.Inputs[Sort Input].Columns[PRODUCTION_LINE_ID]"
+                      cachedDataType="i2"
+                      cachedName="PRODUCTION_LINE_ID"
+                      lineageId="Package\NA3130BA\Load TBMN Data.Outputs[OLE DB Source Output].Columns[PRODUCTION_LINE_ID]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\NA3130BA\Sort Join Field 2.Inputs[Sort Input].Columns[PRODUCTION_MODEL_ID]"
+                      cachedDataType="i2"
+                      cachedName="PRODUCTION_MODEL_ID"
+                      lineageId="Package\NA3130BA\Load TBMN Data.Outputs[OLE DB Source Output].Columns[PRODUCTION_MODEL_ID]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\NA3130BA\Sort Join Field 2.Inputs[Sort Input].Columns[join_field]"
+                      cachedDataType="i4"
+                      cachedName="join_field"
+                      lineageId="Package\NA3130BA\Load TBMN Data.Outputs[OLE DB Source Output].Columns[join_field]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">1</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\NA3130BA\Sort Join Field 2.Outputs[Sort Output]"
+                  isSorted="true"
+                  name="Sort Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\NA3130BA\Sort Join Field 2.Outputs[Sort Output].Columns[PRODUCTION_LINE_ID]"
+                      dataType="i2"
+                      lineageId="Package\NA3130BA\Sort Join Field 2.Outputs[Sort Output].Columns[PRODUCTION_LINE_ID]"
+                      name="PRODUCTION_LINE_ID">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\NA3130BA\Load TBMN Data.Outputs[OLE DB Source Output].Columns[PRODUCTION_LINE_ID]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\NA3130BA\Sort Join Field 2.Outputs[Sort Output].Columns[PRODUCTION_MODEL_ID]"
+                      dataType="i2"
+                      lineageId="Package\NA3130BA\Sort Join Field 2.Outputs[Sort Output].Columns[PRODUCTION_MODEL_ID]"
+                      name="PRODUCTION_MODEL_ID">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\NA3130BA\Load TBMN Data.Outputs[OLE DB Source Output].Columns[PRODUCTION_MODEL_ID]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\NA3130BA\Sort Join Field 2.Outputs[Sort Output].Columns[join_field]"
+                      dataType="i4"
+                      lineageId="Package\NA3130BA\Sort Join Field 2.Outputs[Sort Output].Columns[join_field]"
+                      name="join_field"
+                      sortKeyPosition="1">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\NA3130BA\Load TBMN Data.Outputs[OLE DB Source Output].Columns[join_field]}</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\NA3130BA.Paths[Conditional Split Default Output]"
+              endId="Package\NA3130BA\Add Technical Fields.Inputs[Derived Column Input]"
+              name="Conditional Split Default Output"
+              startId="Package\NA3130BA\Delta Loading Filter.Outputs[Conditional Split Default Output]" />
+            <path
+              refId="Package\NA3130BA.Paths[Derived Column Output]"
+              endId="Package\NA3130BA\Sort Join Field 1.Inputs[Sort Input]"
+              name="Derived Column Output"
+              startId="Package\NA3130BA\Add Technical Fields.Outputs[Derived Column Output]" />
+            <path
+              refId="Package\NA3130BA.Paths[Flat File Source Output]"
+              endId="Package\NA3130BA\Delta Loading Filter.Inputs[Conditional Split Input]"
+              name="Flat File Source Output"
+              startId="Package\NA3130BA\NA3130BA Flat File.Outputs[Flat File Source Output]" />
+            <path
+              refId="Package\NA3130BA.Paths[Merge Join Output]"
+              endId="Package\NA3130BA\OLE DB Destination.Inputs[OLE DB Destination Input]"
+              name="Merge Join Output"
+              startId="Package\NA3130BA\Merge Join.Outputs[Merge Join Output]" />
+            <path
+              refId="Package\NA3130BA.Paths[OLE DB Source Output]"
+              endId="Package\NA3130BA\Sort Join Field 2.Inputs[Sort Input]"
+              name="OLE DB Source Output"
+              startId="Package\NA3130BA\Load TBMN Data.Outputs[OLE DB Source Output]" />
+            <path
+              refId="Package\NA3130BA.Paths[Sort Output]"
+              endId="Package\NA3130BA\Merge Join.Inputs[Merge Join Left Input]"
+              name="Sort Output"
+              startId="Package\NA3130BA\Sort Join Field 1.Outputs[Sort Output]" />
+            <path
+              refId="Package\NA3130BA.Paths[Sort Output1]"
+              endId="Package\NA3130BA\Merge Join.Inputs[Merge Join Right Input]"
+              name="Sort Output"
+              startId="Package\NA3130BA\Sort Join Field 2.Outputs[Sort Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="132,42.6666666666667"
+          Id="Package\NA3130BA"
+          TopLeft="60,162.666666666667" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\NA3130BA">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="172,42.6666666666667"
+          Id="Package\NA3130BA\Delta Loading Filter"
+          TopLeft="124.374998146668,88.2631595560718" />
+        <NodeLayout
+          Size="132,42.6666666666667"
+          Id="Package\NA3130BA\NA3130BA Flat File"
+          TopLeft="146.249997820705,4.10526323516612" />
+        <NodeLayout
+          Size="161.333333333334,42.6666666666667"
+          Id="Package\NA3130BA\Load TBMN Data"
+          TopLeft="531.944436517855,79.06432897357" />
+        <NodeLayout
+          Size="156,42.6666666666667"
+          Id="Package\NA3130BA\Sort Join Field 1"
+          TopLeft="228.749996591359,231.947370339959" />
+        <NodeLayout
+          Size="156,42.6666666666667"
+          Id="Package\NA3130BA\Sort Join Field 2"
+          TopLeft="474.305548487852,230.350881528766" />
+        <NodeLayout
+          Size="174.666666666667,42.6666666666667"
+          Id="Package\NA3130BA\OLE DB Destination"
+          TopLeft="348.124994812534,380.087726214036" />
+        <NodeLayout
+          Size="178.666666666667,42.6666666666667"
+          Id="Package\NA3130BA\Add Technical Fields"
+          TopLeft="176.249997373671,155.842107104793" />
+        <NodeLayout
+          Size="132,42.6666666666667"
+          Id="Package\NA3130BA\Merge Join"
+          TopLeft="368.749994505197,312.923980114019" />
+        <EdgeLayout
+          Id="Package\NA3130BA.Paths[Sort Output1]"
+          TopLeft="552.305548487852,273.017548195433">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-96.8888873159883,39.9064319185864"
+              Start="0,0"
+              End="-96.8888873159883,32.4064319185864">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,19.6571063469464" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,19.6571063469464"
+                    Point2="0,23.6571063469464"
+                    Point3="-4,23.6571063469464" />
+                  <mssgle:LineSegment
+                    End="-92.8888873159883,23.6571063469464" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-92.8888873159883,23.6571063469464"
+                    Point2="-96.8888873159883,23.6571063469464"
+                    Point3="-96.8888873159883,27.6571063469464" />
+                  <mssgle:LineSegment
+                    End="-96.8888873159883,32.4064319185864" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\NA3130BA.Paths[Sort Output]"
+          TopLeft="306.749996591359,274.614037006626">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="107.333331247171,38.3099431073933"
+              Start="0,0"
+              End="107.333331247171,30.8099431073933">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,18.7106848361194" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,18.7106848361194"
+                    Point2="0,22.7106848361194"
+                    Point3="4,22.7106848361194" />
+                  <mssgle:LineSegment
+                    End="103.333331247171,22.7106848361194" />
+                  <mssgle:CubicBezierSegment
+                    Point1="103.333331247171,22.7106848361194"
+                    Point2="107.333331247171,22.7106848361194"
+                    Point3="107.333331247171,26.7106848361194" />
+                  <mssgle:LineSegment
+                    End="107.333331247171,30.8099431073933" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\NA3130BA.Paths[OLE DB Source Output]"
+          TopLeft="612.611103184521,121.730995640237">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-60.305554696669,108.61988588853"
+              Start="0,0"
+              End="-60.305554696669,101.11988588853">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,50.3099429442649" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,50.3099429442649"
+                    Point2="0,54.3099429442649"
+                    Point3="-4,54.3099429442649" />
+                  <mssgle:LineSegment
+                    End="-56.305554696669,54.3099429442649" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-56.305554696669,54.3099429442649"
+                    Point2="-60.305554696669,54.3099429442649"
+                    Point3="-60.305554696669,58.3099429442649" />
+                  <mssgle:LineSegment
+                    End="-60.305554696669,101.11988588853" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\NA3130BA.Paths[Merge Join Output]"
+          TopLeft="435.104161325532,355.590646780686">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,24.4970794333499"
+              Start="0,0"
+              End="0,16.9970794333499">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,16.9970794333499" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\NA3130BA.Paths[Derived Column Output]"
+          TopLeft="265.583330707004,198.50877377146">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="41.1666658843547,33.4385965684993"
+              Start="0,0"
+              End="41.1666658843547,25.9385965684993">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,12.7192982842497" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,12.7192982842497"
+                    Point2="0,16.7192982842497"
+                    Point3="4,16.7192982842497" />
+                  <mssgle:LineSegment
+                    End="37.1666658843547,16.7192982842497" />
+                  <mssgle:CubicBezierSegment
+                    Point1="37.1666658843547,16.7192982842497"
+                    Point2="41.1666658843547,16.7192982842497"
+                    Point3="41.1666658843547,20.7192982842497" />
+                  <mssgle:LineSegment
+                    End="41.1666658843547,25.9385965684993" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\NA3130BA.Paths[Conditional Split Default Output]"
+          TopLeft="210.374998146668,130.929826222738">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="55.2083325603363,24.9122808820545"
+              Start="0,0"
+              End="55.2083325603363,17.4122808820545">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,8.45614044102727" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,8.45614044102727"
+                    Point2="0,12.4561404410273"
+                    Point3="4,12.4561404410273" />
+                  <mssgle:LineSegment
+                    End="51.2083325603363,12.4561404410273" />
+                  <mssgle:CubicBezierSegment
+                    Point1="51.2083325603363,12.4561404410273"
+                    Point2="55.2083325603363,12.4561404410273"
+                    Point3="55.2083325603363,16.4561404410273" />
+                  <mssgle:LineSegment
+                    End="55.2083325603363,17.4122808820545" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-43.0097399698319,17.4561404410273,141.2278125,11.658203125"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\NA3130BA.Paths[Flat File Source Output]"
+          TopLeft="211.312497983687,46.7719299018328">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,41.491229654239"
+              Start="0,0"
+              End="0,33.991229654239">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,33.991229654239" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>
